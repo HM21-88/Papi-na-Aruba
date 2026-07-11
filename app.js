@@ -2627,7 +2627,7 @@ const tenseExercises = [
   translation:'Ik was gisteren thuis.',
   choices:['tabata','ta','lo'],
   answer:'tabata',
-  explanation:'Tabata gebruik je voor een toestand in het verleden.'
+  explanation:'Een toestand in het verleden gebruikt tabata.'
 },
 
 {
@@ -2645,7 +2645,7 @@ const tenseExercises = [
   translation:'Wij waren in de klas toen de docent aankwam.',
   choices:['tabata','ta','lo'],
   answer:'tabata',
-  explanation:'Situatie in het verleden = tabata.'
+  explanation:'Een toestand in het verleden gebruikt tabata.'
 },
 
 {
@@ -2663,7 +2663,7 @@ const tenseExercises = [
   translation:'Ik was moe na het werk.',
   choices:['tabata','ta','lo'],
   answer:'tabata',
-  explanation:'Verleden toestand = tabata.'
+  explanation:'Een toestand in het verleden gebruikt tabata.'
 },
 
 {
@@ -2681,7 +2681,7 @@ const tenseExercises = [
   translation:'Wij waren blij op het feest.',
   choices:['tabata','ta','lo'],
   answer:'tabata',
-  explanation:'Verleden toestand = tabata.'
+  explanation:'Een toestand in het verleden gebruikt tabata.'
 },
 
 {
@@ -2699,7 +2699,7 @@ const tenseExercises = [
   translation:'Ik was in Aruba in 2024.',
   choices:['tabata','ta','lo'],
   answer:'tabata',
-  explanation:'Verleden toestand = tabata.'
+  explanation:'Een toestand in het verleden gebruikt tabata.'
 },
 
 {
@@ -2710,6 +2710,74 @@ const tenseExercises = [
   answer:'tabatin',
   explanation:'Er was = tabatin.'
 },
+
+{
+  level:'gemiddeld',
+  question:'Mi ___ triste despues di e noticia.',
+  translation:'Ik was verdrietig na het nieuws.',
+  choices:['tabata','ta','lo'],
+  answer:'tabata',
+  explanation:'Verleden toestand = tabata.'
+},
+
+{
+  level:'gemiddeld',
+  question:'___ un hospital aki promé.',
+  translation:'Hier stond vroeger een ziekenhuis.',
+  choices:['tabatin','ta','lo'],
+  answer:'tabatin',
+  explanation:'Er was = tabatin.'
+},
+
+{
+  level:'gemiddeld',
+  question:'Nos ___ den oficina ayera.',
+  translation:'Wij waren gisteren op kantoor.',
+  choices:['tabata','ta','lo'],
+  answer:'tabata',
+  explanation:'Verleden toestand = tabata.'
+},
+
+{
+  level:'gemiddeld',
+  question:'___ hopi trafico awe mainta.',
+  translation:'Er was vanmorgen veel verkeer.',
+  choices:['tabatin','ta','lo'],
+  answer:'tabatin',
+  explanation:'Er was = tabatin.'
+},
+
+{
+  level:'gemiddeld',
+  question:'Mi ___ hopi cansá despues di deporte.',
+  translation:'Ik was erg moe na het sporten.',
+  choices:['tabata','ta','lo'],
+  answer:'tabata',
+  explanation:'Toestand in het verleden.'
+},
+
+{
+  level:'gemiddeld',
+  question:'___ un reunion importante ayera.',
+  translation:'Er was gisteren een belangrijke vergadering.',
+  choices:['tabatin','ta','lo'],
+  answer:'tabatin',
+  explanation:'Er was = tabatin.'
+},
+
+{
+  level:'gemiddeld',
+  question:'Nos ___ contento cu e resultado.',
+  translation:'Wij waren blij met het resultaat.',
+  choices:['tabata','ta','lo'],
+  answer:'tabata',
+  explanation:'Verleden toestand.'
+},
+
+{
+  level:'gemiddeld',
+  question:'___ hopi turista den ciudad.',
+  translation:'Er waren ,
 
 /* ===== MOEILIJK ===== */
 
