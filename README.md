@@ -1,6 +1,6 @@
-# PapiQuest - learn papiamento the fun way
+# Papi na Aruba - learn papiamento the fun way
 
-Een interactieve webapp voor het leren van Papiamento; de taal die specifiek op Aruba wordt gesproken. De applicatie combineert verschillende leermethoden in één omgeving, zodat gebruikers zowel woordenschat als grammatica kunnen oefenen.
+Papi na Aruba is een interactieve webapp voor het leren van Papiamento; de taal die specifiek op Aruba wordt gesproken. De applicatie combineert verschillende leermethoden in één omgeving, zodat gebruikers zowel woordenschat als grammatica kunnen oefenen.
 
 ---
 
