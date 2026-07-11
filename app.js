@@ -2621,6 +2621,8 @@ const tenseExercises = [
 
 /* ===== GEMIDDELD ===== */
 
+/* ===== GEMIDDELD ===== */
+
 {
   level:'gemiddeld',
   question:'Mi ___ na kas ayera.',
@@ -2777,7 +2779,119 @@ const tenseExercises = [
 {
   level:'gemiddeld',
   question:'___ hopi turista den ciudad.',
-  translation:'Er waren ,
+  translation:'Er waren veel toeristen in de stad.',
+  choices:['tabatin','ta','lo'],
+  answer:'tabatin',
+  explanation:'Er waren = tabatin.'
+},
+
+{
+  level:'gemiddeld',
+  question:'Mi ___ den playa ora bo a yega.',
+  translation:'Ik was op het strand toen jij arriveerde.',
+  choices:['tabata','ta','lo'],
+  answer:'tabata',
+  explanation:'Toestand in het verleden.'
+},
+
+{
+  level:'gemiddeld',
+  question:'___ un evento grandi e siman pasa.',
+  translation:'Er was vorige week een groot evenement.',
+  choices:['tabatin','ta','lo'],
+  answer:'tabatin',
+  explanation:'Er was = tabatin.'
+},
+
+{
+  level:'gemiddeld',
+  question:'Nos ___ den skol tur dia.',
+  translation:'Wij waren elke dag op school.',
+  choices:['tabata','ta','lo'],
+  answer:'tabata',
+  explanation:'Doorlopende toestand in het verleden.'
+},
+
+{
+  level:'gemiddeld',
+  question:'___ un famoso restaurante aki.',
+  translation:'Hier was een beroemd restaurant.',
+  choices:['tabatin','ta','lo'],
+  answer:'tabatin',
+  explanation:'Er was = tabatin.'
+},
+
+{
+  level:'gemiddeld',
+  question:'Mi ___ solo den kas.',
+  translation:'Ik was alleen thuis.',
+  choices:['tabata','ta','lo'],
+  answer:'tabata',
+  explanation:'Verleden toestand.'
+},
+
+{
+  level:'gemiddeld',
+  question:'___ dos persona na entrada.',
+  translation:'Er stonden twee personen bij de ingang.',
+  choices:['tabatin','ta','lo'],
+  answer:'tabatin',
+  explanation:'Er waren = tabatin.'
+},
+
+{
+  level:'gemiddeld',
+  question:'Nos ___ preocupa cu e noticia.',
+  translation:'Wij waren bezorgd om het nieuws.',
+  choices:['tabata','ta','lo'],
+  answer:'tabata',
+  explanation:'Verleden toestand.'
+},
+
+{
+  level:'gemiddeld',
+  question:'___ hopi viento ayera.',
+  translation:'Er was gisteren veel wind.',
+  choices:['tabatin','ta','lo'],
+  answer:'tabatin',
+  explanation:'Er was = tabatin.'
+},
+
+{
+  level:'gemiddeld',
+  question:'Mi ___ den biblioteca tur anochi.',
+  translation:'Ik was de hele avond in de bibliotheek.',
+  choices:['tabata','ta','lo'],
+  answer:'tabata',
+  explanation:'Doorlopende toestand in het verleden.'
+},
+
+{
+  level:'gemiddeld',
+  question:'___ un problema cu computador.',
+  translation:'Er was een probleem met de computer.',
+  choices:['tabatin','ta','lo'],
+  answer:'tabatin',
+  explanation:'Er was = tabatin.'
+},
+
+{
+  level:'gemiddeld',
+  question:'Nos ___ hopi ocupa ayera.',
+  translation:'Wij waren gisteren erg druk.',
+  choices:['tabata','ta','lo'],
+  answer:'tabata',
+  explanation:'Verleden toestand.'
+},
+
+{
+  level:'gemiddeld',
+  question:'___ hopi pregunta durante reunion.',
+  translation:'Er waren veel vragen tijdens de vergadering.',
+  choices:['tabatin','ta','lo'],
+  answer:'tabatin',
+  explanation:'Er waren = tabatin.'
+},
 
 /* ===== MOEILIJK ===== */
 
