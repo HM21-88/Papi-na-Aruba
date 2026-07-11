@@ -1,4 +1,4 @@
-# 🇦🇼 Papiamento Leren – Web App
+# PapiQuest - learn papiamento the fun way
 
 Een interactieve webapp voor het leren van Papiamento; de taal die specifiek op Aruba wordt gesproken. De applicatie combineert verschillende leermethoden in één omgeving, zodat gebruikers zowel woordenschat als grammatica kunnen oefenen.
 
