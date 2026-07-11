@@ -1731,6 +1731,9 @@ function renderPrepositionExercise(){
     return;
 
   selectedPrepositions = [];
+  
+  originalPrepositionQuestion =
+	currentPrepositionExercise.question;
 
   document.getElementById('prepQuestion').textContent =
     currentPrepositionExercise.question;
@@ -1760,6 +1763,7 @@ function renderPrepositionExercise(){
 }
 
 let selectedPrepositions = [];
+let originalPrepositionQuestion = '';
 
 function checkPreposition(choice){
 
@@ -1772,6 +1776,17 @@ function checkPreposition(choice){
 
   const correct =
     choice === answer;
+	
+	const previewQuestion =
+  originalPrepositionQuestion.replace(
+    '___',
+    `[${choice}]`
+  );
+
+document.getElementById(
+  'prepQuestion'
+).textContent =
+  previewQuestion;
 
   if(correct){
 
@@ -1818,6 +1833,24 @@ function checkPreposition(choice){
   }
 
   selectedPrepositions.push(choice);
+  
+  let previewQuestion =
+  originalPrepositionQuestion;
+
+selectedPrepositions.forEach(answer => {
+
+  previewQuestion =
+    previewQuestion.replace(
+      '___',
+      `[${answer}]`
+    );
+
+});
+
+document.getElementById(
+  'prepQuestion'
+).textContent =
+  previewQuestion;
 
   const totalNeeded =
     answer.length;
