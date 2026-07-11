@@ -971,6 +971,52 @@ function checkPreposition(choice){
     return;
   }
 
+function nextPrepositionExercise(){
+
+  if(!currentPrepositionExercise){
+    return;
+  }
+
+  const level =
+    currentPrepositionExercise.level;
+
+  const pool =
+    prepositionExercises.filter(
+      x => x.level === level
+    );
+
+  let nextQuestion =
+    pool[Math.floor(
+      Math.random() * pool.length
+    )];
+
+  // probeer te voorkomen dat dezelfde vraag direct terugkomt
+
+  let attempts = 0;
+
+  while(
+    nextQuestion.question ===
+    currentPrepositionExercise.question
+    &&
+    attempts < 10
+  ){
+
+    nextQuestion =
+      pool[Math.floor(
+        Math.random() * pool.length
+      )];
+
+    attempts++;
+
+  }
+
+  currentPrepositionExercise =
+    nextQuestion;
+
+  renderPrepositionExercise();
+
+}
+
   // Meerdere antwoorden
 
   if(
