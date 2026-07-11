@@ -15,16 +15,28 @@ function showSection(id){
   updateMainNav(id);
   playFlashSound('nav');
 
-  if(id==='flashcards'){
-    renderFlash();
-  } else if(id==='quiz'){
-    updateQuizStats();
-    if(!currentQuiz){
-      newQuiz();
-    }
-  } else if(id==='woordenlijst'){
-    renderList();
+if(id==='flashcards'){
+
+  renderFlash();
+
+} else if(id==='quiz'){
+
+  updateQuizStats();
+
+  if(!currentQuiz){
+    newQuiz();
   }
+
+} else if(id==='woordenlijst'){
+
+  renderList();
+
+} else if(id==='oefeningen'){
+
+  showExercise('voorzetsels');
+
+}
+``
 }
 
 function showExercise(id){
@@ -2606,8 +2618,6 @@ const tenseExercises = [
   answer:'a',
   explanation:'Ayera = verleden tijd.'
 },
-
-/* ===== GEMIDDELD ===== */
 
 /* ===== GEMIDDELD ===== */
 
