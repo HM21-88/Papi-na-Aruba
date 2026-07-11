@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Papiamento oefenwebsite</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">
+      <div class="logo" aria-label="Shoco logo">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="24" cy="30" r="11" fill="#8b5e34"/>
+          <circle cx="40" cy="30" r="11" fill="#8b5e34"/>
+          <circle cx="24" cy="30" r="6.5" fill="#ffffff"/>
+          <circle cx="40" cy="30" r="6.5" fill="#ffffff"/>
+          <circle cx="24" cy="30" r="3" fill="#111827"/>
+          <circle cx="40" cy="30" r="3" fill="#111827"/>
+          <path d="M29 39 L32 43 L35 39 Z" fill="#f59e0b"/>
+          <path d="M16 21 L22 16 L24 24 Z" fill="#6b4423"/>
+          <path d="M48 21 L42 16 L40 24 Z" fill="#6b4423"/>
+        </svg>
+      </div>
+
+      <div>
+        <h1>Papiamento oefenwebsite</h1>
+        <div class="sub">Week 1 t/m 4 • Aantal woorden: <span id="wordCount"></span></div>
+      </div>
+    </div>
+
+    <div class="nav" id="mainNav">
+      <button class="btn" onclick="showSection('woordenlijst');">
+        <span class="ico" aria-hidden="true">📘</span>
+        Woordenlijst
+      </button>
+
+      <button class="btn alt btn-flash" onclick="showSection('flashcards');">
+        <span class="ico" aria-hidden="true">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <rect x="12" y="20" width="28" height="22" rx="5" fill="#ffffff" stroke="#1f2937" stroke-width="3.5"/>
+            <rect x="24" y="12" width="28" height="22" rx="5" fill="#fff3b0" stroke="#1f2937" stroke-width="3.5"/>
+            <line x1="29" y1="20" x2="47" y2="20" stroke="#C8102E" stroke-width="3.5" stroke-linecap="round"/>
+            <line x1="29" y1="27" x2="43" y2="27" stroke="#418FDE" stroke-width="3.5" stroke-linecap="round"/>
+          </svg>
+        </span>
+        Flashcards
+      </button>
+
+      <button class="btn secondary" onclick="showSection('quiz');">
+        <span class="ico" aria-hidden="true">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <circle cx="32" cy="24" r="19" fill="#ffffff" stroke="#1f2937" stroke-width="4"/>
+            <path d="M25 20 C25 14, 29 11, 35 11 C41 11, 45 14, 45 20 C45 25, 41 27, 38 30 C35 32, 34 34, 34 37"
+              fill="none"
+              stroke="#1f2937"
+              stroke-width="5"
+              stroke-linecap="round"
+              stroke-linejoin="round"/>
+            <line x1="34" y1="37" x2="34" y2="41"
+              stroke="#1f2937"
+              stroke-width="5"
+              stroke-linecap="round"/>
+            <circle cx="34" cy="48" r="3.5" fill="#C8102E"/>
+          </svg>
+        </span>
+        Quiz
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="flag-stripe" aria-hidden="true"></div>
+
+<main class="wrap">
+  <section id="woordenlijst" class="panel">
+  <div class="row">
+    <input id="search" placeholder="Zoek woord, betekenis, variant of type..." oninput="renderList()" />
+
+    <div class="week-picker" data-week-picker="weekFilter">
+      <button class="week-picker-btn" type="button" onclick="toggleWeekPicker('weekFilter')">
+        <span class="week-picker-label" id="weekFilterLabel">Alle weken</span>
+        <span class="week-picker-arrow">▾</span>
+      </button>
+      <div class="week-picker-menu" id="weekFilterMenu"></div>
+    </div>
+  </div>
+
+  <div class="top-tools">
+    <button id="toggleMeaningsBtn" class="icon-toggle" type="button" onclick="toggleMeanings()" aria-label="Betekenis tonen of verbergen">
+      <span aria-hidden="true">👁️</span>
+      <span class="toggle-text">Betekenis verbergen</span>
+    </button>
+  </div>
+
+  <div id="list"></div>
+
+  <div class="top-tools bottom-tools">
+    <button id="toggleMeaningsBtnBottom" class="icon-toggle" type="button" onclick="toggleMeanings()" aria-label="Betekenis tonen of verbergen">
+      <span aria-hidden="true">👁️</span>
+      <span class="toggle-text">Betekenis verbergen</span>
+    </button>
+  </div>
+</section>
+
+<section id="flashcards" class="panel hidden">
+  <div class="row">
+    <select id="flashDir" onchange="resetFlash()">
+      <option value="nl-pa">Nederlands → Papiamento</option>
+      <option value="pa-nl">Papiamento → Nederlands</option>
+    </select>
+
+    <div class="week-picker" data-week-picker="flashWeek">
+      <button class="week-picker-btn" type="button" onclick="toggleWeekPicker('flashWeek')">
+        <span class="week-picker-label" id="flashWeekLabelBtn">Alle weken</span>
+        <span class="week-picker-arrow">▾</span>
+      </button>
+      <div class="week-picker-menu" id="flashWeekMenu"></div>
+    </div>
+
+    <select id="flashType" onchange="resetFlash()"></select>
+
+    <select id="flashOrder" onchange="resetFlash()">
+      <option value="list">Lijstvolgorde</option>
+      <option value="shuffle">Shuffle</option>
+    </select>
+  </div>
+
+  <div class="stats" style="margin-top:12px">
+  <div class="stat" id="flashProgress">Kaart 0 van 0</div>
+  <div class="stat" id="flashStatus">Geen actieve stapel</div>
+  <div class="stat" id="flashGoodCount">Makkelijk: 0</div>
+  <div class="stat" id="flashHardCount">Moeilijk: 0</div>
+</div>
+
+  <div class="flash-wrap">
+    <div class="flash-stack" aria-hidden="true"></div>
+
+    <div class="flash" id="flashBox" onclick="flipFlash()">
+      <div>
+        <div class="pill" id="flashWeekLabel"></div>
+        <div class="big" id="flashFront"></div>
+        <div class="small" id="flashHint">Tik of druk op spatie om om te draaien</div>
+      </div>
+    </div>
+  </div>
+
+   <div class="actions">
+    <button class="btn white-outline action-btn" onclick="prevFlash()" aria-label="Vorige kaart">
+      <span class="ico" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m15 18-6-6 6-6"/>
+        </svg>
+      </span>
+      <span class="label">Vorige</span>
+    </button>
+
+    <button class="btn secondary action-btn" onclick="flipFlash()" aria-label="Kaart omdraaien">
+      <span class="ico" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M8 3H5a2 2 0 0 0-2 2v3"/>
+          <path d="M3 5l3 3 3-3"/>
+          <path d="M16 21h3a2 2 0 0 0 2-2v-3"/>
+          <path d="M21 19l-3-3-3 3"/>
+          <rect x="7" y="7" width="10" height="10" rx="2"/>
+        </svg>
+      </span>
+      <span class="label">Omdraaien</span>
+    </button>
+
+    <button class="btn white-outline action-btn" onclick="nextFlash()" aria-label="Volgende kaart">
+      <span class="ico" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m9 18 6-6-6-6"/>
+        </svg>
+      </span>
+      <span class="label">Volgende</span>
+    </button>
+
+    <button class="btn alt action-btn" onclick="markFlashHard()" aria-label="Markeer als moeilijk">
+      <span class="ico" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+          <path d="M12 9v4"/>
+          <path d="M12 17h.01"/>
+        </svg>
+      </span>
+      <span class="label">Moeilijk</span>
+    </button>
+
+    <button class="btn action-btn" onclick="markFlashGood()" aria-label="Markeer als makkelijk">
+      <span class="ico" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 6 9 17l-5-5"/>
+        </svg>
+      </span>
+      <span class="label">Makkelijk</span>
+    </button>
+
+    <button class="btn white-outline action-btn" onclick="resetFlash()" aria-label="Reset sessie">
+      <span class="ico" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 12a9 9 0 1 0 3-6.7"/>
+          <path d="M3 3v6h6"/>
+        </svg>
+      </span>
+      <span class="label">Reset</span>
+    </button>
+  </div>
+
+  <div class="panel" style="margin-top:12px">
+    <div id="flashBack"></div>
+  </div>
+</section>
+
+<section id="quiz" class="panel hidden">
+    <div class="row">
+      <select id="quizDir" onchange="resetQuizSession()">
+        <option value="nl-pa">Nederlands → Papiamento</option>
+        <option value="pa-nl">Papiamento → Nederlands</option>
+      </select>
+
+      <div class="week-picker" data-week-picker="quizWeek">
+        <button class="week-picker-btn" type="button" onclick="toggleWeekPicker('quizWeek')">
+          <span class="week-picker-label" id="quizWeekLabel">Alle weken</span>
+          <span class="week-picker-arrow">▾</span>
+        </button>
+        <div class="week-picker-menu" id="quizWeekMenu"></div>
+      </div>
+    </div>
+
+    <div class="stats" style="margin-top:12px">
+      <div class="stat" id="quizScoreGood">Goed: 0</div>
+      <div class="stat" id="quizScoreBad">Fout: 0</div>
+      <div class="stat" id="quizQueueInfo">Herhaling: 0</div>
+    </div>
+
+    <div class="quiz-q" id="quizQ"></div>
+    <input id="quizA" placeholder="Typ je antwoord..." onkeydown="handleQuizEnter(event)" />
+
+      <div class="actions actions-quiz">
+      <button class="btn action-btn" onclick="checkQuiz()" aria-label="Controleer antwoord">
+  <span class="ico" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 11l3 3L22 4"/>
+      <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+    </svg>
+  </span>
+  <span class="label">Controleer</span>
+</button>
+
+      <button class="btn secondary action-btn" onclick="newQuiz()" aria-label="Volgende vraag">
+  <span class="ico" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m9 18 6-6-6-6"/>
+    </svg>
+  </span>
+  <span class="label">Volgende</span>
+</button>
+
+      <button class="btn white-outline action-btn" type="button" onclick="resetQuizScore()" aria-label="Reset telling">
+        <span class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 12a9 9 0 1 0 3-6.7"/>
+            <path d="M3 3v6h6"/>
+          </svg>
+        </span>
+        <span class="label">Reset</span>
+      </button>
+    </div>
+
+    <div id="quizF" style="margin-top:12px"></div>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
