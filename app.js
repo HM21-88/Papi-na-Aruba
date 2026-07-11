@@ -705,7 +705,7 @@ function checkQuiz(){
     .filter(Boolean);
 
   const hasInput=input.length>0;
-  const ok=hasInput && answers.some(a => a && (input===a || a.includes(input) || input.includes(a)));
+  const ok = hasInput && answers.some((a) => a && a.trim() === input.trim());
 
   quizAnswered++;
 
