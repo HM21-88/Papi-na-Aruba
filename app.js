@@ -972,6 +972,8 @@ function checkPreposition(choice){
   }
 
 function nextPrepositionExercise(){
+	
+	console.log('NEXT BUTTON');
 
   if(!currentPrepositionExercise){
     return;
