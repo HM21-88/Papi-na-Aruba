@@ -1751,30 +1751,46 @@ function checkPreposition(choice){
 
   // Eén antwoord
 
-  if(!Array.isArray(answer)){
+ if(!Array.isArray(answer)){
 
-    const correct =
-      choice === answer;
+  const correct =
+    choice === answer;
+
+  if(correct){
+
+    prepGood++;
+    prepStreak++;
 
     document.getElementById(
       'prepFeedback'
     ).innerHTML =
-      correct
-      ? `
-        <div class="feedback good">
-          ✅ Goed!<br>
-          ${currentPrepositionExercise.explanation}
-        </div>
       `
-      : `
-        <div class="feedback bad">
-          ❌ Niet juist.<br>
-          ${currentPrepositionExercise.explanation}
-        </div>
+      <div class="feedback good">
+        ✅ Goed!<br>
+        ${currentPrepositionExercise.explanation}
+      </div>
       `;
 
-    return;
+  }else{
+
+    prepBad++;
+    prepStreak = 0;
+
+    document.getElementById(
+      'prepFeedback'
+    ).innerHTML =
+      `
+      <div class="feedback bad">
+        ❌ Niet juist.<br>
+        ${currentPrepositionExercise.explanation}
+      </div>
+      `;
   }
+
+  updatePrepositionStats();
+
+  return;
+}
 
   // Meerdere antwoorden
 
