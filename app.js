@@ -2887,90 +2887,270 @@ const tenseExercises = [
   level:'moeilijk',
   question:'Mi ___ traha ayera pero mañan mi ___ traha atrobe.',
   translation:'Ik werkte gisteren maar morgen zal ik weer werken.',
-  choices:['a','lo','ta','tabata'],
+  choices:['a','lo','ta','tabata','tabatin'],
   answer:['a','lo'],
-  explanation:'Ayera vraagt verleden tijd (a), mañan vraagt toekomst (lo).'
-},
-
-{
-  level:'moeilijk',
-  question:'Nos ___ na kas ora e a yega.',
-  translation:'Wij waren thuis toen hij aankwam.',
-  choices:['tabata','ta','lo'],
-  answer:'tabata',
-  explanation:'Verleden toestand = tabata.'
-},
-
-{
-  level:'moeilijk',
-  question:'___ hopi hende na estadio ayera.',
-  translation:'Er waren gisteren veel mensen in het stadion.',
-  choices:['tabatin','ta','lo'],
-  answer:'tabatin',
-  explanation:'Er waren = tabatin.'
+  explanation:'Ayera = verleden tijd, mañan = toekomst.'
 },
 
 {
   level:'moeilijk',
   question:'Mi ___ pensa cu bo ___ bin mañan.',
   translation:'Ik dacht dat jij morgen zou komen.',
-  choices:['a','lo','ta','tabata'],
+  choices:['a','lo','ta','tabata','tabatin'],
   answer:['a','lo'],
-  explanation:'Ik dacht = verleden tijd (a), jij zal komen = toekomst (lo).'
+  explanation:'Ik dacht = verleden tijd, zal komen = toekomst.'
 },
 
 {
   level:'moeilijk',
   question:'Nos ___ traha awe pero nos ___ libre mañan.',
   translation:'Wij werken vandaag maar zijn morgen vrij.',
-  choices:['ta','lo','a'],
+  choices:['ta','lo','a','tabata','tabatin'],
+  answer:['ta','lo'],
+  explanation:'Vandaag = tegenwoordige tijd, morgen = toekomst.'
+},
+
+{
+  level:'moeilijk',
+  question:'Mi ___ den playa ora bo ___ yega.',
+  translation:'Ik was op het strand toen jij aankwam.',
+  choices:['tabata','a','ta','lo','tabatin'],
+  answer:['tabata','a'],
+  explanation:'Toestand in verleden gevolgd door gebeurtenis.'
+},
+
+{
+  level:'moeilijk',
+  question:'___ hopi hende den kas pero despues nan ___ bai.',
+  translation:'Er waren veel mensen thuis maar daarna vertrokken ze.',
+  choices:['tabatin','a','ta','lo','tabata'],
+  answer:['tabatin','a'],
+  explanation:'Er waren = tabatin, vertrokken = a.'
+},
+
+{
+  level:'moeilijk',
+  question:'Mi ___ pensa cu nos ___ gana e partido.',
+  translation:'Ik denk dat wij de wedstrijd zullen winnen.',
+  choices:['ta','lo','a','tabata','tabatin'],
+  answer:['ta','lo'],
+  explanation:'Ik denk = heden, zullen winnen = toekomst.'
+},
+
+{
+  level:'moeilijk',
+  question:'Nos ___ den restaurant ora e waiter ___ bin.',
+  translation:'Wij waren in het restaurant toen de ober kwam.',
+  choices:['tabata','a','ta','lo','tabatin'],
+  answer:['tabata','a'],
+  explanation:'Verleden toestand gevolgd door gebeurtenis.'
+},
+
+{
+  level:'moeilijk',
+  question:'Mi ___ traha awe pero ayera mi ___ na kas.',
+  translation:'Ik werk vandaag maar gisteren was ik thuis.',
+  choices:['ta','tabata','a','lo','tabatin'],
+  answer:['ta','tabata'],
+  explanation:'Vandaag = ta, verleden toestand = tabata.'
+},
+
+{
+  level:'moeilijk',
+  question:'___ un reunion ayera i mañan nos ___ un otro.',
+  translation:'Er was gisteren een vergadering en morgen hebben we er nog één.',
+  choices:['tabatin','lo','ta','a','tabata'],
+  answer:['tabatin','lo'],
+  explanation:'Er was = tabatin, morgen = toekomst.'
+},
+
+{
+  level:'moeilijk',
+  question:'Mi ___ den skol promé pero awor mi ___ traha.',
+  translation:'Ik was vroeger op school maar nu werk ik.',
+  choices:['tabata','ta','a','lo','tabatin'],
+  answer:['tabata','ta'],
+  explanation:'Vroeger = tabata, nu = ta.'
+},
+
+{
+  level:'moeilijk',
+  question:'Nos ___ mira e pelicula ayera i nos ___ gusta dje hopi.',
+  translation:'Wij keken gisteren de film en vonden hem erg leuk.',
+  choices:['a','tabata','lo','ta','tabatin'],
+  answer:['a','a'],
+  explanation:'Twee gebeurtenissen in het verleden.'
+},
+
+{
+  level:'moeilijk',
+  question:'Mi ___ kansá ayera pero awe mi ___ bon.',
+  translation:'Ik was moe gisteren maar vandaag voel ik mij goed.',
+  choices:['tabata','ta','lo','a','tabatin'],
+  answer:['tabata','ta'],
+  explanation:'Verleden toestand gevolgd door huidige toestand.'
+},
+
+{
+  level:'moeilijk',
+  question:'___ hopi viento ayera pero awe e klima ___ bon.',
+  translation:'Er was gisteren veel wind maar vandaag is het weer goed.',
+  choices:['tabatin','ta','a','lo','tabata'],
+  answer:['tabatin','ta'],
+  explanation:'Er was = tabatin, vandaag = ta.'
+},
+
+{
+  level:'moeilijk',
+  question:'Mi ___ pensa cu bo ___ na kas pero bo ___ den trabou.',
+  translation:'Ik dacht dat je thuis was maar je was op het werk.',
+  choices:['a','tabata','ta','lo','tabatin'],
+  answer:['a','tabata','tabata'],
+  explanation:'Dacht = a, beide toestanden gebruiken tabata.'
+},
+
+{
+  level:'moeilijk',
+  question:'Nos ___ den Aruba awe pero mañan nos ___ na Korsou.',
+  translation:'Wij zijn vandaag op Aruba maar morgen op Curaçao.',
+  choices:['ta','lo','a','tabata','tabatin'],
   answer:['ta','lo'],
   explanation:'Vandaag = ta, morgen = lo.'
 },
 
 {
   level:'moeilijk',
-  question:'Mi ___ den skol ora e evento a kuminsá.',
-  translation:'Ik was op school toen het evenement begon.',
-  choices:['tabata','ta','lo'],
-  answer:'tabata',
-  explanation:'Toestand in het verleden.'
+  question:'___ un problema ayera pero awe no ___ nada.',
+  translation:'Er was gisteren een probleem maar vandaag is er niets.',
+  choices:['tabatin','ta','lo','a','tabata'],
+  answer:['tabatin','ta'],
+  explanation:'Gisteren = tabatin, vandaag = ta.'
 },
 
 {
   level:'moeilijk',
-  question:'___ un kas aki promé.',
-  translation:'Hier stond vroeger een huis.',
-  choices:['tabatin','ta','lo'],
-  answer:'tabatin',
-  explanation:'Er was = tabatin.'
+  question:'Mi ___ lesa un buki ora e luz ___ bai.',
+  translation:'Ik las een boek toen de stroom uitviel.',
+  choices:['a','lo','ta','tabata','tabatin'],
+  answer:['a','a'],
+  explanation:'Twee gebeurtenissen in het verleden.'
 },
 
 {
   level:'moeilijk',
-  question:'E mucha ___ studia ayera.',
-  translation:'Het kind studeerde gisteren.',
-  choices:['a','ta','lo'],
-  answer:'a',
-  explanation:'Gisteren = verleden tijd.'
+  question:'Nos ___ feliz ora nos ___ e noticia.',
+  translation:'Wij waren blij toen wij het nieuws hoorden.',
+  choices:['tabata','a','lo','ta','tabatin'],
+  answer:['tabata','a'],
+  explanation:'Toestand gevolgd door gebeurtenis.'
 },
 
 {
   level:'moeilijk',
-  question:'Mi ___ bai Aruba den juli.',
-  translation:'Ik zal in juli naar Aruba gaan.',
-  choices:['lo','a','ta'],
-  answer:'lo',
-  explanation:'Toekomst = lo.'
+  question:'Mi ___ spera cu bo ___ yega promé.',
+  translation:'Ik hoop dat je vroeg zult aankomen.',
+  choices:['ta','lo','a','tabata','tabatin'],
+  answer:['ta','lo'],
+  explanation:'Ik hoop = heden, aankomen = toekomst.'
 },
 
 {
   level:'moeilijk',
-  question:'Nos ___ hopi kos pa hasi ayera.',
-  translation:'Wij hadden gisteren veel dingen te doen.',
-  choices:['tabatin','ta','lo'],
-  answer:'tabatin',
-  explanation:'Er was / hadden = tabatin.'
+  question:'___ un fiesta grandi i hopi hende ___ presente.',
+  translation:'Er was een groot feest en veel mensen waren aanwezig.',
+  choices:['tabatin','tabata','ta','lo','a'],
+  answer:['tabatin','tabata'],
+  explanation:'Er was = tabatin, aanwezig waren = tabata.'
+},
+
+{
+  level:'moeilijk',
+  question:'Mi ___ den kas ora e telefono ___ sona.',
+  translation:'Ik was thuis toen de telefoon ging.',
+  choices:['tabata','a','ta','lo','tabatin'],
+  answer:['tabata','a'],
+  explanation:'Toestand gevolgd door gebeurtenis.'
+},
+
+{
+  level:'moeilijk',
+  question:'Nos ___ pensa cu e ___ gana pero e no ___ logra.',
+  translation:'Wij dachten dat hij zou winnen maar hij slaagde niet.',
+  choices:['a','lo','ta','tabata','tabatin'],
+  answer:['a','lo','a'],
+  explanation:'Dachten = a, zou winnen = lo, slaagde niet = a.'
+},
+
+{
+  level:'moeilijk',
+  question:'Mi ___ ocupa ayera pero mañan mi ___ libre.',
+  translation:'Ik was gisteren druk maar morgen ben ik vrij.',
+  choices:['tabata','lo','ta','a','tabatin'],
+  answer:['tabata','lo'],
+  explanation:'Gisteren = tabata, morgen = lo.'
+},
+
+{
+  level:'moeilijk',
+  question:'Nos ___ den klas ora e profesor ___ drenta.',
+  translation:'Wij waren in de klas toen de docent binnenkwam.',
+  choices:['tabata','a','ta','lo','tabatin'],
+  answer:['tabata','a'],
+  explanation:'Toestand gevolgd door gebeurtenis.'
+},
+
+{
+  level:'moeilijk',
+  question:'___ hopi problema pero despues tur kos ___ bon.',
+  translation:'Er waren veel problemen maar daarna was alles goed.',
+  choices:['tabatin','tabata','ta','a','lo'],
+  answer:['tabatin','tabata'],
+  explanation:'Er waren = tabatin, toestand = tabata.'
+},
+
+{
+  level:'moeilijk',
+  question:'Mi ___ kere cu bo ___ bin pero bo no ___ yega.',
+  translation:'Ik dacht dat je zou komen maar je kwam niet aan.',
+  choices:['a','lo','ta','tabata','tabatin'],
+  answer:['a','lo','a'],
+  explanation:'Dacht = a, zou komen = lo, kwam niet = a.'
+},
+
+{
+  level:'moeilijk',
+  question:'Nos ___ pensa cu e ___ den kas pero e ___ na trabou.',
+  translation:'Wij dachten dat hij thuis was maar hij was op het werk.',
+  choices:['a','tabata','ta','lo','tabatin'],
+  answer:['a','tabata','tabata'],
+  explanation:'Dachten = a, toestanden gebruiken tabata.'
+},
+
+{
+  level:'moeilijk',
+  question:'___ un aksidente pero nadie ___ herida gravemente.',
+  translation:'Er was een ongeluk maar niemand was ernstig gewond.',
+  choices:['tabatin','tabata','ta','a','lo'],
+  answer:['tabatin','tabata'],
+  explanation:'Er was = tabatin, toestand = tabata.'
+},
+
+{
+  level:'moeilijk',
+  question:'Mi ___ pensa cu nos ___ gana pero nos no ___ logra.',
+  translation:'Ik dacht dat wij zouden winnen maar het lukte ons niet.',
+  choices:['a','lo','ta','tabata','tabatin'],
+  answer:['a','lo','a'],
+  explanation:'Dacht = a, zouden winnen = lo, lukte niet = a.'
+},
+
+{
+  level:'moeilijk',
+  question:'Nos ___ contento ayera pero awe nos ___ preocupa.',
+  translation:'Wij waren gisteren blij maar vandaag zijn wij bezorgd.',
+  choices:['tabata','ta','a','lo','tabatin'],
+  answer:['tabata','ta'],
+  explanation:'Gisteren = tabata, vandaag = ta.'
 }
 
 ];
