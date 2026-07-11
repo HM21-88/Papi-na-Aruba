@@ -36,7 +36,7 @@ if(id==='flashcards'){
   showExercise('voorzetsels');
 
 }
-``
+
 }
 
 function showExercise(id){
@@ -262,6 +262,18 @@ function renderList(){
 
     return weekMatches(item, selectedWeeks) && (!q || haystack.includes(q));
   });
+
+/* ===== WOORDENTELLER ===== */
+
+const wordCountCard =
+  document.getElementById(
+    'wordCountCard'
+  );
+
+if(wordCountCard){
+  wordCountCard.textContent =
+    `📘 Woorden: ${data.length}`;
+}
 
   const list=document.getElementById('list');
 
