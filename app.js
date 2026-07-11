@@ -1681,6 +1681,7 @@ let prepStreak = 0;
 
 let currentTenseExercise = null;
 let selectedTenses = [];
+let originalTenseQuestion = '';
 
 let tenseGood = 0;
 let tenseBad = 0;
@@ -2029,6 +2030,9 @@ if(!currentTenseExercise){
 
 selectedTenses = [];
 
+originalTenseQuestion =
+  currentTenseExercise.question;
+
   document.getElementById(
     'tenseQuestion'
   ).textContent =
@@ -2128,6 +2132,24 @@ function checkTense(choice){
   }
 
   selectedTenses.push(choice);
+  
+  let previewQuestion =
+  originalTenseQuestion;
+
+selectedTenses.forEach(answer => {
+
+  previewQuestion =
+    previewQuestion.replace(
+      '___',
+      `[${answer}]`
+    );
+
+});
+
+document.getElementById(
+  'tenseQuestion'
+).textContent =
+  previewQuestion;
 
   const totalNeeded =
     answer.length;
