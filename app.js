@@ -1728,13 +1728,13 @@ function renderPrepositionExercise(){
 
   currentPrepositionExercise.choices.forEach(choice=>{
 
-    choices.innerHTML += `
-      <button
-        class="btn secondary"
-        onclick="checkPreposition('${choice}')">
-        ${choice}
-      </button>
-    `;
+	choices.innerHTML += `
+	<button
+		class="btn white-outline"
+		onclick="checkPreposition('${choice}')">
+		${choice}
+  </button>
+`;
 
   });
 
