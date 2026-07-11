@@ -67,6 +67,11 @@
         </span>
         Quiz
       </button>
+	  <button class="btn white-outline" onclick="showSection('oefeningen')">
+		<span class="ico">📚
+		</span>
+  Oefeningen
+</button>
     </div>
   </div>
 </header>
@@ -272,6 +277,52 @@
 
     <div id="quizF" style="margin-top:12px"></div>
   </section>
+
+<section id="oefeningen" class="hidden">
+
+  <div class="panel">
+
+    <h2>📚 Oefeningen</h2>
+
+    <div class="flag-stripe"></div>
+
+    <div class="row">
+
+      <button
+        class="btn secondary"
+        onclick="showExercise('voorzetsels')">
+        📍 Voorzetsels
+      </button>
+
+      <button
+        class="btn secondary"
+        onclick="showExercise('tijdsvormen')">
+        ⏱️ Tijdsvormen
+      </button>
+
+    </div>
+
+  </div>
+
+  <div id="voorzetsels" class="panel hidden">
+    <h3>📍 Voorzetsels</h3>
+
+    <p>
+      Hier komt straks de voorzetseltrainer.
+    </p>
+  </div>
+
+  <div id="tijdsvormen" class="panel hidden">
+    <h3>⏱️ Tijdsvormen</h3>
+
+    <p>
+      Hier komt straks de tijdsvormtrainer.
+    </p>
+
+  </div>
+
+</section>  
+  
 </main>
 <script src="words.js"></script>
 <script src="app.js"></script>

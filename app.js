@@ -5,7 +5,7 @@ const weekSelections = {
 };
 
 function showSection(id){
-  ['woordenlijst','flashcards','quiz'].forEach(sectionId=>{
+  ['woordenlijst','flashcards','quiz','oefeningen'].forEach(sectionId=>{
     const el=document.getElementById(sectionId);
     if(el){
       el.classList.toggle('hidden', sectionId!==id);
@@ -25,6 +25,25 @@ function showSection(id){
   } else if(id==='woordenlijst'){
     renderList();
   }
+}
+
+function showExercise(id){
+
+  playFlashSound('nav');
+
+  ['voorzetsels','tijdsvormen'].forEach(sectionId=>{
+
+    const el=document.getElementById(sectionId);
+
+    if(el){
+      el.classList.toggle(
+        'hidden',
+        sectionId!==id
+      );
+    }
+
+  });
+
 }
 
 function escapeHtml(value){
