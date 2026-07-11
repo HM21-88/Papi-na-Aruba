@@ -1729,10 +1729,10 @@ function renderPrepositionExercise(){
   currentPrepositionExercise.choices.forEach(choice=>{
 
 	choices.innerHTML += `
-	<button
-		class="btn white-outline"
-		onclick="checkPreposition('${choice}')">
-		${choice}
+  <button
+    class="btn white-outline prep-choice"
+    onclick="selectPrepositionChoice(this,'${choice}')">
+    ${choice}
   </button>
 `;
 
@@ -1864,6 +1864,18 @@ if(allCorrect){
 }
 
 updatePrepositionStats();
+}
+
+function selectPrepositionChoice(button, choice){
+
+  button.classList.add('prep-selected');
+
+  setTimeout(() => {
+    button.classList.remove('prep-selected');
+  }, 250);
+
+  checkPreposition(choice);
+
 }
 
 function nextPrepositionExercise(){
