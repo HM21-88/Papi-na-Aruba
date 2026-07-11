@@ -3239,7 +3239,13 @@ const tenseExercises = [
 
 
 function init(){
-  document.getElementById('wordCount').textContent=data.length;
+  const wordCount =
+  document.getElementById('wordCount');
+
+if(wordCount){
+  wordCount.textContent =
+    data.length;
+}
 
   fillWeekPicker('weekFilter');
   fillWeekPicker('flashWeek');
