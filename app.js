@@ -27,36 +27,22 @@ function showSection(id){
   }
 }
 
-*unction showExercise(id){
+function showExercise(id){
 
-  playF*ashSound('nav');
+  playFlashSound('nav');
 
-  ['voorzetsels','tijdsvormen']
-    .forEach(sectio*Id=>{
+  ['voorzetsels','tijdsvormen'].forEach(sectionId=>{
 
-      const el =
-        do*ument.getElementById(sectionId);
+    const el=document.getElementById(sectionId);
 
-*     if(el){
-        el.classList.*oggle(
-          'hidden',
-       *  sectionId!==id
-        );
-      *
-
-    });
-
-  if(id === 'voorzetsel*'){
-
-    if(!currentPrepositionExe*cise){
-
-      startPrepositionExer*ise(
-        'makkelijk'
+    if(el){
+      el.classList.toggle(
+        'hidden',
+        sectionId!==id
       );
-
     }
 
-  }
+  });
 
 }
 
@@ -909,28 +895,6 @@ let currentPrepositionExercise = null;
 
 function startPrepositionExercise(level){
 
-  document
-    .querySelectorAll('#prepDifficultyNav button')
-    .forEach(btn => btn.classList.remove('active'));
-
-  if(level === 'makkelijk'){
-    document
-      .getElementById('prepEasyBtn')
-      .classList.add('active');
-  }
-
-  if(level === 'gemiddeld'){
-    document
-      .getElementById('prepMediumBtn')
-      .classList.add('active');
-  }
-
-  if(level === 'moeilijk'){
-    document
-      .getElementById('prepHardBtn')
-      .classList.add('active');
-  }
-
   const pool =
     prepositionExercises.filter(
       x => x.level === level
@@ -939,7 +903,8 @@ function startPrepositionExercise(level){
   currentPrepositionExercise =
     pool[Math.floor(Math.random()*pool.length)];
 
-  renderPrepositio*Exercise();
+  renderPrepositionExercise();
+
 }
 
 function renderPrepositionExercise(){
