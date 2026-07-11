@@ -2083,6 +2083,17 @@ function checkTense(choice){
     const correct =
       choice === answer;
 
+const previewQuestion =
+  originalTenseQuestion.replace(
+    '___',
+    `[${choice}]`
+  );
+
+document.getElementById(
+  'tenseQuestion'
+).textContent =
+  previewQuestion;
+
     if(correct){
 
       tenseGood++;
