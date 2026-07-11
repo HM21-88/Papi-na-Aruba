@@ -1854,12 +1854,6 @@ document.getElementById(
 
   // Meerdere antwoorden
 
-  if(
-    selectedPrepositions.includes(choice)
-  ){
-    return;
-  }
-
   selectedPrepositions.push(choice);
   
   let previewQuestion =
@@ -2196,12 +2190,6 @@ document.getElementById(
   }
 
   // Meerdere antwoorden
-
-  if(
-    selectedTenses.includes(choice)
-  ){
-    return;
-  }
 
   selectedTenses.push(choice);
   
