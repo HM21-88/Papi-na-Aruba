@@ -1719,6 +1719,13 @@ let prepGood = 0;
 let prepBad = 0;
 let prepStreak = 0;
 
+let prepBestStreak =
+  Number(
+    localStorage.getItem(
+      'prepBestStreak'
+    )
+  ) || 0;
+
 let currentTenseExercise = null;
 let selectedTenses = [];
 let originalTenseQuestion = '';
@@ -1726,6 +1733,13 @@ let originalTenseQuestion = '';
 let tenseGood = 0;
 let tenseBad = 0;
 let tenseStreak = 0;
+
+let tenseBestStreak =
+  Number(
+    localStorage.getItem(
+      'tenseBestStreak'
+    )
+  ) || 0;
 
 function startPrepositionExercise(level){
 
@@ -1832,6 +1846,18 @@ document.getElementById(
 
     prepGood++;
     prepStreak++;
+	
+	if(prepStreak > prepBestStreak){
+
+  prepBestStreak =
+    prepStreak;
+
+  localStorage.setItem(
+    'prepBestStreak',
+    prepBestStreak
+  );
+
+}
 
     document.getElementById(
       'prepFeedback'
@@ -1917,6 +1943,18 @@ if(allCorrect){
 
   prepGood++;
   prepStreak++;
+  
+  if(prepStreak > prepBestStreak){
+
+  prepBestStreak =
+    prepStreak;
+
+  localStorage.setItem(
+    'prepBestStreak',
+    prepBestStreak
+  );
+
+}
 
   document.getElementById(
     'prepFeedback'
@@ -2022,6 +2060,11 @@ function updatePrepositionStats(){
     'prepStreak'
   ).textContent =
     `🔥 Streak: ${prepStreak}`;
+	
+	document.getElementById(
+	  'prepBest'
+	).textContent =
+	  `🏆 Beste: ${prepBestStreak}`;
 
 }
 
@@ -2041,6 +2084,11 @@ function updateTenseStats(){
     'tenseStreak'
   ).textContent =
     `🔥 Streak: ${tenseStreak}`;
+	
+	document.getElementById(
+	'tenseBest'
+	).textContent =
+	`🏆 Beste: ${tenseBestStreak}`;
 
 }
 
@@ -2165,6 +2213,18 @@ document.getElementById(
 
       tenseGood++;
       tenseStreak++;
+	  
+	  if(tenseStreak > tenseBestStreak){
+
+  tenseBestStreak =
+    tenseStreak;
+
+  localStorage.setItem(
+    'tenseBestStreak',
+    tenseBestStreak
+  );
+
+}
 
       document.getElementById(
         'tenseFeedback'
@@ -2255,6 +2315,18 @@ document.getElementById(
 
     tenseGood++;
     tenseStreak++;
+	
+	if(tenseStreak > tenseBestStreak){
+
+  tenseBestStreak =
+    tenseStreak;
+
+  localStorage.setItem(
+    'tenseBestStreak',
+    tenseBestStreak
+  );
+
+}
 
     document.getElementById(
       'tenseFeedback'
