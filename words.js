@@ -1,4 +1,7 @@
 const data = [ 
+
+// ===== WEEK 1 =====
+
   {week:1,nummer:1,papiamento:'mi',nederlands:'ik, mij, me, mijn',varianten:'ami',type:'persoonlijk voornaamwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta bai kas.',voorbeeld_nederlands:'Ik ga naar huis.'},
   {week:1,nummer:2,papiamento:'bo',nederlands:'jij, je, jouw',varianten:'abo',type:'persoonlijk voornaamwoord',uitspraak:'',voorbeeld_papiamento:'Bo ta bon.',voorbeeld_nederlands:'Jij bent goed.'},
   {week:1,nummer:3,papiamento:'e',nederlands:'hij, zij, hem, haar, de, het',varianten:'',type:'persoonlijk voornaamwoord',uitspraak:'',voorbeeld_papiamento:'E ta yega awor.',voorbeeld_nederlands:'Hij of zij komt nu aan.'},
@@ -99,6 +102,9 @@ const data = [
   {week:1,nummer:98,papiamento:'nomber',nederlands:'naam, voornaam, benaming',varianten:'nòmber',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Kiko ta bo nomber?',voorbeeld_nederlands:'Wat is je naam?'},
   {week:1,nummer:99,papiamento:'number',nederlands:'nummer, getal',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Skirbi e number.',voorbeeld_nederlands:'Schrijf het nummer op.'},
   {week:1,nummer:100,papiamento:'adres',nederlands:'adres',varianten:'adrés',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi tin bo adres.',voorbeeld_nederlands:'Ik heb je adres.'},
+  
+  // ===== WEEK 2 =====
+  
   {week:2,nummer:101,papiamento:'moro!',nederlands:'goedemorgen!',varianten:'mòru!',type:'groet',uitspraak:'',voorbeeld_papiamento:'Moro! Con ta bay?',voorbeeld_nederlands:'Goedemorgen! Hoe gaat het?'},
   {week:2,nummer:102,papiamento:'bon dia!',nederlands:'goeiedag!',varianten:'',type:'groet',uitspraak:'',voorbeeld_papiamento:'Bon dia, señora.',voorbeeld_nederlands:'Goeiedag, mevrouw.'},
   {week:2,nummer:103,papiamento:'bon tardi!',nederlands:'goedemiddag!',varianten:'',type:'groet',uitspraak:'',voorbeeld_papiamento:'Bon tardi, tata.',voorbeeld_nederlands:'Goedemiddag, vader.'},
@@ -202,6 +208,9 @@ const data = [
   {week:2,nummer:203,papiamento:'lubida',nederlands:'vergeten',varianten:'lubidá',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'No lubida e yabi.',voorbeeld_nederlands:'Vergeet de sleutel niet.'},
   {week:2,nummer:204,papiamento:'corda',nederlands:'herinneren, zich herinneren, eraan denken',varianten:'korda',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta corda bo nomber.',voorbeeld_nederlands:'Ik herinner me je naam.'},
   {week:2,nummer:205,papiamento:'toca',nederlands:'muziek spelen, instrument spelen, ter sprake brengen',varianten:'toka',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'E ta toca gitara.',voorbeeld_nederlands:'Hij speelt gitaar.'},
+  
+  // ===== WEEK 3 =====
+  
   {week:3,nummer:206,papiamento:'expresa',nederlands:'uiten, uitdrukken, kenbaar maken',varianten:'ekspresá',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Expresa bo opinion.',voorbeeld_nederlands:'Druk je mening uit.'},
   {week:3,nummer:207,papiamento:'critica',nederlands:'bekritiseren, beoordelen',varianten:'kritika',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'No critica sin motibu.',voorbeeld_nederlands:'Kritiseer niet zonder reden.'},
   {week:3,nummer:208,papiamento:'puntra',nederlands:'vragen',varianten:'pidi',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Puntra un pregunta.',voorbeeld_nederlands:'Stel een vraag.'},
@@ -307,6 +316,9 @@ const data = [
   {week:3,nummer:308,papiamento:'batisa',nederlands:'dopen, gedoopt',varianten:'batisá',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Nan lo batisa e mucha.',voorbeeld_nederlands:'Ze zullen het kind dopen.'},
   {week:3,nummer:309,papiamento:'gradua',nederlands:'afstuderen, een graad behalen',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta gradua e aña aki.',voorbeeld_nederlands:'Ik studeer dit jaar af.'},
   {week:3,nummer:310,papiamento:'paranda',nederlands:'doorfeesten, de bloemetjes buiten zetten',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Nan ta paranda te mainta.',voorbeeld_nederlands:'Zij feesten door tot de ochtend.'},
+  
+  // ===== WEEK 4 =====
+  
   {week:4,nummer:311,papiamento:'señora / señorita / meneer',nederlands:'mevrouw, juffrouw, meneer',varianten:'mener',type:'burgerlijke staat / aanspreekvorm',uitspraak:'',voorbeeld_papiamento:'Bon dia, señora.',voorbeeld_nederlands:'Goedendag, mevrouw.'},
   {week:4,nummer:312,papiamento:'shon',nederlands:'mevrouw, juffrouw, meneer; zij die u zou noemen',varianten:'(m/v)',type:'aanspreekvorm',uitspraak:'',voorbeeld_papiamento:'Bon tardi, shon.',voorbeeld_nederlands:'Goedemiddag, meneer of mevrouw.'},
   {week:4,nummer:313,papiamento:'casa',nederlands:'trouwen; echtgenoot, echtgenote, getrouwd',varianten:'kasa, kasá',type:'burgerlijke staat',uitspraak:'',voorbeeld_papiamento:'Nan ta kasa.',voorbeeld_nederlands:'Zij zijn getrouwd.'},
