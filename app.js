@@ -831,6 +831,145 @@ function updateMainNav(sectionId){
     btn.setAttribute('aria-current', isActive ? 'page' : 'false');
   });
 }
+
+// data voor pagina voorzetseltrainer
+const prepositionExercises = [
+
+{
+  level:'makkelijk',
+  question:'Mi ta bai ___ kas.',
+  translation:'Ik ga naar huis.',
+  choices:['na','pa','ku'],
+  answer:'na',
+  explanation:'"na" wordt gebruikt voor naar/bij/in een plaats.'
+},
+
+{
+  level:'makkelijk',
+  question:'Esaki ta ___ bo.',
+  translation:'Dit is voor jou.',
+  choices:['pa','na','di'],
+  answer:'pa',
+  explanation:'"pa" betekent hier "voor".'
+},
+
+{
+  level:'makkelijk',
+  question:'E libro ta ___ mesa.',
+  translation:'Het boek ligt op tafel.',
+  choices:['den','riba','ku'],
+  answer:'riba',
+  explanation:'"riba" betekent op of bovenop.'
+},
+
+{
+  level:'gemiddeld',
+  question:'Mi ta papia ___ mi ruman ___ kas.',
+  translation:'Ik praat met mijn broer thuis.',
+  choices:['ku','na','pa','di'],
+  answer:['ku','na'],
+  explanation:'Je praat MET iemand (ku) en bent BIJ/THUIS (na kas).'
+},
+
+{
+  level:'gemiddeld',
+  question:'E regalo ta ___ mi mama ___ Aruba.',
+  translation:'Het cadeau is voor mijn moeder uit Aruba.',
+  choices:['pa','di','na','ku'],
+  answer:['pa','di'],
+  explanation:'Voor = pa, van/uit = di.'
+},
+
+{
+  level:'moeilijk',
+  question:'Mi ta bin ___ Hulanda ___ Aruba ___ mi famia.',
+  translation:'Ik kom van Nederland naar Aruba met mijn familie.',
+  choices:['di','pa','ku','na'],
+  answer:['di','pa','ku'],
+  explanation:'Van = di, naar = pa, met = ku.'
+}
+
+];
+
+let currentPrepositionExercise = null;
+
+function startPrepositionExercise(level){
+
+  const pool =
+    prepositionExercises.filter(
+      x => x.level === level
+    );
+
+  currentPrepositionExercise =
+    pool[Math.floor(Math.random()*pool.length)];
+
+  renderPrepositionExercise();
+
+}
+
+function renderPrepositionExercise(){
+
+  if(!currentPrepositionExercise) return;
+
+  document.getElementById('prepQuestion').textContent =
+    currentPrepositionExercise.question;
+
+  document.getElementById('prepTranslation').textContent =
+    currentPrepositionExercise.translation;
+
+  const choices =
+    document.getElementById('prepChoices');
+
+  choices.innerHTML='';
+
+  currentPrepositionExercise.choices.forEach(choice=>{
+
+    choices.innerHTML += `
+      <button
+        class="btn secondary"
+        onclick="checkPreposition('${choice}')">
+        ${choice}
+      </button>
+    `;
+
+  });
+
+  document.getElementById('prepFeedback').innerHTML='';
+
+}
+
+function checkPreposition(choice){
+
+  const answer =
+    currentPrepositionExercise.answer;
+
+  const correct =
+    Array.isArray(answer)
+      ? answer.includes(choice)
+      : choice===answer;
+
+  if(correct){
+
+    document.getElementById('prepFeedback').innerHTML=`
+      <div class="feedback good">
+        ✅ Goed!<br>
+        ${currentPrepositionExercise.explanation}
+      </div>
+    `;
+
+  } else {
+
+    document.getElementById('prepFeedback').innerHTML=`
+      <div class="feedback bad">
+        ❌ Niet juist.<br>
+        ${currentPrepositionExercise.explanation}
+      </div>
+    `;
+
+  }
+
+}
+
 function init(){
   document.getElementById('wordCount').textContent=data.length;
 

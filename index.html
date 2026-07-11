@@ -304,13 +304,56 @@
 
   </div>
 
-  <div id="voorzetsels" class="panel hidden">
-    <h3>📍 Voorzetsels</h3>
+<div id="voorzetsels" class="panel hidden">
 
-    <p>
-      Hier komt straks de voorzetseltrainer.
-    </p>
+  <h3>📍 Voorzetseltrainer</h3>
+
+  <div class="row">
+
+    <button
+      class="btn secondary"
+      onclick="startPrepositionExercise('makkelijk')">
+      Makkelijk
+    </button>
+
+    <button
+      class="btn secondary"
+      onclick="startPrepositionExercise('gemiddeld')">
+      Gemiddeld
+    </button>
+
+    <button
+      class="btn alt"
+      onclick="startPrepositionExercise('moeilijk')">
+      Moeilijk
+    </button>
+
   </div>
+
+  <div class="panel" style="margin-top:12px;">
+
+    <div id="prepQuestion" class="quiz-q">
+      Kies een niveau.
+    </div>
+
+    <div
+      id="prepTranslation"
+      class="meta">
+    </div>
+
+    <div
+      id="prepChoices"
+      class="actions actions-quiz">
+    </div>
+
+    <div
+      id="prepFeedback"
+      style="margin-top:12px;">
+    </div>
+
+  </div>
+
+</div>
 
   <div id="tijdsvormen" class="panel hidden">
     <h3>⏱️ Tijdsvormen</h3>
