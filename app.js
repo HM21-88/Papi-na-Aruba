@@ -2466,8 +2466,8 @@ const tenseExercises = [
   question:'Mi ___ traha ayera pero mañan mi ___ traha atrobe.',
   translation:'Ik werkte gisteren maar morgen zal ik weer werken.',
   choices:['a','lo','ta','tabata'],
-  answer:'a',
-  explanation:'Het eerste werkwoord staat in de verleden tijd.'
+  answer:['a','lo'],
+  explanation:'Ayera vraagt verleden tijd (a), mañan vraagt toekomst (lo).'
 },
 
 {
@@ -2502,8 +2502,8 @@ const tenseExercises = [
   question:'Nos ___ traha awe pero nos ___ libre mañan.',
   translation:'Wij werken vandaag maar zijn morgen vrij.',
   choices:['ta','lo','a'],
-  answer:'ta',
-  explanation:'De eerste actie speelt vandaag.'
+  answer:['ta','lo'],
+  explanation:'Vandaag = ta, morgen = lo.'
 },
 
 {
