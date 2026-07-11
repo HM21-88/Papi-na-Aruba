@@ -949,11 +949,15 @@ function checkPreposition(choice){
     currentPrepositionExercise.answer;
 
   // Eén antwoord
+
   if(!Array.isArray(answer)){
 
-    const correct = choice === answer;
+    const correct =
+      choice === answer;
 
-    document.getElementById('prepFeedback').innerHTML =
+    document.getElementById(
+      'prepFeedback'
+    ).innerHTML =
       correct
       ? `
         <div class="feedback good">
@@ -971,9 +975,67 @@ function checkPreposition(choice){
     return;
   }
 
+  // Meerdere antwoorden
+
+  if(
+    selectedPrepositions.includes(choice)
+  ){
+    return;
+  }
+
+  selectedPrepositions.push(choice);
+
+  const totalNeeded =
+    answer.length;
+
+  if(
+    selectedPrepositions.length <
+    totalNeeded
+  ){
+
+    document.getElementById(
+      'prepFeedback'
+    ).innerHTML =
+      `
+      <div class="feedback">
+        Kies nog ${
+          totalNeeded -
+          selectedPrepositions.length
+        } antwoord(en).
+      </div>
+      `;
+
+    return;
+  }
+
+  const allCorrect =
+    JSON.stringify(answer) ===
+    JSON.stringify(selectedPrepositions);
+
+  document.getElementById(
+    'prepFeedback'
+  ).innerHTML =
+    allCorrect
+    ? `
+      <div class="feedback good">
+        ✅ Helemaal goed!<br>
+        ${currentPrepositionExercise.explanation}
+      </div>
+    `
+    : `
+      <div class="feedback bad">
+        ❌ Niet helemaal goed.<br>
+        Correcte volgorde:
+        ${answer.join(' → ')}
+        <br><br>
+        ${currentPrepositionExercise.explanation}
+      </div>
+    `;
+}
+
 function nextPrepositionExercise(){
-	
-	console.log('NEXT BUTTON');
+
+  console.log('NEXT BUTTON');
 
   if(!currentPrepositionExercise){
     return;
@@ -992,13 +1054,11 @@ function nextPrepositionExercise(){
       Math.random() * pool.length
     )];
 
-  // probeer te voorkomen dat dezelfde vraag direct terugkomt
-
   let attempts = 0;
 
   while(
     nextQuestion.question ===
-    currentPrepositionExercise.question
+      currentPrepositionExercise.question
     &&
     attempts < 10
   ){
@@ -1009,72 +1069,12 @@ function nextPrepositionExercise(){
       )];
 
     attempts++;
-
   }
 
   currentPrepositionExercise =
     nextQuestion;
 
   renderPrepositionExercise();
-
-}
-
-  // Meerdere antwoorden
-
-  if(
-    selectedPrepositions.includes(choice)
-  ){
-    return;
-  }
-
-  selectedPrepositions.push(choice);
-
-  const totalNeeded = answer.length;
-
-  if(
-    selectedPrepositions.length <
-    totalNeeded
-  ){
-
-    document.getElementById(
-      'prepFeedback'
-    ).innerHTML =
-      `
-      <div class="feedback">
-      Kies nog ${
-        totalNeeded -
-        selectedPrepositions.length
-      } antwoord(en).
-      </div>
-      `;
-
-    return;
-  }
-
-  const allCorrect =
-  JSON.stringify(answer) ===
-  JSON.stringify(selectedPrepositions);
-
-  document.getElementById(
-    'prepFeedback'
-  ).innerHTML =
-    allCorrect
-    ? `
-      <div class="feedback good">
-        ✅ Helemaal goed!<br>
-        ${currentPrepositionExercise.explanation}
-      </div>
-    `
-    : `
-      <div class="feedback bad">
-        ❌ Niet helemaal goed.<br>
-        Correcte volgorde:
-		${answer.join(' → ')}
-        <br><br>
-        ${currentPrepositionExercise.explanation}
-      </div>
-    `;
-
 }
 
 function init(){
