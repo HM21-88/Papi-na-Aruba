@@ -1122,11 +1122,29 @@ const prepositionExercises = [
 
 {
   level:'gemiddeld',
-  question:'Mi ta kome ___ mi famia ___ kas.',
-  translation:'Ik eet met mijn familie thuis.',
+  question:'Mi ta papia ___ mi ruman ___ kas.',
+  translation:'Ik praat met mijn broer thuis.',
   choices:['cu','na','pa','di'],
   answer:['cu','na'],
-  explanation:'Met = cu, thuis = na kas.'
+  explanation:'Met iemand = cu, thuis = na kas.'
+},
+
+{
+  level:'gemiddeld',
+  question:'E regalo ta ___ mi mama ___ Aruba.',
+  translation:'Het cadeau is voor mijn moeder uit Aruba.',
+  choices:['pa','di','na','cu'],
+  answer:['pa','di'],
+  explanation:'Voor = pa, uit = di.'
+},
+
+{
+  level:'gemiddeld',
+  question:'Mi ta kome ___ mi famia ___ kas.',
+  translation:'Ik eet met mijn familie thuis.',
+  choices:['cu','na','di','pa'],
+  answer:['cu','na'],
+  explanation:'Met = cu, thuis = na.'
 },
 
 {
@@ -1145,15 +1163,6 @@ const prepositionExercises = [
   choices:['pa','di','cu','na'],
   answer:['pa','di'],
   explanation:'Voor = pa, uit = di.'
-},
-
-{
-  level:'gemiddeld',
-  question:'Mi ta papia ___ bo ___ telefono.',
-  translation:'Ik praat met jou via de telefoon.',
-  choices:['cu','pa','di','na'],
-  answer:['cu','pa'],
-  explanation:'Met = cu, via = pa.'
 },
 
 {
@@ -1185,8 +1194,8 @@ const prepositionExercises = [
 
 {
   level:'gemiddeld',
-  question:'E ta sali ___ kas ___ school.',
-  translation:'Hij komt uit het huis naar school.',
+  question:'E ta sali ___ kas ___ skol.',
+  translation:'Hij vertrekt van huis naar school.',
   choices:['di','pa','cu','na'],
   answer:['di','pa'],
   explanation:'Van = di, naar = pa.'
@@ -1194,11 +1203,11 @@ const prepositionExercises = [
 
 {
   level:'gemiddeld',
-  question:'Mi ta biba ___ Aruba ___ mi famia.',
-  translation:'Ik woon op Aruba met mijn familie.',
-  choices:['na','cu','di','pa'],
-  answer:['na','cu'],
-  explanation:'Plaats = na, met = cu.'
+  question:'Mi ta papia ___ bo ___ telefono.',
+  translation:'Ik praat met jou via de telefoon.',
+  choices:['cu','pa','di','na'],
+  answer:['cu','pa'],
+  explanation:'Met = cu, via = pa.'
 },
 
 {
@@ -1208,6 +1217,177 @@ const prepositionExercises = [
   choices:['na','cu','di','pa'],
   answer:['na','cu'],
   explanation:'Naar = na, met = cu.'
+},
+
+{
+  level:'gemiddeld',
+  question:'Mi ta drenta ___ e kamber ___ mi ruman.',
+  translation:'Ik ga de kamer van mijn broer binnen.',
+  choices:['den','di','na','pa'],
+  answer:['den','di'],
+  explanation:'In = den, van = di.'
+},
+
+{
+  level:'gemiddeld',
+  question:'Mi ta kumpra un regalo ___ bo ___ cumpleanos.',
+  translation:'Ik koop een cadeau voor jou voor je verjaardag.',
+  choices:['pa','di','na','cu'],
+  answer:['pa','pa'],
+  explanation:'Voor = pa.'
+},
+
+{
+  level:'gemiddeld',
+  question:'E por bin ___ Aruba ___ mi famia.',
+  translation:'Hij kan uit Aruba komen met mijn familie.',
+  choices:['di','cu','na','pa'],
+  answer:['di','cu'],
+  explanation:'Uit = di, met = cu.'
+},
+
+{
+  level:'gemiddeld',
+  question:'Mi ta biba ___ Aruba ___ mi esposa.',
+  translation:'Ik woon op Aruba met mijn partner.',
+  choices:['na','cu','di','pa'],
+  answer:['na','cu'],
+  explanation:'Plaats = na, met = cu.'
+},
+
+{
+  level:'gemiddeld',
+  question:'E dokumento ta ___ governo ___ Aruba.',
+  translation:'Het document is van de overheid van Aruba.',
+  choices:['di','na','cu','pa'],
+  answer:['di','di'],
+  explanation:'Van = di.'
+},
+
+{
+  level:'gemiddeld',
+  question:'Mi ta bebe koffie ___ mi mama ___ mainta.',
+  translation:'Ik drink koffie met mijn moeder in de ochtend.',
+  choices:['cu','na','di','pa'],
+  answer:['cu','na'],
+  explanation:'Met = cu, tijd = na.'
+},
+
+{
+  level:'gemiddeld',
+  question:'Nos ta bai ___ playa ___ nos famia.',
+  translation:'Wij gaan naar het strand met onze familie.',
+  choices:['na','cu','di','pa'],
+  answer:['na','cu'],
+  explanation:'Naar = na, met = cu.'
+},
+
+{
+  level:'gemiddeld',
+  question:'Mi ta sali ___ ofisina ___ kas.',
+  translation:'Ik vertrek van kantoor naar huis.',
+  choices:['di','na','cu','pa'],
+  answer:['di','na'],
+  explanation:'Van = di, naar = na.'
+},
+
+{
+  level:'gemiddeld',
+  question:'E ta traha ___ skol ___ niños.',
+  translation:'Hij werkt op school met kinderen.',
+  choices:['na','cu','pa','di'],
+  answer:['na','cu'],
+  explanation:'Op = na, met = cu.'
+},
+
+{
+  level:'gemiddeld',
+  question:'Mi ta drenta ___ supermercado ___ mi amigo.',
+  translation:'Ik ga de supermarkt binnen met mijn vriend.',
+  choices:['den','cu','na','di'],
+  answer:['den','cu'],
+  explanation:'In = den, met = cu.'
+},
+
+{
+  level:'gemiddeld',
+  question:'Mi ta haya un regalo ___ bo ___ Aruba.',
+  translation:'Ik vind een cadeau voor jou uit Aruba.',
+  choices:['pa','di','na','cu'],
+  answer:['pa','di'],
+  explanation:'Voor = pa, uit = di.'
+},
+
+{
+  level:'gemiddeld',
+  question:'Nos ta bai ___ misa ___ mainta.',
+  translation:'Wij gaan naar de mis in de ochtend.',
+  choices:['na','di','cu','pa'],
+  answer:['na','na'],
+  explanation:'Bestemming = na, tijd = na.'
+},
+
+{
+  level:'gemiddeld',
+  question:'E buki ta ___ mi tata ___ Aruba.',
+  translation:'Het boek is van mijn vader uit Aruba.',
+  choices:['di','na','cu','pa'],
+  answer:['di','di'],
+  explanation:'Van = di, uit = di.'
+},
+
+{
+  level:'gemiddeld',
+  question:'Mi ta cana ___ mi amigo ___ playa.',
+  translation:'Ik loop met mijn vriend naar het strand.',
+  choices:['cu','na','di','pa'],
+  answer:['cu','na'],
+  explanation:'Met = cu, naar = na.'
+},
+
+{
+  level:'gemiddeld',
+  question:'Mi ta drenta ___ kas ___ mainta.',
+  translation:'Ik ga het huis binnen in de ochtend.',
+  choices:['den','na','pa','di'],
+  answer:['den','na'],
+  explanation:'In = den, tijd = na.'
+},
+
+{
+  level:'gemiddeld',
+  question:'Nos ta traha ___ Aruba ___ gobierno.',
+  translation:'Wij werken op Aruba voor de overheid.',
+  choices:['na','pa','di','cu'],
+  answer:['na','pa'],
+  explanation:'Plaats = na, voor = pa.'
+},
+
+{
+  level:'gemiddeld',
+  question:'Mi ta papia ___ mi mama ___ skol.',
+  translation:'Ik praat met mijn moeder op school.',
+  choices:['cu','na','di','pa'],
+  answer:['cu','na'],
+  explanation:'Met = cu, plaats = na.'
+},
+
+{
+  level:'gemiddeld',
+  question:'E ta bini ___ skol ___ su amigo.',
+  translation:'Hij komt van school met zijn vriend.',
+  choices:['di','cu','na','pa'],
+  answer:['di','cu'],
+  explanation:'Van = di, met = cu.'
+},
+
+{
+  level:'gemiddeld',
+  question:'Mi ta kumpra pan ___ mi famia ___ mainta.',
+  translation:'Ik koop brood voor mijn familie in de ochtend.',
+  choices:['pa','na','di','cu'],
+  answer:['pa','na'],
+  explanation:'Voor = pa, tijd = na.'
 },
 
 /* ===== MOEILIJK ===== */
