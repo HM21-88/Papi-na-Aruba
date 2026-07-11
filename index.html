@@ -434,13 +434,133 @@
 </div>
 
   <div id="tijdsvormen" class="panel hidden">
-    <h3>⏱️ Tijdsvormen</h3>
 
-    <p>
-      Hier komt straks de tijdsvormtrainer.
-    </p>
+  <h3>⏱️ Tijdsvormtrainer</h3>
+
+  <div class="stats" style="margin-top:12px">
+    <div class="stat" id="tenseGood">
+      ✅ Goed: 0
+    </div>
+
+    <div class="stat" id="tenseBad">
+      ❌ Fout: 0
+    </div>
+
+    <div class="stat" id="tenseStreak">
+      🔥 Streak: 0
+    </div>
+
+    <button
+      class="stat prep-reset-btn"
+      onclick="resetTenseStats()"
+      aria-label="Reset score">
+
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        width="18"
+        height="18">
+
+        <path d="M3 12a9 9 0 1 0 3-6.7"/>
+        <path d="M3 3v6h6"/>
+
+      </svg>
+
+      Reset
+
+    </button>
 
   </div>
+
+  <div class="row" id="tenseDifficultyNav">
+
+    <button
+      id="tenseEasyBtn"
+      class="btn"
+      onclick="startTenseExercise('makkelijk')">
+
+      <span class="prep-icon">🙂</span>
+      <span class="prep-label">Makkelijk</span>
+
+    </button>
+
+    <button
+      id="tenseMediumBtn"
+      class="btn secondary"
+      onclick="startTenseExercise('gemiddeld')">
+
+      <span class="prep-icon">😐</span>
+      <span class="prep-label">Gemiddeld</span>
+
+    </button>
+
+    <button
+      id="tenseHardBtn"
+      class="btn alt"
+      onclick="startTenseExercise('moeilijk')">
+
+      <span class="prep-icon">🔥</span>
+      <span class="prep-label">Moeilijk</span>
+
+    </button>
+
+  </div>
+
+  <div class="panel" style="margin-top:12px;">
+
+    <div id="tenseQuestion" class="quiz-q">
+      Kies een niveau.
+    </div>
+
+    <div id="tenseTranslation" class="meta">
+    </div>
+
+    <div class="prep-actions-row">
+
+      <div
+        id="tenseChoices"
+        class="actions actions-quiz">
+      </div>
+
+      <button
+        class="btn white-outline action-btn prep-next-btn"
+        onclick="nextTenseExercise()"
+        aria-label="Volgende oefening">
+
+        <span class="ico" aria-hidden="true">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.6"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+
+            <path d="m9 18 6-6-6-6"/>
+
+          </svg>
+        </span>
+
+        <span class="label">
+          Volgende
+        </span>
+
+      </button>
+
+    </div>
+
+    <div
+      id="tenseFeedback"
+      style="margin-top:12px;">
+    </div>
+
+  </div>
+
+</div>
 
 </section>  
   

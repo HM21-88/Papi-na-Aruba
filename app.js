@@ -1670,6 +1670,12 @@ let prepGood = 0;
 let prepBad = 0;
 let prepStreak = 0;
 
+let currentTenseExercise = null;
+
+let tenseGood = 0;
+let tenseBad = 0;
+let tenseStreak = 0;
+
 function startPrepositionExercise(level){
 
   document
@@ -1941,6 +1947,35 @@ function updatePrepositionStats(){
 
 }
 
+function updateTenseStats(){
+
+  document.getElementById(
+    'tenseGood'
+  ).textContent =
+    `✅ Goed: ${tenseGood}`;
+
+  document.getElementById(
+    'tenseBad'
+  ).textContent =
+    `❌ Fout: ${tenseBad}`;
+
+  document.getElementById(
+    'tenseStreak'
+  ).textContent =
+    `🔥 Streak: ${tenseStreak}`;
+
+}
+
+function resetTenseStats(){
+
+  tenseGood = 0;
+  tenseBad = 0;
+  tenseStreak = 0;
+
+  updateTenseStats();
+
+}
+
 function resetPrepositionStats(){
 
   prepGood = 0;
@@ -1950,6 +1985,39 @@ function resetPrepositionStats(){
   updatePrepositionStats();
 
 }
+
+// tijdsvormen trainer
+const tenseExercises = [
+
+{
+  level:'makkelijk',
+  question:'Mi ___ traha.',
+  translation:'Ik werk.',
+  choices:['ta','a','lo'],
+  answer:'ta',
+  explanation:'Tegenwoordige tijd gebruikt meestal ta.'
+},
+
+{
+  level:'makkelijk',
+  question:'Mi ___ traha ayera.',
+  translation:'Ik werkte gisteren.',
+  choices:['ta','a','lo'],
+  answer:'a',
+  explanation:'Verleden tijd gebruikt a.'
+},
+
+{
+  level:'makkelijk',
+  question:'Mi ___ traha mañan.',
+  translation:'Ik zal morgen werken.',
+  choices:['ta','a','lo'],
+  answer:'lo',
+  explanation:'Toekomst gebruikt lo.'
+}
+
+];
+
 
 function init(){
   document.getElementById('wordCount').textContent=data.length;
