@@ -15,10 +15,8 @@ Persoonlijke oefenwebsite voor het leren van Papiamento.
 ## Github workflow
 
 Bewerk words.js
-↓
-Test index.html
-↓
-Commit
-↓
-Push
+
+1. Test index.html
+2. Commit
+3. Push
 
