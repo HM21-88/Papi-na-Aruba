@@ -2364,7 +2364,7 @@ const tenseExercises = [
   translation:'Ik werkte gisteren.',
   choices:['ta','a','lo'],
   answer:'a',
-  explanation:'Verleden tijd gebruikt a.'
+  explanation:'Ayera wijst op verleden tijd.'
 },
 
 {
@@ -2373,7 +2373,7 @@ const tenseExercises = [
   translation:'Ik zal morgen werken.',
   choices:['ta','a','lo'],
   answer:'lo',
-  explanation:'Toekomst gebruikt lo.'
+  explanation:'Mañan wijst op toekomst.'
 },
 
 {
@@ -2382,7 +2382,7 @@ const tenseExercises = [
   translation:'Wij eten vandaag.',
   choices:['ta','a','lo'],
   answer:'ta',
-  explanation:'Tegenwoordige tijd = ta.'
+  explanation:'Awe betekent vandaag.'
 },
 
 {
@@ -2391,7 +2391,7 @@ const tenseExercises = [
   translation:'Hij ging gisteren naar school.',
   choices:['a','ta','lo'],
   answer:'a',
-  explanation:'Verleden tijd = a.'
+  explanation:'Ayera = verleden tijd.'
 },
 
 {
@@ -2400,7 +2400,7 @@ const tenseExercises = [
   translation:'Wij gaan morgen naar het strand.',
   choices:['lo','ta','a'],
   answer:'lo',
-  explanation:'Toekomst = lo.'
+  explanation:'Mañan = toekomst.'
 },
 
 {
@@ -2409,7 +2409,7 @@ const tenseExercises = [
   translation:'Ik drink vandaag koffie.',
   choices:['ta','a','lo'],
   answer:'ta',
-  explanation:'Tegenwoordige tijd = ta.'
+  explanation:'Awe = tegenwoordige tijd.'
 },
 
 {
@@ -2418,7 +2418,7 @@ const tenseExercises = [
   translation:'Ik sprak gisteren met jou.',
   choices:['a','lo','ta'],
   answer:'a',
-  explanation:'Gisteren = verleden tijd.'
+  explanation:'Ayera = verleden tijd.'
 },
 
 {
@@ -2427,7 +2427,7 @@ const tenseExercises = [
   translation:'Hij zal morgen aankomen.',
   choices:['lo','ta','a'],
   answer:'lo',
-  explanation:'Morgen = toekomst.'
+  explanation:'Mañan = toekomst.'
 },
 
 {
@@ -2436,7 +2436,187 @@ const tenseExercises = [
   translation:'Wij studeren vandaag.',
   choices:['ta','a','lo'],
   answer:'ta',
+  explanation:'Awe = heden.'
+},
+
+{
+  level:'makkelijk',
+  question:'Mi ___ mira tv awe.',
+  translation:'Ik kijk vandaag tv.',
+  choices:['ta','a','lo'],
+  answer:'ta',
   explanation:'Vandaag = tegenwoordige tijd.'
+},
+
+{
+  level:'makkelijk',
+  question:'E ___ kumpra pan ayera.',
+  translation:'Hij kocht gisteren brood.',
+  choices:['a','ta','lo'],
+  answer:'a',
+  explanation:'Gisteren = verleden tijd.'
+},
+
+{
+  level:'makkelijk',
+  question:'Nos ___ studia mañan.',
+  translation:'Wij zullen morgen studeren.',
+  choices:['lo','ta','a'],
+  answer:'lo',
+  explanation:'Morgen = toekomst.'
+},
+
+{
+  level:'makkelijk',
+  question:'Mi ___ lesa un buki awe.',
+  translation:'Ik lees vandaag een boek.',
+  choices:['ta','a','lo'],
+  answer:'ta',
+  explanation:'Awe = heden.'
+},
+
+{
+  level:'makkelijk',
+  question:'E ___ kome pizza ayera.',
+  translation:'Hij at gisteren pizza.',
+  choices:['a','lo','ta'],
+  answer:'a',
+  explanation:'Ayera = verleden tijd.'
+},
+
+{
+  level:'makkelijk',
+  question:'Mi ___ bai kas mañan.',
+  translation:'Ik ga morgen naar huis.',
+  choices:['lo','ta','a'],
+  answer:'lo',
+  explanation:'Mañan = toekomst.'
+},
+
+{
+  level:'makkelijk',
+  question:'Nos ___ papia Papiamento awe.',
+  translation:'Wij spreken vandaag Papiamento.',
+  choices:['ta','a','lo'],
+  answer:'ta',
+  explanation:'Vandaag = heden.'
+},
+
+{
+  level:'makkelijk',
+  question:'Mi ___ yega laat ayera.',
+  translation:'Ik kwam gisteren laat aan.',
+  choices:['a','lo','ta'],
+  answer:'a',
+  explanation:'Ayera = verleden tijd.'
+},
+
+{
+  level:'makkelijk',
+  question:'E ___ traha mañan.',
+  translation:'Hij zal morgen werken.',
+  choices:['lo','a','ta'],
+  answer:'lo',
+  explanation:'Mañan = toekomst.'
+},
+
+{
+  level:'makkelijk',
+  question:'Nos ___ bebe awa awe.',
+  translation:'Wij drinken vandaag water.',
+  choices:['ta','a','lo'],
+  answer:'ta',
+  explanation:'Awe = heden.'
+},
+
+{
+  level:'makkelijk',
+  question:'Mi ___ bai playa ayera.',
+  translation:'Ik ging gisteren naar het strand.',
+  choices:['a','lo','ta'],
+  answer:'a',
+  explanation:'Ayera = verleden tijd.'
+},
+
+{
+  level:'makkelijk',
+  question:'Nos ___ mira un película mañan.',
+  translation:'Wij zullen morgen een film kijken.',
+  choices:['lo','ta','a'],
+  answer:'lo',
+  explanation:'Mañan = toekomst.'
+},
+
+{
+  level:'makkelijk',
+  question:'Mi ___ traha den ofisina awe.',
+  translation:'Ik werk vandaag op kantoor.',
+  choices:['ta','a','lo'],
+  answer:'ta',
+  explanation:'Awe = tegenwoordige tijd.'
+},
+
+{
+  level:'makkelijk',
+  question:'E ___ studia hopi ayera.',
+  translation:'Hij studeerde gisteren veel.',
+  choices:['a','ta','lo'],
+  answer:'a',
+  explanation:'Ayera = verleden tijd.'
+},
+
+{
+  level:'makkelijk',
+  question:'Mi ___ papia cu bo mañan.',
+  translation:'Ik zal morgen met jou praten.',
+  choices:['lo','ta','a'],
+  answer:'lo',
+  explanation:'Mañan = toekomst.'
+},
+
+{
+  level:'makkelijk',
+  question:'Nos ___ tafel pone awe.',
+  translation:'Wij dekken vandaag de tafel.',
+  choices:['ta','a','lo'],
+  answer:'ta',
+  explanation:'Awe = heden.'
+},
+
+{
+  level:'makkelijk',
+  question:'Mi ___ lesa e email ayera.',
+  translation:'Ik las gisteren de e-mail.',
+  choices:['a','lo','ta'],
+  answer:'a',
+  explanation:'Ayera = verleden tijd.'
+},
+
+{
+  level:'makkelijk',
+  question:'E ___ yega promé mañan.',
+  translation:'Hij zal morgen vroeg aankomen.',
+  choices:['lo','a','ta'],
+  answer:'lo',
+  explanation:'Mañan = toekomst.'
+},
+
+{
+  level:'makkelijk',
+  question:'Mi ___ traha hopi awe.',
+  translation:'Ik werk vandaag hard.',
+  choices:['ta','a','lo'],
+  answer:'ta',
+  explanation:'Awe = heden.'
+},
+
+{
+  level:'makkelijk',
+  question:'Nos ___ bai kas ayera.',
+  translation:'Wij gingen gisteren naar huis.',
+  choices:['a','ta','lo'],
+  answer:'a',
+  explanation:'Ayera = verleden tijd.'
 },
 
 /* ===== GEMIDDELD ===== */
