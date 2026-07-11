@@ -54,6 +54,15 @@ function showExercise(id){
     );
   }
 
+  if(
+    id === 'tijdsvormen' &&
+    !currentTenseExercise
+  ){
+    startTenseExercise(
+      'makkelijk'
+    );
+  }
+
 }
 
 function escapeHtml(value){
@@ -1976,6 +1985,174 @@ function resetTenseStats(){
 
 }
 
+function startTenseExercise(level){
+
+  document
+    .querySelectorAll('#tenseDifficultyNav button')
+    .forEach(btn => btn.classList.remove('active'));
+
+  if(level === 'makkelijk'){
+    document.getElementById('tenseEasyBtn')
+      .classList.add('active');
+  }
+
+  if(level === 'gemiddeld'){
+    document.getElementById('tenseMediumBtn')
+      .classList.add('active');
+  }
+
+  if(level === 'moeilijk'){
+    document.getElementById('tenseHardBtn')
+      .classList.add('active');
+  }
+
+  const pool =
+    tenseExercises.filter(
+      x => x.level === level
+    );
+
+  currentTenseExercise =
+    pool[Math.floor(
+      Math.random() * pool.length
+    )];
+
+  renderTenseExercise();
+
+}
+
+function renderTenseExercise(){
+
+  if(!currentTenseExercise){
+    return;
+  }
+
+  document.getElementById(
+    'tenseQuestion'
+  ).textContent =
+    currentTenseExercise.question;
+
+  document.getElementById(
+    'tenseTranslation'
+  ).textContent =
+    currentTenseExercise.translation;
+
+  const choices =
+    document.getElementById(
+      'tenseChoices'
+    );
+
+  choices.innerHTML='';
+
+  currentTenseExercise.choices
+    .forEach(choice=>{
+
+      choices.innerHTML += `
+        <button
+          class="btn white-outline prep-choice"
+          onclick="checkTense('${choice}')">
+
+          ${choice}
+
+        </button>
+      `;
+
+    });
+
+  document.getElementById(
+    'tenseFeedback'
+  ).innerHTML='';
+
+}
+
+function checkTense(choice){
+
+  const correct =
+    choice ===
+    currentTenseExercise.answer;
+
+  if(correct){
+
+    tenseGood++;
+    tenseStreak++;
+
+    document.getElementById(
+      'tenseFeedback'
+    ).innerHTML =
+      `
+      <div class="feedback good">
+        ✅ Goed!<br>
+        ${currentTenseExercise.explanation}
+      </div>
+      `;
+
+  }else{
+
+    tenseBad++;
+    tenseStreak = 0;
+
+    document.getElementById(
+      'tenseFeedback'
+    ).innerHTML =
+      `
+      <div class="feedback bad">
+        ❌ Niet juist.<br>
+        Correct antwoord:
+        ${currentTenseExercise.answer}
+        <br><br>
+        ${currentTenseExercise.explanation}
+      </div>
+      `;
+
+  }
+
+  updateTenseStats();
+
+}
+
+function nextTenseExercise(){
+
+  if(!currentTenseExercise){
+    return;
+  }
+
+  const level =
+    currentTenseExercise.level;
+
+  const pool =
+    tenseExercises.filter(
+      x => x.level === level
+    );
+
+  let nextQuestion =
+    pool[Math.floor(
+      Math.random() * pool.length
+    )];
+
+  let attempts = 0;
+
+  while(
+    nextQuestion.question ===
+      currentTenseExercise.question
+    &&
+    attempts < 10
+  ){
+
+    nextQuestion =
+      pool[Math.floor(
+        Math.random() * pool.length
+      )];
+
+    attempts++;
+
+  }
+
+  currentTenseExercise =
+    nextQuestion;
+
+  renderTenseExercise();
+
+}
+
 function resetPrepositionStats(){
 
   prepGood = 0;
@@ -2035,6 +2212,7 @@ function init(){
   newQuiz();
   updateMainNav('woordenlijst');
   updatePrepositionStats();
+  updateTenseStats();
 }
 
 init();
