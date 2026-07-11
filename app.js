@@ -1680,6 +1680,7 @@ let prepBad = 0;
 let prepStreak = 0;
 
 let currentTenseExercise = null;
+let selectedTenses = [];
 
 let tenseGood = 0;
 let tenseBad = 0;
@@ -2022,9 +2023,11 @@ function startTenseExercise(level){
 
 function renderTenseExercise(){
 
-  if(!currentTenseExercise){
-    return;
-  }
+if(!currentTenseExercise){
+  return;
+}
+
+selectedTenses = [];
 
   document.getElementById(
     'tenseQuestion'
@@ -2066,11 +2069,95 @@ function renderTenseExercise(){
 
 function checkTense(choice){
 
-  const correct =
-    choice ===
+  const answer =
     currentTenseExercise.answer;
 
-  if(correct){
+  // Eén antwoord
+
+  if(!Array.isArray(answer)){
+
+    const correct =
+      choice === answer;
+
+    if(correct){
+
+      tenseGood++;
+      tenseStreak++;
+
+      document.getElementById(
+        'tenseFeedback'
+      ).innerHTML =
+        `
+        <div class="feedback good">
+          ✅ Goed!<br>
+          ${currentTenseExercise.explanation}
+        </div>
+        `;
+
+    }else{
+
+      tenseBad++;
+      tenseStreak = 0;
+
+      document.getElementById(
+        'tenseFeedback'
+      ).innerHTML =
+        `
+        <div class="feedback bad">
+          ❌ Niet juist.<br>
+          Correct antwoord:
+          ${answer}
+          <br><br>
+          ${currentTenseExercise.explanation}
+        </div>
+        `;
+    }
+
+    updateTenseStats();
+
+    return;
+
+  }
+
+  // Meerdere antwoorden
+
+  if(
+    selectedTenses.includes(choice)
+  ){
+    return;
+  }
+
+  selectedTenses.push(choice);
+
+  const totalNeeded =
+    answer.length;
+
+  if(
+    selectedTenses.length <
+    totalNeeded
+  ){
+
+    document.getElementById(
+      'tenseFeedback'
+    ).innerHTML =
+      `
+      <div class="feedback">
+        Kies nog ${
+          totalNeeded -
+          selectedTenses.length
+        } antwoord(en).
+      </div>
+      `;
+
+    return;
+
+  }
+
+  const allCorrect =
+    JSON.stringify(answer) ===
+    JSON.stringify(selectedTenses);
+
+  if(allCorrect){
 
     tenseGood++;
     tenseStreak++;
@@ -2080,7 +2167,7 @@ function checkTense(choice){
     ).innerHTML =
       `
       <div class="feedback good">
-        ✅ Goed!<br>
+        ✅ Helemaal goed!<br>
         ${currentTenseExercise.explanation}
       </div>
       `;
@@ -2095,9 +2182,9 @@ function checkTense(choice){
     ).innerHTML =
       `
       <div class="feedback bad">
-        ❌ Niet juist.<br>
-        Correct antwoord:
-        ${currentTenseExercise.answer}
+        ❌ Niet helemaal goed.<br>
+        Correcte volgorde:
+        ${answer.join(' → ')}
         <br><br>
         ${currentTenseExercise.explanation}
       </div>
@@ -2384,8 +2471,8 @@ const tenseExercises = [
   question:'Mi ___ pensa cu bo ___ bin mañan.',
   translation:'Ik dacht dat jij morgen zou komen.',
   choices:['a','lo','ta','tabata'],
-  answer:'a',
-  explanation:'De eerste actie staat in het verleden.'
+  answer:['a','lo'],
+  explanation:'Ik dacht = verleden tijd (a), jij zal komen = toekomst (lo).'
 },
 
 {
