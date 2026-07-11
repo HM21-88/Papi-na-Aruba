@@ -2166,6 +2166,8 @@ function resetPrepositionStats(){
 // tijdsvormen trainer
 const tenseExercises = [
 
+/* ===== MAKKELIJK ===== */
+
 {
   level:'makkelijk',
   question:'Mi ___ traha.',
@@ -2191,6 +2193,253 @@ const tenseExercises = [
   choices:['ta','a','lo'],
   answer:'lo',
   explanation:'Toekomst gebruikt lo.'
+},
+
+{
+  level:'makkelijk',
+  question:'Nos ___ kome awe.',
+  translation:'Wij eten vandaag.',
+  choices:['ta','a','lo'],
+  answer:'ta',
+  explanation:'Tegenwoordige tijd = ta.'
+},
+
+{
+  level:'makkelijk',
+  question:'E ___ bai skol ayera.',
+  translation:'Hij ging gisteren naar school.',
+  choices:['a','ta','lo'],
+  answer:'a',
+  explanation:'Verleden tijd = a.'
+},
+
+{
+  level:'makkelijk',
+  question:'Nos ___ bai playa mañan.',
+  translation:'Wij gaan morgen naar het strand.',
+  choices:['lo','ta','a'],
+  answer:'lo',
+  explanation:'Toekomst = lo.'
+},
+
+{
+  level:'makkelijk',
+  question:'Mi ___ bebe koffie awe.',
+  translation:'Ik drink vandaag koffie.',
+  choices:['ta','a','lo'],
+  answer:'ta',
+  explanation:'Tegenwoordige tijd = ta.'
+},
+
+{
+  level:'makkelijk',
+  question:'Mi ___ papia cu bo ayera.',
+  translation:'Ik sprak gisteren met jou.',
+  choices:['a','lo','ta'],
+  answer:'a',
+  explanation:'Gisteren = verleden tijd.'
+},
+
+{
+  level:'makkelijk',
+  question:'E ___ yega mañan.',
+  translation:'Hij zal morgen aankomen.',
+  choices:['lo','ta','a'],
+  answer:'lo',
+  explanation:'Morgen = toekomst.'
+},
+
+{
+  level:'makkelijk',
+  question:'Nos ___ studia awe.',
+  translation:'Wij studeren vandaag.',
+  choices:['ta','a','lo'],
+  answer:'ta',
+  explanation:'Vandaag = tegenwoordige tijd.'
+},
+
+/* ===== GEMIDDELD ===== */
+
+{
+  level:'gemiddeld',
+  question:'Mi ___ na kas ayera.',
+  translation:'Ik was gisteren thuis.',
+  choices:['tabata','ta','lo'],
+  answer:'tabata',
+  explanation:'Tabata gebruik je voor een toestand in het verleden.'
+},
+
+{
+  level:'gemiddeld',
+  question:'___ hopi hende na fiesta.',
+  translation:'Er waren veel mensen op het feest.',
+  choices:['tabata','tabatin','lo'],
+  answer:'tabatin',
+  explanation:'Tabatin betekent er was of er waren.'
+},
+
+{
+  level:'gemiddeld',
+  question:'Nos ___ den klas ora e profesor a yega.',
+  translation:'Wij waren in de klas toen de docent aankwam.',
+  choices:['tabata','ta','lo'],
+  answer:'tabata',
+  explanation:'Situatie in het verleden = tabata.'
+},
+
+{
+  level:'gemiddeld',
+  question:'___ un perro den kas.',
+  translation:'Er was een hond in huis.',
+  choices:['tabatin','ta','lo'],
+  answer:'tabatin',
+  explanation:'Er was = tabatin.'
+},
+
+{
+  level:'gemiddeld',
+  question:'Mi ___ kansá despues di trabou.',
+  translation:'Ik was moe na het werk.',
+  choices:['tabata','ta','lo'],
+  answer:'tabata',
+  explanation:'Verleden toestand = tabata.'
+},
+
+{
+  level:'gemiddeld',
+  question:'___ un problema grandi.',
+  translation:'Er was een groot probleem.',
+  choices:['tabatin','ta','a'],
+  answer:'tabatin',
+  explanation:'Er was = tabatin.'
+},
+
+{
+  level:'gemiddeld',
+  question:'Nos ___ feliz na e fiesta.',
+  translation:'Wij waren blij op het feest.',
+  choices:['tabata','ta','lo'],
+  answer:'tabata',
+  explanation:'Verleden toestand = tabata.'
+},
+
+{
+  level:'gemiddeld',
+  question:'___ hopi mucha na playa.',
+  translation:'Er waren veel kinderen op het strand.',
+  choices:['tabatin','ta','lo'],
+  answer:'tabatin',
+  explanation:'Er waren = tabatin.'
+},
+
+{
+  level:'gemiddeld',
+  question:'Mi ___ den Aruba na 2024.',
+  translation:'Ik was in Aruba in 2024.',
+  choices:['tabata','ta','lo'],
+  answer:'tabata',
+  explanation:'Verleden toestand = tabata.'
+},
+
+{
+  level:'gemiddeld',
+  question:'___ un restaurante aki promé.',
+  translation:'Hier was vroeger een restaurant.',
+  choices:['tabatin','lo','ta'],
+  answer:'tabatin',
+  explanation:'Er was = tabatin.'
+},
+
+/* ===== MOEILIJK ===== */
+
+{
+  level:'moeilijk',
+  question:'Mi ___ traha ayera pero mañan mi ___ traha atrobe.',
+  translation:'Ik werkte gisteren maar morgen zal ik weer werken.',
+  choices:['a','lo','ta','tabata'],
+  answer:'a',
+  explanation:'Het eerste werkwoord staat in de verleden tijd.'
+},
+
+{
+  level:'moeilijk',
+  question:'Nos ___ na kas ora e a yega.',
+  translation:'Wij waren thuis toen hij aankwam.',
+  choices:['tabata','ta','lo'],
+  answer:'tabata',
+  explanation:'Verleden toestand = tabata.'
+},
+
+{
+  level:'moeilijk',
+  question:'___ hopi hende na estadio ayera.',
+  translation:'Er waren gisteren veel mensen in het stadion.',
+  choices:['tabatin','ta','lo'],
+  answer:'tabatin',
+  explanation:'Er waren = tabatin.'
+},
+
+{
+  level:'moeilijk',
+  question:'Mi ___ pensa cu bo ___ bin mañan.',
+  translation:'Ik dacht dat jij morgen zou komen.',
+  choices:['a','lo','ta','tabata'],
+  answer:'a',
+  explanation:'De eerste actie staat in het verleden.'
+},
+
+{
+  level:'moeilijk',
+  question:'Nos ___ traha awe pero nos ___ libre mañan.',
+  translation:'Wij werken vandaag maar zijn morgen vrij.',
+  choices:['ta','lo','a'],
+  answer:'ta',
+  explanation:'De eerste actie speelt vandaag.'
+},
+
+{
+  level:'moeilijk',
+  question:'Mi ___ den skol ora e evento a kuminsá.',
+  translation:'Ik was op school toen het evenement begon.',
+  choices:['tabata','ta','lo'],
+  answer:'tabata',
+  explanation:'Toestand in het verleden.'
+},
+
+{
+  level:'moeilijk',
+  question:'___ un kas aki promé.',
+  translation:'Hier stond vroeger een huis.',
+  choices:['tabatin','ta','lo'],
+  answer:'tabatin',
+  explanation:'Er was = tabatin.'
+},
+
+{
+  level:'moeilijk',
+  question:'E mucha ___ studia ayera.',
+  translation:'Het kind studeerde gisteren.',
+  choices:['a','ta','lo'],
+  answer:'a',
+  explanation:'Gisteren = verleden tijd.'
+},
+
+{
+  level:'moeilijk',
+  question:'Mi ___ bai Aruba den juli.',
+  translation:'Ik zal in juli naar Aruba gaan.',
+  choices:['lo','a','ta'],
+  answer:'lo',
+  explanation:'Toekomst = lo.'
+},
+
+{
+  level:'moeilijk',
+  question:'Nos ___ hopi kos pa hasi ayera.',
+  translation:'Wij hadden gisteren veel dingen te doen.',
+  choices:['tabatin','ta','lo'],
+  answer:'tabatin',
+  explanation:'Er was / hadden = tabatin.'
 }
 
 ];
