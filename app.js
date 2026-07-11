@@ -30,6 +30,34 @@ function showSection(id){
 function showExercise(id){
 
   playFlashSound('nav');
+  
+  document
+  .getElementById(
+    'exercisePrepositionsBtn'
+  )
+  .classList.remove('active');
+
+document
+  .getElementById(
+    'exerciseTensesBtn'
+  )
+  .classList.remove('active');
+
+if(id === 'voorzetsels'){
+  document
+    .getElementById(
+      'exercisePrepositionsBtn'
+    )
+    .classList.add('active');
+}
+
+if(id === 'tijdsvormen'){
+  document
+    .getElementById(
+      'exerciseTensesBtn'
+    )
+    .classList.add('active');
+}
 
   ['voorzetsels','tijdsvormen']
     .forEach(sectionId=>{

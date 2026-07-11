@@ -171,6 +171,41 @@
   border-radius:999px;
   background:#111827;
 }
+
+#tenseDifficultyNav .btn.active{
+  border-color:#111827;
+  box-shadow:0 0 0 2px rgba(17,24,39,.08), 0 2px 8px rgba(0,0,0,.08);
+}
+
+#tenseDifficultyNav .btn.active::after{
+  content:"";
+  position:absolute;
+  left:12px;
+  right:12px;
+  bottom:6px;
+  height:4px;
+  border-radius:999px;
+  background:#111827;
+}
+  
+#exercisePrepositionsBtn.active,
+#exerciseTensesBtn.active{
+  border-color:#111827;
+  box-shadow:0 0 0 2px rgba(17,24,39,.08),
+              0 2px 8px rgba(0,0,0,.08);
+}
+
+#exercisePrepositionsBtn.active::after,
+#exerciseTensesBtn.active::after{
+  content:"";
+  position:absolute;
+  left:12px;
+  right:12px;
+  bottom:6px;
+  height:4px;
+  border-radius:999px;
+  background:#111827;
+}
   
   .btn:hover{
     background:var(--blue-dark);
