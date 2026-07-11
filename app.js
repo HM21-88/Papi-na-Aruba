@@ -845,58 +845,281 @@ function updateMainNav(sectionId){
 // data voor pagina voorzetseltrainer
 const prepositionExercises = [
 
+
+/* ===== MAKKELIJK ===== */
+
 {
   level:'makkelijk',
-  question:'Mi ta bai ___ kas.',
-  translation:'Ik ga naar huis.',
-  choices:['na','pa','ku'],
+  question:'Mi ta biba ___ Aruba.',
+  translation:'Ik woon op Aruba.',
+  choices:['na','pa','di'],
   answer:'na',
-  explanation:'"na" wordt gebruikt voor naar/bij/in een plaats.'
+  explanation:'Na wordt gebruikt bij plaatsen.'
 },
 
 {
   level:'makkelijk',
-  question:'Esaki ta ___ bo.',
-  translation:'Dit is voor jou.',
+  question:'E regalo ta ___ mama.',
+  translation:'Het cadeau is voor mama.',
   choices:['pa','na','di'],
   answer:'pa',
-  explanation:'"pa" betekent hier "voor".'
+  explanation:'Pa betekent voor.'
 },
 
 {
   level:'makkelijk',
-  question:'E libro ta ___ mesa.',
-  translation:'Het boek ligt op tafel.',
-  choices:['den','riba','ku'],
-  answer:'riba',
-  explanation:'"riba" betekent op of bovenop.'
+  question:'Mi ta bini ___ Hulanda.',
+  translation:'Ik kom uit Nederland.',
+  choices:['di','na','cu'],
+  answer:'di',
+  explanation:'Di betekent van of uit.'
+},
+
+{
+  level:'makkelijk',
+  question:'Mi ta papia ___ bo.',
+  translation:'Ik praat met jou.',
+  choices:['cu','pa','na'],
+  answer:'cu',
+  explanation:'Cu betekent met.'
+},
+
+{
+  level:'makkelijk',
+  question:'Mi ta drenta ___ kas.',
+  translation:'Ik ga het huis binnen.',
+  choices:['den','na','di'],
+  answer:'den',
+  explanation:'Den betekent in.'
+},
+
+{
+  level:'makkelijk',
+  question:'Mi ta bai ___ mi amigo.',
+  translation:'Ik ga naar mijn vriend.',
+  choices:['na','cu','di'],
+  answer:'na',
+  explanation:'Na betekent naar of bij.'
+},
+
+{
+  level:'makkelijk',
+  question:'E buki ta ___ mi tata.',
+  translation:'Het boek is van mijn vader.',
+  choices:['di','pa','na'],
+  answer:'di',
+  explanation:'Di betekent van.'
+},
+
+{
+  level:'makkelijk',
+  question:'Mi ta kome ___ mi famia.',
+  translation:'Ik eet met mijn familie.',
+  choices:['cu','pa','na'],
+  answer:'cu',
+  explanation:'Cu betekent met.'
+},
+
+{
+  level:'makkelijk',
+  question:'Nos ta bai ___ playa.',
+  translation:'Wij gaan naar het strand.',
+  choices:['na','di','pa'],
+  answer:'na',
+  explanation:'Na gebruik je bij bestemmingen.'
+},
+
+{
+  level:'makkelijk',
+  question:'Esaki ta ___ mi amigunan.',
+  translation:'Dit is voor mijn vrienden.',
+  choices:['pa','na','di'],
+  answer:'pa',
+  explanation:'Pa betekent voor.'
+},
+
+/* ===== GEMIDDELD ===== */
+
+{
+  level:'gemiddeld',
+  question:'Mi ta kome ___ mi famia ___ kas.',
+  translation:'Ik eet met mijn familie thuis.',
+  choices:['cu','na','pa','di'],
+  answer:['cu','na'],
+  explanation:'Met = cu, thuis = na kas.'
 },
 
 {
   level:'gemiddeld',
-  question:'Mi ta papia ___ mi ruman ___ kas.',
-  translation:'Ik praat met mijn broer thuis.',
-  choices:['ku','na','pa','di'],
-  answer:['ku','na'],
-  explanation:'Je praat MET iemand (ku) en bent BIJ/THUIS (na kas).'
+  question:'Mi ta bini ___ trabou ___ kas.',
+  translation:'Ik kom van werk naar huis.',
+  choices:['di','na','cu','pa'],
+  answer:['di','na'],
+  explanation:'Van = di, naar huis = na.'
 },
 
 {
   level:'gemiddeld',
-  question:'E regalo ta ___ mi mama ___ Aruba.',
-  translation:'Het cadeau is voor mijn moeder uit Aruba.',
-  choices:['pa','di','na','ku'],
+  question:'E carta ta ___ mi amigo ___ Hulanda.',
+  translation:'De brief is voor mijn vriend uit Nederland.',
+  choices:['pa','di','cu','na'],
   answer:['pa','di'],
-  explanation:'Voor = pa, van/uit = di.'
+  explanation:'Voor = pa, uit = di.'
+},
+
+{
+  level:'gemiddeld',
+  question:'Mi ta papia ___ bo ___ telefono.',
+  translation:'Ik praat met jou via de telefoon.',
+  choices:['cu','pa','di','na'],
+  answer:['cu','pa'],
+  explanation:'Met = cu, via = pa.'
+},
+
+{
+  level:'gemiddeld',
+  question:'Nos ta drenta ___ kas ___ nos tata.',
+  translation:'Wij gaan het huis van onze vader binnen.',
+  choices:['den','di','na','pa'],
+  answer:['den','di'],
+  explanation:'In = den, van = di.'
+},
+
+{
+  level:'gemiddeld',
+  question:'Mi ta bebe awa ___ mi amigo ___ mainta.',
+  translation:'Ik drink water met mijn vriend in de ochtend.',
+  choices:['cu','na','di','pa'],
+  answer:['cu','na'],
+  explanation:'Met = cu, tijd = na.'
+},
+
+{
+  level:'gemiddeld',
+  question:'Mi ta bai ___ Aruba ___ trabou.',
+  translation:'Ik ga naar Aruba voor werk.',
+  choices:['na','pa','di','cu'],
+  answer:['na','pa'],
+  explanation:'Naar = na, voor = pa.'
+},
+
+{
+  level:'gemiddeld',
+  question:'E ta sali ___ kas ___ su mama.',
+  translation:'Hij komt uit het huis van zijn moeder.',
+  choices:['di','na','cu','pa'],
+  answer:['di','di'],
+  explanation:'Uit = di, van = di.'
+},
+
+{
+  level:'gemiddeld',
+  question:'Mi ta biba ___ Aruba ___ mi famia.',
+  translation:'Ik woon op Aruba met mijn familie.',
+  choices:['na','cu','di','pa'],
+  answer:['na','cu'],
+  explanation:'Plaats = na, met = cu.'
+},
+
+{
+  level:'gemiddeld',
+  question:'Nos ta bai ___ skol ___ mainta.',
+  translation:'Wij gaan naar school in de ochtend.',
+  choices:['na','di','cu','pa'],
+  answer:['na','na'],
+  explanation:'Bestemming = na, tijd = na.'
+},
+
+/* ===== MOEILIJK ===== */
+
+{
+  level:'moeilijk',
+  question:'Nos ta bai ___ playa ___ nos amigunan ___ mainta.',
+  translation:'Wij gaan naar het strand met onze vrienden in de ochtend.',
+  choices:['na','cu','di','pa'],
+  answer:['na','cu','na'],
+  explanation:'Naar = na, met = cu, tijd = na.'
 },
 
 {
   level:'moeilijk',
-  question:'Mi ta bin ___ Hulanda ___ Aruba ___ mi famia.',
-  translation:'Ik kom van Nederland naar Aruba met mijn familie.',
-  choices:['di','pa','ku','na'],
-  answer:['di','pa','ku'],
-  explanation:'Van = di, naar = pa, met = ku.'
+  question:'Mi ta sali ___ kas ___ mi mama ___ trabou.',
+  translation:'Ik vertrek uit het huis van mijn moeder naar werk.',
+  choices:['di','pa','cu','na'],
+  answer:['di','di','pa'],
+  explanation:'Uit = di, van = di, naar = pa.'
+},
+
+{
+  level:'moeilijk',
+  question:'Mi ta drumi ___ kamber ___ mi ruman ___ mainta.',
+  translation:'Ik slaap in de kamer van mijn broer in de ochtend.',
+  choices:['den','di','na','pa'],
+  answer:['den','di','na'],
+  explanation:'In = den, van = di, tijd = na.'
+},
+
+{
+  level:'moeilijk',
+  question:'Nos ta bini ___ skol ___ kas ___ autobus.',
+  translation:'Wij komen van school naar huis met de bus.',
+  choices:['di','na','cu','pa'],
+  answer:['di','na','cu'],
+  explanation:'Van = di, naar = na, met = cu.'
+},
+
+{
+  level:'moeilijk',
+  question:'Mi ta papia ___ mi amigo ___ Aruba ___ telefono.',
+  translation:'Ik praat met mijn vriend op Aruba via de telefoon.',
+  choices:['cu','na','pa','di'],
+  answer:['cu','na','pa'],
+  explanation:'Met = cu, plaats = na, via = pa.'
+},
+
+{
+  level:'moeilijk',
+  question:'Mi ta drenta ___ kas ___ mi wela ___ mainta.',
+  translation:'Ik ga het huis van mijn oma binnen in de ochtend.',
+  choices:['den','di','na','pa'],
+  answer:['den','di','na'],
+  explanation:'In = den, van = di, tijd = na.'
+},
+
+{
+  level:'moeilijk',
+  question:'Nos ta bai ___ Aruba ___ nos famia ___ luna.',
+  translation:'Wij gaan naar Aruba met onze familie op maandag.',
+  choices:['na','cu','na','di'],
+  answer:['na','cu','na'],
+  explanation:'Naar = na, met = cu, tijd = na.'
+},
+
+{
+  level:'moeilijk',
+  question:'Mi ta bini ___ kas ___ mi tata ___ bicicleta.',
+  translation:'Ik kom van het huis van mijn vader met de fiets.',
+  choices:['di','di','cu','pa'],
+  answer:['di','di','cu'],
+  explanation:'Van = di, van = di, met = cu.'
+},
+
+{
+  level:'moeilijk',
+  question:'E regalo ta ___ mi mama ___ su cumpleanos ___ amor.',
+  translation:'Het cadeau is voor mijn moeder voor haar verjaardag uit liefde.',
+  choices:['pa','pa','di','na'],
+  answer:['pa','pa','di'],
+  explanation:'Voor = pa, voor = pa, uit = di.'
+},
+
+{
+  level:'moeilijk',
+  question:'Nos ta kome ___ nos famia ___ Aruba ___ fiesta.',
+  translation:'Wij eten met onze familie op Aruba op een feest.',
+  choices:['cu','na','di','pa'],
+  answer:['cu','na','na'],
+  explanation:'Met = cu, plaats = na, locatie = na.'
 }
 
 ];
