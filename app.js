@@ -1230,11 +1230,11 @@ const prepositionExercises = [
 
 {
   level:'gemiddeld',
-  question:'Mi ta kumpra un regalo ___ bo ___ cumpleanos.',
-  translation:'Ik koop een cadeau voor jou voor je verjaardag.',
+  question:'Mi ta kumpra un regalo ___ bo ___ Aruba.',
+  translation:'Ik koop een cadeau voor jou uit Aruba.',
   choices:['pa','di','na','cu'],
-  answer:['pa','pa'],
-  explanation:'Voor = pa.'
+  answer:['pa','di'],
+  explanation:'Voor = pa, uit = di.'
 },
 
 {
@@ -1257,11 +1257,11 @@ const prepositionExercises = [
 
 {
   level:'gemiddeld',
-  question:'E dokumento ta ___ governo ___ Aruba.',
-  translation:'Het document is van de overheid van Aruba.',
-  choices:['di','na','cu','pa'],
-  answer:['di','di'],
-  explanation:'Van = di.'
+  question:'E dokumento ta ___ governo ___ educacion.',
+  translation:'Het document is van de overheid voor onderwijs.',
+  choices:['di','pa','na','cu'],
+  answer:['di','pa'],
+  explanation:'Van = di, voor = pa.'
 },
 
 {
@@ -1320,11 +1320,11 @@ const prepositionExercises = [
 
 {
   level:'gemiddeld',
-  question:'Nos ta bai ___ misa ___ mainta.',
-  translation:'Wij gaan naar de mis in de ochtend.',
-  choices:['na','di','cu','pa'],
-  answer:['na','na'],
-  explanation:'Bestemming = na, tijd = na.'
+  question:'Nos ta bai ___ misa ___ nos famia.',
+  translation:'Wij gaan naar de mis met onze familie.',
+  choices:['na','cu','di','pa'],
+  answer:['na','cu'],
+  explanation:'Naar = na, met = cu.'
 },
 
 {
