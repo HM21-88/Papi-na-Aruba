@@ -262,11 +262,6 @@ function renderList(){
 
     return weekMatches(item, selectedWeeks) && (!q || haystack.includes(q));
   });
-  
-  document.getElementById(
-  'wordCountCard'
-).textContent =
-  `📘 Woorden: ${filtered.length}`;
 
   const list=document.getElementById('list');
 
