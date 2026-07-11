@@ -1004,10 +1004,8 @@ function checkPreposition(choice){
   }
 
   const allCorrect =
-    answer.every(
-      a =>
-        selectedPrepositions.includes(a)
-    );
+  JSON.stringify(answer) ===
+  JSON.stringify(selectedPrepositions);
 
   document.getElementById(
     'prepFeedback'
@@ -1022,8 +1020,8 @@ function checkPreposition(choice){
     : `
       <div class="feedback bad">
         ❌ Niet helemaal goed.<br>
-        Correct was:
-        ${answer.join(', ')}
+        Correcte volgorde:
+		${answer.join(' → ')}
         <br><br>
         ${currentPrepositionExercise.explanation}
       </div>
