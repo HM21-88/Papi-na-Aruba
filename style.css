@@ -838,7 +838,7 @@
 .prep-actions-row{
   display:flex;
   gap:12px;
-  align-items:flex-start;
+  align-items:center;
 }
 
 .prep-actions-row .actions{
