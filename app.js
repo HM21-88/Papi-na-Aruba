@@ -31,18 +31,28 @@ function showExercise(id){
 
   playFlashSound('nav');
 
-  ['voorzetsels','tijdsvormen'].forEach(sectionId=>{
+  ['voorzetsels','tijdsvormen']
+    .forEach(sectionId=>{
 
-    const el=document.getElementById(sectionId);
+      const el=document.getElementById(sectionId);
 
-    if(el){
-      el.classList.toggle(
-        'hidden',
-        sectionId!==id
-      );
-    }
+      if(el){
+        el.classList.toggle(
+          'hidden',
+          sectionId!==id
+        );
+      }
 
-  });
+    });
+
+  if(
+    id === 'voorzetsels' &&
+    !currentPrepositionExercise
+  ){
+    startPrepositionExercise(
+      'makkelijk'
+    );
+  }
 
 }
 
