@@ -813,6 +813,14 @@
       );
   }
 
+.prep-icon{
+  margin-right:6px;
+}
+
+.prep-label{
+  display:inline;
+}
+
   @media (max-width:820px){
     .actions{
       grid-template-columns:repeat(3,1fr);
@@ -1034,4 +1042,11 @@
     .quiz-q{
       font-size:1rem;
     }
+	.prep-label{
+    display:none;
+  }
+
+  .prep-icon{
+    font-size:1.5rem;
+  }
   }

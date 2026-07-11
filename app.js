@@ -1005,11 +1005,11 @@ const prepositionExercises = [
 
 {
   level:'gemiddeld',
-  question:'E ta sali ___ kas ___ su mama.',
-  translation:'Hij komt uit het huis van zijn moeder.',
-  choices:['di','na','cu','pa'],
-  answer:['di','di'],
-  explanation:'Uit = di, van = di.'
+  question:'E ta sali ___ kas ___ school.',
+  translation:'Hij komt uit het huis naar school.',
+  choices:['di','pa','cu','na'],
+  answer:['di','pa'],
+  explanation:'Van = di, naar = pa.'
 },
 
 {
@@ -1023,11 +1023,11 @@ const prepositionExercises = [
 
 {
   level:'gemiddeld',
-  question:'Nos ta bai ___ skol ___ mainta.',
-  translation:'Wij gaan naar school in de ochtend.',
-  choices:['na','di','cu','pa'],
-  answer:['na','na'],
-  explanation:'Bestemming = na, tijd = na.'
+  question:'Nos ta bai ___ skol ___ nos amigo.',
+  translation:'Wij gaan naar school met onze vriend.',
+  choices:['na','cu','di','pa'],
+  answer:['na','cu'],
+  explanation:'Naar = na, met = cu.'
 },
 
 /* ===== MOEILIJK ===== */
