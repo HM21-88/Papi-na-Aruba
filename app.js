@@ -909,7 +909,10 @@ function startPrepositionExercise(level){
 
 function renderPrepositionExercise(){
 
-  if(!currentPrepositionExercise) return;
+  if(!currentPrepositionExercise)
+    return;
+
+  selectedPrepositions = [];
 
   document.getElementById('prepQuestion').textContent =
     currentPrepositionExercise.question;
@@ -938,35 +941,93 @@ function renderPrepositionExercise(){
 
 }
 
+let selectedPrepositions = [];
+
 function checkPreposition(choice){
 
   const answer =
     currentPrepositionExercise.answer;
 
-  const correct =
-    Array.isArray(answer)
-      ? answer.includes(choice)
-      : choice===answer;
+  // Eén antwoord
+  if(!Array.isArray(answer)){
 
-  if(correct){
+    const correct = choice === answer;
 
-    document.getElementById('prepFeedback').innerHTML=`
-      <div class="feedback good">
-        ✅ Goed!<br>
-        ${currentPrepositionExercise.explanation}
-      </div>
-    `;
+    document.getElementById('prepFeedback').innerHTML =
+      correct
+      ? `
+        <div class="feedback good">
+          ✅ Goed!<br>
+          ${currentPrepositionExercise.explanation}
+        </div>
+      `
+      : `
+        <div class="feedback bad">
+          ❌ Niet juist.<br>
+          ${currentPrepositionExercise.explanation}
+        </div>
+      `;
 
-  } else {
-
-    document.getElementById('prepFeedback').innerHTML=`
-      <div class="feedback bad">
-        ❌ Niet juist.<br>
-        ${currentPrepositionExercise.explanation}
-      </div>
-    `;
-
+    return;
   }
+
+  // Meerdere antwoorden
+
+  if(
+    selectedPrepositions.includes(choice)
+  ){
+    return;
+  }
+
+  selectedPrepositions.push(choice);
+
+  const totalNeeded = answer.length;
+
+  if(
+    selectedPrepositions.length <
+    totalNeeded
+  ){
+
+    document.getElementById(
+      'prepFeedback'
+    ).innerHTML =
+      `
+      <div class="feedback">
+      Kies nog ${
+        totalNeeded -
+        selectedPrepositions.length
+      } antwoord(en).
+      </div>
+      `;
+
+    return;
+  }
+
+  const allCorrect =
+    answer.every(
+      a =>
+        selectedPrepositions.includes(a)
+    );
+
+  document.getElementById(
+    'prepFeedback'
+  ).innerHTML =
+    allCorrect
+    ? `
+      <div class="feedback good">
+        ✅ Helemaal goed!<br>
+        ${currentPrepositionExercise.explanation}
+      </div>
+    `
+    : `
+      <div class="feedback bad">
+        ❌ Niet helemaal goed.<br>
+        Correct was:
+        ${answer.join(', ')}
+        <br><br>
+        ${currentPrepositionExercise.explanation}
+      </div>
+    `;
 
 }
 
