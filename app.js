@@ -1329,11 +1329,11 @@ const prepositionExercises = [
 
 {
   level:'gemiddeld',
-  question:'E buki ta ___ mi tata ___ Aruba.',
-  translation:'Het boek is van mijn vader uit Aruba.',
+  question:'Mi ta haya un regalo ___ mi tata ___ bo.',
+  translation:'Ik vind een cadeau van mijn vader voor jou.',
   choices:['di','na','cu','pa'],
-  answer:['di','di'],
-  explanation:'Van = di, uit = di.'
+  answer:['di','pa'],
+  explanation:'Van = di, voor = pa.'
 },
 
 {
@@ -1910,6 +1910,16 @@ function updatePrepositionStats(){
     'prepStreak'
   ).textContent =
     `🔥 Streak: ${prepStreak}`;
+
+}
+
+function resetPrepositionStats(){
+
+  prepGood = 0;
+  prepBad = 0;
+  prepStreak = 0;
+
+  updatePrepositionStats();
 
 }
 
