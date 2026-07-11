@@ -905,6 +905,30 @@ let currentPrepositionExercise = null;
 
 function startPrepositionExercise(level){
 
+  document
+    .querySelectorAll('#prepDifficultyNav button')
+    .forEach(btn => {
+      btn.classList.remove('active');
+    });
+
+  if(level === 'makkelijk'){
+    document
+      .getElementById('prepEasyBtn')
+      .classList.add('active');
+  }
+
+  if(level === 'gemiddeld'){
+    document
+      .getElementById('prepMediumBtn')
+      .classList.add('active');
+  }
+
+  if(level === 'moeilijk'){
+    document
+      .getElementById('prepHardBtn')
+      .classList.add('active');
+  }
+
   const pool =
     prepositionExercises.filter(
       x => x.level === level
