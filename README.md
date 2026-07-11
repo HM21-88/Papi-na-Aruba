@@ -211,7 +211,7 @@ De applicatie is geoptimaliseerd voor:
 
 ## Doel van het project
 
-Het doel van Arubaans Leren is om een laagdrempelige en effectieve omgeving te bieden voor het leren van Papiamento.
+Het doel van Papi na Aruba is om een laagdrempelige en effectieve omgeving te hebben voor het leren van Papiamento. Ik en mijn partner leren papiamento en zo hebben we altijd alle stof bij de hand.
 
 Door verschillende leermethoden te combineren kunnen gebruikers zowel woordenschat als grammatica oefenen, terwijl scores, streaks en persoonlijke records zorgen voor extra motivatie.
 
