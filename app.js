@@ -1666,6 +1666,10 @@ const prepositionExercises = [
 
 let currentPrepositionExercise = null;
 
+let prepGood = 0;
+let prepBad = 0;
+let prepStreak = 0;
+
 function startPrepositionExercise(level){
 
   document
@@ -1809,25 +1813,41 @@ function checkPreposition(choice){
     JSON.stringify(answer) ===
     JSON.stringify(selectedPrepositions);
 
+if(allCorrect){
+
+  prepGood++;
+  prepStreak++;
+
   document.getElementById(
     'prepFeedback'
   ).innerHTML =
-    allCorrect
-    ? `
-      <div class="feedback good">
-        ✅ Helemaal goed!<br>
-        ${currentPrepositionExercise.explanation}
-      </div>
     `
-    : `
-      <div class="feedback bad">
-        ❌ Niet helemaal goed.<br>
-        Correcte volgorde:
-        ${answer.join(' → ')}
-        <br><br>
-        ${currentPrepositionExercise.explanation}
-      </div>
+    <div class="feedback good">
+      ✅ Helemaal goed!<br>
+      ${currentPrepositionExercise.explanation}
+    </div>
     `;
+
+}else{
+
+  prepBad++;
+  prepStreak = 0;
+
+  document.getElementById(
+    'prepFeedback'
+  ).innerHTML =
+    `
+    <div class="feedback bad">
+      ❌ Niet helemaal goed.<br>
+      Correcte volgorde:
+      ${answer.join(' → ')}
+      <br><br>
+      ${currentPrepositionExercise.explanation}
+    </div>
+    `;
+}
+
+updatePrepositionStats();
 }
 
 function nextPrepositionExercise(){
@@ -1874,6 +1894,25 @@ function nextPrepositionExercise(){
   renderPrepositionExercise();
 }
 
+function updatePrepositionStats(){
+
+  document.getElementById(
+    'prepGood'
+  ).textContent =
+    `✅ Goed: ${prepGood}`;
+
+  document.getElementById(
+    'prepBad'
+  ).textContent =
+    `❌ Fout: ${prepBad}`;
+
+  document.getElementById(
+    'prepStreak'
+  ).textContent =
+    `🔥 Streak: ${prepStreak}`;
+
+}
+
 function init(){
   document.getElementById('wordCount').textContent=data.length;
 
@@ -1889,6 +1928,7 @@ function init(){
   updateQuizStats();
   newQuiz();
   updateMainNav('woordenlijst');
+  updatePrepositionStats();
 }
 
 init();
