@@ -1144,13 +1144,15 @@
 #tenseDifficultyNav{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:6px;
+  gap:4px;
+  margin-top:4px;
 }
 
 #prepDifficultyNav .btn,
 #tenseDifficultyNav .btn{
-  padding:6px;
-  min-height:42px;
+  padding:4px;
+  min-height:34px;
+  border-radius:10px;
 }
   
   .prep-actions-row{
