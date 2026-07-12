@@ -990,10 +990,14 @@
 
 /* ===== OEFENINGKEUZE MOBIEL ===== */
 
-#oefeningen .row{
+#oefeningen > .panel .row{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:8px;
+}
+
+#oefeningen > .panel .row button{
+  width:100%;
 }
 
 #oefeningen .row button{
@@ -1142,14 +1146,14 @@
 
 #prepDifficultyNav,
 #tenseDifficultyNav{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
+  display:flex;
+  flex-direction:row;
   gap:4px;
-  margin-top:4px;
 }
 
 #prepDifficultyNav .btn,
 #tenseDifficultyNav .btn{
+  flex:1;
   padding:4px;
   min-height:34px;
   border-radius:10px;
