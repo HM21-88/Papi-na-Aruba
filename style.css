@@ -991,12 +991,12 @@
 /* ===== OEFENINGKEUZE MOBIEL ===== */
 
 #oefeningen .row{
-  disp*ay:grid;
-  grid-template-columns:1*r 1fr;
+  display:grid;
+  grid-template-columns:1fr 1fr;
   gap:8px;
 }
 
-#oefeningen .*ow button{
+#oefeningen .row button{
   width:100%;
 }
 
@@ -1086,12 +1086,13 @@
     }
 
 	.stats{
-	gap:6px;
-	
-	.stat{
-	padding:6px 8px;
-	font-size:.8rem;
-	}
+  gap:6px;
+}
+
+.stat{
+  padding:6px 8px;
+  font-size:.8rem;
+}
 
         .flash-wrap{
       margin-bottom:18px;
@@ -1140,15 +1141,15 @@
 /* ===== COMPACTE MOEILIJKHEID ===== */
 
 #prepDifficultyNav,
-#tenseDiffi*ultyNav{
+#tenseDifficultyNav{
   display:grid;
-  grid-te*plate-columns:repeat(3,1fr);
-  gap*6px;
+  grid-template-columns:repeat(3,1fr);
+  gap:6px;
 }
 
 #prepDifficultyNav .btn,
-#*enseDifficultyNav .btn{
-  padding:*px;
+#tenseDifficultyNav .btn{
+  padding:6px;
   min-height:42px;
 }
   
