@@ -984,9 +984,21 @@
       display:none;
     }
     .row{
-      flex-direction:column;
-      gap:6px;
-    }
+  flex-direction:column;
+  gap:6px;
+}
+
+/* ===== OEFENINGKEUZE MOBIEL ===== */
+
+#oefeningen .row{
+  disp*ay:grid;
+  grid-template-columns:1*r 1fr;
+  gap:8px;
+}
+
+#oefeningen .*ow button{
+  width:100%;
+}
 
     .row > *{
       flex:1 1 auto;
@@ -1073,14 +1085,13 @@
       padding:12px;
     }
 
-    .stats{
-      gap:8px;
-    }
-
-    .stat{
-      padding:8px 10px;
-      font-size:.86rem;
-    }
+	.stats{
+	gap:6px;
+	
+	.stat{
+	padding:6px 8px;
+	font-size:.8rem;
+	}
 
         .flash-wrap{
       margin-bottom:18px;
@@ -1119,12 +1130,27 @@
       font-size:1rem;
     }
 	.prep-label{
-    display:none;
-  }
+  display:none;
+}
 
-  .prep-icon{
-    font-size:1.5rem;
-  }
+.prep-icon{
+  font-size:1.3rem;
+}
+
+/* ===== COMPACTE MOEILIJKHEID ===== */
+
+#prepDifficultyNav,
+#tenseDiffi*ultyNav{
+  display:grid;
+  grid-te*plate-columns:repeat(3,1fr);
+  gap*6px;
+}
+
+#prepDifficultyNav .btn,
+#*enseDifficultyNav .btn{
+  padding:*px;
+  min-height:42px;
+}
   
   .prep-actions-row{
   flex-direction:column;
