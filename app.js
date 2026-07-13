@@ -1611,6 +1611,8 @@ function resetPrepositionStats(){
 }
 
 // tijdsvormen trainer
+console.log(window.tenseExercises);
+
 const tenseExercises =
   window.tenseExercises || [];
 
