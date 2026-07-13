@@ -1166,5 +1166,32 @@
 .prep-next-btn{
   width:100%;
 }
-  
-  }
+
+/* ===== TRAINER HEADER ===== */
+
+.trainer-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+}
+
+.trainer-header h3{
+  margin:0;
+}
+
+.trainer-difficulty{
+  display:flex;
+  gap:4px;
+}
+
+.trainer-difficulty .prep-label{
+  display:none;
+}
+
+.trainer-difficulty .btn{
+  min-height:32px;
+  padding:3px 6px;
+}
+
+}

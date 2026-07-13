@@ -318,7 +318,45 @@
 
 <div id="voorzetsels" class="panel hidden">
 
-<h3>📍 Voorzetseltrainer</h3>
+<div class="trainer-header">
+
+  <h3>📍 Voorzetseltrainer</h3>
+
+  <div class="trainer-difficulty" id="prepDifficultyNav">
+
+    <button
+      id="prepEasyBtn"
+      class="btn"
+      onclick="startPrepositionExercise('makkelijk')">
+
+      <span class="prep-icon">🙂</span>
+      <span class="prep-label">Makkelijk</span>
+
+    </button>
+
+    <button
+      id="prepMediumBtn"
+      class="btn secondary"
+      onclick="startPrepositionExercise('gemiddeld')">
+
+      <span class="prep-icon">😐</span>
+      <span class="prep-label">Gemiddeld</span>
+
+    </button>
+
+    <button
+      id="prepHardBtn"
+      class="btn alt"
+      onclick="startPrepositionExercise('moeilijk')">
+
+      <span class="prep-icon">🔥</span>
+      <span class="prep-label">Moeilijk</span>
+
+    </button>
+
+  </div>
+
+</div>
 
 <div class="stats" style="margin-top:12px">
 
@@ -360,40 +398,6 @@
     Reset
 
   </button>
-
-</div>
-
- <div class="row" id="prepDifficultyNav">
-
- <button
-  id="prepEasyBtn"
-  class="btn"
-  onclick="startPrepositionExercise('makkelijk')">
-
-  <span class="prep-icon">🙂</span>
-  <span class="prep-label">Makkelijk</span>
-
-</button>
-
- <button
-  id="prepMediumBtn"
-  class="btn secondary"
-  onclick="startPrepositionExercise('gemiddeld')">
-
-  <span class="prep-icon">😐</span>
-  <span class="prep-label">Gemiddeld</span>
-
-</button>
-
-  <button
-  id="prepHardBtn"
-  class="btn alt"
-  onclick="startPrepositionExercise('moeilijk')">
-
-  <span class="prep-icon">🔥</span>
-  <span class="prep-label">Moeilijk</span>
-
-</button>
 
 </div>
 
@@ -451,50 +455,45 @@
 
   <div id="tijdsvormen" class="panel hidden">
 
+ <div class="trainer-header">
+
   <h3>⏱️ Tijdsvormtrainer</h3>
 
-  <div class="stats" style="margin-top:12px">
-    <div class="stat" id="tenseGood">
-      ✅ Goed: 0
-    </div>
-
-    <div class="stat" id="tenseBad">
-      ❌ Fout: 0
-    </div>
-
-    <div class="stat" id="tenseStreak">
-      🔥 Streak: 0
-    </div>
-
-<div class="stat" id="tenseBest">
-  🏆 Beste: 0
-</div>
+  <div class="trainer-difficulty" id="tenseDifficultyNav">
 
     <button
-      class="stat prep-reset-btn"
-      onclick="resetTenseStats()"
-      aria-label="Reset score">
+      id="tenseEasyBtn"
+      class="btn"
+      onclick="startTenseExercise('makkelijk')">
 
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2.2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        width="18"
-        height="18">
+      <span class="prep-icon">🙂</span>
+      <span class="prep-label">Makkelijk</span>
 
-        <path d="M3 12a9 9 0 1 0 3-6.7"/>
-        <path d="M3 3v6h6"/>
+    </button>
 
-      </svg>
+    <button
+      id="tenseMediumBtn"
+      class="btn secondary"
+      onclick="startTenseExercise('gemiddeld')">
 
-      Reset
+      <span class="prep-icon">😐</span>
+      <span class="prep-label">Gemiddeld</span>
+
+    </button>
+
+    <button
+      id="tenseHardBtn"
+      class="btn alt"
+      onclick="startTenseExercise('moeilijk')">
+
+      <span class="prep-icon">🔥</span>
+      <span class="prep-label">Moeilijk</span>
 
     </button>
 
   </div>
+
+</div>
 
   <div class="row" id="tenseDifficultyNav">
 
