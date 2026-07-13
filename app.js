@@ -2061,22 +2061,22 @@ function updatePrepositionStats(){
   document.getElementById(
     'prepGood'
   ).textContent =
-    `✅ Goed: ${prepGood}`;
+    `✅ ${prepGood}`;
 
   document.getElementById(
     'prepBad'
   ).textContent =
-    `❌ Fout: ${prepBad}`;
+    `❌ ${prepBad}`;
 
   document.getElementById(
     'prepStreak'
   ).textContent =
-    `🔥 Streak: ${prepStreak}`;
-	
-	document.getElementById(
-	  'prepBest'
-	).textContent =
-	  `🏆 Beste: ${prepBestStreak}`;
+    `🔥 ${prepStreak}`;
+
+  document.getElementById(
+    'prepBest'
+  ).textContent =
+    `🏆 ${prepBestStreak}`;
 
 }
 
@@ -2085,22 +2085,22 @@ function updateTenseStats(){
   document.getElementById(
     'tenseGood'
   ).textContent =
-    `✅ Goed: ${tenseGood}`;
+    `✅ ${tenseGood}`;
 
   document.getElementById(
     'tenseBad'
   ).textContent =
-    `❌ Fout: ${tenseBad}`;
+    `❌ ${tenseBad}`;
 
   document.getElementById(
     'tenseStreak'
   ).textContent =
-    `🔥 Streak: ${tenseStreak}`;
-	
-	document.getElementById(
-	'tenseBest'
-	).textContent =
-	`🏆 Beste: ${tenseBestStreak}`;
+    `🔥 ${tenseStreak}`;
+
+  document.getElementById(
+    'tenseBest'
+  ).textContent =
+    `🏆 ${tenseBestStreak}`;
 
 }
 
