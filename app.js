@@ -1,3 +1,5 @@
+const data = window.wordsData || [];
+
 const weekSelections = {
   weekFilter: ['alle'],
   flashWeek: ['alle'],
