@@ -1616,6 +1616,8 @@ console.log(window.tenseExercises);
 const tenseExercises =
   window.tenseExercises || [];
 
+console.log('PREP', window.prepositionExercises);
+console.log('TENSE', window.tenseExercises);
 
 function init(){
   const wordCount =

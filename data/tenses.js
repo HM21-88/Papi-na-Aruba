@@ -1,3 +1,5 @@
+console.log('TENSES FILE LOADED');
+
 window.tenseExercises = [
 
 /* ===== MAKKELIJK ===== */
