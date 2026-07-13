@@ -1,3 +1,6 @@
+throw new Error('OLD WORDS.JS LOADED');
+
+
 const data = [ 
 
 // ===== WEEK 1 =====
