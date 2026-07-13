@@ -1,4 +1,5 @@
 window.wordsData = [
+  
   // ===== WEEK 1 =====
 
   {week:1,nummer:1,papiamento:'mi',nederlands:'ik, mij, me, mijn',varianten:'ami',type:'persoonlijk voornaamwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta bai kas.',voorbeeld_nederlands:'Ik ga naar huis.'},
