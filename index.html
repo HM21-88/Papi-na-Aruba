@@ -359,20 +359,20 @@
 
 <div class="stats" style="margin-top:12px">
 
-  <div class="stat" id="prepGood">
-    ✅ Goed: 0
-  </div>
+<div class="stat stat-compact" id="prepGood">
+  ✅ 0
+</div>
 
-  <div class="stat" id="prepBad">
-    ❌ Fout: 0
-  </div>
+<div class="stat stat-compact" id="prepBad">
+  ❌ 0
+</div>
 
-  <div class="stat" id="prepStreak">
-    🔥 Streak: 0
-  </div>
+<div class="stat stat-compact" id="prepStreak">
+  🔥 0
+</div>
  
- <div class="stat" id="prepBest">
-  🏆 Beste: 0
+<div class="stat stat-compact" id="prepBest">
+  🏆 0
 </div>
 
   <button
@@ -493,7 +493,51 @@
 
 </div>
 
-  <div class="panel" style="margin-top:12px;">
+<div class="stats" style="margin-top:12px">
+
+  <div class="stat stat-compact" id="tenseGood">
+    ✅ 0
+  </div>
+
+  <div class="stat stat-compact" id="tenseBad">
+    ❌ 0
+  </div>
+
+  <div class="stat stat-compact" id="tenseStreak">
+    🔥 0
+  </div>
+
+  <div class="stat stat-compact" id="tenseBest">
+    🏆 0
+  </div>
+
+  <button
+    class="stat prep-reset-btn"
+    onclick="resetTenseStats()"
+    aria-label="Reset score">
+
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2.2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      width="18"
+      height="18">
+
+      <path d="M3 12a9 9 0 1 0 3-6.7"/>
+      <path d="M3 3v6h6"/>
+
+    </svg>
+
+    Reset
+
+  </button>
+
+</div>
+
+<div class="panel" style="margin-top:12px;">
 
     <div id="tenseQuestion" class="quiz-q">
       Kies een niveau.

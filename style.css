@@ -387,13 +387,20 @@
     margin-top:12px;
   }
 
-  .stat{
-    background:var(--blue-soft);
-    border:1px solid var(--border);
-    border-radius:14px;
-    padding:10px 12px;
-    font-size:.92rem;
-  }
+.stat{
+  background:var(--blue-soft);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:10px 12px;
+  font-size:.92rem;
+}
+
+.stat-compact{
+  min-width:72px;
+  text-align:center;
+  font-weight:700;
+}
+
 
   .top-tools{
     display:flex;
@@ -841,9 +848,20 @@
   color:var(--text);
   display:flex;
   align-items:center;
-  gap:8px;
+  justify-content:center;
   cursor:pointer;
   border:1px solid var(--border);
+  min-width:44px;
+  width:44px;
+  padding:0;
+}
+
+.prep-reset-btn svg{
+  margin:0;
+}
+
+.prep-reset-btn{
+  font-size:0;
 }
 
 .prep-reset-btn:hover{
