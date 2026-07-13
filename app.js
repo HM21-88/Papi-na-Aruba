@@ -1640,4 +1640,6 @@ if(wordCount){
   updateTenseStats();
 }
 
+console.log(window.wordsData);
+
 init();
