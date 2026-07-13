@@ -396,7 +396,8 @@
 }
 
 .stat-compact{
-  min-width:72px;
+  min-width:auto;
+  padding:8px 10px;
   text-align:center;
   font-weight:700;
 }
@@ -915,10 +916,9 @@
 .difficulty-title{
   display:block;
   margin-bottom:6px;
-  font-size:.8rem;
+  font-size:.9rem;
   color:var(--muted);
   font-weight:700;
-  text-transform:uppercase;
   letter-spacing:.04em;
 }
 
@@ -1207,12 +1207,22 @@
   border-radius:10px;
 }
   
-  .prep-actions-row{
-  flex-direction:column;
+ .prep-actions-row{
+  display:flex;
+  flex-direction:row;
+  align-items:flex-end;
+  gap:8px;
+}
+
+.prep-actions-row .actions{
+  flex:1;
 }
 
 .prep-next-btn{
-  width:100%;
+  width:72px;
+  min-width:72px;
+  height:56px;
+  min-height:56px;
 }
 
 }
