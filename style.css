@@ -156,36 +156,17 @@
     background:#111827;
   }
   
-  #prepDifficultyNav .btn.active{
-  border-color:#111827;
-  box-shadow:0 0 0 2px rgba(17,24,39,.08), 0 2px 8px rgba(0,0,0,.08);
-}
-
-#prepDifficultyNav .btn.active::after{
-  content:"";
-  position:absolute;
-  left:12px;
-  right:12px;
-  bottom:6px;
-  height:4px;
-  border-radius:999px;
-  background:#111827;
-}
-
+ #prepDifficultyNav .btn.active,
 #tenseDifficultyNav .btn.active{
   border-color:#111827;
-  box-shadow:0 0 0 2px rgba(17,24,39,.08), 0 2px 8px rgba(0,0,0,.08);
+  background:#111827;
+  color:#ffffff;
+  box-shadow:none;
 }
 
+#prepDifficultyNav .btn.active::after,
 #tenseDifficultyNav .btn.active::after{
-  content:"";
-  position:absolute;
-  left:12px;
-  right:12px;
-  bottom:6px;
-  height:4px;
-  border-radius:999px;
-  background:#111827;
+  display:none;
 }
   
 #exercisePrepositionsBtn.active,
@@ -1190,8 +1171,12 @@
 }
 
 .trainer-difficulty .btn{
-  min-height:32px;
-  padding:3px 6px;
+  width:38px;
+  height:38px;
+  min-height:38px;
+  min-width:38px;
+  padding:0;
+  border-radius:999px;
 }
 
 }
