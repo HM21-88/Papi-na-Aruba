@@ -891,12 +891,12 @@
 }
 
 .trainer-difficulty-wrap{
-  display:flex;
-  align-items:center;
-  gap:10px;
+  margin-bottom:12px;
 }
 
 .difficulty-title{
+  display:block;
+  margin-bottom:6px;
   font-size:.8rem;
   color:var(--muted);
   font-weight:700;
@@ -906,18 +906,18 @@
 
 .trainer-difficulty{
   display:flex;
-  gap:0;
+  width:100%;
   border:1px solid var(--border);
-  border-radius:999px;
+  border-radius:12px;
   overflow:hidden;
   background:#fff;
 }
 
 .trainer-difficulty .btn{
+  flex:1;
   border:none;
   border-radius:0;
-  padding:8px 14px;
-  min-height:auto;
+  padding:10px;
   background:#fff;
   color:var(--text);
   box-shadow:none;
