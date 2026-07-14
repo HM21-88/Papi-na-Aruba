@@ -510,7 +510,6 @@ function resetFlash(){
     flashGoodCount=0;
     flashHardCount=0;
     buildFlashPool();
-    document.getElementById('flashBack').innerHTML='';
     updateFlashCounters();
   });
 }
@@ -538,7 +537,6 @@ function updateFlashMeta(){
   const typeLabel=typeValue==='alle' ? 'alle types' : typeValue;
   const orderLabel=orderValue==='shuffle' ? 'shuffle' : 'lijstvolgorde';
 
-  document.getElementById('flashStatus').textContent=`${getWeekLabel(selectedWeeks)} • ${typeLabel} • ${orderLabel}`;
   updateFlashCounters();
 }
 
@@ -562,7 +560,7 @@ function renderFlash(){
     document.getElementById('flashWeekLabel').textContent='';
     document.getElementById('flashFront').textContent='Geen woorden.';
     document.getElementById('flashHint').textContent='Pas je filters aan.';
-    document.getElementById('flashBack').innerHTML='';
+ 
     return;
   }
 
@@ -585,30 +583,59 @@ if(flashWeekLabel){
   flashWeekLabel.textContent =
     `Week ${x.week} • ${x.type || 'zonder type'}`;
 }
-  document.getElementById('flashFront').textContent=
-    flashFlipped
-      ? (dir==='nl-pa' ? x.papiamento : x.nederlands)
-      : (dir==='nl-pa' ? x.nederlands : x.papiamento);
+  if(!flashFlipped){
+
+  document.getElementById('flashFront').innerHTML =
+    `
+      <div class="flash-front-word">
+        ${
+          dir==='nl-pa'
+            ? escapeHtml(x.nederlands)
+            : escapeHtml(x.papiamento)
+        }
+      </div>
+    `;
+
+}else{
+
+  const answer =
+    dir==='nl-pa'
+      ? x.papiamento
+      : x.nederlands;
+
+  document.getElementById('flashFront').innerHTML =
+    `
+      <div class="flash-answer-word">
+        ${escapeHtml(answer)}
+      </div>
+
+      <div class="flash-answer-variants">
+        Varianten: ${escapeHtml(x.varianten || '-')}
+      </div>
+
+      <div class="flash-example">
+
+        <div class="flash-example-title">
+          Voorbeeld
+        </div>
+
+        <div class="flash-example-pa">
+          ${escapeHtml(x.voorbeeld_papiamento || '-')}
+        </div>
+
+        <div class="flash-example-nl">
+          ${escapeHtml(x.voorbeeld_nederlands || '-')}
+        </div>
+
+      </div>
+    `;
+}
 
   document.getElementById('flashHint').textContent=
-    flashFlipped ? 'Gebruik Makkelijk of Moeilijk' : 'Tik of druk op spatie om om te draaien';
+    flashFlipped 
+		? '' 
+		: 'Tik of druk op spatie om om te draaien';
 
-  if(!flashFlipped){
-    document.getElementById('flashBack').innerHTML='';
-    return;
-  }
-
-  const answer=dir==='nl-pa' ? x.papiamento : x.nederlands;
-
-  document.getElementById('flashBack').innerHTML=`
-    <div><strong>Nr. ${x.nummer}</strong></div>
-    <div><strong>Antwoord:</strong> ${escapeHtml(answer)}</div>
-    <div><strong>Varianten:</strong> ${escapeHtml(x.varianten || '-')}</div>
-    <div><strong>Week:</strong> ${x.week}</div>
-    <div><strong>Type:</strong> ${escapeHtml(x.type || '-')}</div>
-    <div style="margin-top:10px"><strong>Voorbeeldzin:</strong> ${escapeHtml(x.voorbeeld_papiamento || '-')}</div>
-    <div><strong>Nederlandse vertaling:</strong> ${escapeHtml(x.voorbeeld_nederlands || '-')}</div>
-  `;
 }
 
 function flipFlash(){

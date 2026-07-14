@@ -711,6 +711,46 @@ header .wrap{
   background:var(--brand-accent);
 }
 
+.flash-front-word{
+  font-size:1.9rem;
+  font-weight:800;
+}
+
+/* ===== FLASHCARD ANSWER V2 ===== */
+
+.flash-answer-word{
+  font-size:2rem;
+  font-weight:800;
+  color:var(--brand-primary);
+  margin-bottom:10px;
+}
+
+.flash-answer-variants{
+  color:var(--text-secondary);
+  margin-bottom:18px;
+}
+
+.flash-example{
+  padding:14px;
+  background:#F8F5EF;
+  border:1px solid var(--border-soft);
+  border-radius:14px;
+}
+
+.flash-example-title{
+  font-weight:700;
+  margin-bottom:8px;
+}
+
+.flash-example-pa{
+  font-weight:600;
+  margin-bottom:6px;
+}
+
+.flash-example-nl{
+  color:var(--text-secondary);
+}
+
 @keyframes flashCardIn{
   0%{
     transform:translateX(24%) scale(.97);
