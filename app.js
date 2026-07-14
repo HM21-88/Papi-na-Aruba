@@ -2049,6 +2049,55 @@ function resetPrepositionStats(){
 const tenseExercises =
   window.tenseExercises || [];
 
+function updateProgressScreen(){
+
+  document.getElementById(
+    'progressFlashGood'
+  ).textContent =
+    flashGoodCount;
+
+  document.getElementById(
+    'progressFlashHard'
+  ).textContent =
+    flashHardCount;
+
+  document.getElementById(
+    'progressQuizGood'
+  ).textContent =
+    quizGood;
+
+  document.getElementById(
+    'progressQuizBad'
+  ).textContent =
+    quizBad;
+
+  document.getElementById(
+    'progressPrepBest'
+  ).textContent =
+    prepBestStreak;
+
+  document.getElementById(
+    'progressTenseBest'
+  ).textContent =
+    tenseBestStreak;
+
+  document.getElementById(
+    'progressWords'
+  ).textContent =
+    data.length;
+
+  document.getElementById(
+    'progressFlashTotal'
+  ).textContent =
+    flashGoodCount + flashHardCount;
+
+  document.getElementById(
+    'progressQuizTotal'
+  ).textContent =
+    quizGood + quizBad;
+
+}
+
 function init(){
   const wordCount =
   document.getElementById('wordCount');
@@ -2141,16 +2190,34 @@ function showMainScreen(screenId){
       .classList.remove('hidden');
   }
   
-  if(screenId === 'progressScreen'){
+if(screenId === 'progressScreen'){
+
+  updateScreenBar(
+    'Progress',
+    true,
+    () => showMainScreen('homeScreen')
+  );
+
   document
     .getElementById('progressScreen')
     .classList.remove('hidden');
+
+  updateProgressScreen();
+
 }
 
 if(screenId === 'profileScreen'){
+
+  updateScreenBar(
+    'Profile',
+    true,
+    () => showMainScreen('homeScreen')
+  );
+
   document
     .getElementById('profileScreen')
     .classList.remove('hidden');
+
 }
   
 }
