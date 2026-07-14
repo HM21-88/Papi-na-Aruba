@@ -2266,6 +2266,11 @@ if(
 
 function updateHomeStats(){
 
+  const weeklyProgress =
+    Math.round(
+      (weeklyLearningDays.length / 7) * 100
+    );
+
   document.getElementById(
     'homeWordCount'
   ).textContent =
@@ -2284,23 +2289,18 @@ function updateHomeStats(){
   document.getElementById(
     'homeHeroSubtitle'
   ).textContent =
-    `${data.length} woorden beschikbaar`;
+    `${weeklyLearningDays.length} van 7 dagen deze week`;
 
-document.getElementById(
-  'homeHeroStreak'
-).textContent =
-  `Dagreeks: ${currentDailyStreak}`;
+  document.getElementById(
+    'homeHeroProgress'
+  ).style.width =
+    `${weeklyProgress}%`;
 
-const progress =
-  Math.min(
-    currentDailyStreak * 10,
-    100
-  );
+  document.getElementById(
+    'homeHeroScore'
+  ).textContent =
+    `${weeklyProgress}%`;
 
-document.getElementById(
-  'homeHeroProgress'
-).style.width =
-  `${progress}%`;
 }
 
 function init(){
