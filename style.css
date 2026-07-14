@@ -1159,8 +1159,10 @@ header .wrap{
   gap:4px;
   color:var(--text);
   font-size:.85rem;
-
   cursor:pointer;
+
+  position:relative;
+  transition:.2s ease;
 }
 
 .bottom-nav svg{
@@ -1754,12 +1756,25 @@ body{
 
 .bottom-nav button.active{
   color:var(--brand-primary);
-  font-weight:700;
-  transform:translateY(-2px);
+  transform:translateY(-3px);
+}
+
+.bottom-nav button.active svg{
+  stroke-width:2.8;
 }
 
 .bottom-nav button.active span{
-  font-weight:700;
+  font-weight:800;
+}
+
+.bottom-nav button.active::before{
+  content:"";
+  position:absolute;
+  top:-10px;
+  width:28px;
+  height:4px;
+  border-radius:999px;
+  background:var(--brand-accent);
 }
 
 @media (min-width: 900px){
