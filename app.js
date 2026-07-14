@@ -1644,7 +1644,7 @@ if(wordCount){
 
 console.log(window.wordsData);
 
-function showMainScreen(screenId) {
+function showMainScreen(screenId){
 
   document
     .getElementById('homeScreen')
@@ -1654,18 +1654,19 @@ function showMainScreen(screenId) {
     .getElementById('woordenlijst')
     .classList.add('hidden');
 
-  if(screenId === 'learnScreen'){
-    document
-      .getElementById('woordenlijst')
-      .classList.remove('hidden');
-  }
-
   if(screenId === 'homeScreen'){
     document
       .getElementById('homeScreen')
       .classList.remove('hidden');
   }
 
+  if(screenId === 'learnScreen'){
+    document
+      .getElementById('woordenlijst')
+      .classList.remove('hidden');
+
+    renderList();
+  }
 }
 
 init();
