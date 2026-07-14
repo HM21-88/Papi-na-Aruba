@@ -963,8 +963,21 @@ function markFlashGood(){
 }
 
 let currentQuiz=null;
-let quizGood=0;
-let quizBad=0;
+
+let quizGood =
+  Number(
+    localStorage.getItem(
+      'quizGood'
+    )
+  ) || 0;
+
+let quizBad =
+  Number(
+    localStorage.getItem(
+      'quizBad'
+    )
+  ) || 0;
+
 let quizAnswered=0;
 let quizRepeatQueue=[];
 let quizRepeatMinGap=3;
@@ -1033,16 +1046,49 @@ function getPepTalkHtml(){
   `;
 }
 function updateQuizStats(){
-  document.getElementById('quizScoreGood').textContent=`Goed: ${quizGood}`;
-  document.getElementById('quizScoreBad').textContent=`Fout: ${quizBad}`;
-  document.getElementById('quizQueueInfo').textContent=`Herhaling: ${quizRepeatQueue.length}`;
+
+  localStorage.setItem(
+    'quizGood',
+    quizGood
+  );
+
+  localStorage.setItem(
+    'quizBad',
+    quizBad
+  );
+
+  document.getElementById(
+    'quizScoreGood'
+  ).textContent =
+    `Goed: ${quizGood}`;
+
+  document.getElementById(
+    'quizScoreBad'
+  ).textContent =
+    `Fout: ${quizBad}`;
+
+  document.getElementById(
+    'quizQueueInfo'
+  ).textContent =
+    `Herhaling: ${quizRepeatQueue.length}`;
 }
 
 function resetQuizScore(){
-  quizGood=0;
-  quizBad=0;
-  quizAnswered=0;
+
+  quizGood = 0;
+  quizBad = 0;
+  quizAnswered = 0;
+
+  localStorage.removeItem(
+    'quizGood'
+  );
+
+  localStorage.removeItem(
+    'quizBad'
+  );
+
   updateQuizStats();
+
 }
 
 function resetQuizSession(){
