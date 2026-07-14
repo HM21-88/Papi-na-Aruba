@@ -1,3 +1,8 @@
+const APP_CONFIG = {
+variant: 'aw',
+subscription: 'free'
+};
+
 const data = window.wordsData || [];
 
 const weekSelections = {

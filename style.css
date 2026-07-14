@@ -68,6 +68,10 @@ header{
   border-bottom:1px solid var(--border-soft);
 }
 
+header .wrap{
+  padding:10px 16px;
+}
+
   .wrap{
     max-width:1200px;
     margin:0 auto;
@@ -81,8 +85,8 @@ header{
   }
 
   .logo{
-    width:88px;
-    height:58px;
+    width:60px;
+    height:40px;
     border-radius:10px;
     background:
       linear-gradient(
@@ -120,8 +124,8 @@ header{
   }
 
   .logo svg{
-    width:56px;
-    height:56px;
+    width:38px;
+    height:38px;
     display:block;
     position:relative;
     z-index:1;
@@ -658,21 +662,61 @@ header{
     border-color:var(--bad);
   }
 
-  .flash .big{
-    font-size:1.6rem;
-    font-weight:800;
-  }
+.flash .big{
+  font-size:1.6rem;
+  font-weight:800;
+}
 
-  .flash .small{
-    margin-top:10px;
-    color:var(--muted);
-  }
+.flash .small{
+  margin-top:10px;
+  color:var(--muted);
+}
 
-  @keyframes flashCardIn{
-    0%{
-      transform:translateX(24%) scale(.97);
-      opacity:0;
-    }
+/* ===== FLASHCARD V2 ===== */
+
+.flash-learning-context{
+  margin-bottom:20px;
+}
+
+.flash-week{
+  color:var(--brand-primary);
+  font-weight:800;
+  font-size:.95rem;
+  margin-bottom:4px;
+}
+
+.flash-topic{
+  font-size:1.45rem;
+  font-weight:800;
+  color:var(--text-primary);
+  margin-bottom:10px;
+}
+
+.flash-progress-text{
+  font-size:.95rem;
+  color:var(--text-secondary);
+  margin-bottom:8px;
+}
+
+.flash-progress-bar{
+  height:10px;
+  background:#E9E2D6;
+  border-radius:999px;
+  overflow:hidden;
+}
+
+.flash-progress-fill{
+  width:35%;
+  height:100%;
+  background:var(--brand-accent);
+}
+
+@keyframes flashCardIn{
+  0%{
+    transform:translateX(24%) scale(.97);
+    opacity:0;
+  }
+	
     100%{
       transform:translateX(0) scale(1);
       opacity:1;

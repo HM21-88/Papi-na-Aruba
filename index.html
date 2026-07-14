@@ -233,30 +233,35 @@
 </section>
 
 <section id="flashcards" class="panel hidden">
-  <div class="row">
-    <select id="flashDir" onchange="resetFlash()">
-      <option value="nl-pa">Nederlands → Papiamento</option>
-      <option value="pa-nl">Papiamento → Nederlands</option>
-    </select>
 
-    <div class="week-picker" data-week-picker="flashWeek">
-      <button class="week-picker-btn" type="button" onclick="toggleWeekPicker('flashWeek')">
-        <span class="week-picker-label" id="flashWeekLabelBtn">Alle weken</span>
-        <span class="week-picker-arrow">▾</span>
-      </button>
-      <div class="week-picker-menu" id="flashWeekMenu"></div>
-    </div>
+<div class="flash-learning-context">
 
-    <select id="flashType" onchange="resetFlash()"></select>
+<div
+  class="flash-week"
+  id="flashContextWeek">
+  Week
+</div>
 
-    <select id="flashOrder" onchange="resetFlash()">
-      <option value="list">Lijstvolgorde</option>
-      <option value="shuffle">Shuffle</option>
-    </select>
+<div
+  class="flash-topic"
+  id="flashContextTopic">
+  Woordenlijst
+</div>
+
+<div
+  class="flash-progress-text"
+  id="flashContextProgress">
+  Kaart 0 van 0
+</div>
+
+  <div class="flash-progress-bar">
+    <div class="flash-progress-fill"></div>
   </div>
 
+</div>
+
   <div class="stats" style="margin-top:12px">
-  <div class="stat" id="flashProgress">Kaart 0 van 0</div>
+  <!--<div class="stat" id="flashProgress">Kaart 0 van 0</div>-->
   <div class="stat" id="flashStatus">Geen actieve stapel</div>
   <div class="stat" id="flashGoodCount">Makkelijk: 0</div>
   <div class="stat" id="flashHardCount">Moeilijk: 0</div>
@@ -340,6 +345,31 @@
   <div class="panel" style="margin-top:12px">
     <div id="flashBack"></div>
   </div>
+  
+  <!-- FLASHCARD SETTINGS V2 -->
+
+  <div class="row">
+    <select id="flashDir" onchange="resetFlash()">
+      <option value="nl-pa">Nederlands → Papiamento</option>
+      <option value="pa-nl">Papiamento → Nederlands</option>
+    </select>
+
+    <div class="week-picker" data-week-picker="flashWeek">
+      <button class="week-picker-btn" type="button" onclick="toggleWeekPicker('flashWeek')">
+        <span class="week-picker-label" id="flashWeekLabelBtn">Alle weken</span>
+        <span class="week-picker-arrow">▾</span>
+      </button>
+      <div class="week-picker-menu" id="flashWeekMenu"></div>
+    </div>
+
+    <select id="flashType" onchange="resetFlash()"></select>
+
+    <select id="flashOrder" onchange="resetFlash()">
+      <option value="list">Lijstvolgorde</option>
+      <option value="shuffle">Shuffle</option>
+    </select>
+  </div>
+  
 </section>
 
 <section id="quiz" class="panel hidden">
