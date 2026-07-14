@@ -265,3 +265,63 @@ Nieuwe functionaliteit wordt alleen toegevoegd wanneer deze:
 1. Past binnen de productvisie
 2. Het leerproces verbetert
 3. Consistent is met bestaande patronen
+
+# Consistency Audit
+
+## Navigatie
+
+Huidig:
+
+- Home
+- Learn
+- Practice
+- Progress
+- Profile
+
+Doel:
+
+- Home
+- Leren
+- Oefenen
+- Voortgang
+- Profiel
+
+Status:
+🔄 Nog aanpassen
+
+---
+
+## Iconen
+
+Huidig:
+
+- Emoji's
+- SVG's
+- Mix van stijlen
+
+Doel:
+
+- Lucide
+
+Status:
+🔄 Nog aanpassen
+
+---
+
+## Kleuren
+
+Huidig:
+
+- brand-primary
+- brand-accent
+- flag-blue
+- flag-red
+- flag-yellow
+
+Doel:
+
+- brand-primary
+- brand-accent
+
+Status:
+🔄 Nog aanpassen
