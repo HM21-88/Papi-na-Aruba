@@ -2264,6 +2264,27 @@ if(
 
 }
 
+function getWordOfDay(){
+
+  const today =
+    new Date()
+      .toISOString()
+      .split('T')[0];
+
+  const hash =
+    today
+      .split('')
+      .reduce(
+        (a, c) => a + c.charCodeAt(0),
+        0
+      );
+
+  return data[
+    hash % data.length
+  ];
+
+}
+
 function updateHomeStats(){
 
   const weeklyProgress =
@@ -2296,10 +2317,70 @@ function updateHomeStats(){
   ).style.width =
     `${weeklyProgress}%`;
 
+document.getElementById(
+  'homeHeroScore'
+).textContent =
+  `${weeklyLearningDays.length}/7`;
+
+const word =
+  getWordOfDay();
+
+if(word){
+
   document.getElementById(
-    'homeHeroScore'
-  ).textContent =
-    `${weeklyProgress}%`;
+    'wordOfDay'
+  ).innerHTML =
+    `
+      <div class="word">
+        ${word.papiamento}
+      </div>
+
+      <div class="meta">
+        ${word.nederlands}
+      </div>
+    `;
+
+} 
+
+renderWeekTracker();
+
+}
+
+function renderWeekTracker(){
+
+  const days = [
+    'Ma',
+    'Di',
+    'Wo',
+    'Do',
+    'Vr',
+    'Za',
+    'Zo'
+  ];
+
+  const completed =
+    weeklyLearningDays.length;
+
+  document.getElementById(
+    'weekTracker'
+  ).innerHTML =
+    days.map(
+      (day, index) => `
+        <div class="week-day">
+
+          <div class="week-day-label">
+            ${day}
+          </div>
+
+          <div class="
+            week-day-dot
+            ${index < completed ? 'active' : ''}
+          ">
+          </div>
+
+        </div>
+      `
+    ).join('');
 
 }
 
