@@ -58,7 +58,7 @@ function updateScreenBar(
 toggleFlashSettingsButton(
   title === 'Flashcards' ||
   title === 'Quiz' ||
-  title === 'Learn'
+  title === 'Leren'
 );
 
 }
@@ -121,7 +121,7 @@ if(id==='flashcards'){
 } else if(id==='woordenlijst'){
 
   updateScreenBar(
-    'Learn',
+    'Leren',
     true,
     () => showMainScreen('homeScreen')
   );
@@ -506,23 +506,47 @@ const group=dayBlock===0 ? 'blue' : dayBlock===1 ? 'red' : 'yellow';
             <div class="meta">Varianten: ${escapeHtml(item.varianten || '-')}</div>
             <div class="meta">Uitspraak: ${escapeHtml(item.uitspraak || '-')}</div>
           </div>
-          <button class="word-toggle" type="button" onclick="toggleWordMeaning('${meaningId}', this)" aria-label="Betekenis tonen of verbergen">
-            ${meaningsHidden ? '🙈' : '👁️'}
-          </button>
+          <button class="word-toggle"
+        type="button"
+        onclick="toggleWordMeaning('${meaningId}', this)"
+        aria-label="Betekenis tonen of verbergen">
+
+  <i data-lucide="${
+    meaningsHidden
+      ? 'eye'
+      : 'eye-off'
+  }"></i>
+
+</button>
+
         </div>
       </div>
     `;
   }).join('');
 
   updateWordToggleIcons();
+  lucide.createIcons();
 }
 
 function toggleWordMeaning(id, btn){
-  const el=document.getElementById(id);
+
+  const el =
+    document.getElementById(id);
+
   if(!el) return;
-  const isHidden=el.style.display==='none';
-  el.style.display=isHidden ? '' : 'none';
-  btn.textContent=isHidden ? '👁️' : '🙈';
+
+  const isHidden =
+    el.style.display === 'none';
+
+  el.style.display =
+    isHidden ? '' : 'none';
+
+  btn.innerHTML =
+    isHidden
+      ? '<i data-lucide="eye-off"></i>'
+      : '<i data-lucide="eye"></i>';
+
+  lucide.createIcons();
 }
 
 let flashPool=[];
@@ -1288,21 +1312,56 @@ document.addEventListener('click', function(e){
 let meaningsHidden = false;
 
 function updateMeaningButtons(){
+
   const html = meaningsHidden
-    ? '<span aria-hidden="true">🙈</span><span class="toggle-text">Betekenis tonen</span>'
-    : '<span aria-hidden="true">👁️</span><span class="toggle-text">Betekenis verbergen</span>';
+    ? `
+      <i data-lucide="eye"></i>
+      <span class="toggle-text">
+        Betekenis tonen
+      </span>
+    `
+    : `
+      <i data-lucide="eye-off"></i>
+      <span class="toggle-text">
+        Betekenis verbergen
+      </span>
+    `;
 
-  const topBtn = document.getElementById('toggleMeaningsBtn');
-  const bottomBtn = document.getElementById('toggleMeaningsBtnBottom');
+  const topBtn =
+    document.getElementById(
+      'toggleMeaningsBtn'
+    );
 
-  if(topBtn) topBtn.innerHTML = html;
-  if(bottomBtn) bottomBtn.innerHTML = html;
+  const bottomBtn =
+    document.getElementById(
+      'toggleMeaningsBtnBottom'
+    );
+
+  if(topBtn){
+    topBtn.innerHTML = html;
+  }
+
+  if(bottomBtn){
+    bottomBtn.innerHTML = html;
+  }
+
+  lucide.createIcons();
 }
 
 function updateWordToggleIcons(){
-  document.querySelectorAll('.word-toggle').forEach(btn=>{
-    btn.textContent = meaningsHidden ? '🙈' : '👁️';
-  });
+
+  document
+    .querySelectorAll('.word-toggle')
+    .forEach(btn => {
+
+      btn.innerHTML =
+        meaningsHidden
+          ? '<i data-lucide="eye"></i>'
+          : '<i data-lucide="eye-off"></i>';
+
+    });
+
+  lucide.createIcons();
 }
 
 function toggleMeanings(){
@@ -2452,7 +2511,7 @@ function showMainScreen(screenId){
   if(screenId === 'learnScreen'){
 
   updateScreenBar(
-    'Learn',
+    'Leren',
     true,
     () => showMainScreen('homeScreen')
   );
@@ -2496,7 +2555,7 @@ if(screenId === 'progressScreen'){
 if(screenId === 'profileScreen'){
 
   updateScreenBar(
-    'Profile',
+    'Profiel',
     true,
     () => showMainScreen('homeScreen')
   );
