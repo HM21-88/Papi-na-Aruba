@@ -530,8 +530,21 @@ let flashIndex=0;
 let flashFlipped=false;
 let flashSeen=0;
 let flashProgressCount=0;
-let flashGoodCount=0;
-let flashHardCount=0;
+
+let flashGoodCount =
+  Number(
+    localStorage.getItem(
+      'flashGoodCount'
+    )
+  ) || 0;
+
+let flashHardCount =
+  Number(
+    localStorage.getItem(
+      'flashHardCount'
+    )
+  ) || 0;
+
 let flashAnimating=false;
 let flashAudioReady=false;
 let flashAudioCtx=null;
@@ -705,18 +718,48 @@ renderFlash();
 }
 
 function resetFlash(){
-  animateFlashReset(()=>{
+
+  animateFlashReset(() => {
+
     flashProgressCount=0;
-    flashGoodCount=0;
-    flashHardCount=0;
+
     buildFlashPool();
+
     updateFlashCounters();
+
   });
 }
 
+function resetFlashStats(){
+
+  flashGoodCount = 0;
+  flashHardCount = 0;
+
+  updateFlashCounters();
+
+}
+
 function updateFlashCounters(){
-  document.getElementById('flashGoodCount').textContent=`Makkelijk: ${flashGoodCount}`;
-  document.getElementById('flashHardCount').textContent=`Moeilijk: ${flashHardCount}`;
+
+  localStorage.setItem(
+    'flashGoodCount',
+    flashGoodCount
+  );
+
+  localStorage.setItem(
+    'flashHardCount',
+    flashHardCount
+  );
+
+  document.getElementById(
+    'flashGoodCount'
+  ).textContent =
+    `Makkelijk: ${flashGoodCount}`;
+
+  document.getElementById(
+    'flashHardCount'
+  ).textContent =
+    `Moeilijk: ${flashHardCount}`;
 }
 
 function updateFlashMeta(){
@@ -1196,6 +1239,56 @@ function updateMainNav(sectionId){
     btn.classList.toggle('active', isActive);
     btn.setAttribute('aria-current', isActive ? 'page' : 'false');
   });
+}
+
+function updateBottomNav(screenId){
+
+  const nav =
+    document.getElementById(
+      'bottomNav'
+    );
+
+  if(!nav){
+    return;
+  }
+
+  const buttons =
+    nav.querySelectorAll(
+      'button'
+    );
+
+  buttons.forEach(btn => {
+
+    const onclickValue =
+      btn.getAttribute(
+        'onclick'
+      ) || '';
+
+    const isActive =
+      onclickValue.includes(
+        `'${screenId}'`
+      );
+
+    btn.classList.toggle(
+      'active',
+      isActive
+    );
+
+  });
+
+  if(screenId === 'woordenlijst'){
+
+    const learnBtn =
+      nav.querySelector(
+        `button[onclick*="learnScreen"]`
+      );
+
+    if(learnBtn){
+      learnBtn.classList.add('active');
+    }
+
+  }
+
 }
 
 // data voor pagina voorzetseltrainer
@@ -1938,6 +2031,8 @@ if(wordCount){
 console.log(window.wordsData);
 
 function showMainScreen(screenId){
+
+	updateBottomNav(screenId);
 
   [
   'homeScreen',

@@ -1740,17 +1740,27 @@ body{
   gap:8px;
 }
 
+.bottom-nav button.active{
+  color:var(--brand-primary);
+  font-weight:700;
+  transform:translateY(-2px);
+}
+
+.bottom-nav button.active span{
+  font-weight:700;
+}
+
 @media (min-width: 900px){
 
-.flash-settings-panel{
-  max-width:500px;
-}
+  .flash-settings-panel{
+    max-width:500px;
+  }
 
-#flashcards,
-#quiz,
-#woordenlijst{
-  max-width:900px;
-  margin:0 auto;
-}
+  #flashcards,
+  #quiz,
+  #woordenlijst{
+    max-width:900px;
+    margin:0 auto;
+  }
 
 }
