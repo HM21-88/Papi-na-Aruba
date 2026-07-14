@@ -841,22 +841,6 @@ header{
     border-radius:6px;
   }
 
-  .flag-stripe{
-    height:8px;
-    border-radius:999px;
-    margin:10px 0 14px;
-    background:
-      linear-gradient(
-        90deg,
-        var(--flag-blue) 0%,
-        var(--flag-blue) 33.33%,
-        var(--flag-red) 33.33%,
-        var(--flag-red) 66.66%,
-        var(--flag-yellow) 66.66%,
-        var(--flag-yellow) 100%
-      );
-  }
-
 .prep-icon{
   margin-right:6px;
 }
