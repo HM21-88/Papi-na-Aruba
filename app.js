@@ -2081,20 +2081,20 @@ function updateProgressScreen(){
   ).textContent =
     tenseBestStreak;
 
-  document.getElementById(
-    'progressWords'
-  ).textContent =
-    data.length;
+document.getElementById(
+  'progressWords'
+).textContent =
+  data.length;
 
-  document.getElementById(
-    'progressFlashTotal'
-  ).textContent =
-    flashGoodCount + flashHardCount;
+document.getElementById(
+  'progressPrepBestOverview'
+).textContent =
+  prepBestStreak;
 
-  document.getElementById(
-    'progressQuizTotal'
-  ).textContent =
-    quizGood + quizBad;
+document.getElementById(
+  'progressTenseBestOverview'
+).textContent =
+  tenseBestStreak;
 
 }
 
