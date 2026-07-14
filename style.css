@@ -1505,6 +1505,7 @@ body{
 
 .practice-card:hover{
   transform:translateY(-2px);
+  border-color:var(--brand-primary);
 }
 
 .practice-icon{
@@ -1513,8 +1514,8 @@ body{
 }
 
 .practice-icon svg{
-  width:36px;
-  height:36px;
+  width:42px;
+  height:42px;
   stroke-width:2;
 }
 
