@@ -1163,6 +1163,16 @@ header .wrap{
   cursor:pointer;
 }
 
+.bottom-nav svg{
+  width:22px;
+  height:22px;
+  stroke-width:2;
+}
+
+.bottom-nav button span{
+  font-size:.75rem;
+}
+
 .bottom-nav{
   position:fixed;
   bottom:0;

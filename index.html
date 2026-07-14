@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Papi na ABC</title>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -947,29 +950,29 @@
   id="bottomNav">
 
   <button onclick="showMainScreen('homeScreen')">
-    🏠
+    <i data-lucide="house"></i>
     <span>Home</span>
   </button>
 
   <button onclick="showMainScreen('learnScreen')">
-    📚
+    <i data-lucide="book-open"></i>
     <span>Leren</span>
   </button>
 
   <button onclick="showMainScreen('practiceScreen')">
-  ✏️
-  <span>Oefenen</span>
-</button>
+    <i data-lucide="brain"></i>
+    <span>Oefenen</span>
+  </button>
 
   <button onclick="showMainScreen('progressScreen')">
-  📈
-  <span>Voortgang</span>
-</button>
+    <i data-lucide="chart-column"></i>
+    <span>Voortgang</span>
+  </button>
 
   <button onclick="showMainScreen('profileScreen')">
-  👤
-  <span>Profiel</span>
-</button>
+    <i data-lucide="user"></i>
+    <span>Profiel</span>
+  </button>
 
 </nav>
 
@@ -977,6 +980,10 @@
 <script src="data/prepositions.js"></script>
 <script src="data/tenses.js"></script>
 <script src="app.js"></script>
+
+<script>
+  lucide.createIcons();
+</script>
 
 </body>
 </html>

@@ -2467,7 +2467,7 @@ function showMainScreen(screenId){
   if(screenId === 'practiceScreen'){
 	  
 	 updateScreenBar(
-		'Study',
+		'Oefenen',
 		true,
 	() => showMainScreen('homeScreen')
 	);
@@ -2480,7 +2480,7 @@ function showMainScreen(screenId){
 if(screenId === 'progressScreen'){
 
   updateScreenBar(
-    'Progress',
+    'Voortgang',
     true,
     () => showMainScreen('homeScreen')
   );
