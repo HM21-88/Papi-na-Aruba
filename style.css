@@ -63,10 +63,40 @@ body{
   color:var(--text-primary);
 }
 
-header{
-  background:rgba(255,255,255,.92);
+.screen-bar{
+  height:64px;
+
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  padding:0 16px;
+
+  background:#fff;
+
   border-bottom:1px solid var(--border-soft);
 }
+
+.back-btn{
+  width:42px;
+  height:42px;
+
+  border:none;
+  border-radius:12px;
+
+  background:#F8F5EF;
+
+  font-size:1.3rem;
+
+  cursor:pointer;
+}
+
+.screen-title{
+  font-size:1.1rem;
+  font-weight:800;
+  color:var(--text-primary);
+}
+``
 
 header .wrap{
   padding:10px 16px;
@@ -1174,9 +1204,10 @@ body{
     .action-btn .label{
       display:none;
     }
-    .row{
-  flex-direction:column;
-  gap:6px;
+  
+	.row{
+	flex-direction:column;
+	gap:6px;
 }
 
 /* ===== OEFENINGKEUZE MOBIEL ===== */
@@ -1369,8 +1400,55 @@ body{
   padding:0;
 }
 
+}
+  
+/* ===== PRACTICE SCREEN V2 ===== */
 
- }
+.practice-grid{
+  display:grid;
+  gap:14px;
+}
+
+.practice-card{
+  background:#fff;
+  border:1px solid var(--border-soft);
+  border-radius:20px;
+  padding:18px;
+  box-shadow:var(--shadow-soft);
+  text-align:left;
+  cursor:pointer;
+  transition:all .2s ease;
+}
+
+.practice-card:hover{
+  transform:translateY(-2px);
+}
+
+.practice-icon{
+  font-size:2rem;
+  margin-bottom:10px;
+}
+
+.practice-title{
+  font-size:1.1rem;
+  font-weight:800;
+  color:var(--text-primary);
+  margin-bottom:4px;
+}
+
+.practice-subtitle{
+  color:var(--text-secondary);
+  font-size:.9rem;
+}
+
+@media (min-width:768px){
+
+  .practice-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+}
+
 /* ===== SPRINT 2 HOME REDESIGN ===== */
 
 #homeScreen{

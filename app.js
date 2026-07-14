@@ -12,6 +12,18 @@ const weekSelections = {
 };
 
 function showSection(id){
+	
+	const practiceScreen =
+  document.getElementById(
+    'practiceScreen'
+  );
+
+if(practiceScreen){
+  practiceScreen.classList.add(
+    'hidden'
+  );
+}
+	
   ['woordenlijst','flashcards','quiz','oefeningen'].forEach(sectionId=>{
     const el=document.getElementById(sectionId);
     if(el){

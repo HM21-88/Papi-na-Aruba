@@ -7,32 +7,20 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <div class="wrap">
-    <div class="brand">
-      <div class="logo" aria-label="Shoco logo">
-        <svg viewBox="0 0 64 64" aria-hidden="true">
-          <circle cx="24" cy="30" r="11" fill="#8b5e34"/>
-          <circle cx="40" cy="30" r="11" fill="#8b5e34"/>
-          <circle cx="24" cy="30" r="6.5" fill="#ffffff"/>
-          <circle cx="40" cy="30" r="6.5" fill="#ffffff"/>
-          <circle cx="24" cy="30" r="3" fill="#111827"/>
-          <circle cx="40" cy="30" r="3" fill="#111827"/>
-          <path d="M29 39 L32 43 L35 39 Z" fill="#f59e0b"/>
-          <path d="M16 21 L22 16 L24 24 Z" fill="#6b4423"/>
-          <path d="M48 21 L42 16 L40 24 Z" fill="#6b4423"/>
-        </svg>
-      </div>
+<header class="screen-bar">
 
-      <div>
-        <h1>Papi na ABC</h1>
-        <div class="sub"> Leer Papiamento & Papiamentu
-		</div>
-    </div>
-	
-	</div>
+  <button
+    class="back-btn"
+    onclick="showMainScreen('practiceScreen')">
 
+    ←
+
+  </button>
+
+  <div class="screen-title" id="screenTitle">
+    Study
   </div>
+
 </header>
 
 <main class="wrap">
@@ -129,25 +117,60 @@
 
 <section id="practiceScreen" class="panel hidden">
 
-  <h2>✏️ Practice</h2>
+  <h2>Study</h2>
 
-  <p>Kies een oefenvorm.</p>
+  <p class="home-subtitle">
+    Kies hoe je vandaag wilt oefenen.
+  </p>
 
-  <div class="actions">
+  <div class="practice-grid">
 
-    <button class="btn"
+    <button
+      class="practice-card"
       onclick="showSection('flashcards')">
-      🎴 Flashcards
+
+      <div class="practice-icon">🎴</div>
+
+      <div class="practice-title">
+        Flashcards
+      </div>
+
+      <div class="practice-subtitle">
+        Woorden oefenen
+      </div>
+
     </button>
 
-    <button class="btn secondary"
+    <button
+      class="practice-card"
       onclick="showSection('quiz')">
-      ❓ Quiz
+
+      <div class="practice-icon">❓</div>
+
+      <div class="practice-title">
+        Quiz
+      </div>
+
+      <div class="practice-subtitle">
+        Herhaal woorden
+      </div>
+
     </button>
 
-    <button class="btn white-outline"
+    <button
+      class="practice-card"
       onclick="showSection('oefeningen')">
-      📚 Trainers
+
+      <div class="practice-icon">📚</div>
+
+      <div class="practice-title">
+        Trainers
+      </div>
+
+      <div class="practice-subtitle">
+        Grammatica
+      </div>
+
     </button>
 
   </div>
