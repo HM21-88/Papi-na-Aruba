@@ -11,6 +11,36 @@ const weekSelections = {
   quizWeek: ['alle']
 };
 
+function updateScreenBar(
+  title,
+  showBack = true,
+  backAction = null
+){
+
+  const titleEl =
+    document.getElementById(
+      'screenTitle'
+    );
+
+  const backBtn =
+    document.getElementById(
+      'backBtn'
+    );
+
+  if(titleEl){
+    titleEl.textContent = title;
+  }
+
+  if(backBtn){
+
+    backBtn.style.display =
+      showBack ? 'flex' : 'none';
+
+    backBtn.onclick =
+      backAction || null;
+  }
+}
+
 function showSection(id){
 	
 	const practiceScreen =
@@ -35,22 +65,41 @@ if(practiceScreen){
   playFlashSound('nav');
 
 if(id==='flashcards'){
+	
+	updateScreenBar(
+		'Flashcards',
+		true,
+	() => showMainScreen('practiceScreen')
+	);
 
   renderFlash();
 
 } else if(id==='quiz'){
+
+  updateScreenBar(
+    'Quiz',
+    true,
+    () => showMainScreen('practiceScreen')
+  );
 
   updateQuizStats();
 
   if(!currentQuiz){
     newQuiz();
   }
+``
 
 } else if(id==='woordenlijst'){
 
   renderList();
 
 } else if(id==='oefeningen'){
+
+  updateScreenBar(
+    'Trainers',
+    true,
+    () => showMainScreen('practiceScreen')
+  );
 
   showExercise('voorzetsels');
 
@@ -1748,20 +1797,40 @@ function showMainScreen(screenId){
   });
 
   if(screenId === 'homeScreen'){
+	  
+	 updateScreenBar(
+		'Home',
+		false
+	);
+	  
     document
       .getElementById('homeScreen')
       .classList.remove('hidden');
   }
 
   if(screenId === 'learnScreen'){
-    document
-      .getElementById('woordenlijst')
-      .classList.remove('hidden');
 
-    renderList();
-  }
+  updateScreenBar(
+    'Learn',
+    true,
+    () => showMainScreen('homeScreen')
+  );
+
+  document
+    .getElementById('woordenlijst')
+    .classList.remove('hidden');
+
+  renderList();
+}
 
   if(screenId === 'practiceScreen'){
+	  
+	 updateScreenBar(
+		'Study',
+		true,
+	() => showMainScreen('homeScreen')
+	);
+	  
     document
       .getElementById('practiceScreen')
       .classList.remove('hidden');
