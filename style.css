@@ -96,7 +96,32 @@ body{
   font-weight:800;
   color:var(--text-primary);
 }
-``
+
+.header-icon-btn{
+
+  display:none;
+
+  margin-left:auto;
+
+  width:42px;
+  height:42px;
+
+  border:none;
+  border-radius:12px;
+
+  background:#F8F5EF;
+
+  font-size:1.2rem;
+
+  cursor:pointer;
+
+  align-items:center;
+  justify-content:center;
+}
+
+.header-icon-btn:hover{
+  background:#EDE7DD;
+}
 
 header .wrap{
   padding:10px 16px;
@@ -779,6 +804,32 @@ header .wrap{
 
 .flash-example-nl{
   color:var(--text-secondary);
+}
+
+.flash-header-row{
+  display:flex;
+  justify-content:flex-end;
+  margin-bottom:12px;
+}
+
+.flash-settings-btn{
+  border:1px solid var(--border-soft);
+  background:#fff;
+  color:var(--text-primary);
+
+  border-radius:12px;
+
+  padding:10px 14px;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+  box-shadow:var(--shadow-soft);
+}
+
+.flash-settings-btn:hover{
+  background:#F8F5EF;
 }
 
 @keyframes flashCardIn{
@@ -1578,4 +1629,8 @@ body{
   margin-top:8px;
   color:var(--muted);
   font-size:.9rem;
+}
+
+#flashSettingsPanel.hidden{
+  display:none !important;
 }

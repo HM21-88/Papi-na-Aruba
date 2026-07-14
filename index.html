@@ -25,7 +25,17 @@
 
   </div>
 
+  <button
+    class="header-icon-btn"
+    id="flashSettingsHeaderBtn"
+    onclick="toggleFlashSettings()">
+
+    ⚙
+
+  </button>
+
 </header>
+
 
 <main class="wrap">
 
@@ -366,9 +376,12 @@
     </button>
   </div>
   
-  <!-- FLASHCARD SETTINGS V2 -->
+ <!-- FLASHCARD SETTINGS V2 -->
 
-  <div class="row">
+<div
+  class="row flash-settings-panel hidden"
+  id="flashSettingsPanel">
+  
     <select id="flashDir" onchange="resetFlash()">
       <option value="nl-pa">Nederlands → Papiamento</option>
       <option value="pa-nl">Papiamento → Nederlands</option>

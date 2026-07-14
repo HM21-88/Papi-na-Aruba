@@ -11,6 +11,21 @@ const weekSelections = {
   quizWeek: ['alle']
 };
 
+function toggleFlashSettingsButton(show){
+
+  const btn =
+    document.getElementById(
+      'flashSettingsHeaderBtn'
+    );
+
+  if(!btn){
+    return;
+  }
+
+  btn.style.display =
+    show ? 'flex' : 'none';
+}
+
 function updateScreenBar(
   title,
   showBack = true,
@@ -39,6 +54,11 @@ function updateScreenBar(
     backBtn.onclick =
       backAction || null;
   }
+  
+  toggleFlashSettingsButton(
+  title === 'Flashcards'
+);
+
 }
 
 function showSection(id){
@@ -87,7 +107,6 @@ if(id==='flashcards'){
   if(!currentQuiz){
     newQuiz();
   }
-``
 
 } else if(id==='woordenlijst'){
 
@@ -218,6 +237,24 @@ function toggleWeekPicker(id){
     const isCurrent = picker.getAttribute('data-week-picker') === id;
     picker.classList.toggle('open', isCurrent ? !picker.classList.contains('open') : false);
   });
+}
+
+function toggleFlashSettings(){
+
+  const panel =
+    document.getElementById(
+      'flashSettingsPanel'
+    );
+
+  if(!panel){
+
+    return;
+  }
+
+  panel.classList.toggle(
+    'hidden'
+  );
+
 }
 
 function closeWeekPickers(){
