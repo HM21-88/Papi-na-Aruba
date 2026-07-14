@@ -55,8 +55,10 @@ function updateScreenBar(
       backAction || null;
   }
   
-  toggleFlashSettingsButton(
-  title === 'Flashcards'
+toggleFlashSettingsButton(
+  title === 'Flashcards' ||
+  title === 'Quiz' ||
+  title === 'Learn'
 );
 
 }
@@ -109,6 +111,12 @@ if(id==='flashcards'){
   }
 
 } else if(id==='woordenlijst'){
+
+  updateScreenBar(
+    'Learn',
+    true,
+    () => showMainScreen('homeScreen')
+  );
 
   renderList();
 
@@ -213,23 +221,81 @@ function getAllWeeks(){
 }
 
 function fillWeekPicker(id){
-  const menu=document.getElementById(`${id}Menu`);
-  const weeks=getAllWeeks();
 
-  menu.innerHTML = `
-    <label class="week-option">
-      <input type="checkbox" value="alle" ${weekSelections[id].includes('alle') ? 'checked' : ''} onchange="toggleWeekValue('${id}','alle')">
-      <span>Alle weken</span>
-    </label>
-    ${weeks.map(week => `
-      <label class="week-option">
-        <input type="checkbox" value="${week}" ${weekSelections[id].includes(String(week)) ? 'checked' : ''} onchange="toggleWeekValue('${id}','${week}')">
-        <span>Week ${week}</span>
-      </label>
-    `).join('')}
-  `;
+  const menu =
+    document.getElementById(
+      `${id}Menu`
+    );
 
-  updateWeekPickerLabel(id);
+  if(!menu){
+    return;
+  }
+
+  const weeks =
+    getAllWeeks();
+
+  menu.innerHTML = '';
+
+  const allButton =
+    document.createElement(
+      'button'
+    );
+
+  allButton.type = 'button';
+
+  allButton.className =
+    `week-chip ${
+      weekSelections[id].includes('alle')
+        ? 'active'
+        : ''
+    }`;
+
+  allButton.textContent =
+    'Alle';
+
+  allButton.onclick = () =>
+    toggleWeekValue(
+      id,
+      'alle'
+    );
+
+  menu.appendChild(
+    allButton
+  );
+
+  weeks.forEach(week => {
+
+    const button =
+      document.createElement(
+        'button'
+      );
+
+    button.type = 'button';
+
+    button.className =
+      `week-chip ${
+        weekSelections[id].includes(
+          String(week)
+        )
+          ? 'active'
+          : ''
+      }`;
+
+    button.textContent =
+      week;
+
+    button.onclick = () =>
+      toggleWeekValue(
+        id,
+        String(week)
+      );
+
+    menu.appendChild(
+      button
+    );
+
+  });
+
 }
 
 function toggleWeekPicker(id){
@@ -241,19 +307,47 @@ function toggleWeekPicker(id){
 
 function toggleFlashSettings(){
 
-  const panel =
+  const flash =
     document.getElementById(
       'flashSettingsPanel'
     );
 
-  if(!panel){
+  const quiz =
+    document.getElementById(
+      'quizSettingsPanel'
+    );
 
-    return;
+  const list =
+    document.getElementById(
+      'listSettingsPanel'
+    );
+
+  if(
+    flash &&
+    !document
+      .getElementById('flashcards')
+      .classList.contains('hidden')
+  ){
+    flash.classList.toggle('hidden');
   }
 
-  panel.classList.toggle(
-    'hidden'
-  );
+  if(
+    quiz &&
+    !document
+      .getElementById('quiz')
+      .classList.contains('hidden')
+  ){
+    quiz.classList.toggle('hidden');
+  }
+
+  if(
+    list &&
+    !document
+      .getElementById('woordenlijst')
+      .classList.contains('hidden')
+  ){
+    list.classList.toggle('hidden');
+  }
 
 }
 
