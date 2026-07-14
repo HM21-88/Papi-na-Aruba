@@ -1,12 +1,12 @@
-# Papi na Aruba - words, grammar and exercises
+# Papi na ABC - words, grammar and exercises
 
-Papi na Aruba is een interactieve webapp voor het leren van Papiamento; de taal die specifiek op Aruba wordt gesproken. De applicatie combineert verschillende leermethoden in één omgeving, zodat gebruikers zowel woordenschat als grammatica kunnen oefenen.
+Papi na ABC is een interactieve webapp voor het leren van Papiamento; de taal die specifiek op Aruba wordt gesproken en Papiamentu; de variant die op Curacao en Bonaire wordt gesproken. De applicatie combineert verschillende leermethoden in één omgeving, zodat gebruikers zowel woordenschat als grammatica kunnen oefenen.
 
 ---
 
 ## Overzicht
 
-Arubaans Leren helpt gebruikers om Papiamento te leren via:
+Papi na ABC helpt gebruikers om Papiamento/Papiamentu te leren via:
 
 - 📚 Woordenlijsten
 - 🃏 Flashcards
@@ -211,7 +211,7 @@ De applicatie is geoptimaliseerd voor:
 
 ## Doel van het project
 
-Het doel van Papi na Aruba is om een laagdrempelige en effectieve omgeving te hebben voor het leren van Papiamento. Ik en mijn partner leren papiamento en zo hebben we altijd alle stof bij de hand.
+Het doel van Papi na ABC is om een laagdrempelige en effectieve omgeving te hebben voor het leren van Papiamento en Papiamentu. Ik en mijn partner leren papiamento en zo hebben we altijd alle stof bij de hand.
 
 Door verschillende leermethoden te combineren kunnen gebruikers zowel woordenschat als grammatica oefenen, terwijl scores, streaks en persoonlijke records zorgen voor extra motivatie.
 
