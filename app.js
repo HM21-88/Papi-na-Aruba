@@ -563,6 +563,20 @@ let lastLearningDate =
   localStorage.getItem(
     'lastLearningDate'
   ) || null;
+  
+let weeklyLearningDays =
+  JSON.parse(
+    localStorage.getItem(
+      'weeklyLearningDays'
+    ) || '[]'
+  );
+
+let storedWeekNumber =
+  Number(
+    localStorage.getItem(
+      'storedWeekNumber'
+    )
+  ) || 0;  
 
 let flashAnimating = false;
 let flashAudioReady = false;
@@ -2121,12 +2135,67 @@ document.getElementById(
 
 }
 
+function getWeekNumber(date){
+
+  const startOfYear =
+    new Date(
+      date.getFullYear(),
+      0,
+      1
+    );
+
+  const days =
+    Math.floor(
+      (date - startOfYear) /
+      86400000
+    );
+
+  return Math.ceil(
+    (days +
+      startOfYear.getDay() +
+      1) / 7
+  );
+
+}
+
 function registerLearningActivity(){
 
+const now = new Date();
+
+const currentWeekNumber =
+  getWeekNumber(now);
+
+if(
+  storedWeekNumber !==
+  currentWeekNumber
+){
+
+  weeklyLearningDays = [];
+
+  storedWeekNumber =
+    currentWeekNumber;
+
+  localStorage.setItem(
+    'storedWeekNumber',
+    storedWeekNumber
+  );
+
+}
+
   const today =
-    new Date()
+    now
       .toISOString()
       .split('T')[0];
+	  
+	if(
+  !weeklyLearningDays.includes(
+    today
+  )
+){
+  weeklyLearningDays.push(
+    today
+  );
+}
 
   if(!lastLearningDate){
 
@@ -2184,6 +2253,13 @@ function registerLearningActivity(){
     lastLearningDate
   );
   
+  localStorage.setItem(
+  'weeklyLearningDays',
+  JSON.stringify(
+    weeklyLearningDays
+  )
+);
+  
   updateHomeStats();
 
 }
@@ -2205,6 +2281,26 @@ function updateHomeStats(){
   ).textContent =
     bestDailyStreak;
 
+  document.getElementById(
+    'homeHeroSubtitle'
+  ).textContent =
+    `${data.length} woorden beschikbaar`;
+
+document.getElementById(
+  'homeHeroStreak'
+).textContent =
+  `Dagreeks: ${currentDailyStreak}`;
+
+const progress =
+  Math.min(
+    currentDailyStreak * 10,
+    100
+  );
+
+document.getElementById(
+  'homeHeroProgress'
+).style.width =
+  `${progress}%`;
 }
 
 function init(){
