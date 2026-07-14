@@ -1508,8 +1508,14 @@ body{
 }
 
 .practice-icon{
-  font-size:2rem;
   margin-bottom:10px;
+  color:var(--brand-primary);
+}
+
+.practice-icon svg{
+  width:36px;
+  height:36px;
+  stroke-width:2;
 }
 
 .practice-title{
