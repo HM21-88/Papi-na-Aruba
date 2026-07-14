@@ -545,9 +545,28 @@ let flashHardCount =
     )
   ) || 0;
 
-let flashAnimating=false;
-let flashAudioReady=false;
-let flashAudioCtx=null;
+let currentDailyStreak =
+  Number(
+    localStorage.getItem(
+      'currentDailyStreak'
+    )
+  ) || 0;
+
+let bestDailyStreak =
+  Number(
+    localStorage.getItem(
+      'bestDailyStreak'
+    )
+  ) || 0;
+
+let lastLearningDate =
+  localStorage.getItem(
+    'lastLearningDate'
+  ) || null;
+
+let flashAnimating = false;
+let flashAudioReady = false;
+let flashAudioCtx = null;
 function getFlashBox(){
   return document.getElementById('flashBox');
 }
@@ -939,7 +958,8 @@ function markFlashHard(){
 
   animateFlashTransition('left', ()=>{
     flashProgressCount++;
-    flashHardCount++;
+    registerLearningActivity();
+	flashHardCount++;
     const card=flashPool.splice(flashIndex,1)[0];
     const insertAt=Math.min(flashIndex+3, flashPool.length);
     flashPool.splice(insertAt,0,card);
@@ -953,7 +973,8 @@ function markFlashGood(){
 
   animateFlashTransition('left', ()=>{
     flashProgressCount++;
-    flashGoodCount++;
+    registerLearningActivity();
+	flashGoodCount++;
     const card=flashPool.splice(flashIndex,1)[0];
     flashPool.push(card);
     if(flashIndex>=flashPool.length){ flashIndex=0; }
@@ -1184,7 +1205,8 @@ function checkQuiz(){
   quizAnswered++;
 
   if(ok){
-    quizGood++;
+    registerLearningActivity();
+	quizGood++;
     const pepHtml = shouldShowPepTalk() ? getPepTalkHtml() : '';
 
     document.getElementById('quizF').innerHTML=`
@@ -1197,7 +1219,8 @@ function checkQuiz(){
       <div><strong>Week:</strong> ${currentQuiz.week}</div>
     `;
   } else {
-    quizBad++;
+    registerLearningActivity();
+	quizBad++;
     const pepHtml = shouldShowPepTalk() ? getPepTalkHtml() : '';
     scheduleQuizRepeat(currentQuiz);
 
@@ -2098,6 +2121,92 @@ document.getElementById(
 
 }
 
+function registerLearningActivity(){
+
+  const today =
+    new Date()
+      .toISOString()
+      .split('T')[0];
+
+  if(!lastLearningDate){
+
+    currentDailyStreak = 1;
+
+  }else{
+
+    const last =
+      new Date(lastLearningDate);
+
+    const current =
+      new Date(today);
+
+    const diffDays =
+      Math.floor(
+        (current - last) /
+        (1000 * 60 * 60 * 24)
+      );
+
+    if(diffDays === 1){
+
+      currentDailyStreak++;
+
+    }else if(diffDays > 1){
+
+      currentDailyStreak = 1;
+
+    }
+
+  }
+
+  lastLearningDate =
+    today;
+
+  if(
+    currentDailyStreak >
+    bestDailyStreak
+  ){
+    bestDailyStreak =
+      currentDailyStreak;
+  }
+
+  localStorage.setItem(
+    'currentDailyStreak',
+    currentDailyStreak
+  );
+
+  localStorage.setItem(
+    'bestDailyStreak',
+    bestDailyStreak
+  );
+
+  localStorage.setItem(
+    'lastLearningDate',
+    lastLearningDate
+  );
+  
+  updateHomeStats();
+
+}
+
+function updateHomeStats(){
+
+  document.getElementById(
+    'homeWordCount'
+  ).textContent =
+    data.length;
+
+  document.getElementById(
+    'homeCurrentStreak'
+  ).textContent =
+    currentDailyStreak;
+
+  document.getElementById(
+    'homeBestStreak'
+  ).textContent =
+    bestDailyStreak;
+
+}
+
 function init(){
   const wordCount =
   document.getElementById('wordCount');
@@ -2121,6 +2230,7 @@ if(wordCount){
   showMainScreen('homeScreen');
   updatePrepositionStats();
   updateTenseStats();
+  updateHomeStats();
 }
 
 console.log(window.wordsData);
