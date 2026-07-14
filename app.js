@@ -1650,13 +1650,17 @@ console.log(window.wordsData);
 function showMainScreen(screenId){
 
   [
-    'homeScreen',
-    'woordenlijst',
-    'practiceScreen',
-    'flashcards',
-    'quiz',
-    'oefeningen'
-  ].forEach(id => {
+  'homeScreen',
+  'woordenlijst',
+  'practiceScreen',
+  'progressScreen',
+  'profileScreen',
+  'flashcards',
+  'quiz',
+  'oefeningen'
+]
+
+.forEach(id => {
 
     const el = document.getElementById(id);
 
@@ -1685,6 +1689,19 @@ function showMainScreen(screenId){
       .getElementById('practiceScreen')
       .classList.remove('hidden');
   }
+  
+  if(screenId === 'progressScreen'){
+  document
+    .getElementById('progressScreen')
+    .classList.remove('hidden');
+}
+
+if(screenId === 'profileScreen'){
+  document
+    .getElementById('profileScreen')
+    .classList.remove('hidden');
+}
+  
 }
 
 init();

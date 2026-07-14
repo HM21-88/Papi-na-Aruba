@@ -157,6 +157,46 @@
 
 </section>
 
+<section id="progressScreen" class="panel hidden">
+
+  <h2>📈 Voortgang</h2>
+
+  <p>Binnenkort beschikbaar.</p>
+
+  <div class="panel">
+    <strong>Hier komt straks:</strong>
+
+    <ul>
+      <li>Woorden geleerd</li>
+      <li>Quizscores</li>
+      <li>Streaks</li>
+      <li>Dagdoelen</li>
+      <li>Voortgang per week</li>
+    </ul>
+  </div>
+
+</section>
+
+<section id="profileScreen" class="panel hidden">
+
+  <h2>👤 Profiel</h2>
+
+  <p>Binnenkort beschikbaar.</p>
+
+  <div class="panel">
+    <strong>Hier komt straks:</strong>
+
+    <ul>
+      <li>Papiamento / Papiamentu</li>
+      <li>Woorden per week</li>
+      <li>Thema's</li>
+      <li>Leerdoelen</li>
+      <li>Instellingen</li>
+    </ul>
+  </div>
+
+</section>
+
  <section id="woordenlijst" class="panel hidden">
   <div class="row">
     <input id="search" placeholder="Zoek woord, betekenis, variant of type..." oninput="renderList()" />
@@ -678,15 +718,15 @@
   <span>Practice</span>
 </button>
 
-  <button>
-    📈
-    <span>Progress</span>
-  </button>
+  <button onclick="showMainScreen('progressScreen')">
+  📈
+  <span>Progress</span>
+</button>
 
-  <button>
-    👤
-    <span>Profile</span>
-  </button>
+  <button onclick="showMainScreen('profileScreen')">
+  👤
+  <span>Profile</span>
+</button>
 
 </nav>
 
