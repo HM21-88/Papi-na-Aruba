@@ -82,52 +82,94 @@
 
 <main class="wrap">
 
-<section id="homeScreen" class="panel">
-  <h2>🐦 Papi na ABC</h2>
+<section id="homeScreen">
 
-  <p>Bon dia Hugo 👋</p>
+  <h2>Bon dia 👋</h2>
 
-  <div class="panel">
-    <h3>Continue Learning</h3>
-    <p>Week 1 t/m 4 beschikbaar</p>
-    <p>416 woorden beschikbaar</p>
+  <p class="home-subtitle">
+    Klaar om vandaag verder te leren?
+  </p>
 
-    <button class="btn" onclick="showMainScreen('learnScreen')">
-      Verder leren
-    </button>
-  </div>
+  <div class="hero-card">
 
-  <div class="stats">
-    <div class="stat">
-      📚 416 woorden
+    <div class="hero-header">
+
+      <div>
+
+        <div class="hero-title">
+          Continue Learning
+        </div>
+
+        <div class="hero-lesson">
+          Week 1 • Basiswoorden
+        </div>
+
+      </div>
+
+      <div class="hero-score">
+        65%
+      </div>
+
     </div>
 
-    <div class="stat">
-      🎯 2 trainers
+    <div class="hero-progress">
+
+      <div class="hero-progress-fill"></div>
+
     </div>
 
-    <div class="stat">
-      📝 4 modules
+    <button
+      class="hero-btn"
+      onclick="showMainScreen('learnScreen')">
+
+      📚 Verder leren
+
+    </button>
+
+  </div>
+
+  <h3>Jouw statistieken</h3>
+
+  <div class="stats-grid">
+
+    <div class="stat-card">
+
+      <div class="stat-number">
+        416
+      </div>
+
+      <div class="stat-label">
+        Woorden
+      </div>
+
     </div>
+
+    <div class="stat-card">
+
+      <div class="stat-number">
+        2
+      </div>
+
+      <div class="stat-label">
+        Trainers
+      </div>
+
+    </div>
+
+    <div class="stat-card">
+
+      <div class="stat-number">
+        4
+      </div>
+
+      <div class="stat-label">
+        Modules
+      </div>
+
+    </div>
+
   </div>
 
-  <div class="actions" style="margin-top:16px;">
-    <button class="btn" onclick="showMainScreen('learnScreen')">
-      📚 Learn
-    </button>
-
-    <button class="btn alt" onclick="showSection('flashcards')">
-      🎴 Flashcards
-    </button>
-
-    <button class="btn secondary" onclick="showSection('quiz')">
-      ❓ Quiz
-    </button>
-
-    <button class="btn white-outline" onclick="showSection('oefeningen')">
-      📍 Practice
-    </button>
-  </div>
 </section>
 
 <section id="practiceScreen" class="panel hidden">

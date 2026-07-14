@@ -699,9 +699,7 @@
   }
 
 .action-btn .label{
-2
-display:none;
-3
+	display:none;
 }
 
   .quiz-q{
@@ -1277,4 +1275,136 @@ body{
   padding:0;
 }
 
+
+ }
+/* ===== SPRINT 2 HOME REDESIGN ===== */
+
+#homeScreen{
+  background:transparent;
+  border:none;
+  box-shadow:none;
+  padding:0;
+}
+
+.home-subtitle{
+  color:var(--muted);
+  margin-bottom:20px;
+}
+
+.hero-card{
+  background:#0F6D73;
+  color:#fff;
+
+  padding:24px;
+
+  border-radius:24px;
+
+  margin-bottom:24px;
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,.12);
+}
+
+.hero-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+}
+
+.hero-title{
+  font-size:1.2rem;
+  font-weight:800;
+}
+
+.hero-lesson{
+  margin-top:6px;
+  opacity:.9;
+}
+
+.hero-score{
+  width:72px;
+  height:72px;
+
+  border-radius:50%;
+
+  background:#D9A441;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-weight:800;
+  font-size:1.2rem;
+}
+
+.hero-progress{
+  margin:20px 0;
+
+  height:10px;
+
+  background:
+    rgba(255,255,255,.2);
+
+  border-radius:999px;
+
+  overflow:hidden;
+}
+
+.hero-progress-fill{
+  width:65%;
+  height:100%;
+
+  background:#D9A441;
+}
+
+.hero-btn{
+  width:100%;
+
+  border:none;
+
+  border-radius:14px;
+
+  padding:14px;
+
+  background:#D9A441;
+
+  color:#fff;
+
+  font-weight:700;
+
+  cursor:pointer;
+}
+
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-top:16px;
+}
+
+.stat-card{
+  background:#fff;
+
+  padding:18px;
+
+  border-radius:18px;
+
+  text-align:center;
+
+  box-shadow:
+    0 4px 14px rgba(0,0,0,.06);
+}
+
+.stat-number{
+  font-size:1.5rem;
+  font-weight:800;
+}
+
+.stat-label{
+  margin-top:4px;
+
+  color:var(--muted);
+
+  font-size:.9rem;
 }
