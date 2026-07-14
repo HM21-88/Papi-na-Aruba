@@ -521,8 +521,16 @@ function updateFlashCounters(){
 }
 
 function updateFlashMeta(){
-  const total=flashPool.length;
-  document.getElementById('flashProgress').textContent=`Kaart ${flashProgressCount} van ${total}`;
+
+  const total = flashPool.length;
+
+  const flashProgressEl =
+    document.getElementById('flashProgress');
+
+  if(flashProgressEl){
+    flashProgressEl.textContent =
+      `Kaart ${flashProgressCount} van ${total}`;
+  }
 
   const selectedWeeks=getSelectedWeeks('flashWeek');
   const typeValue=document.getElementById('flashType').value;
@@ -541,6 +549,16 @@ function renderFlash(){
   updateFlashMeta();
 
   if(!flashPool.length){
+	  
+	document.getElementById('flashContextWeek').textContent =
+		'Week';
+
+	document.getElementById('flashContextTopic').textContent =
+		'Geen woorden gevonden';
+
+	document.getElementById('flashContextProgress').textContent =
+		'Kaart 0 van 0';
+	  
     document.getElementById('flashWeekLabel').textContent='';
     document.getElementById('flashFront').textContent='Geen woorden.';
     document.getElementById('flashHint').textContent='Pas je filters aan.';
@@ -550,8 +568,23 @@ function renderFlash(){
 
   const x=flashPool[flashIndex];
   const dir=document.getElementById('flashDir').value;
+  
+  document.getElementById('flashContextWeek').textContent =
+  `Week ${x.week}`;
 
-  document.getElementById('flashWeekLabel').textContent=`Week ${x.week} • ${x.type || 'zonder type'}`;
+document.getElementById('flashContextTopic').textContent =
+  x.type || 'Woordenlijst';
+
+document.getElementById('flashContextProgress').textContent =
+  `Kaart ${flashIndex + 1} van ${flashPool.length}`;
+
+  const flashWeekLabel =
+  document.getElementById('flashWeekLabel');
+
+if(flashWeekLabel){
+  flashWeekLabel.textContent =
+    `Week ${x.week} • ${x.type || 'zonder type'}`;
+}
   document.getElementById('flashFront').textContent=
     flashFlipped
       ? (dir==='nl-pa' ? x.papiamento : x.nederlands)
