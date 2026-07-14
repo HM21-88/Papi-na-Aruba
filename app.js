@@ -1637,11 +1637,35 @@ if(wordCount){
   resetFlash();
   updateQuizStats();
   newQuiz();
-  updateMainNav('woordenlijst');
+  showMainScreen('homeScreen');
   updatePrepositionStats();
   updateTenseStats();
 }
 
 console.log(window.wordsData);
+
+function showMainScreen(screenId) {
+
+  document
+    .getElementById('homeScreen')
+    .classList.add('hidden');
+
+  document
+    .getElementById('woordenlijst')
+    .classList.add('hidden');
+
+  if(screenId === 'learnScreen'){
+    document
+      .getElementById('woordenlijst')
+      .classList.remove('hidden');
+  }
+
+  if(screenId === 'homeScreen'){
+    document
+      .getElementById('homeScreen')
+      .classList.remove('hidden');
+  }
+
+}
 
 init();

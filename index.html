@@ -81,7 +81,56 @@
 <div class="flag-stripe" aria-hidden="true"></div>
 
 <main class="wrap">
-  <section id="woordenlijst" class="panel">
+
+<section id="homeScreen" class="panel">
+  <h2>🐦 Papi na ABC</h2>
+
+  <p>Bon dia Hugo 👋</p>
+
+  <div class="panel">
+    <h3>Continue Learning</h3>
+    <p>Week 1 t/m 4 beschikbaar</p>
+    <p>416 woorden beschikbaar</p>
+
+    <button class="btn" onclick="showMainScreen('learnScreen')">
+      Verder leren
+    </button>
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      📚 416 woorden
+    </div>
+
+    <div class="stat">
+      🎯 2 trainers
+    </div>
+
+    <div class="stat">
+      📝 4 modules
+    </div>
+  </div>
+
+  <div class="actions" style="margin-top:16px;">
+    <button class="btn" onclick="showMainScreen('learnScreen')">
+      📚 Learn
+    </button>
+
+    <button class="btn alt" onclick="showSection('flashcards')">
+      🎴 Flashcards
+    </button>
+
+    <button class="btn secondary" onclick="showSection('quiz')">
+      ❓ Quiz
+    </button>
+
+    <button class="btn white-outline" onclick="showSection('oefeningen')">
+      📍 Practice
+    </button>
+  </div>
+</section>
+
+ <section id="woordenlijst" class="panel hidden">
   <div class="row">
     <input id="search" placeholder="Zoek woord, betekenis, variant of type..." oninput="renderList()" />
 
