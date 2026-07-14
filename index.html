@@ -130,6 +130,33 @@
   </div>
 </section>
 
+<section id="practiceScreen" class="panel hidden">
+
+  <h2>✏️ Practice</h2>
+
+  <p>Kies een oefenvorm.</p>
+
+  <div class="actions">
+
+    <button class="btn"
+      onclick="showSection('flashcards')">
+      🎴 Flashcards
+    </button>
+
+    <button class="btn secondary"
+      onclick="showSection('quiz')">
+      ❓ Quiz
+    </button>
+
+    <button class="btn white-outline"
+      onclick="showSection('oefeningen')">
+      📚 Trainers
+    </button>
+
+  </div>
+
+</section>
+
  <section id="woordenlijst" class="panel hidden">
   <div class="row">
     <input id="search" placeholder="Zoek woord, betekenis, variant of type..." oninput="renderList()" />
@@ -647,9 +674,9 @@
   </button>
 
   <button onclick="showMainScreen('practiceScreen')">
-    ✏️
-    <span>Practice</span>
-  </button>
+  ✏️
+  <span>Practice</span>
+</button>
 
   <button>
     📈

@@ -530,6 +530,9 @@ function updateFlashMeta(){
 }
 
 function renderFlash(){
+	
+	console.log('renderFlash uitgevoerd');
+	
   updateFlashMeta();
 
   if(!flashPool.length){
@@ -1646,13 +1649,22 @@ console.log(window.wordsData);
 
 function showMainScreen(screenId){
 
-  document
-    .getElementById('homeScreen')
-    .classList.add('hidden');
+  [
+    'homeScreen',
+    'woordenlijst',
+    'practiceScreen',
+    'flashcards',
+    'quiz',
+    'oefeningen'
+  ].forEach(id => {
 
-  document
-    .getElementById('woordenlijst')
-    .classList.add('hidden');
+    const el = document.getElementById(id);
+
+    if(el){
+      el.classList.add('hidden');
+    }
+
+  });
 
   if(screenId === 'homeScreen'){
     document
@@ -1666,6 +1678,12 @@ function showMainScreen(screenId){
       .classList.remove('hidden');
 
     renderList();
+  }
+
+  if(screenId === 'practiceScreen'){
+    document
+      .getElementById('practiceScreen')
+      .classList.remove('hidden');
   }
 }
 
