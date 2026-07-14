@@ -136,7 +136,7 @@ header .wrap{
 }
 
   .wrap{
-    max-width:1200px;
+    max-width:1000px;
     margin:0 auto;
     padding:16px;
   }
@@ -1459,6 +1459,17 @@ body{
   padding:0;
 }
 
+.flash-settings-panel{
+  padding:12px;
+  border-radius:16px;
+}
+
+.week-chip{
+  min-width:38px;
+  height:38px;
+  font-size:.85rem;
+}
+
 }
   
 /* ===== PRACTICE SCREEN V2 ===== */
@@ -1656,15 +1667,29 @@ body{
 
 .week-chip{
 
-  min-width:40px;
+  min-width:42px;
 
-  padding:8px 10px;
+  height:42px;
+
+  padding:0 12px;
 
   border-radius:10px;
 
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  border:2px solid #333;
+
+  background:#fff;
+
   font-size:.9rem;
 
-  font-weight:600;
+  font-weight:700;
+
+  cursor:pointer;
 }
 
 .week-chip:hover{
@@ -1673,21 +1698,32 @@ body{
 
 .week-chip.active{
 
-  background:#4688D3;
+  background:var(--flag-blue);
+
+  border-color:var(--flag-blue);
 
   color:#fff;
 }
-
 .flash-settings-panel{
 
   display:flex;
-
   flex-direction:column;
 
   gap:12px;
+
+  padding:16px;
+
+  border:1px solid var(--border-soft);
+
+  border-radius:18px;
+
+  background:#fff;
+
+  margin-bottom:16px;
 }
 
 .flash-settings-panel select{
+  width:100%;
   max-width:420px;
 }
 
@@ -1705,8 +1741,15 @@ body{
 
 @media (min-width: 900px){
 
-  .flash-settings-panel{
-    max-width:700px;
-  }
+.flash-settings-panel{
+  max-width:500px;
+}
+
+#flashcards,
+#quiz,
+#woordenlijst{
+  max-width:900px;
+  margin:0 auto;
+}
 
 }
