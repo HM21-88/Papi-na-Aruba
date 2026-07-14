@@ -64,7 +64,15 @@ toggleFlashSettingsButton(
 }
 
 function showSection(id){
-	
+
+	document
+  .querySelectorAll(
+    '.flash-settings-panel'
+  )
+  .forEach(panel => {
+    panel.classList.add('hidden');
+  });
+
 	const practiceScreen =
   document.getElementById(
     'practiceScreen'
@@ -753,6 +761,15 @@ function renderFlash(){
     document.getElementById('flashFront').textContent='Geen woorden.';
     document.getElementById('flashHint').textContent='Pas je filters aan.';
  
+	const progressFill =
+  document.querySelector(
+    '.flash-progress-fill'
+	  );
+
+	if(progressFill){
+	  progressFill.style.width='0%';
+	}
+	
     return;
   }
 
@@ -767,6 +784,22 @@ document.getElementById('flashContextTopic').textContent =
 
 document.getElementById('flashContextProgress').textContent =
   `Kaart ${flashIndex + 1} van ${flashPool.length}`;
+  
+  const progressFill =
+  document.querySelector(
+    '.flash-progress-fill'
+  );
+
+if(progressFill){
+
+  const progress =
+    ((flashIndex + 1) /
+      flashPool.length) * 100;
+
+  progressFill.style.width =
+    `${progress}%`;
+}
+
 
   const flashWeekLabel =
   document.getElementById('flashWeekLabel');
