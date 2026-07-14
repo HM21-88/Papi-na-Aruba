@@ -36,6 +36,14 @@ De primaire ervaring is mobiel.
 
 # Talen
 
+## Basistaal
+
+Totdat meertaligheid wordt geïmplementeerd is Nederlands de voertaal.
+
+Alle nieuwe schermen, knoppen en meldingen worden in het Nederlands geschreven.
+
+Engelse labels worden uitsluitend gebruikt via toekomstige vertalingen.
+
 Ondersteunde talen:
 
 - Nederlands
