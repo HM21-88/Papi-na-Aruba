@@ -1858,4 +1858,14 @@ body{
     0 0 0 3px rgba(217,164,65,.20);
 }
 
+.trainer-header h3{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.trainer-header svg{
+  width:18px;
+  height:18px;
+  stroke-width:2;
 }
