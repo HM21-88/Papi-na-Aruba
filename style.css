@@ -1886,3 +1886,25 @@ body{
   stroke-width:2;
   flex-shrink:0;
 }
+
+.home-brand{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin-bottom:20px;
+}
+
+.home-logo{
+  width:72px;
+  height:72px;
+  object-fit:contain;
+  flex-shrink:0;
+}
+
+.home-brand h2{
+  margin:0;
+}
+
+.home-brand .home-subtitle{
+  margin:4px 0 0;
+}
