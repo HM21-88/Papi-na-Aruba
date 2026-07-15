@@ -684,20 +684,6 @@ header .wrap{
     min-height:24px;
   }
 
-  .meaning-placeholder{
-    display:none;
-    color:var(--muted);
-    font-style:italic;
-  }
-
-  .meaning-hidden .meaning-text{
-    display:none;
-  }
-
-  .meaning-hidden .meaning-placeholder{
-    display:inline;
-  }
-
   .flash-wrap{
     position:relative;
     margin-top:12px;
@@ -1999,4 +1985,39 @@ body{
   gap:6px;
   font-size:.8rem;
   font-weight:700;
+}
+
+.words-toolbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  margin-top:12px;
+  margin-bottom:12px;
+}
+
+.word-example{
+  margin-top:12px;
+
+  padding:12px;
+
+  background:#F8F5EF;
+
+  border:1px solid var(--border-soft);
+
+  border-radius:12px;
+}
+
+.word-example-pa{
+  font-weight:600;
+
+  margin-bottom:6px;
+
+  color:var(--text-primary);
+}
+
+.word-example-nl{
+  font-size:.9rem;
+
+  color:var(--text-secondary);
 }

@@ -493,10 +493,18 @@ if(wordCountCard){
 
   list.innerHTML=filtered.map((item,index)=>{
     const dayBlock=Math.floor(index / 15) % 3;
-const group=dayBlock===0 ? 'blue' : dayBlock===1 ? 'red' : 'yellow';
-    const meaningId=`meaning-${index}-${item.week}-${item.nummer}`;
-    return `
-      <div class="list-item group-${group}">
+	const group=dayBlock===0 ? 'blue' : dayBlock===1 ? 'red' : 'yellow';
+    
+	const meaningId =
+	`meaning-${index}-${item.week}-${item.nummer}`;
+
+	const exampleId =
+	  `example-${index}-${item.week}-${item.nummer}`;
+    
+	return `
+    
+	
+	  <div class="list-item group-${group}">
         <div class="list-item-top">
           <div class="list-main">
             
@@ -515,11 +523,34 @@ const group=dayBlock===0 ? 'blue' : dayBlock===1 ? 'red' : 'yellow';
 </div>
             
 			<div class="word">${escapeHtml(item.papiamento || '-')}</div>
-            <div class="meaning-line">
-              <span id="${meaningId}" class="meaning-text">${escapeHtml(item.nederlands || '-')}</span>
-              <span class="meaning-placeholder">Betekenis verborgen</span>
-            </div>
-            <div class="meta">Varianten: ${escapeHtml(item.varianten || '-')}</div>
+            
+		<div class="meaning-line">
+
+	  <span
+		id="${meaningId}"
+		class="meaning-text">
+
+		${escapeHtml(item.nederlands || '-')}
+
+  </span>
+
+</div>
+			
+ <div class="meta">
+  Varianten: ${escapeHtml(item.varianten || '-')}
+</div>
+
+<div
+  id="${exampleId}"
+  class="word-example">
+  <div class="word-example-pa">
+    ${escapeHtml(item.voorbeeld_papiamento)}
+  </div>
+
+  <div class="word-example-nl">
+    ${escapeHtml(item.voorbeeld_nederlands)}
+  </div>
+</div>
            
    ${
 	  item.uitspraak
@@ -535,7 +566,11 @@ const group=dayBlock===0 ? 'blue' : dayBlock===1 ? 'red' : 'yellow';
 		 </div>
           <button class="word-toggle"
         type="button"
-        onclick="toggleWordMeaning('${meaningId}', this)"
+        onclick="toggleWordMeaning(
+		  '${meaningId}',
+		  '${exampleId}',
+		  this
+		)"
         aria-label="Betekenis tonen of verbergen">
 
   <i data-lucide="${
@@ -555,23 +590,38 @@ const group=dayBlock===0 ? 'blue' : dayBlock===1 ? 'red' : 'yellow';
   lucide.createIcons();
 }
 
-function toggleWordMeaning(id, btn){
+function toggleWordMeaning(
+  meaningId,
+  exampleId,
+  btn
+){
+  const meaning =
+    document.getElementById(
+      meaningId
+    );
 
-  const el =
-    document.getElementById(id);
+  const example =
+    document.getElementById(
+      exampleId
+    );
 
-  if(!el) return;
+  if(!meaning) return;
 
   const isHidden =
-    el.style.display === 'none';
+    meaning.style.display === 'none';
 
-  el.style.display =
+  meaning.style.display =
     isHidden ? '' : 'none';
 
-  btn.innerHTML =
-    isHidden
-      ? '<i data-lucide="eye-off"></i>'
-      : '<i data-lucide="eye"></i>';
+  if(example){
+    example.style.display =
+      isHidden ? '' : 'none';
+  }
+
+	btn.innerHTML =
+	  isHidden
+		? '<i data-lucide="chevron-up"></i>'
+		: '<i data-lucide="chevron-down"></i>';
 
   lucide.createIcons();
 }
@@ -1340,40 +1390,27 @@ let meaningsHidden = false;
 
 function updateMeaningButtons(){
 
-  const html = meaningsHidden
-    ? `
-      <i data-lucide="eye"></i>
-      <span class="toggle-text">
-        Betekenis tonen
-      </span>
-    `
-    : `
-      <i data-lucide="eye-off"></i>
-      <span class="toggle-text">
-        Betekenis verbergen
-      </span>
-    `;
+  const html =
+    meaningsHidden
+      ? `
+        <i data-lucide="chevrons-down"></i>
+      `
+      : `
+        <i data-lucide="chevrons-up"></i>
+      `;
 
   const topBtn =
     document.getElementById(
       'toggleMeaningsBtn'
     );
 
-  const bottomBtn =
-    document.getElementById(
-      'toggleMeaningsBtnBottom'
-    );
-
   if(topBtn){
     topBtn.innerHTML = html;
   }
 
-  if(bottomBtn){
-    bottomBtn.innerHTML = html;
-  }
-
   lucide.createIcons();
 }
+
 
 function updateWordToggleIcons(){
 
@@ -1383,8 +1420,12 @@ function updateWordToggleIcons(){
 
       btn.innerHTML =
         meaningsHidden
-          ? '<i data-lucide="eye"></i>'
-          : '<i data-lucide="eye-off"></i>';
+          ? `
+            <i data-lucide="chevron-down"></i>
+          `
+          : `
+            <i data-lucide="chevron-up"></i>
+          `;
 
     });
 
@@ -1392,11 +1433,40 @@ function updateWordToggleIcons(){
 }
 
 function toggleMeanings(){
+
   meaningsHidden = !meaningsHidden;
-  document.getElementById('woordenlijst').classList.toggle('meaning-hidden', meaningsHidden);
+
+  document
+    .querySelectorAll('.meaning-text')
+    .forEach(el => {
+      el.style.display =
+        meaningsHidden
+          ? 'none'
+          : '';
+    });
+
+  document
+    .querySelectorAll('.meaning-placeholder')
+    .forEach(el => {
+      el.style.display =
+        meaningsHidden
+          ? 'inline'
+          : 'none';
+    });
+
+  document
+    .querySelectorAll('.word-example')
+    .forEach(el => {
+      el.style.display =
+        meaningsHidden
+          ? 'none'
+          : '';
+    });
+
   updateMeaningButtons();
   updateWordToggleIcons();
 }
+
 function updateMainNav(sectionId){
   const nav=document.getElementById('mainNav');
   if(!nav) return;
