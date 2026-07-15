@@ -500,6 +500,22 @@ header .wrap{
   font-size:.92rem;
 }
 
+.word-counter{
+  background:#F8F5EF;
+  border:1px solid var(--border-soft);
+  color:var(--text-primary);
+
+  border-radius:999px;
+
+  padding:8px 14px;
+
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+
+  font-weight:700;
+}
+
 .stat-compact{
   min-width:auto;
   padding:8px 10px;
@@ -652,7 +668,6 @@ header .wrap{
       #fff 18%
     );
 }
-
 
   .meta{
     color:var(--muted);

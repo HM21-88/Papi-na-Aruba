@@ -480,7 +480,8 @@ const wordCountCard =
 
 if(wordCountCard){
   wordCountCard.textContent =
-    `📘 Woorden: ${data.length}`;
+  `${data.length} woorden`;
+
 }
 
   const list=document.getElementById('list');
