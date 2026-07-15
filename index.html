@@ -511,6 +511,14 @@
 
   </select>
 
+<button
+	class="btn white-outline"
+	onclick="resetFlash()">
+	
+	Reset sessie
+	
+</button>
+
 </div>
 
 <div class="flash-learning-context">
@@ -540,7 +548,6 @@
 </div>
 
   <div class="stats" style="margin-top:12px">
-  <div class="stat" id="flashGoodCount">Makkelijk: 0</div>
   <div class="stat" id="flashHardCount">Moeilijk: 0</div>
 </div>
 
@@ -587,35 +594,21 @@
       <span class="label">Volgende</span>
     </button>
 
-    <button class="btn alt action-btn" onclick="markFlashHard()" aria-label="Markeer als moeilijk">
-      <span class="ico" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
-          <path d="M12 9v4"/>
-          <path d="M12 17h.01"/>
-        </svg>
-      </span>
-      <span class="label">Moeilijk</span>
-    </button>
+    <button
+  class="flash-hard-btn action-btn"
+  onclick="markFlashHard()"
+  aria-label="Opnieuw oefenen">
 
-    <button class="btn action-btn" onclick="markFlashGood()" aria-label="Markeer als makkelijk">
-      <span class="ico" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M20 6 9 17l-5-5"/>
-        </svg>
-      </span>
-      <span class="label">Makkelijk</span>
-    </button>
+  <span class="ico">
+    <i data-lucide="brain"></i>
+  </span>
 
-    <button class="btn white-outline action-btn" onclick="resetFlash()" aria-label="Reset sessie">
-      <span class="ico" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M3 12a9 9 0 1 0 3-6.7"/>
-          <path d="M3 3v6h6"/>
-        </svg>
-      </span>
-      <span class="label">Reset</span>
-    </button>
+  <span class="label">
+    Opnieuw
+  </span>
+
+</button>
+
   </div>
   
 </section>

@@ -632,13 +632,6 @@ let flashFlipped=false;
 let flashSeen=0;
 let flashProgressCount=0;
 
-let flashGoodCount =
-  Number(
-    localStorage.getItem(
-      'flashGoodCount'
-    )
-  ) || 0;
-
 let flashHardCount =
   Number(
     localStorage.getItem(
@@ -866,7 +859,6 @@ function resetFlash(){
 
 function resetFlashStats(){
 
-  flashGoodCount = 0;
   flashHardCount = 0;
 
   updateFlashCounters();
@@ -876,24 +868,14 @@ function resetFlashStats(){
 function updateFlashCounters(){
 
   localStorage.setItem(
-    'flashGoodCount',
-    flashGoodCount
-  );
-
-  localStorage.setItem(
     'flashHardCount',
     flashHardCount
   );
 
   document.getElementById(
-    'flashGoodCount'
-  ).textContent =
-    `Makkelijk: ${flashGoodCount}`;
-
-  document.getElementById(
     'flashHardCount'
   ).textContent =
-    `Moeilijk: ${flashHardCount}`;
+    `🧠 Moeilijk: ${flashHardCount}`;
 }
 
 function updateFlashMeta(){
@@ -1081,21 +1063,6 @@ function markFlashHard(){
     flashFlipped=false;
     renderFlash();
   }, 'hard', 'flash-hard');
-}
-
-function markFlashGood(){
-  if(!flashPool.length || flashAnimating) return;
-
-  animateFlashTransition('left', ()=>{
-    flashProgressCount++;
-    registerLearningActivity();
-	flashGoodCount++;
-    const card=flashPool.splice(flashIndex,1)[0];
-    flashPool.push(card);
-    if(flashIndex>=flashPool.length){ flashIndex=0; }
-    flashFlipped=false;
-    renderFlash();
-  }, 'good', 'flash-good');
 }
 
 let currentQuiz=null;
@@ -1372,10 +1339,7 @@ document.addEventListener('keydown', function(e){
   } else if(e.key==='m' || e.key==='M'){
     e.preventDefault();
     markFlashHard();
-  } else if(e.key==='g' || e.key==='G'){
-    e.preventDefault();
-    markFlashGood();
-  }
+  } 
 });
 
 document.addEventListener('click', function(e){
@@ -2243,11 +2207,6 @@ const tenseExercises =
   window.tenseExercises || [];
 
 function updateProgressScreen(){
-
-  document.getElementById(
-    'progressFlashGood'
-  ).textContent =
-    flashGoodCount;
 
   document.getElementById(
     'progressFlashHard'
