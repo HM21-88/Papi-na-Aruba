@@ -519,8 +519,19 @@ const group=dayBlock===0 ? 'blue' : dayBlock===1 ? 'red' : 'yellow';
               <span class="meaning-placeholder">Betekenis verborgen</span>
             </div>
             <div class="meta">Varianten: ${escapeHtml(item.varianten || '-')}</div>
-            <div class="meta">Uitspraak: ${escapeHtml(item.uitspraak || '-')}</div>
-          </div>
+           
+   ${
+	  item.uitspraak
+		? `
+		  <div class="meta">
+			Uitspraak: ${escapeHtml(item.uitspraak)}
+		  </div>
+		`
+		: ''
+	}
+
+         
+		 </div>
           <button class="word-toggle"
         type="button"
         onclick="toggleWordMeaning('${meaningId}', this)"

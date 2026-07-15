@@ -584,25 +584,41 @@ header .wrap{
     min-width:0;
   }
 
-  .word-toggle{
-    flex:0 0 auto;
-    border:2px solid var(--flag-yellow);
-    background:#fff;
-    color:#1f2937;
-    border-radius:10px;
-    padding:8px 10px;
-    font-weight:700;
-    cursor:pointer;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    min-width:44px;
-    min-height:44px;
-  }
+.word-toggle{
+  flex:0 0 auto;
 
-  .word-toggle:hover{
-    background:var(--yellow-soft);
-  }
+  border:1px solid var(--border-soft);
+  background:#fff;
+  color:var(--text-secondary);
+
+  border-radius:10px;
+
+  padding:8px 10px;
+
+  cursor:pointer;
+
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  min-width:34px;
+  min-height:34px;
+  padding:6px;
+
+  transition:.2s ease;
+}
+
+.word-toggle svg{
+  width:16px;
+  height:16px;
+  stroke-width:2;
+}
+
+.word-toggle:hover{
+  background:#F8F5EF;
+  border-color:var(--brand-accent);
+  color:var(--brand-primary);
+}
 
   .list-item.group-blue{
     border-left-color:var(--flag-blue);
