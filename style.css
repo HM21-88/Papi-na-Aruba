@@ -1869,6 +1869,7 @@ body{
   height:18px;
   stroke-width:2;
 }
+<<<<<<< HEAD
 
 #progressScreen h2,
 #profileScreen h2,
@@ -1906,6 +1907,5 @@ body{
 }
 
 .home-brand .home-subtitle{
-  margin-top:4px;
-  margin-bottom:0;
+  margin:4px 0 0;
 }
