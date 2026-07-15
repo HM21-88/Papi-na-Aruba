@@ -1908,3 +1908,18 @@ body{
 .home-brand .home-subtitle{
   margin:4px 0 0;
 }
+
+#progressScreen h3,
+#progressScreen .stat{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+#progressScreen h3 svg,
+#progressScreen .stat svg{
+  width:18px;
+  height:18px;
+  stroke-width:2;
+  flex-shrink:0;
+}
