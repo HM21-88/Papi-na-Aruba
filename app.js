@@ -498,8 +498,22 @@ const group=dayBlock===0 ? 'blue' : dayBlock===1 ? 'red' : 'yellow';
       <div class="list-item group-${group}">
         <div class="list-item-top">
           <div class="list-main">
-            <div class="meta">Week ${item.week} • Nr. ${item.nummer} • ${escapeHtml(item.type || '-')}</div>
-            <div class="word">${escapeHtml(item.papiamento || '-')}</div>
+            
+	<div class="word-card-header">
+		<span class="word-week-badge group-${group}">
+			● Week ${item.week}
+		</span>
+
+  <span class="word-number">
+    #${item.nummer}
+  </span>
+</div>
+
+<div class="word-type">
+  ${escapeHtml(item.type || '-')}
+</div>
+            
+			<div class="word">${escapeHtml(item.papiamento || '-')}</div>
             <div class="meaning-line">
               <span id="${meaningId}" class="meaning-text">${escapeHtml(item.nederlands || '-')}</span>
               <span class="meaning-placeholder">Betekenis verborgen</span>

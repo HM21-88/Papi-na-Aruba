@@ -1923,3 +1923,30 @@ body{
   stroke-width:2;
   flex-shrink:0;
 }
+
+.word-card-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:8px;
+}
+
+.word-number{
+  color:var(--text-secondary);
+  font-size:.85rem;
+  font-weight:600;
+}
+
+.word-type{
+  color:var(--text-secondary);
+  font-size:.85rem;
+  margin-bottom:12px;
+}
+
+.word-week-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-size:.8rem;
+  font-weight:700;
+}
