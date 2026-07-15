@@ -620,20 +620,39 @@ header .wrap{
   color:var(--brand-primary);
 }
 
-  .list-item.group-blue{
-    border-left-color:var(--flag-blue);
-    background:linear-gradient(90deg, rgba(65,143,222,.06) 0%, #fff 18%);
-  }
+.list-item.group-blue{
+  border-left-color:var(--brand-primary);
 
-  .list-item.group-red{
-    border-left-color:var(--flag-red);
-    background:linear-gradient(90deg, rgba(200,16,46,.05) 0%, #fff 18%);
-  }
+  background:
+    linear-gradient(
+      90deg,
+      rgba(15,109,115,.06) 0%,
+      #fff 18%
+    );
+}
 
-  .list-item.group-yellow{
-    border-left-color:#d4b700;
-    background:linear-gradient(90deg, rgba(251,225,34,.12) 0%, #fff 18%);
-  }
+.list-item.group-red{
+  border-left-color:var(--brand-accent);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(217,164,65,.08) 0%,
+      #fff 18%
+    );
+}
+
+.list-item.group-yellow{
+  border-left-color:var(--border-soft);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(233,226,214,.35) 0%,
+      #fff 18%
+    );
+}
+
 
   .meta{
     color:var(--muted);
