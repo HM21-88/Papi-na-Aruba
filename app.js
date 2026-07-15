@@ -63,6 +63,7 @@ toggleFlashSettingsButton(
 
 }
 
+
 function showSection(id){
 
 	document
