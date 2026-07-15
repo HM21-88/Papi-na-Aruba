@@ -2,7 +2,7 @@
 
   /* ===== NIEUW DESIGN SYSTEM ===== */
 
-  --bg-app:#F8F5EF;
+  --bg-app:#F5F0E7;
   --bg-card:#FFFFFF;
 
   --text-primary:#17364D;
@@ -72,9 +72,9 @@ body{
 
   padding:0 16px;
 
-  background:#fff;
+  background:transparent;
 
-  border-bottom:1px solid var(--border-soft);
+  border-bottom:none;
 }
 
 .back-btn{
@@ -598,7 +598,7 @@ header .wrap{
     border:none;
     border-left:4px solid var(--flag-blue);
     border-radius:20px;
-    background:#fff;
+    background:#FCFAF7;
     box-shadow:0 12px 30px rgba(15,109,115,.06);
 	transition:
   transform .15s ease,
@@ -706,7 +706,7 @@ header .wrap{
 
 .word{
   font-weight:800;
-  font-size:1.4rem;
+  font-size:1.55rem;
 
   color:var(--brand-primary);
 }
@@ -1760,9 +1760,9 @@ body{
 
   justify-content:center;
 
-  border:2px solid #333;
-
-  background:#fff;
+	border:1px solid var(--border-soft);
+ 
+	background:#FCFAF7;
 
   font-size:.9rem;
 
@@ -1776,29 +1776,30 @@ body{
 }
 
 .week-chip.active{
+  background:var(--brand-primary);
 
-  background:var(--flag-blue);
-
-  border-color:var(--flag-blue);
+  border-color:var(--brand-primary);
 
   color:#fff;
 }
-.flash-settings-panel{
 
+.flash-settings-panel{
   display:flex;
   flex-direction:column;
 
   gap:12px;
 
-  padding:16px;
+  padding:0;
 
-  border:1px solid var(--border-soft);
+  border:none;
 
-  border-radius:18px;
+  border-radius:0;
 
-  background:#fff;
+  background:transparent;
 
-  margin-bottom:16px;
+  box-shadow:none;
+
+  margin-bottom:20px;
 }
 
 .flash-settings-panel select{
@@ -1974,7 +1975,8 @@ body{
 
 .word-type{
   color:var(--text-secondary);
-  font-size:.85rem;
+  font-size:.8rem;
+	color:#8A8A8A;
   margin-bottom:12px;
 }
 
@@ -2022,6 +2024,8 @@ body{
 
 #woordenlijst #search{
   margin-bottom:16px;
+  background:#FCFAF7;
+	border:1px solid #E7DED0;
 }
 
 .words-toolbar{
