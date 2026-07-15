@@ -119,9 +119,10 @@ body{
 
   border-radius:14px;
 
-  background:var(--brand-accent);
+	background:#fff;
+	color:var(--brand-primary);
 
-  color:#fff;
+	border:1px solid var(--border-soft);
 
   font-size:18px;
 
@@ -136,13 +137,13 @@ body{
   transition:.2s;
 }
 
-.header-icon-btn svg{
-  width:20px;
-  height:20px;
+.header-icon-btn.active{
+  background:#fff;
+  border-color:var(--brand-primary);
 }
 
 .header-icon-btn:hover{
-  background:var(--brand-accent-dark);
+  background:#F8F5EF;
 }
 
 .header-icon-btn svg{
@@ -374,6 +375,13 @@ header .wrap{
   margin-bottom:14px;
 }
 
+.content-screen{
+  background:transparent;
+  border:none;
+  box-shadow:none;
+  padding:0;
+}
+
   .hidden{
     display:none;
   }
@@ -388,6 +396,10 @@ header .wrap{
   .row>*{
     flex:1 1 180px;
   }
+  
+#woordenlijst .row{
+  margin-bottom:16px;
+}
 
   input,select{
     width:100%;
@@ -523,6 +535,9 @@ header .wrap{
   gap:8px;
 
   font-weight:700;
+  
+  font-size:.92rem;
+	padding:6px 12px;
 }
 
 .stat-compact{
@@ -553,11 +568,6 @@ header .wrap{
     gap:8px;
   }
 
-  .bottom-tools{
-    margin-top:12px;
-    margin-bottom:0;
-  }
-
   .icon-toggle .toggle-text{
     display:inline;
   }
@@ -585,12 +595,22 @@ header .wrap{
   .list-item{
     padding:12px 14px;
     margin-bottom:10px;
-    border:1px solid var(--border);
-    border-left:6px solid var(--flag-blue);
-    border-radius:14px;
+    border:none;
+    border-left:4px solid var(--flag-blue);
+    border-radius:20px;
     background:#fff;
-    box-shadow:var(--shadow);
+    box-shadow:0 12px 30px rgba(15,109,115,.06);
+	transition:
+  transform .15s ease,
+  box-shadow .15s ease;
   }
+
+.list-item:hover{
+  transform:translateY(-1px);
+
+  box-shadow:
+    0 10px 22px rgba(15,109,115,.08);
+}
 
   .list-item:last-child{
     border-bottom:1px solid var(--border);
@@ -684,10 +704,12 @@ header .wrap{
     margin-bottom:4px;
   }
 
-  .word{
-    font-weight:800;
-    font-size:1.05rem;
-  }
+.word{
+  font-weight:800;
+  font-size:1.4rem;
+
+  color:var(--brand-primary);
+}
 
   .meaning-line{
     min-height:24px;
@@ -1200,23 +1222,6 @@ header .wrap{
     }
   }
 
-.bottom-nav{
-  position:fixed;
-  bottom:0;
-  left:0;
-  right:0;
-
-  display:flex;
-  justify-content:space-around;
-
-  background:#fff;
-  border-top:1px solid var(--border);
-
-  padding:10px 0;
-
-  z-index:999;
-}
-
 .bottom-nav button{
   background:none;
   border:none;
@@ -1422,10 +1427,6 @@ body{
       min-height:42px;
       padding:0;
       justify-content:center;
-    }
-
-    .bottom-tools{
-      padding-right:0;
     }
 
     .icon-toggle .toggle-text{
@@ -1743,17 +1744,6 @@ body{
   display:none !important;
 }
 
-.week-chips{
-
-  display:flex;
-
-  flex-wrap:wrap;
-
-  gap:8px;
-
-  width:100%;
-}
-
 .week-chip{
 
   min-width:42px;
@@ -1991,18 +1981,15 @@ body{
 .word-week-badge{
   display:inline-flex;
   align-items:center;
-  gap:6px;
+
+  padding:4px 10px;
+
+  border-radius:999px;
+
+  background:#F8F5EF;
+
   font-size:.8rem;
   font-weight:700;
-}
-
-.words-toolbar{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-
-  margin-top:12px;
-  margin-bottom:12px;
 }
 
 .word-example{
@@ -2010,9 +1997,11 @@ body{
 
   padding:12px;
 
-  background:#F8F5EF;
+  background:rgba(248,245,239,.6);
 
-  border:1px solid var(--border-soft);
+  border:none;
+  border-left:3px solid
+	var(--brand-accent);
 
   border-radius:12px;
 }
@@ -2029,4 +2018,16 @@ body{
   font-size:.9rem;
 
   color:var(--text-secondary);
+}
+
+#woordenlijst #search{
+  margin-bottom:16px;
+}
+
+.words-toolbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  margin-bottom:18px;
 }
