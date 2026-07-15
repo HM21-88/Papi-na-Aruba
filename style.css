@@ -1256,10 +1256,10 @@ header .wrap{
   display:flex;
   justify-content:space-around;
 
-  background:#fff;
-  border-top:1px solid var(--border);
-
+  background:#FCFAF7;
+  border-top:1px solid var(--border-soft);
   padding:10px 0;
+  box-shadow:0 -4px 16px rgba(15,109,115,.05);
 
   z-index:999;
 
@@ -1561,7 +1561,7 @@ body{
 }
 
 .practice-card{
-  background:#fff;
+  background:#FCFAF7;
   border:1px solid var(--border-soft);
   border-radius:20px;
   padding:18px;
@@ -1819,9 +1819,14 @@ body{
   gap:8px;
 }
 
+.bottom-nav button{
+  padding:6px 10px;
+  border-radius:12px;
+}
+
 .bottom-nav button.active{
   color:var(--brand-primary);
-  transform:translateY(-3px);
+  background:rgba(15,109,115,.06);
 }
 
 .bottom-nav button.active svg{
@@ -1835,7 +1840,7 @@ body{
 .bottom-nav button.active::before{
   content:"";
   position:absolute;
-  top:-10px;
+  top:-7px;
   width:28px;
   height:4px;
   border-radius:999px;
