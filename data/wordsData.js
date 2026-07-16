@@ -519,6 +519,72 @@ window.wordsData = [
 
 {week:5,nummer:456,level:'A1',tags:['werk','winkelen'],papiamento:'bestel',papiamentu:'bestèl',nederlands:'bestelling, aanvraag, order',engels:'',varianten:'orde, ordu',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
 
+{week:5,nummer:457,level:'A1',tags:['geld'],papiamento:'placa',papiamentu:'plaka',nederlands:'geld',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
 
+{week:5,nummer:458,level:'A1',tags:['geld'],papiamento:'credito',papiamentu:'krédito',nederlands:'rekening, op rekening, krediet',engels:'',varianten:'cuenta, kuenta',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:459,level:'A1',tags:['geld'],papiamento:'cash',papiamentu:'kèsh',nederlands:'contant geld',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:460,level:'A1',tags:['geld','werk'],papiamento:'caha',papiamentu:'kaha',nederlands:'kas, kassa, doos, krat',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:461,level:'A1',tags:['geld'],papiamento:'recibo',papiamentu:'resibu',nederlands:'kwitantie',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:462,level:'A1',tags:['geld'],papiamento:'debe',papiamentu:'',nederlands:'schuld, verschuldigd zijn',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:463,level:'A1',tags:['werk'],papiamento:'respondi',papiamentu:'rospondi',nederlands:'boodschap, bericht',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:464,level:'A1',tags:['werk'],papiamento:'apreciabel',papiamentu:'apresiabel',nederlands:'geachte',engels:'',varianten:'',type:'uitdrukking',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:465,level:'A1',tags:['werk'],papiamento:'saludo',papiamentu:'kumindamentu',nederlands:'groet, vriendelijke groet',engels:'',varianten:'saludo cordial',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:466,level:'A1',tags:['plaatsen'],papiamento:'hanchi',papiamentu:'',nederlands:'steeg',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:467,level:'A1',tags:['plaatsen'],papiamento:'bario',papiamentu:'',nederlands:'wijk, buurt',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:468,level:'A1',tags:['plaatsen'],papiamento:'centro',papiamentu:'sentro',nederlands:'centrum',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:469,level:'A1',tags:['plaatsen'],papiamento:'playa',papiamentu:'punda',nederlands:'stad',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:470,level:'A1',tags:['plaatsen'],papiamento:'misa',papiamentu:'',nederlands:'kerk, mis',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:471,level:'A1',tags:['plaatsen'],papiamento:'plasa',papiamentu:'',nederlands:'plein',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:472,level:'A1',tags:['natuur'],papiamento:'mondi',papiamentu:'',nederlands:'wildernis, bos',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:473,level:'A1',tags:['natuur'],papiamento:'cunucu',papiamentu:'kunuku',nederlands:'platteland',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:474,level:'A1',tags:['natuur'],papiamento:'naturalesa',papiamentu:'',nederlands:'natuur',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:475,level:'A1',tags:['natuur'],papiamento:'palo',papiamentu:'palu di mata',nederlands:'boom',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:476,level:'A1',tags:['gezondheid','plaatsen'],papiamento:'hospital',papiamentu:'hòspital',nederlands:'ziekenhuis',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:477,level:'A1',tags:['vrije_tijd'],papiamento:'cine',papiamentu:'sine',nederlands:'bioscoop',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:478,level:'A1',tags:['winkelen'],papiamento:'supermercado',papiamentu:'supermerkado',nederlands:'supermarkt',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:479,level:'A1',tags:['eten_drinken','plaatsen'],papiamento:'restaurant',papiamentu:'restorant',nederlands:'restaurant',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:480,level:'A1',tags:['geld'],papiamento:'banco',papiamentu:'banku',nederlands:'bank',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:481,level:'A1',tags:['geld'],papiamento:'ATM',papiamentu:'bankomátiko',nederlands:'geldautomaat',engels:'',varianten:'bancomatico',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:482,level:'A1',tags:['geld'],papiamento:'karchi di banco',papiamentu:'',nederlands:'pinpas',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:483,level:'A1',tags:['winkelen'],papiamento:'hardware',papiamentu:'fereteria',nederlands:'ijzerhandel',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:484,level:'A1',tags:['reizen'],papiamento:'mapa',papiamentu:'',nederlands:'plattegrond, landkaart',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:485,level:'A1',tags:['reizen','natuur'],papiamento:'laman',papiamentu:'playa',nederlands:'zee, strand',engels:'',varianten:'beach',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:486,level:'A1',tags:['reizen','vrije_tijd'],papiamento:'landa',papiamentu:'',nederlands:'zwemmen',engels:'',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:487,level:'A1',tags:['plaatsen'],papiamento:'eyden',papiamentu:'eiden',nederlands:'daarbinnen, erin',engels:'',varianten:'',type:'plaatsbepaling',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:488,level:'A1',tags:['plaatsen'],papiamento:'eyfo',papiamentu:'eifó',nederlands:'daarbuiten',engels:'',varianten:'',type:'plaatsbepaling',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:489,level:'A1',tags:['grammatica'],papiamento:'paga tino!',papiamentu:'pone tino!',nederlands:'let op!',engels:'',varianten:'',type:'uitdrukking',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:490,level:'A1',tags:['grammatica'],papiamento:'ban mira!',papiamentu:'',nederlands:'vooruit!, opschieten!',engels:'',varianten:'',type:'uitroep',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
 
 ];
