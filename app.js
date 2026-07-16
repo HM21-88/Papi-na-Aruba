@@ -2473,30 +2473,53 @@ function renderWeekTracker(){
     'Zo'
   ];
 
-  const completed =
-    weeklyLearningDays.length;
+  const activeDays =
+    weeklyLearningDays.map(dateStr => {
+
+      const date =
+        new Date(dateStr);
+
+      const day =
+        date.getDay();
+
+      // JS:
+      // 0=Zo
+      // 1=Ma
+      // 2=Di
+      // ...
+      // wij willen:
+      // 0=Ma
+      // 1=Di
+      // ...
+      // 6=Zo
+
+      return day === 0
+        ? 6
+        : day - 1;
+    });
 
   document.getElementById(
     'weekTracker'
   ).innerHTML =
-    days.map(
-      (day, index) => `
-        <div class="week-day">
+    days.map((day, index) => `
+      <div class="week-day">
 
-          <div class="week-day-label">
-            ${day}
-          </div>
-
-          <div class="
-            week-day-dot
-            ${index < completed ? 'active' : ''}
-          ">
-          </div>
-
+        <div class="week-day-label">
+          ${day}
         </div>
-      `
-    ).join('');
 
+        <div class="
+          week-day-dot
+          ${
+            activeDays.includes(index)
+              ? 'active'
+              : ''
+          }
+        ">
+        </div>
+
+      </div>
+    `).join('');
 }
 
 function init(){
