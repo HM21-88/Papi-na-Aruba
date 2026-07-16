@@ -662,8 +662,21 @@
     <div class="flash-stack" aria-hidden="true"></div>
 
     <div class="flash" id="flashBox" onclick="flipFlash()">
-      <div>
-        <div class="big" id="flashFront"></div>
+
+  <div>
+
+    <div class="big" id="flashFront"></div>
+	
+	<button
+	  class="audio-btn flash-card-audio"
+	  type="button"
+	  onclick="event.stopPropagation(); speakCurrentFlash();">
+
+	  <i data-lucide="volume-2"></i>
+
+	</button>
+
+	
         <div class="small" id="flashHint">Tik of druk op spatie om om te draaien</div>
       </div>
     </div>

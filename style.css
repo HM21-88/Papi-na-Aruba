@@ -1467,7 +1467,7 @@ body{
       min-width:42px;
       min-height:42px;
     }
-
+	
     .panel{
       padding:12px;
     }
@@ -2345,4 +2345,78 @@ body{
 
 .language-option:first-of-type{
   margin-top:8px;
+}
+
+.audio-btn{
+  width:36px;
+  height:36px;
+
+  border:none;
+  border-radius:50%;
+
+  background:#EEF8FB;
+  color:var(--brand-primary);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  cursor:pointer;
+
+  transition:
+    transform .15s ease,
+    background .15s ease;
+}
+
+.audio-btn:hover{
+  background:#DFF1F5;
+  transform:scale(1.05);
+}
+
+.audio-btn svg{
+  width:18px;
+  height:18px;
+}
+
+.flash-audio-row{
+  display:flex;
+  justify-content:center;
+  margin-bottom:16px;
+}
+
+.flash-audio-btn{
+  width:42px;
+  height:42px;
+}
+
+.word-of-day{
+  position:relative;
+}
+
+.word-of-day{
+  position:relative;
+}
+
+.word-of-day-header .audio-btn{
+  position:absolute;
+
+  top:0;
+  right:0;
+
+  z-index:10;
+}
+
+.flash-card-audio{
+  position:absolute;
+  top:14px;
+  right:14px;
+  z-index:20;
+}
+
+.word-actions{
+  display:flex;
+  gap:8px;
+
+  align-items:center;
+  flex-shrink:0;
 }

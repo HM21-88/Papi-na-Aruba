@@ -10,6 +10,42 @@ const APP_CONFIG = {
 
 const data = window.wordsData || [];
 
+function speakText(text){
+
+  if(!window.speechSynthesis){
+    alert('Spraak wordt niet ondersteund op dit apparaat.');
+    return;
+  }
+
+  const utterance =
+    new SpeechSynthesisUtterance(text);
+
+  utterance.lang = 'es-ES';
+
+  utterance.rate = 0.9;
+  utterance.pitch = 1;
+
+  speechSynthesis.cancel();
+  speechSynthesis.speak(utterance);
+}
+
+function speakCurrentFlash(){
+
+  if(!flashPool.length){
+    return;
+  }
+
+  const card = flashPool[flashIndex];
+
+  if(!card){
+    return;
+  }
+
+  const word = getPrimaryWord(card);
+
+  speakText(word);
+}
+
 function isPapiamento(){
   return APP_CONFIG.variant === 'pao';
 }
@@ -785,26 +821,45 @@ ${
 
          
 		 </div>
-          <button class="word-toggle"
-        type="button"
-        onclick="toggleWordMeaning(
-		  '${meaningId}',
-		  '${exampleId}',
-		  this
-		)"
-        aria-label="Betekenis tonen of verbergen">
 
-  <i data-lucide="${
-    meaningsHidden
-      ? 'eye'
-      : 'eye-off'
-  }"></i>
+<div class="word-actions">
 
-</button>
+  <button
+    class="audio-btn"
+    type="button"
+    onclick="speakText('${escapeHtml(
+      getPrimaryWord(item)
+    )}')">
 
-        </div>
-      </div>
-    `;
+    <i data-lucide="volume-2"></i>
+
+  </button>
+
+  <button
+    class="word-toggle"
+    type="button"
+    onclick="toggleWordMeaning(
+      '${meaningId}',
+      '${exampleId}',
+      this
+    )"
+    aria-label="Betekenis tonen of verbergen">
+
+    <i data-lucide="${
+      meaningsHidden
+        ? 'eye'
+        : 'eye-off'
+    }"></i>
+
+  </button>
+
+</div>
+
+</div>
+</div>
+
+</div>
+`;
   }).join('');
 
   updateWordToggleIcons();
@@ -2783,36 +2838,51 @@ document.getElementById(
   'wordOfDay'
 ).innerHTML =
 `
+<div class="word-of-day-header">
+
   <div class="word">
     ${getPrimaryWord(word)}
   </div>
 
-  ${
-    shouldShowSecondaryWord(word)
-      ? `
-        <div class="word-secondary">
+  <button
+    class="audio-btn"
+    type="button"
+    onclick="speakText('${getPrimaryWord(word)}')">
 
-          <span class="variant-tag">
-            ${
-              isPapiamento()
-                ? 'PAU'
-                : 'PAO'
-            }
-          </span>
+    <i data-lucide="volume-2"></i>
 
-          ${getSecondaryWord(word)}
+  </button>
 
-        </div>
-      `
-      : ''
-  }
+</div>
 
-  <div class="meta">
-    ${word.nederlands}
-  </div>
+${
+  shouldShowSecondaryWord(word)
+    ? `
+      <div class="word-secondary">
+
+        <span class="variant-tag">
+          ${
+            isPapiamento()
+              ? 'PAU'
+              : 'PAO'
+          }
+        </span>
+
+        ${getSecondaryWord(word)}
+
+      </div>
+    `
+    : ''
+}
+
+<div class="meta">
+  ${word.nederlands}
+</div>
 `;
 
 } 
+
+lucide.createIcons();
 
 renderWeekTracker();
 
