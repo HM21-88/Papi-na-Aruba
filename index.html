@@ -45,14 +45,27 @@
 
 <div class="header-actions">
 
+<div class="language-toggle">
+
   <button
-    id="languageChip"
-    class="language-chip"
-    onclick="toggleLanguageVariant()">
+    id="paoBtn"
+    type="button"
+    onclick="setLanguageVariant('pao')">
 
     PAO
 
   </button>
+
+  <button
+    id="pauBtn"
+    type="button"
+    onclick="setLanguageVariant('pau')">
+
+    PAU
+
+  </button>
+
+</div>
 
   <button
     class="header-icon-btn"
@@ -141,13 +154,12 @@
 
 </div>
 
-<div class="panel">
+<div class="panel word-of-day-panel">
 
-	<h3>
-	  <i data-lucide="tree-palm"></i>
-	  Woord van de dag
-	</h3>
-
+  <h3>
+    <i data-lucide="tree-palm"></i>
+    Palabra di dia
+  </h3>
 
   <div
     class="word-of-day"
@@ -386,23 +398,116 @@
 
 <section id="profileScreen" class="panel hidden">
 
-	<h2>
-	  <i data-lucide="user"></i>
-	  Profiel
-	</h2>
-
-  <p>Binnenkort beschikbaar.</p>
+  <h2>
+    <i data-lucide="user"></i>
+    Profiel
+  </h2>
 
   <div class="panel">
-    <strong>Hier komt straks:</strong>
 
-    <ul>
-      <li>Papiamento / Papiamentu</li>
-      <li>Woorden per week</li>
-      <li>Thema's</li>
-      <li>Leerdoelen</li>
-      <li>Instellingen</li>
-    </ul>
+    <h3>
+      <i data-lucide="languages"></i>
+      Taalinstellingen
+    </h3>
+
+<div class="setting-block">
+
+  <div class="setting-title">
+    Taalvariant
+  </div>
+
+  <div class="setting-description">
+    Kies welke taalvariant je als hoofdvorm wilt gebruiken.
+  </div>
+
+<div class="language-option">
+
+  <div>
+
+    <div class="language-name">
+      Papiamento (PAO)
+    </div>
+
+    <div class="language-description">
+      Veel gebruikt op Aruba
+    </div>
+
+  </div>
+
+  <label class="switch">
+
+    <input
+      type="checkbox"
+      id="profilePaoToggle"
+      onchange="setLanguageVariant('pao')">
+
+    <span class="slider"></span>
+
+  </label>
+
+</div>
+
+<div class="language-option">
+
+  <div>
+
+    <div class="language-name">
+      Papiamentu (PAU)
+    </div>
+
+    <div class="language-description">
+      Veel gebruikt op Curaçao en Bonaire
+    </div>
+
+  </div>
+
+  <label class="switch">
+
+    <input
+      type="checkbox"
+      id="profilePauToggle"
+      onchange="setLanguageVariant('pau')">
+
+    <span class="slider"></span>
+
+  </label>
+
+</div>
+
+<div class="setting-divider"></div>
+
+<div class="setting-row">
+
+  <div class="setting-content">
+
+    <div class="setting-title">
+      Andere taalvariant tonen
+    </div>
+
+    <div class="setting-description">
+      Toon zowel de Papiamento- als de Papiamentu-vorm van een woord.
+    </div>
+
+    <div class="setting-example">
+      Bijvoorbeeld: bay ↔ bai
+    </div>
+
+  </div>
+
+  <label class="switch">
+
+    <input
+      type="checkbox"
+      id="showOtherVariantToggle"
+      onchange="toggleOtherVariant()">
+
+    <span class="slider"></span>
+
+  </label>
+
+</div>
+
+
   </div>
 
 </section>
@@ -432,7 +537,7 @@
 
   <input
     id="search"
-    placeholder="Zoek woord, betekenis, variant of type..."
+    placeholder="Zoek in Papiamento, Papiamentu of Nederlands..."
     oninput="renderList()" />
 
 </div>

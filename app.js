@@ -1,6 +1,10 @@
 const APP_CONFIG = {
   variant: localStorage.getItem('languageVariant') || 'pao',
-  showOtherVariant: true,
+  showOtherVariant:
+  localStorage.getItem(
+    'showOtherVariant'
+  ) !== 'false',
+
   subscription: 'free'
 };
 
@@ -52,6 +56,14 @@ function hasSecondaryWord(word){
   );
 }
 
+function shouldShowSecondaryWord(word){
+
+  return (
+    APP_CONFIG.showOtherVariant &&
+    hasSecondaryWord(word)
+  );
+}
+
 function toggleLanguageVariant(){
 
   APP_CONFIG.variant =
@@ -79,21 +91,113 @@ function toggleLanguageVariant(){
   updateHomeStats();
 }
 
-function updateLanguageChip(){
+function setLanguageVariant(
+  variant
+){
 
-  const chip =
-    document.getElementById(
-      'languageChip'
-    );
+  APP_CONFIG.variant =
+    variant;
 
-  if(!chip){
-    return;
+  localStorage.setItem(
+    'languageVariant',
+    variant
+  );
+
+  updateLanguageChip();
+
+  renderList();
+
+  renderFlash();
+
+  updateHomeStats();
+
+  if(currentQuiz){
+    newQuiz();
   }
 
-  chip.textContent =
-    APP_CONFIG.variant === 'pao'
-      ? 'PAO'
-      : 'PAU';
+}
+
+function toggleOtherVariant(){
+
+  APP_CONFIG.showOtherVariant =
+    !APP_CONFIG.showOtherVariant;
+
+  localStorage.setItem(
+    'showOtherVariant',
+    APP_CONFIG.showOtherVariant
+  );
+
+  renderList();
+  renderFlash();
+  updateHomeStats();
+
+}
+
+function updateLanguageChip(){
+
+  const paoBtn =
+    document.getElementById('paoBtn');
+
+  const pauBtn =
+    document.getElementById('pauBtn');
+
+  const profilePaoBtn =
+    document.getElementById('profilePaoBtn');
+
+  const profilePauBtn =
+    document.getElementById('profilePauBtn');
+
+  const isPao =
+    APP_CONFIG.variant === 'pao';
+
+  if(paoBtn){
+    paoBtn.classList.toggle(
+      'active',
+      isPao
+    );
+  }
+
+  if(pauBtn){
+    pauBtn.classList.toggle(
+      'active',
+      !isPao
+    );
+  }
+
+  if(profilePaoBtn){
+    profilePaoBtn.classList.toggle(
+      'active',
+      isPao
+    );
+  }
+
+  if(profilePauBtn){
+    profilePauBtn.classList.toggle(
+      'active',
+      !isPao
+    );
+  }
+  
+  const paoToggle =
+  document.getElementById(
+    'profilePaoToggle'
+  );
+
+const pauToggle =
+  document.getElementById(
+    'profilePauToggle'
+  );
+
+if(paoToggle){
+  paoToggle.checked =
+    APP_CONFIG.variant === 'pao';
+}
+
+if(pauToggle){
+  pauToggle.checked =
+    APP_CONFIG.variant === 'pau';
+}
+  
 }
 
 const weekSelections = {
@@ -548,16 +652,15 @@ function renderList(){
   const selectedWeeks=getSelectedWeeks('weekFilter');
 
   const filtered=data.filter(item=>{
-    const haystack=[
-      item.nummer,
-      item.papiamento,
-      item.nederlands,
-      item.varianten,
-      item.type,
-      item.uitspraak,
-      item.voorbeeld_papiamento,
-      item.voorbeeld_nederlands
-    ].join(' ').toLowerCase();
+const haystack=[
+  item.nummer,
+  item.papiamento || '',
+  item.papiamentu || '',
+  item.nederlands || '',
+  item.varianten || '',
+  item.type || '',
+  item.uitspraak || ''
+].join(' ').toLowerCase();
 
     return weekMatches(item, selectedWeeks) && (!q || haystack.includes(q));
   });
@@ -620,7 +723,7 @@ if(wordCountCard){
 </div>
 
 ${
-  hasSecondaryWord(item)
+  shouldShowSecondaryWord(item)
     ? `
       <div class="word-secondary">
 
@@ -1112,7 +1215,7 @@ const answer =
 </div>
 
 ${
-  hasSecondaryWord(x)
+  shouldShowSecondaryWord(x)
     ? `
       <div class="flash-secondary-word">
 
@@ -2685,7 +2788,7 @@ document.getElementById(
   </div>
 
   ${
-    hasSecondaryWord(word)
+    shouldShowSecondaryWord(word)
       ? `
         <div class="word-secondary">
 
@@ -2800,6 +2903,17 @@ if(wordCount){
   updatePrepositionStats();
   updateTenseStats();
   updateHomeStats();
+  updateLanguageChip();
+  
+  const toggle =
+  document.getElementById(
+    'showOtherVariantToggle'
+  );
+
+if(toggle){
+  toggle.checked =
+    APP_CONFIG.showOtherVariant;
+}
 }
 
 console.log(window.wordsData);
