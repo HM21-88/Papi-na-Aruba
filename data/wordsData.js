@@ -587,4 +587,62 @@ window.wordsData = [
 
 {week:5,nummer:490,level:'A1',tags:['grammatica'],papiamento:'ban mira!',papiamentu:'',nederlands:'vooruit!, opschieten!',engels:'',varianten:'',type:'uitroep',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
 
+{week:5,nummer:491,level:'A1',tags:['grammatica'],papiamento:'mi sa anto!',papiamentu:'',nederlands:'weet ik veel!',engels:'',varianten:'',type:'uitdrukking',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:492,level:'A1',tags:['grammatica'],papiamento:'natural',papiamentu:'',nederlands:'logisch!, natuurlijk!, zeker!',engels:'',varianten:'síno',type:'uitdrukking',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:493,level:'A1',tags:['gezondheid'],papiamento:'laba man',papiamentu:'',nederlands:'de handen wassen',engels:'',varianten:'',type:'uitdrukking',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:494,level:'A1',tags:['grammatica'],papiamento:'par',papiamentu:'',nederlands:'paar, tweetal, enkele',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:495,level:'A1',tags:['grammatica'],papiamento:'pa e motibo ey',papiamentu:'pa e motibu ei',nederlands:'om die reden',engels:'',varianten:'',type:'uitdrukking',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:497,level:'A1',tags:['taal'],papiamento:'manera',papiamentu:'mané',nederlands:'manier, wijze',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:498,level:'A1',tags:['grammatica'],papiamento:'nodo',papiamentu:'nodi',nederlands:'nodig, noodzaak',engels:'',varianten:'mester, meste, mesté, tin cu, tin ku',type:'bijvoeglijk naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:499,level:'A1',tags:['grammatica'],papiamento:'basta',papiamentu:'',nederlands:'genoeg, voldoende',engels:'',varianten:'',type:'bijwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:500,level:'A1',tags:['grammatica'],papiamento:'avanza',papiamentu:'avansá',nederlands:'vooruitgaan, vorderen',engels:'',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:501,level:'A1',tags:['vrije_tijd'],papiamento:'chasko',papiamentu:'',nederlands:'grap, mop',engels:'',varianten:'chiste',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:502,level:'A1',tags:['taal'],papiamento:'conoci',papiamentu:'konosi',nederlands:'kennis, bekende',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:503,level:'A1',tags:['taal'],papiamento:'idioma',papiamentu:'lenga',nederlands:'taal',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:504,level:'A1',tags:['taal'],papiamento:'imagen',papiamentu:'imágen',nederlands:'beeld, afbeelding, imago',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:505,level:'A1',tags:['grammatica'],papiamento:'fuera',papiamentu:'',nederlands:'behalve, naast, afgezien van',engels:'',varianten:'',type:'woordje',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:506,level:'A1',tags:['tijd'],papiamento:'kada',papiamentu:'',nederlands:'elk, iedere',engels:'',varianten:'kada pasa',type:'woordje',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:507,level:'A1',tags:['taal'],papiamento:'motibo',papiamentu:'motibu',nederlands:'reden, aanleiding, motief',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:508,level:'A1',tags:['grammatica'],papiamento:'segun',papiamentu:'',nederlands:'volgens, naarmate',engels:'',varianten:'',type:'woordje',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:509,level:'A1',tags:['tijd'],papiamento:'djis',papiamentu:'',nederlands:'slechts, dadelijk, eventjes',engels:'',varianten:'',type:'bijwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:510,level:'A1',tags:['taal'],papiamento:'tema',papiamentu:'',nederlands:'thema, onderwerp',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:511,level:'A1',tags:['grammatica'],papiamento:'locual',papiamentu:'lokual',nederlands:'hetgeen, wat',engels:'',varianten:'loce, loke',type:'voornaamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:512,level:'A1',tags:['grammatica'],papiamento:'masce',papiamentu:'maske',nederlands:'hoewel, ook al',engels:'',varianten:'aunke, anke',type:'woordje',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:513,level:'A1',tags:['grammatica'],papiamento:'ni',papiamentu:'',nederlands:'noch, zelfs niet',engels:'',varianten:'',type:'woordje',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:514,level:'A1',tags:['grammatica'],papiamento:'sea',papiamentu:'',nederlands:'oftewel, dat wil zeggen',engels:'',varianten:'',type:'woordje',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:515,level:'A1',tags:['grammatica'],papiamento:'comosifuera',papiamentu:'komosifuera',nederlands:'alsof',engels:'',varianten:'',type:'woordje',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:516,level:'A1',tags:['mensen'],papiamento:'humilde',papiamentu:'umilde',nederlands:'nederig, bescheiden',engels:'',varianten:'',type:'bijvoeglijk naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:517,level:'A1',tags:['eten_drinken'],papiamento:'ijscream',papiamentu:'eiskrim',nederlands:'ijsje',engels:'',varianten:'ijs, eis',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:518,level:'A1',tags:['natuur'],papiamento:'palo',papiamentu:'palu',nederlands:'hout, stok, paal, boom',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:519,level:'A1',tags:['mensen'],papiamento:'respet',papiamentu:'rèspèt',nederlands:'respect, eerbied',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:520,level:'A1',tags:['noodgevallen'],papiamento:'polis',papiamentu:'',nederlands:'politie',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
 ];
