@@ -32,207 +32,395 @@ window.wordsData = [
 
 {week:1,nummer:15,level:'A1',tags:['grammatica'],papiamento:'kier',papiamentu:'ke',nederlands:'willen, liefhebben, houden van',engels:'want, love',varianten:'kié',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi kier awa.',voorbeeld_papiamentu:'Mi ke awa.',voorbeeld_nederlands:'Ik wil water.',voorbeeld_engels:'I want water.'},
 
+{week:1,nummer:16,level:'A1',tags:['grammatica'],papiamento:'por',papiamentu:'por',nederlands:'kunnen, mogen',engels:'can, may',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Bo por bay.',voorbeeld_papiamentu:'Bo por bai.',voorbeeld_nederlands:'Je mag gaan.',voorbeeld_engels:'You may go.'},
+
+{week:1,nummer:17,level:'A1',tags:['taal'],papiamento:'ken?',papiamentu:'ken?',nederlands:'wie?',engels:'who?',varianten:'',type:'vraagwoord',uitspraak:'',voorbeeld_papiamento:'Ken ta ey?',voorbeeld_papiamentu:'Ken ta ei?',voorbeeld_nederlands:'Wie is dat?',voorbeeld_engels:'Who is that?'},
+
+{week:1,nummer:18,level:'A1',tags:['taal'],papiamento:'kiko?',papiamentu:'kiko?',nederlands:'wat?, welke?',engels:'what?, which?',varianten:'ki?, cua, kua?',type:'vraagwoord',uitspraak:'',voorbeeld_papiamento:'Kiko bo kier?',voorbeeld_papiamentu:'Kiko bo kier?',voorbeeld_nederlands:'Wat wil je?',voorbeeld_engels:'What do you want?'},
+
+{week:1,nummer:19,level:'A1',tags:['taal'],papiamento:'unda',papiamentu:'unda',nederlands:'waar?',engels:'where?',varianten:'',type:'vraagwoord',uitspraak:'',voorbeeld_papiamento:'Unda bo ta?',voorbeeld_papiamentu:'Unda bo ta?',voorbeeld_nederlands:'Waar ben je?',voorbeeld_engels:'Where are you?'},
+
+{week:1,nummer:20,level:'A1',tags:['taal'],papiamento:'ki dia?',papiamentu:'ki dia?',nederlands:'welke dag?',engels:'which day?',varianten:'',type:'vraagwoord',uitspraak:'',voorbeeld_papiamento:'Ki dia bo ta bay?',voorbeeld_papiamentu:'Ki dia bo ta bai?',voorbeeld_nederlands:'Welke dag ga je?',voorbeeld_engels:'Which day are you going?'},
+
+{week:1,nummer:21,level:'A1',tags:['taal'],papiamento:'ki ora?',papiamentu:'ki ora?',nederlands:'wanneer?',engels:'when?',varianten:'',type:'vraagwoord',uitspraak:'',voorbeeld_papiamento:'Ki ora nos ta cuminsa?',voorbeeld_papiamentu:'Ki ora nos ta kuminsa?',voorbeeld_nederlands:'Wanneer beginnen we?',voorbeeld_engels:'When do we begin?'},
+
+{week:1,nummer:22,level:'A1',tags:['taal'],papiamento:'ki tempo?',papiamentu:'ki tempu?',nederlands:'welk seizoen?',engels:'which season?',varianten:'',type:'vraagwoord',uitspraak:'',voorbeeld_papiamento:'Ki tempo ta awor?',voorbeeld_papiamentu:'Ki tempu ta awor?',voorbeeld_nederlands:'Welk seizoen is het nu?',voorbeeld_engels:'What season is it now?'},
+
+{week:1,nummer:23,level:'A1',tags:['taal'],papiamento:'pakico?',papiamentu:'pakiko?',nederlands:'waarom?',engels:'why?',varianten:'pasikiko?, dicon?, dikon?',type:'vraagwoord',uitspraak:'',voorbeeld_papiamento:'Pakico bo ta yora?',voorbeeld_papiamentu:'Pakiko bo ta yora?',voorbeeld_nederlands:'Waarom huil je?',voorbeeld_engels:'Why are you crying?'},
+
+{week:1,nummer:24,level:'A1',tags:['taal'],papiamento:'con?',papiamentu:'kon?',nederlands:'hoe?',engels:'how?',varianten:'kon?',type:'vraagwoord',uitspraak:'',voorbeeld_papiamento:'Con bo ta hasi esaki?',voorbeeld_papiamentu:'Kon bo ta hasi esaki?',voorbeeld_nederlands:'Hoe doe je dit?',voorbeeld_engels:'How do you do this?'},
+
+{week:1,nummer:25,level:'A1',tags:['grammatica'],papiamento:'si',papiamentu:'si',nederlands:'ja, als, indien',engels:'yes, if',varianten:'se, sé',type:'woordje',uitspraak:'',voorbeeld_papiamento:'Si, mi ta cla.',voorbeeld_papiamentu:'Si, mi ta kla.',voorbeeld_nederlands:'Ja, ik ben klaar.',voorbeeld_engels:'Yes, I am ready.'},
+
+{week:1,nummer:26,level:'A1',tags:['grammatica'],papiamento:'no',papiamentu:'no',nederlands:'nee',engels:'no',varianten:'nó',type:'woordje',uitspraak:'',voorbeeld_papiamento:'No, danki.',voorbeeld_papiamentu:'No, danki.',voorbeeld_nederlands:'Nee, bedankt.',voorbeeld_engels:'No, thank you.'},
+
+{week:1,nummer:27,level:'A1',tags:['grammatica'],papiamento:'no',papiamentu:'no',nederlands:'niet, geen',engels:'not, no',varianten:'',type:'ontkenning',uitspraak:'',voorbeeld_papiamento:'Mi no sa.',voorbeeld_papiamentu:'Mi no sa.',voorbeeld_nederlands:'Ik weet het niet.',voorbeeld_engels:'I do not know.'},
+
+{week:1,nummer:28,level:'A1',tags:['plaatsen'],papiamento:'aki',papiamentu:'aki',nederlands:'hier',engels:'here',varianten:'akinan',type:'plaatsbepaling',uitspraak:'',voorbeeld_papiamento:'Mi ta aki.',voorbeeld_papiamentu:'Mi ta aki.',voorbeeld_nederlands:'Ik ben hier.',voorbeeld_engels:'I am here.'},
+
+{week:1,nummer:29,level:'A1',tags:['plaatsen'],papiamento:'ey',papiamentu:'ei',nederlands:'daar',engels:'there',varianten:'ey-, ei-nan',type:'plaatsbepaling',uitspraak:'',voorbeeld_papiamento:'E ta ey.',voorbeeld_papiamentu:'E ta ei.',voorbeeld_nederlands:'Het is daar.',voorbeeld_engels:'It is there.'},
+
+{week:1,nummer:30,level:'A1',tags:['plaatsen'],papiamento:'aya',papiamentu:'aya',nederlands:'daarginds',engels:'over there',varianten:'ayanan',type:'plaatsbepaling',uitspraak:'',voorbeeld_papiamento:'Nan ta aya.',voorbeeld_papiamentu:'Nan ta aya.',voorbeeld_nederlands:'Zij zijn daarginds.',voorbeeld_engels:'They are over there.'},
+
+{week:1,nummer:31,level:'A1',tags:['grammatica'],papiamento:'esaki',papiamentu:'esaki',nederlands:'dit, deze',engels:'this',varianten:'',type:'aanwijzend voornaamwoord',uitspraak:'',voorbeeld_papiamento:'Esaki ta dushi.',voorbeeld_papiamentu:'Esaki ta dushi.',voorbeeld_nederlands:'Deze is lekker.',voorbeeld_engels:'This one is tasty.'},
+
+{week:1,nummer:32,level:'A1',tags:['grammatica'],papiamento:'esey',papiamentu:'esei',nederlands:'die, dat',engels:'that',varianten:'',type:'aanwijzend voornaamwoord',uitspraak:'',voorbeeld_papiamento:'Esey ta grandi.',voorbeeld_papiamentu:'Esei ta grandi.',voorbeeld_nederlands:'Dat is groot.',voorbeeld_engels:'That is big.'},
+
+{week:1,nummer:33,level:'A1',tags:['grammatica'],papiamento:'esaya',papiamentu:'esaya',nederlands:'die daar(ginds)',engels:'that one over there',varianten:'',type:'aanwijzend voornaamwoord',uitspraak:'',voorbeeld_papiamento:'Esaya ta bunita.',voorbeeld_papiamentu:'Esaya ta bunita.',voorbeeld_nederlands:'Die daar is mooi.',voorbeeld_engels:'That one over there is beautiful.'},
+
+{week:1,nummer:34,level:'A1',tags:['grammatica'],papiamento:'esun',papiamentu:'esun',nederlands:'die, dat, degene',engels:'that one, the one',varianten:'',type:'aanwijzend voornaamwoord',uitspraak:'',voorbeeld_papiamento:'Esun ta mi buki.',voorbeeld_papiamentu:'Esun ta mi buki.',voorbeeld_nederlands:'Dat is mijn boek.',voorbeeld_engels:'That is my book.'},
+
+{week:1,nummer:35,level:'A1',tags:['grammatica'],papiamento:'esnan',papiamentu:'esnan',nederlands:'degene die',engels:'those who',varianten:'cu, ku',type:'aanwijzend voornaamwoord',uitspraak:'',voorbeeld_papiamento:'Esnan cu ta bin.',voorbeeld_papiamentu:'Esnan ku ta bin.',voorbeeld_nederlands:'Degenen die komen.',voorbeeld_engels:'Those who are coming.'},
+
+{week:1,nummer:36,level:'A1',tags:['grammatica'],papiamento:'na',papiamentu:'na',nederlands:'bij, in, op, naar',engels:'at, in, on, to',varianten:'',type:'voorzetsel',uitspraak:'',voorbeeld_papiamento:'Mi ta na cas.',voorbeeld_papiamentu:'Mi ta na kas.',voorbeeld_nederlands:'Ik ben thuis.',voorbeeld_engels:'I am at home.'},
+
+{week:1,nummer:37,level:'A1',tags:['grammatica'],papiamento:'cu',papiamentu:'ku',nederlands:'met',engels:'with',varianten:'',type:'voorzetsel',uitspraak:'',voorbeeld_papiamento:'Mi ta bay cu bo.',voorbeeld_papiamentu:'Mi ta bai ku bo.',voorbeeld_nederlands:'Ik ga met jou.',voorbeeld_engels:'I am going with you.'},
+
+{week:1,nummer:38,level:'A1',tags:['grammatica'],papiamento:'pa',papiamentu:'pa',nederlands:'voor',engels:'for',varianten:'',type:'voorzetsel',uitspraak:'',voorbeeld_papiamento:'Esaki ta pa bo.',voorbeeld_papiamentu:'Esaki ta pa bo.',voorbeeld_nederlands:'Dit is voor jou.',voorbeeld_engels:'This is for you.'},
+
+{week:1,nummer:39,level:'A1',tags:['plaatsen'],papiamento:'riba',papiamentu:'riba',nederlands:'op, bovenop',engels:'on, on top of',varianten:'',type:'voorzetsel',uitspraak:'',voorbeeld_papiamento:'E buki ta riba mesa.',voorbeeld_papiamentu:'E buki ta riba mesa.',voorbeeld_nederlands:'Het boek ligt op tafel.',voorbeeld_engels:'The book is on the table.'},
+
+{week:1,nummer:40,level:'A1',tags:['plaatsen'],papiamento:'ariba',papiamentu:'ariba',nederlands:'boven',engels:'above, up',varianten:'',type:'plaatsbepaling',uitspraak:'',voorbeeld_papiamento:'Mira ariba.',voorbeeld_papiamentu:'Mira ariba.',voorbeeld_nederlands:'Kijk omhoog.',voorbeeld_engels:'Look up.'},
+
+{week:1,nummer:41,level:'A1',tags:['plaatsen'],papiamento:'bou',papiamentu:'bou',nederlands:'onder',engels:'under, below',varianten:'',type:'plaatsbepaling',uitspraak:'',voorbeeld_papiamento:'E cos ta bou mesa.',voorbeeld_papiamentu:'E kos ta bou mesa.',voorbeeld_nederlands:'Het ding ligt onder de tafel.',voorbeeld_engels:'The thing is under the table.'},
+
+{week:1,nummer:42,level:'A1',tags:['plaatsen'],papiamento:'abou',papiamentu:'abou',nederlands:'beneden, laag',engels:'downstairs, below',varianten:'',type:'plaatsbepaling',uitspraak:'',voorbeeld_papiamento:'Nos ta abou.',voorbeeld_papiamentu:'Nos ta abou.',voorbeeld_nederlands:'Wij zijn beneden.',voorbeeld_engels:'We are downstairs.'},
+
+{week:1,nummer:43,level:'A1',tags:['plaatsen'],papiamento:'halto',papiamentu:'haltu',nederlands:'hoog',engels:'high, tall',varianten:'',type:'bijvoeglijk naamwoord',uitspraak:'',voorbeeld_papiamento:'E muraya ta halto.',voorbeeld_papiamentu:'E muraya ta haltu.',voorbeeld_nederlands:'De muur is hoog.',voorbeeld_engels:'The wall is high.'},
+
+{week:1,nummer:44,level:'A1',tags:['plaatsen'],papiamento:'meymey',papiamentu:'mèimèi',nederlands:'in het midden',engels:'in the middle',varianten:'memey',type:'plaatsbepaling',uitspraak:'',voorbeeld_papiamento:'Sinta meymey.',voorbeeld_papiamentu:'Sinta mèimèi.',voorbeeld_nederlands:'Ga in het midden zitten.',voorbeeld_engels:'Sit in the middle.'},
+
+{week:1,nummer:45,level:'A1',tags:['plaatsen'],papiamento:'entre',papiamentu:'entre',nederlands:'tussen',engels:'between',varianten:'',type:'voorzetsel',uitspraak:'',voorbeeld_papiamento:'E ta entre dos casnan.',voorbeeld_papiamentu:'E ta entre dos kasnan.',voorbeeld_nederlands:'Het ligt tussen twee huizen.',voorbeeld_engels:'It is between two houses.'},
+
+{week:1,nummer:46,level:'A1',tags:['plaatsen'],papiamento:'pafo',papiamentu:'afó',nederlands:'buiten, naar buiten',engels:'outside',varianten:'',type:'plaatsbepaling',uitspraak:'',voorbeeld_papiamento:'Nos ta bay pafo.',voorbeeld_papiamentu:'Nos ta bai afó.',voorbeeld_nederlands:'Wij gaan naar buiten.',voorbeeld_engels:'We are going outside.'},
+
+{week:1,nummer:47,level:'A1',tags:['plaatsen'],papiamento:'padilanti',papiamentu:'dilanti',nederlands:'naar voren, vooraan',engels:'forward, in front',varianten:'',type:'plaatsbepaling',uitspraak:'',voorbeeld_papiamento:'Move padilanti.',voorbeeld_papiamentu:'Move dilanti.',voorbeeld_nederlands:'Ga naar voren.',voorbeeld_engels:'Move forward.'},
+
+{week:1,nummer:48,level:'A1',tags:['plaatsen'],papiamento:'patras',papiamentu:'patras',nederlands:'achter',engels:'behind, back',varianten:'',type:'plaatsbepaling',uitspraak:'',voorbeeld_papiamento:'Mira patras.',voorbeeld_papiamentu:'Mira patras.',voorbeeld_nederlands:'Kijk achterom.',voorbeeld_engels:'Look behind you.'},
+
+{week:1,nummer:49,level:'A1',tags:['plaatsen'],papiamento:'paden',papiamentu:'aden',nederlands:'binnen, naar binnen',engels:'inside, indoors',varianten:'',type:'plaatsbepaling',uitspraak:'',voorbeeld_papiamento:'Drenta paden.',voorbeeld_papiamentu:'Drenta aden.',voorbeeld_nederlands:'Ga naar binnen.',voorbeeld_engels:'Go inside.'},
+
+{week:1,nummer:50,level:'A1',tags:['plaatsen'],papiamento:'den',papiamentu:'den',nederlands:'in, binnen',engels:'in, inside',varianten:'',type:'voorzetsel',uitspraak:'',voorbeeld_papiamento:'E ta den cas.',voorbeeld_papiamentu:'E ta den kas.',voorbeeld_nederlands:'Het is in huis.',voorbeeld_engels:'It is inside the house.'},
   
-  {week:1,nummer:16,tags:[],papiamento:'por',nederlands:'kunnen, mogen',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Bo por bai.',voorbeeld_nederlands:'Je mag gaan.'},
-  {week:1,nummer:17,tags:[],papiamento:'ken?',nederlands:'wie?',varianten:'',type:'vraagwoord',uitspraak:'',voorbeeld_papiamento:'Ken ta ei?',voorbeeld_nederlands:'Wie is dat?'},
-  {week:1,nummer:18,tags:[],papiamento:'kiko?',nederlands:'wat?, welke?',varianten:'ki?, cua, kua?',type:'vraagwoord',uitspraak:'',voorbeeld_papiamento:'Kiko bo kier?',voorbeeld_nederlands:'Wat wil je?'},
-  {week:1,nummer:19,tags:[],papiamento:'unda',nederlands:'waar?',varianten:'',type:'vraagwoord',uitspraak:'',voorbeeld_papiamento:'Unda bo ta?',voorbeeld_nederlands:'Waar ben je?'},
-  {week:1,nummer:20,tags:[],papiamento:'ki dia?',nederlands:'welke dag?',varianten:'',type:'vraagwoord',uitspraak:'',voorbeeld_papiamento:'Ki dia bo ta bai?',voorbeeld_nederlands:'Welke dag ga je?'},
-  {week:1,nummer:21,tags:[],papiamento:'ki ora?',nederlands:'wanneer?',varianten:'',type:'vraagwoord',uitspraak:'',voorbeeld_papiamento:'Ki ora nos ta kuminsa?',voorbeeld_nederlands:'Wanneer beginnen we?'},
-  {week:1,nummer:22,tags:[],papiamento:'ki tempo?',nederlands:'welk seizoen?',varianten:'',type:'vraagwoord',uitspraak:'',voorbeeld_papiamento:'Ki tempo ta awor?',voorbeeld_nederlands:'Welk seizoen is het nu?'},
-  {week:1,nummer:23,tags:[],papiamento:'pakico?',nederlands:'waarom?',varianten:'pasikiko?, dicon?, Pakiko?, dikon?',type:'vraagwoord',uitspraak:'',voorbeeld_papiamento:'Pakico bo ta yora?',voorbeeld_nederlands:'Waarom huil je?'},
-  {week:1,nummer:24,tags:[],papiamento:'con?',nederlands:'hoe?',varianten:'kon?',type:'vraagwoord',uitspraak:'',voorbeeld_papiamento:'Con bo ta hasi esaki?',voorbeeld_nederlands:'Hoe doe je dit?'},
-  {week:1,nummer:25,tags:[],papiamento:'si',nederlands:'ja, als, indien, wel',varianten:'se, sé',type:'woordje',uitspraak:'',voorbeeld_papiamento:'Si, mi ta kla.',voorbeeld_nederlands:'Ja, ik ben klaar.'},
-  {week:1,nummer:26,tags:[],papiamento:'no',nederlands:'nee, neen',varianten:'nó',type:'woordje',uitspraak:'',voorbeeld_papiamento:'No, danki.',voorbeeld_nederlands:'Nee, bedankt.'},
-  {week:1,nummer:27,tags:[],papiamento:'no',nederlands:'niet, geen',varianten:'',type:'ontkenning',uitspraak:'',voorbeeld_papiamento:'Mi no sa.',voorbeeld_nederlands:'Ik weet het niet.'},
-  {week:1,nummer:28,tags:[],papiamento:'aki',nederlands:'hier',varianten:'akinan',type:'plaatsbepaling',uitspraak:'',voorbeeld_papiamento:'Mi ta aki.',voorbeeld_nederlands:'Ik ben hier.'},
-  {week:1,nummer:29,tags:[],papiamento:'ey',nederlands:'daar',varianten:'ei, ey-, ei-nan',type:'plaatsbepaling',uitspraak:'',voorbeeld_papiamento:'E ta ey.',voorbeeld_nederlands:'Het is daar.'},
-  {week:1,nummer:30,tags:[],papiamento:'aya',nederlands:'daarginds',varianten:'ayanan',type:'plaatsbepaling',uitspraak:'',voorbeeld_papiamento:'Nan ta aya.',voorbeeld_nederlands:'Zij zijn daarginds.'},
-  {week:1,nummer:31,tags:[],papiamento:'esaki',nederlands:'dit, deze',varianten:'',type:'aanwijzend voornaamwoord',uitspraak:'',voorbeeld_papiamento:'Esaki ta dushi.',voorbeeld_nederlands:'Deze is lekker.'},
-  {week:1,nummer:32,tags:[],papiamento:'esey',nederlands:'die, dat',varianten:'esei',type:'aanwijzend voornaamwoord',uitspraak:'',voorbeeld_papiamento:'Esey ta grandi.',voorbeeld_nederlands:'Dat is groot.'},
-  {week:1,nummer:33,tags:[],papiamento:'esaya',nederlands:'die daar(ginds)',varianten:'',type:'aanwijzend voornaamwoord',uitspraak:'',voorbeeld_papiamento:'Esaya ta bunita.',voorbeeld_nederlands:'Die daar is mooi.'},
-  {week:1,nummer:34,tags:[],papiamento:'esun',nederlands:'die, dat, degene',varianten:'',type:'aanwijzend voornaamwoord',uitspraak:'',voorbeeld_papiamento:'Esun ta mi libro.',voorbeeld_nederlands:'Die is mijn boek.'},
-  {week:1,nummer:35,tags:[],papiamento:'esnan',nederlands:'degene die',varianten:'cu, ku',type:'aanwijzend voornaamwoord',uitspraak:'',voorbeeld_papiamento:'Esnan cu ta bini.',voorbeeld_nederlands:'Degenen die komen.'},
-  {week:1,nummer:36,tags:[],papiamento:'na',nederlands:'bij, te, in, op, aan, voor, met, tot, naar, onder, tegen',varianten:'',type:'voorzetsel',uitspraak:'',voorbeeld_papiamento:'Mi ta na kas.',voorbeeld_nederlands:'Ik ben thuis.'},
-  {week:1,nummer:37,tags:[],papiamento:'cu',nederlands:'met, plus, en, samen met, dan, dat, die',varianten:'ku',type:'voorzetsel',uitspraak:'',voorbeeld_papiamento:'Mi ta bai cu bo.',voorbeeld_nederlands:'Ik ga met jou.'},
-  {week:1,nummer:38,tags:[],papiamento:'pa',nederlands:'voor, met, door, aan, per, om, bij, naar',varianten:'',type:'voorzetsel',uitspraak:'',voorbeeld_papiamento:'Esaki ta pa bo.',voorbeeld_nederlands:'Dit is voor jou.'},
-  {week:1,nummer:39,tags:[],papiamento:'riba',nederlands:'op, bovenop',varianten:'',type:'voorzetsel',uitspraak:'',voorbeeld_papiamento:'E boka ta riba mesa.',voorbeeld_nederlands:'Het boek ligt op tafel.'},
-  {week:1,nummer:40,tags:[],papiamento:'ariba',nederlands:'boven, bovenkant',varianten:'',type:'plaatsbepaling',uitspraak:'',voorbeeld_papiamento:'Mira ariba.',voorbeeld_nederlands:'Kijk omhoog.'},
-  {week:1,nummer:41,tags:[],papiamento:'bou',nederlands:'onder',varianten:'',type:'plaatsbepaling',uitspraak:'',voorbeeld_papiamento:'E kos ta bou mesa.',voorbeeld_nederlands:'Het ding ligt onder de tafel.'},
-  {week:1,nummer:42,tags:[],papiamento:'abou',nederlands:'beneden, laag',varianten:'abou',type:'plaatsbepaling',uitspraak:'',voorbeeld_papiamento:'Nos ta abou.',voorbeeld_nederlands:'Wij zijn beneden.'},
-  {week:1,nummer:43,tags:[],papiamento:'halto',nederlands:'hoog, high',varianten:'haltu',type:'bijvoeglijk naamwoord',uitspraak:'',voorbeeld_papiamento:'E muraya ta halto.',voorbeeld_nederlands:'De muur is hoog.'},
-  {week:1,nummer:44,tags:[],papiamento:'meymey',nederlands:'in het midden, midden tussenin',varianten:'memey, mèimèi',type:'plaatsbepaling',uitspraak:'',voorbeeld_papiamento:'Sinta meymey.',voorbeeld_nederlands:'Ga in het midden zitten.'},
-  {week:1,nummer:45,tags:[],papiamento:'entre',nederlands:'tussen',varianten:'',type:'voorzetsel',uitspraak:'',voorbeeld_papiamento:'E ta entre dos kasnan.',voorbeeld_nederlands:'Het ligt tussen twee huizen.'},
-  {week:1,nummer:46,tags:[],papiamento:'pafo',nederlands:'buiten of naar buiten',varianten:'afó',type:'plaatsbepaling',uitspraak:'',voorbeeld_papiamento:'Nos ta bai pafo.',voorbeeld_nederlands:'Wij gaan naar buiten.'},
-  {week:1,nummer:47,tags:[],papiamento:'padilanti',nederlands:'naar voren, voorkant, vooraan',varianten:'dilanti',type:'plaatsbepaling',uitspraak:'',voorbeeld_papiamento:'Move padilanti.',voorbeeld_nederlands:'Ga naar voren.'},
-  {week:1,nummer:48,tags:[],papiamento:'patras',nederlands:'achter',varianten:'',type:'plaatsbepaling',uitspraak:'',voorbeeld_papiamento:'Mira patras.',voorbeeld_nederlands:'Kijk achterom.'},
-  {week:1,nummer:49,tags:[],papiamento:'paden',nederlands:'binnen, naar binnen, in',varianten:'aden',type:'plaatsbepaling',uitspraak:'',voorbeeld_papiamento:'Drenta paden.',voorbeeld_nederlands:'Ga naar binnen.'},
-  {week:1,nummer:50,tags:[],papiamento:'den',nederlands:'in, binnen',varianten:'',type:'voorzetsel',uitspraak:'',voorbeeld_papiamento:'E ta den kas.',voorbeeld_nederlands:'Het is in huis.'},
-  {week:1,nummer:51,tags:[],papiamento:'banda',nederlands:'naast, kant, zijde, langs, tegen, tegenover',varianten:'',type:'plaatsbepaling',uitspraak:'',voorbeeld_papiamento:'Mi ta banda bo.',voorbeeld_nederlands:'Ik sta naast jou.'},
-  {week:1,nummer:52,tags:[],papiamento:'canto',nederlands:'kant, langs',varianten:'kantu',type:'plaatsbepaling',uitspraak:'',voorbeeld_papiamento:'Bai na e canto.',voorbeeld_nederlands:'Ga naar die kant.'},
-  {week:1,nummer:53,tags:[],papiamento:'rond',nederlands:'rond, rondom',varianten:'rònt',type:'plaatsbepaling',uitspraak:'',voorbeeld_papiamento:'Nos ta ronda e kas.',voorbeeld_nederlands:'Wij lopen rond het huis.'},
-  {week:1,nummer:54,tags:[],papiamento:'ata',nederlands:'hier, alsjeblieft',varianten:'atá, até',type:'woordje',uitspraak:'',voorbeeld_papiamento:'Ata bo awa.',voorbeeld_nederlands:'Hier is je water.'},
-  {week:1,nummer:55,tags:[],papiamento:'atey',nederlands:'daar heb je hem, haar, de, het',varianten:'atei',type:'woordje',uitspraak:'',voorbeeld_papiamento:'Atey e libro.',voorbeeld_nederlands:'Daar heb je het boek.'},
-  {week:1,nummer:56,tags:[],papiamento:'ateki',nederlands:'hier heb je hem, haar, de, het',varianten:'',type:'woordje',uitspraak:'',voorbeeld_papiamento:'Ateki e yabi.',voorbeeld_nederlands:'Hier heb je de sleutel.'},
-  {week:1,nummer:57,tags:[],papiamento:"t'ey",nederlands:'is daar, aanwezig',varianten:"t'ei",type:'woordje',uitspraak:'',voorbeeld_papiamento:"E t'ey.",voorbeeld_nederlands:'Hij of zij is daar.'},
-  {week:1,nummer:58,tags:[],papiamento:'dje',nederlands:'van hem, van haar, van iets',varianten:'di e',type:'referentiewoord',uitspraak:'',voorbeeld_papiamento:'Esaki ta dje.',voorbeeld_nederlands:'Dit is van hem of haar.'},
-  {week:1,nummer:59,tags:[],papiamento:'di',nederlands:'van, om, te',varianten:'',type:'voorzetsel',uitspraak:'',voorbeeld_papiamento:'Buki di mi.',voorbeeld_nederlands:'Mijn boek.'},
-  {week:1,nummer:60,tags:[],papiamento:'bisa',nederlands:'zeggen, noemen',varianten:'di',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Bisa mi un cos.',voorbeeld_nederlands:'Vertel me iets.'},
-  {week:1,nummer:61,tags:[],papiamento:'y',nederlands:'en, plus',varianten:'i',type:'woordje',uitspraak:'',voorbeeld_papiamento:'Pan y keshi.',voorbeeld_nederlands:'Brood en kaas.'},
-  {week:1,nummer:62,tags:[],papiamento:'of',nederlands:'of',varianten:'òf, o',type:'woordje',uitspraak:'',voorbeeld_papiamento:'Bo kier awa of lamunchi?',voorbeeld_nederlands:'Wil je water of limonade?'},
-  {week:1,nummer:63,tags:[],papiamento:'su',nederlands:'zijn, haar, uw',varianten:'',type:'bezittelijk voornaamwoord',uitspraak:'',voorbeeld_papiamento:'Su nomber ta Ana.',voorbeeld_nederlands:'Haar naam is Ana.'},
-  {week:1,nummer:64,tags:[],papiamento:'mes',nederlands:'zelf, zelfde, gelijk, eigen',varianten:'',type:'woordje',uitspraak:'',voorbeeld_papiamento:'Mi mes ta hasi esaki.',voorbeeld_nederlands:'Ik doe dit zelf.'},
-  {week:1,nummer:65,tags:[],papiamento:'so',nederlands:'alleen, eenzaam',varianten:'',type:'bijwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta so awe.',voorbeeld_nederlands:'Ik ben vandaag alleen.'},
-  {week:1,nummer:66,tags:[],papiamento:'awor',nederlands:'nu, op dit ogenblik',varianten:'awo, awó',type:'tijdsaanduiding',uitspraak:'',voorbeeld_papiamento:'Mi ta bai awor.',voorbeeld_nederlands:'Ik ga nu.'},
-  {week:1,nummer:67,tags:[],papiamento:'awe',nederlands:'vandaag',varianten:'',type:'tijdsaanduiding',uitspraak:'',voorbeeld_papiamento:'Awe ta dushi.',voorbeeld_nederlands:'Vandaag is fijn.'},
-  {week:1,nummer:68,tags:[],papiamento:'mayan',nederlands:'morgen',varianten:'',type:'tijdsaanduiding',uitspraak:'',voorbeeld_papiamento:'Nos ta mira mayan.',voorbeeld_nederlands:'We zien elkaar morgen.'},
-  {week:1,nummer:69,tags:[],papiamento:'ayera',nederlands:'gisteren',varianten:'',type:'tijdsaanduiding',uitspraak:'',voorbeeld_papiamento:'Ayer a yoba.',voorbeeld_nederlands:'Gisteren regende het.'},
-  {week:1,nummer:70,tags:[],papiamento:'despues',nederlands:'daarna, later, straks, een later tijdstip',varianten:'mas oro, mas aweró',type:'tijdsaanduiding',uitspraak:'',voorbeeld_papiamento:'Nos ta papia despues.',voorbeeld_nederlands:'We praten later.'},
-  {week:1,nummer:71,tags:[],papiamento:'antes',nederlands:'vroeger',varianten:'àntes',type:'tijdsaanduiding',uitspraak:'',voorbeeld_papiamento:'Antes mi tabata chikito.',voorbeeld_nederlands:'Vroeger was ik klein.'},
-  {week:1,nummer:72,tags:[],papiamento:'pronto',nederlands:'spoedig, binnenkort, weldra',varianten:'',type:'tijdsaanduiding',uitspraak:'',voorbeeld_papiamento:'Mi ta bin pronto.',voorbeeld_nederlands:'Ik kom binnenkort.'},
-  {week:1,nummer:73,tags:[],papiamento:'bin',nederlands:'komen, kwam, gekomen',varianten:'bini',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Bo por bin awe?',voorbeeld_nederlands:'Kun je vandaag komen?'},
-  {week:1,nummer:74,tags:[],papiamento:'bay',nederlands:'gaan, ging, gegaan',varianten:'bai',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta bay kas.',voorbeeld_nederlands:'Ik ga naar huis.'},
-  {week:1,nummer:75,tags:[],papiamento:'bay bin',nederlands:'heen en weer bewegen',varianten:'baiben',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'E ta bay bin hopi.',voorbeeld_nederlands:'Het beweegt heen en weer.'},
-  {week:1,nummer:76,tags:[],papiamento:'keda',nederlands:'blijven, verblijven, overblijven, liggen, logeren',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta keda aki.',voorbeeld_nederlands:'Ik blijf hier.'},
-  {week:1,nummer:77,tags:[],papiamento:'keto',nederlands:'stil, doodstil, rustig',varianten:'ketu, trankil',type:'bijvoeglijk naamwoord',uitspraak:'',voorbeeld_papiamento:'Ta keto aki.',voorbeeld_nederlands:'Het is hier stil.'},
-  {week:1,nummer:78,tags:[],papiamento:'keda keto',nederlands:'blijf stil, blijf rustig, niet praten',varianten:'ketu',type:'uitdrukking',uitspraak:'',voorbeeld_papiamento:'Keda keto un rato.',voorbeeld_nederlands:'Blijf even stil.'},
-  {week:1,nummer:79,tags:[],papiamento:'bolbe',nederlands:'terugkeren',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi lo bolbe despues.',voorbeeld_nederlands:'Ik kom later terug.'},
-  {week:1,nummer:80,tags:[],papiamento:'bek',nederlands:'terug, achteruitgaan, terugdeinzen',varianten:'bèk',type:'bijwoord',uitspraak:'',voorbeeld_papiamento:'Move bek un tiki.',voorbeeld_nederlands:'Ga een beetje terug.'},
-  {week:1,nummer:81,tags:[],papiamento:'salud',nederlands:'gezond, gezondheid!, proost!',varianten:'salú',type:'woordje',uitspraak:'',voorbeeld_papiamento:'Salud!',voorbeeld_nederlands:'Proost!'},
-  {week:1,nummer:82,tags:[],papiamento:'bon',nederlands:'goed, wel, best, fijn',varianten:'',type:'bijvoeglijk naamwoord',uitspraak:'',voorbeeld_papiamento:'E ta bon.',voorbeeld_nederlands:'Het is goed.'},
-  {week:1,nummer:83,tags:[],papiamento:'malo',nederlands:'slecht, verkeerd, stout, ziek',varianten:'malu',type:'bijvoeglijk naamwoord',uitspraak:'',voorbeeld_papiamento:'Esaki ta malo.',voorbeeld_nederlands:'Dat is slecht.'},
-  {week:1,nummer:84,tags:[],papiamento:'grandi',nederlands:'groot, bejaard, op leeftijd',varianten:'',type:'bijvoeglijk naamwoord',uitspraak:'',voorbeeld_papiamento:'E kas ta grandi.',voorbeeld_nederlands:'Het huis is groot.'},
-  {week:1,nummer:85,tags:[],papiamento:'chikito',nederlands:'klein',varianten:'chikitu, chiki',type:'bijvoeglijk naamwoord',uitspraak:'',voorbeeld_papiamento:'E mucha ta chikito.',voorbeeld_nederlands:'Het kind is klein.'},
-  {week:1,nummer:86,tags:[],papiamento:'hopi',nederlands:'veel, erg, heel, zeer',varianten:'',type:'bijwoord',uitspraak:'',voorbeeld_papiamento:'Mi tin hopi trabou.',voorbeeld_nederlands:'Ik heb veel werk.'},
-  {week:1,nummer:87,tags:[],papiamento:'poco',nederlands:'weinig, een beetje',varianten:'poko, tiki',type:'bijwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta come poco.',voorbeeld_nederlands:'Ik eet weinig.'},
-  {week:1,nummer:88,tags:[],papiamento:'poco poco',nederlands:'langzaam, zacht',varianten:'poko poko',type:'bijwoord',uitspraak:'',voorbeeld_papiamento:'Bai poco poco.',voorbeeld_nederlands:'Ga langzaam.'},
-  {week:1,nummer:89,tags:[],papiamento:'lihe',nederlands:'snel, vlug',varianten:'lihé',type:'bijwoord',uitspraak:'',voorbeeld_papiamento:'Corre lihe.',voorbeeld_nederlands:'Ren snel.'},
-  {week:1,nummer:90,tags:[],papiamento:'pura',nederlands:'haast, spoed',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi tin pura.',voorbeeld_nederlands:'Ik heb haast.'},
-  {week:1,nummer:91,tags:[],papiamento:'prome',nederlands:'eerste, voordat',varianten:'promé, di 2, di 3 etc',type:'rangtelwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta promé.',voorbeeld_nederlands:'Ik ben de eerste.'},
-  {week:1,nummer:92,tags:[],papiamento:'grita',nederlands:'gillen, schreeuwen',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'No grita.',voorbeeld_nederlands:'Niet schreeuwen.'},
-  {week:1,nummer:93,tags:[],papiamento:'papia',nederlands:'praten, spreken, bespreken',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Nos ta papia Papiamento.',voorbeeld_nederlands:'Wij spreken Papiaments.'},
-  {week:1,nummer:94,tags:[],papiamento:'combersa',nederlands:'bijpraten, gesprek voeren',varianten:'kombersá',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Nos ta combersa awe anochi.',voorbeeld_nederlands:'We praten vanavond bij.'},
-  {week:1,nummer:95,tags:[],papiamento:'compronde',nederlands:'begrijpen',varianten:'komprondé',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi no compronde.',voorbeeld_nederlands:'Ik begrijp het niet.'},
-  {week:1,nummer:96,tags:[],papiamento:'discuti',nederlands:'discussiëren, van gedachten wisselen',varianten:'diskutí',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Nan ta discuti hopi.',voorbeeld_nederlands:'Zij discussiëren veel.'},
-  {week:1,nummer:97,tags:[],papiamento:'yama',nederlands:'bellen, telefoneren, roepen, heten, noemen',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta yama bo despues.',voorbeeld_nederlands:'Ik bel je later.'},
-  {week:1,nummer:98,tags:[],papiamento:'nomber',nederlands:'naam, voornaam, benaming',varianten:'nòmber',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Kiko ta bo nomber?',voorbeeld_nederlands:'Wat is je naam?'},
-  {week:1,nummer:99,tags:[],papiamento:'number',nederlands:'nummer, getal',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Skirbi e number.',voorbeeld_nederlands:'Schrijf het nummer op.'},
-  {week:1,nummer:100,tags:[],papiamento:'adres',nederlands:'adres',varianten:'adrés',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi tin bo adres.',voorbeeld_nederlands:'Ik heb je adres.'},
+{week:1,nummer:51,level:'A1',tags:['plaatsen'],papiamento:'banda',papiamentu:'banda',nederlands:'naast, kant, zijde',engels:'beside, side',varianten:'',type:'plaatsbepaling',uitspraak:'',voorbeeld_papiamento:'Mi ta banda bo.',voorbeeld_papiamentu:'Mi ta banda bo.',voorbeeld_nederlands:'Ik sta naast jou.',voorbeeld_engels:'I am standing next to you.'},
+
+{week:1,nummer:52,level:'A1',tags:['plaatsen'],papiamento:'canto',papiamentu:'kantu',nederlands:'kant, langs',engels:'side, edge',varianten:'',type:'plaatsbepaling',uitspraak:'',voorbeeld_papiamento:'Bai na e canto.',voorbeeld_papiamentu:'Bai na e kantu.',voorbeeld_nederlands:'Ga naar die kant.',voorbeeld_engels:'Go to that side.'},
+
+{week:1,nummer:53,level:'A1',tags:['plaatsen'],papiamento:'rond',papiamentu:'rònt',nederlands:'rond, rondom',engels:'around',varianten:'',type:'plaatsbepaling',uitspraak:'',voorbeeld_papiamento:'Nos ta rond e cas.',voorbeeld_papiamentu:'Nos ta rònt e kas.',voorbeeld_nederlands:'Wij lopen rond het huis.',voorbeeld_engels:'We walk around the house.'},
+
+{week:1,nummer:54,level:'A1',tags:['grammatica'],papiamento:'ata',papiamentu:'atá',nederlands:'hier, alsjeblieft',engels:'here you are',varianten:'até',type:'woordje',uitspraak:'',voorbeeld_papiamento:'Ata bo awa.',voorbeeld_papiamentu:'Atá bo awa.',voorbeeld_nederlands:'Hier is je water.',voorbeeld_engels:'Here is your water.'},
+
+{week:1,nummer:55,level:'A1',tags:['grammatica'],papiamento:'atey',papiamentu:'atei',nederlands:'daar heb je hem, haar, het',engels:'there it is',varianten:'',type:'woordje',uitspraak:'',voorbeeld_papiamento:'Atey e buki.',voorbeeld_papiamentu:'Atei e buki.',voorbeeld_nederlands:'Daar heb je het boek.',voorbeeld_engels:'There is the book.'},
+
+{week:1,nummer:56,level:'A1',tags:['grammatica'],papiamento:'ateki',papiamentu:'ateki',nederlands:'hier heb je hem, haar, het',engels:'here it is',varianten:'',type:'woordje',uitspraak:'',voorbeeld_papiamento:'Ateki e yabi.',voorbeeld_papiamentu:'Ateki e yabi.',voorbeeld_nederlands:'Hier heb je de sleutel.',voorbeeld_engels:'Here is the key.'},
+
+{week:1,nummer:57,level:'A1',tags:['grammatica'],papiamento:"t'ey",papiamentu:"t'ei",nederlands:'is daar, aanwezig',engels:'is there, present',varianten:'',type:'woordje',uitspraak:'',voorbeeld_papiamento:"E t'ey.",voorbeeld_papiamentu:"E t'ei.",voorbeeld_nederlands:'Hij of zij is aanwezig.',voorbeeld_engels:'He or she is present.'},
+
+{week:1,nummer:58,level:'A1',tags:['grammatica'],papiamento:'dje',papiamentu:'dje',nederlands:'van hem, van haar',engels:'his, hers',varianten:'di e',type:'referentiewoord',uitspraak:'',voorbeeld_papiamento:'Esaki ta dje.',voorbeeld_papiamentu:'Esaki ta dje.',voorbeeld_nederlands:'Dit is van hem of haar.',voorbeeld_engels:'This belongs to him or her.'},
+
+{week:1,nummer:59,level:'A1',tags:['grammatica'],papiamento:'di',papiamentu:'di',nederlands:'van',engels:'of, from',varianten:'',type:'voorzetsel',uitspraak:'',voorbeeld_papiamento:'E buki ta di mi.',voorbeeld_papiamentu:'E buki ta di mi.',voorbeeld_nederlands:'Het boek is van mij.',voorbeeld_engels:'The book is mine.'},
+
+{week:1,nummer:60,level:'A1',tags:['taal'],papiamento:'bisa',papiamentu:'bisa',nederlands:'zeggen, noemen',engels:'say, tell',varianten:'di',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Bisa mi un cos.',voorbeeld_papiamentu:'Bisa mi un kos.',voorbeeld_nederlands:'Vertel mij iets.',voorbeeld_engels:'Tell me something.'},
+
+{week:1,nummer:61,level:'A1',tags:['grammatica'],papiamento:'y',papiamentu:'i',nederlands:'en',engels:'and',varianten:'',type:'woordje',uitspraak:'',voorbeeld_papiamento:'Pan y keshi.',voorbeeld_papiamentu:'Pan i keshi.',voorbeeld_nederlands:'Brood en kaas.',voorbeeld_engels:'Bread and cheese.'},
+
+{week:1,nummer:62,level:'A1',tags:['grammatica'],papiamento:'of',papiamentu:'òf',nederlands:'of',engels:'or',varianten:'o',type:'woordje',uitspraak:'',voorbeeld_papiamento:'Awa of lamunchi?',voorbeeld_papiamentu:'Awa òf lamunchi?',voorbeeld_nederlands:'Water of limonade?',voorbeeld_engels:'Water or lemonade?'},
+
+{week:1,nummer:63,level:'A1',tags:['grammatica'],papiamento:'su',papiamentu:'su',nederlands:'zijn, haar, uw',engels:'his, her, your',varianten:'',type:'bezittelijk voornaamwoord',uitspraak:'',voorbeeld_papiamento:'Su nomber ta Ana.',voorbeeld_papiamentu:'Su nòmber ta Ana.',voorbeeld_nederlands:'Haar naam is Ana.',voorbeeld_engels:'Her name is Ana.'},
+
+{week:1,nummer:64,level:'A1',tags:['grammatica'],papiamento:'mes',papiamentu:'mes',nederlands:'zelf, zelfde',engels:'self, same',varianten:'',type:'woordje',uitspraak:'',voorbeeld_papiamento:'Mi mes a hasi esaki.',voorbeeld_papiamentu:'Mi mes a hasi esaki.',voorbeeld_nederlands:'Ik heb dit zelf gedaan.',voorbeeld_engels:'I did this myself.'},
+
+{week:1,nummer:65,level:'A1',tags:['grammatica'],papiamento:'so',papiamentu:'so',nederlands:'alleen',engels:'alone, only',varianten:'',type:'bijwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta so awe.',voorbeeld_papiamentu:'Mi ta so awe.',voorbeeld_nederlands:'Ik ben vandaag alleen.',voorbeeld_engels:'I am alone today.'},
+
+{week:1,nummer:66,level:'A1',tags:['tijd'],papiamento:'awor',papiamentu:'awor',nederlands:'nu',engels:'now',varianten:'awo, awó',type:'tijdsaanduiding',uitspraak:'',voorbeeld_papiamento:'Mi ta bay awor.',voorbeeld_papiamentu:'Mi ta bai awor.',voorbeeld_nederlands:'Ik ga nu weg.',voorbeeld_engels:'I am leaving now.'},
+
+{week:1,nummer:67,level:'A1',tags:['tijd'],papiamento:'awe',papiamentu:'awe',nederlands:'vandaag',engels:'today',varianten:'',type:'tijdsaanduiding',uitspraak:'',voorbeeld_papiamento:'Awe ta un bon dia.',voorbeeld_papiamentu:'Awe ta un bon dia.',voorbeeld_nederlands:'Vandaag is een mooie dag.',voorbeeld_engels:'Today is a good day.'},
+
+{week:1,nummer:68,level:'A1',tags:['tijd'],papiamento:'mayan',papiamentu:'mayan',nederlands:'morgen',engels:'tomorrow',varianten:'',type:'tijdsaanduiding',uitspraak:'',voorbeeld_papiamento:'Nos lo bay mayan.',voorbeeld_papiamentu:'Nos lo bai mayan.',voorbeeld_nederlands:'We gaan morgen.',voorbeeld_engels:'We are going tomorrow.'},
+
+{week:1,nummer:69,level:'A1',tags:['tijd'],papiamento:'ayera',papiamentu:'ayera',nederlands:'gisteren',engels:'yesterday',varianten:'',type:'tijdsaanduiding',uitspraak:'',voorbeeld_papiamento:'Ayera a yobe.',voorbeeld_papiamentu:'Ayera a yobe.',voorbeeld_nederlands:'Gisteren regende het.',voorbeeld_engels:'It rained yesterday.'},
+
+{week:1,nummer:70,level:'A1',tags:['tijd'],papiamento:'despues',papiamentu:'despues',nederlands:'later, daarna',engels:'later, afterwards',varianten:'mas oro',type:'tijdsaanduiding',uitspraak:'',voorbeeld_papiamento:'Nos ta papia despues.',voorbeeld_papiamentu:'Nos ta papia despues.',voorbeeld_nederlands:'We praten later.',voorbeeld_engels:'We will talk later.'},
+
+{week:1,nummer:71,level:'A1',tags:['tijd'],papiamento:'antes',papiamentu:'àntes',nederlands:'vroeger',engels:'before, earlier',varianten:'',type:'tijdsaanduiding',uitspraak:'',voorbeeld_papiamento:'Antes mi tabata chikito.',voorbeeld_papiamentu:'Àntes mi tabata chikitu.',voorbeeld_nederlands:'Vroeger was ik klein.',voorbeeld_engels:'I used to be small.'},
+
+{week:1,nummer:72,level:'A1',tags:['tijd'],papiamento:'pronto',papiamentu:'pronto',nederlands:'spoedig, binnenkort',engels:'soon',varianten:'',type:'tijdsaanduiding',uitspraak:'',voorbeeld_papiamento:'Mi ta bin pronto.',voorbeeld_papiamentu:'Mi ta bin pronto.',voorbeeld_nederlands:'Ik kom binnenkort.',voorbeeld_engels:'I will come soon.'},
+
+{week:1,nummer:73,level:'A1',tags:['grammatica'],papiamento:'bin',papiamentu:'bini',nederlands:'komen',engels:'come',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Bo por bin awe?',voorbeeld_papiamentu:'Bo por bini awe?',voorbeeld_nederlands:'Kun je vandaag komen?',voorbeeld_engels:'Can you come today?'},
+
+{week:1,nummer:74,level:'A1',tags:['grammatica'],papiamento:'bay',papiamentu:'bai',nederlands:'gaan',engels:'go',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta bay cas.',voorbeeld_papiamentu:'Mi ta bai kas.',voorbeeld_nederlands:'Ik ga naar huis.',voorbeeld_engels:'I am going home.'},
+
+{week:1,nummer:75,level:'A1',tags:['grammatica'],papiamento:'bay bin',papiamentu:'bai bin',nederlands:'heen en weer bewegen',engels:'move back and forth',varianten:'baiben',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'E ta bay bin hopi.',voorbeeld_papiamentu:'E ta bai bin hopi.',voorbeeld_nederlands:'Het beweegt veel heen en weer.',voorbeeld_engels:'It moves back and forth a lot.'},
+
+{week:1,nummer:76,level:'A1',tags:['grammatica'],papiamento:'keda',papiamentu:'keda',nederlands:'blijven',engels:'stay, remain',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta keda aki.',voorbeeld_papiamentu:'Mi ta keda aki.',voorbeeld_nederlands:'Ik blijf hier.',voorbeeld_engels:'I am staying here.'},
+
+{week:1,nummer:77,level:'A1',tags:['grammatica'],papiamento:'keto',papiamentu:'ketu',nederlands:'stil, rustig',engels:'quiet, calm',varianten:'trankil',type:'bijvoeglijk naamwoord',uitspraak:'',voorbeeld_papiamento:'Ta keto aki.',voorbeeld_papiamentu:'Ta ketu aki.',voorbeeld_nederlands:'Het is hier stil.',voorbeeld_engels:'It is quiet here.'},
+
+{week:1,nummer:78,level:'A1',tags:['grammatica'],papiamento:'keda keto',papiamentu:'keda ketu',nederlands:'blijf stil',engels:'stay quiet',varianten:'',type:'uitdrukking',uitspraak:'',voorbeeld_papiamento:'Keda keto un rato.',voorbeeld_papiamentu:'Keda ketu un rato.',voorbeeld_nederlands:'Blijf even stil.',voorbeeld_engels:'Stay quiet for a moment.'},
+
+{week:1,nummer:79,level:'A1',tags:['grammatica'],papiamento:'bolbe',papiamentu:'bolbe',nederlands:'terugkeren',engels:'return',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi lo bolbe despues.',voorbeeld_papiamentu:'Mi lo bolbe despues.',voorbeeld_nederlands:'Ik kom later terug.',voorbeeld_engels:'I will return later.'},
+
+{week:1,nummer:80,level:'A1',tags:['plaatsen'],papiamento:'bek',papiamentu:'bèk',nederlands:'terug',engels:'back',varianten:'',type:'bijwoord',uitspraak:'',voorbeeld_papiamento:'Move bek un tiki.',voorbeeld_papiamentu:'Move bèk un tiki.',voorbeeld_nederlands:'Ga een stukje terug.',voorbeeld_engels:'Move back a little.'},
+
+{week:1,nummer:81,level:'A1',tags:['gezondheid'],papiamento:'salud',papiamentu:'salú',nederlands:'gezondheid!, proost!',engels:'cheers!, bless you!',varianten:'',type:'woordje',uitspraak:'',voorbeeld_papiamento:'Salud!',voorbeeld_papiamentu:'Salú!',voorbeeld_nederlands:'Proost!',voorbeeld_engels:'Cheers!'},
+
+{week:1,nummer:82,level:'A1',tags:['grammatica'],papiamento:'bon',papiamentu:'bon',nederlands:'goed',engels:'good',varianten:'',type:'bijvoeglijk naamwoord',uitspraak:'',voorbeeld_papiamento:'E ta bon.',voorbeeld_papiamentu:'E ta bon.',voorbeeld_nederlands:'Het is goed.',voorbeeld_engels:'It is good.'},
+
+{week:1,nummer:83,level:'A1',tags:['grammatica'],papiamento:'malo',papiamentu:'malu',nederlands:'slecht',engels:'bad',varianten:'',type:'bijvoeglijk naamwoord',uitspraak:'',voorbeeld_papiamento:'Esaki ta malo.',voorbeeld_papiamentu:'Esaki ta malu.',voorbeeld_nederlands:'Dat is slecht.',voorbeeld_engels:'That is bad.'},
+
+{week:1,nummer:84,level:'A1',tags:['grammatica'],papiamento:'grandi',papiamentu:'grandi',nederlands:'groot',engels:'big, large',varianten:'',type:'bijvoeglijk naamwoord',uitspraak:'',voorbeeld_papiamento:'E cas ta grandi.',voorbeeld_papiamentu:'E kas ta grandi.',voorbeeld_nederlands:'Het huis is groot.',voorbeeld_engels:'The house is big.'},
+
+{week:1,nummer:85,level:'A1',tags:['grammatica'],papiamento:'chikito',papiamentu:'chikitu',nederlands:'klein',engels:'small',varianten:'chiki',type:'bijvoeglijk naamwoord',uitspraak:'',voorbeeld_papiamento:'E mucha ta chikito.',voorbeeld_papiamentu:'E mucha ta chikitu.',voorbeeld_nederlands:'Het kind is klein.',voorbeeld_engels:'The child is small.'},
+  
+  
+{week:1,nummer:86,level:'A1',tags:['grammatica'],papiamento:'hopi',papiamentu:'hopi',nederlands:'veel, erg, zeer',engels:'many, much, very',varianten:'',type:'bijwoord',uitspraak:'',voorbeeld_papiamento:'Mi tin hopi trabou.',voorbeeld_papiamentu:'Mi tin hopi trabou.',voorbeeld_nederlands:'Ik heb veel werk.',voorbeeld_engels:'I have a lot of work.'},
+
+{week:1,nummer:87,level:'A1',tags:['grammatica'],papiamento:'poco',papiamentu:'poko',nederlands:'weinig, een beetje',engels:'little, a bit',varianten:'tiki',type:'bijwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta papia poco Papiamento.',voorbeeld_papiamentu:'Mi ta papia poko Papiamentu.',voorbeeld_nederlands:'Ik spreek een beetje Papiaments.',voorbeeld_engels:'I speak a little Papiamento.'},
+
+{week:1,nummer:88,level:'A1',tags:['grammatica'],papiamento:'poco poco',papiamentu:'poko poko',nederlands:'langzaam, zachtjes',engels:'slowly',varianten:'',type:'bijwoord',uitspraak:'',voorbeeld_papiamento:'Papia poco poco.',voorbeeld_papiamentu:'Papia poko poko.',voorbeeld_nederlands:'Praat langzaam.',voorbeeld_engels:'Speak slowly.'},
+
+{week:1,nummer:89,level:'A1',tags:['grammatica'],papiamento:'lihe',papiamentu:'lihé',nederlands:'snel, vlug',engels:'fast, quickly',varianten:'',type:'bijwoord',uitspraak:'',voorbeeld_papiamento:'E ta core lihe.',voorbeeld_papiamentu:'E ta kore lihé.',voorbeeld_nederlands:'Hij of zij rent snel.',voorbeeld_engels:'He or she runs quickly.'},
+
+{week:1,nummer:90,level:'A1',tags:['grammatica'],papiamento:'pura',papiamentu:'pura',nederlands:'haast, spoed',engels:'hurry, rush',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Nos tin pura.',voorbeeld_papiamentu:'Nos tin pura.',voorbeeld_nederlands:'Wij hebben haast.',voorbeeld_engels:'We are in a hurry.'},
+
+{week:1,nummer:91,level:'A1',tags:['tijd'],papiamento:'prome',papiamentu:'promé',nederlands:'eerste, voordat',engels:'first, before',varianten:'',type:'tijdsaanduiding',uitspraak:'',voorbeeld_papiamento:'Come prome cu bo bay.',voorbeeld_papiamentu:'Kome promé ku bo bai.',voorbeeld_nederlands:'Eet voordat je gaat.',voorbeeld_engels:'Eat before you go.'},
+
+{week:1,nummer:92,level:'A1',tags:['taal'],papiamento:'grita',papiamentu:'grita',nederlands:'schreeuwen, gillen',engels:'shout, scream',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'No grita asina.',voorbeeld_papiamentu:'No grita asina.',voorbeeld_nederlands:'Schreeuw niet zo.',voorbeeld_engels:'Do not shout like that.'},
+
+{week:1,nummer:93,level:'A1',tags:['taal'],papiamento:'papia',papiamentu:'papia',nederlands:'praten, spreken',engels:'speak, talk',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta papia cu bo.',voorbeeld_papiamentu:'Mi ta papia ku bo.',voorbeeld_nederlands:'Ik praat met jou.',voorbeeld_engels:'I am talking with you.'},
+
+{week:1,nummer:94,level:'A1',tags:['taal'],papiamento:'combersa',papiamentu:'kombersá',nederlands:'gesprek voeren, praten',engels:'converse, chat',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Nos ta combersa awe.',voorbeeld_papiamentu:'Nos ta kombersá awe.',voorbeeld_nederlands:'Wij praten vandaag.',voorbeeld_engels:'We are talking today.'},
+
+{week:1,nummer:95,level:'A1',tags:['taal'],papiamento:'compronde',papiamentu:'komprondé',nederlands:'begrijpen',engels:'understand',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi no compronde.',voorbeeld_papiamentu:'Mi no komprondé.',voorbeeld_nederlands:'Ik begrijp het niet.',voorbeeld_engels:'I do not understand.'},
+
+{week:1,nummer:96,level:'A1',tags:['taal'],papiamento:'discuti',papiamentu:'diskutí',nederlands:'discussiëren',engels:'discuss',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Nos tabata discuti.',voorbeeld_papiamentu:'Nos tabata diskutí.',voorbeeld_nederlands:'Wij waren aan het discussiëren.',voorbeeld_engels:'We were discussing.'},
+
+{week:1,nummer:97,level:'A1',tags:['taal'],papiamento:'yama',papiamentu:'yama',nederlands:'bellen, roepen, heten',engels:'call, be called',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Con yamabo?',voorbeeld_papiamentu:'Kon yamabo?',voorbeeld_nederlands:'Hoe heet je?',voorbeeld_engels:'What is your name?'},
+
+{week:1,nummer:98,level:'A1',tags:['taal'],papiamento:'nomber',papiamentu:'nòmber',nederlands:'naam',engels:'name',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi nomber ta Hugo.',voorbeeld_papiamentu:'Mi nòmber ta Hugo.',voorbeeld_nederlands:'Mijn naam is Hugo.',voorbeeld_engels:'My name is Hugo.'},
+
+{week:1,nummer:99,level:'A1',tags:['taal'],papiamento:'number',papiamentu:'number',nederlands:'nummer, getal',engels:'number',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Kiko ta bo number?',voorbeeld_papiamentu:'Kiko ta bo number?',voorbeeld_nederlands:'Wat is je nummer?',voorbeeld_engels:'What is your number?'},
+
+{week:1,nummer:100,level:'A1',tags:['taal'],papiamento:'adres',papiamentu:'adrés',nederlands:'adres',engels:'address',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi sa bo adres.',voorbeeld_papiamentu:'Mi sa bo adrés.',voorbeeld_nederlands:'Ik ken je adres.',voorbeeld_engels:'I know your address.'},
+  
   
   // ===== WEEK 2 =====
+ {week:2,nummer:101,level:'A1',tags:['groeten'],papiamento:'moro!',papiamentu:'mòru!',nederlands:'goedemorgen!',engels:'good morning!',varianten:'',type:'groet',uitspraak:'',voorbeeld_papiamento:'Moro! Con ta bay?',voorbeeld_papiamentu:'Mòru! Kon ta bai?',voorbeeld_nederlands:'Goedemorgen! Hoe gaat het?',voorbeeld_engels:'Good morning! How are you?'},
+
+{week:2,nummer:102,level:'A1',tags:['groeten'],papiamento:'bon dia!',papiamentu:'bon dia!',nederlands:'goeiedag!',engels:'good day!',varianten:'',type:'groet',uitspraak:'',voorbeeld_papiamento:'Bon dia, señora.',voorbeeld_papiamentu:'Bon dia, señora.',voorbeeld_nederlands:'Goedendag, mevrouw.',voorbeeld_engels:'Good day, madam.'},
+
+{week:2,nummer:103,level:'A1',tags:['groeten'],papiamento:'bon tardi!',papiamentu:'bon tardi!',nederlands:'goedemiddag!',engels:'good afternoon!',varianten:'',type:'groet',uitspraak:'',voorbeeld_papiamento:'Bon tardi, amigo.',voorbeeld_papiamentu:'Bon tardi, amigo.',voorbeeld_nederlands:'Goedemiddag, vriend.',voorbeeld_engels:'Good afternoon, friend.'},
+
+{week:2,nummer:104,level:'A1',tags:['groeten'],papiamento:'bonochi!',papiamentu:'bonochi!',nederlands:'goedenavond!, goedenacht!',engels:'good evening!, good night!',varianten:'',type:'groet',uitspraak:'',voorbeeld_papiamento:'Bonochi, te despues.',voorbeeld_papiamentu:'Bonochi, te despues.',voorbeeld_nederlands:'Goedenavond, tot later.',voorbeeld_engels:'Good evening, see you later.'},
+
+{week:2,nummer:105,level:'A1',tags:['groeten'],papiamento:'bon siman!',papiamentu:'felis siman!',nederlands:'fijne week!',engels:'have a nice week!',varianten:'bon of feliz siman',type:'groet',uitspraak:'',voorbeeld_papiamento:'Bon siman pa bo.',voorbeeld_papiamentu:'Felis siman pa bo.',voorbeeld_nederlands:'Fijne week voor jou.',voorbeeld_engels:'Have a nice week.'},
+
+{week:2,nummer:106,level:'A1',tags:['groeten'],papiamento:'bon ora di caminda',papiamentu:'bon ora di kaminda',nederlands:'wel thuis',engels:'safe trip home',varianten:'',type:'groet',uitspraak:'',voorbeeld_papiamento:'Bon ora di caminda!',voorbeeld_papiamentu:'Bon ora di kaminda!',voorbeeld_nederlands:'Wel thuis!',voorbeeld_engels:'Have a safe trip home!'},
+
+{week:2,nummer:107,level:'A1',tags:['groeten'],papiamento:'con ta bay?',papiamentu:'kon ta bai?',nederlands:'hoe gaat het?',engels:'how are you?',varianten:'',type:'vraag',uitspraak:'',voorbeeld_papiamento:'Con ta bay cu bo?',voorbeeld_papiamentu:'Kon ta bai ku bo?',voorbeeld_nederlands:'Hoe gaat het met je?',voorbeeld_engels:'How are you?'},
+
+{week:2,nummer:108,level:'A1',tags:['groeten'],papiamento:'conta?',papiamentu:'konta?',nederlands:'hoi!, hoe gaat het?',engels:'hi!, how are things?',varianten:'',type:'groet',uitspraak:'',voorbeeld_papiamento:'Conta, amigo?',voorbeeld_papiamentu:'Konta, amigo?',voorbeeld_nederlands:'Hoi vriend, hoe gaat het?',voorbeeld_engels:'Hi friend, how are you?'},
+
+{week:2,nummer:109,level:'A1',tags:['groeten'],papiamento:'te oro!',papiamentu:'te aworo!',nederlands:'tot later!',engels:'see you later!',varianten:'te aweró',type:'afscheid',uitspraak:'',voorbeeld_papiamento:'Te oro!',voorbeeld_papiamentu:'Te aworo!',voorbeeld_nederlands:'Tot straks!',voorbeeld_engels:'See you later!'},
+
+{week:2,nummer:110,level:'A1',tags:['groeten'],papiamento:'ayo!',papiamentu:'ayó!',nederlands:'doei!, tot ziens!',engels:'bye!',varianten:'',type:'afscheid',uitspraak:'',voorbeeld_papiamento:'Ayo, te otro biaha.',voorbeeld_papiamentu:'Ayó, te otro biaha.',voorbeeld_nederlands:'Doei, tot de volgende keer.',voorbeeld_engels:'Bye, until next time.'},
+
+{week:2,nummer:111,level:'A1',tags:['groeten'],papiamento:'cuminda',papiamentu:'kumindá',nederlands:'begroeten, de groeten doen',engels:'greet, send regards',varianten:'kumindamentu',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Cuminda bo mama pa mi.',voorbeeld_papiamentu:'Kumindá bo mama pa mi.',voorbeeld_nederlands:'Doe je moeder de groeten van mij.',voorbeeld_engels:'Give my regards to your mother.'},
+
+{week:2,nummer:112,level:'A1',tags:['familie'],papiamento:'famia',papiamentu:'famia',nederlands:'familie',engels:'family',varianten:'fam',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi famia ta grandi.',voorbeeld_papiamentu:'Mi famia ta grandi.',voorbeeld_nederlands:'Mijn familie is groot.',voorbeeld_engels:'My family is large.'},
+
+{week:2,nummer:113,level:'A1',tags:['familie'],papiamento:'homber',papiamentu:'hómber',nederlands:'man',engels:'man',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'E homber ta traha.',voorbeeld_papiamentu:'E hómber ta traha.',voorbeeld_nederlands:'De man werkt.',voorbeeld_engels:'The man works.'},
+
+{week:2,nummer:114,level:'A1',tags:['familie'],papiamento:'muhe',papiamentu:'muhé',nederlands:'vrouw',engels:'woman',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'E muhe ta canta.',voorbeeld_papiamentu:'E muhé ta kanta.',voorbeeld_nederlands:'De vrouw zingt.',voorbeeld_engels:'The woman sings.'},
+
+{week:2,nummer:115,level:'A1',tags:['familie'],papiamento:'mama',papiamentu:'mama',nederlands:'moeder',engels:'mother',varianten:'mami, mai',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi mama ta cas.',voorbeeld_papiamentu:'Mi mama ta kas.',voorbeeld_nederlands:'Mijn moeder is thuis.',voorbeeld_engels:'My mother is at home.'},
+
+{week:2,nummer:116,level:'A1',tags:['familie'],papiamento:'tata',papiamentu:'tata',nederlands:'vader',engels:'father',varianten:'papa, papi',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi tata ta traha.',voorbeeld_papiamentu:'Mi tata ta traha.',voorbeeld_nederlands:'Mijn vader werkt.',voorbeeld_engels:'My father works.'},
+
+{week:2,nummer:117,level:'A1',tags:['familie'],papiamento:'mucha',papiamentu:'mucha',nederlands:'kind',engels:'child',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'E mucha ta yuga.',voorbeeld_papiamentu:'E mucha ta huga.',voorbeeld_nederlands:'Het kind speelt.',voorbeeld_engels:'The child is playing.'},
+
+{week:2,nummer:118,level:'A1',tags:['familie'],papiamento:'yiu',papiamentu:'yu',nederlands:'eigen kind',engels:'son or daughter',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi yiu ta drumi.',voorbeeld_papiamentu:'Mi yu ta drumi.',voorbeeld_nederlands:'Mijn kind slaapt.',voorbeeld_engels:'My child is sleeping.'},
+
+{week:2,nummer:119,level:'A1',tags:['familie'],papiamento:'ruman mohe',papiamentu:'ruman muhé',nederlands:'zus',engels:'sister',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi ruman mohe ta aki.',voorbeeld_papiamentu:'Mi ruman muhé ta aki.',voorbeeld_nederlands:'Mijn zus is hier.',voorbeeld_engels:'My sister is here.'},
+
+{week:2,nummer:120,level:'A1',tags:['familie'],papiamento:'ruman homber',papiamentu:'ruman hòmber',nederlands:'broer',engels:'brother',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi ruman homber ta grandi.',voorbeeld_papiamentu:'Mi ruman hòmber ta grandi.',voorbeeld_nederlands:'Mijn broer is groot.',voorbeeld_engels:'My brother is tall.'},
+
+///// nummer 121 dubbel nummer is ook zo in listo 2 
+
+{week:2,nummer:121,level:'A1',tags:['familie'],papiamento:'wela',papiamentu:'wela',nederlands:'oma',engels:'grandmother',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi wela ta sinta.',voorbeeld_papiamentu:'Mi wela ta sinta.',voorbeeld_nederlands:'Mijn oma zit.',voorbeeld_engels:'My grandmother is sitting.'},
+
+{week:2,nummer:121,level:'A1',tags:['familie'],papiamento:'welo',papiamentu:'welo',nederlands:'opa',engels:'grandfather',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi welo ta sinta.',voorbeeld_papiamentu:'Mi welo ta sinta.',voorbeeld_nederlands:'Mijn opa zit.',voorbeeld_engels:'My grandfather is sitting.'},
+
+
+///// nummer 122 dubbel nummer is ook zo in listo 2
+
+{week:2,nummer:122,level:'A1',tags:['familie'],papiamento:'nieta',papiamentu:'ñeta',nederlands:'kleindochter',engels:'granddaughter',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'E nieta ta chikito.',voorbeeld_papiamentu:'E ñeta ta chikitu.',voorbeeld_nederlands:'De kleindochter is klein.',voorbeeld_engels:'The granddaughter is small.'},
+
+{week:2,nummer:122,level:'A1',tags:['familie'],papiamento:'nieto',papiamentu:'ñetu',nederlands:'kleinzoon',engels:'grandson',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'E nieto ta chikito.',voorbeeld_papiamentu:'E ñetu ta chikitu.',voorbeeld_nederlands:'De kleinzoon is klein.',voorbeeld_engels:'The grandson is small.'},
+
+{week:2,nummer:123,level:'A1',tags:['familie'],papiamento:'subrino',papiamentu:'subrino',nederlands:'neefje',engels:'nephew',varianten:'subrina, primo, prima',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi subrino ta yuga.',voorbeeld_papiamentu:'Mi subrino ta huga.',voorbeeld_nederlands:'Mijn neefje speelt.',voorbeeld_engels:'My nephew is playing.'},
+
+{week:2,nummer:124,level:'A1',tags:['familie'],papiamento:'cuña',papiamentu:'kuñá',nederlands:'schoonzus, zwager',engels:'brother-in-law, sister-in-law',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi cuña ta bon hende.',voorbeeld_papiamentu:'Mi kuñá ta bon hende.',voorbeeld_nederlands:'Mijn schoonzus is een aardig persoon.',voorbeeld_engels:'My sister-in-law is a nice person.'},
+
+{week:2,nummer:125,level:'A1',tags:['familie'],papiamento:'sua',papiamentu:'suá',nederlands:'zwager, maatje',engels:'brother-in-law',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi sua ta traha hopi.',voorbeeld_papiamentu:'Mi suá ta traha hopi.',voorbeeld_nederlands:'Mijn zwager werkt veel.',voorbeeld_engels:'My brother-in-law works a lot.'},
+
+{week:2,nummer:126,level:'A1',tags:['familie'],papiamento:'suegra',papiamentu:'suegra',nederlands:'schoonmoeder',engels:'mother-in-law',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi suegra ta biba aki.',voorbeeld_papiamentu:'Mi suegra ta biba aki.',voorbeeld_nederlands:'Mijn schoonmoeder woont hier.',voorbeeld_engels:'My mother-in-law lives here.'},
+
+{week:2,nummer:127,level:'A1',tags:['familie'],papiamento:'suegro',papiamentu:'suegro',nederlands:'schoonvader',engels:'father-in-law',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi suegro ta na cas.',voorbeeld_papiamentu:'Mi suegro ta na kas.',voorbeeld_nederlands:'Mijn schoonvader is thuis.',voorbeeld_engels:'My father-in-law is at home.'},
+
+{week:2,nummer:129,level:'A1',tags:['familie'],papiamento:'omo',papiamentu:'tio',nederlands:'oom',engels:'uncle',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi omo ta biba na Aruba.',voorbeeld_papiamentu:'Mi tio ta biba na Aruba.',voorbeeld_nederlands:'Mijn oom woont op Aruba.',voorbeeld_engels:'My uncle lives in Aruba.'},
+
+{week:2,nummer:130,level:'A1',tags:['familie'],papiamento:'madrina',papiamentu:'madrina',nederlands:'peettante',engels:'godmother',varianten:'pepe, dina',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi madrina ta hopi dushi.',voorbeeld_papiamentu:'Mi madrina ta hopi dushi.',voorbeeld_nederlands:'Mijn peettante is erg lief.',voorbeeld_engels:'My godmother is very kind.'},
+
+{week:2,nummer:131,level:'A1',tags:['familie'],papiamento:'padrino',papiamentu:'padrinu',nederlands:'peetoom',engels:'godfather',varianten:'dino',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi padrino ta aki awe.',voorbeeld_papiamentu:'Mi padrinu ta aki awe.',voorbeeld_nederlands:'Mijn peetoom is hier vandaag.',voorbeeld_engels:'My godfather is here today.'},
+
+{week:2,nummer:132,level:'A1',tags:['tijd','familie'],papiamento:'fecha',papiamentu:'fecha',nederlands:'datum',engels:'date',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Kiko ta e fecha awe?',voorbeeld_papiamentu:'Kiko ta e fecha awe?',voorbeeld_nederlands:'Wat is de datum vandaag?',voorbeeld_engels:'What is the date today?'},
+
+{week:2,nummer:133,level:'A1',tags:['familie'],papiamento:'nace',papiamentu:'nasé',nederlands:'geboren worden',engels:'to be born',varianten:'nase',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi a nace na Corsou.',voorbeeld_papiamentu:'Mi a nasé na Kòrsou.',voorbeeld_nederlands:'Ik ben geboren op Curaçao.',voorbeeld_engels:'I was born in Curaçao.'},
+
+{week:2,nummer:134,level:'A1',tags:['familie'],papiamento:'nacemento',papiamentu:'nasementu',nederlands:'geboorte',engels:'birth',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi nacemento tabata na juli.',voorbeeld_papiamentu:'Mi nasementu tabata na yüli.',voorbeeld_nederlands:'Mijn geboorte was in juli.',voorbeeld_engels:'My birth was in July.'},
+
+{week:2,nummer:135,level:'A1',tags:['plaatsen','familie'],papiamento:'luga',papiamentu:'lugá',nederlands:'plaats, locatie',engels:'place, location',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Esaki ta un bon luga.',voorbeeld_papiamentu:'Esaki ta un bon lugá.',voorbeeld_nederlands:'Dit is een goede plek.',voorbeeld_engels:'This is a good place.'},
   
-  {week:2,nummer:101,tags:[],papiamento:'moro!',nederlands:'goedemorgen!',varianten:'mòru!',type:'groet',uitspraak:'',voorbeeld_papiamento:'Moro! Con ta bay?',voorbeeld_nederlands:'Goedemorgen! Hoe gaat het?'},
-  {week:2,nummer:102,tags:[],papiamento:'bon dia!',nederlands:'goeiedag!',varianten:'',type:'groet',uitspraak:'',voorbeeld_papiamento:'Bon dia, señora.',voorbeeld_nederlands:'Goeiedag, mevrouw.'},
-  {week:2,nummer:103,tags:[],papiamento:'bon tardi!',nederlands:'goedemiddag!',varianten:'',type:'groet',uitspraak:'',voorbeeld_papiamento:'Bon tardi, tata.',voorbeeld_nederlands:'Goedemiddag, vader.'},
-  {week:2,nummer:104,tags:[],papiamento:'Bonochi!',nederlands:'goedenavond!, goedenacht!',varianten:'',type:'groet',uitspraak:'',voorbeeld_papiamento:'Bonochi, te despues.',voorbeeld_nederlands:'Goedenavond, tot later.'},
-  {week:2,nummer:105,tags:[],papiamento:'bon of feliz siman!',nederlands:'fijne, gelukkig week',varianten:'bon of felis siman!',type:'groet',uitspraak:'',voorbeeld_papiamento:'Bon siman pa bo.',voorbeeld_nederlands:'Fijne week voor jou.'},
-  {week:2,nummer:106,tags:[],papiamento:'bon ora di caminda',nederlands:'wel thuis',varianten:'kaminda',type:'groet',uitspraak:'',voorbeeld_papiamento:'Bon ora di caminda.',voorbeeld_nederlands:'Wel thuis.'},
-  {week:2,nummer:107,tags:[],papiamento:'con ta bay?',nederlands:'hoe gaat het?',varianten:'kon ta bai?',type:'vraag',uitspraak:'',voorbeeld_papiamento:'Con ta bay ku bo?',voorbeeld_nederlands:'Hoe gaat het met je?'},
-  {week:2,nummer:108,tags:[],papiamento:'conta?',nederlands:'hoe gaat het?, hoi!',varianten:'konta?',type:'vraag/groet',uitspraak:'',voorbeeld_papiamento:'Conta, amigo?',voorbeeld_nederlands:'Hoi, vriend, hoe gaat het?'},
-  {week:2,nummer:109,tags:[],papiamento:'te oró!',nederlands:'tot later!, tot straks!, tot zo!',varianten:'te aworo!, te aweró!',type:'afscheid',uitspraak:'',voorbeeld_papiamento:'Te aworo!',voorbeeld_nederlands:'Tot straks!'},
-  {week:2,nummer:110,tags:[],papiamento:'ayo!',nederlands:'dag!, tot ziens!, doei!, houdou!',varianten:'ayó!',type:'afscheid',uitspraak:'',voorbeeld_papiamento:'Ayo, te otro biaha.',voorbeeld_nederlands:'Doei, tot een volgende keer.'},
-  {week:2,nummer:111,tags:[],papiamento:'cuminda',nederlands:'begroeten, de groeten doen',varianten:'kumindá, cumindamento!, kumindamentu!',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta cuminda bo.',voorbeeld_nederlands:'Ik groet je.'},
-  {week:2,nummer:112,tags:[],papiamento:'famia',nederlands:'familie, achternaam',varianten:'fam',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi famia ta grandi.',voorbeeld_nederlands:'Mijn familie is groot.'},
-  {week:2,nummer:113,tags:[],papiamento:'homber',nederlands:'man',varianten:'hómber',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'E homber ta traha.',voorbeeld_nederlands:'De man werkt.'},
-  {week:2,nummer:114,tags:[],papiamento:'muhe',nederlands:'vrouw, vrouwtje',varianten:'muhé',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'E muhe ta canta.',voorbeeld_nederlands:'De vrouw zingt.'},
-  {week:2,nummer:115,tags:[],papiamento:'mama',nederlands:'moeder',varianten:'mami, ma, mai, mamai, amai, amachi',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi mama ta kas.',voorbeeld_nederlands:'Mijn moeder is thuis.'},
-  {week:2,nummer:116,tags:[],papiamento:'tata',nederlands:'vader',varianten:'papa, papi, pa, dada, dadi',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi tata ta traha.',voorbeeld_nederlands:'Mijn vader werkt.'},
-  {week:2,nummer:117,tags:[],papiamento:'mucha',nederlands:'kind',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'E mucha ta yuga.',voorbeeld_nederlands:'Het kind speelt.'},
-  {week:2,nummer:118,tags:[],papiamento:'yiu',nederlands:'eigen kind',varianten:'yu',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi yiu ta drumi.',voorbeeld_nederlands:'Mijn kind slaapt.'},
-  {week:2,nummer:119,tags:[],papiamento:'ruman mohe',nederlands:'zus',varianten:'ruman muhé',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi ruman mohe ta aki.',voorbeeld_nederlands:'Mijn zus is hier.'},
-  {week:2,nummer:120,tags:[],papiamento:'ruman homber',nederlands:'broer',varianten:'ruman hòmber',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi ruman homber ta grandi.',voorbeeld_nederlands:'Mijn broer is groot.'},
-  
-  // Cursusnummer 121 bevat zowel wela als welo. Voor de website opgesplitst in aparte woorden.
-  {week:2,nummer:121,tags:[],papiamento:'wela',nederlands:'oma',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi wela ta sinta.',voorbeeld_nederlands:'Mijn oma zit.'},
-  {week:2,nummer:121,tags:[],papiamento:'welo',nederlands:'opa',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi welo ta sinta.',voorbeeld_nederlands:'Mijn opa zit.'},
-  
-  // Cursusnummer 122 bevat zowel nieto als nieta. Voor de website opgesplitst in aparte woorden.
-  {week:2,nummer:122,tags:[],papiamento:'nieta',nederlands:'kleindochter',varianten:'ñeta',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'E nieta ta chikito.',voorbeeld_nederlands:'De kleindochter is klein.'},
-  {week:2,nummer:122,tags:[],papiamento:'nieto',nederlands:'kleinzoon',varianten:'ñetu',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'E nieto ta chikito.',voorbeeld_nederlands:'De kleinzoon is klein.'},
-  
-  {week:2,nummer:123,tags:[],papiamento:'subrino',nederlands:'neefje, nichtje, neef, nicht',varianten:'subrina, primo, primu, prima',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi subrino ta yega.',voorbeeld_nederlands:'Mijn neefje komt aan.'},
-  {week:2,nummer:124,tags:[],papiamento:'cuña',nederlands:'schoonzus',varianten:'kuñá',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi cuña ta bunita.',voorbeeld_nederlands:'Mijn schoonzus is aardig.'},
-  {week:2,nummer:125,tags:[],papiamento:'sua',nederlands:'zwager, maatje',varianten:'suá',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi sua ta yuda.',voorbeeld_nederlands:'Mijn zwager helpt.'},
-  {week:2,nummer:126,tags:[],papiamento:'suegra',nederlands:'schoonmoeder',varianten:'suegu grandi',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi suegra ta bini.',voorbeeld_nederlands:'Mijn schoonmoeder komt.'},
-  {week:2,nummer:127,tags:[],papiamento:'suegro',nederlands:'schoonvader',varianten:'suegu grandi',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi suegro ta kasa.',voorbeeld_nederlands:'Mijn schoonvader is thuis.'},
-  {week:2,nummer:129,tags:[],papiamento:'omo',nederlands:'oom, tante',varianten:'tio, tanta, tanchi',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi omo ta na kas.',voorbeeld_nederlands:'Mijn oom is thuis.'},
-  {week:2,nummer:130,tags:[],papiamento:'madrina',nederlands:'peettante, meter',varianten:'pepe, dina, pechi, pepechi',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi madrina ta yama mi.',voorbeeld_nederlands:'Mijn peettante belt me.'},
-  {week:2,nummer:131,tags:[],papiamento:'padrino',nederlands:'peetoom, meter',varianten:'padrinu, dino',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi padrino ta kanta.',voorbeeld_nederlands:'Mijn peetoom zingt.'},
-  {week:2,nummer:132,tags:[],papiamento:'fecha',nederlands:'datum, dagtekening',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Skirbi e fecha.',voorbeeld_nederlands:'Schrijf de datum op.'},
-  {week:2,nummer:133,tags:[],papiamento:'nace',nederlands:'geboren worden, ontstaan',varianten:'nase, nasé',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi a nace na Aruba.',voorbeeld_nederlands:'Ik ben geboren op Aruba.'},
-  {week:2,nummer:134,tags:[],papiamento:'nacemento',nederlands:'geboorte',varianten:'nasementu',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'E nacemento tabata dushi.',voorbeeld_nederlands:'De geboorte was mooi.'},
-  {week:2,nummer:135,tags:[],papiamento:'luga',nederlands:'plaats, locatie',varianten:'lugá',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Esaki ta un bon luga.',voorbeeld_nederlands:'Dit is een goede plek.'},
-  {week:2,nummer:136,tags:[],papiamento:'luga di nacemento',nederlands:'geboorteplaats',varianten:'lugá di nasementu',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Aruba ta mi luga di nacemento.',voorbeeld_nederlands:'Aruba is mijn geboorteplaats.'},
-  {week:2,nummer:137,tags:[],papiamento:'edad',nederlands:'leeftijd',varianten:'edat',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Kiko ta bo edad?',voorbeeld_nederlands:'Wat is je leeftijd?'},
-  {week:2,nummer:138,tags:[],papiamento:'arubiano',nederlands:'arubaan',varianten:'rubiano, arubianu, arubanu',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta arubiano.',voorbeeld_nederlands:'Ik ben Arubaan.'},
-  {week:2,nummer:139,tags:[],papiamento:'boneriano',nederlands:'bonairiaan',varianten:'bonerianu',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'E ta boneriano.',voorbeeld_nederlands:'Hij of zij is Bonairiaan.'},
-  {week:2,nummer:141,tags:[],papiamento:'macamba',nederlands:'nederlander, hollander',varianten:'hulandes, makamba, (h)ulandes',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'E ta macamba.',voorbeeld_nederlands:'Hij of zij is Nederlander.'},
-  {week:2,nummer:142,tags:[],papiamento:'soño',nederlands:'slaap',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi tin soño.',voorbeeld_nederlands:'Ik heb slaap.'},
-  {week:2,nummer:143,tags:[],papiamento:'drumi',nederlands:'slapen, liggen',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'E ta drumi.',voorbeeld_nederlands:'Hij of zij slaapt.'},
-  {week:2,nummer:144,tags:[],papiamento:'soña',nederlands:'dromen',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi a soña bon.',voorbeeld_nederlands:'Ik droomde fijn.'},
-  {week:2,nummer:145,tags:[],papiamento:'sosega',nederlands:'rusten, uitrusten',varianten:'sosegá, descansa, deskansá',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Nos ta sosega.',voorbeeld_nederlands:'Wij rusten uit.'},
-  {week:2,nummer:146,tags:[],papiamento:'lanta',nederlands:'staan, opstaan, wakker worden',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta lanta mainta.',voorbeeld_nederlands:'Ik sta in de ochtend op.'},
-  {week:2,nummer:147,tags:[],papiamento:'sinta',nederlands:'zitten, gaan zitten',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Sinta aki.',voorbeeld_nederlands:'Ga hier zitten.'},
-  {week:2,nummer:148,tags:[],papiamento:'para',nederlands:'staan, stoppen, parkeren',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Para aki.',voorbeeld_nederlands:'Stop hier.'},
-  {week:2,nummer:149,tags:[],papiamento:'cana',nederlands:'lopen, optrekken',varianten:'kana',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Nos ta cana hunto.',voorbeeld_nederlands:'Wij lopen samen.'},
-  {week:2,nummer:150,tags:[],papiamento:'sigui',nederlands:'volgen, voortzetten, doorgaan',varianten:'sigi',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Sigui bai.',voorbeeld_nederlands:'Ga door.'},
-  {week:2,nummer:151,tags:[],papiamento:'core',nederlands:'rennen, rijden, stromen',varianten:'kore, kuri',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'E mucha ta core.',voorbeeld_nederlands:'Het kind rent.'},
-  {week:2,nummer:152,tags:[],papiamento:'cay',nederlands:'vallen',varianten:'kai',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'No cay!',voorbeeld_nederlands:'Val niet!'},
-  {week:2,nummer:153,tags:[],papiamento:'bula',nederlands:'springen, vliegen, ontploffen',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'E para ta bula.',voorbeeld_nederlands:'De vogel vliegt.'},
-  {week:2,nummer:154,tags:[],papiamento:'hamber',nederlands:'honger',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi tin hamber.',voorbeeld_nederlands:'Ik heb honger.'},
-  {week:2,nummer:155,tags:[],papiamento:'come',nederlands:'eten, opeten',varianten:'kome',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Nos ta come awor.',voorbeeld_nederlands:'Wij eten nu.'},
-  {week:2,nummer:156,tags:[],papiamento:'morde',nederlands:'bijten',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'No morde e pan.',voorbeeld_nederlands:'Bijt niet in het brood.'},
-  {week:2,nummer:157,tags:[],papiamento:'kauw',nederlands:'kauwen',varianten:'kou',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Kauw bon.',voorbeeld_nederlands:'Kauw goed.'},
-  {week:2,nummer:158,tags:[],papiamento:'lembe',nederlands:'likken',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'E kat ta lembe.',voorbeeld_nederlands:'De kat likt.'},
-  {week:2,nummer:159,tags:[],papiamento:'chupa',nederlands:'opzuigen, absorberen, uitzuigen',varianten:'zuig, zùig',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'E ta chupa e awa.',voorbeeld_nederlands:'Hij zuigt het water op.'},
-  {week:2,nummer:160,tags:[],papiamento:'smak',nederlands:'smaak, smaken, zin hebben',varianten:'',type:'zelfstandig naamwoord/werkwoord',uitspraak:'',voorbeeld_papiamento:'E kuminda tin bon smak.',voorbeeld_nederlands:'Het eten heeft een goede smaak.'},
-  {week:2,nummer:161,tags:[],papiamento:'guli',nederlands:'slikken, doorslikken',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Guli e pil.',voorbeeld_nederlands:'Slik de pil door.'},
-  {week:2,nummer:162,tags:[],papiamento:'gusta',nederlands:'lusten, lekker vinden, leuk vinden, houden van',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi gusta e sopi.',voorbeeld_nederlands:'Ik vind de soep lekker.'},
-  {week:2,nummer:163,tags:[],papiamento:'dushi',nederlands:'lieverd, liefje, zoet, lekker, heerlijk',varianten:'',type:'bijvoeglijk naamwoord',uitspraak:'',voorbeeld_papiamento:'E ta dushi.',voorbeeld_nederlands:'Dat is lekker.'},
-  {week:2,nummer:164,tags:[],papiamento:'saboria',nederlands:'savoureren, proeven',varianten:'saboriá',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Saboria e kuminda.',voorbeeld_nederlands:'Proef het eten.'},
-  {week:2,nummer:165,tags:[],papiamento:'sushi',nederlands:'vuil, vies, vuilnis',varianten:'susha, sushá',type:'bijvoeglijk naamwoord',uitspraak:'',voorbeeld_papiamento:'E kamber ta sushi.',voorbeeld_nederlands:'De kamer is vies.'},
-  {week:2,nummer:166,tags:[],papiamento:'mors',nederlands:'morsen, knoeien',varianten:'mòrs',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'No mors e awa.',voorbeeld_nederlands:'Mors het water niet.'},
-  {week:2,nummer:167,tags:[],papiamento:'plama',nederlands:'morsen, uitbreiden, verspreiden',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'No plama e pintura.',voorbeeld_nederlands:'Verspreid de verf niet.'},
-  {week:2,nummer:168,tags:[],papiamento:'bari',nederlands:'vegen, wegvagen',varianten:'barí',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Bari e piso.',voorbeeld_nederlands:'Veeg de vloer.'},
-  {week:2,nummer:169,tags:[],papiamento:'bari di sushi',nederlands:'vuilnisvat, vuilnisemmer, vuilniston',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Tira esaki den bari di sushi.',voorbeeld_nederlands:'Gooi dit in de vuilnisbak.'},
-  {week:2,nummer:170,tags:[],papiamento:'sed',nederlands:'dorst',varianten:'set',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi tin sed.',voorbeeld_nederlands:'Ik heb dorst.'},
-  {week:2,nummer:171,tags:[],papiamento:'bebe',nederlands:'drinken',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Bebe awa.',voorbeeld_nederlands:'Drink water.'},
-  {week:2,nummer:172,tags:[],papiamento:'awa',nederlands:'water',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Awa ta friu.',voorbeeld_nederlands:'Water is koud.'},
-  {week:2,nummer:173,tags:[],papiamento:'baña',nederlands:'baden, in bad gaan',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'E mucha ta baña.',voorbeeld_nederlands:'Het kind gaat in bad.'},
-  {week:2,nummer:174,tags:[],papiamento:'muha',nederlands:'vochtig worden, nat worden, nat maken',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'E kos a muha.',voorbeeld_nederlands:'Het ding werd nat.'},
-  {week:2,nummer:175,tags:[],papiamento:'seca',nederlands:'drogen, afdrogen, opdrogen',varianten:'seka',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Seca bo man.',voorbeeld_nederlands:'Droog je hand.'},
-  {week:2,nummer:176,tags:[],papiamento:'friu',nederlands:'koud, kil, kou',varianten:'friw',type:'bijvoeglijk naamwoord',uitspraak:'',voorbeeld_papiamento:'E awa ta friu.',voorbeeld_nederlands:'Het water is koud.'},
-  {week:2,nummer:177,tags:[],papiamento:'tembla',nederlands:'beven, trillen, bibberen',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta tembla di friu.',voorbeeld_nederlands:'Ik tril van de kou.'},
-  {week:2,nummer:178,tags:[],papiamento:'cla',nederlands:'klaar, gereed, helder, licht',varianten:'kla',type:'bijvoeglijk naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta cla.',voorbeeld_nederlands:'Ik ben klaar.'},
-  {week:2,nummer:179,tags:[],papiamento:'hisa',nederlands:'tillen, verhogen, heffen, hijsen',varianten:'(h)isa',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Hisa e kaja.',voorbeeld_nederlands:'Til de doos op.'},
-  {week:2,nummer:180,tags:[],papiamento:'baha',nederlands:'dalen, neerzetten, zakken, afdalen',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Baha e bolsa.',voorbeeld_nederlands:'Zet de tas neer.'},
-  {week:2,nummer:181,tags:[],papiamento:'subi',nederlands:'klimmen, naar boven gaan, stijgen',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Subi riba e trapi.',voorbeeld_nederlands:'Ga de trap op.'},
-  {week:2,nummer:182,tags:[],papiamento:'siña',nederlands:'leren, onderwijzen',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta siña Papiamento.',voorbeeld_nederlands:'Ik leer Papiaments.'},
-  {week:2,nummer:183,tags:[],papiamento:'palabra',nederlands:'woord',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Esaki ta un palabra nobo.',voorbeeld_nederlands:'Dit is een nieuw woord.'},
-  {week:2,nummer:184,tags:[],papiamento:'domina',nederlands:'beheersen, domineren, bedwingen',varianten:'dominá',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'E ta domina e idioma.',voorbeeld_nederlands:'Hij beheerst de taal.'},
-  {week:2,nummer:185,tags:[],papiamento:'sirbi',nederlands:'bedienen, dienen, helpen',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Sirbi mi un glas awa.',voorbeeld_nederlands:'Geef mij een glas water.'},
-  {week:2,nummer:186,tags:[],papiamento:'scucha',nederlands:'luisteren, beluisteren, horen',varianten:'skucha, tende',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Scucha bon.',voorbeeld_nederlands:'Luister goed.'},
-  {week:2,nummer:187,tags:[],papiamento:'mira',nederlands:'zien, kijken, kijken naar',varianten:'wak, wa, weita, weta',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mira e solo.',voorbeeld_nederlands:'Kijk naar de zon.'},
-  {week:2,nummer:188,tags:[],papiamento:'duda',nederlands:'twijfelen, betwijfelen',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi no duda.',voorbeeld_nederlands:'Ik twijfel niet.'},
-  {week:2,nummer:189,tags:[],papiamento:'sigur',nederlands:'zeker, natuurlijk',varianten:'sigu',type:'bijwoord',uitspraak:'',voorbeeld_papiamento:'Sigur mi ta bai.',voorbeeld_nederlands:'Natuurlijk ga ik.'},
-  {week:2,nummer:190,tags:[],papiamento:'pusha',nederlands:'duwen, dringen, aanstoten',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'No pusha e porta.',voorbeeld_nederlands:'Duw de deur niet.'},
-  {week:2,nummer:191,tags:[],papiamento:'ranca',nederlands:'trekken, uitdrukken',varianten:'ranka',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Ranca e soga.',voorbeeld_nederlands:'Trek aan het touw.'},
-  {week:2,nummer:192,tags:[],papiamento:'habri',nederlands:'openen, opengaan, aanbreken',varianten:'(h)abri',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Habri e porta.',voorbeeld_nederlands:'Open de deur.'},
-  {week:2,nummer:193,tags:[],papiamento:'sera',nederlands:'dichtmaken, sluiten',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Sera e bentana.',voorbeeld_nederlands:'Sluit het raam.'},
-  {week:2,nummer:194,tags:[],papiamento:'danki',nederlands:'bedankt, dank',varianten:'',type:'woordje',uitspraak:'',voorbeeld_papiamento:'Danki hopi.',voorbeeld_nederlands:'Heel erg bedankt.'},
-  {week:2,nummer:195,tags:[],papiamento:'sali',nederlands:'uitgaan, te voorschijn komen, uitkomen',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'E solo ta sali.',voorbeeld_nederlands:'De zon komt op.'},
-  {week:2,nummer:196,tags:[],papiamento:'drenta',nederlands:'kom binnen, binnengaan, binnenkomen',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Drenta, por fabor.',voorbeeld_nederlands:'Kom binnen, alsjeblieft.'},
-  {week:2,nummer:197,tags:[],papiamento:'hari',nederlands:'lachen, gelach',varianten:'(h)ari',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Nan ta hari hopi.',voorbeeld_nederlands:'Zij lachen veel.'},
-  {week:2,nummer:198,tags:[],papiamento:'yora',nederlands:'huilen, janken, geschrei',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'No yora.',voorbeeld_nederlands:'Huil niet.'},
-  {week:2,nummer:199,tags:[],papiamento:'kibra',nederlands:'breken, openbreken, afbreken, stukmaken',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'No kibra e glas.',voorbeeld_nederlands:'Breek het glas niet.'},
-  {week:2,nummer:200,tags:[],papiamento:'drecha',nederlands:'repareren, herstellen, verbeteren',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta drecha e auto.',voorbeeld_nederlands:'Ik repareer de auto.'},
-  {week:2,nummer:201,tags:[],papiamento:'duna',nederlands:'geven, aanreiken, toedienen',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Duna mi e boka.',voorbeeld_nederlands:'Geef mij het boek.'},
-  {week:2,nummer:202,tags:[],papiamento:'tuma',nederlands:'nemen, innemen, aanpakken, gebruiken',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Tuma bo tempu.',voorbeeld_nederlands:'Neem je tijd.'},
-  {week:2,nummer:203,tags:[],papiamento:'lubida',nederlands:'vergeten',varianten:'lubidá',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'No lubida e yabi.',voorbeeld_nederlands:'Vergeet de sleutel niet.'},
-  {week:2,nummer:204,tags:[],papiamento:'corda',nederlands:'herinneren, zich herinneren, eraan denken',varianten:'korda',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta corda bo nomber.',voorbeeld_nederlands:'Ik herinner me je naam.'},
-  {week:2,nummer:205,tags:[],papiamento:'toca',nederlands:'muziek spelen, instrument spelen, ter sprake brengen',varianten:'toka',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'E ta toca gitara.',voorbeeld_nederlands:'Hij speelt gitaar.'},
-  
-  // ===== WEEK 3 =====
+{week:2,nummer:136,level:'A1',tags:['familie','plaatsen'],papiamento:'luga di nacemento',papiamentu:'lugá di nasementu',nederlands:'geboorteplaats',engels:'place of birth',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Corsou ta mi luga di nacemento.',voorbeeld_papiamentu:'Kòrsou ta mi lugá di nasementu.',voorbeeld_nederlands:'Curaçao is mijn geboorteplaats.',voorbeeld_engels:'Curaçao is my place of birth.'},
+
+{week:2,nummer:137,level:'A1',tags:['familie'],papiamento:'edad',papiamentu:'edat',nederlands:'leeftijd',engels:'age',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Kiko ta bo edad?',voorbeeld_papiamentu:'Kiko ta bo edat?',voorbeeld_nederlands:'Wat is je leeftijd?',voorbeeld_engels:'What is your age?'},
+
+{week:2,nummer:138,level:'A1',tags:['mensen'],papiamento:'arubiano',papiamentu:'arubianu',nederlands:'Arubaan',engels:'Aruban',varianten:'rubiano, arubanu',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'E ta un arubiano.',voorbeeld_papiamentu:'E ta un arubianu.',voorbeeld_nederlands:'Hij of zij is een Arubaan.',voorbeeld_engels:'He or she is Aruban.'},
+
+{week:2,nummer:139,level:'A1',tags:['mensen'],papiamento:'boneriano',papiamentu:'bonerianu',nederlands:'Bonairiaan',engels:'Bonairean',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'E ta un boneriano.',voorbeeld_papiamentu:'E ta un bonerianu.',voorbeeld_nederlands:'Hij of zij is een Bonairiaan.',voorbeeld_engels:'He or she is from Bonaire.'},
+
+{week:2,nummer:141,level:'A1',tags:['mensen'],papiamento:'macamba',papiamentu:'makamba',nederlands:'Nederlander, Hollander',engels:'Dutch person',varianten:'hulandes, ulandes',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi amigo ta macamba.',voorbeeld_papiamentu:'Mi amigo ta makamba.',voorbeeld_nederlands:'Mijn vriend komt uit Nederland.',voorbeeld_engels:'My friend is Dutch.'},
+
+{week:2,nummer:142,level:'A1',tags:['gezondheid'],papiamento:'soño',papiamentu:'soño',nederlands:'slaap',engels:'sleep',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi tin hopi soño.',voorbeeld_papiamentu:'Mi tin hopi soño.',voorbeeld_nederlands:'Ik heb veel slaap.',voorbeeld_engels:'I am very sleepy.'},
+
+{week:2,nummer:143,level:'A1',tags:['gezondheid'],papiamento:'drumi',papiamentu:'drumi',nederlands:'slapen',engels:'to sleep',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta drumi bon.',voorbeeld_papiamentu:'Mi ta drumi bon.',voorbeeld_nederlands:'Ik slaap goed.',voorbeeld_engels:'I sleep well.'},
+
+{week:2,nummer:144,level:'A1',tags:['gezondheid'],papiamento:'soña',papiamentu:'soña',nederlands:'dromen',engels:'to dream',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi a soña cu bo.',voorbeeld_papiamentu:'Mi a soña ku bo.',voorbeeld_nederlands:'Ik droomde van jou.',voorbeeld_engels:'I dreamed about you.'},
+
+{week:2,nummer:145,level:'A1',tags:['gezondheid'],papiamento:'sosega',papiamentu:'deskansá',nederlands:'rusten',engels:'to rest',varianten:'descansa',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta sosega awor.',voorbeeld_papiamentu:'Mi ta deskansá awor.',voorbeeld_nederlands:'Ik rust nu uit.',voorbeeld_engels:'I am resting now.'},
+
+{week:2,nummer:146,level:'A1',tags:['gezondheid'],papiamento:'lanta',papiamentu:'lanta',nederlands:'opstaan, wakker worden',engels:'to get up',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta lanta trempan.',voorbeeld_papiamentu:'Mi ta lanta tempran.',voorbeeld_nederlands:'Ik sta vroeg op.',voorbeeld_engels:'I get up early.'},
+
+{week:2,nummer:147,level:'A1',tags:['mensen'],papiamento:'sinta',papiamentu:'sinta',nederlands:'zitten',engels:'to sit',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Sinta aki.',voorbeeld_papiamentu:'Sinta aki.',voorbeeld_nederlands:'Ga hier zitten.',voorbeeld_engels:'Sit here.'},
+
+{week:2,nummer:148,level:'A1',tags:['mensen'],papiamento:'para',papiamentu:'para',nederlands:'staan, stoppen',engels:'to stand, stop',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta para aki.',voorbeeld_papiamentu:'Mi ta para aki.',voorbeeld_nederlands:'Ik sta hier.',voorbeeld_engels:'I am standing here.'},
+
+{week:2,nummer:149,level:'A1',tags:['mensen'],papiamento:'cana',papiamentu:'kana',nederlands:'lopen',engels:'to walk',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Nos ta cana poco poco.',voorbeeld_papiamentu:'Nos ta kana poko poko.',voorbeeld_nederlands:'Wij lopen langzaam.',voorbeeld_engels:'We are walking slowly.'},
+
+{week:2,nummer:150,level:'A1',tags:['grammatica'],papiamento:'sigui',papiamentu:'sigi',nederlands:'volgen, doorgaan',engels:'follow, continue',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Sigui cana.',voorbeeld_papiamentu:'Sigi kana.',voorbeeld_nederlands:'Blijf lopen.',voorbeeld_engels:'Keep walking.'},
+
+{week:2,nummer:151,level:'A1',tags:['mensen'],papiamento:'core',papiamentu:'kore',nederlands:'rennen',engels:'to run',varianten:'kuri',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'E ta core lihe.',voorbeeld_papiamentu:'E ta kore lihé.',voorbeeld_nederlands:'Hij rent snel.',voorbeeld_engels:'He runs fast.'},
+
+{week:2,nummer:152,level:'A1',tags:['mensen'],papiamento:'cay',papiamentu:'kai',nederlands:'vallen',engels:'to fall',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'E a cay.',voorbeeld_papiamentu:'E a kai.',voorbeeld_nederlands:'Hij of zij viel.',voorbeeld_engels:'He or she fell.'},
+
+{week:2,nummer:153,level:'A1',tags:['mensen'],papiamento:'bula',papiamentu:'bula',nederlands:'springen, vliegen',engels:'jump, fly',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'E mucha ta bula.',voorbeeld_papiamentu:'E mucha ta bula.',voorbeeld_nederlands:'Het kind springt.',voorbeeld_engels:'The child is jumping.'},
+
+{week:2,nummer:154,level:'A1',tags:['eten_drinken'],papiamento:'hamber',papiamentu:'hamber',nederlands:'honger',engels:'hunger',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi tin hamber.',voorbeeld_papiamentu:'Mi tin hamber.',voorbeeld_nederlands:'Ik heb honger.',voorbeeld_engels:'I am hungry.'},
+
+{week:2,nummer:155,level:'A1',tags:['eten_drinken'],papiamento:'come',papiamentu:'kome',nederlands:'eten',engels:'to eat',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta come pan.',voorbeeld_papiamentu:'Mi ta kome pan.',voorbeeld_nederlands:'Ik eet brood.',voorbeeld_engels:'I eat bread.'},
+
+{week:2,nummer:156,level:'A1',tags:['eten_drinken'],papiamento:'morde',papiamentu:'morde',nederlands:'bijten',engels:'to bite',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'No morde e apel.',voorbeeld_papiamentu:'No morde e apel.',voorbeeld_nederlands:'Bij niet in de appel.',voorbeeld_engels:'Do not bite the apple.'},
+
+{week:2,nummer:157,level:'A1',tags:['eten_drinken'],papiamento:'kauw',papiamentu:'kou',nederlands:'kauwen',engels:'to chew',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Kauw bo cuminda bon.',voorbeeld_papiamentu:'Kou bo kuminda bon.',voorbeeld_nederlands:'Kauw je eten goed.',voorbeeld_engels:'Chew your food well.'},
+
+{week:2,nummer:158,level:'A1',tags:['eten_drinken'],papiamento:'lembe',papiamentu:'lembe',nederlands:'likken',engels:'to lick',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'E ta lembe e ijscream.',voorbeeld_papiamentu:'E ta lembe e eiskrim.',voorbeeld_nederlands:'Hij likt het ijsje.',voorbeeld_engels:'He is licking the ice cream.'},
+
+{week:2,nummer:159,level:'A1',tags:['eten_drinken'],papiamento:'chupa',papiamentu:'chupa',nederlands:'zuigen',engels:'to suck',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'E mucha ta chupa.',voorbeeld_papiamentu:'E mucha ta chupa.',voorbeeld_nederlands:'Het kind zuigt.',voorbeeld_engels:'The child is sucking.'},
+
+{week:2,nummer:160,level:'A1',tags:['eten_drinken'],papiamento:'smak',papiamentu:'smak',nederlands:'smaak',engels:'taste, flavor',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'E ta un bon smak.',voorbeeld_papiamentu:'E ta un bon smak.',voorbeeld_nederlands:'Dat heeft een goede smaak.',voorbeeld_engels:'It has a good taste.'},
+
+{week:2,nummer:161,level:'A1',tags:['eten_drinken'],papiamento:'guli',papiamentu:'guli',nederlands:'slikken',engels:'to swallow',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta guli e pilchi.',voorbeeld_papiamentu:'Mi ta guli e pilchi.',voorbeeld_nederlands:'Ik slik het pilletje.',voorbeeld_engels:'I swallow the pill.'},
+
+{week:2,nummer:162,level:'A1',tags:['eten_drinken'],papiamento:'gusta',papiamentu:'gusta',nederlands:'lekker vinden, houden van',engels:'to like',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi gusta pastechi.',voorbeeld_papiamentu:'Mi gusta pastechi.',voorbeeld_nederlands:'Ik houd van pastechi.',voorbeeld_engels:'I like pastechi.'},
+
+{week:2,nummer:163,level:'A1',tags:['eten_drinken'],papiamento:'dushi',papiamentu:'dushi',nederlands:'lekker, lief',engels:'sweet, nice, delicious',varianten:'',type:'bijvoeglijk naamwoord',uitspraak:'',voorbeeld_papiamento:'E bolo ta dushi.',voorbeeld_papiamentu:'E bolo ta dushi.',voorbeeld_nederlands:'De taart is heerlijk.',voorbeeld_engels:'The cake is delicious.'},
+
+{week:2,nummer:164,level:'A1',tags:['eten_drinken'],papiamento:'saboria',papiamentu:'saboriá',nederlands:'proeven, savoureren',engels:'to taste, savor',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Saboria e sopa.',voorbeeld_papiamentu:'Saboriá e sopa.',voorbeeld_nederlands:'Proef de soep.',voorbeeld_engels:'Taste the soup.'},
+
+{week:2,nummer:165,level:'A1',tags:['huishouden'],papiamento:'sushi',papiamentu:'sushi',nederlands:'vuil, vies',engels:'dirty',varianten:'susha',type:'bijvoeglijk naamwoord',uitspraak:'',voorbeeld_papiamento:'E camisa ta sushi.',voorbeeld_papiamentu:'E kamisa ta sushi.',voorbeeld_nederlands:'Het shirt is vies.',voorbeeld_engels:'The shirt is dirty.'},
+
+{week:2,nummer:166,level:'A1',tags:['huishouden'],papiamento:'mors',papiamentu:'mòrs',nederlands:'morsen',engels:'to spill',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'No mors e awa.',voorbeeld_papiamentu:'No mòrs e awa.',voorbeeld_nederlands:'Mors het water niet.',voorbeeld_engels:'Do not spill the water.'},
+
+{week:2,nummer:167,level:'A1',tags:['huishouden'],papiamento:'plama',papiamentu:'plama',nederlands:'verspreiden, morsen',engels:'spread, spill',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'No plama e awa.',voorbeeld_papiamentu:'No plama e awa.',voorbeeld_nederlands:'Verspreid het water niet.',voorbeeld_engels:'Do not spill the water.'},
+
+{week:2,nummer:168,level:'A1',tags:['huishouden'],papiamento:'bari',papiamentu:'barí',nederlands:'vegen',engels:'to sweep',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta bari e vloer.',voorbeeld_papiamentu:'Mi ta barí e vloer.',voorbeeld_nederlands:'Ik veeg de vloer.',voorbeeld_engels:'I am sweeping the floor.'},
+
+{week:2,nummer:169,level:'A1',tags:['huishouden'],papiamento:'bari di sushi',papiamentu:'barí di sushi',nederlands:'vuilnisemmer',engels:'trash can',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Tira e papel den bari di sushi.',voorbeeld_papiamentu:'Tira e papel den barí di sushi.',voorbeeld_nederlands:'Gooi het papier in de vuilnisbak.',voorbeeld_engels:'Throw the paper in the trash can.'},
+
+{week:2,nummer:170,level:'A1',tags:['eten_drinken'],papiamento:'sed',papiamentu:'set',nederlands:'dorst',engels:'thirst',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi tin sed.',voorbeeld_papiamentu:'Mi tin set.',voorbeeld_nederlands:'Ik heb dorst.',voorbeeld_engels:'I am thirsty.'},
+
+{week:2,nummer:171,level:'A1',tags:['eten_drinken'],papiamento:'bebe',papiamentu:'bebe',nederlands:'drinken',engels:'to drink',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta bebe awa.',voorbeeld_papiamentu:'Mi ta bebe awa.',voorbeeld_nederlands:'Ik drink water.',voorbeeld_engels:'I drink water.'},
+
+{week:2,nummer:172,level:'A1',tags:['eten_drinken'],papiamento:'awa',papiamentu:'awa',nederlands:'water',engels:'water',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi kier awa.',voorbeeld_papiamentu:'Mi kier awa.',voorbeeld_nederlands:'Ik wil water.',voorbeeld_engels:'I want water.'},
+
+{week:2,nummer:173,level:'A1',tags:['gezondheid'],papiamento:'baña',papiamentu:'baña',nederlands:'baden, in bad gaan',engels:'to bathe',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta baña awe.',voorbeeld_papiamentu:'Mi ta baña awe.',voorbeeld_nederlands:'Ik ga vandaag in bad.',voorbeeld_engels:'I am taking a bath today.'},
+
+{week:2,nummer:174,level:'A1',tags:['gezondheid'],papiamento:'muha',papiamentu:'muha',nederlands:'nat maken, nat worden',engels:'to get wet',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Awacero a muha mi camisa.',voorbeeld_papiamentu:'Áwaseru a muha mi kamisa.',voorbeeld_nederlands:'De regen maakte mijn shirt nat.',voorbeeld_engels:'The rain made my shirt wet.'},
+
+{week:2,nummer:175,level:'A1',tags:['gezondheid'],papiamento:'seca',papiamentu:'seka',nederlands:'drogen',engels:'to dry',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta seca mi man.',voorbeeld_papiamentu:'Mi ta seka mi man.',voorbeeld_nederlands:'Ik droog mijn handen.',voorbeeld_engels:'I dry my hands.'},
+
+{week:2,nummer:176,level:'A1',tags:['weer'],papiamento:'friu',papiamentu:'friu',nederlands:'koud',engels:'cold',varianten:'friw',type:'bijvoeglijk naamwoord',uitspraak:'',voorbeeld_papiamento:'Awa ta friu.',voorbeeld_papiamentu:'Awa ta friu.',voorbeeld_nederlands:'Het water is koud.',voorbeeld_engels:'The water is cold.'},
+
+{week:2,nummer:177,level:'A1',tags:['gezondheid'],papiamento:'tembla',papiamentu:'tembla',nederlands:'beven, trillen',engels:'to tremble, shake',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta tembla di friu.',voorbeeld_papiamentu:'Mi ta tembla di friu.',voorbeeld_nederlands:'Ik tril van de kou.',voorbeeld_engels:'I am shivering from the cold.'},
+
+{week:2,nummer:178,level:'A1',tags:['grammatica'],papiamento:'cla',papiamentu:'kla',nederlands:'klaar',engels:'ready, finished',varianten:'',type:'bijvoeglijk naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta cla awor.',voorbeeld_papiamentu:'Mi ta kla awor.',voorbeeld_nederlands:'Ik ben nu klaar.',voorbeeld_engels:'I am ready now.'},
+
+{week:2,nummer:179,level:'A1',tags:['mensen'],papiamento:'hisa',papiamentu:'hisa',nederlands:'tillen, heffen',engels:'to lift, raise',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Bo por hisa esaki?',voorbeeld_papiamentu:'Bo por hisa esaki?',voorbeeld_nederlands:'Kun je dit optillen?',voorbeeld_engels:'Can you lift this?'},
+
+{week:2,nummer:180,level:'A1',tags:['plaatsen'],papiamento:'baha',papiamentu:'baha',nederlands:'naar beneden gaan',engels:'to go down',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Nos ta baha awor.',voorbeeld_papiamentu:'Nos ta baha awor.',voorbeeld_nederlands:'Wij gaan nu naar beneden.',voorbeeld_engels:'We are going downstairs now.'},
+
+{week:2,nummer:181,level:'A1',tags:['plaatsen'],papiamento:'subi',papiamentu:'subi',nederlands:'omhoog gaan, stijgen',engels:'to go up',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta subi e trapi.',voorbeeld_papiamentu:'Mi ta subi e trapi.',voorbeeld_nederlands:'Ik ga de trap op.',voorbeeld_engels:'I am going up the stairs.'},
+
+{week:2,nummer:182,level:'A1',tags:['taal'],papiamento:'siña',papiamentu:'siña',nederlands:'leren, onderwijzen',engels:'to learn, teach',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta siña Papiamento.',voorbeeld_papiamentu:'Mi ta siña Papiamentu.',voorbeeld_nederlands:'Ik leer Papiaments.',voorbeeld_engels:'I am learning Papiamento.'},
+
+{week:2,nummer:183,level:'A1',tags:['taal'],papiamento:'palabra',papiamentu:'palabra',nederlands:'woord',engels:'word',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Esaki ta un palabra nobo.',voorbeeld_papiamentu:'Esaki ta un palabra nobo.',voorbeeld_nederlands:'Dit is een nieuw woord.',voorbeeld_engels:'This is a new word.'},
+
+{week:2,nummer:184,level:'A1',tags:['taal'],papiamento:'domina',papiamentu:'dominá',nederlands:'beheersen',engels:'to master',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'E ta domina Ingles.',voorbeeld_papiamentu:'E ta dominá Ingles.',voorbeeld_nederlands:'Hij beheerst Engels.',voorbeeld_engels:'He masters English.'},
+
+{week:2,nummer:185,level:'A1',tags:['mensen'],papiamento:'sirbi',papiamentu:'sirbi',nederlands:'helpen, bedienen',engels:'to serve, help',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta sirbi e cliente.',voorbeeld_papiamentu:'Mi ta sirbi e kliente.',voorbeeld_nederlands:'Ik help de klant.',voorbeeld_engels:'I assist the customer.'},
+
+{week:2,nummer:186,level:'A1',tags:['taal'],papiamento:'scucha',papiamentu:'skucha',nederlands:'luisteren',engels:'to listen',varianten:'tende',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Scucha bon.',voorbeeld_papiamentu:'Skucha bon.',voorbeeld_nederlands:'Luister goed.',voorbeeld_engels:'Listen carefully.'},
+
+{week:2,nummer:187,level:'A1',tags:['taal'],papiamento:'mira',papiamentu:'mira',nederlands:'zien, kijken',engels:'to see, look',varianten:'wak',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mira esaki.',voorbeeld_papiamentu:'Mira esaki.',voorbeeld_nederlands:'Kijk hiernaar.',voorbeeld_engels:'Look at this.'},
+
+{week:2,nummer:188,level:'A1',tags:['taal'],papiamento:'duda',papiamentu:'duda',nederlands:'twijfelen',engels:'to doubt',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi no ta duda.',voorbeeld_papiamentu:'Mi no ta duda.',voorbeeld_nederlands:'Ik twijfel niet.',voorbeeld_engels:'I do not doubt it.'},
+
+{week:2,nummer:189,level:'A1',tags:['grammatica'],papiamento:'sigur',papiamentu:'sigu',nederlands:'zeker, natuurlijk',engels:'sure, certain',varianten:'',type:'bijvoeglijk naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta sigur.',voorbeeld_papiamentu:'Mi ta sigu.',voorbeeld_nederlands:'Ik weet het zeker.',voorbeeld_engels:'I am sure.'},
+
+{week:2,nummer:190,level:'A1',tags:['mensen'],papiamento:'pusha',papiamentu:'pusha',nederlands:'duwen',engels:'to push',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Pusha e porta.',voorbeeld_papiamentu:'Pusha e porta.',voorbeeld_nederlands:'Duw de deur.',voorbeeld_engels:'Push the door.'},
+
+{week:2,nummer:191,level:'A1',tags:['mensen'],papiamento:'ranca',papiamentu:'ranka',nederlands:'trekken',engels:'to pull',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'No ranca e kabel.',voorbeeld_papiamentu:'No ranka e kabel.',voorbeeld_nederlands:'Trek niet aan de kabel.',voorbeeld_engels:'Do not pull the cable.'},
+
+{week:2,nummer:192,level:'A1',tags:['huishouden'],papiamento:'habri',papiamentu:'abri',nederlands:'openen',engels:'to open',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Habri e bentana.',voorbeeld_papiamentu:'Abri e bentana.',voorbeeld_nederlands:'Open het raam.',voorbeeld_engels:'Open the window.'},
+
+{week:2,nummer:193,level:'A1',tags:['huishouden'],papiamento:'sera',papiamentu:'sera',nederlands:'sluiten',engels:'to close',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Sera e porta.',voorbeeld_papiamentu:'Sera e porta.',voorbeeld_nederlands:'Sluit de deur.',voorbeeld_engels:'Close the door.'},
+
+{week:2,nummer:194,level:'A1',tags:['groeten'],papiamento:'danki',papiamentu:'danki',nederlands:'bedankt',engels:'thank you',varianten:'',type:'uitdrukking',uitspraak:'',voorbeeld_papiamento:'Danki pa bo yudansa.',voorbeeld_papiamentu:'Danki pa bo yudansa.',voorbeeld_nederlands:'Dank je voor je hulp.',voorbeeld_engels:'Thank you for your help.'},
+
+{week:2,nummer:195,level:'A1',tags:['plaatsen'],papiamento:'sali',papiamentu:'sali',nederlands:'uitgaan, naar buiten gaan',engels:'to leave, go out',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta sali awor.',voorbeeld_papiamentu:'Mi ta sali awor.',voorbeeld_nederlands:'Ik ga nu weg.',voorbeeld_engels:'I am leaving now.'},
+
+{week:2,nummer:196,level:'A1',tags:['plaatsen'],papiamento:'drenta',papiamentu:'drenta',nederlands:'binnenkomen',engels:'to enter',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Por drenta.',voorbeeld_papiamentu:'Por drenta.',voorbeeld_nederlands:'Kom binnen.',voorbeeld_engels:'Come in.'},
+
+{week:2,nummer:197,level:'A1',tags:['mensen'],papiamento:'hari',papiamentu:'ari',nederlands:'lachen',engels:'to laugh',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Nos ta hari hopi.',voorbeeld_papiamentu:'Nos ta ari hopi.',voorbeeld_nederlands:'Wij lachen veel.',voorbeeld_engels:'We laugh a lot.'},
+
+{week:2,nummer:198,level:'A1',tags:['mensen'],papiamento:'yora',papiamentu:'yora',nederlands:'huilen',engels:'to cry',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'E mucha ta yora.',voorbeeld_papiamentu:'E mucha ta yora.',voorbeeld_nederlands:'Het kind huilt.',voorbeeld_engels:'The child is crying.'},
+
+{week:2,nummer:199,level:'A1',tags:['huishouden'],papiamento:'kibra',papiamentu:'kibra',nederlands:'breken, stukmaken',engels:'to break',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'No kibra e glas.',voorbeeld_papiamentu:'No kibra e glas.',voorbeeld_nederlands:'Breek het glas niet.',voorbeeld_engels:'Do not break the glass.'},
+
+{week:2,nummer:200,level:'A1',tags:['huishouden'],papiamento:'drecha',papiamentu:'drecha',nederlands:'repareren, herstellen',engels:'to repair',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta drecha e bicicleta.',voorbeeld_papiamentu:'Mi ta drecha e bisikleta.',voorbeeld_nederlands:'Ik repareer de fiets.',voorbeeld_engels:'I am repairing the bicycle.'},
+
+{week:2,nummer:201,level:'A1',tags:['mensen'],papiamento:'duna',papiamentu:'duna',nederlands:'geven',engels:'to give',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Duna mi e buki.',voorbeeld_papiamentu:'Duna mi e buki.',voorbeeld_nederlands:'Geef mij het boek.',voorbeeld_engels:'Give me the book.'},
+
+{week:2,nummer:202,level:'A1',tags:['mensen'],papiamento:'tuma',papiamentu:'tuma',nederlands:'nemen',engels:'to take',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Tuma un cadeira.',voorbeeld_papiamentu:'Tuma un kadera.',voorbeeld_nederlands:'Neem een stoel.',voorbeeld_engels:'Take a chair.'},
+
+{week:2,nummer:203,level:'A1',tags:['taal'],papiamento:'lubida',papiamentu:'lubidá',nederlands:'vergeten',engels:'to forget',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'No lubida bo yabi.',voorbeeld_papiamentu:'No lubidá bo yabi.',voorbeeld_nederlands:'Vergeet je sleutel niet.',voorbeeld_engels:'Do not forget your key.'},
+
+{week:2,nummer:204,level:'A1',tags:['taal'],papiamento:'corda',papiamentu:'korda',nederlands:'herinneren',engels:'to remember',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta corda esaki.',voorbeeld_papiamentu:'Mi ta korda esaki.',voorbeeld_nederlands:'Ik herinner mij dit.',voorbeeld_engels:'I remember this.'},
+
+{week:2,nummer:205,level:'A1',tags:['vrije_tijd'],papiamento:'toca',papiamentu:'toka',nederlands:'muziek spelen',engels:'to play music',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'E ta toca guitarra.',voorbeeld_papiamentu:'E ta toka gitara.',voorbeeld_nederlands:'Hij speelt gitaar.',voorbeeld_engels:'He plays guitar.'},
+ 
+ // ===== WEEK 3 =====
   
   {week:3,nummer:206,tags:[],papiamento:'expresa',nederlands:'uiten, uitdrukken, kenbaar maken',varianten:'ekspresá',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Expresa bo opinion.',voorbeeld_nederlands:'Druk je mening uit.'},
   {week:3,nummer:207,tags:[],papiamento:'critica',nederlands:'bekritiseren, beoordelen',varianten:'kritika',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'No critica sin motibu.',voorbeeld_nederlands:'Kritiseer niet zonder reden.'},
