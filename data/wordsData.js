@@ -2,21 +2,37 @@ window.wordsData = [
   
   // ===== WEEK 1 =====
 
-  {week:1,nummer:1,tags:[],papiamento:'mi',nederlands:'ik, mij, me, mijn',varianten:'ami',type:'persoonlijk voornaamwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta bai kas.',voorbeeld_nederlands:'Ik ga naar huis.'},
-  {week:1,nummer:2,tags:[],papiamento:'bo',nederlands:'jij, je, jouw',varianten:'abo',type:'persoonlijk voornaamwoord',uitspraak:'',voorbeeld_papiamento:'Bo ta bon.',voorbeeld_nederlands:'Jij bent goed.'},
-  {week:1,nummer:3,tags:[],papiamento:'e',nederlands:'hij, zij, hem, haar, de, het',varianten:'',type:'persoonlijk voornaamwoord',uitspraak:'',voorbeeld_papiamento:'E ta yega awor.',voorbeeld_nederlands:'Hij of zij komt nu aan.'},
-  {week:1,nummer:4,tags:[],papiamento:'nos',nederlands:'wij, we, ons, onze',varianten:'anos',type:'persoonlijk voornaamwoord',uitspraak:'',voorbeeld_papiamento:'Nos ta bai.',voorbeeld_nederlands:'Wij gaan.'},
-  {week:1,nummer:5,tags:[],papiamento:'boso',nederlands:'jullie',varianten:'bosonan, aboso',type:'persoonlijk voornaamwoord',uitspraak:'',voorbeeld_papiamento:'Boso ta aki.',voorbeeld_nederlands:'Jullie zijn hier.'},
-  {week:1,nummer:6,tags:[],papiamento:'nan',nederlands:'zij, ze, hun, hen, men',varianten:'anan',type:'persoonlijk voornaamwoord',uitspraak:'',voorbeeld_papiamento:'Nan ta bini.',voorbeeld_nederlands:'Zij komen.'},
-  {week:1,nummer:7,tags:[],papiamento:'ta',nederlands:'is, ben, zijn, worden',varianten:'',type:'grammaticale tijd',uitspraak:'',voorbeeld_papiamento:'Mi ta traha.',voorbeeld_nederlands:'Ik werk.'},
-  {week:1,nummer:8,tags:[],papiamento:'lo',nederlands:'zal, zullen',varianten:'',type:'grammaticale tijd',uitspraak:'',voorbeeld_papiamento:'Nos lo bai mañan.',voorbeeld_nederlands:'Wij zullen morgen gaan.'},
-  {week:1,nummer:9,tags:[],papiamento:'a',nederlands:'verleden tijd',varianten:'',type:'grammaticale tijd',uitspraak:'',voorbeeld_papiamento:'E a bin.',voorbeeld_nederlands:'Hij of zij kwam.'},
-  {week:1,nummer:10,tags:[],papiamento:'tabata',nederlands:'was, waren',varianten:'tawata',type:'grammaticale tijd',uitspraak:'',voorbeeld_papiamento:'Nos tabata na kas.',voorbeeld_nederlands:'Wij waren thuis.'},
-  {week:1,nummer:11,tags:[],papiamento:'tabatin',nederlands:'had, er was',varianten:'',type:'grammaticale tijd',uitspraak:'',voorbeeld_papiamento:'Tabatin awa.',voorbeeld_nederlands:'Er was water.'},
-  {week:1,nummer:12,tags:[],papiamento:'sa',nederlands:'weten, kunnen',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi sa papia un tiki.',voorbeeld_nederlands:'Ik kan een beetje spreken.'},
-  {week:1,nummer:13,tags:[],papiamento:'tin',nederlands:'hebben, bezitten, er is, er zijn',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Tin pan riba mesa.',voorbeeld_nederlands:'Er ligt brood op tafel.'},
-  {week:1,nummer:14,tags:[],papiamento:'mester',nederlands:'moeten, nodig hebben',varianten:'mesté, tin cu, ku',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi mester drumi.',voorbeeld_nederlands:'Ik moet slapen.'},
-  {week:1,nummer:15,tags:[],papiamento:'kier',nederlands:'willen, liefhebben, houden van',varianten:'kié, ke',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi kier awa.',voorbeeld_nederlands:'Ik wil water.'},
+ {week:1,nummer:1,level:'A1',tags:['grammatica'],papiamento:'mi',papiamentu:'mi',nederlands:'ik, mij, me, mijn',engels:'I, me, my',varianten:'ami',type:'persoonlijk voornaamwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta bay cas.',voorbeeld_papiamentu:'Mi ta bai kas.',voorbeeld_nederlands:'Ik ga naar huis.',voorbeeld_engels:'I am going home.'},
+
+{week:1,nummer:2,level:'A1',tags:['grammatica'],papiamento:'bo',papiamentu:'bo',nederlands:'jij, je, jouw',engels:'you, your',varianten:'abo',type:'persoonlijk voornaamwoord',uitspraak:'',voorbeeld_papiamento:'Bo ta bon.',voorbeeld_papiamentu:'Bo ta bon.',voorbeeld_nederlands:'Jij bent goed.',voorbeeld_engels:'You are good.'},
+
+{week:1,nummer:3,level:'A1',tags:['grammatica'],papiamento:'e',papiamentu:'e',nederlands:'hij, zij, hem, haar, de, het',engels:'he, she, him, her, it',varianten:'',type:'persoonlijk voornaamwoord',uitspraak:'',voorbeeld_papiamento:'E ta yega awor.',voorbeeld_papiamentu:'E ta yega awor.',voorbeeld_nederlands:'Hij of zij komt nu aan.',voorbeeld_engels:'He or she is arriving now.'},
+
+{week:1,nummer:4,level:'A1',tags:['grammatica'],papiamento:'nos',papiamentu:'nos',nederlands:'wij, we, ons, onze',engels:'we, us, our',varianten:'anos',type:'persoonlijk voornaamwoord',uitspraak:'',voorbeeld_papiamento:'Nos ta bay.',voorbeeld_papiamentu:'Nos ta bai.',voorbeeld_nederlands:'Wij gaan.',voorbeeld_engels:'We are going.'},
+
+{week:1,nummer:5,level:'A1',tags:['grammatica'],papiamento:'boso',papiamentu:'boso',nederlands:'jullie',engels:'you (plural)',varianten:'bosonan, aboso',type:'persoonlijk voornaamwoord',uitspraak:'',voorbeeld_papiamento:'Boso ta aki.',voorbeeld_papiamentu:'Boso ta aki.',voorbeeld_nederlands:'Jullie zijn hier.',voorbeeld_engels:'You are here.'},
+
+{week:1,nummer:6,level:'A1',tags:['grammatica'],papiamento:'nan',papiamentu:'nan',nederlands:'zij, ze, hun, hen, men',engels:'they, them',varianten:'anan',type:'persoonlijk voornaamwoord',uitspraak:'',voorbeeld_papiamento:'Nan ta bin.',voorbeeld_papiamentu:'Nan ta bin.',voorbeeld_nederlands:'Zij komen.',voorbeeld_engels:'They are coming.'},
+
+{week:1,nummer:7,level:'A1',tags:['grammatica'],papiamento:'ta',papiamentu:'ta',nederlands:'is, ben, zijn, worden',engels:'am, is, are',varianten:'',type:'grammaticale tijd',uitspraak:'',voorbeeld_papiamento:'Mi ta traha.',voorbeeld_papiamentu:'Mi ta traha.',voorbeeld_nederlands:'Ik werk.',voorbeeld_engels:'I work.'},
+
+{week:1,nummer:8,level:'A1',tags:['grammatica'],papiamento:'lo',papiamentu:'lo',nederlands:'zal, zullen',engels:'will, shall',varianten:'',type:'grammaticale tijd',uitspraak:'',voorbeeld_papiamento:'Nos lo bay mayan.',voorbeeld_papiamentu:'Nos lo bai mayan.',voorbeeld_nederlands:'Wij zullen morgen gaan.',voorbeeld_engels:'We will go tomorrow.'},
+
+{week:1,nummer:9,level:'A1',tags:['grammatica'],papiamento:'a',papiamentu:'a',nederlands:'verleden tijd',engels:'past tense marker',varianten:'',type:'grammaticale tijd',uitspraak:'',voorbeeld_papiamento:'E a bin.',voorbeeld_papiamentu:'E a bin.',voorbeeld_nederlands:'Hij of zij kwam.',voorbeeld_engels:'He or she came.'},
+
+{week:1,nummer:10,level:'A1',tags:['grammatica'],papiamento:'tabata',papiamentu:'tabata',nederlands:'was, waren',engels:'was, were',varianten:'tawata',type:'grammaticale tijd',uitspraak:'',voorbeeld_papiamento:'Nos tabata na cas.',voorbeeld_papiamentu:'Nos tabata na kas.',voorbeeld_nederlands:'Wij waren thuis.',voorbeeld_engels:'We were at home.'},
+
+{week:1,nummer:11,level:'A1',tags:['grammatica'],papiamento:'tabatin',papiamentu:'tabatin',nederlands:'had, er was',engels:'had, there was',varianten:'',type:'grammaticale tijd',uitspraak:'',voorbeeld_papiamento:'Tabatin awa.',voorbeeld_papiamentu:'Tabatin awa.',voorbeeld_nederlands:'Er was water.',voorbeeld_engels:'There was water.'},
+
+{week:1,nummer:12,level:'A1',tags:['grammatica'],papiamento:'sa',papiamentu:'sa',nederlands:'weten, kunnen',engels:'know, can',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi sa papia un tiki.',voorbeeld_papiamentu:'Mi sa papia un tiki.',voorbeeld_nederlands:'Ik kan een beetje spreken.',voorbeeld_engels:'I can speak a little.'},
+
+{week:1,nummer:13,level:'A1',tags:['grammatica'],papiamento:'tin',papiamentu:'tin',nederlands:'hebben, bezitten, er is, er zijn',engels:'have, there is, there are',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Tin pan riba mesa.',voorbeeld_papiamentu:'Tin pan riba mesa.',voorbeeld_nederlands:'Er ligt brood op tafel.',voorbeeld_engels:'There is bread on the table.'},
+
+{week:1,nummer:14,level:'A1',tags:['grammatica'],papiamento:'mester',papiamentu:'mesté',nederlands:'moeten, nodig hebben',engels:'must, need',varianten:'tin cu, ku',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi mester drumi.',voorbeeld_papiamentu:'Mi mesté drumi.',voorbeeld_nederlands:'Ik moet slapen.',voorbeeld_engels:'I need to sleep.'},
+
+{week:1,nummer:15,level:'A1',tags:['grammatica'],papiamento:'kier',papiamentu:'ke',nederlands:'willen, liefhebben, houden van',engels:'want, love',varianten:'kié',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi kier awa.',voorbeeld_papiamentu:'Mi ke awa.',voorbeeld_nederlands:'Ik wil water.',voorbeeld_engels:'I want water.'},
+
+  
   {week:1,nummer:16,tags:[],papiamento:'por',nederlands:'kunnen, mogen',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Bo por bai.',voorbeeld_nederlands:'Je mag gaan.'},
   {week:1,nummer:17,tags:[],papiamento:'ken?',nederlands:'wie?',varianten:'',type:'vraagwoord',uitspraak:'',voorbeeld_papiamento:'Ken ta ei?',voorbeeld_nederlands:'Wie is dat?'},
   {week:1,nummer:18,tags:[],papiamento:'kiko?',nederlands:'wat?, welke?',varianten:'ki?, cua, kua?',type:'vraagwoord',uitspraak:'',voorbeeld_papiamento:'Kiko bo kier?',voorbeeld_nederlands:'Wat wil je?'},
