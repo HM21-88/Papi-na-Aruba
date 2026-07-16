@@ -433,9 +433,91 @@ window.wordsData = [
   {week:4,nummer:412,tags:[],papiamento:'cushina',nederlands:'koken',varianten:'kushiná',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta cushina awe anochi.',voorbeeld_nederlands:'Ik kook vanavond.'},
   {week:4,nummer:413,tags:[],papiamento:'dolor',nederlands:'pijn',varianten:'doló',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi tin dolor na lomba.',voorbeeld_nederlands:'Ik heb pijn in mijn rug.'},
   {week:4,nummer:414,tags:[],papiamento:'klap',nederlands:'klappen, applaus',varianten:'bati man, aplauso, aplouso',type:'werkwoord/zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Tur hende ta klap.',voorbeeld_nederlands:'Iedereen klapt.'},
-  {week:4,nummer:415,tags:[],papiamento:'ansioso',nederlands:'bezorgd, verlangend, begerig',varianten:'',type:'bijvoeglijk naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta ansioso pa e resultadonan.',voorbeeld_nederlands:'Ik ben bezorgd om de resultaten.'}
+  {week:4,nummer:415,tags:[],papiamento:'ansioso',nederlands:'bezorgd, verlangend, begerig',varianten:'',type:'bijvoeglijk naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta ansioso pa e resultadonan.',voorbeeld_nederlands:'Ik ben bezorgd om de resultaten.'},
 
  // ===== WEEK 5 =====
+
+{week:5,nummer:416,level:'A1',tags:['weer'],papiamento:'tempo',papiamentu:'tempu',nederlands:'weer, tijd, seizoen',engels:'',varianten:'wer',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:417,level:'A1',tags:['weer'],papiamento:'bon tempo',papiamentu:'bon tempu',nederlands:'goed weer',engels:'',varianten:'',type:'uitdrukking',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:418,level:'A1',tags:['weer'],papiamento:'mal tempo',papiamentu:'mal tempu',nederlands:'slecht weer, onweer',engels:'',varianten:'',type:'uitdrukking',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:419,level:'A1',tags:['weer'],papiamento:'awacero',papiamentu:'áwaseru',nederlands:'regen',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:420,level:'A1',tags:['weer'],papiamento:'yobe',papiamentu:'',nederlands:'regenen',engels:'',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:421,level:'A1',tags:['weer'],papiamento:'yobida',papiamentu:'',nederlands:'regenbui',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:422,level:'A1',tags:['weer'],papiamento:'calor',papiamentu:'kalor',nederlands:'warm',engels:'',varianten:'',type:'bijvoeglijk naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:423,level:'A1',tags:['weer'],papiamento:'cayente',papiamentu:'kayente',nederlands:'heet',engels:'',varianten:'',type:'bijvoeglijk naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:424,level:'A1',tags:['weer'],papiamento:'soda',papiamentu:'',nederlands:'zweten, transpireren, sodawater',engels:'',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:425,level:'A1',tags:['weer'],papiamento:'fresco',papiamentu:'fresku',nederlands:'fris',engels:'',varianten:'',type:'bijvoeglijk naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:426,level:'A1',tags:['weer'],papiamento:'biento',papiamentu:'bientu',nederlands:'wind',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:427,level:'A1',tags:['weer'],papiamento:'nubia',papiamentu:'',nederlands:'wolk',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:428,level:'A1',tags:['weer'],papiamento:'nubla',papiamentu:'nubiá',nederlands:'bewolkt',engels:'',varianten:'nubia',type:'bijvoeglijk naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:429,level:'A1',tags:['weer'],papiamento:'lampro',papiamentu:'',nederlands:'weerlicht, bliksem',engels:'',varianten:'werlek',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:430,level:'A1',tags:['weer'],papiamento:'strea',papiamentu:'',nederlands:'ster',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:431,level:'A1',tags:['weer'],papiamento:'strena',papiamentu:'',nederlands:'donder',engels:'',varianten:'bos',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:432,level:'A1',tags:['weer'],papiamento:'scur',papiamentu:'skur',nederlands:'donker',engels:'',varianten:'sukú',type:'bijvoeglijk naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:433,level:'A1',tags:['werk'],papiamento:'hefe',papiamentu:'shèf',nederlands:'chef, hoofd van afdeling',engels:'',varianten:'doño',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:434,level:'A1',tags:['werk'],papiamento:'oficina',papiamentu:'ofisina',nederlands:'kantoor',engels:'',varianten:'kantor',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:435,level:'A1',tags:['werk'],papiamento:'reunion',papiamentu:'',nederlands:'vergadering',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:436,level:'A1',tags:['werk'],papiamento:'cita',papiamentu:'sita',nederlands:'afspraak',engels:'',varianten:'afsprak',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:437,level:'A1',tags:['werk'],papiamento:'lessenaar',papiamentu:'lèsenar',nederlands:'bureau',engels:'',varianten:'büró',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:438,level:'A1',tags:['werk'],papiamento:'lachi',papiamentu:'',nederlands:'lade, laatje',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:439,level:'A1',tags:['werk'],papiamento:'cellular',papiamentu:'selular',nederlands:'mobiele telefoon',engels:'',varianten:'cel, sèlula, sel',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:440,level:'A1',tags:['werk'],papiamento:'ley',papiamentu:'lèi',nederlands:'wet',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:441,level:'A1',tags:['werk'],papiamento:'kaso',papiamentu:'',nederlands:'geval, zaak, voorval',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:442,level:'A1',tags:['werk'],papiamento:'cliente',papiamentu:'kliente',nederlands:'klant, cliënt',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:443,level:'A1',tags:['werk'],papiamento:'scirbi',papiamentu:'skirbi',nederlands:'schrijven, opschrijven',engels:'',varianten:'scibi, skibi',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:444,level:'A1',tags:['werk'],papiamento:'inscribi',papiamentu:'inskribí',nederlands:'inschrijven',engels:'',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:445,level:'A1',tags:['werk'],papiamento:'carta',papiamentu:'karta',nederlands:'brief, speelkaart',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:446,level:'A1',tags:['werk'],papiamento:'blachi',papiamentu:'',nederlands:'blad',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:447,level:'A1',tags:['werk'],papiamento:'papel',papiamentu:'',nederlands:'papier',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:448,level:'A1',tags:['werk'],papiamento:'atentamente',papiamentu:'',nederlands:'hoogachtend, met vriendelijke groet, aandachtig',engels:'',varianten:'',type:'uitdrukking',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:449,level:'A1',tags:['werk'],papiamento:'firma',papiamentu:'',nederlands:'handtekening, ondertekening',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:450,level:'A1',tags:['werk'],papiamento:'documento',papiamentu:'dokumento',nederlands:'document, officiële papieren',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:451,level:'A1',tags:['werk'],papiamento:'agrega',papiamentu:'añadi',nederlands:'toevoegen',engels:'',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:452,level:'A1',tags:['geld','werk'],papiamento:'polisa',papiamentu:'pólisa',nederlands:'polis',engels:'',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:453,level:'A1',tags:['winkelen'],papiamento:'bende',papiamentu:'',nederlands:'verkopen',engels:'',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:454,level:'A1',tags:['winkelen'],papiamento:'cumpra',papiamentu:'kumpra',nederlands:'kopen, aankoop',engels:'',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:455,level:'A1',tags:['winkelen'],papiamento:'caro',papiamentu:'karu',nederlands:'duur, prijzig, kostbaar',engels:'',varianten:'',type:'bijvoeglijk naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
+
+{week:5,nummer:456,level:'A1',tags:['werk','winkelen'],papiamento:'bestel',papiamentu:'bestèl',nederlands:'bestelling, aanvraag, order',engels:'',varianten:'orde, ordu',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'',voorbeeld_papiamentu:'',voorbeeld_nederlands:'',voorbeeld_engels:''},
 
 
 
