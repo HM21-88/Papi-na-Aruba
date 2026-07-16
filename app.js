@@ -1,9 +1,100 @@
 const APP_CONFIG = {
-variant: 'aw',
-subscription: 'free'
+  variant: localStorage.getItem('languageVariant') || 'pao',
+  showOtherVariant: true,
+  subscription: 'free'
 };
 
 const data = window.wordsData || [];
+
+function isPapiamento(){
+  return APP_CONFIG.variant === 'pao';
+}
+
+function isPapiamentu(){
+  return APP_CONFIG.variant === 'pau';
+}
+
+function getPrimaryWord(word){
+ 
+ return isPapiamento()
+    ? (word.papiamento || '')
+    : (word.papiamentu || word.papiamento || '');
+}
+
+function getPrimaryExample(word){
+  return isPapiamento()
+    ? (word.voorbeeld_papiamento || '')
+    : (
+        word.voorbeeld_papiamentu ||
+        word.voorbeeld_papiamento ||
+        ''
+      );
+}
+
+function getSecondaryWord(word){
+  return isPapiamento()
+    ? (word.papiamentu || '')
+    : (word.papiamento || '');
+}
+
+function hasSecondaryWord(word){
+
+  const secondary =
+    getSecondaryWord(word);
+
+  const primary =
+    getPrimaryWord(word);
+
+  return (
+    secondary &&
+    secondary.trim() !== '' &&
+    secondary !== primary
+  );
+}
+
+function toggleLanguageVariant(){
+
+  APP_CONFIG.variant =
+    APP_CONFIG.variant === 'pao'
+      ? 'pau'
+      : 'pao';
+
+  localStorage.setItem(
+    'languageVariant',
+    APP_CONFIG.variant
+  );
+
+  updateLanguageChip();
+
+  renderList();
+
+  renderFlash();
+  
+  updateHomeStats();
+
+  if(currentQuiz){
+    newQuiz();
+  }
+
+  updateHomeStats();
+}
+
+function updateLanguageChip(){
+
+  const chip =
+    document.getElementById(
+      'languageChip'
+    );
+
+  if(!chip){
+    return;
+  }
+
+  chip.textContent =
+    APP_CONFIG.variant === 'pao'
+      ? 'PAO'
+      : 'PAU';
+}
 
 const weekSelections = {
   weekFilter: ['alle'],
@@ -522,7 +613,33 @@ if(wordCountCard){
   ${escapeHtml(item.type || '-')}
 </div>
             
-			<div class="word">${escapeHtml(item.papiamento || '-')}</div>
+<div class="word">
+  ${escapeHtml(
+    getPrimaryWord(item) || '-'
+  )}
+</div>
+
+${
+  hasSecondaryWord(item)
+    ? `
+      <div class="word-secondary">
+
+  <span class="variant-tag">
+    ${
+      isPapiamento()
+        ? 'PAU'
+        : 'PAO'
+    }
+  </span>
+
+  ${escapeHtml(
+    getSecondaryWord(item)
+  )}
+
+</div>
+    `
+    : ''
+}
             
 		<div class="meaning-line">
 
@@ -543,9 +660,10 @@ if(wordCountCard){
 <div
   id="${exampleId}"
   class="word-example">
-  <div class="word-example-pa">
-    ${escapeHtml(item.voorbeeld_papiamento)}
-  </div>
+  
+	<div class="word-example-pa">
+	  ${escapeHtml(getPrimaryExample(item))}
+	</div>
 
   <div class="word-example-nl">
     ${escapeHtml(item.voorbeeld_nederlands)}
@@ -974,28 +1092,50 @@ if(flashWeekLabel){
       <div class="flash-front-word">
         ${
           dir==='nl-pa'
-            ? escapeHtml(x.nederlands)
-            : escapeHtml(x.papiamento)
+			  ? escapeHtml(x.nederlands)
+			  : escapeHtml(getPrimaryWord(x))
         }
       </div>
     `;
 
 }else{
 
-  const answer =
-    dir==='nl-pa'
-      ? x.papiamento
-      : x.nederlands;
+const answer =
+  dir==='nl-pa'
+    ? getPrimaryWord(x)
+    : x.nederlands;
 
   document.getElementById('flashFront').innerHTML =
     `
-      <div class="flash-answer-word">
-        ${escapeHtml(answer)}
-      </div>
+<div class="flash-answer-word">
+  ${escapeHtml(answer)}
+</div>
 
-      <div class="flash-answer-variants">
-        Varianten: ${escapeHtml(x.varianten || '-')}
+${
+  hasSecondaryWord(x)
+    ? `
+      <div class="flash-secondary-word">
+
+        <span class="variant-tag">
+          ${
+            isPapiamento()
+              ? 'PAU'
+              : 'PAO'
+          }
+        </span>
+
+        ${escapeHtml(
+          getSecondaryWord(x)
+        )}
+
       </div>
+    `
+    : ''
+}
+
+<div class="flash-answer-variants">
+  Varianten: ${escapeHtml(x.varianten || '-')}
+</div>
 
       <div class="flash-example">
 
@@ -1004,7 +1144,7 @@ if(flashWeekLabel){
         </div>
 
         <div class="flash-example-pa">
-          ${escapeHtml(x.voorbeeld_papiamento || '-')}
+          ${escapeHtml(getPrimaryExample(x) || '-')}
         </div>
 
         <div class="flash-example-nl">
@@ -1272,19 +1412,105 @@ function checkQuiz(){
   const rawInput=document.getElementById('quizA').value;
   const input=normalize(rawInput);
 
-  const answers=(dir==='nl-pa'
-    ? [currentQuiz.papiamento, currentQuiz.varianten]
-    : [currentQuiz.nederlands, currentQuiz.varianten]
+  const primaryAnswer =
+  normalize(
+    getPrimaryWord(currentQuiz)
+  );
+
+const secondaryAnswer =
+  normalize(
+    getSecondaryWord(currentQuiz)
+  );
+
+const otherAnswers =
+  (
+    dir === 'nl-pa'
+      ? currentQuiz.varianten
+      : currentQuiz.nederlands
   )
-    .join(',')
     .split(',')
-    .map(s=>normalize(s))
+    .map(s => normalize(s))
     .filter(Boolean);
 
-  const hasInput=input.length>0;
-  const ok = hasInput && answers.some((a) => a && a.trim() === input.trim());
+const hasInput =
+  input.length > 0;
 
-  quizAnswered++;
+const usedPrimary =
+  input === primaryAnswer;
+
+const usedSecondary =
+  input === secondaryAnswer &&
+  secondaryAnswer !== primaryAnswer;
+
+const ok =
+  hasInput &&
+  (
+    usedPrimary ||
+    usedSecondary ||
+    otherAnswers.includes(input)
+  );
+
+let variantNotice = '';
+
+if(
+  dir === 'nl-pa' &&
+  usedSecondary
+){
+
+variantNotice = `
+	<div class="quiz-variant-warning">
+
+	⚠️ Andere taalvariant gebruikt
+
+	<br><br>
+
+		Je antwoord is goed,
+
+		maar je gebruikte de ${
+
+		isPapiamento()
+
+		? 'PAU'
+
+		: 'PAO'
+
+		}-variant.
+
+</div>
+
+    <div class="quiz-variant-pair">
+
+      <span class="variant-tag">
+        ${
+          isPapiamento()
+            ? 'PAO'
+            : 'PAU'
+        }
+      </span>
+
+      ${escapeHtml(
+        getPrimaryWord(currentQuiz)
+      )}
+
+      <br>
+
+      <span class="variant-tag">
+        ${
+          isPapiamento()
+            ? 'PAU'
+            : 'PAO'
+        }
+      </span>
+
+      ${escapeHtml(
+        getSecondaryWord(currentQuiz)
+      )}
+
+    </div>
+  `;
+}
+
+quizAnswered++;
 
   if(ok){
     registerLearningActivity();
@@ -1294,12 +1520,20 @@ function checkQuiz(){
     document.getElementById('quizF').innerHTML=`
       <div class="feedback good">Goed.</div>
       ${pepHtml}
-      <div><strong>Juiste antwoord:</strong> ${escapeHtml(dir==='nl-pa' ? currentQuiz.papiamento : currentQuiz.nederlands)}</div>
-      <div><strong>Voorbeeldzin:</strong> ${escapeHtml(currentQuiz.voorbeeld_papiamento || '-')}</div>
+	  
+	  ${variantNotice}
+	  
+      <div><strong>Juiste antwoord:</strong> ${escapeHtml(
+  dir==='nl-pa'
+    ? getPrimaryWord(currentQuiz)
+    : currentQuiz.nederlands
+)}</div>
+      <div><strong>Voorbeeldzin:</strong> ${escapeHtml(getPrimaryExample(currentQuiz) || '-')}</div>
       <div><strong>Vertaling:</strong> ${escapeHtml(currentQuiz.voorbeeld_nederlands || '-')}</div>
       <div><strong>Nr.:</strong> ${currentQuiz.nummer}</div>
       <div><strong>Week:</strong> ${currentQuiz.week}</div>
     `;
+	
   } else {
     registerLearningActivity();
 	quizBad++;
@@ -1309,8 +1543,8 @@ function checkQuiz(){
     document.getElementById('quizF').innerHTML=`
       <div class="feedback bad">Fout.</div>
       ${pepHtml}
-      <div><strong>Juiste antwoord:</strong> ${escapeHtml(dir==='nl-pa' ? currentQuiz.papiamento : currentQuiz.nederlands)}</div>
-      <div><strong>Voorbeeldzin:</strong> ${escapeHtml(currentQuiz.voorbeeld_papiamento || '-')}</div>
+      <div><strong>Juiste antwoord:</strong> ${escapeHtml(dir==='nl-pa' ? getPrimaryWord(currentQuiz) : currentQuiz.nederlands)}</div>
+      <div><strong>Voorbeeldzin:</strong> ${escapeHtml( getPrimaryExample(currentQuiz) || '-')}</div>
       <div><strong>Vertaling:</strong> ${escapeHtml(currentQuiz.voorbeeld_nederlands || '-')}</div>
       <div><strong>Nr.:</strong> ${currentQuiz.nummer}</div>
       <div><strong>Week:</strong> ${currentQuiz.week}</div>
@@ -2442,18 +2676,38 @@ const word =
 
 if(word){
 
-  document.getElementById(
-    'wordOfDay'
-  ).innerHTML =
-    `
-      <div class="word">
-        ${word.papiamento}
-      </div>
+document.getElementById(
+  'wordOfDay'
+).innerHTML =
+`
+  <div class="word">
+    ${getPrimaryWord(word)}
+  </div>
 
-      <div class="meta">
-        ${word.nederlands}
-      </div>
-    `;
+  ${
+    hasSecondaryWord(word)
+      ? `
+        <div class="word-secondary">
+
+          <span class="variant-tag">
+            ${
+              isPapiamento()
+                ? 'PAU'
+                : 'PAO'
+            }
+          </span>
+
+          ${getSecondaryWord(word)}
+
+        </div>
+      `
+      : ''
+  }
+
+  <div class="meta">
+    ${word.nederlands}
+  </div>
+`;
 
 } 
 
