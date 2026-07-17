@@ -2,38 +2,41 @@ window.learningPaths = {
 
   aruba: {
 
-    title:
-      'One Happy Island',
+    id:'aruba',
 
-    guide:
-      'Ana',
+    title:'One Happy Island',
 
-    stops: [
+    guide:'Ana',
+
+    stops:[
 
       {
         id:'airport',
-        title:
-          'Reina Beatrix Airport',
+
+        order:1,
+
+        title:'Reina Beatrix Airport',
+
         icon:'plane',
-        words:[]
-      },
 
-      {
-        id:'taxi',
-        title:'Taxi',
-        icon:'car',
-        words:[]
-      },
+        description:
+          'Je komt aan op Aruba.',
 
-      {
-        id:'hotel',
-        title:'Hotel',
-        icon:'building',
-        words:[]
+        categories:[
+          'groeten',
+          'taal'
+        ],
+
+        featuredWords:[
+          102,
+          107,
+          110,
+          194
+        ],
+
+        funFact:
+          'De luchthaven is vernoemd naar koningin Beatrix.'
       }
-
     ]
-
   }
-
 };
