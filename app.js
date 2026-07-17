@@ -1538,7 +1538,7 @@ function newQuiz(){
   const dir=document.getElementById('quizDir').value;
   document.getElementById('quizQ').textContent=
     dir==='nl-pa'
-      ? `Wat is het Papiamento van: ${currentQuiz.nederlands}?`
+      ? `Wat is het Papiaments van: ${currentQuiz.nederlands}?`
       : `Wat is de Nederlandse betekenis van: ${currentQuiz.papiamento}?`;
 
   document.getElementById('quizA').value='';
