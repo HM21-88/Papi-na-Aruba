@@ -2420,3 +2420,44 @@ body{
   align-items:center;
   flex-shrink:0;
 }
+
+.home-cards-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+
+  margin-bottom:20px;
+}
+
+.saying-panel{
+  background:#ffffff;
+}
+
+#sayingOfDay{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.saying-text{
+  font-size:1.2rem;
+  font-weight:800;
+  color:var(--brand-primary);
+}
+
+.saying-translation{
+  color:var(--text-secondary);
+  font-style:italic;
+}
+
+@media (max-width:720px){
+
+  .home-cards-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .saying-text{
+    font-size:1rem;
+  }
+
+}

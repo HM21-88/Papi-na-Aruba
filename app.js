@@ -10,6 +10,10 @@ const APP_CONFIG = {
 
 const data = window.wordsData || [];
 
+const sayingsData = window.sayingsData || [];
+
+const holidaysData = window.holidaysData || [];
+
 function speakText(text){
 
   if(!window.speechSynthesis){
@@ -2792,6 +2796,79 @@ function getWordOfDay(){
 
 }
 
+function getSayingTranslation(
+  saying
+){
+
+  const appLanguage =
+    localStorage.getItem(
+      'appLanguage'
+    ) || 'nl';
+
+  if(appLanguage === 'en'){
+
+    return (
+      saying.en_gezegde ||
+      saying.en
+    );
+
+  }
+
+  return (
+    saying.nl_gezegde ||
+    saying.nl
+  );
+}
+
+function renderSayingOfDay(){
+
+  if(!sayingsData.length){
+    return;
+  }
+
+  const today =
+    new Date()
+      .toISOString()
+      .split('T')[0];
+
+  const hash =
+    today
+      .split('')
+      .reduce(
+        (a, c) => a + c.charCodeAt(0),
+        0
+      );
+
+  const saying =
+    sayingsData[
+      hash % sayingsData.length
+    ];
+
+  const text =
+    APP_CONFIG.variant === 'pao'
+      ? saying.pao
+      : saying.pau;
+
+  const container =
+    document.getElementById(
+      'sayingOfDay'
+    );
+
+  if(!container){
+    return;
+  }
+
+  container.innerHTML = `
+    <div class="saying-text">
+      "${text}"
+    </div>
+
+	<div class="saying-translation">
+	  ${getSayingTranslation(saying)}
+	</div>
+  `;
+}
+
 function updateHomeStats(){
 
   const weeklyProgress =
@@ -2885,6 +2962,8 @@ ${
 lucide.createIcons();
 
 renderWeekTracker();
+
+renderSayingOfDay();
 
 }
 
