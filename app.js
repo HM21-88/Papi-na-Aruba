@@ -3669,6 +3669,16 @@ function openAirportOverview(){
 	  isLessonCompleted(
 		'airport-1'
 	  );
+	  
+	 const lesson2Done =
+  isLessonCompleted(
+    'airport-2'
+  );
+
+const lesson3Done =
+  isLessonCompleted(
+    'airport-3'
+  );
 
   showMainScreen(
     'airportOverviewScreen'
@@ -3691,7 +3701,7 @@ function openAirportOverview(){
     `
 	<button
 	  class="practice-card"
-	  onclick="openAirportLesson()">
+	  onclick="openLesson('airport-1')">
 
 	  <div class="practice-title">
 		${
@@ -3705,37 +3715,53 @@ function openAirportOverview(){
 
 <button
   class="practice-card"
-  ${lesson1Done
-    ? 'onclick="alert(\'Les 2 komt zo! \')"'
-    : ''}>
+  onclick="openLesson('airport-2')">
 
   <div class="practice-title">
 
-    ${
-      lesson1Done
-        ? '🔓 Les 2 - Mi Nomber Ta...'
-        : '🔒 Les 2 - Mi Nomber Ta...'
-    }
+${
+  lesson2Done
+    ? '✅ Les 2 - Mi Nomber Ta...'
+    : lesson1Done
+      ? '🔓 Les 2 - Mi Nomber Ta...'
+      : '🔒 Les 2 - Mi Nomber Ta...'
+}
 
   </div>
 
 </button>
 
-      <button
-        class="practice-card">
+	<button
+	  class="practice-card"
+	  onclick="openLesson('airport-3')">
+
 
         <div class="practice-title">
-          🔒 Les 3 - Con Ta Bay?
+${
+  lesson3Done
+    ? '✅ Les 3 - Con Ta Bay?'
+    : lesson2Done
+      ? '🔓 Les 3 - Con Ta Bay?'
+      : '🔒 Les 3 - Con Ta Bay?'
+}
 
         </div>
 
       </button>
 
       <button
-        class="practice-card">
+  class="practice-card"
+  onclick="openLesson('airport-challenge')">
+
 
         <div class="practice-title">
-          🏆 Airport Challenge
+          ${
+  lesson1Done &&
+  lesson2Done &&
+  lesson3Done
+    ? '🏆 Airport Challenge'
+    : '🔒 Airport Challenge'
+}
         </div>
 
       </button>
@@ -3743,15 +3769,35 @@ function openAirportOverview(){
 
 }
 
-function openAirportLesson(){
+let challengeIndex = 0;
 
-  const lesson =
+let currentChallenge =
+  null;
+  
+ let challengeScore = 0;
+
+let currentLessonId =
+  null;
+
+function openLesson(
+  lessonId
+){
+
+  currentLessonId =
+    lessonId;
+
+  const airport =
     window.learningPaths
       .aruba
       .levels[0]
       .chapters[0]
-      .locations[0]
-      .lessons[0];
+      .locations[0];
+
+  const lesson =
+    airport.lessons.find(
+      item =>
+        item.id === lessonId
+    );
 
   const lessonInfo =
     window.lessonData[
@@ -3768,50 +3814,79 @@ function openAirportLesson(){
   ).innerHTML =
 
     `
-    <p>
-      ${lessonInfo.intro}
-    </p>
-
-    <div class="panel">
-
-      <strong>
-        👵🏻 Wela Ana
-      </strong>
-
       <p>
-        ${lessonInfo.anaMessage}
+        ${lessonInfo.intro}
       </p>
 
-    </div>
+      <div class="panel">
+
+        <strong>
+          👵🏻 Wela Ana
+        </strong>
+
+        <p>
+          ${lessonInfo.anaMessage}
+        </p>
+
+      </div>
     `;
 
-const words =
-  data.filter(
-    word =>
-      lesson.wordIds.includes(
-        word.nummer
-      )
-  );
+  if(!lesson.wordIds){
 
-document.getElementById(
-  'airportWords'
-).innerHTML =
+    currentChallenge =
+      lessonInfo;
 
-  words.map(word => `
+    challengeIndex = 0;
+	challengeScore = 0;
 
-    <div class="list-item">
+    document.getElementById(
+      'challengeChat'
+    ).classList.remove(
+      'hidden'
+    );
 
-      <div class="word">
-        ${getPrimaryWord(word)}
-      </div>
+    document.getElementById(
+      'airportWords'
+    ).innerHTML = '';
 
-      <div class="meta">
-        ${word.nederlands}
-      </div>
+    renderChallenge();
 
-    </div>
+  } else {
 
-  `).join('');
+    document.getElementById(
+      'challengeChat'
+    ).classList.add(
+      'hidden'
+    );
+
+    const words =
+      data.filter(
+        word =>
+          lesson.wordIds.includes(
+            word.nummer
+          )
+      );
+
+    document.getElementById(
+      'airportWords'
+    ).innerHTML =
+
+      words.map(word => `
+
+        <div class="list-item">
+
+          <div class="word">
+            ${getPrimaryWord(word)}
+          </div>
+
+          <div class="meta">
+            ${word.nederlands}
+          </div>
+
+        </div>
+
+      `).join('');
+  }
 
   showMainScreen(
     'airportLessonScreen'
@@ -3821,25 +3896,179 @@ document.getElementById(
     lesson.title,
     true,
     () => showMainScreen(
-      'travelScreen'
+      'airportOverviewScreen'
     )
   );
+
 }
 
-function completeAirportLesson(){
+
+function renderChallenge(){
+
+  const question =
+    currentChallenge.questions[
+      challengeIndex
+    ];
+
+  document.getElementById(
+    'challengeChat'
+  ).innerHTML =
+
+    `
+      <div class="panel">
+
+        <strong>
+          👵🏻 Wela Ana
+        </strong>
+
+        <p>
+          Wat betekent:
+        </p>
+
+        <h3>
+          ${question.word}
+        </h3>
+
+      </div>
+
+      <input
+        id="challengeAnswer"
+        type="text"
+        placeholder="Typ je antwoord">
+
+      <button
+        class="btn"
+        onclick="submitChallengeAnswer()">
+
+        📨 Verstuur
+
+      </button>
+    `;
+}
+
+function submitChallengeAnswer(){
+
+  const question =
+    currentChallenge.questions[
+      challengeIndex
+    ];
+
+  const userAnswer =
+    document.getElementById(
+      'challengeAnswer'
+    )
+    .value
+    .trim()
+    .toLowerCase();
+
+  const correctAnswer =
+    question.answer
+      .trim()
+      .toLowerCase();
+
+  if(
+    userAnswer ===
+    correctAnswer
+  ){
+    challengeScore++;
+
+    alert(
+      '✅ Correct!'
+    );
+
+  } else {
+
+    alert(
+      '❌ Fout!\n\nJuiste antwoord: ' +
+      question.answer
+    );
+
+  }
+
+  challengeIndex++;
+
+  if(
+    challengeIndex >=
+    currentChallenge
+      .questions.length
+  ){
+
+showAirportCompletion();
+
+return;
+
+
+    return;
+
+  }
+
+  renderChallenge();
+
+}
+
+function showAirportCompletion(){
+
+  document.getElementById(
+    'challengeChat'
+  ).innerHTML =
+
+    `
+      <div class="panel">
+
+        <h2>
+          🎉 Bon Trabou!
+        </h2>
+
+        <p>
+          Airport voltooid.
+        </p>
+
+        <p>
+          🏆 Airport Explorer
+        </p>
+
+        <p>
+          🎫 Souvenir ontvangen:
+          Instapkaart Aruba
+        </p>
+
+        <button
+          class="btn"
+          onclick="showMainScreen(
+            'travelScreen'
+          )">
+
+          🌴 Terug naar Reis
+
+        </button>
+
+      </div>
+    `;
+}
+
+function completeLesson(){
+
+  if(
+    !currentLessonId
+  ){
+    return;
+  }
 
   const learnerData =
     getLearnerData();
 
   if(
-    !learnerData.travel_progress
+    !learnerData
+      .travel_progress
   ){
-    learnerData.travel_progress = {};
+    learnerData
+      .travel_progress = {};
   }
 
-  learnerData.travel_progress[
-    'airport-1'
-  ] = true;
+  learnerData
+    .travel_progress[
+      currentLessonId
+    ] = true;
 
   saveLearnerData(
     learnerData
