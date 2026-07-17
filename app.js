@@ -2820,11 +2820,98 @@ function getSayingTranslation(
   );
 }
 
+//Test functie om te dwingen holiday te laten zien in home-tegel
+///function getHolidayToday(){return holidaysData[0];}
+
+function getHolidayToday(){
+
+  const today = new Date();
+
+  const month =
+    today.getMonth() + 1;
+
+  const day =
+    today.getDate();
+
+  return holidaysData.find(
+    holiday =>
+      holiday.month === month &&
+      holiday.day === day
+  );
+
+}
+
+function getIslandFlag(
+  island
+){
+
+  switch(island){
+
+    case 'Aruba':
+      return '🇦🇼';
+
+    case 'Curaçao':
+      return '🇨🇼';
+
+    case 'Bonaire':
+      return '🇧🇶';
+
+    case 'ABC':
+      return '🌴';
+
+    default:
+      return '🏝️';
+
+  }
+
+}
+
 function renderSayingOfDay(){
 
-  if(!sayingsData.length){
+  const container =
+    document.getElementById(
+      'sayingOfDay'
+    );
+
+  const title =
+    document.getElementById(
+      'sayingCardTitle'
+    );
+
+  if(!container || !title){
     return;
   }
+
+  const holiday =
+    getHolidayToday();
+
+  if(holiday){
+
+    title.innerHTML =
+      '<i data-lucide="party-popper"></i> Feestdag';
+
+    container.innerHTML = `
+      <div class="saying-text">
+        ${holiday.title}
+      </div>
+
+      <div class="saying-translation">
+        ${getIslandFlag(
+          holiday.island
+        )}
+        ${holiday.island}
+        ·
+        ${holiday.nl}
+      </div>
+    `;
+
+    lucide.createIcons();
+
+    return;
+  }
+
+  title.innerHTML =
+    '<i data-lucide="message-circle"></i> Dicho';
 
   const today =
     new Date()
@@ -2849,24 +2936,19 @@ function renderSayingOfDay(){
       ? saying.pao
       : saying.pau;
 
-  const container =
-    document.getElementById(
-      'sayingOfDay'
-    );
-
-  if(!container){
-    return;
-  }
-
   container.innerHTML = `
     <div class="saying-text">
       "${text}"
     </div>
 
-	<div class="saying-translation">
-	  ${getSayingTranslation(saying)}
-	</div>
+    <div class="saying-translation">
+      ${getSayingTranslation(
+        saying
+      )}
+    </div>
   `;
+
+  lucide.createIcons();
 }
 
 function updateHomeStats(){
