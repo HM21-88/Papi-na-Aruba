@@ -1703,6 +1703,11 @@ logQuizAttempt({
 
 });
 
+updateWordProgress(
+  currentQuiz.nummer,
+  ok
+);
+
 quizAnswered++;
 
   if(ok){

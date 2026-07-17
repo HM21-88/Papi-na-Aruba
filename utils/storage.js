@@ -65,6 +65,23 @@ function saveLearnerData(
 
 }
 
+function addDays(
+  date,
+  days
+){
+
+  const result =
+    new Date(date);
+
+  result.setDate(
+    result.getDate() + days
+  );
+
+  return result
+    .toISOString();
+
+}
+
 function logQuizAttempt({
   word_id,
   typed_answer,
@@ -122,6 +139,81 @@ function logQuizAttempt({
 
 }
 
+function updateWordProgress(
+  wordId,
+  correct
+){
+
+  const learnerData =
+    getLearnerData();
+
+  const progress =
+    learnerData.word_progress[
+      wordId
+    ] || {
+
+      repetitions:0,
+
+      last_result:null,
+
+      last_reviewed_at:null,
+
+      interval_days:1,
+
+      next_review_at:null
+
+    };
+
+  const today =
+    new Date();
+
+  if(correct){
+
+    progress.repetitions++;
+
+    const intervals =
+      [1, 3, 7, 14, 30];
+
+    progress.interval_days =
+      intervals[
+        Math.min(
+          progress.repetitions - 1,
+          intervals.length - 1
+        )
+      ];
+
+  }else{
+
+    progress.repetitions = 0;
+
+    progress.interval_days = 1;
+
+  }
+
+  progress.last_result =
+    correct
+      ? 'correct'
+      : 'incorrect';
+
+  progress.last_reviewed_at =
+    today.toISOString();
+
+  progress.next_review_at =
+    addDays(
+      today,
+      progress.interval_days
+    );
+
+  learnerData.word_progress[
+    wordId
+  ] = progress;
+
+  saveLearnerData(
+    learnerData
+  );
+
+}
+
 function getPracticeLog(){
 
   return (
@@ -158,3 +250,4 @@ function getCategoryAccuracy(
   );
 
 }
+
