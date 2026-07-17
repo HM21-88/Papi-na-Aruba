@@ -2985,6 +2985,146 @@ function renderSayingOfDay(){
   lucide.createIcons();
 }
 
+function renderDifficultWords(){
+
+  const container =
+    document.getElementById(
+      'difficultWordsCard'
+    );
+
+  if(!container){
+    return;
+  }
+
+if(
+  !difficultWordQueue.length
+){
+
+  difficultWordQueue =
+    getDifficultWords(3);
+
+}
+
+  if(
+    !difficultWordQueue.length
+  ){
+
+    container.innerHTML = `
+      <div class="meta">
+        Geen moeilijke woorden gevonden.
+      </div>
+    `;
+
+    return;
+
+  }
+
+  const [
+    wordId
+  ] =
+    difficultWordQueue[
+      currentDifficultIndex
+    ];
+
+  const word =
+    data.find(
+      item =>
+        String(item.nummer) ===
+        String(wordId)
+    );
+
+  if(!word){
+    return;
+  }
+
+  container.innerHTML = `
+    <div class="difficult-word">
+      ${getPrimaryWord(word)}
+    </div>
+
+    <div class="meta">
+      ${word.nederlands}
+    </div>
+
+    <div class="difficult-actions">
+
+      <button
+	  class="btn-know"
+	  onclick="handleDifficultWord(true)">
+        ✅ Wist ik
+      </button>
+
+      <button
+	  class="btn-hard"
+	  onclick="handleDifficultWord(false)">
+        ❌ Nog moeilijk
+      </button>
+
+    </div>
+
+    <div class="difficult-counter">
+      ${currentDifficultIndex + 1}
+      van
+      ${difficultWordQueue.length}
+    </div>
+  `;
+}
+
+
+let difficultWordQueue = [];
+
+let currentDifficultIndex = 0;
+
+function handleDifficultWord(
+  knewIt
+){
+
+  const [
+    wordId
+  ] =
+    difficultWordQueue[
+      currentDifficultIndex
+    ];
+
+  updateWordProgress(
+    wordId,
+    knewIt
+  );
+
+  currentDifficultIndex++;
+
+  if(
+    currentDifficultIndex >=
+    difficultWordQueue.length
+  ){
+	 difficultWordQueue = [];
+	
+	currentDifficultIndex = 0;
+
+    const container =
+      document.getElementById(
+        'difficultWordsCard'
+      );
+
+    container.innerHTML = `
+      <div class="difficult-word">
+        🎉 Klaar!
+      </div>
+
+      <div class="meta">
+        Je moeilijke woorden
+        zijn bijgewerkt.
+      </div>
+    `;
+
+    return;
+
+  }
+
+  renderDifficultWords();
+
+}
+
 function updateHomeStats(){
 
   const weeklyProgress =
@@ -3080,6 +3220,8 @@ lucide.createIcons();
 renderWeekTracker();
 
 renderSayingOfDay();
+
+renderDifficultWords();
 
 }
 

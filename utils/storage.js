@@ -251,3 +251,43 @@ function getCategoryAccuracy(
 
 }
 
+function getDifficultWords(
+  limit = 3
+){
+
+  const learnerData =
+    getLearnerData();
+
+  const entries =
+    Object.entries(
+      learnerData.word_progress
+    );
+
+  const difficultWords =
+    entries
+.filter(
+  ([, progress]) =>
+    progress.repetitions <= 2
+)
+      .sort(
+        (
+          [, a],
+          [, b]
+        ) =>
+
+          new Date(
+            a.last_reviewed_at || 0
+          ) -
+
+          new Date(
+            b.last_reviewed_at || 0
+          )
+      )
+      .slice(
+        0,
+        limit
+      );
+
+  return difficultWords;
+
+}

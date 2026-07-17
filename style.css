@@ -2461,3 +2461,54 @@ body{
   }
 
 }
+
+.difficult-actions{
+  display:flex;
+  gap:10px;
+  margin-top:16px;
+}
+
+.difficult-actions button{
+  flex:1;
+  border:none;
+  border-radius:14px;
+  padding:14px 12px;
+
+  font-size:.95rem;
+  font-weight:700;
+
+  cursor:pointer;
+}
+
+.btn-know{
+  background:#1b7f5f;
+  color:white;
+}
+
+.btn-hard{
+  background:#e0a83a;
+  color:white;
+}
+
+.difficult-word{
+  font-size:2rem;
+  font-weight:800;
+  color:var(--brand-primary);
+
+  margin-bottom:4px;
+}
+
+.difficult-counter{
+  text-align:center;
+
+  margin-top:12px;
+
+  font-size:.9rem;
+
+  color:var(--text-secondary);
+}
+
+#difficultWordsPanel{
+  background:#fff4e8;
+  border:1px solid #f3dcc0;
+}
