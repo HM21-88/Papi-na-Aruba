@@ -28,3 +28,9 @@ Beta feature - leerpad
 
 11 Savaneta
     └ Marinierskazerne
+
+
+Regels
+1. Stops zijn locaties
+2. Tags zijn leerdoelen
+3. Sub-locaties zijn nooit hoofdstops.
