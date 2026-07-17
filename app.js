@@ -1181,8 +1181,6 @@ function updateFlashMeta(){
 
 function renderFlash(){
 	
-	console.log('renderFlash uitgevoerd');
-	
   updateFlashMeta();
 
   if(!flashPool.length){
@@ -1611,6 +1609,20 @@ const ok =
     usedSecondary ||
     otherAnswers.includes(input)
   );
+  
+ let matchType = 'wrong';
+
+if(ok){
+
+  matchType =
+	(
+	  usedPrimary ||
+	  otherAnswers.includes(input)
+	)
+	  ? 'exact'
+	  : 'variant';
+
+}
 
 let variantNotice = '';
 
@@ -1671,6 +1683,25 @@ variantNotice = `
     </div>
   `;
 }
+
+logQuizAttempt({
+
+  word_id:
+    currentQuiz.nummer,
+
+  typed_answer:
+    rawInput,
+
+  correct:
+    ok,
+
+  match_type:
+    matchType,
+
+  category:
+    'woordenschat'
+
+});
 
 quizAnswered++;
 
@@ -2182,8 +2213,6 @@ function selectPrepositionChoice(button, choice){
 }
 
 function nextPrepositionExercise(){
-
-  console.log('NEXT BUTTON');
 
   if(!currentPrepositionExercise){
     return;
@@ -3146,8 +3175,6 @@ if(toggle){
     APP_CONFIG.showOtherVariant;
 }
 }
-
-console.log(window.wordsData);
 
 function showMainScreen(screenId){
 
