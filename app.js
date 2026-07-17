@@ -3501,6 +3501,7 @@ function showMainScreen(screenId){
   'quiz',
   'oefeningen',
   'travelScreen',
+  'airportOverviewScreen',
   'airportLessonScreen'
 ]
 
@@ -3604,7 +3605,18 @@ if(screenId === 'travelScreen'){
     getAirportStatus();
 	
 } 
- 
+
+if(screenId === 'airportOverviewScreen'){
+
+  document
+    .getElementById(
+      'airportOverviewScreen'
+    )
+    .classList.remove(
+      'hidden'
+    );
+}
+
  if(screenId === 'airportLessonScreen'){
 
   document
@@ -3632,6 +3644,102 @@ function getAirportStatus(){
   return completed
     ? '✅ Voltooid'
     : '📚 Nog niet gestart';
+
+}
+
+function isLessonCompleted(
+  lessonId
+){
+
+  const learnerData =
+    getLearnerData();
+
+  return !!(
+    learnerData
+      .travel_progress?.[
+        lessonId
+      ]
+  );
+
+}
+
+function openAirportOverview(){
+
+	const lesson1Done =
+	  isLessonCompleted(
+		'airport-1'
+	  );
+
+  showMainScreen(
+    'airportOverviewScreen'
+  );
+
+  updateScreenBar(
+    'Airport',
+    true,
+    () => showMainScreen(
+      'travelScreen'
+    )
+  );
+
+  document
+    .getElementById(
+      'airportLessonsList'
+    )
+    .innerHTML =
+
+    `
+	<button
+	  class="practice-card"
+	  onclick="openAirportLesson()">
+
+	  <div class="practice-title">
+		${
+  lesson1Done
+    ? '✅ Les 1 - Bon Bini na Aruba'
+    : '📚 Les 1 - Bon Bini na Aruba'
+}
+	  </div>
+
+	</button>	
+
+<button
+  class="practice-card"
+  ${lesson1Done
+    ? 'onclick="alert(\'Les 2 komt zo! \')"'
+    : ''}>
+
+  <div class="practice-title">
+
+    ${
+      lesson1Done
+        ? '🔓 Les 2 - Mi Nomber Ta...'
+        : '🔒 Les 2 - Mi Nomber Ta...'
+    }
+
+  </div>
+
+</button>
+
+      <button
+        class="practice-card">
+
+        <div class="practice-title">
+          🔒 Les 3 - Con Ta Bay?
+
+        </div>
+
+      </button>
+
+      <button
+        class="practice-card">
+
+        <div class="practice-title">
+          🏆 Airport Challenge
+        </div>
+
+      </button>
+    `;
 
 }
 
