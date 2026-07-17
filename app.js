@@ -3091,8 +3091,8 @@ if(
   !difficultWordQueue.length
 ){
 
-  difficultWordQueue =
-    getDifficultWords(3);
+	difficultWordQueue =
+	getDifficultWords(3);
 
 }
 
@@ -3101,10 +3101,11 @@ if(
   ){
 
     container.innerHTML = `
-      <div class="meta">
-        Geen moeilijke woorden gevonden.
-      </div>
-    `;
+  <div class="meta">
+    🎉 Geen oefenwoorden beschikbaar.
+  </div>
+`;
+
 
     return;
 
