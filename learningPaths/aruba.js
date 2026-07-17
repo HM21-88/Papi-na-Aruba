@@ -1,259 +1,310 @@
 window.learningPaths = {
   aruba: {
     id: 'aruba',
+
     title: 'One Happy Island',
+
     guide: 'Ana',
 
-    chapters: [
+    levels: [
       {
-        id: 'arrival',
-        title: 'Aankomst',
-        order: 1,
+        id: 'biahero',
+        title: 'Biahero',
+        subtitle: 'Reiziger',
 
-        stops: [
+        chapters: [
           {
-            id: 'airport',
+            id: 'arrival',
+            title: 'Aankomst',
             order: 1,
-            title: 'Reina Beatrix Airport',
-            icon: 'plane',
 
-            description:
-              'Je komt aan op Aruba en leert je eerste woorden.',
+            locations: [
+              {
+                id: 'airport',
+                title: 'Reina Beatrix Airport',
+                icon: 'plane',
 
-            categories: [
-              'groeten',
-              'taal'
-            ],
+                lessons: [
+                  {
+                    id: 'airport-1',
+                    title: 'Bon Bini na Aruba',
 
-            featuredWords: [
-              102, // bon dia
-              107, // con ta bay
-              110, // ayo
-              194  // danki
-            ],
+                    wordIds: [
+                      101,
+                      102,
+                      103,
+                      104,
+                      105,
+                      107,
+                      108,
+                      109,
+                      110,
+                      194,
+                      387
+                    ],
 
-            funFact:
-              'De luchthaven van Aruba is vernoemd naar koningin Beatrix.',
+                    academyTopics: [
+                      'groeten'
+                    ]
+                  },
 
-            subLocations: [],
+                  {
+                    id: 'airport-2',
+                    title: 'Mi Nomber Ta...',
 
-            unlocked: true
+                    wordIds: [
+                      1,
+                      2,
+                      3,
+                      4,
+                      5,
+                      6,
+                      17,
+                      97,
+                      98,
+                      138,
+                      141
+                    ],
+
+                    academyTopics: [
+                      'persoonlijke-voornaamwoorden',
+                      'jezelf-voorstellen'
+                    ]
+                  },
+
+                  {
+                    id: 'airport-3',
+                    title: 'Con Ta Bay?',
+
+                    wordIds: [
+                      18,
+                      19,
+                      23,
+                      24,
+                      25,
+                      26,
+                      93,
+                      95,
+                      208,
+                      209,
+                      300,
+                      403
+                    ],
+
+                    academyTopics: [
+                      'basisgesprekken'
+                    ]
+                  },
+
+                  {
+                    id: 'airport-challenge',
+                    title: 'Airport Challenge',
+                    challenge: true
+                  }
+                ]
+              },
+
+              {
+                id: 'oranjestad',
+                title: 'Oranjestad',
+                icon: 'city',
+
+                lessons: [
+                  {
+                    id: 'oranjestad-1',
+                    title: 'Unda Ta?',
+
+                    wordIds: [
+                      28,
+                      29,
+                      30,
+                      31,
+                      32,
+                      33,
+                      34,
+                      35,
+                      36,
+                      50
+                    ]
+                  },
+
+                  {
+                    id: 'oranjestad-2',
+                    title: 'E Caminda',
+
+                    wordIds: [
+                      39,
+                      40,
+                      41,
+                      42,
+                      43,
+                      44,
+                      45,
+                      46,
+                      47,
+                      48,
+                      49
+                    ]
+                  },
+
+                  {
+                    id: 'oranjestad-3',
+                    title: 'Pasea den Oranjestad',
+
+                    wordIds: [
+                      466,
+                      467,
+                      468,
+                      469,
+                      471,
+                      484,
+                      360,
+                      361,
+                      329,
+                      330,
+                      331,
+                      332
+                    ]
+                  },
+
+                  {
+                    id: 'oranjestad-challenge',
+                    title: 'Oranjestad Challenge',
+                    challenge: true
+                  }
+                ]
+              },
+
+              {
+                id: 'hotel',
+                title: 'Hotel',
+                icon: 'building',
+
+                lessons: [
+                  {
+                    id: 'hotel-1',
+                    title: 'Check In',
+
+                    wordIds: [
+                      73,
+                      74,
+                      76,
+                      178,
+                      192,
+                      193,
+                      195,
+                      196
+                    ]
+                  },
+
+                  {
+                    id: 'hotel-2',
+                    title: 'Mi Kamber',
+
+                    wordIds: [
+                      142,
+                      143,
+                      145,
+                      147,
+                      148,
+                      214,
+                      215,
+                      203
+                    ]
+                  },
+
+                  {
+                    id: 'hotel-3',
+                    title: 'Awa i Cuminda',
+
+                    wordIds: [
+                      154,
+                      155,
+                      160,
+                      162,
+                      163,
+                      170,
+                      171,
+                      172,
+                      412
+                    ]
+                  },
+
+                  {
+                    id: 'hotel-challenge',
+                    title: 'Hotel Challenge',
+                    challenge: true
+                  }
+                ]
+              }
+            ]
           },
 
           {
-            id: 'oranjestad',
+            id: 'discover',
+            title: 'Ontdekken',
             order: 2,
-            title: 'Oranjestad',
-            icon: 'city',
 
-            description:
-              'Ontdek het centrum van Aruba en leer de weg vragen.',
+            locations: [
+              {
+                id: 'main-street',
+                title: 'Main Street',
+                lessons: [
+                  {
+                    id: 'mainstreet-1',
+                    title: 'Mi Kier Cumpra'
+                  },
+                  {
+                    id: 'mainstreet-2',
+                    title: 'Cuantu E Ta Costa?'
+                  },
+                  {
+                    id: 'mainstreet-challenge',
+                    title: 'Main Street Challenge',
+                    challenge: true
+                  }
+                ]
+              },
 
-            categories: [
-              'plaatsen',
-              'mensen',
-              'taal'
-            ],
+              {
+                id: 'tanki-flip',
+                title: 'Tanki Flip',
+                lessons: [
+                  {
+                    id: 'tankiflip-1',
+                    title: 'Mi Famia'
+                  },
+                  {
+                    id: 'tankiflip-2',
+                    title: 'Mi Bisinan'
+                  },
+                  {
+                    id: 'tankiflip-challenge',
+                    title: 'Tanki Flip Challenge',
+                    challenge: true
+                  }
+                ]
+              },
 
-            featuredWords: [],
-
-            funFact:
-              'Oranjestad is de hoofdstad van Aruba.',
-
-            subLocations: [],
-
-            unlocked: false
-          },
-
-          {
-            id: 'hotel',
-            order: 3,
-            title: 'Hotel',
-            icon: 'building',
-
-            description:
-              'Check in bij je hotel en leer dagelijkse woorden.',
-
-            categories: [
-              'plaatsen',
-              'eten_drinken',
-              'huishouden'
-            ],
-
-            featuredWords: [],
-
-            funFact:
-              'Veel bezoekers verblijven rondom Palm Beach en Eagle Beach.',
-
-            subLocations: [],
-
-            unlocked: false
-          }
-        ]
-      },
-
-      {
-        id: 'discover',
-        title: 'Ontdekken',
-        order: 2,
-
-        stops: [
-          {
-            id: 'main-street',
-            order: 4,
-            title: 'Main Street',
-            icon: 'shopping',
-
-            categories: [
-              'winkelen',
-              'geld'
-            ],
-
-            featuredWords: [],
-
-            subLocations: []
-          },
-
-          {
-            id: 'tanki-flip',
-            order: 5,
-            title: 'Tanki Flip',
-            icon: 'community',
-
-            categories: [
-              'mensen',
-              'familie',
-              'plaatsen'
-            ],
-
-            featuredWords: [],
-
-            subLocations: []
-          },
-
-          {
-            id: 'eagle-beach',
-            order: 6,
-            title: 'Eagle Beach',
-            icon: 'beach',
-
-            categories: [
-              'vrije_tijd',
-              'gezondheid',
-              'mensen'
-            ],
-
-            featuredWords: [],
-
-            subLocations: []
-          }
-        ]
-      },
-
-      {
-        id: 'explore',
-        title: 'Verkennen',
-        order: 3,
-
-        stops: [
-          {
-            id: 'california-lighthouse',
-            order: 7,
-            title: 'California Lighthouse',
-            icon: 'lighthouse',
-
-            categories: [
-              'plaatsen',
-              'tijd',
-              'mensen'
-            ],
-
-            featuredWords: [],
-
-            subLocations: [
-              'Alto Vista Chapel'
-            ]
-          },
-
-          {
-            id: 'arikok',
-            order: 8,
-            title: 'Arikok National Park',
-            icon: 'mountain',
-
-            categories: [
-              'plaatsen',
-              'mensen',
-              'vrije_tijd'
-            ],
-
-            featuredWords: [],
-
-            subLocations: [
-              'Natural Pool',
-              'Fontein Cave'
-            ]
-          }
-        ]
-      },
-
-      {
-        id: 'experience',
-        title: 'Beleven',
-        order: 4,
-
-        stops: [
-          {
-            id: 'san-nicolas',
-            order: 9,
-            title: 'San Nicolas',
-            icon: 'art',
-
-            categories: [
-              'vrije_tijd',
-              'mensen',
-              'taal'
-            ],
-
-            featuredWords: [],
-
-            subLocations: []
-          },
-
-          {
-            id: 'baby-beach',
-            order: 10,
-            title: 'Baby Beach',
-            icon: 'swim',
-
-            categories: [
-              'vrije_tijd',
-              'gezondheid'
-            ],
-
-            featuredWords: [],
-
-            subLocations: [
-              'Tres Trapi'
-            ]
-          },
-
-          {
-            id: 'savaneta',
-            order: 11,
-            title: 'Savaneta',
-            icon: 'anchor',
-
-            categories: [
-              'werk',
-              'mensen',
-              'familie'
-            ],
-
-            featuredWords: [],
-
-            subLocations: [
-              'Marinierskazerne'
+              {
+                id: 'eagle-beach',
+                title: 'Eagle Beach',
+                lessons: [
+                  {
+                    id: 'eagle-1',
+                    title: 'Relax'
+                  },
+                  {
+                    id: 'eagle-2',
+                    title: 'Beach Life'
+                  },
+                  {
+                    id: 'eagle-challenge',
+                    title: 'Eagle Beach Challenge',
+                    challenge: true
+                  }
+                ]
+              }
             ]
           }
         ]
