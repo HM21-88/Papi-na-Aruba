@@ -6,7 +6,7 @@ function generateDeviceId(){
 
 function createLearnerData(){
 
-  return {
+return {
 
   device_id:
     generateDeviceId(),
@@ -19,7 +19,9 @@ function createLearnerData(){
 
   confusion_log:[],
 
-  travel_progress:{}
+  travel_progress:{},
+
+  souvenirs:[]
 
 };
 
@@ -32,13 +34,19 @@ function getLearnerData(){
       'learnerData'
     );
 
-  if(stored){
+if(stored){
 
-    return JSON.parse(
-      stored
-    );
+  const learnerData =
+    JSON.parse(stored);
 
+  if(
+    !learnerData.souvenirs
+  ){
+    learnerData.souvenirs = [];
   }
+
+  return learnerData;
+}
 
   const learnerData =
     createLearnerData();

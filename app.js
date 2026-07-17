@@ -3568,6 +3568,8 @@ if(screenId === 'progressScreen'){
     .classList.remove('hidden');
 
   updateProgressScreen();
+  
+  renderSouvenirs();
 
 }
 
@@ -4008,6 +4010,29 @@ return;
 
 function showAirportCompletion(){
 
+const learnerData =
+  getLearnerData();
+
+if(
+  !learnerData.souvenirs
+){
+  learnerData.souvenirs = [];
+}
+
+if(
+  !learnerData.souvenirs.includes(
+    'airport-boarding-pass'
+  )
+){
+  learnerData.souvenirs.push(
+    'airport-boarding-pass'
+  );
+
+  saveLearnerData(
+    learnerData
+  );
+}
+
   document.getElementById(
     'challengeChat'
   ).innerHTML =
@@ -4078,6 +4103,52 @@ function completeLesson(){
     '🎉 Les voltooid!'
   );
 
+}
+
+function renderSouvenirs(){
+
+  const learnerData =
+    getLearnerData();
+
+  const souvenirs =
+    learnerData.souvenirs || [];
+
+  let html = '';
+
+  if(
+    souvenirs.includes(
+      'airport-boarding-pass'
+    )
+  ){
+
+    html +=
+
+      `
+      <div class="list-item">
+
+        🎫 Instapkaart Aruba
+
+      </div>
+      `;
+  }
+
+  if(!html){
+
+    html =
+
+      `
+      <div class="list-item">
+
+        Nog geen souvenirs verzameld.
+
+      </div>
+      `;
+  }
+
+  document.getElementById(
+    'souvenirList'
+  ).innerHTML =
+    html;
 }
 
 init();
