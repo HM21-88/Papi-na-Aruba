@@ -17,6 +17,21 @@ De resultaten van deze quizzen leveren waardevolle leerdata op. Op basis daarvan
 Papi na ABC helpt gebruikers Papiamento en Papiamentu te leren via zowel **vrij leren** als **begeleid leren**. 
 Gebruikers kiezen zelf hun hoofdvariant (PAO of PAU), terwijl de andere variant desgewenst zichtbaar kan blijven voor vergelijking en verdieping.
 
+Papi na ABC
+
+├─ Vrij leren
+│   ├─ Woordenlijst
+│   ├─ Flashcards
+│   ├─ Quiz
+│   └─ Trainers
+│
+├─ Reis
+│   ├─ Aruba
+│   ├─ Curaçao
+│   └─ Bonaire
+│
+└─ Wela Ana Academie
+
 ## Vrij leren
 
 Gebruikers kunnen zelfstandig leren via bestaande onderdelen zoals:
