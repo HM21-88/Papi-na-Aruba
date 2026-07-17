@@ -3693,4 +3693,29 @@ document.getElementById(
   );
 }
 
+function completeAirportLesson(){
+
+  const learnerData =
+    getLearnerData();
+
+  if(
+    !learnerData.travel_progress
+  ){
+    learnerData.travel_progress = {};
+  }
+
+  learnerData.travel_progress[
+    'airport-1'
+  ] = true;
+
+  saveLearnerData(
+    learnerData
+  );
+
+  alert(
+    '🎉 Les voltooid!'
+  );
+
+}
+
 init();

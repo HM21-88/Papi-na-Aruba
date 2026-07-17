@@ -8,18 +8,20 @@ function createLearnerData(){
 
   return {
 
-    device_id:
-      generateDeviceId(),
+  device_id:
+    generateDeviceId(),
 
-    word_progress:{},
+  word_progress:{},
 
-    category_stats:{},
+  category_stats:{},
 
-    practice_log:[],
+  practice_log:[],
 
-    confusion_log:[]
+  confusion_log:[],
 
-  };
+  travel_progress:{}
+
+};
 
 }
 
