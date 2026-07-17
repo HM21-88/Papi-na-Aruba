@@ -4,9 +4,13 @@ window.lessonData = {
 
     title: 'Bon Bini na Aruba',
 
+    location: 'airport',
+
+    lessonNumber: 1,
+
     intro: `
       Bon bini na Aruba!
-      Na un vuelo largo bo a yega.
+      Na un vuelo largo bo a yega na One Happy Island.
     `,
 
     anaMessage: `
@@ -18,9 +22,13 @@ window.lessonData = {
       Aruba tin hende cu ta papia cuatro idioma.
     `,
 
-    reward: {
-      badge: 'airport-explorer'
-    }
+    objectives: [
+      'Begroeten',
+      'Bedanken',
+      'Afscheid nemen'
+    ],
+
+    badge: 'airport-explorer'
 
   }
 
