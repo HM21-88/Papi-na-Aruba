@@ -3595,6 +3595,14 @@ if(screenId === 'travelScreen'){
   document
     .getElementById('travelScreen')
     .classList.remove('hidden');
+	
+	document
+  .getElementById(
+    'airportStatus'
+  )
+  .textContent =
+    getAirportStatus();
+	
 } 
  
  if(screenId === 'airportLessonScreen'){
@@ -3608,6 +3616,23 @@ if(screenId === 'travelScreen'){
     );
 }
  
+}
+
+function getAirportStatus(){
+
+  const learnerData =
+    getLearnerData();
+
+  const completed =
+    learnerData
+      .travel_progress?.[
+        'airport-1'
+      ];
+
+  return completed
+    ? '✅ Voltooid'
+    : '📚 Nog niet gestart';
+
 }
 
 function openAirportLesson(){
