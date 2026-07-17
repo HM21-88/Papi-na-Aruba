@@ -50,6 +50,97 @@ function speakCurrentFlash(){
   speakText(word);
 }
 
+function getRandomCompletionMessage(){
+
+const messages = [
+
+  'Hopi bon!',
+  'Bon trabou!',
+  'Sigue asina!',
+  'Masha bon!',
+  'Excelente!',
+  'Bo ta progresando!',
+  'Asina mes!',
+  'Bo ta hasi bon!',
+  'Bo ta yega leu!'
+
+];
+
+  return messages[
+    Math.floor(
+      Math.random() *
+      messages.length
+    )
+  ];
+
+}
+
+const UI_TEXT = {
+
+  nl: {
+
+    sessionCompleted:
+      'Je woordenschat is weer gegroeid.',
+
+    practiceFinishedLine1:
+      'Vandaag heb je goed gewerkt.',
+
+    practiceFinishedLine2:
+      'Morgen staan er nieuwe woorden klaar.'
+
+  },
+
+  en: {
+
+    sessionCompleted:
+      'Your vocabulary has grown again.',
+
+    practiceFinishedLine1:
+      'You did a great job today.',
+
+    practiceFinishedLine2:
+      'New words will be waiting tomorrow.'
+
+  }
+
+};
+
+function t(key){
+
+  const language =
+    getAppLanguage();
+
+  return (
+    UI_TEXT[
+      language
+    ]?.[key] ||
+
+    UI_TEXT.nl[key] ||
+
+    key
+  );
+
+}
+
+function getSessionCompletedText(){
+
+  return t(
+    'sessionCompleted'
+  );
+
+}
+
+
+function getAppLanguage(){
+
+  return (
+    localStorage.getItem(
+      'appLanguage'
+    ) || 'nl'
+  );
+
+}
+
 function isPapiamento(){
   return APP_CONFIG.variant === 'pao';
 }
@@ -3063,9 +3154,10 @@ if(
     </div>
 
     <div class="difficult-counter">
-      ${currentDifficultIndex + 1}
-      van
-      ${difficultWordQueue.length}
+      Palabra
+		${currentDifficultIndex + 1}
+		di
+		${difficultWordQueue.length}
     </div>
   `;
 }
@@ -3106,16 +3198,35 @@ function handleDifficultWord(
         'difficultWordsCard'
       );
 
-    container.innerHTML = `
-      <div class="difficult-word">
-        🎉 Klaar!
-      </div>
+container.innerHTML = `
+  <div class="difficult-word">
+    🎉 ${getRandomCompletionMessage()}
+  </div>
 
-      <div class="meta">
-        Je moeilijke woorden
-        zijn bijgewerkt.
-      </div>
-    `;
+  <div class="meta">
+    ${getSessionCompletedText()}
+  </div>
+
+  <div class="difficult-actions">
+
+    <button
+      class="btn-know"
+      onclick="startNextDifficultWords()">
+
+      🚀 3 palabra mas
+
+    </button>
+
+    <button
+	  class="btn-hard"
+	  onclick="finishPracticeSession()">
+
+	  👍 Kla pa awe
+
+	</button>
+
+  </div>
+`;
 
     return;
 
@@ -3123,6 +3234,58 @@ function handleDifficultWord(
 
   renderDifficultWords();
 
+}
+
+function startNextDifficultWords(){
+
+  difficultWordQueue = [];
+
+  currentDifficultIndex = 0;
+
+  renderDifficultWords();
+
+}
+
+function finishPracticeSession(){
+
+  const container =
+    document.getElementById(
+      'difficultWordsCard'
+    );
+
+  if(!container){
+    return;
+  }
+
+  container.innerHTML = `
+    <div class="difficult-word">
+      🌴 Te aworaki!
+    </div>
+
+    <div class="meta">
+      ${t(
+	  'practiceFinishedLine1'
+	)}
+
+	<br><br>
+
+	${t(
+	  'practiceFinishedLine2'
+	)}
+    </div>
+
+    <div class="difficult-actions">
+
+      <button
+        class="btn-know"
+        onclick="startNextDifficultWords()">
+
+        🚀 3 palabra mas
+
+      </button>
+
+    </div>
+  `;
 }
 
 function updateHomeStats(){
