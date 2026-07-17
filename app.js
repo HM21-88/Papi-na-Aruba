@@ -3491,7 +3491,7 @@ function showMainScreen(screenId){
 
 	updateBottomNav(screenId);
 
-  [
+[
   'homeScreen',
   'woordenlijst',
   'practiceScreen',
@@ -3499,7 +3499,9 @@ function showMainScreen(screenId){
   'profileScreen',
   'flashcards',
   'quiz',
-  'oefeningen'
+  'oefeningen',
+  'travelScreen',
+  'airportLessonScreen'
 ]
 
 .forEach(id => {
@@ -3581,7 +3583,114 @@ if(screenId === 'profileScreen'){
     .classList.remove('hidden');
 
 }
-  
+
+if(screenId === 'travelScreen'){
+
+  updateScreenBar(
+    'Reis',
+    true,
+    () => showMainScreen('homeScreen')
+  );
+
+  document
+    .getElementById('travelScreen')
+    .classList.remove('hidden');
+} 
+ 
+ if(screenId === 'airportLessonScreen'){
+
+  document
+    .getElementById(
+      'airportLessonScreen'
+    )
+    .classList.remove(
+      'hidden'
+    );
+}
+ 
+}
+
+function openAirportLesson(){
+
+  const lesson =
+    window.learningPaths
+      .aruba
+      .levels[0]
+      .chapters[0]
+      .locations[0]
+      .lessons[0];
+
+  const lessonInfo =
+    window.lessonData[
+      lesson.id
+    ];
+
+  document.getElementById(
+    'airportLessonTitle'
+  ).textContent =
+    lesson.title;
+
+  document.getElementById(
+    'airportLessonContent'
+  ).innerHTML =
+
+    `
+    <p>
+      ${lessonInfo.intro}
+    </p>
+
+    <div class="panel">
+
+      <strong>
+        👵🏻 Wela Ana
+      </strong>
+
+      <p>
+        ${lessonInfo.anaMessage}
+      </p>
+
+    </div>
+    `;
+
+const words =
+  data.filter(
+    word =>
+      lesson.wordIds.includes(
+        word.nummer
+      )
+  );
+
+document.getElementById(
+  'airportWords'
+).innerHTML =
+
+  words.map(word => `
+
+    <div class="list-item">
+
+      <div class="word">
+        ${getPrimaryWord(word)}
+      </div>
+
+      <div class="meta">
+        ${word.nederlands}
+      </div>
+
+    </div>
+
+  `).join('');
+
+  showMainScreen(
+    'airportLessonScreen'
+  );
+
+  updateScreenBar(
+    lesson.title,
+    true,
+    () => showMainScreen(
+      'travelScreen'
+    )
+  );
 }
 
 init();

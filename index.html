@@ -252,6 +252,54 @@
 
 </section>
 
+<section id="travelScreen" class="panel hidden">
+
+  <h2>
+    🌴 Reis door Aruba
+  </h2>
+
+  <p class="home-subtitle">
+    Wela Ana wacht op je.
+  </p>
+
+  <div class="panel">
+
+    <h3>Hoofdstuk 1 - Aankomst</h3>
+
+    <button
+      class="practice-card"
+      onclick="openAirportLesson()">
+
+      <div class="practice-title">
+        ✈️ Reina Beatrix Airport
+      </div>
+
+      <div class="practice-subtitle">
+        Bon Bini na Aruba
+      </div>
+
+    </button>
+
+  </div>
+
+</section>
+
+<section
+  id="airportLessonScreen"
+  class="panel hidden">
+
+  <h2 id="airportLessonTitle">
+    Airport Les
+  </h2>
+
+  <div id="airportLessonContent">
+  </div>
+
+  <div id="airportWords">
+  </div>
+
+</section>
+
 <section id="practiceScreen" class="panel hidden">
 
   <h2>Oefenen</h2>
@@ -1159,6 +1207,11 @@
     <span>Leren</span>
   </button>
 
+<button onclick="showMainScreen('travelScreen')">
+  <i data-lucide="map"></i>
+  <span>Reis</span>
+</button>
+
   <button onclick="showMainScreen('practiceScreen')">
     <i data-lucide="brain"></i>
     <span>Oefenen</span>
@@ -1181,6 +1234,8 @@
 <script src="data/tenses.js"></script>
 <script src="data/sayingsData.js"></script>
 <script src="data/holidaysData.js"></script>
+<script src="data/learningPaths/aruba.js"></script>
+<script src="data/lessonData.js"></script>
 <script src="utils/storage.js"></script>
 <script src="app.js"></script>
 
