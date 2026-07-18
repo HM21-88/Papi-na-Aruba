@@ -3778,6 +3778,8 @@ let currentChallenge =
   
  let challengeScore = 0;
  
+ let anaTyping = false;
+ 
  let challengeMessages = [];
 
 let currentLessonId =
@@ -3932,104 +3934,109 @@ function renderChallenge(){
   challengeMessages.forEach(
     message => {
 
-if(
-  message.sender === 'ana'
-){
+      if(
+        message.sender === 'ana'
+      ){
 
-  html += `
-    <div class="panel">
+        html += `
+          <div class="panel">
+            <strong>
+              👵🏻 Wela Ana
+            </strong>
+            <p>
+              ${message.text}
+            </p>
+          </div>
+        `;
 
-      <strong>
-        👵🏻 Wela Ana
-      </strong>
+      } else if(
+        message.sender === 'question'
+      ){
 
-      <p>
-        ${message.text}
-      </p>
+        html += `
+          <div class="panel">
+            <p
+              style="
+                font-size:28px;
+                font-weight:bold;
+                text-align:center;
+                margin:0;
+              ">
+              ${message.text}
+            </p>
+          </div>
+        `;
 
-    </div>
-  `;
+      } else {
 
-} else if(
+        html += `
+          <div
+            class="panel"
+            style="
+              margin-left:40px;
+              background:#4f83ff;
+              color:white;
+            ">
+            ${message.text}
+          </div>
+        `;
 
-  message.sender === 'question'
-
-){
-
-  html += `
-    <div class="panel">
-
-      <p
-        style="
-          font-size:28px;
-          font-weight:bold;
-          text-align:center;
-          margin:0;
-        ">
-
-        ${message.text}
-
-      </p>
-
-    </div>
-  `;
-
-} else {
-
-  html += `
-    <div
-      class="panel"
-      style="
-        margin-left:40px;
-        background:#4f83ff;
-        color:white;
-      ">
-
-      ${message.text}
-
-    </div>
-  `;
-}
+      }
 
     }
   );
 
+  if(anaTyping){
+
+    html += `
+      <div class="panel">
+        <strong>
+          👵🏻 Wela Ana
+        </strong>
+        <p>
+          Ana is aan het typen...
+        </p>
+      </div>
+    `;
+
+  }
+
   html += `
 
-<div
-  style="
-    display:flex;
-    gap:8px;
-    margin-top:12px;
-  ">
+    <div
+      style="
+        display:flex;
+        gap:8px;
+        margin-top:12px;
+      ">
 
-  <input
-    id="challengeAnswer"
-    type="text"
-    placeholder="Typ je antwoord"
-    onkeypress="
-      if(event.key === 'Enter'){
-        submitChallengeAnswer();
-      }
-    "
-    style="
-      flex:1;
-    ">
+      <input
+        id="challengeAnswer"
+        type="text"
+        placeholder="Typ je antwoord"
+        ${anaTyping ? 'disabled' : ''}
+        onkeypress="
+          if(event.key === 'Enter'){
+            submitChallengeAnswer();
+          }
+        "
+        style="
+          flex:1;
+        ">
 
-  <button
-    class="btn"
-    onclick="submitChallengeAnswer()"
-    style="
-      width:56px;
-      min-width:56px;
-      padding:0;
-    ">
+      <button
+        class="btn"
+        onclick="submitChallengeAnswer()"
+        ${anaTyping ? 'disabled' : ''}
+        style="
+          width:56px;
+          min-width:56px;
+          padding:0;
+        ">
+        ➤
+      </button>
 
-    ➤
-
-  </button>
-
-</div>
+    </div>
 
   `;
 
@@ -4037,102 +4044,129 @@ if(
     'challengeChat'
   ).innerHTML = html;
 
+  const challengeChat =
+    document.getElementById(
+      'challengeChat'
+    );
+
+  challengeChat.scrollTop =
+    challengeChat.scrollHeight;
+
+  setTimeout(() => {
+
+    const answerInput =
+      document.getElementById(
+        'challengeAnswer'
+      );
+
+    if(
+      answerInput &&
+      !anaTyping
+    ){
+
+      answerInput.focus();
+
+    }
+
+  }, 50);
+
 }
 
 function submitChallengeAnswer(){
+
+  const input =
+    document.getElementById(
+      'challengeAnswer'
+    );
+
+  const userAnswer =
+    input.value
+      .trim()
+      .toLowerCase();
+
+  if(!userAnswer){
+    return;
+  }
 
   const question =
     currentChallenge.questions[
       challengeIndex
     ];
 
-  const userAnswer =
-    document.getElementById(
-      'challengeAnswer'
-    )
-    .value
-    .trim()
-    .toLowerCase();
-
   challengeMessages.push({
-
     sender: 'user',
-
-    text: userAnswer
-
+    text: input.value.trim()
   });
+
+  input.value = '';
 
   const correctAnswer =
     question.answer
       .trim()
       .toLowerCase();
 
-  if(
-    userAnswer ===
-    correctAnswer
-  ){
-
-    challengeScore++;
-
-    challengeMessages.push({
-
-      sender: 'ana',
-
-      text:
-        '✅ Hopi bon! Dat is correct.'
-
-    });
-
-  } else {
-
-    challengeMessages.push({
-
-      sender: 'ana',
-
-      text:
-        '❌ Niet helemaal. Het juiste antwoord is: ' +
-        question.answer
-
-    });
-
-  }
-
-  challengeIndex++;
-
-if(
-  challengeIndex <
-  currentChallenge.questions.length
-){
-
-challengeMessages.push({
-
-  sender: 'question',
-
-  text:
-    currentChallenge
-      .questions[
-        challengeIndex
-      ]
-      .word
-
-});
-
-}
-
-  if(
-    challengeIndex >=
-    currentChallenge.questions.length
-  ){
-
-    showAirportCompletion();
-
-    return;
-
-  }
+  anaTyping = true;
 
   renderChallenge();
 
+  setTimeout(() => {
+
+    anaTyping = false;
+
+    if(
+      userAnswer ===
+      correctAnswer
+    ){
+
+      challengeScore++;
+
+      challengeMessages.push({
+        sender: 'ana',
+        text:
+          '✅ Hopi bon! Dat is correct.'
+      });
+
+    } else {
+
+      challengeMessages.push({
+        sender: 'ana',
+        text:
+          '❌ Niet helemaal. Het juiste antwoord is: ' +
+          question.answer
+      });
+
+    }
+
+    challengeIndex++;
+
+    if(
+      challengeIndex >=
+      currentChallenge.questions.length
+    ){
+
+      renderChallenge();
+
+      showAirportCompletion();
+
+      return;
+
+    }
+
+    challengeMessages.push({
+      sender: 'question',
+      text:
+        currentChallenge.questions[
+          challengeIndex
+        ].word
+    });
+
+    renderChallenge();
+
+  }, 1300);
+
 }
+
+
 
 function showAirportCompletion(){
 
