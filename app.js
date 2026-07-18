@@ -3926,7 +3926,6 @@ challengeMessages.push({
 
 }
 
-
 function renderChallenge(){
 
   let html = '';
@@ -4008,6 +4007,7 @@ function renderChallenge(){
         display:flex;
         gap:8px;
         margin-top:12px;
+		margin-bottom:24px;
       ">
 
       <input
