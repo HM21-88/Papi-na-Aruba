@@ -53,9 +53,7 @@ window.lessonData = {
 
   title: 'Airport Challenge',
 
-  intro: `
-    Tijd om te kijken hoeveel je hebt onthouden.
-  `,
+  intro: ``,
 
   anaMessage: `
     Bo ta cla?

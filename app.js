@@ -3808,10 +3808,13 @@ function openLesson(
       lesson.id
     ];
 
-  document.getElementById(
-    'airportLessonTitle'
-  ).textContent =
-    lesson.title;
+document.getElementById(
+  'airportLessonTitle'
+).textContent =
+
+  lesson.wordIds
+    ? lesson.title
+    : '';
 
   document.getElementById(
     'airportLessonContent'
@@ -3825,19 +3828,33 @@ function openLesson(
 
   if(!lesson.wordIds){
 
+	document.getElementById(
+	'lessonCompleteButton'
+	).style.display = 'none';
+
     currentChallenge =
       lessonInfo;
 
     challengeIndex = 0;
 	challengeScore = 0;
-	challengeMessages = [];
-	
-	challengeMessages.push({
+challengeMessages = [];
+
+challengeMessages.push({
 
   sender: 'ana',
 
   text:
     'Bo ta cla? Laga nos mira con bo ta hasi.'
+
+});
+
+challengeMessages.push({
+
+  sender: 'ana',
+
+  text:
+    'Wat betekent:\n\n' +
+    currentChallenge.questions[0].word
 
 });
 
@@ -3855,6 +3872,10 @@ function openLesson(
     renderChallenge();
 
   } else {
+	  
+	 document.getElementById(
+	'lessonCompleteButton'
+	).style.display = 'block';
 
     document.getElementById(
       'challengeChat'
@@ -3908,11 +3929,6 @@ function openLesson(
 
 function renderChallenge(){
 
-  const question =
-    currentChallenge.questions[
-      challengeIndex
-    ];
-
   let html = '';
 
   challengeMessages.forEach(
@@ -3958,34 +3974,40 @@ function renderChallenge(){
 
   html += `
 
-    <div class="panel">
+<div
+  style="
+    display:flex;
+    gap:8px;
+    margin-top:12px;
+  ">
 
-      <strong>
-        👵🏻 Wela Ana
-      </strong>
+  <input
+    id="challengeAnswer"
+    type="text"
+    placeholder="Typ je antwoord"
+    onkeypress="
+      if(event.key === 'Enter'){
+        submitChallengeAnswer();
+      }
+    "
+    style="
+      flex:1;
+    ">
 
-      <p>
-        Wat betekent:
-      </p>
+  <button
+    class="btn"
+    onclick="submitChallengeAnswer()"
+    style="
+      width:56px;
+      min-width:56px;
+      padding:0;
+    ">
 
-      <h3>
-        ${question.word}
-      </h3>
+    ➤
 
-    </div>
+  </button>
 
-    <input
-      id="challengeAnswer"
-      type="text"
-      placeholder="Typ je antwoord">
-
-    <button
-      class="btn"
-      onclick="submitChallengeAnswer()">
-
-      📨 Verstuur
-
-    </button>
+</div>
 
   `;
 
@@ -4054,6 +4076,27 @@ function submitChallengeAnswer(){
   }
 
   challengeIndex++;
+
+if(
+  challengeIndex <
+  currentChallenge.questions.length
+){
+
+  challengeMessages.push({
+
+    sender: 'ana',
+
+    text:
+      'Wat betekent:\n\n' +
+      currentChallenge
+        .questions[
+          challengeIndex
+        ]
+        .word
+
+  });
+
+}
 
   if(
     challengeIndex >=
