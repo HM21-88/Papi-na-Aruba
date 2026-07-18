@@ -3777,6 +3777,8 @@ let currentChallenge =
   null;
   
  let challengeScore = 0;
+ 
+ let challengeMessages = [];
 
 let currentLessonId =
   null;
@@ -3815,23 +3817,11 @@ function openLesson(
     'airportLessonContent'
   ).innerHTML =
 
-    `
-      <p>
-        ${lessonInfo.intro}
-      </p>
-
-      <div class="panel">
-
-        <strong>
-          👵🏻 Wela Ana
-        </strong>
-
-        <p>
-          ${lessonInfo.anaMessage}
-        </p>
-
-      </div>
-    `;
+`
+  <p>
+    ${lessonInfo.intro}
+  </p>
+`;
 
   if(!lesson.wordIds){
 
@@ -3840,6 +3830,17 @@ function openLesson(
 
     challengeIndex = 0;
 	challengeScore = 0;
+	challengeMessages = [];
+	
+	challengeMessages.push({
+
+  sender: 'ana',
+
+  text:
+    'Bo ta cla? Laga nos mira con bo ta hasi.'
+
+});
+
 
     document.getElementById(
       'challengeChat'
@@ -3912,40 +3913,86 @@ function renderChallenge(){
       challengeIndex
     ];
 
+  let html = '';
+
+  challengeMessages.forEach(
+    message => {
+
+      if(
+        message.sender === 'ana'
+      ){
+
+        html += `
+          <div class="panel">
+
+            <strong>
+              👵🏻 Wela Ana
+            </strong>
+
+            <p>
+              ${message.text}
+            </p>
+
+          </div>
+        `;
+
+      } else {
+
+        html += `
+          <div
+            class="panel"
+            style="
+              margin-left:40px;
+              background:#4f83ff;
+              color:white;
+            ">
+
+            ${message.text}
+
+          </div>
+        `;
+      }
+
+    }
+  );
+
+  html += `
+
+    <div class="panel">
+
+      <strong>
+        👵🏻 Wela Ana
+      </strong>
+
+      <p>
+        Wat betekent:
+      </p>
+
+      <h3>
+        ${question.word}
+      </h3>
+
+    </div>
+
+    <input
+      id="challengeAnswer"
+      type="text"
+      placeholder="Typ je antwoord">
+
+    <button
+      class="btn"
+      onclick="submitChallengeAnswer()">
+
+      📨 Verstuur
+
+    </button>
+
+  `;
+
   document.getElementById(
     'challengeChat'
-  ).innerHTML =
+  ).innerHTML = html;
 
-    `
-      <div class="panel">
-
-        <strong>
-          👵🏻 Wela Ana
-        </strong>
-
-        <p>
-          Wat betekent:
-        </p>
-
-        <h3>
-          ${question.word}
-        </h3>
-
-      </div>
-
-      <input
-        id="challengeAnswer"
-        type="text"
-        placeholder="Typ je antwoord">
-
-      <button
-        class="btn"
-        onclick="submitChallengeAnswer()">
-
-        📨 Verstuur
-
-      </button>
-    `;
 }
 
 function submitChallengeAnswer(){
@@ -3963,6 +4010,14 @@ function submitChallengeAnswer(){
     .trim()
     .toLowerCase();
 
+  challengeMessages.push({
+
+    sender: 'user',
+
+    text: userAnswer
+
+  });
+
   const correctAnswer =
     question.answer
       .trim()
@@ -3972,18 +4027,29 @@ function submitChallengeAnswer(){
     userAnswer ===
     correctAnswer
   ){
+
     challengeScore++;
 
-    alert(
-      '✅ Correct!'
-    );
+    challengeMessages.push({
+
+      sender: 'ana',
+
+      text:
+        '✅ Hopi bon! Dat is correct.'
+
+    });
 
   } else {
 
-    alert(
-      '❌ Fout!\n\nJuiste antwoord: ' +
-      question.answer
-    );
+    challengeMessages.push({
+
+      sender: 'ana',
+
+      text:
+        '❌ Niet helemaal. Het juiste antwoord is: ' +
+        question.answer
+
+    });
 
   }
 
@@ -3991,14 +4057,10 @@ function submitChallengeAnswer(){
 
   if(
     challengeIndex >=
-    currentChallenge
-      .questions.length
+    currentChallenge.questions.length
   ){
 
-showAirportCompletion();
-
-return;
-
+    showAirportCompletion();
 
     return;
 
