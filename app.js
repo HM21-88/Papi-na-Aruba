@@ -3850,14 +3850,12 @@ challengeMessages.push({
 
 challengeMessages.push({
 
-  sender: 'ana',
+  sender: 'question',
 
   text:
-    'Wat betekent:\n\n' +
     currentChallenge.questions[0].word
 
 });
-
 
     document.getElementById(
       'challengeChat'
@@ -3934,40 +3932,64 @@ function renderChallenge(){
   challengeMessages.forEach(
     message => {
 
-      if(
-        message.sender === 'ana'
-      ){
+if(
+  message.sender === 'ana'
+){
 
-        html += `
-          <div class="panel">
+  html += `
+    <div class="panel">
 
-            <strong>
-              👵🏻 Wela Ana
-            </strong>
+      <strong>
+        👵🏻 Wela Ana
+      </strong>
 
-            <p>
-              ${message.text}
-            </p>
+      <p>
+        ${message.text}
+      </p>
 
-          </div>
-        `;
+    </div>
+  `;
 
-      } else {
+} else if(
 
-        html += `
-          <div
-            class="panel"
-            style="
-              margin-left:40px;
-              background:#4f83ff;
-              color:white;
-            ">
+  message.sender === 'question'
 
-            ${message.text}
+){
 
-          </div>
-        `;
-      }
+  html += `
+    <div class="panel">
+
+      <p
+        style="
+          font-size:28px;
+          font-weight:bold;
+          text-align:center;
+          margin:0;
+        ">
+
+        ${message.text}
+
+      </p>
+
+    </div>
+  `;
+
+} else {
+
+  html += `
+    <div
+      class="panel"
+      style="
+        margin-left:40px;
+        background:#4f83ff;
+        color:white;
+      ">
+
+      ${message.text}
+
+    </div>
+  `;
+}
 
     }
   );
@@ -4082,19 +4104,18 @@ if(
   currentChallenge.questions.length
 ){
 
-  challengeMessages.push({
+challengeMessages.push({
 
-    sender: 'ana',
+  sender: 'question',
 
-    text:
-      'Wat betekent:\n\n' +
-      currentChallenge
-        .questions[
-          challengeIndex
-        ]
-        .word
+  text:
+    currentChallenge
+      .questions[
+        challengeIndex
+      ]
+      .word
 
-  });
+});
 
 }
 
