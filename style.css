@@ -2518,3 +2518,109 @@ body{
 #challengeChat{
   padding-bottom:100px;
 }
+
+/* ===== STORY MODE CHAT ===== */
+
+.chat-row{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:14px;
+}
+
+.chat-avatar{
+  width:42px;
+  height:42px;
+  flex-shrink:0;
+
+  border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:20px;
+}
+
+.chat-avatar.customs{
+  background:#7DD3FC;
+}
+
+.chat-avatar.traveler{
+  background:#86EFAC;
+}
+
+.chat-avatar.taxi{
+  background:#C4B5FD;
+}
+
+.chat-avatar.hotel{
+  background:#F9A8D4;
+}
+
+.chat-avatar.ana{
+  background:#F4C95D;
+}
+
+.chat-bubble{
+  display:inline-block;
+  line-height:1.45;
+
+  max-width:260px;
+
+  padding:14px;
+
+  border-radius:18px;
+
+  background:white;
+
+  border:1px solid #E6E6E6;
+}
+
+.chat-bubble.local{
+  background:white;
+}
+
+.chat-bubble.ana{
+  background:#FFF8E6;
+  border:1px solid #D9A441;
+}
+
+.chat-name{
+  font-size:11px;
+  font-weight:700;
+  margin-bottom:2px;
+  opacity:.9;
+}
+
+.chat-name.local{
+  color:#418FDE;
+}
+
+.chat-name.ana{
+  color:#B98100;
+}
+
+.chat-user{
+  margin-left:50px;
+  background:#4F83FF;
+  color:white;
+}
+
+.translation-link{
+
+  margin-top:8px;
+
+  font-size:12px;
+
+  color:#6B7280;
+
+  border-top:1px solid #ECECEC;
+
+  padding-top:6px;
+
+  cursor:pointer;
+
+  user-select:none;
+
+}

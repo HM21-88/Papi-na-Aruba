@@ -3778,9 +3778,11 @@ let currentChallenge =
   
  let challengeScore = 0;
  
- let anaTyping = false;
- 
  let challengeMessages = [];
+
+let visibleTranslations = {};
+
+let anaTyping = false;
 
 let currentLessonId =
   null;
@@ -3818,46 +3820,50 @@ document.getElementById(
     ? lesson.title
     : '';
 
-  document.getElementById(
-    'airportLessonContent'
-  ).innerHTML =
+document.getElementById(
+  'airportLessonContent'
+).innerHTML = '';
 
-`
-  <p>
-    ${lessonInfo.intro}
-  </p>
-`;
-
-  if(!lesson.wordIds){
+if(
+  lessonInfo.scene
+){
 
 	document.getElementById(
 	'lessonCompleteButton'
 	).style.display = 'none';
 
-    currentChallenge =
-      lessonInfo;
-
-    challengeIndex = 0;
-	challengeScore = 0;
 challengeMessages = [];
 
-challengeMessages.push({
+const scene =
+  lessonInfo.scene || [];
 
-  sender: 'ana',
+challengeMessages.push(
+  ...scene
+);
 
-  text:
-    'Bo ta cla? Laga nos mira con bo ta hasi.'
+if(
+  lessonInfo.questions
+){
 
-});
+  currentChallenge =
+    lessonInfo;
 
-challengeMessages.push({
+  challengeIndex = 0;
 
-  sender: 'question',
+  challengeScore = 0;
 
-  text:
-    currentChallenge.questions[0].word
+  challengeMessages.push({
 
-});
+    sender:'question',
+
+    text:
+      currentChallenge
+        .questions[0]
+        .word
+
+  });
+
+}
 
     document.getElementById(
       'challengeChat'
@@ -3926,34 +3932,162 @@ challengeMessages.push({
 
 }
 
-function renderChallenge(){
+function renderChallenge(
+  autoScroll = true
+){
 
   let html = '';
 
-  challengeMessages.forEach(
-    message => {
+challengeMessages.forEach(
+  (message, index) => {
+
 
       if(
+        message.sender === 'narration'
+      ){
+
+        html += `
+          <div
+            style="
+              text-align:center;
+              color:#6B7280;
+              font-size:13px;
+              font-style:italic;
+              margin:8px 0 16px;
+            ">
+            ${message.text}
+          </div>
+        `;
+
+      }
+
+      else if(
+        message.sender === 'dialogue'
+      ){
+
+        html += `
+          <div class="chat-row">
+
+<div
+  class="chat-avatar ${
+  message.avatar || 'customs'
+}">
+
+
+  ${
+    message.avatar === 'traveler'
+      ? '🧑'
+      : message.avatar === 'taxi'
+      ? '🚕'
+      : message.avatar === 'hotel'
+      ? '🏨'
+      : '👮'
+  }
+
+</div>
+
+            <div
+              class="chat-bubble local">
+
+              <div
+                class="chat-name local">
+
+                ${message.speaker}
+
+              </div>
+
+<div>
+
+  ${message.text}
+
+</div>
+
+${
+  message.translation
+
+  ?
+
+  visibleTranslations[index]
+
+    ?
+
+    `
+      <div
+        class="translation-link"
+        onclick="
+          toggleTranslation(${index})
+        ">
+
+        💡 ${message.translation}
+
+      </div>
+    `
+
+    :
+
+    `
+      <div
+        class="translation-link"
+        onclick="
+          toggleTranslation(${index})
+        ">
+
+        👁 Toon vertaling
+
+      </div>
+    `
+
+  : ''
+
+}
+
+            </div>
+
+          </div>
+        `;
+
+      }
+
+      else if(
         message.sender === 'ana'
       ){
 
         html += `
-          <div class="panel">
-            <strong>
-              👵🏻 Wela Ana
-            </strong>
-            <p>
+          <div class="chat-row">
+
+            <div
+              class="chat-avatar ana">
+
+              👵🏻
+
+            </div>
+
+            <div
+              class="chat-bubble ana">
+
+              <div
+                class="chat-name ana">
+
+                Wela Ana
+
+              </div>
+
               ${message.text}
-            </p>
+
+            </div>
+
           </div>
         `;
 
-      } else if(
+      }
+
+      else if(
         message.sender === 'question'
       ){
 
         html += `
           <div class="panel">
+
             <p
               style="
                 font-size:28px;
@@ -3963,20 +4097,23 @@ function renderChallenge(){
               ">
               ${message.text}
             </p>
+
           </div>
         `;
 
-      } else {
+      }
+
+      else{
 
         html += `
           <div
-            class="panel"
-            style="
-              margin-left:40px;
-              background:#4f83ff;
-              color:white;
+            class="
+              panel
+              chat-user
             ">
+
             ${message.text}
+
           </div>
         `;
 
@@ -3985,16 +4122,34 @@ function renderChallenge(){
     }
   );
 
-  if(anaTyping){
+  if(
+    anaTyping
+  ){
 
     html += `
-      <div class="panel">
-        <strong>
-          👵🏻 Wela Ana
-        </strong>
-        <p>
+      <div class="chat-row">
+
+        <div
+          class="chat-avatar ana">
+
+          👵🏻
+
+        </div>
+
+        <div
+          class="chat-bubble ana">
+
+          <div
+            class="chat-name ana">
+
+            Wela Ana
+
+          </div>
+
           Ana is aan het typen...
-        </p>
+
+        </div>
+
       </div>
     `;
 
@@ -4007,7 +4162,7 @@ function renderChallenge(){
         display:flex;
         gap:8px;
         margin-top:12px;
-		margin-bottom:24px;
+        margin-bottom:24px;
       ">
 
       <input
@@ -4049,7 +4204,11 @@ function renderChallenge(){
       'challengeChat'
     );
 
-  setTimeout(() => {
+setTimeout(() => {
+
+  if(
+    autoScroll
+  ){
 
     challengeChat.scrollTop =
       challengeChat.scrollHeight;
@@ -4064,14 +4223,24 @@ function renderChallenge(){
       !anaTyping
     ){
       answerInput.focus();
-
-      answerInput.scrollIntoView({
-        block:'nearest',
-        behavior:'smooth'
-      });
     }
 
-  }, 120);
+  }
+
+}, 120);
+
+}
+
+function toggleTranslation(
+  index
+){
+
+  visibleTranslations[index] =
+    !visibleTranslations[index];
+
+  renderChallenge(
+    false
+  );
 
 }
 
