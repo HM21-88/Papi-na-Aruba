@@ -258,6 +258,7 @@ window.wordsData = [
 
 {week:2,nummer:122,level:'A1',tags:['familie'],papiamento:'nieto',papiamentu:'ñetu',nederlands:'kleinzoon',engels:'grandson',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'E nieto ta chikito.',voorbeeld_papiamentu:'E ñetu ta chikitu.',voorbeeld_nederlands:'De kleinzoon is klein.',voorbeeld_engels:'The grandson is small.'},
 
+
 {week:2,nummer:123,level:'A1',tags:['familie'],papiamento:'subrino',papiamentu:'subrino',nederlands:'neefje',engels:'nephew',varianten:'subrina, primo, prima',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi subrino ta yuga.',voorbeeld_papiamentu:'Mi subrino ta huga.',voorbeeld_nederlands:'Mijn neefje speelt.',voorbeeld_engels:'My nephew is playing.'},
 
 {week:2,nummer:124,level:'A1',tags:['familie'],papiamento:'cuña',papiamentu:'kuñá',nederlands:'schoonzus, zwager',engels:'brother-in-law, sister-in-law',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi cuña ta bon hende.',voorbeeld_papiamentu:'Mi kuñá ta bon hende.',voorbeeld_nederlands:'Mijn schoonzus is een aardig persoon.',voorbeeld_engels:'My sister-in-law is a nice person.'},
@@ -725,11 +726,14 @@ window.wordsData = [
 
 {week:4,nummer:354,level:'A1',tags:['tijd'],papiamento:'mey anochi',papiamentu:'mèi anochi',nederlands:'middernacht',engels:'midnight',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi a drumi na mey anochi.',voorbeeld_papiamentu:'Mi a drumi na mèi anochi.',voorbeeld_nederlands:'Ik ging slapen om middernacht.',voorbeeld_engels:'I went to sleep at midnight.'},
 
-/////// 355 moet gesplitst worden 
 
+/////// 355 dubbel want gesplits
 {week:4,nummer:355,level:'A1',tags:['tijd'],papiamento:'otro mayan',papiamentu:'otro mayan',nederlands:'overmorgen',engels:'day after tomorrow',varianten:'',type:'tijdsaanduiding',uitspraak:'',voorbeeld_papiamento:'Mi lo bin otro mayan.',voorbeeld_papiamentu:'Mi lo bin otro mayan.',voorbeeld_nederlands:'Ik kom overmorgen.',voorbeeld_engels:'I will come the day after tomorrow.'},
 
 {week:4,nummer:355,level:'A1',tags:['tijd'],papiamento:'otro siman',papiamentu:'otro siman',nederlands:'volgende week',engels:'next week',varianten:'',type:'tijdsaanduiding',uitspraak:'',voorbeeld_papiamento:'Mi lo bin otro siman.',voorbeeld_papiamentu:'Mi lo bin otro siman.',voorbeeld_nederlands:'Ik kom volgende week.',voorbeeld_engels:'I will come next week.'},
+
+/////// 355 dubbel, want gesplitst
+
 
 {week:4,nummer:356,level:'A1',tags:['tijd'],papiamento:'antayera',papiamentu:'antayera',nederlands:'eergisteren',engels:'day before yesterday',varianten:'',type:'tijdsaanduiding',uitspraak:'',voorbeeld_papiamento:'Mi a mira dje antayera.',voorbeeld_papiamentu:'Mi a mira dje antayera.',voorbeeld_nederlands:'Ik zag hem eergisteren.',voorbeeld_engels:'I saw him the day before yesterday.'},
 
