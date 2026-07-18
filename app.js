@@ -4200,13 +4200,11 @@ function completeLesson(){
       currentLessonId
     ] = true;
 
-  saveLearnerData(
-    learnerData
-  );
+saveLearnerData(
+  learnerData
+);
 
-  alert(
-    '🎉 Les voltooid!'
-  );
+openAirportOverview();
 
 }
 
