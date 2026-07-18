@@ -3812,58 +3812,69 @@ function openLesson(
       lesson.id
     ];
 
-document.getElementById(
-  'airportLessonTitle'
-).textContent =
+  document.getElementById(
+    'airportLessonTitle'
+  ).textContent =
+    lessonInfo.title || '';
 
-  lesson.wordIds
-    ? lesson.title
-    : '';
+  document.getElementById(
+    'airportLessonContent'
+  ).innerHTML = '';
 
-document.getElementById(
-  'airportLessonContent'
-).innerHTML = '';
+  challengeMessages = [];
 
-if(
-  lessonInfo.scene
-){
+  const scene =
+    lessonInfo.scene || [];
 
-	document.getElementById(
-	'lessonCompleteButton'
-	).style.display = 'none';
+  if(
+    scene.length
+  ){
 
-challengeMessages = [];
+    document.getElementById(
+      'lessonCompleteButton'
+    ).style.display = 'none';
 
-const scene =
-  lessonInfo.scene || [];
+    challengeMessages.push(
+      ...scene
+    );
 
-challengeMessages.push(
-  ...scene
-);
+    if(
+      lessonInfo.questions
+    ){
 
-if(
-  lessonInfo.questions
-){
+      currentChallenge =
+        lessonInfo;
 
-  currentChallenge =
-    lessonInfo;
+      challengeIndex = 0;
 
-  challengeIndex = 0;
+      challengeScore = 0;
 
-  challengeScore = 0;
+      challengeMessages.push({
 
-  challengeMessages.push({
+        sender:'question',
 
-    sender:'question',
+        text:
+          currentChallenge
+            .questions[0]
+            .word
 
-    text:
-      currentChallenge
-        .questions[0]
-        .word
+      });
 
-  });
+    }
 
-}
+    else if(
+      lessonInfo.miniQuiz
+    ){
+
+      challengeMessages.push({
+
+        sender:'miniQuizStart',
+
+        text:'✅ Start Miniquiz'
+
+      });
+
+    }
 
     document.getElementById(
       'challengeChat'
@@ -3877,11 +3888,13 @@ if(
 
     renderChallenge();
 
-  } else {
-	  
-	 document.getElementById(
-	'lessonCompleteButton'
-	).style.display = 'block';
+  }
+
+  else{
+
+    document.getElementById(
+      'lessonCompleteButton'
+    ).style.display = 'block';
 
     document.getElementById(
       'challengeChat'
@@ -3916,6 +3929,7 @@ if(
         </div>
 
       `).join('');
+
   }
 
   showMainScreen(
@@ -3923,14 +3937,20 @@ if(
   );
 
   updateScreenBar(
+
     lesson.title,
+
     true,
-    () => showMainScreen(
-      'airportOverviewScreen'
-    )
+
+    () =>
+      showMainScreen(
+        'airportOverviewScreen'
+      )
+
   );
 
 }
+
 
 function renderChallenge(
   autoScroll = true
@@ -3938,9 +3958,8 @@ function renderChallenge(
 
   let html = '';
 
-challengeMessages.forEach(
-  (message, index) => {
-
+  challengeMessages.forEach(
+    (message, index) => {
 
       if(
         message.sender === 'narration'
@@ -3953,7 +3972,7 @@ challengeMessages.forEach(
               color:#6B7280;
               font-size:13px;
               font-style:italic;
-              margin:8px 0 16px;
+              margin:10px 0 16px;
             ">
             ${message.text}
           </div>
@@ -3966,84 +3985,72 @@ challengeMessages.forEach(
       ){
 
         html += `
+
           <div class="chat-row">
 
-<div
-  class="chat-avatar ${
-  message.avatar || 'customs'
-}">
-
-
-  ${
-    message.avatar === 'traveler'
-      ? '🧑'
-      : message.avatar === 'taxi'
-      ? '🚕'
-      : message.avatar === 'hotel'
-      ? '🏨'
-      : '👮'
-  }
-
-</div>
-
             <div
-              class="chat-bubble local">
+              class="chat-avatar ${message.avatar || 'customs'}">
 
-              <div
-                class="chat-name local">
+              ${
+                message.avatar === 'traveler'
+                  ? '🧑'
+                  : message.avatar === 'taxi'
+                  ? '🚕'
+                  : message.avatar === 'hotel'
+                  ? '🏨'
+                  : '👮'
+              }
 
+            </div>
+
+            <div class="chat-bubble local">
+
+              <div class="chat-name local">
                 ${message.speaker}
-
               </div>
 
-<div>
+              <div>
+                ${message.text}
+              </div>
 
-  ${message.text}
+              ${
+                message.translation
 
-</div>
+                ?
 
-${
-  message.translation
+                visibleTranslations[index]
 
-  ?
+                  ?
 
-  visibleTranslations[index]
+                  `
+                    <div
+                      class="translation-link"
+                      onclick="toggleTranslation(${index})">
 
-    ?
+                      💡 ${message.translation}
 
-    `
-      <div
-        class="translation-link"
-        onclick="
-          toggleTranslation(${index})
-        ">
+                    </div>
+                  `
 
-        💡 ${message.translation}
+                  :
 
-      </div>
-    `
+                  `
+                    <div
+                      class="translation-link"
+                      onclick="toggleTranslation(${index})">
 
-    :
+                      👁 Toon vertaling
 
-    `
-      <div
-        class="translation-link"
-        onclick="
-          toggleTranslation(${index})
-        ">
+                    </div>
+                  `
 
-        👁 Toon vertaling
-
-      </div>
-    `
-
-  : ''
-
-}
+                : ''
+              }
 
             </div>
 
           </div>
+
         `;
 
       }
@@ -4053,6 +4060,7 @@ ${
       ){
 
         html += `
+
           <div class="chat-row">
 
             <div
@@ -4072,11 +4080,30 @@ ${
 
               </div>
 
-              ${message.text}
+              <div>
+                ${message.text}
+              </div>
+
+              ${
+                message.translation
+
+                ?
+
+                `
+                  <div class="translation-link">
+
+                    💡 ${message.translation}
+
+                  </div>
+                `
+
+                : ''
+              }
 
             </div>
 
           </div>
+
         `;
 
       }
@@ -4086,19 +4113,129 @@ ${
       ){
 
         html += `
-          <div class="panel">
 
-            <p
-              style="
-                font-size:28px;
-                font-weight:bold;
-                text-align:center;
-                margin:0;
-              ">
-              ${message.text}
-            </p>
+          <div class="chat-row">
+
+            <div
+              class="chat-avatar ana">
+
+              👵🏻
+
+            </div>
+
+            <div
+              class="chat-bubble ana">
+
+              <div
+                class="chat-name ana">
+
+                Wela Ana
+
+              </div>
+
+              <div
+                style="
+                  margin-bottom:6px;
+                ">
+
+                Wat betekent:
+
+              </div>
+
+              <div
+                style="
+                  font-size:18px;
+                  font-weight:700;
+                ">
+
+                ${message.text}
+
+              </div>
+
+            </div>
 
           </div>
+
+        `;
+
+      }
+
+      else if(
+        message.sender === 'miniQuizStart'
+      ){
+
+        html += `
+
+          <div
+            style="
+              text-align:center;
+              margin:24px 0;
+            ">
+
+            <button
+              class="btn"
+              onclick="startMiniQuiz()">
+
+              ${message.text}
+
+            </button>
+
+          </div>
+
+        `;
+
+      }
+
+      else if(
+        message.sender === 'lessonSummary'
+      ){
+
+        html += `
+
+          <div class="chat-row">
+
+            <div
+              class="chat-avatar ana">
+
+              👵🏻
+
+            </div>
+
+            <div
+              class="chat-bubble ana">
+
+              <div
+                class="chat-name ana">
+
+                Wela Ana
+
+              </div>
+
+		<div
+		  style="
+			line-height:1.5;
+		  ">
+
+			⭐ ${message.text}
+
+		</div>
+
+              <button
+                class="btn"
+                onclick="completeLesson()"
+                style="
+                  width:100%;
+                  margin-top:14px;
+                ">
+
+                ✅ Les voltooien
+
+              </button>
+
+            </div>
+
+          </div>
+
         `;
 
       }
@@ -4106,6 +4243,7 @@ ${
       else{
 
         html += `
+
           <div
             class="
               panel
@@ -4115,11 +4253,13 @@ ${
             ${message.text}
 
           </div>
+
         `;
 
       }
 
     }
+
   );
 
   if(
@@ -4127,6 +4267,7 @@ ${
   ){
 
     html += `
+
       <div class="chat-row">
 
         <div
@@ -4151,49 +4292,65 @@ ${
         </div>
 
       </div>
+
     `;
 
   }
 
-  html += `
+  const hasSummary =
+    challengeMessages.some(
+      message =>
+        message.sender ===
+        'lessonSummary'
+    );
 
-    <div
-      style="
-        display:flex;
-        gap:8px;
-        margin-top:12px;
-        margin-bottom:24px;
-      ">
+  if(
+    !hasSummary
+  ){
 
-      <input
-        id="challengeAnswer"
-        type="text"
-        placeholder="Typ je antwoord"
-        ${anaTyping ? 'disabled' : ''}
-        onkeypress="
-          if(event.key === 'Enter'){
-            submitChallengeAnswer();
-          }
-        "
+    html += `
+
+      <div
         style="
-          flex:1;
+          display:flex;
+          gap:8px;
+          margin-top:12px;
+          margin-bottom:24px;
         ">
 
-      <button
-        class="btn"
-        onclick="submitChallengeAnswer()"
-        ${anaTyping ? 'disabled' : ''}
-        style="
-          width:56px;
-          min-width:56px;
-          padding:0;
-        ">
-        ➤
-      </button>
+        <input
+          id="challengeAnswer"
+          type="text"
+          placeholder="Typ je antwoord"
+          ${anaTyping ? 'disabled' : ''}
+          onkeypress="
+            if(event.key === 'Enter'){
+              submitChallengeAnswer();
+            }
+          "
+          style="
+            flex:1;
+          ">
 
-    </div>
+        <button
+          class="btn"
+          onclick="submitChallengeAnswer()"
+          ${anaTyping ? 'disabled' : ''}
+          style="
+            width:56px;
+            min-width:56px;
+            padding:0;
+          ">
 
-  `;
+          ➤
+
+        </button>
+
+      </div>
+
+    `;
+
+  }
 
   document.getElementById(
     'challengeChat'
@@ -4204,32 +4361,33 @@ ${
       'challengeChat'
     );
 
-setTimeout(() => {
-
-  if(
-    autoScroll
-  ){
-
-    challengeChat.scrollTop =
-      challengeChat.scrollHeight;
-
-    const answerInput =
-      document.getElementById(
-        'challengeAnswer'
-      );
+  setTimeout(() => {
 
     if(
-      answerInput &&
-      !anaTyping
+      autoScroll
     ){
-      answerInput.focus();
+
+      challengeChat.scrollTop =
+        challengeChat.scrollHeight;
+
+      const answerInput =
+        document.getElementById(
+          'challengeAnswer'
+        );
+
+      if(
+        answerInput &&
+        !anaTyping
+      ){
+        answerInput.focus();
+      }
+
     }
 
-  }
-
-}, 120);
+  }, 120);
 
 }
+
 
 function toggleTranslation(
   index
@@ -4244,6 +4402,48 @@ function toggleTranslation(
 
 }
 
+
+function startMiniQuiz(){
+
+  challengeMessages = [];
+
+  currentChallenge = {
+
+    questions:
+      lessonData[
+        currentLessonId
+      ].miniQuiz
+
+  };
+
+  challengeIndex = 0;
+  challengeScore = 0;
+
+  challengeMessages.push({
+
+    sender:'ana',
+
+    text:
+      'Bo ta cla? Laten we kijken wat je hebt onthouden.'
+
+  });
+
+  challengeMessages.push({
+
+    sender:'question',
+
+    text:
+      currentChallenge
+        .questions[0]
+        .word
+
+  });
+
+  renderChallenge();
+
+}
+
+
 function submitChallengeAnswer(){
 
   const input =
@@ -4251,12 +4451,12 @@ function submitChallengeAnswer(){
       'challengeAnswer'
     );
 
-  const userAnswer =
-    input.value
-      .trim()
-      .toLowerCase();
+  const rawUserAnswer =
+    input.value.trim();
 
-  if(!userAnswer){
+  if(
+    !rawUserAnswer
+  ){
     return;
   }
 
@@ -4266,16 +4466,26 @@ function submitChallengeAnswer(){
     ];
 
   challengeMessages.push({
-    sender: 'user',
-    text: input.value.trim()
+
+    sender:'user',
+
+    text:rawUserAnswer
+
   });
 
   input.value = '';
 
+  const userAnswer =
+    rawUserAnswer
+      .toLowerCase()
+      .replace(/[.,!?]/g,'')
+      .trim();
+
   const correctAnswer =
     question.answer
-      .trim()
-      .toLowerCase();
+      .toLowerCase()
+      .replace(/[.,!?]/g,'')
+      .trim();
 
   anaTyping = true;
 
@@ -4293,18 +4503,26 @@ function submitChallengeAnswer(){
       challengeScore++;
 
       challengeMessages.push({
-        sender: 'ana',
+
+        sender:'ana',
+
         text:
           '✅ Hopi bon! Dat is correct.'
+
       });
 
-    } else {
+    }
+
+    else{
 
       challengeMessages.push({
-        sender: 'ana',
+
+        sender:'ana',
+
         text:
           '❌ Niet helemaal. Het juiste antwoord is: ' +
           question.answer
+
       });
 
     }
@@ -4316,20 +4534,76 @@ function submitChallengeAnswer(){
       currentChallenge.questions.length
     ){
 
-      renderChallenge();
+      const total =
+        currentChallenge.questions.length;
 
-      showAirportCompletion();
+      let summaryText = '';
+
+      if(
+        challengeScore === total
+      ){
+
+        summaryText =
+          `${challengeScore} van de ${total} vragen goed.\n\nMi ta orguyoso di bo! 🌴`;
+
+      }
+
+      else if(
+        challengeScore >=
+        Math.ceil(
+          total * 0.8
+        )
+      ){
+
+        summaryText =
+          `${challengeScore} van de ${total} vragen goed.\n\nJe bent klaar voor de volgende stap van je reis.`;
+
+      }
+
+      else if(
+        challengeScore >=
+        Math.ceil(
+          total * 0.5
+        )
+      ){
+
+        summaryText =
+          `${challengeScore} van de ${total} vragen goed.\n\nMet een beetje oefenen kom je er wel.`;
+
+      }
+
+      else{
+
+        summaryText =
+          `${challengeScore} van de ${total} vragen goed.\n\nTalen leer je stap voor stap.`;
+
+      }
+
+      challengeMessages.push({
+
+        sender:'lessonSummary',
+
+        text:summaryText
+
+      });
+
+      renderChallenge();
 
       return;
 
     }
 
     challengeMessages.push({
-      sender: 'question',
+
+      sender:'question',
+
       text:
-        currentChallenge.questions[
-          challengeIndex
-        ].word
+        currentChallenge
+          .questions[
+            challengeIndex
+          ]
+          .word
+
     });
 
     renderChallenge();
@@ -4337,7 +4611,6 @@ function submitChallengeAnswer(){
   }, 1300);
 
 }
-
 
 
 function showAirportCompletion(){
@@ -4403,6 +4676,7 @@ if(
     `;
 }
 
+
 function completeLesson(){
 
   if(
@@ -4434,6 +4708,7 @@ saveLearnerData(
 openAirportOverview();
 
 }
+
 
 function renderSouvenirs(){
 
@@ -4480,5 +4755,6 @@ function renderSouvenirs(){
   ).innerHTML =
     html;
 }
+
 
 init();
