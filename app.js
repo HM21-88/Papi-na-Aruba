@@ -4049,10 +4049,10 @@ function renderChallenge(){
       'challengeChat'
     );
 
-  challengeChat.scrollTop =
-    challengeChat.scrollHeight;
-
   setTimeout(() => {
+
+    challengeChat.scrollTop =
+      challengeChat.scrollHeight;
 
     const answerInput =
       document.getElementById(
@@ -4063,12 +4063,15 @@ function renderChallenge(){
       answerInput &&
       !anaTyping
     ){
-
       answerInput.focus();
 
+      answerInput.scrollIntoView({
+        block:'nearest',
+        behavior:'smooth'
+      });
     }
 
-  }, 50);
+  }, 120);
 
 }
 
