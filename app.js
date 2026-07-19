@@ -1826,7 +1826,7 @@ variantNotice = `
 logQuizAttempt({
 
   word_id:
-    currentQuiz.nummer,
+    currentQuiz.id,
 
   typed_answer:
     rawInput,
@@ -1843,7 +1843,7 @@ logQuizAttempt({
 });
 
 updateWordProgress(
-  currentQuiz.nummer,
+  currentQuiz.id,
   ok
 );
 
@@ -3124,6 +3124,23 @@ function renderSayingOfDay(){
   lucide.createIcons();
 }
 
+function getReviewWords(
+  limit = 3
+){
+
+  return data
+    .slice()
+    .sort(
+      () => Math.random() - 0.5
+    )
+    .slice(0, limit)
+    .map(word => [
+      word.id,
+      {}
+    ]);
+
+}
+
 function renderDifficultWords(){
 
   const container =
@@ -3139,8 +3156,15 @@ if(
   !difficultWordQueue.length
 ){
 
-	difficultWordQueue =
-	getDifficultWords(3);
+  difficultWordQueue =
+    getDifficultWords(3);
+
+  if(
+    !difficultWordQueue.length
+  ){
+    difficultWordQueue =
+      getReviewWords(3);
+  }
 
 }
 
@@ -3166,12 +3190,11 @@ if(
       currentDifficultIndex
     ];
 
-  const word =
-    data.find(
-      item =>
-        String(item.nummer) ===
-        String(wordId)
-    );
+	const word =
+	  data.find(
+		item =>
+		  item.id === wordId
+	  );
 
   if(!word){
     return;
@@ -4660,6 +4683,13 @@ if (
     acceptedAnswers.includes(userAnswer)
 ) {
 
+    if(question.id){
+      updateWordProgress(
+        question.id,
+        true
+      );
+    }
+
     challengeScore++;
 
     challengeMessages.push({
@@ -4668,6 +4698,13 @@ if (
     });
 
 } else {
+
+    if(question.id){
+      updateWordProgress(
+        question.id,
+        false
+      );
+    }
 
     challengeMessages.push({
         sender:'ana',
