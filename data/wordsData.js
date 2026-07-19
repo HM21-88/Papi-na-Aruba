@@ -258,7 +258,14 @@ window.wordsData = [
 
 {week:2,nummer:118,level:'A1',tags:['familie'],papiamento:'yiu',papiamentu:'yu',nederlands:'eigen kind',engels:'son or daughter',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi yiu ta drumi.',voorbeeld_papiamentu:'Mi yu ta drumi.',voorbeeld_nederlands:'Mijn kind slaapt.',voorbeeld_engels:'My child is sleeping.'},
 
-{week:2,nummer:119,level:'A1',tags:['familie'],papiamento:'ruman mohe',papiamentu:'ruman muhé',nederlands:'zus',engels:'sister',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi ruman mohe ta aki.',voorbeeld_papiamentu:'Mi ruman muhé ta aki.',voorbeeld_nederlands:'Mijn zus is hier.',voorbeeld_engels:'My sister is here.'},
+///// nummer 121 dubbel nummer is ook zo in listo 2 
+{week:2,nummer:118.1,level:'A1',tags:['familie'],papiamento:'yiu muhe',papiamentu:'yu',nederlands:'dochter',engels:'daughter',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi yiu muhe ta drumi.',voorbeeld_papiamentu:'Mi yu muhe ta drumi.',voorbeeld_nederlands:'Mijn dochter slaapt.',voorbeeld_engels:'My daughter is sleeping.'},
+
+{week:2,nummer:118.2,level:'A1',tags:['familie'],papiamento:'yiu homber',papiamentu:'yu',nederlands:'zoon',engels:'son',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi yiu homber ta drumi.',voorbeeld_papiamentu:'Mi yu homber ta drumi.',voorbeeld_nederlands:'Mijn zoon slaapt.',voorbeeld_engels:'My son is sleeping.'},
+///// nummer 121 dubbel nummer is ook zo in listo 2 
+
+
+{week:2,nummer:119,level:'A1',tags:['familie'],papiamento:'ruman muhe',papiamentu:'ruman muhé',nederlands:'zus',engels:'sister',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi ruman mohe ta aki.',voorbeeld_papiamentu:'Mi ruman muhé ta aki.',voorbeeld_nederlands:'Mijn zus is hier.',voorbeeld_engels:'My sister is here.'},
 
 {week:2,nummer:120,level:'A1',tags:['familie'],papiamento:'ruman homber',papiamentu:'ruman hòmber',nederlands:'broer',engels:'brother',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi ruman homber ta grandi.',voorbeeld_papiamentu:'Mi ruman hòmber ta grandi.',voorbeeld_nederlands:'Mijn broer is groot.',voorbeeld_engels:'My brother is tall.'},
 
@@ -287,6 +294,9 @@ window.wordsData = [
 {week:2,nummer:127,level:'A1',tags:['familie'],papiamento:'suegro',papiamentu:'suegro',nederlands:'schoonvader',engels:'father-in-law',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi suegro ta na cas.',voorbeeld_papiamentu:'Mi suegro ta na kas.',voorbeeld_nederlands:'Mijn schoonvader is thuis.',voorbeeld_engels:'My father-in-law is at home.'},
 
 {week:2,nummer:129,level:'A1',tags:['familie'],papiamento:'omo',papiamentu:'tio',nederlands:'oom',engels:'uncle',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi omo ta biba na Aruba.',voorbeeld_papiamentu:'Mi tio ta biba na Aruba.',voorbeeld_nederlands:'Mijn oom woont op Aruba.',voorbeeld_engels:'My uncle lives in Aruba.'},
+
+{week:2,nummer:129.1,level:'A1',tags:['familie'],papiamento:'tanta',papiamentu:'tanta',nederlands:'tante',engels:'aunt',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi tanta ta biba na Aruba.',voorbeeld_papiamentu:'Mi tanta ta biba na Aruba.',voorbeeld_nederlands:'Mijn tante woont op Aruba.',voorbeeld_engels:'My aunt lives in Aruba.'},
+
 
 {week:2,nummer:130,level:'A1',tags:['familie'],papiamento:'madrina',papiamentu:'madrina',nederlands:'peettante',engels:'godmother',varianten:'pepe, dina',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi madrina ta hopi dushi.',voorbeeld_papiamentu:'Mi madrina ta hopi dushi.',voorbeeld_nederlands:'Mijn peettante is erg lief.',voorbeeld_engels:'My godmother is very kind.'},
 
@@ -1075,5 +1085,7 @@ window.wordsData = [
 {week:5,nummer:519,level:'A1',tags:['mensen'],papiamento:'respet',papiamentu:'rèspèt',nederlands:'respect, eerbied',engels:'respect',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi tin respet pa dje.',voorbeeld_papiamentu:'Mi tin rèspèt pa dje.',voorbeeld_nederlands:'Ik heb respect voor hem of haar.',voorbeeld_engels:'I have respect for him or her.'},
 
 {week:5,nummer:520,level:'A1',tags:['noodgevallen'],papiamento:'polis',papiamentu:'polis',nederlands:'politie',engels:'police',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta yama polis.',voorbeeld_papiamentu:'Mi ta yama polis.',voorbeeld_nederlands:'Ik bel de politie.',voorbeeld_engels:'I am calling the police.'},
+
+{week:5,nummer:520.1,level:'A1',tags:['locatie'],papiamento:'tera',papiamentu:'tera',nederlands:'land, aarde',engels:'land, earth',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Aruba ta un dushi tera.',voorbeeld_papiamentu:'Kòrsou ta un dushi tera.',voorbeeld_nederlands:'Aruba/Curacao is een mooi land',voorbeeld_engels:'Aruba/Curacao is a beautiful land'},
 
 ];

@@ -3842,6 +3842,69 @@ ${
 
 }
 
+function openTankiFlipOverview(){
+
+  showMainScreen(
+    'airportOverviewScreen'
+  );
+
+  updateScreenBar(
+    'Tanki Flip',
+    true,
+    () => showMainScreen(
+      'travelScreen'
+    )
+  );
+
+  document
+    .getElementById(
+      'airportLessonsList'
+    )
+    .innerHTML = `
+
+      <button
+        class="practice-card"
+        onclick="openLesson('tanki-flip-1')">
+
+        <div class="practice-title">
+          📚 Les 1 - Kas di Rosa
+        </div>
+
+      </button>
+
+      <button
+        class="practice-card"
+        onclick="openLesson('tanki-flip-2')">
+
+        <div class="practice-title">
+          📚 Les 2 - Un Bishita Serka Rosa
+        </div>
+
+      </button>
+
+      <button
+        class="practice-card"
+        onclick="openLesson('tanki-flip-3')">
+
+        <div class="practice-title">
+          📚 Les 3 - Yiu di Rosa
+        </div>
+
+      </button>
+
+      <button
+        class="practice-card"
+        onclick="openLesson('tanki-flip-challenge')">
+
+        <div class="practice-title">
+          🏆 Tanki Flip Challenge
+        </div>
+
+      </button>
+
+    `;
+}
+
 let challengeIndex = 0;
 let currentChallenge =
   null;
@@ -3864,23 +3927,50 @@ function openLesson(
   currentLessonId =
     lessonId;
 
-  const airport =
-    window.learningPaths
-      .aruba
-      .levels[0]
-      .chapters[0]
-      .locations[0];
+let lesson = null;
 
-  const lesson =
-    airport.lessons.find(
-      item =>
-        item.id === lessonId
+window.learningPaths
+  .aruba
+  .levels
+  .forEach(level => {
+
+    level.chapters.forEach(
+      chapter => {
+
+        chapter.locations.forEach(
+          location => {
+
+            const found =
+              location.lessons.find(
+                item =>
+                  item.id === lessonId
+              );
+
+            if(found){
+              lesson = found;
+            }
+
+          }
+        );
+
+      }
     );
+
+  });
+
+	if(!lesson){
+  console.error(
+    'Les niet gevonden:',
+    lessonId
+  );
+  return;
+}
 
   const lessonInfo =
     window.lessonData[
       lesson.id
     ];
+	
 
   document.getElementById(
     'airportLessonTitle'
