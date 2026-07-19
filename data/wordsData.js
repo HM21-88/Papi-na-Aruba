@@ -4,7 +4,7 @@ window.wordsData = [
 
  {week:1,nummer:1,level:'A1',tags:['grammatica'],papiamento:'mi',papiamentu:'mi',nederlands:'ik, mij, me, mijn',engels:'I, me, my',varianten:'ami',type:'persoonlijk voornaamwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta bay cas.',voorbeeld_papiamentu:'Mi ta bai kas.',voorbeeld_nederlands:'Ik ga naar huis.',voorbeeld_engels:'I am going home.'},
 
-{week:1,nummer:2,level:'A1',tags:['grammatica'],papiamento:'bo',papiamentu:'bo',nederlands:'jij, je, jouw',engels:'you, your',varianten:'abo',type:'persoonlijk voornaamwoord',uitspraak:'',voorbeeld_papiamento:'Bo ta bon.',voorbeeld_papiamentu:'Bo ta bon.',voorbeeld_nederlands:'Jij bent goed.',voorbeeld_engels:'You are good.'},
+{week:1,nummer:2,level:'A1',tags:['grammatica'],papiamento:'bo',papiamentu:'bo',nederlands:'jij, je, jouw, jou',engels:'you, your',varianten:'abo',type:'persoonlijk voornaamwoord',uitspraak:'',voorbeeld_papiamento:'Bo ta bon.',voorbeeld_papiamentu:'Bo ta bon.',voorbeeld_nederlands:'Jij bent goed.',voorbeeld_engels:'You are good.'},
 
 {week:1,nummer:3,level:'A1',tags:['grammatica'],papiamento:'e',papiamentu:'e',nederlands:'hij, zij, hem, haar, de, het',engels:'he, she, him, her, it',varianten:'',type:'persoonlijk voornaamwoord',uitspraak:'',voorbeeld_papiamento:'E ta yega awor.',voorbeeld_papiamentu:'E ta yega awor.',voorbeeld_nederlands:'Hij of zij komt nu aan.',voorbeeld_engels:'He or she is arriving now.'},
 
@@ -52,9 +52,9 @@ window.wordsData = [
 
 {week:1,nummer:25,level:'A1',tags:['grammatica'],papiamento:'si',papiamentu:'si',nederlands:'ja, als, indien',engels:'yes, if',varianten:'se, sé',type:'woordje',uitspraak:'',voorbeeld_papiamento:'Si, mi ta cla.',voorbeeld_papiamentu:'Si, mi ta kla.',voorbeeld_nederlands:'Ja, ik ben klaar.',voorbeeld_engels:'Yes, I am ready.'},
 
-{week:1,nummer:26,level:'A1',tags:['grammatica'],papiamento:'no',papiamentu:'no',nederlands:'nee',engels:'no',varianten:'nó',type:'woordje',uitspraak:'',voorbeeld_papiamento:'No, danki.',voorbeeld_papiamentu:'No, danki.',voorbeeld_nederlands:'Nee, bedankt.',voorbeeld_engels:'No, thank you.'},
+{week:1,nummer:26,level:'A1',tags:['grammatica'],papiamento:'no',papiamentu:'no',nederlands:'nee, niet, geen',engels:'no, not',varianten:'nó',type:'woordje',uitspraak:'',voorbeeld_papiamento:'No, danki.',voorbeeld_papiamentu:'No, danki.',voorbeeld_nederlands:'Nee, bedankt.',voorbeeld_engels:'No, thank you.'},
 
-{week:1,nummer:27,level:'A1',tags:['grammatica'],papiamento:'no',papiamentu:'no',nederlands:'niet, geen',engels:'not, no',varianten:'',type:'ontkenning',uitspraak:'',voorbeeld_papiamento:'Mi no sa.',voorbeeld_papiamentu:'Mi no sa.',voorbeeld_nederlands:'Ik weet het niet.',voorbeeld_engels:'I do not know.'},
+{week:1,nummer:27,level:'A1',tags:['grammatica'],papiamento:'no',papiamentu:'no',nederlands:'nee, niet, geen',engels:'not, no',varianten:'nó',type:'ontkenning',uitspraak:'',voorbeeld_papiamento:'Mi no sa.',voorbeeld_papiamentu:'Mi no sa.',voorbeeld_nederlands:'Ik weet het niet.',voorbeeld_engels:'I do not know.'},
 
 {week:1,nummer:28,level:'A1',tags:['plaatsen'],papiamento:'aki',papiamentu:'aki',nederlands:'hier',engels:'here',varianten:'akinan',type:'plaatsbepaling',uitspraak:'',voorbeeld_papiamento:'Mi ta aki.',voorbeeld_papiamentu:'Mi ta aki.',voorbeeld_nederlands:'Ik ben hier.',voorbeeld_engels:'I am here.'},
 
@@ -148,6 +148,11 @@ window.wordsData = [
 
 {week:1,nummer:73,level:'A1',tags:['grammatica'],papiamento:'bin',papiamentu:'bini',nederlands:'komen',engels:'come',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Bo por bin awe?',voorbeeld_papiamentu:'Bo por bini awe?',voorbeeld_nederlands:'Kun je vandaag komen?',voorbeeld_engels:'Can you come today?'},
 
+////added bon bini to wordlist.
+
+{week:1,nummer:73.1,level:'A1',tags:['taal'],papiamento:'bon bini',papiamentu:'bon bini',nederlands:'welkom',engels:'welcome',varianten:'',type:'uitdrukking',uitspraak:'',voorbeeld_papiamento:'Bon bini na Aruba',voorbeeld_papiamentu:'Bon bini na Aruba?',voorbeeld_nederlands:'Welkom op Aruba',voorbeeld_engels:'Welcom to Aruba'},
+
+
 {week:1,nummer:74,level:'A1',tags:['grammatica'],papiamento:'bay',papiamentu:'bai',nederlands:'gaan',engels:'go',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta bay cas.',voorbeeld_papiamentu:'Mi ta bai kas.',voorbeeld_nederlands:'Ik ga naar huis.',voorbeeld_engels:'I am going home.'},
 
 {week:1,nummer:75,level:'A1',tags:['grammatica'],papiamento:'bay bin',papiamentu:'bai bin',nederlands:'heen en weer bewegen',engels:'move back and forth',varianten:'baiben',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'E ta bay bin hopi.',voorbeeld_papiamentu:'E ta bai bin hopi.',voorbeeld_nederlands:'Het beweegt veel heen en weer.',voorbeeld_engels:'It moves back and forth a lot.'},
@@ -166,6 +171,12 @@ window.wordsData = [
 
 {week:1,nummer:82,level:'A1',tags:['grammatica'],papiamento:'bon',papiamentu:'bon',nederlands:'goed',engels:'good',varianten:'',type:'bijvoeglijk naamwoord',uitspraak:'',voorbeeld_papiamento:'E ta bon.',voorbeeld_papiamentu:'E ta bon.',voorbeeld_nederlands:'Het is goed.',voorbeeld_engels:'It is good.'},
 
+//// ta bon added to wordlist
+{week:1,nummer:82.1,level:'A1',tags:['groeten'],papiamento:'ta bon',papiamentu:'ta bon',nederlands:'het gaat goed',engels:'I am fine',varianten:'',type:'uitdrukking',uitspraak:'',voorbeeld_papiamento:'Ta bon, danki.',voorbeeld_papiamentu:'Ta bon, danki.',voorbeeld_nederlands:'Het gaat goed, bedankt.',voorbeeld_engels:'I am fine, thank you.'},
+
+//// ta bon bon added to wordlist
+
+
 {week:1,nummer:83,level:'A1',tags:['grammatica'],papiamento:'malo',papiamentu:'malu',nederlands:'slecht',engels:'bad',varianten:'',type:'bijvoeglijk naamwoord',uitspraak:'',voorbeeld_papiamento:'Esaki ta malo.',voorbeeld_papiamentu:'Esaki ta malu.',voorbeeld_nederlands:'Dat is slecht.',voorbeeld_engels:'That is bad.'},
 
 {week:1,nummer:84,level:'A1',tags:['grammatica'],papiamento:'grandi',papiamentu:'grandi',nederlands:'groot',engels:'big, large',varianten:'',type:'bijvoeglijk naamwoord',uitspraak:'',voorbeeld_papiamento:'E cas ta grandi.',voorbeeld_papiamentu:'E kas ta grandi.',voorbeeld_nederlands:'Het huis is groot.',voorbeeld_engels:'The house is big.'},
@@ -175,7 +186,7 @@ window.wordsData = [
   
 {week:1,nummer:86,level:'A1',tags:['grammatica'],papiamento:'hopi',papiamentu:'hopi',nederlands:'veel, erg, zeer',engels:'many, much, very',varianten:'',type:'bijwoord',uitspraak:'',voorbeeld_papiamento:'Mi tin hopi trabou.',voorbeeld_papiamentu:'Mi tin hopi trabou.',voorbeeld_nederlands:'Ik heb veel werk.',voorbeeld_engels:'I have a lot of work.'},
 
-{week:1,nummer:87,level:'A1',tags:['grammatica'],papiamento:'poco',papiamentu:'poko',nederlands:'weinig, een beetje',engels:'little, a bit',varianten:'tiki',type:'bijwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta papia poco Papiamento.',voorbeeld_papiamentu:'Mi ta papia poko Papiamentu.',voorbeeld_nederlands:'Ik spreek een beetje Papiaments.',voorbeeld_engels:'I speak a little Papiamento.'},
+{week:1,nummer:87,level:'A1',tags:['grammatica'],papiamento:'poco',papiamentu:'poko',nederlands:'weinig, een beetje, beetje',engels:'little, a bit',varianten:'tiki',type:'bijwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta papia poco Papiamento.',voorbeeld_papiamentu:'Mi ta papia poko Papiamentu.',voorbeeld_nederlands:'Ik spreek een beetje Papiaments.',voorbeeld_engels:'I speak a little Papiamento.'},
 
 {week:1,nummer:88,level:'A1',tags:['grammatica'],papiamento:'poco poco',papiamentu:'poko poko',nederlands:'langzaam, zachtjes',engels:'slowly',varianten:'',type:'bijwoord',uitspraak:'',voorbeeld_papiamento:'Papia poco poco.',voorbeeld_papiamentu:'Papia poko poko.',voorbeeld_nederlands:'Praat langzaam.',voorbeeld_engels:'Speak slowly.'},
 
@@ -207,7 +218,7 @@ window.wordsData = [
   // ===== WEEK 2 =====
  {week:2,nummer:101,level:'A1',tags:['groeten'],papiamento:'moro!',papiamentu:'mòru!',nederlands:'goedemorgen!',engels:'good morning!',varianten:'',type:'groet',uitspraak:'',voorbeeld_papiamento:'Moro! Con ta bay?',voorbeeld_papiamentu:'Mòru! Kon ta bai?',voorbeeld_nederlands:'Goedemorgen! Hoe gaat het?',voorbeeld_engels:'Good morning! How are you?'},
 
-{week:2,nummer:102,level:'A1',tags:['groeten'],papiamento:'bon dia!',papiamentu:'bon dia!',nederlands:'goeiedag!',engels:'good day!',varianten:'',type:'groet',uitspraak:'',voorbeeld_papiamento:'Bon dia, señora.',voorbeeld_papiamentu:'Bon dia, señora.',voorbeeld_nederlands:'Goedendag, mevrouw.',voorbeeld_engels:'Good day, madam.'},
+{week:2,nummer:102,level:'A1',tags:['groeten'],papiamento:'bon dia!',papiamentu:'bon dia!',nederlands:'goeiedag!, goeie dag, goedendag, goedemorgen',engels:'good day!',varianten:'',type:'groet',uitspraak:'',voorbeeld_papiamento:'Bon dia, señora.',voorbeeld_papiamentu:'Bon dia, señora.',voorbeeld_nederlands:'Goedendag, mevrouw.',voorbeeld_engels:'Good day, madam.'},
 
 {week:2,nummer:103,level:'A1',tags:['groeten'],papiamento:'bon tardi!',papiamentu:'bon tardi!',nederlands:'goedemiddag!',engels:'good afternoon!',varianten:'',type:'groet',uitspraak:'',voorbeeld_papiamento:'Bon tardi, amigo.',voorbeeld_papiamentu:'Bon tardi, amigo.',voorbeeld_nederlands:'Goedemiddag, vriend.',voorbeeld_engels:'Good afternoon, friend.'},
 
@@ -218,6 +229,12 @@ window.wordsData = [
 {week:2,nummer:106,level:'A1',tags:['groeten'],papiamento:'bon ora di caminda',papiamentu:'bon ora di kaminda',nederlands:'wel thuis',engels:'safe trip home',varianten:'',type:'groet',uitspraak:'',voorbeeld_papiamento:'Bon ora di caminda!',voorbeeld_papiamentu:'Bon ora di kaminda!',voorbeeld_nederlands:'Wel thuis!',voorbeeld_engels:'Have a safe trip home!'},
 
 {week:2,nummer:107,level:'A1',tags:['groeten'],papiamento:'con ta bay?',papiamentu:'kon ta bai?',nederlands:'hoe gaat het?',engels:'how are you?',varianten:'',type:'vraag',uitspraak:'',voorbeeld_papiamento:'Con ta bay cu bo?',voorbeeld_papiamentu:'Kon ta bai ku bo?',voorbeeld_nederlands:'Hoe gaat het met je?',voorbeeld_engels:'How are you?'},
+
+
+/// added to wordlist
+{week:2,nummer:107.1,level:'A1',tags:['groeten'],papiamento:'con ta bay cu bo?',papiamentu:'kon ta bai ku bo?',nederlands:'hoe gaat het met jou?',engels:'how are you?',varianten:'',type:'vraag',uitspraak:'',voorbeeld_papiamento:'Bon dia! Con ta bay cu bo?',voorbeeld_papiamentu:'Bon dia! Kon ta bai ku bo?',voorbeeld_nederlands:'Goedendag! Hoe gaat het met jou?',voorbeeld_engels:'Good day! How are you?'},
+/// added to wordlist
+
 
 {week:2,nummer:108,level:'A1',tags:['groeten'],papiamento:'conta?',papiamentu:'konta?',nederlands:'hoi!, hoe gaat het?',engels:'hi!, how are things?',varianten:'',type:'groet',uitspraak:'',voorbeeld_papiamento:'Conta, amigo?',voorbeeld_papiamentu:'Konta, amigo?',voorbeeld_nederlands:'Hoi vriend, hoe gaat het?',voorbeeld_engels:'Hi friend, how are you?'},
 
@@ -398,6 +415,10 @@ window.wordsData = [
 {week:2,nummer:193,level:'A1',tags:['huishouden'],papiamento:'sera',papiamentu:'sera',nederlands:'sluiten',engels:'to close',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Sera e porta.',voorbeeld_papiamentu:'Sera e porta.',voorbeeld_nederlands:'Sluit de deur.',voorbeeld_engels:'Close the door.'},
 
 {week:2,nummer:194,level:'A1',tags:['groeten'],papiamento:'danki',papiamentu:'danki',nederlands:'bedankt',engels:'thank you',varianten:'',type:'uitdrukking',uitspraak:'',voorbeeld_papiamento:'Danki pa bo yudansa.',voorbeeld_papiamentu:'Danki pa bo yudansa.',voorbeeld_nederlands:'Dank je voor je hulp.',voorbeeld_engels:'Thank you for your help.'},
+
+//// added ta bon, danki
+{week:2,nummer:194.1,level:'A1',tags:['groeten'],papiamento:'ta bon, danki',papiamentu:'ta bon, danki',nederlands:'goed, bedankt',engels:'fine, thank you',varianten:'',type:'uitdrukking',uitspraak:'',voorbeeld_papiamento:'Con ta bay cu bo? Ta bon, danki.',voorbeeld_papiamentu:'Kon ta bai ku bo? Ta bon, danki.',voorbeeld_nederlands:'Hoe gaat het met jou? Goed, bedankt.',voorbeeld_engels:'How are you? Fine, thank you.'},
+//// added ta bon, danki
 
 {week:2,nummer:195,level:'A1',tags:['plaatsen'],papiamento:'sali',papiamentu:'sali',nederlands:'uitgaan, naar buiten gaan',engels:'to leave, go out',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta sali awor.',voorbeeld_papiamentu:'Mi ta sali awor.',voorbeeld_nederlands:'Ik ga nu weg.',voorbeeld_engels:'I am leaving now.'},
 
@@ -616,7 +637,14 @@ window.wordsData = [
 
 {week:3,nummer:301,level:'A1',tags:['taal'],papiamento:'con bini?',papiamentu:'kon bini?',nederlands:'hoe komt het dat?',engels:'how come?',varianten:'',type:'uitdrukking',uitspraak:'',voorbeeld_papiamento:'Con bini bo no a bin?',voorbeeld_papiamentu:'Kon bini bo no a bin?',voorbeeld_nederlands:'Hoe komt het dat je niet kwam?',voorbeeld_engels:'How come you did not come?'},
 
-{week:3,nummer:302,level:'A1',tags:['grammatica'],papiamento:'masha',papiamentu:'masha',nederlands:'heel, erg',engels:'very',varianten:'',type:'bijwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta masha felis.',voorbeeld_papiamentu:'Mi ta masha felis.',voorbeeld_nederlands:'Ik ben heel gelukkig.',voorbeeld_engels:'I am very happy.'},
+{week:3,nummer:302,level:'A1',tags:['grammatica'],papiamento:'masha',papiamentu:'masha',nederlands:'heel, erg, zeer',engels:'very',varianten:'',type:'bijwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta masha felis.',voorbeeld_papiamentu:'Mi ta masha felis.',voorbeeld_nederlands:'Ik ben heel gelukkig.',voorbeeld_engels:'I am very happy.'},
+
+
+{week:3,nummer:302.1,level:'A1',tags:['groeten'],papiamento:'masha bon',papiamentu:'masha bon',nederlands:'heel goed, erg goed, zeer goed',engels:'very good',varianten:'',type:'uitdrukking',uitspraak:'',voorbeeld_papiamento:'Mi ta masha bon awe.',voorbeeld_papiamentu:'Mi ta masha bon awe.',voorbeeld_nederlands:'Het gaat vandaag heel goed met mij.',voorbeeld_engels:'I am very well today.'},
+
+
+{week:3,nummer:302.2,level:'A1',tags:['taal'],papiamento:'problema',papiamentu:'problema',nederlands:'probleem',engels:'problem',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'No tin problema.',voorbeeld_papiamentu:'No tin problema.',voorbeeld_nederlands:'Geen probleem.',voorbeeld_engels:'No problem.'},
+
 
 {week:3,nummer:303,level:'A1',tags:['vrije_tijd'],papiamento:'gosa',papiamentu:'gosa',nederlands:'genieten',engels:'enjoy',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Nos ta gosa di e dia.',voorbeeld_papiamentu:'Nos ta gosa di e dia.',voorbeeld_nederlands:'Wij genieten van de dag.',voorbeeld_engels:'We are enjoying the day.'},
 

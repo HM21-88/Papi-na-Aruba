@@ -4690,55 +4690,66 @@ if (
       const total =
         currentChallenge.questions.length;
 
-      let summaryText = '';
+let summaryText = '';
 
-      if(
-        challengeScore === total
-      ){
+if(
+  challengeScore === total
+){
 
-        summaryText =
-          `${challengeScore} van de ${total} vragen goed.\n\nMi ta orguyoso di bo! 🌴`;
+  summaryText =
+    `${challengeScore} van de ${total} vragen goed.\n\nMi ta orguyoso di bo! 🌴`;
 
-      }
+}
+else if(
+  challengeScore >=
+  Math.ceil(
+    total * 0.8
+  )
+){
 
-      else if(
-        challengeScore >=
-        Math.ceil(
-          total * 0.8
-        )
-      ){
+  summaryText =
+    `${challengeScore} van de ${total} vragen goed.\n\nJe bent klaar voor de volgende stap van je reis.`;
 
-        summaryText =
-          `${challengeScore} van de ${total} vragen goed.\n\nJe bent klaar voor de volgende stap van je reis.`;
+}
+else if(
+  challengeScore >=
+  Math.ceil(
+    total * 0.5
+  )
+){
 
-      }
+  summaryText =
+    `${challengeScore} van de ${total} vragen goed.\n\nMet een beetje oefenen kom je er wel.`;
 
-      else if(
-        challengeScore >=
-        Math.ceil(
-          total * 0.5
-        )
-      ){
+}
+else{
 
-        summaryText =
-          `${challengeScore} van de ${total} vragen goed.\n\nMet een beetje oefenen kom je er wel.`;
+  summaryText =
+    `${challengeScore} van de ${total} vragen goed.\n\nTalen leer je stap voor stap.`;
 
-      }
+}
 
-      else{
+let finalSummary =
+  summaryText;
 
-        summaryText =
-          `${challengeScore} van de ${total} vragen goed.\n\nTalen leer je stap voor stap.`;
+if(
+  currentChallenge.summary
+){
 
-      }
+  finalSummary +=
+    '\n\n' +
+    currentChallenge.summary;
 
-      challengeMessages.push({
+}
 
-        sender:'lessonSummary',
+challengeMessages.push({
 
-        text:summaryText
+  sender:'lessonSummary',
 
-      });
+  text:finalSummary
+
+});
+
 
       renderChallenge();
 
