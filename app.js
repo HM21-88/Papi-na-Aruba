@@ -4481,6 +4481,11 @@ const showStoryButton =
     message =>
       message.sender ===
       'miniQuizStart'
+  ) &&
+  !challengeMessages.some(
+    message =>
+      message.sender ===
+      'reviewFinished'
   );
 
   const hasSummary =
