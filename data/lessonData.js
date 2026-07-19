@@ -251,25 +251,25 @@ window.lessonData = {
 
   miniQuiz:[
 
-    {
-      word:'Mi',
-      answer:'ik'
-    },
+	{
+	  id:'mi_1',
+	  word:'Mi'
+	},
 
-    {
-      word:'Bo',
-      answer:'jij'
-    },
+	{
+	  id:'bo_2',
+	  word:'Bo'
+	},
 
-    {
-      word:'E',
-      answer:'hij'
-    },
+	{
+	  id:'e_3',
+	  word:'E'
+	},
 
-    {
-      word:'Nos',
-      answer:'wij'
-    },
+	{
+	  id:'nos_4',
+	  word:'Nos'
+	},
 
     {
       word:'Mi nomber ta',
@@ -527,25 +527,25 @@ window.lessonData = {
       answer:'nee'
     },
 
-    {
-      word:'Mi',
-      answer:'ik'
-    },
+	{
+	  id:'mi_1',
+	  word:'Mi'
+	},
 
-    {
-      word:'Bo',
-      answer:'jij'
-    },
+	{
+	  id:'bo_2',
+	  word:'Bo'
+	},
 
-    {
-      word:'E',
-      answer:'hij'
-    },
+	{
+	  id:'e_3',
+	  word:'E'
+	},
 
-    {
-      word:'Nos',
-      answer:'wij'
-    },
+	{
+	  id:'nos_4',
+	  word:'Nos'
+	},
 
     {
       word:'Mi nomber ta',

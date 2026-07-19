@@ -10,6 +10,53 @@ const APP_CONFIG = {
 
 const data = window.wordsData || [];
 
+data.forEach(word => {
+
+  if(!word.id){
+
+    word.id =
+      `${word.papiamento}_${word.nummer}`;
+
+  }
+
+});
+
+function getWordById(id){
+
+  return data.find(
+    item =>
+      item.id === id
+  );
+
+}
+
+function getAcceptedAnswers(word){
+
+  if(
+    !word ||
+    !word.nederlands
+  ){
+    return [];
+  }
+
+  return word.nederlands
+    .split(',')
+    .map(answer =>
+      answer
+        .toLowerCase()
+        .trim()
+        .replace(/[.,!?]/g,'')
+    );
+
+}
+
+function normalizeAnswer(text){
+    return text
+        .trim()
+        .toLowerCase()
+        .replace(/[.,!?]/g,'');
+}
+
 const sayingsData = window.sayingsData || [];
 
 const holidaysData = window.holidaysData || [];
@@ -4388,7 +4435,6 @@ function renderChallenge(
 
 }
 
-
 function toggleTranslation(
   index
 ){
@@ -4451,8 +4497,11 @@ function submitChallengeAnswer(){
       'challengeAnswer'
     );
 
-  const rawUserAnswer =
-    input.value.trim();
+const rawUserAnswer =
+  input.value.trim();
+
+const userAnswer =
+  normalizeAnswer(rawUserAnswer);
 
   if(
     !rawUserAnswer
@@ -4475,17 +4524,33 @@ function submitChallengeAnswer(){
 
   input.value = '';
 
-  const userAnswer =
-    rawUserAnswer
-      .toLowerCase()
-      .replace(/[.,!?]/g,'')
-      .trim();
+let acceptedAnswers = [];
 
-  const correctAnswer =
+if(question.id){
+
+  const word =
+    getWordById(
+      question.id
+    );
+
+  acceptedAnswers =
+    getAcceptedAnswers(
+      word
+    );
+
+}
+else{
+
+  acceptedAnswers = [
+
     question.answer
       .toLowerCase()
       .replace(/[.,!?]/g,'')
-      .trim();
+      .trim()
+
+  ];
+
+}
 
   anaTyping = true;
 
@@ -4495,37 +4560,29 @@ function submitChallengeAnswer(){
 
     anaTyping = false;
 
-    if(
-      userAnswer ===
-      correctAnswer
-    ){
+if (
+    acceptedAnswers.includes(userAnswer)
+) {
 
-      challengeScore++;
+    challengeScore++;
 
-      challengeMessages.push({
-
+    challengeMessages.push({
         sender:'ana',
+        text:'☑️ Hopi bon! Dat is correct.'
+    });
 
-        text:
-          '✅ Hopi bon! Dat is correct.'
+} else {
 
-      });
-
-    }
-
-    else{
-
-      challengeMessages.push({
-
+    challengeMessages.push({
         sender:'ana',
+        text: question.id
+            ? '❌ Niet helemaal. Mogelijke antwoorden zijn: ' +
+              acceptedAnswers.join(', ')
+            : '❌ Niet helemaal. Het juiste antwoord is: ' +
+              question.answer
+    });
 
-        text:
-          '❌ Niet helemaal. Het juiste antwoord is: ' +
-          question.answer
-
-      });
-
-    }
+}
 
     challengeIndex++;
 
@@ -4608,7 +4665,7 @@ function submitChallengeAnswer(){
 
     renderChallenge();
 
-  }, 1300);
+  }, 1100);
 
 }
 
