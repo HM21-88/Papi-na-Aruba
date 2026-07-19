@@ -97,6 +97,7 @@ function speakCurrentFlash(){
   speakText(word);
 }
 
+
 function getRandomCompletionMessage(){
 
 const messages = [
@@ -3819,20 +3820,16 @@ ${
 }
 
 let challengeIndex = 0;
-
 let currentChallenge =
   null;
-  
- let challengeScore = 0;
- 
- let challengeMessages = [];
-
+let challengeScore = 0;
+let challengeMessages = [];
 let visibleTranslations = {};
-
 let anaTyping = false;
-
 let currentLessonId =
   null;
+
+let currentStoryIndex = 0;
 
 function openLesson(
   lessonId
@@ -3868,11 +3865,14 @@ function openLesson(
     'airportLessonContent'
   ).innerHTML = '';
 
-  challengeMessages = [];
+challengeMessages = [];
 
-  const scene =
-    lessonInfo.scene || [];
+currentChallenge = null;
 
+currentStoryIndex = 0;
+
+const scene =
+  lessonInfo.scene || [];
   if(
     scene.length
   ){
@@ -3881,11 +3881,9 @@ function openLesson(
       'lessonCompleteButton'
     ).style.display = 'none';
 
-    challengeMessages.push(
-      ...scene
-    );
-
-    if(
+	showNextStoryMessage();
+    
+	if(
       lessonInfo.questions
     ){
 
@@ -3904,20 +3902,6 @@ function openLesson(
           currentChallenge
             .questions[0]
             .word
-
-      });
-
-    }
-
-    else if(
-      lessonInfo.miniQuiz
-    ){
-
-      challengeMessages.push({
-
-        sender:'miniQuizStart',
-
-        text:'✅ Start Miniquiz'
 
       });
 
@@ -3982,6 +3966,11 @@ function openLesson(
   showMainScreen(
     'airportLessonScreen'
   );
+  
+  window.scrollTo(
+  0,
+  0
+);
 
   updateScreenBar(
 
@@ -3998,6 +3987,82 @@ function openLesson(
 
 }
 
+function showNextStoryMessage(){
+
+  const scene =
+    lessonData[
+      currentLessonId
+    ].scene || [];
+
+  if(
+    currentStoryIndex >=
+    scene.length
+  ){
+
+    const lessonInfo =
+      lessonData[
+        currentLessonId
+      ];
+
+    if(
+      lessonInfo.questions
+    ){
+
+      currentChallenge =
+        lessonInfo;
+
+      challengeIndex = 0;
+      challengeScore = 0;
+
+      challengeMessages.push({
+        sender:'question',
+        text:
+          currentChallenge
+            .questions[0]
+            .word
+      });
+
+    }
+else if(
+  lessonInfo.miniQuiz &&
+  !challengeMessages.some(
+    message =>
+      message.sender ===
+      'miniQuizStart'
+  )
+){
+
+challengeMessages.push({
+  sender:'miniQuizStart',
+  text:'Mini-quiz starten →'
+});
+
+}
+
+    renderChallenge();
+    return;
+  }
+
+  challengeMessages.push(
+    scene[currentStoryIndex]
+  );
+
+  currentStoryIndex++;
+
+renderChallenge();
+
+setTimeout(() => {
+
+  const chat =
+    document.getElementById(
+      'challengeChat'
+    );
+
+  chat.scrollTop =
+    chat.scrollHeight;
+
+}, 100);
+}
 
 function renderChallenge(
   autoScroll = true
@@ -4213,15 +4278,11 @@ function renderChallenge(
 
         html += `
 
-          <div
-            style="
-              text-align:center;
-              margin:24px 0;
-            ">
+	<div class="story-action-bar">
 
-            <button
-              class="btn"
-              onclick="startMiniQuiz()">
+	<button
+	  class="btn story-action-btn"
+	  onclick="startMiniQuiz()">
 
               ${message.text}
 
@@ -4344,6 +4405,21 @@ function renderChallenge(
 
   }
 
+	const lessonInfo =
+	  lessonData[currentLessonId];
+
+	const scene =
+	  lessonInfo?.scene || [];
+
+const showStoryButton =
+  currentStoryIndex <= scene.length &&
+  !currentChallenge &&
+  !challengeMessages.some(
+    message =>
+      message.sender ===
+      'miniQuizStart'
+  );
+
   const hasSummary =
     challengeMessages.some(
       message =>
@@ -4351,10 +4427,11 @@ function renderChallenge(
         'lessonSummary'
     );
 
-  if(
-    !hasSummary
-  ){
-
+if(
+  !hasSummary &&
+  currentChallenge
+){
+	
     html += `
 
       <div
@@ -4399,6 +4476,22 @@ function renderChallenge(
 
   }
 
+if(
+  showStoryButton
+){
+
+html += `
+  <div class="story-action-bar">
+    <button
+      class="btn story-action-btn"
+      onclick="showNextStoryMessage()"
+    >
+      Verder →
+    </button>
+  </div>
+`;
+}
+
   document.getElementById(
     'challengeChat'
   ).innerHTML = html;
@@ -4408,30 +4501,33 @@ function renderChallenge(
       'challengeChat'
     );
 
-  setTimeout(() => {
+setTimeout(() => {
 
-    if(
-      autoScroll
-    ){
+if(
+  challengeMessages.length > 1
+){
+  window.scrollTo({
+    top: document.body.scrollHeight,
+    behavior:'smooth'
+  });
+}
 
-      challengeChat.scrollTop =
-        challengeChat.scrollHeight;
+  challengeChat.scrollTop =
+    challengeChat.scrollHeight;
 
-      const answerInput =
-        document.getElementById(
-          'challengeAnswer'
-        );
+  const answerInput =
+    document.getElementById(
+      'challengeAnswer'
+    );
 
-      if(
-        answerInput &&
-        !anaTyping
-      ){
-        answerInput.focus();
-      }
+  if(
+    answerInput &&
+    !anaTyping
+  ){
+    answerInput.focus();
+  }
 
-    }
-
-  }, 120);
+}, 120);
 
 }
 

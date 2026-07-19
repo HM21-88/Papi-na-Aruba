@@ -64,17 +64,19 @@ body{
 }
 
 .screen-bar{
-  height:64px;
+  position:sticky;
+  top:0;
+  z-index:1000;
 
+  height:64px;
   display:flex;
   align-items:center;
   gap:12px;
-
   padding:0 16px;
 
-  background:transparent;
-
-  border-bottom:none;
+  background:#EFE6D6;
+  box-shadow:
+    0 4px 12px rgba(0,0,0,.04);
 }
 
 .back-btn{
@@ -2516,8 +2518,12 @@ body{
 }
 
 #challengeChat{
-  padding-bottom:100px;
+  display:flex;
+  flex-direction:column;
+  min-height:calc(100vh - 230px);
+  padding-bottom:260px;
 }
+
 
 /* ===== STORY MODE CHAT ===== */
 
@@ -2623,4 +2629,28 @@ body{
 
   user-select:none;
 
+}
+
+#airportLessonScreen{
+  background:transparent;
+  border:none;
+  box-shadow:none;
+  padding:0;
+}
+
+.story-action-bar{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:75px;
+  padding:12px;
+  max-width:1000px;
+  margin:auto;
+  z-index:100;
+}
+
+.story-action-btn{
+  width:100%;
+  border-radius:28px;
+  min-height:56px;
 }
