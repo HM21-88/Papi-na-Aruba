@@ -4295,27 +4295,57 @@ function renderChallenge(
 
       }
 
-      else if(
-        message.sender === 'miniQuizStart'
-      ){
+else if(
+  message.sender === 'miniQuizStart'
+){
+  html += `
+    <div class="story-action-bar">
+      <button
+        class="btn story-action-btn"
+        onclick="startMiniQuiz()">
+        ${message.text}
+      </button>
+    </div>
+  `;
+}
 
-        html += `
+else if(
+  message.sender === 'reviewWords'
+){
+  html += `
+    <div class="story-action-bar">
+      <button
+        class="btn story-action-btn"
+        onclick="startChallengeReview()">
+        📚 Moeilijke woorden oefenen
+      </button>
+    </div>
+  `;
+
+}
+
+else if(
+  message.sender === 'restartLesson'
+){
+  html += `
+    <div class="story-action-bar">
+      <button
+        class="btn story-action-btn"
+        onclick="openLesson(currentLessonId)">
+        🔄 Les opnieuw doen
+      </button>
+    </div>
 
 	<div class="story-action-bar">
-
 	<button
-	  class="btn story-action-btn"
-	  onclick="startMiniQuiz()">
-
-              ${message.text}
-
-            </button>
-
-          </div>
-
-        `;
-
-      }
+	  class="btn story-primary-action"
+	  onclick="completeLesson()">
+	  ✅ Verder reizen
+	</button>
+	</div>	
+  
+  `;
+}
 
       else if(
         message.sender === 'lessonSummary'
@@ -4351,17 +4381,6 @@ function renderChallenge(
 
 		</div>
 
-              <button
-                class="btn"
-                onclick="completeLesson()"
-                style="
-                  width:100%;
-                  margin-top:14px;
-                ">
-
-                ✅ Les voltooien
-
-              </button>
 
             </div>
 
@@ -4514,6 +4533,7 @@ html += `
   </div>
 `;
 }
+
 
   document.getElementById(
     'challengeChat'
@@ -4780,11 +4800,21 @@ if(
 }
 
 challengeMessages.push({
-
   sender:'lessonSummary',
-
   text:finalSummary
+});
 
+challengeMessages.push({
+  sender:'ana',
+  text:'Wil je nog even oefenen? We kunnen de woorden herhalen die je lastig vond of de les opnieuw doen.'
+});
+
+challengeMessages.push({
+  sender:'reviewWords'
+});
+
+challengeMessages.push({
+  sender:'restartLesson'
 });
 
 
@@ -4809,7 +4839,18 @@ challengeMessages.push({
 
     renderChallenge();
 
-  }, 1100);
+  }, 900);
+
+}
+
+
+function startChallengeReview(){
+
+  showMainScreen(
+    'homeScreen'
+  );
+
+  renderDifficultWords();
 
 }
 
