@@ -3848,6 +3848,8 @@ let currentChallenge =
 let challengeScore = 0;
 let challengeMessages = [];
 let challengeMistakes = [];
+let challengeReviewQuestions = [];
+let challengeReviewIndex = 0;
 let visibleTranslations = {};
 let anaTyping = false;
 let currentLessonId =
@@ -4348,6 +4350,24 @@ else if(
   `;
 }
 
+else if(
+  message.sender === 'reviewFinished'
+){
+  html += `
+    <div class="story-action-bar">
+
+      <button
+        class="btn story-primary-action"
+        onclick="completeLesson()">
+
+        ✅ Verder reizen
+
+      </button>
+
+    </div>
+  `;
+}
+
       else if(
         message.sender === 'lessonSummary'
       ){
@@ -4641,6 +4661,18 @@ function submitChallengeAnswer(){
 const rawUserAnswer =
   input.value.trim();
 
+if(
+  challengeReviewQuestions.length
+){
+  submitChallengeReviewAnswer(
+    rawUserAnswer
+  );
+
+  input.value = '';
+
+  return;
+}
+
 const userAnswer =
   normalizeAnswer(rawUserAnswer);
 
@@ -4860,14 +4892,145 @@ challengeMessages.push({
 
 function startChallengeReview(){
 
-  difficultWordQueue =
-    challengeMistakes.map(
-      id => [id, {}]
+  challengeReviewQuestions =
+    challengeMistakes.map(id => {
+
+      const word =
+        getWordById(id);
+
+      return {
+        id: word.id,
+        word: getPrimaryWord(word)
+      };
+
+    });
+
+  challengeReviewIndex = 0;
+
+  challengeMessages = [];
+
+  challengeMessages.push({
+    sender:'ana',
+    text:'Deze woorden vond je nog lastig. Laten we ze nog één keer oefenen.'
+  });
+
+  challengeMessages.push({
+    sender:'question',
+    text:
+      challengeReviewQuestions[0]
+        .word
+  });
+
+  renderChallenge();
+
+}
+
+function submitChallengeReviewAnswer(
+  rawUserAnswer
+){
+
+  const question =
+    challengeReviewQuestions[
+      challengeReviewIndex
+    ];
+
+  const word =
+    getWordById(
+      question.id
     );
 
-  currentDifficultIndex = 0;
+  const answers =
+    getAcceptedAnswers(
+      word
+    );
 
-  renderChallengeReview();
+  const userAnswer =
+    normalizeAnswer(
+      rawUserAnswer
+    );
+
+  const correct =
+    answers.includes(
+      userAnswer
+    );
+
+  challengeMessages.push({
+    sender:'user',
+    text:rawUserAnswer
+  });
+
+  anaTyping = true;
+
+  renderChallenge();
+
+  setTimeout(() => {
+
+    anaTyping = false;
+
+    if(correct){
+
+      challengeMessages.push({
+        sender:'ana',
+        text:'☑️ Hopi bon!'
+      });
+
+      updateWordProgress(
+        question.id,
+        true
+      );
+
+    }else{
+
+      challengeMessages.push({
+        sender:'ana',
+        text:
+          '❌ Mogelijke antwoorden zijn: ' +
+          answers.join(', ')
+      });
+
+      updateWordProgress(
+        question.id,
+        false
+      );
+
+    }
+
+    challengeReviewIndex++;
+
+    if(
+      challengeReviewIndex >=
+      challengeReviewQuestions.length
+    ){
+
+	challengeReviewQuestions = [];
+
+	currentChallenge = null;
+
+      challengeMessages.push({
+        sender:'ana',
+        text:'🎉 Hopi bon! Je hebt de moeilijke woorden opnieuw geoefend.'
+      });
+
+      challengeMessages.push({
+        sender:'reviewFinished'
+      });
+
+      renderChallenge();
+
+      return;
+    }
+
+    challengeMessages.push({
+      sender:'question',
+      text:
+        challengeReviewQuestions[
+          challengeReviewIndex
+        ].word
+    });
+
+    renderChallenge();
+
+  }, 900);
 
 }
 
@@ -4921,9 +5084,16 @@ function renderChallengeReview(){
         ${getPrimaryWord(word)}
       </div>
 
-      <div class="meta">
-        ${word.nederlands}
-      </div>
+	<div class="meta">
+	  ${word.nederlands}
+	</div>
+
+	<div class="difficult-counter">
+	  Woord
+	  ${currentDifficultIndex + 1}
+	  van
+	  ${difficultWordQueue.length}
+	</div>
 
       <div class="difficult-actions">
 
@@ -4967,6 +5137,9 @@ function handleChallengeReview(
     currentDifficultIndex >=
     difficultWordQueue.length
   ){
+
+challengeReviewQuestions = [];
+currentChallenge = null;
 
     document.getElementById(
       'challengeChat'
