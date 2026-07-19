@@ -3847,6 +3847,7 @@ let currentChallenge =
   null;
 let challengeScore = 0;
 let challengeMessages = [];
+let challengeMistakes = [];
 let visibleTranslations = {};
 let anaTyping = false;
 let currentLessonId =
@@ -4590,6 +4591,7 @@ function toggleTranslation(
 
 function startMiniQuiz(){
 
+  challengeMistakes = [];
   challengeMessages = [];
 
   currentChallenge = {
@@ -4719,12 +4721,24 @@ if (
 
 } else {
 
-    if(question.id){
-      updateWordProgress(
-        question.id,
-        false
-      );
-    }
+	if(question.id){
+
+	  updateWordProgress(
+		question.id,
+		false
+	  );
+
+	  if(
+		!challengeMistakes.includes(
+		  question.id
+		)
+	  ){
+		challengeMistakes.push(
+		  question.id
+		);
+	  }
+
+	}
 
     challengeMessages.push({
         sender:'ana',
@@ -4846,14 +4860,147 @@ challengeMessages.push({
 
 function startChallengeReview(){
 
-  showMainScreen(
-    'homeScreen'
-  );
+  difficultWordQueue =
+    challengeMistakes.map(
+      id => [id, {}]
+    );
 
-  renderDifficultWords();
+  currentDifficultIndex = 0;
+
+  renderChallengeReview();
 
 }
 
+function renderChallengeReview(){
+
+  const [
+    wordId
+  ] =
+    difficultWordQueue[
+      currentDifficultIndex
+    ];
+
+  const word =
+    getWordById(
+      wordId
+    );
+
+  if(!word){
+    return;
+  }
+
+  document.getElementById(
+    'challengeChat'
+  ).innerHTML = `
+
+    <div class="chat-row">
+
+      <div
+        class="chat-avatar ana">
+        👵🏻
+      </div>
+
+      <div
+        class="chat-bubble ana">
+
+        <div
+          class="chat-name ana">
+          Wela Ana
+        </div>
+
+        Laten we deze woorden nog
+        even oefenen.
+
+      </div>
+
+    </div>
+
+    <div class="panel">
+
+      <div class="difficult-word">
+        ${getPrimaryWord(word)}
+      </div>
+
+      <div class="meta">
+        ${word.nederlands}
+      </div>
+
+      <div class="difficult-actions">
+
+        <button
+          class="btn-know"
+          onclick="handleChallengeReview(true)">
+          ✅ Wist ik
+        </button>
+
+        <button
+          class="btn-hard"
+          onclick="handleChallengeReview(false)">
+          ❌ Nog moeilijk
+        </button>
+
+      </div>
+
+    </div>
+  `;
+}
+
+function handleChallengeReview(
+  knewIt
+){
+
+  const [
+    wordId
+  ] =
+    difficultWordQueue[
+      currentDifficultIndex
+    ];
+
+  updateWordProgress(
+    wordId,
+    knewIt
+  );
+
+  currentDifficultIndex++;
+
+  if(
+    currentDifficultIndex >=
+    difficultWordQueue.length
+  ){
+
+    document.getElementById(
+      'challengeChat'
+    ).innerHTML = `
+
+      <div class="panel">
+
+        <h3>
+          🎉 Hopi bon!
+        </h3>
+
+        <p>
+          Je hebt de moeilijke woorden
+          opnieuw geoefend.
+        </p>
+
+        <button
+          class="btn"
+          onclick="completeLesson()">
+
+          ✅ Verder reizen
+
+        </button>
+
+      </div>
+
+    `;
+
+    return;
+  }
+
+  renderChallengeReview();
+
+}
 
 function showAirportCompletion(){
 
