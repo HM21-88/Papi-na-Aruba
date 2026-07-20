@@ -3917,6 +3917,57 @@ function renderTravelRoute(){
   if(!container){
     return;
   }
+  
+  document.getElementById(
+  'travelHero'
+).innerHTML = `
+
+  <div
+    style="
+      background:
+        linear-gradient(
+          135deg,
+          #0F7C82,
+          #1E5F74
+        );
+
+      color:white;
+      padding:24px;
+      border-radius:24px;
+      margin-bottom:16px;
+    "
+  >
+
+    <div
+      style="
+        font-size:28px;
+        font-weight:700;
+      "
+    >
+      🌴 Reis door Aruba
+    </div>
+
+    <div
+      style="
+        opacity:.85;
+        margin-top:4px;
+        font-style:italic;
+      "
+    >
+      One Happy Island
+    </div>
+
+    <div
+      style="
+        margin-top:14px;
+      "
+    >
+      Leer Aruba kennen door de ogen van Wela Ana.
+    </div>
+
+  </div>
+
+`;
 
   let html = '';
 
@@ -3939,15 +3990,26 @@ function renderTravelRoute(){
                   lesson.id
                 )
             ).length;
+			
+			const isCompleted =
+			completed ===
+			location.lessons.length;
 
 html += `
 
 <div
-  class="panel"
   style="
     margin-bottom:16px;
+    padding:20px;
+    border-radius:24px;
     background:${location.theme.background};
-    border:none;
+
+    border-left:6px solid
+      ${location.theme.progress};
+
+    box-shadow:
+      0 6px 18px
+      rgba(0,0,0,.08);
   "
 >
 
@@ -3968,44 +4030,88 @@ html += `
         ${location.icon}
       </div>
 
-      <div>
+<div
+  style="
+    flex:1;
+  "
+>
 
-        <div
-          style="
-            font-size:12px;
-            color:#6B7280;
-            font-weight:600;
-          "
-        >
-          Hoofdstuk ${location.chapter}
-        </div>
+  <div
+    style="
+      font-size:12px;
+      color:#6B7280;
+      font-weight:600;
+    "
+  >
+    Hoofdstuk ${location.chapter}
+  </div>
 
-        <div
-          style="
-            font-size:22px;
-            font-weight:700;
-          "
-        >
-          ${location.shortTitle}
-        </div>
+  <div
+    style="
+      font-size:22px;
+      font-weight:700;
+    "
+  >
+    ${location.shortTitle}
+  </div>
 
-      </div>
+</div>
+
+<div
+  style="
+    text-align:center;
+    min-width:70px;
+  "
+>
+
+  <div
+    style="
+      font-size:30px;
+      filter:${
+        isCompleted
+          ? 'none'
+          : 'grayscale(100%) opacity(50%)'
+      };
+    "
+  >
+    ${location.souvenir.icon}
+  </div>
+
+  <div
+    style="
+      font-size:11px;
+	  font-weight:600;
+      margin-top:4px;
+      opacity:.8;
+    "
+  >
+    ${location.souvenir.title}
+  </div>
+
+</div>
 
     </div>
 
-    <button
-      class="practice-card"
-      onclick="
-        openLocationOverview(
-          '${location.id}'
-        )
-      "
+	<button
+	  onclick="
+		openLocationOverview(
+		  '${location.id}'
+		)
+	  "
 
-      style="
-        width:100%;
-        text-align:left;
-      "
-    >
+	style="
+	  width:100%;
+	  text-align:left;
+	  border:none;
+	  background:transparent;
+	  padding:0;
+	  cursor:pointer;
+
+	  box-shadow:
+		0 2px 8px
+		rgba(0,0,0,.04);
+	"
+	>
 
       <div class="practice-title">
         ${location.title}

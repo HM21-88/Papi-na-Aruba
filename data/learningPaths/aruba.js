@@ -33,6 +33,12 @@ window.learningPaths = {
 					'Leer begroeten, jezelf voorstellen en de eerste woorden van het Papiamento.',
 
 				  icon: '✈️',
+				  
+				  souvenir:{
+				  
+				  icon:'🎫',
+				  title:'Boarding Pass'
+				},
 
 				  theme:{
 					  background:'#EAF4FF',
@@ -88,6 +94,11 @@ window.learningPaths = {
 					'Leer praten over familie, bezoek en het gevoel van dushi tera.',
 
 				  icon: '🏠',
+
+					souvenir:{
+				  icon:'❤️',
+				  title:'Dushi Tera'
+				},
 
 				  theme:{
 					  background:'#FFF0E6',
