@@ -1037,7 +1037,12 @@ wordIds:[
 	
 	 {
       sender:'ana',
-      text:'🟨Ruman homber betekent broer. Dat doen we bij kinderen ook zo, let maar op.'
+      text:'🟨Ruman homber betekent broer.'
+    },
+	
+	 {
+      sender:'ana',
+      text:'In de volgende les zal je zien dat we dat voor zoon en dochter ook zo doen.'
     },
 
     {
