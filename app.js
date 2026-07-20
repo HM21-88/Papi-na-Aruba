@@ -4318,9 +4318,39 @@ function renderChallenge(
 
             <div class="chat-bubble local">
 
-              <div class="chat-name local">
-                ${message.speaker}
-              </div>
+<div
+  class="chat-name local"
+  style="
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  "
+>
+
+  <span>
+    ${message.speaker}
+  </span>
+
+  <button
+    type="button"
+    onclick="speakText('${message.text.replace(/'/g, "\\'")}')"
+    style="
+      border:none;
+      background:#EEF2FF;
+      border-radius:50%;
+      width:24px;
+      height:24px;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:12px;
+    "
+  >
+    🔊
+  </button>
+
+</div>
 
               <div>
                 ${message.text}
