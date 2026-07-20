@@ -333,6 +333,24 @@
 
   <div class="practice-grid">
 
+	<button
+	  class="practice-card"
+	  onclick="showMainScreen('learnScreen')">
+
+	  <div class="practice-icon">
+		<i data-lucide="book-open"></i>
+	  </div>
+
+	  <div class="practice-title">
+		Woordenlijst
+	  </div>
+
+	  <div class="practice-subtitle">
+		Alle woorden bekijken
+	  </div>
+
+	</button>
+
     <button
       class="practice-card"
       onclick="showSection('flashcards')">
@@ -365,7 +383,7 @@
       </div>
 
       <div class="practice-subtitle">
-        Herhaal woorden
+        Kennis testen
       </div>
 
     </button>
@@ -383,7 +401,7 @@
       </div>
 
       <div class="practice-subtitle">
-        Grammatica
+        Grammatica oefenen
       </div>
 
     </button>
@@ -1234,11 +1252,6 @@
   <button onclick="showMainScreen('homeScreen')">
     <i data-lucide="house"></i>
     <span>Home</span>
-  </button>
-
-  <button onclick="showMainScreen('learnScreen')">
-    <i data-lucide="book-open"></i>
-    <span>Leren</span>
   </button>
 
 <button onclick="showMainScreen('travelScreen')">

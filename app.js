@@ -496,9 +496,9 @@ if(id==='flashcards'){
 } else if(id==='woordenlijst'){
 
   updateScreenBar(
-    'Leren',
+    'Woordenlijst',
     true,
-    () => showMainScreen('homeScreen')
+    () => showMainScreen('practiceScreen')
   );
 
   renderList();
@@ -3595,12 +3595,12 @@ function showMainScreen(screenId){
       .classList.remove('hidden');
   }
 
-  if(screenId === 'learnScreen'){
+if(screenId === 'learnScreen'){
 
   updateScreenBar(
-    'Leren',
+    'Woordenlijst',
     true,
-    () => showMainScreen('homeScreen')
+    () => showMainScreen('practiceScreen')
   );
 
   document
@@ -3608,6 +3608,7 @@ function showMainScreen(screenId){
     .classList.remove('hidden');
 
   renderList();
+
 }
 
   if(screenId === 'practiceScreen'){
