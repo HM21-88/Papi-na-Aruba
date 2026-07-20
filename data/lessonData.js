@@ -268,7 +268,7 @@ wordIds:[
 
     {
       sender:'ana',
-      text:'Bijvoorbeeld: 🟨 Nos ta bin di Aruba. Dat betekent: wij komen uit Aruba.'
+      text:'Bijvoorbeeld: 🟨 Nos ta bin di Aruba. Dat betekent wij komen uit Aruba.'
     },
 
     {
@@ -958,12 +958,12 @@ wordIds:[
 	
 	{
       sender:'ana',
-      text:'🟨 Aki betekent: hier'
+      text:'🟨 Aki betekent hier'
     },
 
     {
       sender:'ana',
-      text:'Je zou kunnen antwoorden: Mi no ta biba aki. Dat betekent: Ik woon hier niet.'
+      text:'Je zou kunnen antwoorden: Mi no ta biba aki. Dat betekent Ik woon hier niet.'
     },
 
     {
@@ -1317,6 +1317,11 @@ wordIds:[
       sender:'ana',
       text:'En als je het over meerdere kinderen hebt, zeg je 🟨 muchanan.'
     },
+	
+	{
+      sender:'ana',
+      text:'🟨 Muchanan betekent kinderen.'
+    },
 
     {
       sender:'ana',
@@ -1399,7 +1404,7 @@ wordIds:[
 
     {
       sender:'ana',
-      text:'Mooi! Nu ken je het verschil tussen mucha en yiu, en je hebt gezien hoe familie hier ook betekent: samen bouwen.'
+      text:'Mooi! Nu ken je het verschil tussen mucha en yiu, en je hebt gezien hoe familie hier ook betekent samen bouwen.'
     }
 
   ],
