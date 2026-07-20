@@ -922,7 +922,7 @@ wordIds:[
 
     {
       sender:'ana',
-      text:'Con ta bay ken je al van het vliegveld. Rosa vraagt hoe het gaat.'
+      text:'Con ta bay ken je al van het vliegveld. Rosa vraagt hoe het gaat. Weet je nog les 1? Dat kan jij beantwoorden.'
     },
 
     {
