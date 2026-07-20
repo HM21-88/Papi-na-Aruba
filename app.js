@@ -3572,7 +3572,7 @@ function showMainScreen(screenId){
   'quiz',
   'oefeningen',
   'travelScreen',
-  'airportOverviewScreen',
+  'locationOverviewScreen',
   'airportLessonScreen'
 ]
 
@@ -3679,12 +3679,12 @@ if(screenId === 'travelScreen'){
 	
 } 
 
-if(screenId === 'airportOverviewScreen'){
+if(screenId === 'locationOverviewScreen'){
 
-  document
-    .getElementById(
-      'airportOverviewScreen'
-    )
+	document
+	  .getElementById(
+		'locationOverviewScreen'
+	  )
     .classList.remove(
       'hidden'
     );
@@ -3905,6 +3905,92 @@ function openTankiFlipOverview(){
     `;
 }
 
+function openLocationOverview(
+  locationId
+){
+
+  currentLocationId =
+    locationId;
+
+  const location =
+    window.learningPaths
+      .aruba
+      .levels
+      .flatMap(level => level.chapters)
+      .flatMap(chapter => chapter.locations)
+      .find(
+        location =>
+          location.id === locationId
+      );
+
+  if(!location){
+    console.error(
+      'Location niet gevonden:',
+      locationId
+    );
+    return;
+  }
+
+  showMainScreen(
+    'locationOverviewScreen'
+  );
+
+  updateScreenBar(
+    location.title,
+    true,
+    () =>
+      showMainScreen(
+        'travelScreen'
+      )
+  );
+
+  document.querySelector(
+    '#locationOverviewScreen h2'
+  ).textContent =
+    location.title;
+
+  document.querySelectorAll(
+    '#locationOverviewScreen .home-subtitle'
+  )[0].textContent =
+    'Voltooi de lessen om deze locatie af te ronden.';
+
+  let html = '';
+
+  location.lessons.forEach(
+    lesson => {
+
+      const done =
+        isLessonCompleted(
+          lesson.id
+        );
+
+      html += `
+        <button
+          class="practice-card"
+          onclick="openLesson('${lesson.id}')">
+
+          <div class="practice-title">
+            ${
+              done
+                ? '✅ '
+                : '📚 '
+            }
+            ${lesson.title}
+          </div>
+
+        </button>
+      `;
+
+    }
+  );
+
+  document.getElementById(
+    'locationLessonsList'
+  ).innerHTML =
+    html;
+
+}
+
 let challengeIndex = 0;
 let currentChallenge =
   null;
@@ -3915,8 +4001,7 @@ let challengeReviewQuestions = [];
 let challengeReviewIndex = 0;
 let visibleTranslations = {};
 let anaTyping = false;
-let currentLessonId =
-  null;
+let currentLessonId = null;
 
 let currentStoryIndex = 0;
 

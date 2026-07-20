@@ -268,7 +268,7 @@
 
 <button
   class="practice-card"
-  onclick="openAirportOverview()">
+  onclick="openLocationOverview('airport')"
 
   <div class="practice-title">
     ✈️ Reina Beatrix Airport
@@ -294,7 +294,7 @@
 
   <button
     class="practice-card"
-    onclick="openTankiFlipOverview()"
+    onclick="openLocationOverview('tanki-flip')"
 
     <div class="practice-title">
       🏠 Tanki Flip
@@ -311,7 +311,7 @@
 </section>
 
 <section
-  id="airportOverviewScreen"
+  id="locationOverviewScreen"
   class="panel hidden">
 
 <h2>
@@ -326,8 +326,8 @@
   Voltooi de lessen om Airport af te ronden.
 </p>
 
-  <div id="airportLessonsList">
-  </div>
+	<div id="locationLessonsList">
+	</div>
 
 </section>
 
