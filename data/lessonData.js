@@ -48,7 +48,7 @@ scene:[
 
   {
     sender:'ana',
-    text:'🟨 Bon dia gebruik je in de ochtend. Later leer je ook Bon tardi en Bonochi.'
+    text:'🟨 Bon dia betekent goedendag en gebruik je in de ochtend. Later leer je ook Bon tardi en Bonochi.'
   },
 
   {
@@ -84,17 +84,17 @@ scene:[
 
 	{
 	  sender:'ana',
-	  text:'Con ta bay? betekent letterlijk: Hoe gaat het?'
+	  text:'🟨 Con ta bay? betekent letterlijk: Hoe gaat het?'
 	},
 
   {
     sender:'ana',
-    text:'Je kunt antwoorden met 🟨 Ta bon.'
+    text:'Je kunt antwoorden met 🟨 ta bon.'
   },
 
   {
     sender:'ana',
-    text:'🟨 Ta bon betekent: het gaat goed.'
+    text:'🟨 Ta bon betekent het gaat goed.'
   },
 
 	{
@@ -104,17 +104,22 @@ scene:[
 
 	{
 	  sender:'ana',
-	  text:'🟨 Cu betekent: met.'
+	  text:'🟨 Cu betekent met.'
+	},
+	
+	{
+	  sender:'ana',
+	  text:'🟨 Bo betekent jij of jou.'
 	},
 
 	{
 	  sender:'ana',
-	  text:'🟨 Bo betekent: jij of jou.'
+	  text:'🟨 Cu bo betekent dus met jou.'
 	},
 
 	{
 	  sender:'ana',
-	  text:'Con ta bay cu bo? betekent letterlijk: hoe gaat het met jou?'
+	  text:'🟨 Con ta bay cu bo? betekent letterlijk: hoe gaat het met jou?'
 	},
 
 	{
@@ -263,7 +268,7 @@ wordIds:[
 
     {
       sender:'ana',
-      text:'Bijvoorbeeld: Nos ta bin di Aruba. Dat betekent: Wij komen uit Aruba.'
+      text:'Bijvoorbeeld: 🟨 Nos ta bin di Aruba. Dat betekent: wij komen uit Aruba.'
     },
 
     {
@@ -276,12 +281,12 @@ wordIds:[
 
     {
       sender:'ana',
-      text:'Je kent 🟨 Con en 🟨 Bo al uit de vorige les.'
+      text:'Je kent con en bo al uit de vorige les.'
     },
 
     {
       sender:'ana',
-      text:'Con ta bo nomber? betekent: Hoe heet jij?'
+      text:'🟨 Con ta bo nomber? betekent hoe heet jij?'
     },
 
     {
@@ -304,12 +309,12 @@ wordIds:[
 
     {
       sender:'ana',
-      text:'Carlos zegt: Mi ta bin di Aruba.'
+      text:'Carlos zegt: 🟨 Mi ta bin di Aruba.'
     },
 
     {
       sender:'ana',
-      text:'Jij kunt straks zeggen: Mi ta bin di Hulanda.'
+      text:'Jij kunt straks zeggen: 🟨 Mi ta bin di Hulanda.'
     },
 
     {
@@ -322,7 +327,7 @@ wordIds:[
 
     {
       sender:'ana',
-      text:'Hier hoor je opnieuw 🟨 Bo, 🟨 Bin en 🟨 Di.'
+      text:'Hier hoor je opnieuw 🟨 Bo, 🟨 Bin, 🟨 Di.'
     },
 
     {
@@ -354,7 +359,7 @@ wordIds:[
 
     {
       sender:'ana',
-      text:'Je kent 🟨 Si en 🟨 No al uit les 1.'
+      text:'Je kent si en no al uit les 1.'
     },
 
     {
@@ -372,7 +377,7 @@ wordIds:[
 
     {
       sender:'ana',
-      text:'Veel mensen beginnen met un poco Papiamento.'
+      text:'Veel mensen beginnen met 🟨 un poco Papiamento.'
     },
 
     {
@@ -472,7 +477,7 @@ wordIds:[
 
     {
       sender:'ana',
-      text:'🟨 Bon tardi gebruik je in de middag.'
+      text:'🟨 Bon tardi betekent goedenmiddag. Dat gebruik je in de middag.'
     },
 
     {
@@ -513,7 +518,7 @@ wordIds:[
 
     {
       sender:'ana',
-      text:'Nos ta bay betekent: Wij gaan.'
+      text:'🟨 Nos ta bay betekent wij gaan.'
     },
 
     {
@@ -541,12 +546,12 @@ wordIds:[
 
     {
       sender:'ana',
-      text:'Bo kier awa? betekent: Wil jij water?'
+      text:'Bo kier awa? betekent wil jij water?'
     },
 
     {
       sender:'ana',
-      text:'Je kunt ook zeggen: Mi kier awa. Dat betekent: Ik wil water.'
+      text:'Je kunt ook zeggen: 🟨 Mi kier awa. Dat betekent ik wil water.'
     },
 
     {
@@ -559,7 +564,7 @@ wordIds:[
 
     {
       sender:'ana',
-      text:'🟨 Ata betekent: hier heb je.'
+      text:'🟨 Ata betekent hier heb je.'
     },
 
     {
@@ -569,7 +574,7 @@ wordIds:[
 
     {
       sender:'ana',
-      text:'🟨 Masha betekent: heel of erg.'
+      text:'🟨 Masha betekent heel of erg.'
     },
 
     {
@@ -597,12 +602,12 @@ wordIds:[
 
     {
       sender:'ana',
-      text:'Je kent 🟨 No al uit les 1. Daar betekende het nee.'
+      text:'Je kent no al uit les 1. Daar betekende het nee.'
     },
 
     {
       sender:'ana',
-      text:'Maar No wordt ook gebruikt voor niet of geen.'
+      text:'Maar no wordt ook gebruikt voor niet of geen.'
     },
 
     {
@@ -653,7 +658,7 @@ wordIds:[
 
     {
       sender:'ana',
-      text:'🟨 Ayo betekent: doei.'
+      text:'🟨 Ayo betekent doei.'
     },
 
     {
@@ -671,7 +676,7 @@ wordIds:[
 
     {
       sender:'ana',
-      text:'🟨 Te mayan betekent: tot morgen.'
+      text:'🟨 Te mayan betekent tot morgen.'
     },
 
     {
@@ -948,7 +953,12 @@ wordIds:[
 
     {
       sender:'ana',
-      text:'🟨 Biba betekent wonen of leven en 🟨 aki betekent hier'
+      text:'🟨 Biba betekent wonen of leven.'
+    },
+	
+	{
+      sender:'ana',
+      text:'🟨 Aki betekent: hier'
     },
 
     {
@@ -966,7 +976,12 @@ wordIds:[
 
     {
       sender:'ana',
-      text:'🟨 Wela betekent oma en y betekent 🟨 en.'
+      text:'🟨 Wela betekent oma.'
+    },
+	
+	{
+      sender:'ana',
+      text:'🟨 y betekent en.'
     },
 
     {
@@ -1017,7 +1032,12 @@ wordIds:[
 
     {
       sender:'ana',
-      text:'🟨 Ruman muhe betekent zus en 🟨ruman homber betekent broer. Dat doen we bij kinderen ook zo, let maar op.'
+      text:'🟨 Ruman muhe betekent zus.'
+    },
+	
+	 {
+      sender:'ana',
+      text:'🟨Ruman homber betekent broer. Dat doen we bij kinderen ook zo, let maar op.'
     },
 
     {
@@ -1167,7 +1187,7 @@ wordIds:[
 
     {
       sender:'ana',
-      text:'Tur siman betekent dus: elke week.'
+      text:'🟨 Tur siman betekent dus: elke week.'
     },
 
     {
@@ -1177,12 +1197,17 @@ wordIds:[
 
     {
       sender:'ana',
-      text:'🟨 Dushi betekent lief, lekker of zoet. 🟨 Tera betekent land of aarde.'
+      text:'🟨 Dushi betekent lief, lekker of zoet.'
+    },
+	
+    {
+      sender:'ana',
+      text:'🟨 Tera betekent land of aarde.'
     },
 
     {
       sender:'ana',
-      text:'Dushi tera betekent dus: het lieve land. Het is zelfs de titel van ons volkslied.'
+      text:'🟨Dushi tera betekent dus: het lieve land. Het is zelfs de titel van ons volkslied.'
     },
 
     {
@@ -1275,7 +1300,7 @@ wordIds:[
 
     {
       sender:'ana',
-      text:'Had Rosa een dochter gehad die dit zei, dan was het 🟨 yiu muhe geweest — dochter.'
+      text:'Had Rosa een dochter gehad die dit zei, dan was het 🟨 yiu muhe.'
     },
 
     {
@@ -1290,7 +1315,7 @@ wordIds:[
 
     {
       sender:'ana',
-      text:'En als je het over meerdere kinderen hebt, zeg je muchanan.'
+      text:'En als je het over meerdere kinderen hebt, zeg je 🟨 muchanan.'
     },
 
     {
@@ -1346,7 +1371,7 @@ wordIds:[
 
     {
       sender:'ana',
-      text:'Yiu homber chikito betekent dus: de jongste zoon.'
+      text:'🟨 Yiu homber chikito betekent dus: de jongste zoon.'
     },
 
     {
@@ -1359,7 +1384,12 @@ wordIds:[
 
     {
       sender:'ana',
-      text:'🟨 pero betekent maar en 🟨 bunita betekent mooi.' 
+      text:'🟨 pero betekent maar.' 
+    },
+	
+    {
+      sender:'ana',
+      text:'🟨 Bunita betekent mooi.' 
     },
 
     {

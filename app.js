@@ -4265,6 +4265,49 @@ setTimeout(() => {
 }, 100);
 }
 
+function createWordChip(word){
+
+  return `
+    <span
+      style="
+        display:inline-flex;
+        align-items:center;
+        gap:6px;
+        background:#F4B74A;
+        color:#23395B;
+        font-weight:700;
+        padding:4px 10px;
+        border-radius:999px;
+        margin-right:4px;
+      "
+    >
+
+      ${word}
+
+      <button
+        type="button"
+        onclick="speakText('${word}')"
+        style="
+          border:none;
+          background:rgba(255,255,255,.55);
+          border-radius:50%;
+          width:22px;
+          height:22px;
+          cursor:pointer;
+          font-size:11px;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+        "
+      >
+        🔊
+      </button>
+
+    </span>
+  `;
+
+}
+
 function renderChallenge(
   autoScroll = true
 ){
@@ -4459,6 +4502,17 @@ if(chipMatch){
     betekent ${meaning}
   `;
 }
+
+anaText =
+  anaText.replace(
+    /🟨\s?([A-Za-zÀ-ÿ' -]+)/g,
+    (_, word) =>
+      createWordChip(
+        word.trim()
+      )
+  );
+
+
 
         html += `
 
