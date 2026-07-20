@@ -19,11 +19,27 @@ window.learningPaths = {
 
             locations: [
               {
-                id: 'airport',
-                title: 'Reina Beatrix Airport',
-                icon: 'plane',
+				  id: 'airport',
 
-                lessons: [
+				  title: 'Reina Beatrix Airport',
+
+				  chapter: 1,
+
+				  shortTitle: 'Aankomst',
+
+				  subtitle: 'Eerste stappen op Aruba',
+
+				  description:
+					'Leer begroeten, jezelf voorstellen en de eerste woorden van het Papiamento.',
+
+				  icon: '✈️',
+
+				  map:{
+					x:120,
+					y:100
+				  },
+
+				  lessons: [
                   {
                     id: 'airport-1',
                     title: 'Bon Bini na Aruba'
@@ -53,11 +69,27 @@ window.learningPaths = {
 
             locations: [
               {
-                id: 'tanki-flip',
-                title: 'Tanki Flip',
-                icon: 'house',
+				  id: 'tanki-flip',
 
-                lessons: [
+				  title: 'Tanki Flip',
+
+				  chapter: 2,
+
+				  shortTitle: 'Familie',
+
+				  subtitle: 'Wela Ana neemt je mee naar haar jeugd',
+
+				  description:
+					'Leer praten over familie, bezoek en het gevoel van dushi tera.',
+
+				  icon: '🏠',
+
+				  map:{
+					x:150,
+					y:420
+				  },
+
+				  lessons: [
                   {
                     id: 'tanki-flip-1',
                     title: 'Kas di Rosa'

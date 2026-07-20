@@ -1587,6 +1587,7 @@ function getPepTalkHtml(){
     </div>
   `;
 }
+
 function updateQuizStats(){
 
   localStorage.setItem(
@@ -3670,13 +3671,6 @@ if(screenId === 'travelScreen'){
     .getElementById('travelScreen')
     .classList.remove('hidden');
 	
-	document
-  .getElementById(
-    'airportStatus'
-  )
-  .textContent =
-    getAirportStatus();
-	
 } 
 
 if(screenId === 'locationOverviewScreen'){
@@ -3700,8 +3694,16 @@ if(screenId === 'locationOverviewScreen'){
       'hidden'
     );
 }
+
+if(
+  screenId ===
+  'travelScreen'
+){
+  renderTravelRoute();
+}
  
 }
+
 
 function getAirportStatus(){
 
@@ -3903,6 +3905,179 @@ function openTankiFlipOverview(){
       </button>
 
     `;
+}
+
+function renderTravelRoute(){
+
+  const container =
+    document.getElementById(
+      'travelRouteContainer'
+    );
+
+  if(!container){
+    return;
+  }
+
+  let html = '';
+
+  const chapters =
+    window.learningPaths
+      .aruba
+      .levels[0]
+      .chapters;
+
+  chapters.forEach(
+    chapter => {
+
+      chapter.locations.forEach(
+        location => {
+
+          const completed =
+            location.lessons.filter(
+              lesson =>
+                isLessonCompleted(
+                  lesson.id
+                )
+            ).length;
+
+html += `
+
+  <div
+    class="panel"
+    style="
+      margin-bottom:16px;
+    "
+  >
+
+    <div
+      style="
+        display:flex;
+        align-items:center;
+        gap:12px;
+        margin-bottom:10px;
+      "
+    >
+
+      <div
+        style="
+          font-size:28px;
+        "
+      >
+        ${location.icon}
+      </div>
+
+      <div>
+
+        <div
+          style="
+            font-size:12px;
+            color:#6B7280;
+            font-weight:600;
+          "
+        >
+          Hoofdstuk ${location.chapter}
+        </div>
+
+        <div
+          style="
+            font-size:22px;
+            font-weight:700;
+          "
+        >
+          ${location.shortTitle}
+        </div>
+
+      </div>
+
+    </div>
+
+    <button
+      class="practice-card"
+      onclick="
+        openLocationOverview(
+          '${location.id}'
+        )
+      "
+
+      style="
+        width:100%;
+        text-align:left;
+      "
+    >
+
+      <div class="practice-title">
+        ${location.title}
+      </div>
+
+      <div class="practice-subtitle">
+        ${location.subtitle}
+      </div>
+
+      <div
+        style="
+          margin-top:10px;
+          font-size:12px;
+          opacity:.75;
+        "
+      >
+        ${location.description}
+      </div>
+
+      <div
+        style="
+          margin-top:12px;
+          height:8px;
+          background:#E5E7EB;
+          border-radius:999px;
+          overflow:hidden;
+        "
+      >
+
+        <div
+          style="
+            width:${
+              (
+                completed /
+                location.lessons.length
+              ) * 100
+            }%;
+            height:100%;
+            background:#0F7C82;
+          "
+        >
+        </div>
+
+      </div>
+
+      <div
+        style="
+          margin-top:8px;
+          font-size:12px;
+          opacity:.7;
+        "
+      >
+        ${completed}
+        van
+        ${location.lessons.length}
+        lessen voltooid
+      </div>
+
+    </button>
+
+  </div>
+
+`;
+
+
+        }
+      );
+
+    }
+  );
+
+  container.innerHTML =
+    html;
+
 }
 
 function openLocationOverview(
@@ -4188,6 +4363,7 @@ updateScreenBar(
 
 }
 
+
 function showNextStoryMessage(){
 
   const scene =
@@ -4265,6 +4441,7 @@ setTimeout(() => {
 }, 100);
 }
 
+
 function createWordChip(word){
 
   return `
@@ -4307,6 +4484,7 @@ function createWordChip(word){
   `;
 
 }
+
 
 function renderChallenge(
   autoScroll = true
@@ -4921,6 +5099,7 @@ if(
 
 }
 
+
 function toggleTranslation(
   index
 ){
@@ -5251,6 +5430,7 @@ function startChallengeReview(){
 
 }
 
+
 function submitChallengeReviewAnswer(
   rawUserAnswer
 ){
@@ -5360,6 +5540,7 @@ function submitChallengeReviewAnswer(
 
 }
 
+
 function renderChallengeReview(){
 
   const [
@@ -5441,6 +5622,7 @@ function renderChallengeReview(){
   `;
 }
 
+
 function handleChallengeReview(
   knewIt
 ){
@@ -5500,6 +5682,7 @@ currentChallenge = null;
   renderChallengeReview();
 
 }
+
 
 function showAirportCompletion(){
 
