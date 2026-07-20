@@ -5896,45 +5896,71 @@ function renderSouvenirs(){
   const learnerData =
     getLearnerData();
 
-  const souvenirs =
-    learnerData.souvenirs || [];
-
   let html = '';
 
-  if(
-    souvenirs.includes(
-      'airport-boarding-pass'
-    )
-  ){
+  const chapters =
+    window.learningPaths
+      .aruba
+      .levels
+      .flatMap(
+        level => level.chapters
+      );
 
-    html +=
+  chapters.forEach(
+    chapter => {
 
-      `
-      <div class="list-item">
+      chapter.locations.forEach(
+        location => {
 
-        🎫 Instapkaart Aruba
+          const completed =
+            location.lessons.every(
+              lesson =>
+                learnerData
+                  .travel_progress?.[
+                    lesson.id
+                  ]
+            );
 
-      </div>
-      `;
-  }
+          if(
+            completed &&
+            location.souvenir
+          ){
+
+            html += `
+              <div class="list-item">
+
+                ${location.souvenir.icon}
+
+                ${location.souvenir.title}
+
+              </div>
+            `;
+
+          }
+
+        }
+      );
+
+    }
+  );
 
   if(!html){
 
-    html =
-
-      `
+    html = `
       <div class="list-item">
 
         Nog geen souvenirs verzameld.
 
       </div>
-      `;
+    `;
+
   }
 
   document.getElementById(
     'souvenirList'
   ).innerHTML =
     html;
+
 }
 
 
