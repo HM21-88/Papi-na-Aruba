@@ -5589,11 +5589,13 @@ function completeLesson(){
       currentLessonId
     ] = true;
 
-saveLearnerData(
-  learnerData
-);
+  saveLearnerData(
+    learnerData
+  );
 
-openAirportOverview();
+  openLocationOverview(
+    currentLocationId
+  );
 
 }
 

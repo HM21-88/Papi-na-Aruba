@@ -172,7 +172,7 @@ window.wordsData = [
 {week:1,nummer:82,level:'A1',tags:['grammatica'],papiamento:'bon',papiamentu:'bon',nederlands:'goed',engels:'good',varianten:'',type:'bijvoeglijk naamwoord',uitspraak:'',voorbeeld_papiamento:'E ta bon.',voorbeeld_papiamentu:'E ta bon.',voorbeeld_nederlands:'Het is goed.',voorbeeld_engels:'It is good.'},
 
 //// ta bon added to wordlist
-{week:1,nummer:82.1,level:'A1',tags:['groeten'],papiamento:'ta bon',papiamentu:'ta bon',nederlands:'het gaat goed',engels:'I am fine',varianten:'',type:'uitdrukking',uitspraak:'',voorbeeld_papiamento:'Ta bon, danki.',voorbeeld_papiamentu:'Ta bon, danki.',voorbeeld_nederlands:'Het gaat goed, bedankt.',voorbeeld_engels:'I am fine, thank you.'},
+{week:1,nummer:82.1,level:'A1',tags:['groeten'],papiamento:'ta bon',papiamentu:'ta bon',nederlands:'het gaat goed, gaat goed, prima',engels:'I am fine',varianten:'',type:'uitdrukking',uitspraak:'',voorbeeld_papiamento:'Ta bon, danki.',voorbeeld_papiamentu:'Ta bon, danki.',voorbeeld_nederlands:'Het gaat goed, bedankt.',voorbeeld_engels:'I am fine, thank you.'},
 
 //// ta bon bon added to wordlist
 
@@ -250,7 +250,7 @@ window.wordsData = [
 
 {week:2,nummer:114,level:'A1',tags:['familie'],papiamento:'muhe',papiamentu:'muhé',nederlands:'vrouw',engels:'woman',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'E muhe ta canta.',voorbeeld_papiamentu:'E muhé ta kanta.',voorbeeld_nederlands:'De vrouw zingt.',voorbeeld_engels:'The woman sings.'},
 
-{week:2,nummer:115,level:'A1',tags:['familie'],papiamento:'mama',papiamentu:'mama',nederlands:'moeder',engels:'mother',varianten:'mami, mai',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi mama ta cas.',voorbeeld_papiamentu:'Mi mama ta kas.',voorbeeld_nederlands:'Mijn moeder is thuis.',voorbeeld_engels:'My mother is at home.'},
+{week:2,nummer:115,level:'A1',tags:['familie'],papiamento:'mama',papiamentu:'mama',nederlands:'moeder, mama',engels:'mother',varianten:'mami, mai',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi mama ta cas.',voorbeeld_papiamentu:'Mi mama ta kas.',voorbeeld_nederlands:'Mijn moeder is thuis.',voorbeeld_engels:'My mother is at home.'},
 
 {week:2,nummer:116,level:'A1',tags:['familie'],papiamento:'tata',papiamentu:'tata',nederlands:'vader',engels:'father',varianten:'papa, papi',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi tata ta traha.',voorbeeld_papiamentu:'Mi tata ta traha.',voorbeeld_nederlands:'Mijn vader werkt.',voorbeeld_engels:'My father works.'},
 

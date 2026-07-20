@@ -1,5 +1,21 @@
-window.lessonData = {
+// CONTENTREGEL VOOR 🟨-CHIPS
+//
+// Een chip mag één woord of één volledige uitdrukking bevatten:
+//
+// ✅ 🟨 Famia betekent familie.
+// ✅ 🟨 Ruman homber betekent broer.
+// ✅ 🟨 Yiu homber betekent zoon.
+// ✅ 🟨 Con ta bay cu bo? betekent hoe gaat het met jou?
+//
+// In één betekenisregel staat maximaal één 🟨-chip.
+//
+// ✅ 🟨 Cu betekent met. 🟨 Bo betekent jij of jou.
+// ✅ 🟨 Dushi betekent lief, lekker of zoet. 🟨 Tera betekent land of aarde.
+//
+// ❌ 🟨 Cu betekent met en 🟨 Bo betekent jij of jou.
+// ❌ 🟨 Ruman muhe betekent zus en 🟨 Ruman homber betekent broer.
 
+window.lessonData = {
 
 
 'airport-1': {
@@ -1037,7 +1053,7 @@ wordIds:[
 	
 	 {
       sender:'ana',
-      text:'🟨Ruman homber betekent broer.'
+      text:'🟨 Ruman homber betekent broer.'
     },
 	
 	 {
