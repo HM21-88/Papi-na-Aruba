@@ -966,7 +966,7 @@ wordIds:[
 
     {
       sender:'ana',
-      text:'🟨 Wela betekent oma en y betekent 🟨 en '
+      text:'🟨 Wela betekent oma en y betekent 🟨 en.'
     },
 
     {
@@ -1007,7 +1007,7 @@ wordIds:[
 
 	{
       sender:'ana',
-      text:'🟨 Herken je al wat woorden? 🟨 Bo (jij) en 🟨 tin (hebben) heb je in de vorige les al geleerd.'
+      text:'Herken je al wat woorden? Bo en tin heb je in de vorige les al geleerd.'
     },
 
     {
@@ -1017,7 +1017,7 @@ wordIds:[
 
     {
       sender:'ana',
-      text:'🟨 Ruman muhe betekent zus en ruman homber betekent broer. Dat doen we bij kinderen ook zo, let maar op.'
+      text:'🟨 Ruman muhe betekent zus en 🟨ruman homber betekent broer. Dat doen we bij kinderen ook zo, let maar op.'
     },
 
     {
@@ -1045,7 +1045,7 @@ wordIds:[
 
     {
       sender:'ana',
-      text:'Je hoort 🟨 biba opnieuw. Rosa gebruikt het net zoals bij "wonen" — alleen dan in het verleden.'
+      text:'Je hoort biba opnieuw. Rosa gebruikt het net zoals bij "wonen" — alleen dan in het verleden.'
     },
 
     {
