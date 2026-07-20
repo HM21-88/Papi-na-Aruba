@@ -3949,10 +3949,10 @@ function openLocationOverview(
   ).textContent =
     location.title;
 
-  document.querySelectorAll(
-    '#locationOverviewScreen .home-subtitle'
-  )[0].textContent =
-    'Voltooi de lessen om deze locatie af te ronden.';
+document.getElementById(
+  'locationOverviewSubtitle'
+).textContent =
+  `Voltooi de lessen om ${location.title} af te ronden.`;
 
   let html = '';
 
@@ -4173,18 +4173,18 @@ const scene =
   0
 );
 
-  updateScreenBar(
+updateScreenBar(
 
-    lesson.title,
+  lesson.title,
 
-    true,
+  true,
 
-    () =>
-      showMainScreen(
-        'airportOverviewScreen'
-      )
+  () =>
+    openLocationOverview(
+      currentLocationId
+    )
 
-  );
+);
 
 }
 
