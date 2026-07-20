@@ -3197,10 +3197,6 @@ if(
 		  item.id === wordId
 	  );
 
-  if(!word){
-    return;
-  }
-
   container.innerHTML = `
     <div class="difficult-word">
       ${getPrimaryWord(word)}

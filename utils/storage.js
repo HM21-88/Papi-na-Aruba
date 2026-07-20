@@ -273,12 +273,19 @@ function getDifficultWords(
       learnerData.word_progress
     );
 
-  const difficultWords =
-    entries
+const difficultWords =
+  entries
 .filter(
-  ([, progress]) =>
-    progress.repetitions <= 2
+  ([wordId, progress]) =>
+
+    progress.repetitions <= 2 &&
+
+    data.some(
+      word =>
+        word.id === wordId
+    )
 )
+
       .sort(
         (
           [, a],
