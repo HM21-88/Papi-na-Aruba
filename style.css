@@ -2568,6 +2568,16 @@ body{
   background:#F4C95D;
 }
 
+/* Buurtbewoners, winkeliers, etc */
+.chat-avatar.neighbor{
+  background:#FCA5A5;
+}
+
+/* Lokale inwoners */
+.chat-avatar.local{
+  background:#86EFAC;
+}
+
 .chat-bubble{
   display:inline-block;
   line-height:1.45;
@@ -2605,6 +2615,14 @@ body{
 
 .chat-name.ana{
   color:#B98100;
+}
+
+.chat-name.neighbor{
+  color:#DC2626;
+}
+
+.chat-name.local{
+  color:#16A34A;
 }
 
 .chat-user{

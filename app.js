@@ -4347,22 +4347,26 @@ function renderChallenge(
             <div
               class="chat-avatar ${message.avatar || 'customs'}">
 
-              ${
-                message.avatar === 'traveler'
-                  ? '🧑'
-                  : message.avatar === 'taxi'
-                  ? '🚕'
-                  : message.avatar === 'hotel'
-                  ? '🏨'
-                  : '👮'
-              }
+	${
+	  message.avatar === 'traveler'
+		? '🧑🏽'
+		: message.avatar === 'neighbor'
+		? '👵🏽'
+		: message.avatar === 'local'
+		? '🧑🏽'
+		: message.avatar === 'taxi'
+		? '🚕'
+		: message.avatar === 'hotel'
+		? '🏨'
+		: '👮🏽'
+	}
 
             </div>
 
             <div class="chat-bubble local">
 
 <div
-  class="chat-name local"
+  class="chat-name ${message.avatar || 'local'}"
   style="
     display:flex;
     justify-content:space-between;
@@ -4521,7 +4525,7 @@ anaText =
             <div
               class="chat-avatar ana">
 
-              👵🏻
+              👵🏼
 
             </div>
 
@@ -4574,7 +4578,7 @@ anaText =
             <div
               class="chat-avatar ana">
 
-              👵🏻
+              👵🏼
 
             </div>
 
@@ -4696,7 +4700,7 @@ else if(
             <div
               class="chat-avatar ana">
 
-              👵🏻
+              👵🏼
 
             </div>
 
@@ -4761,7 +4765,7 @@ else if(
         <div
           class="chat-avatar ana">
 
-          👵🏻
+          👵🏼
 
         </div>
 
@@ -5382,7 +5386,7 @@ function renderChallengeReview(){
 
       <div
         class="chat-avatar ana">
-        👵🏻
+        👵🏼
       </div>
 
       <div
