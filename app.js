@@ -4405,11 +4405,11 @@ function renderChallenge(
 		let anaText =
   message.text;  
   
-  const chipMatch =
+const chipMatch =
   anaText.match(
     /^🟨\s(.+?)\sbetekent\s(.+)$/
   );
-
+  
 if(chipMatch){
 
   const word =
