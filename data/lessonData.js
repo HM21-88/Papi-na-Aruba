@@ -1005,6 +1005,11 @@ wordIds:[
       translation:'Heb jij een zus of een broer?'
     },
 
+	{
+      sender:'ana',
+      text:'🟨 Herken je al wat woorden? 🟨 Bo (jij) en 🟨 tin (hebben) heb je in de vorige les al geleerd.'
+    },
+
     {
       sender:'ana',
       text:'🟨 Ruman betekent broer of zus. Zeg je erbij welk geslacht, dan weet je precies wie je bedoelt.'
@@ -1012,12 +1017,12 @@ wordIds:[
 
     {
       sender:'ana',
-      text:'🟨 Ruman muhe betekent zus en ruman homber betekent broer. Dat doen bij kinderen ook zo, let maar op.'
+      text:'🟨 Ruman muhe betekent zus en ruman homber betekent broer. Dat doen we bij kinderen ook zo, let maar op.'
     },
 
     {
       sender:'ana',
-      text:'Zo bouw je het hier steeds op: één basiswoord, en er komt telkens iets bij dat het preciezer maakt.'
+      text:'Zo bouw je het hier steeds op: één basiswoord en er komt telkens iets bij dat het preciezer maakt.'
     },
 
     {
@@ -1040,7 +1045,7 @@ wordIds:[
 
     {
       sender:'ana',
-      text:'Je hoort biba opnieuw. Rosa gebruikt het net zoals bij "wonen" — alleen dan in het verleden.'
+      text:'Je hoort 🟨 biba opnieuw. Rosa gebruikt het net zoals bij "wonen" — alleen dan in het verleden.'
     },
 
     {
@@ -1147,7 +1152,7 @@ wordIds:[
 
     {
       sender:'ana',
-      text:'🟨 Yama betekent hier bellen of roepen.'
+      text:'🟨 Yama betekent hier bellen in andere zinnen kan yama roepen betekenen.'
     },
 
     {
@@ -1172,12 +1177,7 @@ wordIds:[
 
     {
       sender:'ana',
-      text:'🟨 Dushi betekent lief, lekker of zoet.'
-    },
-
-    {
-      sender:'ana',
-      text:'🟨 Tera betekent land of aarde.'
+      text:'🟨 Dushi betekent lief, lekker of zoet. 🟨 Tera betekent land of aarde.'
     },
 
     {
@@ -1321,22 +1321,22 @@ wordIds:[
 
     {
       sender:'ana',
-      text:'🟨 Traha betekent werken, maar ook bouwen of maken.'
+      text:'🟨 Traha betekent werken, maar ook bouwen of maken. Dat zal je vaker zien, op Aruba gaan we slim met woorden om.'
     },
 
     {
       sender:'ana',
-      text:'Trabou is het werk zelf, traha is wat je dóét. Twee verschillende woorden die op elkaar lijken.'
+      text:'Trabou is het werk zelf, traha is wat je dóét, het werkwoord. Twee verschillende woorden die op elkaar lijken.'
     },
 
     {
       sender:'narration',
-      text:'🏨 Door het raam wijst Rosa naar een klein, keurig geschilderd gebouw met een paar kamers.'
+      text:'🏨 Door het raam wijst Rosa naar een klein hotel verderop. Een keurig geschilderd huis met drie appartementen'
     },
 
     {
       sender:'ana',
-      text:'Kijk, dat is nu een klein hotel. Maar dat huis en die kamers heeft haar jongste zoon zelf gebouwd.'
+      text:'Kijk, dat is nu een klein hotel. Maar dat huis en die appartementen heeft haar jongste zoon zelf gebouwd.'
     },
 
     {
@@ -1359,7 +1359,7 @@ wordIds:[
 
     {
       sender:'ana',
-      text:'🟨 Bunita betekent mooi.'
+      text:'🟨 pero betekent maar en 🟨 bunita betekent mooi.' 
     },
 
     {
@@ -1381,11 +1381,12 @@ wordIds:[
     { id:'trabou_238', word:'Trabou' },
     { id:'traha_237', word:'Traha' },
     { id:'chikito_85', word:'Chikito' },
+	{ id:'pero_395', word:'Pero' },
     { id:'bunita_367', word:'Bunita' }
   ],
 
   wordIds:[
-    85, 117, 118.1, 118.2, 237, 238, 367
+    85, 117, 118.1, 118.2, 237, 238, 367, 395
   ]
 
 },
@@ -1445,6 +1446,7 @@ wordIds:[
     { id:'trabou_238', word:'Trabou' },
     { id:'traha_237', word:'Traha' },
     { id:'chikito_85', word:'Chikito' },
+	{ id:'pero_395', word:'Pero' },
     { id:'bunita_367', word:'Bunita' }
 
   ],
@@ -1459,7 +1461,7 @@ summary:`
 
   Je hebt gehoord hoe families vroeger vaak dicht bij elkaar woonden, hoe bezoekers altijd welkom zijn, en waarom Aruba voor veel mensen een echte dushi tera blijft.
 
-  🌴 Awor bo por bisa - Nu kun jij zeggen:
+  🌴 Awor bo por bisa - nu kun jij zeggen:
   Mi famia ta hopi importante pa mi.
 
   Dat is een zin die veel mensen op Aruba meteen zullen begrijpen.
