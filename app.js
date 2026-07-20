@@ -432,7 +432,7 @@ function updateScreenBar(
 toggleFlashSettingsButton(
   title === 'Flashcards' ||
   title === 'Quiz' ||
-  title === 'Leren'
+  title === 'Woordenlijst'
 );
 
 }
@@ -3594,6 +3594,9 @@ function showMainScreen(screenId){
       .getElementById('homeScreen')
       .classList.remove('hidden');
   }
+
+// Woordenlijst is vanuit Oefenen bereikbaar.
+// Terugnavigeert naar practiceScreen.
 
 if(screenId === 'learnScreen'){
 

@@ -324,6 +324,11 @@ window.wordsData = [
 
 {week:2,nummer:143,level:'A1',tags:['gezondheid'],papiamento:'drumi',papiamentu:'drumi',nederlands:'slapen',engels:'to sleep',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta drumi bon.',voorbeeld_papiamentu:'Mi ta drumi bon.',voorbeeld_nederlands:'Ik slaap goed.',voorbeeld_engels:'I sleep well.'},
 
+
+{week:2,nummer:143.1,level:'A1',tags:['gezondheid'],papiamento:'drumi dushi',papiamentu:'drumi dushi',nederlands:'slaap lekker',engels:'sleep well',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Bo a drumi dushi?',voorbeeld_papiamentu:'Bo a drumi dushi?',voorbeeld_nederlands:'Heb je lekker geslapen?',voorbeeld_engels:'Did you sleep well?'},
+
+
+
 {week:2,nummer:144,level:'A1',tags:['gezondheid'],papiamento:'soña',papiamentu:'soña',nederlands:'dromen',engels:'to dream',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi a soña cu bo.',voorbeeld_papiamentu:'Mi a soña ku bo.',voorbeeld_nederlands:'Ik droomde van jou.',voorbeeld_engels:'I dreamed about you.'},
 
 {week:2,nummer:145,level:'A1',tags:['gezondheid'],papiamento:'sosega',papiamentu:'deskansá',nederlands:'rusten',engels:'to rest',varianten:'descansa',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta sosega awor.',voorbeeld_papiamentu:'Mi ta deskansá awor.',voorbeeld_nederlands:'Ik rust nu uit.',voorbeeld_engels:'I am resting now.'},
@@ -680,7 +685,7 @@ window.wordsData = [
 
 {week:4,nummer:312,level:'A1',tags:['mensen'],papiamento:'shon',papiamentu:'shon',nederlands:'meneer, mevrouw (beleefd)',engels:'sir, madam',varianten:'',type:'aanspreekvorm',uitspraak:'',voorbeeld_papiamento:'Bonochi shon.',voorbeeld_papiamentu:'Bonochi shon.',voorbeeld_nederlands:'Goedenavond meneer/mevrouw.',voorbeeld_engels:'Good evening sir/madam.'},
 
-{week:4,nummer:313,level:'A1',tags:['familie'],papiamento:'casa',papiamentu:'kasá',nederlands:'trouwen, getrouwd',engels:'marry, married',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Nan ta casa.',voorbeeld_papiamentu:'Nan ta kasá.',voorbeeld_nederlands:'Zij zijn getrouwd.',voorbeeld_engels:'They are married.'},
+{week:4,nummer:313,level:'A1',tags:['familie'],papiamento:'casa',papiamentu:'kasá',nederlands:'trouwen, getrouwd, echtgenoot',engels:'marry, married',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Nan ta casa.',voorbeeld_papiamentu:'Nan ta kasá.',voorbeeld_nederlands:'Zij zijn getrouwd.',voorbeeld_engels:'They are married.'},
 
 {week:4,nummer:314,level:'A1',tags:['familie'],papiamento:'divorcia',papiamentu:'diborsiá',nederlands:'scheiden',engels:'divorce',varianten:'divorsiá',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Nan a divorcia.',voorbeeld_papiamentu:'Nan a diborsiá.',voorbeeld_nederlands:'Zij zijn gescheiden.',voorbeeld_engels:'They divorced.'},
 

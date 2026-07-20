@@ -1526,5 +1526,537 @@ summary:`
 
 `
 
+},
+
+
+'eagle-beach-1': {
+
+  title:'Bon Bini na Bo Hotel',
+
+  scene:[
+
+    {
+      sender:'narration',
+      text:'🚕 De taxi stopt voor een laag, wit hotel. Palmbomen wuiven boven de ingang.'
+    },
+
+    {
+      sender:'ana',
+      text:'Welkom bij Eagle Beach. Dit stuk kust noemen wij hier de Low-Rise Area.'
+    },
+
+    {
+      sender:'ana',
+      text:'In Aruba hebben we de low-rise en high-rise area. Hier heb je lage hotels en daar veel hogere. Laten we daar een andere keer langs gaan.'
+    },
+
+    {
+      sender:'narration',
+      text:'🏨 Bij de balie staat een vrouw met een brede glimlach.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Sofia',
+      avatar:'receptionist',
+      text:'Bon tardi! Con ta bay?',
+      translation:'Goedemiddag! Hoe gaat het?'
+    },
+
+    {
+      sender:'ana',
+      text:'Bon tardi en con ta bay ken je al — dat zei de taxichauffeur ook.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Sofia',
+      avatar:'receptionist',
+      text:'Bo tin un reservacion?',
+      translation:'Heb je een reservering?'
+    },
+
+    {
+      sender:'ana',
+      text:'Tin herken je ook alweer — dat leerde je bij de taxi, met No tin problema.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Sofia',
+      avatar:'receptionist',
+      text:'Con bo yama?',
+      translation:'Hoe heet je?'
+    },
+
+    {
+      sender:'ana',
+      text:'Dat vroeg Carlos je ook al bij de bagageband.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Sofia',
+      avatar:'receptionist',
+      text:'Bon, mi ta mira... Si, mi tin bo aki.',
+      translation:'Goed, ik kijk even... Ja, ik heb je hier.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Mira betekent zien of kijken.'
+    },
+	
+	{
+      sender:'ana',
+      text:'🟨 Wak betekent ook zien of kijken.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Sofia',
+      avatar:'receptionist',
+      text:'Bo cuarto ta cla.',
+      translation:'Jouw kamer is klaar.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Cla betekent klaar of helder.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Ta betekent is, ben of zijn. Het kleinste woordje van het Papiamento, maar je hoort het de hele dag door.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Sofia',
+      avatar:'receptionist',
+      text:'Unda bo kier bay prome? E playa ta net dilanti.',
+      translation:'Waar wil je eerst naartoe? Het strand is vlak voor de deur.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Unda betekent waar.'
+    },
+
+    {
+      sender:'ana',
+      text:'Kier en bay ken je alweer — die zag je al bij het vliegveld.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Sofia',
+      avatar:'receptionist',
+      text:'Nos hotel ta na Eagle Beach.',
+      translation:'Ons hotel is aan Eagle Beach.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Na betekent bij, in of op — een woordje dat je overal tegenkomt als je een plek noemt.'
+    },
+
+    {
+      sender:'ana',
+      text:'Ik heb hier zo vaak gestaan, jaren geleden, om vrienden op te halen die op vakantie kwamen.'
+    },
+
+    {
+      sender:'ana',
+      text:'Weet je zoveel mooie herinneringen. Mijn nieta heeft hier haar man ontmoet, gewoon hier recht voor op het strand. Ze wonen nu in Nederland met mijn achterkleinkinderen.'
+    },
+	
+	 {
+      sender:'ana',
+      text:'🟨Mi nieta ta biba na Hulanda cu su casa y yiunan'
+    },
+	
+	 {
+      sender:'ana',
+      text:'Kijk heel veel woorden ken jij al van die zin.'
+    },
+	
+	 {
+      sender:'ana',
+      text:'🟨 Nieta betekent kleindochter.'
+    },
+	
+	 {
+      sender:'ana',
+      text:'🟨 su betekent van hem of van haar.'
+    },
+	
+	 {
+      sender:'ana',
+      text:'🟨 casa betekent echtgenoot.'
+    },
+	
+	{
+      sender:'ana',
+      text:'Dus bij elkaar: mijn kleindochter woont in Nederland met haar echtgenoot en kinderen. '
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Sofia',
+      avatar:'receptionist',
+      text:'Mi gusta e playa aki masha hopi.',
+      translation:'Ik hou heel erg van dit strand.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Gusta betekent leuk vinden of houden van.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Hopi betekent veel. Je hebt het al vaker gehoord, bijvoorbeeld bij Ramon zijn hopi trabou.'
+    },
+
+    {
+      sender:'ana',
+      text:'Mooi! Je bent ingecheckt. Kom, ik laat je het strand zien — het is grandi, heel groot.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Grandi betekent groot.'
+    }
+
+  ],
+
+  miniQuiz:[
+    { id:'ta_7', word:'Ta' },
+    { id:'unda_19', word:'Unda' },
+    { id:'na_36', word:'Na' },
+    { id:'grandi_84', word:'Grandi' },
+    { id:'hopi_86', word:'Hopi' },
+    { id:'gusta_162', word:'Gusta' },
+    { id:'cla_178', word:'Cla' },
+	{ id:'nieta_122', word:'nieta' },
+	{ id:'su_63', word:'su' },
+	{ id:'casa_313', word:'casa' },
+    { id:'mira_187', word:'Mira' }
+  ],
+
+  wordIds:[
+    7, 19, 36, 63, 84, 86, 122, 162, 178, 187, 313
+  ]
+
+},
+
+
+'eagle-beach-2': {
+
+  title:'Playa Eagle Beach',
+
+  scene:[
+
+    {
+      sender:'narration',
+      text:'🌊 Jullie lopen tussen twee gebouwen door, en dan zie je het: wit zand, en water in een blauw dat je nog niet eerder zag.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Laman betekent zee of strand.'
+    },
+	
+	{
+      sender:'ana',
+      text:'In het papiamentu op Curacao en Bonaire gebruiken ze playa voor strand. Dat mag je ook zeggen hoor, dat begrijpt iedereen.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Blauw betekent blauw. E laman ta blauw — de zee is blauw.'
+    },
+
+    {
+      sender:'narration',
+      text:'🌳 Vlak bij het water staat een kromme boom, alsof hij altijd naar één kant waait.'
+    },
+
+    {
+      sender:'ana',
+      text:'Dat is een divi-divi. Zie je hoe hij helemaal krom staat, richting het zuidwesten?'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Palo betekent boom.'
+    },
+
+    {
+      sender:'ana',
+      text:'Dat komt door de wind — dezelfde wind waar ik je bij Tanki Flip over vertelde. Die waait hier al duizenden jaren uit dezelfde hoek.'
+    },
+
+    {
+      sender:'ana',
+      text:'Wij noemen hem soms het kompas van Aruba. Verdwaal je, kijk dan gewoon welke kant de divi-divi opwijst.'
+    },
+
+    {
+      sender:'narration',
+      text:'👩 Een vrouw met een strandtas loopt voorbij en groet vriendelijk.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Iris',
+      avatar:'local',
+      text:'Ta hopi calor awe, no?',
+      translation:'Het is vandaag erg warm, hè?'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Calor betekent warm.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Iris',
+      avatar:'local',
+      text:'Bo por landa aki, e awa ta trankil.',
+      translation:'Je kunt hier zwemmen, het water is rustig.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Por betekent kunnen.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Landa betekent zwemmen.'
+    },
+
+    {
+      sender:'ana',
+      text:'Bo por landa aki betekent letterlijk: jij kunt hier zwemmen.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Iris',
+      avatar:'local',
+      text:'Ayo! Dushi dia pa bo.',
+      translation:'Doei! Een fijne dag voor jou.'
+    },
+
+    {
+      sender:'ana',
+      text:'Ayo ken je al, en dushi hoorde je bij Rosa — hier betekent het gewoon fijn of lekker, niet per se lief.'
+    },
+
+    {
+      sender:'ana',
+      text:'Mooi! Je kunt nu over de zee praten, over warm weer, en zeggen dat je kunt zwemmen.'
+    }
+
+  ],
+
+  miniQuiz:[
+    { id:'laman_485', word:'Laman' },
+    { id:'blauw_321', word:'Blauw' },
+    { id:'palo_475', word:'Palo' },
+    { id:'calor_422', word:'Calor' },
+    { id:'por_16', word:'Por' },
+    { id:'landa_486', word:'Landa' }
+  ],
+
+  wordIds:[
+    16, 321, 422, 475, 485, 486
+  ]
+
+},
+
+
+'eagle-beach-3': {
+
+  title:'Anochi na Eagle Beach',
+
+  scene:[
+
+    {
+      sender:'narration',
+      text:'🌅 De zon zakt langzaam naar de horizon. De lucht kleurt fel.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Oraño betekent oranje. Kijk, e shelu ta oraño — de lucht is oranje.'
+    },
+
+    {
+      sender:'ana',
+      text:'Op Aruba zeggen we vaak dat awe niet zomaar een dag is. Elke zonsondergang is weer anders.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Awe betekent vandaag.'
+    },
+
+    {
+      sender:'narration',
+      text:'🪑 Jullie gaan zitten op het zand, met uitzicht op het water.'
+    },
+
+    {
+      sender:'ana',
+      text:'Ik kom hier soms nog steeds zitten, alleen, aan het einde van de dag. Sommige dingen veranderen nooit.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Keda betekent blijven.'
+    },
+	
+	{
+      sender:'ana',
+      text:'🟨 Nos por keda aki betekent wij kunnen hier blijven.'
+    },
+
+    {
+      sender:'narration',
+      text:'🌙 Langzaam wordt het donker. De eerste sterren verschijnen boven de zee.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Anochi betekent \'s avonds of \'s nachts.'
+    },
+
+    {
+      sender:'ana',
+      text:'Het is tijd om terug te gaan naar het hotel. Morgen wacht er weer een nieuw stukje Aruba op je.'
+    },
+
+    {
+      sender:'ana',
+      text:'Nos ta bay Oranjestad mayan — wij gaan morgen naar Oranjestad.'
+    },
+
+    {
+      sender:'ana',
+      text:'Mayan en bay ken je alweer, van het vliegveld en de taxi.'
+    },
+
+    {
+      sender:'ana',
+      text:'Voor nu wens ik je drumi dushi.'
+    },
+	
+	{
+      sender:'ana',
+      text:'🟨 Drumi dushi betekent slaap lekker.'
+    },
+
+    {
+      sender:'ana',
+      text:'Dat hoor je hier bijna elke avond, van ouders tegen kinderen, en tussen geliefden. We gebruiken het woord dushi vaak liefkozend, net als bij Dushi tera weet je nog?'
+    },
+
+    {
+      sender:'ana',
+      text:'Mooi! De dagen vliegen voorbij op Aruba, dus vergeet niet om af en toe van de zonsondergang te genieten.'
+    }
+
+  ],
+
+  miniQuiz:[
+    { id:'oraño_325', word:'Oraño' },
+    { id:'awe_67', word:'Awe' },
+    { id:'keda_76', word:'Keda' },
+    { id:'anochi_352', word:'Anochi' },
+    { id:'drumi dushi_143.1', word:'Drumi dushi' }
+  ],
+
+  wordIds:[
+    67, 76, 143.1, 325, 352
+  ]
+
+},
+
+
+'eagle-beach-challenge': {
+
+  title:'Eagle Beach Challenge',
+
+  scene:[
+
+    {
+      sender:'narration',
+      text:'🏆 Je hebt je eerste hele dag op Aruba beleefd — van de balie tot het strand, tot de sterren boven zee.'
+    },
+
+    {
+      sender:'ana',
+      text:'Je hebt ingecheckt, gezwommen in gedachten, en geleerd hoe wij hier de dag afsluiten.'
+    },
+
+    {
+      sender:'ana',
+      text:'Laten we kijken wat je hebt onthouden voordat de zon morgen weer opkomt.'
+    }
+
+  ],
+
+  questions:[
+
+    { id:'ta_7', word:'Ta' },
+    { id:'unda_19', word:'Unda' },
+    { id:'na_36', word:'Na' },
+    { id:'grandi_84', word:'Grandi' },
+    { id:'hopi_86', word:'Hopi' },
+    { id:'gusta_162', word:'Gusta' },
+    { id:'cla_178', word:'Cla' },
+	{ id:'nieta_122', word:'nieta' },
+	{ id:'su_63', word:'su' },
+	{ id:'casa_313', word:'casa' },
+    { id:'mira_187', word:'Mira' },
+
+    { id:'laman_485', word:'Laman' },
+    { id:'blauw_321', word:'Blauw' },
+    { id:'palo_475', word:'Palo' },
+    { id:'calor_422', word:'Calor' },
+    { id:'por_16', word:'Por' },
+    { id:'landa_486', word:'Landa' },
+
+    { id:'oraño_325', word:'Oraño' },
+    { id:'awe_67', word:'Awe' },
+    { id:'keda_76', word:'Keda' },
+    { id:'anochi_352', word:'Anochi' },
+    { id:'drumi dushi_143.1', word:'Drumi dushi' }
+
+  ],
+
+  summary:`
+
+    Je hebt je eerste hele dag op Aruba afgerond.
+
+    🟨 Awe mi ta mira laman blauw, y mi ta bay drumi dushi.
+
+    Van inchecken (bo cuarto ta cla) tot zwemmen (bo por landa), tot de oranje lucht boven Eagle Beach.
+
+    Je weet nu ook waarom de divi-divi altijd naar het zuidwesten wijst, en waarom bijna elk hotel hier laag blijft.
+
+    🌴 Mayan nos ta bay Oranjestad — morgen gaan we naar Oranjestad.
+
+    Klaar voor de volgende halte van je reis?
+
+  `
+
 }
+
+
 };
