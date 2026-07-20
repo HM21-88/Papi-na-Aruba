@@ -1868,7 +1868,7 @@ summary:`
     { id:'laman_485', word:'Laman' },
     { id:'blauw_321', word:'Blauw' },
     { id:'palo_475', word:'Palo' },
-    { id:'calor_422', word:'Calor' },
+    { id:'calor_520.2', word:'Calor' },
     { id:'por_16', word:'Por' },
     { id:'landa_486', word:'Landa' }
   ],
@@ -2028,7 +2028,7 @@ summary:`
     { id:'laman_485', word:'Laman' },
     { id:'blauw_321', word:'Blauw' },
     { id:'palo_475', word:'Palo' },
-    { id:'calor_422', word:'Calor' },
+    { id:'calor_520.2', word:'Calor' },
     { id:'por_16', word:'Por' },
     { id:'landa_486', word:'Landa' },
 
