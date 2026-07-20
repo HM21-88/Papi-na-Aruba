@@ -34,6 +34,11 @@ window.learningPaths = {
 
 				  icon: '✈️',
 
+				  theme:{
+					  background:'#EAF4FF',
+					  progress:'#4A90E2'
+					},				
+
 				  map:{
 					x:120,
 					y:100
@@ -83,6 +88,11 @@ window.learningPaths = {
 					'Leer praten over familie, bezoek en het gevoel van dushi tera.',
 
 				  icon: '🏠',
+
+				  theme:{
+					  background:'#FFF0E6',
+					  progress:'#F2994A'
+					},
 
 				  map:{
 					x:150,

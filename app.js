@@ -3942,12 +3942,14 @@ function renderTravelRoute(){
 
 html += `
 
-  <div
-    class="panel"
-    style="
-      margin-bottom:16px;
-    "
-  >
+<div
+  class="panel"
+  style="
+    margin-bottom:16px;
+    background:${location.theme.background};
+    border:none;
+  "
+>
 
     <div
       style="
@@ -4042,7 +4044,7 @@ html += `
               ) * 100
             }%;
             height:100%;
-            background:#0F7C82;
+            background:${location.theme.progress};
           "
         >
         </div>
