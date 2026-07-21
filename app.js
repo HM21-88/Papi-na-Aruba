@@ -4443,51 +4443,78 @@ const estimatedMinutes =
           "
         >
 
-          <div
-            style="
-              display:flex;
-              align-items:center;
-              gap:14px;
-            "
-          >
+		<div
+		  style="
+			display:flex;
+			align-items:flex-start;
+			gap:14px;
+		  "
+		>
 
-            <div
-              style="
-                width:48px;
-                height:48px;
-                border-radius:50%;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                font-weight:bold;
-                background:${
-			  done
-				? '#45B36B'
-				: active
-				  ? location.theme.progress
-				  : '#F3EFE2'
-			};
+<div
+  style="
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    flex-shrink:0;
+  "
+>
 
-			color:${
-			  done
-				? 'white'
-				: active
-				  ? 'white'
-				  : '#0A2E57'
-			};
+  <div
+    style="
+      width:48px;
+      height:48px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:bold;
 
-               
-                flex-shrink:0;
-              "
-            >
-			${
-			  lesson.challenge
-				? '🏆'
-				: done
-				  ? '✓'
-				  : index + 1
-			}
-            </div>
+      background:${
+        done
+          ? '#45B36B'
+          : active
+            ? location.theme.progress
+            : '#F3EFE2'
+      };
+
+      color:${
+        done
+          ? 'white'
+          : active
+            ? 'white'
+            : '#0A2E57'
+      };
+    "
+  >
+    ${
+      lesson.challenge
+        ? '🏆'
+        : done
+          ? '✓'
+          : index + 1
+    }
+  </div>
+
+  ${
+    index <
+    location.lessons.length - 1
+      ? `
+      <div
+        style="
+          width:3px;
+          height:34px;
+          background:#E5E7EB;
+          margin-top:6px;
+        "
+      >
+      </div>
+      `
+      : ''
+  }
+
+</div>
+					
 
             <div>
 
