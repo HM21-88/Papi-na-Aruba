@@ -2678,3 +2678,10 @@ body{
 .story-primary-action{
   width:100%;
 }
+
+#locationOverviewScreen{
+  background:transparent;
+  border:none;
+  box-shadow:none;
+  padding:0;
+}

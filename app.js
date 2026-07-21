@@ -4227,45 +4227,45 @@ function openLocationOverview(
       )
   );
 
-const completedLessons =
-  location.lessons.filter(
-    lesson =>
-      isLessonCompleted(
-        lesson.id
+  const completedLessons =
+    location.lessons.filter(
+      lesson =>
+        isLessonCompleted(
+          lesson.id
+        )
+    ).length;
+
+  const totalWords =
+    location.lessons
+      .filter(
+        lesson => !lesson.challenge
       )
-  ).length;
+      .reduce(
+        (total, lesson) => {
 
-const totalWords =
-  location.lessons
-    .filter(
-      lesson => !lesson.challenge
-    )
-    .reduce(
-      (total, lesson) => {
+          const lessonInfo =
+            window.lessonData[
+              lesson.id
+            ];
 
-        const lessonInfo =
-          window.lessonData[
-            lesson.id
-          ];
+          return (
+            total +
+            (
+              lessonInfo?.wordIds?.length || 0
+            )
+          );
 
-        return (
-          total +
-          (
-            lessonInfo?.wordIds?.length || 0
-          )
-        );
+        },
+        0
+      );
 
-      },
-      0
+  const progressPercent =
+    Math.round(
+      (
+        completedLessons /
+        location.lessons.length
+      ) * 100
     );
-
-const progressPercent =
-  Math.round(
-    (
-      completedLessons /
-      location.lessons.length
-    ) * 100
-  );
 
   let html = `
 
@@ -4274,28 +4274,60 @@ const progressPercent =
         background:white;
         border-radius:24px;
         padding:20px;
-        margin-bottom:20px;
+        margin-bottom:24px;
       "
     >
 
       <div
         style="
-          font-size:64px;
+          display:flex;
+          align-items:center;
+          gap:12px;
           margin-bottom:10px;
         "
       >
-        ${location.icon}
+
+        <div
+          style="
+            font-size:40px;
+            flex-shrink:0;
+          "
+        >
+          ${location.icon}
+        </div>
+
+        <div
+          style="
+            font-size:24px;
+            font-weight:700;
+            color:#0A2E57;
+          "
+        >
+          ${location.title}
+        </div>
+
       </div>
 
+<p
+  style="
+    margin:0;
+    opacity:.8;
+    line-height:1.5;
+  "
+>
+  ${location.description}
+</p>
 
-      <p
-        style="
-          margin-top:8px;
-          opacity:.8;
-        "
-      >
-        ${location.description}
-      </p>
+<div
+  style="
+    margin-top:12px;
+    font-size:14px;
+    font-weight:600;
+    color:#0F6D73;
+  "
+>
+  🎁 Beloning: ${location.souvenir.title}
+</div>
 
       <div
         style="
@@ -4314,20 +4346,24 @@ const progressPercent =
             text-align:center;
           "
         >
-          <div style="
-            font-weight:bold;
-            font-size:22px;
-          ">
+          <div
+            style="
+              font-weight:bold;
+              font-size:22px;
+            "
+          >
             ${
-			  location.lessons.filter(
-				lesson => !lesson.challenge
-			  ).length
-			}
+              location.lessons.filter(
+                lesson => !lesson.challenge
+              ).length
+            }
           </div>
 
-          <div style="
-            font-size:12px;
-          ">
+          <div
+            style="
+              font-size:12px;
+            "
+          >
             ontmoetingen
           </div>
         </div>
@@ -4341,42 +4377,50 @@ const progressPercent =
             text-align:center;
           "
         >
-          <div style="
-            font-weight:bold;
-            font-size:22px;
-          ">
+          <div
+            style="
+              font-weight:bold;
+              font-size:22px;
+            "
+          >
             ${totalWords}
           </div>
 
-          <div style="
-            font-size:12px;
-          ">
+          <div
+            style="
+              font-size:12px;
+            "
+          >
             woorden
           </div>
         </div>
 
-		<div
-		  style="
-			flex:1;
-			background:#F3EFE2;
-			border-radius:16px;
-			padding:12px;
-			text-align:center;
-		  "
-		>
-		  <div style="
-			font-weight:bold;
-			font-size:22px;
-		  ">
-			${progressPercent}%
-		  </div>
+        <div
+          style="
+            flex:1;
+            background:#F3EFE2;
+            border-radius:16px;
+            padding:12px;
+            text-align:center;
+          "
+        >
+          <div
+            style="
+              font-weight:bold;
+              font-size:22px;
+            "
+          >
+            ${progressPercent}%
+          </div>
 
-		  <div style="
-			font-size:12px;
-		  ">
-			voortgang
-		  </div>
-		</div>
+          <div
+            style="
+              font-size:12px;
+            "
+          >
+            voortgang
+          </div>
+        </div>
 
       </div>
 
@@ -4384,49 +4428,49 @@ const progressPercent =
 
   `;
 
-const nextLesson =
-  location.lessons.find(
-    lesson =>
-      !isLessonCompleted(
-        lesson.id
-      )
-  );
+  const nextLesson =
+    location.lessons.find(
+      lesson =>
+        !isLessonCompleted(
+          lesson.id
+        )
+    );
 
   location.lessons.forEach(
     (lesson,index) => {
 
-const done =
-  isLessonCompleted(
-    lesson.id
-  );
+      const done =
+        isLessonCompleted(
+          lesson.id
+        );
 
-const active =
-  nextLesson &&
-  nextLesson.id === lesson.id;
+      const active =
+        nextLesson &&
+        nextLesson.id === lesson.id;
 
-const lessonInfo =
-  window.lessonData[
-    lesson.id
-  ];
+      const lessonInfo =
+        window.lessonData[
+          lesson.id
+        ];
 
-const estimatedMinutes =
-  lesson.challenge
-    ? Math.max(
-        2,
-        Math.ceil(
-          (
-            lessonInfo?.questions?.length || 0
-          ) / 15
-        )
-      )
-    : Math.max(
-        1,
-        Math.ceil(
-          (
-            lessonInfo?.scene?.length || 0
-          ) / 5
-        )
-      );
+      const estimatedMinutes =
+        lesson.challenge
+          ? Math.max(
+              2,
+              Math.ceil(
+                (
+                  lessonInfo?.questions?.length || 0
+                ) / 15
+              )
+            )
+          : Math.max(
+              1,
+              Math.ceil(
+                (
+                  lessonInfo?.scene?.length || 0
+                ) / 5
+              )
+            );
 
       html += `
 
@@ -4443,78 +4487,90 @@ const estimatedMinutes =
           "
         >
 
-		<div
-		  style="
-			display:flex;
-			align-items:flex-start;
-			gap:14px;
-		  "
-		>
-
 <div
   style="
     display:flex;
-    flex-direction:column;
-    align-items:center;
-    flex-shrink:0;
+    align-items:flex-start;
+    gap:14px;
+
+    background:#FCFAF7;
+    border-radius:18px;
+    padding:12px;
+
+    ${
+      active
+        ? `
+          outline:2px solid rgba(217,164,65,.35);
+          background:rgba(217,164,65,.12);
+        `
+        : ''
+    }
   "
 >
 
-  <div
-    style="
-      width:48px;
-      height:48px;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:bold;
+            <div
+              style="
+                display:flex;
+                flex-direction:column;
+                align-items:center;
+                flex-shrink:0;
+              "
+            >
 
-      background:${
-        done
-          ? '#45B36B'
-          : active
-            ? location.theme.progress
-            : '#F3EFE2'
-      };
+              <div
+                style="
+                  width:48px;
+                  height:48px;
+                  border-radius:50%;
+                  display:flex;
+                  align-items:center;
+                  justify-content:center;
+                  font-weight:bold;
 
-      color:${
-        done
-          ? 'white'
-          : active
-            ? 'white'
-            : '#0A2E57'
-      };
-    "
-  >
-    ${
-      lesson.challenge
-        ? '🏆'
-        : done
-          ? '✓'
-          : index + 1
-    }
-  </div>
+                  background:${
+                    done
+                      ? '#45B36B'
+                      : active
+                        ? location.theme.progress
+                        : '#F3EFE2'
+                  };
 
-  ${
-    index <
-    location.lessons.length - 1
-      ? `
-      <div
-        style="
-          width:3px;
-          height:34px;
-          background:#E5E7EB;
-          margin-top:6px;
-        "
-      >
-      </div>
-      `
-      : ''
-  }
+                  color:${
+                    done
+                      ? 'white'
+                      : active
+                        ? 'white'
+                        : '#0A2E57'
+                  };
+                "
+              >
+                ${
+                  lesson.challenge
+                    ? '🏆'
+                    : done
+                      ? '✓'
+                      : index + 1
+                }
+              </div>
 
-</div>
-					
+              ${
+                index <
+                location.lessons.length - 1
+                  ? `
+                  <div
+                    style="
+                      width:3px;
+                      height:34px;
+                      background:#D6D3D1;
+                      margin-top:6px;
+                    "
+                  >
+                  </div>
+                  `
+                  : ''
+              }
+
+            </div>
 
             <div>
 
@@ -4524,25 +4580,27 @@ const estimatedMinutes =
                   color:#0A2E57;
                 "
               >
-                ${lesson.challenge
-                  ? '🏆 '
-                  : `Les ${index+1} - `
+                ${
+                  lesson.challenge
+                    ? '🏆 '
+                    : `Les ${index+1} - `
                 }
                 ${lesson.title}
               </div>
 
-		<div
-		  style="
-			font-size:13px;
-			opacity:.7;
-		  "
-		>
-		  ${
-			done
-			  ? 'Voltooid'
-			  : `⏱ ±${estimatedMinutes} min`
-		  }
-		</div>
+              <div
+                style="
+                  font-size:13px;
+                  opacity:.7;
+                "
+              >
+                ${
+                  done
+                    ? 'Voltooid'
+                    : `⏱ ±${estimatedMinutes} min`
+                }
+              </div>
+
             </div>
 
           </div>
@@ -4558,6 +4616,7 @@ const estimatedMinutes =
   ).innerHTML =
     html;
 }
+
 
 let challengeIndex = 0;
 let currentChallenge =
