@@ -989,7 +989,9 @@ window.wordsData = [
 
 {week:5,nummer:468,level:'A1',tags:['plaatsen'],papiamento:'centro',papiamentu:'sentro',nederlands:'centrum',engels:'center, downtown',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Nos ta bai centro awe.',voorbeeld_papiamentu:'Nos ta bai sentro awe.',voorbeeld_nederlands:'Wij gaan vandaag naar het centrum.',voorbeeld_engels:'We are going downtown today.'},
 
-{week:5,nummer:469,level:'A1',tags:['plaatsen'],papiamento:'playa',papiamentu:'punda',nederlands:'stad',engels:'town, city center',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta bai playa mainta.',voorbeeld_papiamentu:'Mi ta bai Punda mainta.',voorbeeld_nederlands:'Ik ga vanmorgen naar de stad.',voorbeeld_engels:'I am going to town this morning.'},
+{week:5,nummer:469,level:'A1',tags:['plaatsen'],papiamento:'playa',papiamentu:'punda',nederlands:'stad, Oranjestad(bijnaam), oude centrum Punda',engels:'town, city center',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta bai playa mainta.',voorbeeld_papiamentu:'Mi ta bai Punda mainta.',voorbeeld_nederlands:'Ik ga vanmorgen naar de stad.',voorbeeld_engels:'I am going to town this morning.'},
+
+{week:5,nummer:469.1,level:'A1',tags:['plaatsen'],papiamento:'playa',papiamentu:'playa',nederlands:'strand',engels:'beach',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta bai playa mainta.',voorbeeld_papiamentu:'Mi ta bai playa mainta.',voorbeeld_nederlands:'Ik ga vanmorgen naar het strand.',voorbeeld_engels:'I am going to the beach this morning.'},
 
 {week:5,nummer:470,level:'A1',tags:['plaatsen'],papiamento:'misa',papiamentu:'misa',nederlands:'kerk, mis',engels:'church, mass',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Nan ta bai misa diadomingo.',voorbeeld_papiamentu:'Nan ta bai misa diadomingo.',voorbeeld_nederlands:'Zij gaan zondag naar de kerk.',voorbeeld_engels:'They go to church on Sunday.'},
 
@@ -1097,6 +1099,9 @@ window.wordsData = [
 
 {week:5,nummer:520.3,level:'A1',tags:['weer'],papiamento:'solo',papiamentu:'solo',nederlands:'zon',engels:'sun',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'E solo ta calor.',voorbeeld_papiamentu:'E solo ta kálor.',voorbeeld_nederlands:'De zon is warm.',voorbeeld_engels:'The sun is warm.'},
 
-{week:5,nummer:520.4,level:'A1',tags:['weer'],papiamento:'luna',papiamentu:'luna',nederlands:'maan',engels:'moon',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta mira e luna.',voorbeeld_papiamentu:'Mi ta mira e luna.',voorbeeld_nederlands:'Ik kijk naar de maan.',voorbeeld_engels:'I am looking at the moon.'}
+{week:5,nummer:520.4,level:'A1',tags:['weer'],papiamento:'luna',papiamentu:'luna',nederlands:'maan',engels:'moon',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta mira e luna.',voorbeeld_papiamentu:'Mi ta mira e luna.',voorbeeld_nederlands:'Ik kijk naar de maan.',voorbeeld_engels:'I am looking at the moon.'},
+
+{week:5,nummer:520.5,level:'A1',tags:['werk'],papiamento:'plachi di number',papiamentu:'plachi di number',nederlands:'kentekenplaat, nummerplaat',engels:'Vihicle registraion plate',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'E plachi di number di auto ta manca.',voorbeeld_papiamentu:'E plachi di number di auto ta manca.',voorbeeld_nederlands:'Het kentekenplaat van de auto mist.',voorbeeld_engels:'The car is missing a registration plate.'}
+
 
 ];

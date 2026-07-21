@@ -1765,19 +1765,19 @@ summary:`
 
     {
       sender:'ana',
-      text:'🟨 Laman betekent zee of strand.'
+      text:'🟨 Laman betekent zee.'
     },
 	
-	{
+	 {
       sender:'ana',
-      text:'In het papiamentu op Curacao en Bonaire gebruiken ze playa voor strand. Dat mag je ook zeggen hoor, dat begrijpt iedereen.'
+      text:'🟨 Playa betekent zee.'
     },
 
     {
       sender:'ana',
       text:'🟨 Blauw betekent blauw. E laman ta blauw — de zee is blauw.'
     },
-
+	
     {
       sender:'narration',
       text:'🌳 Vlak bij het water staat een kromme boom, alsof hij altijd naar één kant waait.'
@@ -1865,8 +1865,9 @@ summary:`
   ],
 
   miniQuiz:[
-    { id:'laman_485', word:'Laman' },
+    { id:'laman_485', word:'Laman' }, 
     { id:'blauw_321', word:'Blauw' },
+	{ id:'playa_469.1', word:'Playa' },
     { id:'palo_475', word:'Palo' },
     { id:'calor_520.2', word:'Calor' },
     { id:'por_16', word:'Por' },
@@ -1874,7 +1875,7 @@ summary:`
   ],
 
   wordIds:[
-    16, 321, 422, 475, 485, 486
+    16, 321, 422, 469.1, 475, 485, 486
   ]
 
 },
@@ -2105,6 +2106,7 @@ summary:`
     { id:'mira_187', word:'Mira' },
 
     { id:'laman_485', word:'Laman' },
+	{ id:'playa_469.1', word:'Playa' },
     { id:'blauw_321', word:'Blauw' },
     { id:'palo_475', word:'Palo' },
     { id:'calor_520.2', word:'Calor' },
@@ -2156,6 +2158,11 @@ summary:`
     {
       sender:'ana',
       text:'Nos ta bay Oranjestad — dat had ik je gisteravond al beloofd.'
+    },
+	
+	{
+      sender:'ana',
+      text:'We zijn nu in playa. Niet het strand, maar wij noemen Oranjestad soms ook playa.'
     },
 
     {
@@ -2475,8 +2482,8 @@ summary:`
       sender:'dialogue',
       speaker:'Verkoper',
       avatar:'local',
-      text:'Mi por scirbi bo nomber riba e placa.',
-      translation:'Ik kan jouw naam op het bord schrijven.'
+      text:'Mi por scirbi bo nomber riba e plachi di number.',
+      translation:'Ik kan jouw naam op de kentekenplaat schrijven.'
     },
 
     {
@@ -2487,6 +2494,16 @@ summary:`
     {
       sender:'ana',
       text:'🟨 Nomber betekent naam.'
+    },
+	
+	 {
+      sender:'ana',
+      text:'🟨 Plachi di number betekent kentekenplaat.'
+    },
+
+	{
+      sender:'ana',
+      text:'In Aruba koop je elk jaar een nieuwe kentekenplaat. Dat is gelijk je voertuigenbelasting. Best makkelijk toch?'
     },
 
     {
@@ -2555,6 +2572,7 @@ summary:`
   miniQuiz:[
     { id:'shon_312', word:'Shon' },
     { id:'nomber_98', word:'Nomber' },
+	{ id:'plachi di number_520.5', word:'Plachi di number' },
     { id:'scirbi_443', word:'Scirbi' },
     { id:'haci_247', word:'Haci' },
     { id:'bestel_456', word:'Bestel' },
@@ -2567,7 +2585,8 @@ summary:`
     247,
     312,
     443,
-    456
+    456,
+	520.5
   ]
 
 },
