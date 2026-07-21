@@ -2778,47 +2778,39 @@ const tenseExercises =
 
 function updateProgressScreen(){
 
-  document.getElementById(
-    'progressFlashHard'
-  ).textContent =
-    flashHardCount;
+  const words =
+    document.getElementById(
+      'progressWords'
+    );
 
-  document.getElementById(
-    'progressQuizGood'
-  ).textContent =
-    quizGood;
+  if(words){
+    words.textContent =
+      data.length;
+  }
 
-  document.getElementById(
-    'progressQuizBad'
-  ).textContent =
-    quizBad;
+  const prep =
+    document.getElementById(
+      'progressPrepBestOverview'
+    );
 
-  document.getElementById(
-    'progressPrepBest'
-  ).textContent =
-    prepBestStreak;
+  if(prep){
+    prep.textContent =
+      prepBestStreak;
+  }
 
-  document.getElementById(
-    'progressTenseBest'
-  ).textContent =
-    tenseBestStreak;
+  const tense =
+    document.getElementById(
+      'progressTenseBestOverview'
+    );
 
-document.getElementById(
-  'progressWords'
-).textContent =
-  data.length;
-
-document.getElementById(
-  'progressPrepBestOverview'
-).textContent =
-  prepBestStreak;
-
-document.getElementById(
-  'progressTenseBestOverview'
-).textContent =
-  tenseBestStreak;
+  if(tense){
+    tense.textContent =
+      tenseBestStreak;
+  }
 
 }
+
+
 
 function getWeekNumber(date){
 
@@ -5796,6 +5788,26 @@ else{
 let finalSummary =
   summaryText;
 
+const learnerData =
+  getLearnerData();
+
+if(
+  !learnerData.challengeScores
+){
+  learnerData.challengeScores = {};
+}
+
+learnerData.challengeScores[
+  currentLessonId
+] = {
+  score: challengeScore,
+  total: total
+};
+
+saveLearnerData(
+  learnerData
+);
+
 if(
   currentChallenge.summary
 ){
@@ -6238,13 +6250,20 @@ function completeLesson(){
 
 }
 
-
 function renderSouvenirs(){
 
   const learnerData =
     getLearnerData();
 
-  let html = '';
+  let html = `
+    <div
+      style="
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:12px;
+      "
+    >
+  `;
 
   const chapters =
     window.learningPaths
@@ -6260,31 +6279,116 @@ function renderSouvenirs(){
       chapter.locations.forEach(
         location => {
 
-          const completed =
-            location.lessons.every(
-              lesson =>
-                learnerData
-                  .travel_progress?.[
-                    lesson.id
-                  ]
-            );
+const completedCount =
+  location.lessons.filter(
+    lesson =>
+      learnerData
+        .travel_progress?.[
+          lesson.id
+        ]
+  ).length;
 
-          if(
-            completed &&
-            location.souvenir
-          ){
+const progressPercent =
+  Math.round(
+    (
+      completedCount /
+      location.lessons.length
+    ) * 100
+  );
+  
+  const challengeLesson =
+  location.lessons.find(
+    lesson => lesson.challenge
+  );
 
-            html += `
-              <div class="list-item">
+const challengeResult =
+  challengeLesson
+    ? learnerData.challengeScores?.[
+        challengeLesson.id
+      ]
+    : null;
 
+const completed =
+  progressPercent === 100;
+
+          html += `
+            <div
+              style="
+                background:#FCFAF7;
+                border-radius:18px;
+                padding:14px;
+                text-align:center;
+
+                opacity:${
+                  completed
+                    ? '1'
+                    : '.45'
+                };
+
+                filter:${
+                  completed
+                    ? 'none'
+                    : 'grayscale(100%)'
+                };
+              "
+            >
+
+              <div
+                style="
+                  font-size:34px;
+                  margin-bottom:8px;
+                "
+              >
                 ${location.souvenir.icon}
-
-                ${location.souvenir.title}
-
               </div>
-            `;
 
-          }
+              <div
+                style="
+                  font-size:13px;
+                  font-weight:700;
+                  line-height:1.3;
+                  min-height:34px;
+                "
+              >
+                ${location.souvenir.title}
+              </div>
+
+<div
+  style="
+    margin-top:8px;
+    font-size:14px;
+    font-weight:700;
+    color:
+      ${
+        progressPercent === 100
+          ? '#0F6D73'
+          : progressPercent >= 50
+            ? '#D9A441'
+            : '#9CA3AF'
+      };
+  "
+>
+  ● ${progressPercent}%
+</div>
+
+${
+  challengeResult
+    ? `
+      <div
+        style="
+          font-size:12px;
+          margin-top:4px;
+          color:#6B7280;
+        "
+      >
+        ${challengeResult.score}/${challengeResult.total} woorden
+      </div>
+    `
+    : ''
+}
+
+            </div>
+          `;
 
         }
       );
@@ -6292,24 +6396,12 @@ function renderSouvenirs(){
     }
   );
 
-  if(!html){
-
-    html = `
-      <div class="list-item">
-
-        Nog geen souvenirs verzameld.
-
-      </div>
-    `;
-
-  }
+  html += `</div>`;
 
   document.getElementById(
     'souvenirList'
   ).innerHTML =
     html;
-
 }
-
 
 init();

@@ -220,7 +220,7 @@ window.wordsData = [
 
 {week:2,nummer:102,level:'A1',tags:['groeten'],papiamento:'bon dia!',papiamentu:'bon dia!',nederlands:'goeiedag!, goeie dag, goedendag, goedemorgen',engels:'good day!',varianten:'',type:'groet',uitspraak:'',voorbeeld_papiamento:'Bon dia, señora.',voorbeeld_papiamentu:'Bon dia, señora.',voorbeeld_nederlands:'Goedendag, mevrouw.',voorbeeld_engels:'Good day, madam.'},
 
-{week:2,nummer:103,level:'A1',tags:['groeten'],papiamento:'bon tardi!',papiamentu:'bon tardi!',nederlands:'goedemiddag!',engels:'good afternoon!',varianten:'',type:'groet',uitspraak:'',voorbeeld_papiamento:'Bon tardi, amigo.',voorbeeld_papiamentu:'Bon tardi, amigo.',voorbeeld_nederlands:'Goedemiddag, vriend.',voorbeeld_engels:'Good afternoon, friend.'},
+{week:2,nummer:103,level:'A1',tags:['groeten'],papiamento:'bon tardi!',papiamentu:'bon tardi!',nederlands:'goedemiddag!, goedenmiddag!',engels:'good afternoon!',varianten:'',type:'groet',uitspraak:'',voorbeeld_papiamento:'Bon tardi, amigo.',voorbeeld_papiamentu:'Bon tardi, amigo.',voorbeeld_nederlands:'Goedemiddag, vriend.',voorbeeld_engels:'Good afternoon, friend.'},
 
 {week:2,nummer:104,level:'A1',tags:['groeten'],papiamento:'bonochi!',papiamentu:'bonochi!',nederlands:'goedenavond!, goedenacht!',engels:'good evening!, good night!',varianten:'',type:'groet',uitspraak:'',voorbeeld_papiamento:'Bonochi, te despues.',voorbeeld_papiamentu:'Bonochi, te despues.',voorbeeld_nederlands:'Goedenavond, tot later.',voorbeeld_engels:'Good evening, see you later.'},
 
@@ -1095,7 +1095,7 @@ window.wordsData = [
 
 {week:5,nummer:520.1,level:'A1',tags:['locatie'],papiamento:'tera',papiamentu:'tera',nederlands:'land, aarde',engels:'land, earth',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Aruba ta un dushi tera.',voorbeeld_papiamentu:'Kòrsou ta un dushi tera.',voorbeeld_nederlands:'Aruba/Curacao is een mooi land',voorbeeld_engels:'Aruba/Curacao is a beautiful land'},
 
-{week:5,nummer:520.2,level:'A1',tags:['gezondheid','weer'],papiamento:'calor',papiamentu:'kálor',nederlands:'warmte; warm',engels:'heat; warm',varianten:'calor',type:'zelfstandig naamwoord / bijvoeglijk naamwoord',uitspraak:'KAH-lor',voorbeeld_papiamento:'Ta hopi calor awe, no?',voorbeeld_papiamentu:'Ta hopi kálor awe, no?',voorbeeld_nederlands:'Het is vandaag erg warm, niet?',voorbeeld_engels:'It is hot today, right?'},
+{week:5,nummer:520.2,level:'A1',tags:['gezondheid','weer'],papiamento:'calor',papiamentu:'kálor',nederlands:'warmte, warm',engels:'heat; warm',varianten:'calor',type:'zelfstandig naamwoord / bijvoeglijk naamwoord',uitspraak:'KAH-lor',voorbeeld_papiamento:'Ta hopi calor awe, no?',voorbeeld_papiamentu:'Ta hopi kálor awe, no?',voorbeeld_nederlands:'Het is vandaag erg warm, niet?',voorbeeld_engels:'It is hot today, right?'},
 
 {week:5,nummer:520.3,level:'A1',tags:['weer'],papiamento:'solo',papiamentu:'solo',nederlands:'zon',engels:'sun',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'E solo ta calor.',voorbeeld_papiamentu:'E solo ta kálor.',voorbeeld_nederlands:'De zon is warm.',voorbeeld_engels:'The sun is warm.'},
 
