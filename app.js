@@ -4482,7 +4482,7 @@ function openLocationOverview(
             background:transparent;
             text-align:left;
             padding:0;
-            margin-bottom:14px;
+            margin-bottom:8px;
             cursor:pointer;
           "
         >
@@ -4594,11 +4594,15 @@ function openLocationOverview(
                   opacity:.7;
                 "
               >
-                ${
-                  done
-                    ? 'Voltooid'
-                    : `⏱ ±${estimatedMinutes} min`
-                }
+		${
+		  done
+			? (
+				lesson.challenge
+				  ? '🎉 Challenge voltooid'
+				  : 'Voltooid'
+			  )
+			: `⏱ ±${estimatedMinutes} min`
+		}
               </div>
 
             </div>
