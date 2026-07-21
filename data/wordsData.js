@@ -1093,6 +1093,10 @@ window.wordsData = [
 
 {week:5,nummer:520.1,level:'A1',tags:['locatie'],papiamento:'tera',papiamentu:'tera',nederlands:'land, aarde',engels:'land, earth',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Aruba ta un dushi tera.',voorbeeld_papiamentu:'Kòrsou ta un dushi tera.',voorbeeld_nederlands:'Aruba/Curacao is een mooi land',voorbeeld_engels:'Aruba/Curacao is a beautiful land'},
 
-{week:5,nummer:520.2,level:'A1',tags:['gezondheid','weer'],papiamento:'calor',papiamentu:'kálor',nederlands:'warmte; warm',engels:'heat; warm',varianten:'calor',type:'zelfstandig naamwoord / bijvoeglijk naamwoord',uitspraak:'KAH-lor',voorbeeld_papiamento:'Ta hopi calor awe, no?',voorbeeld_papiamentu:'Ta hopi kálor awe, no?',voorbeeld_nederlands:'Het is vandaag erg warm, niet?',voorbeeld_engels:'It is hot today, right?'}
+{week:5,nummer:520.2,level:'A1',tags:['gezondheid','weer'],papiamento:'calor',papiamentu:'kálor',nederlands:'warmte; warm',engels:'heat; warm',varianten:'calor',type:'zelfstandig naamwoord / bijvoeglijk naamwoord',uitspraak:'KAH-lor',voorbeeld_papiamento:'Ta hopi calor awe, no?',voorbeeld_papiamentu:'Ta hopi kálor awe, no?',voorbeeld_nederlands:'Het is vandaag erg warm, niet?',voorbeeld_engels:'It is hot today, right?'},
+
+{week:5,nummer:520.3,level:'A1',tags:['weer'],papiamento:'solo',papiamentu:'solo',nederlands:'zon',engels:'sun',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'E solo ta calor.',voorbeeld_papiamentu:'E solo ta kálor.',voorbeeld_nederlands:'De zon is warm.',voorbeeld_engels:'The sun is warm.'},
+
+{week:5,nummer:520.4,level:'A1',tags:['weer'],papiamento:'luna',papiamentu:'luna',nederlands:'maan',engels:'moon',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta mira e luna.',voorbeeld_papiamentu:'Mi ta mira e luna.',voorbeeld_nederlands:'Ik kijk naar de maan.',voorbeeld_engels:'I am looking at the moon.'}
 
 ];

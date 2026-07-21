@@ -1831,7 +1831,7 @@ summary:`
 
     {
       sender:'ana',
-      text:'🟨 Por betekent kunnen.'
+      text:'🟨 Por betekent kunnen of mogen.'
     },
 
     {
@@ -1892,6 +1892,29 @@ summary:`
     },
 
     {
+      sender:'dialogue',
+      speaker:'Ana',
+      avatar:'ana',
+      text:'Mira, e solo ta baha.',
+      translation:'Kijk, de zon gaat onder.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Solo betekent zon.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Baha betekent naar beneden gaan.'
+    },
+
+    {
+      sender:'ana',
+      text:'Dus e solo ta baha betekent letterlijk: de zon gaat naar beneden.'
+    },
+
+    {
       sender:'ana',
       text:'🟨 Oraño betekent oranje. Kijk, e shelu ta oraño — de lucht is oranje.'
     },
@@ -1920,15 +1943,56 @@ summary:`
       sender:'ana',
       text:'🟨 Keda betekent blijven.'
     },
-	
-	{
+
+    {
       sender:'ana',
-      text:'🟨 Nos por keda aki betekent wij kunnen hier blijven.'
+      text:'🟨 Nos por keda aki betekent: wij kunnen hier blijven.'
     },
 
     {
       sender:'narration',
       text:'🌙 Langzaam wordt het donker. De eerste sterren verschijnen boven de zee.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Local',
+      avatar:'local',
+      text:'Mira e luna y e streanan.',
+      translation:'Kijk naar de maan en de sterren.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Luna betekent maan.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Strea betekent ster.'
+    },
+
+    {
+      sender:'ana',
+      text:'Die zin betekende: kijk naar de maan en de sterren.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Local',
+      avatar:'local',
+      text:'Bonochi!',
+      translation:'Goedenavond!'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Bonochi betekent goedenavond.'
+    },
+
+    {
+      sender:'ana',
+      text:'Nu ken je alle drie: bon dia, bon tardi en bonochi.'
     },
 
     {
@@ -1955,8 +2019,8 @@ summary:`
       sender:'ana',
       text:'Voor nu wens ik je drumi dushi.'
     },
-	
-	{
+
+    {
       sender:'ana',
       text:'🟨 Drumi dushi betekent slaap lekker.'
     },
@@ -1968,24 +2032,39 @@ summary:`
 
     {
       sender:'ana',
-      text:'Mooi! De dagen vliegen voorbij op Aruba, dus vergeet niet om af en toe van de zonsondergang te genieten.'
+      text:'Mooi! Je eerste dag op Aruba zit erop. Van de zon boven Eagle Beach tot de sterren boven zee.'
     }
 
   ],
 
   miniQuiz:[
+    { id:'solo_520.3', word:'Solo' },
+    { id:'baha_180', word:'Baha' },
     { id:'oraño_325', word:'Oraño' },
     { id:'awe_67', word:'Awe' },
     { id:'keda_76', word:'Keda' },
+    { id:'luna_520.4', word:'Luna' },
+    { id:'strea_430', word:'Strea' },
+    { id:'bonochi_104', word:'Bonochi' },
     { id:'anochi_352', word:'Anochi' },
     { id:'drumi dushi_143.1', word:'Drumi dushi' }
   ],
 
   wordIds:[
-    67, 76, 143.1, 325, 352
+    67,
+    76,
+    104,
+    143.1,
+    180,
+    325,
+    352,
+    430,
+    521,
+    522
   ]
 
 },
+
 
 
 'eagle-beach-challenge': {
@@ -2032,9 +2111,14 @@ summary:`
     { id:'por_16', word:'Por' },
     { id:'landa_486', word:'Landa' },
 
+	{ id:'solo_520.3', word:'Solo' },
+    { id:'baha_180', word:'Baha' },
     { id:'oraño_325', word:'Oraño' },
     { id:'awe_67', word:'Awe' },
     { id:'keda_76', word:'Keda' },
+    { id:'luna_520.4', word:'Luna' },
+    { id:'strea_430', word:'Strea' },
+    { id:'bonochi_104', word:'Bonochi' },
     { id:'anochi_352', word:'Anochi' },
     { id:'drumi dushi_143.1', word:'Drumi dushi' }
 
@@ -2056,7 +2140,506 @@ summary:`
 
   `
 
+},
+
+'oranjestad-1': {
+
+  title:'Mainstreet Oranjestad',
+
+  scene:[
+
+    {
+      sender:'narration',
+      text:'☀️ De volgende ochtend rijden jullie het centrum van Oranjestad in. De straten zijn al vol leven.'
+    },
+
+    {
+      sender:'ana',
+      text:'Nos ta bay Oranjestad — dat had ik je gisteravond al beloofd.'
+    },
+
+    {
+      sender:'narration',
+      text:'🏛️ Overal om je heen staan gebouwen in felle kleuren: roze, groen, geel, blauw — als een tropische grachtengordel.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Cora betekent rood. Kijk, e edificio ey ta cora — dat gebouw daar is rood.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Geel betekent geel.'
+    },
+
+    {
+      sender:'ana',
+      text:'Deze gevels zijn gebouwd in Nederlandse koloniale stijl, met balkonnetjes en luiken. Maar de kleuren, die zijn helemaal van ons.'
+    },
+
+    {
+      sender:'narration',
+      text:'🏰 Wela Ana wijst naar een oud, laag fort met dikke muren.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Mustra betekent wijzen of tonen. Mira, mi ta mustra bo Fort Zoutman.'
+    },
+
+    {
+      sender:'ana',
+      text:'Dat is het oudste gebouw van Aruba, gebouwd in 1798. Vroeger beschermde het ons tegen piraten.'
+    },
+
+    {
+      sender:'ana',
+      text:'Oranjestad was ooit maar een klein vissersdorp, weet je. Pas later, door goudkoorts en later door de olie-industrie, werd het een echte stad.'
+    },
+
+    {
+      sender:'narration',
+      text:'🛍️ Jullie lopen verder, het 🟨 centro in, langs winkels vol sieraden en parfum.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Centro betekent centrum.'
+    },
+
+    {
+      sender:'ana',
+      text:'Toen ik een jong meisje was, had ik hier mijn eerste baantje. Een klein stofjeswinkeltje, van een vrouw die we Doña Elena noemden.'
+    },
+
+    {
+      sender:'ana',
+      text:'Zij leerde mij alles over klanten, over geduld, en over geld tellen zonder ooit een fout te maken.'
+    },
+
+    {
+      sender:'narration',
+      text:'🚢 In de verte, bij de haven, ligt een enorm cruiseschip aangemeerd. Honderden mensen stromen de straat in.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Ey betekent daar. Mira, ey na haber ta un barco grandi — kijk, daar bij de haven ligt een groot schip.'
+    },
+
+    {
+      sender:'ana',
+      text:'Toen ik klein was kwamen hier bijna geen schepen. Nu komen er bijna elke dag, en de straat verandert mee.'
+    },
+
+    {
+      sender:'ana',
+      text:'Doña Elena\'s winkeltje bestaat niet meer. Maar als ik hier loop, zie ik het nog precies voor me.'
+    },
+
+    {
+      sender:'ana',
+      text:'Mooi! Je kent nu een stukje van de geschiedenis van Oranjestad — en een stukje van mijn eigen geschiedenis.'
+    }
+
+  ],
+
+  miniQuiz:[
+    { id:'cora_324', word:'Cora' },
+    { id:'geel_323', word:'Geel' },
+    { id:'mustra_300', word:'Mustra' },
+    { id:'centro_468', word:'Centro' },
+    { id:'ey_29', word:'Ey' }
+  ],
+
+  wordIds:[
+    29, 300, 323, 324, 468
+  ]
+
+},
+
+'oranjestad-2': {
+
+  title:'Kumpra na Mainstreet',
+
+  scene:[
+
+    {
+      sender:'narration',
+      text:'👜 Voor een klein winkeltje met kleurrijke sjaals in de etalage blijft Wela Ana staan.'
+    },
+
+    {
+      sender:'ana',
+      text:'Dit doet me nog steeds denken aan Doña Elena\'s winkeltje. Laten we naar binnen gaan.'
+    },
+
+    {
+      sender:'narration',
+      text:'🧣 Binnen groet een jonge verkoper vriendelijk vanachter de toonbank.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Verkoper',
+      avatar:'shopkeeper',
+      text:'Bon dia! Bo kier cumpra algo?',
+      translation:'Goedendag! Wil je iets kopen?'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Cumpra betekent kopen.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Verkoper',
+      avatar:'shopkeeper',
+      text:'Mi ta bende artesania local.',
+      translation:'Ik verkoop lokale ambachtelijke producten.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Bende betekent verkopen.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Verkoper',
+      avatar:'shopkeeper',
+      text:'Por fabor, mira esaki.',
+      translation:'Alsjeblieft, kijk eens naar deze.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Por betekent kunnen of mogen.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Por fabor betekent alsjeblieft.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Verkoper',
+      avatar:'shopkeeper',
+      text:'E sjaal aki ta masha bunita, no?',
+      translation:'Deze sjaal is heel mooi, toch?'
+    },
+
+    {
+      sender:'ana',
+      text:'Bunita ken je van Rosa, en masha van Ramon.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Verkoper',
+      avatar:'shopkeeper',
+      text:'E ta costa binti placa.',
+      translation:'Hij kost twintig florin.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Placa betekent geld.'
+    },
+
+    {
+      sender:'ana',
+      text:'Op Aruba betalen we met de Arubaanse florin. Vroeger hoorde Aruba bij de Nederlandse Antillen, daarom lijkt onze munt nog steeds op de oude gulden.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Verkoper',
+      avatar:'shopkeeper',
+      text:'Un tiki caro, pero e ta original.',
+      translation:'Een beetje duur, maar hij is origineel.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Caro betekent duur.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Verkoper',
+      avatar:'shopkeeper',
+      text:'Bo por duna mi diesocho, ta basta pa mi.',
+      translation:'Je mag me achttien geven, dat is genoeg voor mij.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Basta betekent genoeg.'
+    },
+
+    {
+      sender:'ana',
+      text:'Zo onderhandelen wij hier soms. Niet hard, maar vriendelijk.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Verkoper',
+      avatar:'shopkeeper',
+      text:'Danki, y bon bishita na Aruba!',
+      translation:'Bedankt en een fijn verblijf op Aruba!'
+    },
+
+    {
+      sender:'ana',
+      text:'Mooi! Je hebt je eerste aankoop gedaan in het Papiamento.'
+    }
+
+  ],
+
+  miniQuiz:[
+    { id:'cumpra_454', word:'Cumpra' },
+    { id:'bende_453', word:'Bende' },
+    { id:'por_16', word:'Por' },
+    { id:'por fabor_387', word:'Por fabor' },
+    { id:'placa_457', word:'Placa' },
+    { id:'caro_455', word:'Caro' },
+    { id:'basta_499', word:'Basta' }
+  ],
+
+  wordIds:[
+    16, 387, 453, 454, 455, 457, 499
+  ]
+
+},
+
+'oranjestad-3': {
+
+  title:'Mercado di Oranjestad',
+
+  scene:[
+
+    {
+      sender:'narration',
+      text:'🎁 Naast de cruisehaven staan kleine marktkraampjes vol souvenirs, nummerborden en handgemaakt houtwerk.'
+    },
+
+    {
+      sender:'ana',
+      text:'Hier komen veel toeristen voor een persoonlijk aandenken aan Aruba.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Verkoper',
+      avatar:'local',
+      text:'Bon dia, shon.',
+      translation:'Goedendag meneer/mevrouw.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Shon is een respectvolle manier om iemand aan te spreken.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Verkoper',
+      avatar:'local',
+      text:'Con bo yama?',
+      translation:'Hoe heet je?'
+    },
+
+    {
+      sender:'ana',
+      text:'Die vraag ken je nog van de luchthaven.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Verkoper',
+      avatar:'local',
+      text:'Mi por scirbi bo nomber riba e placa.',
+      translation:'Ik kan jouw naam op het bord schrijven.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Scirbi betekent schrijven.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Nomber betekent naam.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Verkoper',
+      avatar:'local',
+      text:'Por fabor, bisa mi bo nomber.',
+      translation:'Zeg me alsjeblieft je naam.'
+    },
+
+    {
+      sender:'ana',
+      text:'Bisa betekent zeggen. Dat ken je al.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Verkoper',
+      avatar:'local',
+      text:'Mi por haci un bestel pa bo.',
+      translation:'Ik kan een bestelling voor je maken.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Haci betekent doen of maken.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Bestel betekent bestelling.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Verkoper',
+      avatar:'local',
+      text:'Mayan bo por bin busca dje.',
+      translation:'Morgen kun je hem ophalen.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Busca betekent zoeken of ophalen.'
+    },
+
+    {
+      sender:'ana',
+      text:'Hier gebruikt hij busca in de betekenis ophalen.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Verkoper',
+      avatar:'local',
+      text:'Danki, shon!'
+    },
+
+    {
+      sender:'ana',
+      text:'Mooi! Nu kun je niet alleen iets kopen, maar ook iets laten maken en later ophalen.'
+    }
+
+  ],
+
+  miniQuiz:[
+    { id:'shon_312', word:'Shon' },
+    { id:'nomber_98', word:'Nomber' },
+    { id:'scirbi_443', word:'Scirbi' },
+    { id:'haci_247', word:'Haci' },
+    { id:'bestel_456', word:'Bestel' },
+    { id:'busca_214', word:'Busca' }
+  ],
+
+  wordIds:[
+    98,
+    214,
+    247,
+    312,
+    443,
+    456
+  ]
+
+},
+
+'oranjestad-challenge': {
+
+  title:'Oranjestad Challenge',
+
+  scene:[
+
+    {
+      sender:'narration',
+      text:'🏆 Je hebt door de kleurrijke straten van Oranjestad gewandeld, langs Fort Zoutman, gewinkeld op Main Street en zelfs een persoonlijk souvenir besteld.'
+    },
+
+    {
+      sender:'ana',
+      text:'Je hebt ook een stukje van mijn eigen verhaal gehoord — over Doña Elena, mijn eerste baantje en hoe deze stad veranderde.'
+    },
+
+    {
+      sender:'ana',
+      text:'En je hebt geleerd hoe je jezelf kunt redden in een winkel of op een markt.'
+    },
+
+    {
+      sender:'ana',
+      text:'Laten we kijken wat je hebt onthouden.'
+    }
+
+  ],
+
+  questions:[
+
+    // Les 1
+
+    { id:'cora_324', word:'Cora' },
+    { id:'geel_323', word:'Geel' },
+    { id:'mustra_300', word:'Mustra' },
+    { id:'centro_468', word:'Centro' },
+    { id:'ey_29', word:'Ey' },
+
+    // Les 2
+
+    { id:'cumpra_454', word:'Cumpra' },
+    { id:'bende_453', word:'Bende' },
+    { id:'por_16', word:'Por' },
+    { id:'por fabor_387', word:'Por fabor' },
+    { id:'placa_457', word:'Placa' },
+    { id:'caro_455', word:'Caro' },
+    { id:'basta_499', word:'Basta' },
+
+    // Les 3
+
+    { id:'shon_312', word:'Shon' },
+    { id:'nomber_98', word:'Nomber' },
+    { id:'scirbi_443', word:'Scirbi' },
+    { id:'haci_247', word:'Haci' },
+    { id:'bestel_456', word:'Bestel' },
+    { id:'busca_214', word:'Busca' }
+
+  ],
+
+  summary:`
+
+    Je hebt Oranjestad ontdekt — niet alleen de kleurrijke gevels en de winkels, maar ook een klein stukje van mijn eigen verleden.
+
+    🟨 Mi tabatin mi promé trabou aki, serka Doña Elena.
+
+    Van een klein stofjeswinkeltje tot de drukke Main Street van vandaag, met cruiseschepen, marktkraampjes en toeristen uit de hele wereld.
+
+    Je hebt geleerd hoe je kunt praten over kleuren, prijzen, kopen en verkopen.
+
+    🟨 Mi por cumpra algo, por fabor.
+    
+    Je kunt nu zelfs een eenvoudige bestelling plaatsen, je naam laten opschrijven en later je souvenir ophalen.
+
+    🌴 Nos ta sigui nos biahe — de reis gaat verder.
+
+    Klaar voor de volgende halte van je reis?
+
+  `
+
 }
 
-
 };
+

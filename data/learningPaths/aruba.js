@@ -10,7 +10,11 @@ window.learningPaths = {
         title: 'Biahero',
         subtitle: 'Reiziger',
 
-        chapters: [
+chapters: [
+
+  // =========================
+  // H1 - AANKOMST
+  // =========================
 
   {
     id: 'arrival',
@@ -72,6 +76,10 @@ window.learningPaths = {
     ]
   },
 
+  // =========================
+  // H2 - FAMILIE
+  // =========================
+
   {
     id: 'family',
     title: 'Familie',
@@ -132,6 +140,10 @@ window.learningPaths = {
     ]
   },
 
+  // =========================
+  // H3 - STRAND
+  // =========================
+
   {
     id: 'beach',
     title: 'Strand',
@@ -190,9 +202,79 @@ window.learningPaths = {
         ]
       }
     ]
+  },
+
+  // =========================
+  // H4 - ORANJESTAD
+  // =========================
+
+  {
+    id: 'city',
+    title: 'Stad',
+    order: 4,
+
+    locations: [
+      {
+        id: 'oranjestad',
+
+        title: 'Main Street Oranjestad',
+
+        chapter: 4,
+
+        shortTitle: 'Stad',
+
+        subtitle: 'Winkelen, geschiedenis en souvenirs',
+
+        description:
+          'Ontdek het centrum van Oranjestad, leer winkelen in het Papiamento en bestel je eigen souvenir.',
+
+        icon: '🏙️',
+
+        souvenir:{
+          icon:'🪪',
+          title:'Aruba Name Plate'
+        },
+
+        theme:{
+          background:'#EAFBEA',
+          progress:'#4CAF50'
+        },
+
+        map:{
+          x:180,
+          y:250
+        },
+
+        lessons: [
+          {
+            id: 'oranjestad-1',
+            title: 'Mainstreet Oranjestad'
+          },
+          {
+            id: 'oranjestad-2',
+            title: 'Kumpra na Mainstreet'
+          },
+          {
+            id: 'oranjestad-3',
+            title: 'Mercado di Oranjestad'
+          },
+          {
+            id: 'oranjestad-challenge',
+            title: 'Oranjestad Challenge',
+            challenge: true
+          }
+        ]
+      }
+    ]
   }
-	  ]
-	  }
+
+  // =========================
+  // H5 - SUPERMARKT
+  // PLAK HIER HOOFDSTUK 5
+  // =========================
+
 ]
-	  }
+	}
+   ]
+  }
 };
