@@ -4167,7 +4167,7 @@ html += `
         ${completed}
         van
         ${location.lessons.length}
-        lessen voltooid
+        ontmoetingen voltooid
       </div>
 
     </button>
@@ -4235,7 +4235,7 @@ function openLocationOverview(
 document.getElementById(
   'locationOverviewSubtitle'
 ).textContent =
-  `Voltooi de lessen om ${location.title} af te ronden.`;
+  `Voltooi de ontmoetingen om ${location.title} af te ronden.`;
 
   let html = '';
 

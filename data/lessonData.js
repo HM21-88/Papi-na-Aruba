@@ -2316,12 +2316,12 @@ summary:`
 
     {
       sender:'ana',
-      text:'🟨 Por betekent kunnen of mogen.'
+      text:'🟨 Por fabor betekent alsjeblieft.'
     },
 
-    {
+	{
       sender:'ana',
-      text:'🟨 Por fabor betekent alsjeblieft.'
+      text:'🟨 Esaki betekent dit of deze. Marvin op Tanki flip gebruikte dat woord al eerder.'
     },
 
     {
@@ -2334,25 +2334,25 @@ summary:`
 
     {
       sender:'ana',
-      text:'Bunita ken je van Rosa, en masha van Ramon.'
+      text:'Bunita ken je van Rosa, en masha van Ramon. Ik denk dat je dit al zelf '
     },
 
     {
       sender:'dialogue',
       speaker:'Verkoper',
       avatar:'shopkeeper',
-      text:'E ta costa binti placa.',
+      text:'E ta costa binti florin.',
       translation:'Hij kost twintig florin.'
     },
 
     {
       sender:'ana',
-      text:'🟨 Placa betekent geld.'
-    },
-
-    {
-      sender:'ana',
       text:'Op Aruba betalen we met de Arubaanse florin. Vroeger hoorde Aruba bij de Nederlandse Antillen, daarom lijkt onze munt nog steeds op de oude gulden.'
+    },
+	
+	 {
+      sender:'ana',
+      text:'🟨 Placa betekent geld.'
     },
 
     {
@@ -2363,10 +2363,21 @@ summary:`
       translation:'Een beetje duur, maar hij is origineel.'
     },
 
+	{
+      sender:'ana',
+      text:'🟨 Tiki betekent beetje.'
+    },
+	
+	{
+      sender:'ana',
+      text:'Je hebt eerder al poco gehoord en ook dat betekent een beetje. Je kunt dus tiki of poco gebruiken.'
+    },
+
     {
       sender:'ana',
       text:'🟨 Caro betekent duur.'
     },
+
 
     {
       sender:'dialogue',
@@ -2404,15 +2415,16 @@ summary:`
   miniQuiz:[
     { id:'cumpra_454', word:'Cumpra' },
     { id:'bende_453', word:'Bende' },
-    { id:'por_16', word:'Por' },
+    { id:'esaki_31', word:'Esaki' },
     { id:'por fabor_387', word:'Por fabor' },
     { id:'placa_457', word:'Placa' },
     { id:'caro_455', word:'Caro' },
+	{ id:'poco_87', word:'Tiki' },
     { id:'basta_499', word:'Basta' }
   ],
 
   wordIds:[
-    16, 387, 453, 454, 455, 457, 499
+    16, 87, 387, 453, 454, 455, 457, 499
   ]
 
 },
@@ -2443,7 +2455,7 @@ summary:`
 
     {
       sender:'ana',
-      text:'🟨 Shon is een respectvolle manier om iemand aan te spreken.'
+      text:'🟨 Shon betekent meneer of mevrouw. Het is een beleefde manier om iemand aan te spreken, zoals u in Nederland. Noem mij maar gewoon Ana hoor.'
     },
 
     {
@@ -2602,9 +2614,10 @@ summary:`
 
     { id:'cumpra_454', word:'Cumpra' },
     { id:'bende_453', word:'Bende' },
-    { id:'por_16', word:'Por' },
+    { id:'esaki_31', word:'Esaki' },
     { id:'por fabor_387', word:'Por fabor' },
     { id:'placa_457', word:'Placa' },
+	{ id:'poco_87', word:'Tiki' },
     { id:'caro_455', word:'Caro' },
     { id:'basta_499', word:'Basta' },
 
@@ -2642,4 +2655,3 @@ summary:`
 }
 
 };
-

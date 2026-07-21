@@ -429,7 +429,7 @@ window.wordsData = [
 
 {week:2,nummer:193,level:'A1',tags:['huishouden'],papiamento:'sera',papiamentu:'sera',nederlands:'sluiten',engels:'to close',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Sera e porta.',voorbeeld_papiamentu:'Sera e porta.',voorbeeld_nederlands:'Sluit de deur.',voorbeeld_engels:'Close the door.'},
 
-{week:2,nummer:194,level:'A1',tags:['groeten'],papiamento:'danki',papiamentu:'danki',nederlands:'bedankt',engels:'thank you',varianten:'',type:'uitdrukking',uitspraak:'',voorbeeld_papiamento:'Danki pa bo yudansa.',voorbeeld_papiamentu:'Danki pa bo yudansa.',voorbeeld_nederlands:'Dank je voor je hulp.',voorbeeld_engels:'Thank you for your help.'},
+{week:2,nummer:194,level:'A1',tags:['groeten'],papiamento:'danki',papiamentu:'danki',nederlands:'bedankt, dankjewel, dank je',engels:'thank you, thanks',varianten:'',type:'uitdrukking',uitspraak:'',voorbeeld_papiamento:'Danki pa bo yudansa.',voorbeeld_papiamentu:'Danki pa bo yudansa.',voorbeeld_nederlands:'Dank je voor je hulp.',voorbeeld_engels:'Thank you for your help.'},
 
 //// added ta bon, danki
 {week:2,nummer:194.1,level:'A1',tags:['groeten'],papiamento:'ta bon, danki',papiamentu:'ta bon, danki',nederlands:'goed, bedankt',engels:'fine, thank you',varianten:'',type:'uitdrukking',uitspraak:'',voorbeeld_papiamento:'Con ta bay cu bo? Ta bon, danki.',voorbeeld_papiamentu:'Kon ta bai ku bo? Ta bon, danki.',voorbeeld_nederlands:'Hoe gaat het met jou? Goed, bedankt.',voorbeeld_engels:'How are you? Fine, thank you.'},
@@ -937,7 +937,7 @@ window.wordsData = [
 
 {week:5,nummer:442,level:'A1',tags:['werk'],papiamento:'cliente',papiamentu:'kliente',nederlands:'klant, cliënt',engels:'customer, client',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'E cliente ta contento.',voorbeeld_papiamentu:'E kliente ta kontentu.',voorbeeld_nederlands:'De klant is tevreden.',voorbeeld_engels:'The customer is satisfied.'},
 
-{week:5,nummer:443,level:'A1',tags:['werk'],papiamento:'scirbi',papiamentu:'skirbi',nederlands:'schrijven, opschrijven',engels:'to write',varianten:'scibi, skibi',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta scirbi un carta.',voorbeeld_papiamentu:'Mi ta skirbi un karta.',voorbeeld_nederlands:'Ik schrijf een brief.',voorbeeld_engels:'I am writing a letter.'},
+{week:5,nummer:443,level:'A1',tags:['werk', 'winkelen'],papiamento:'scirbi',papiamentu:'skirbi',nederlands:'schrijven, opschrijven',engels:'to write',varianten:'scibi, skibi',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta scirbi un carta.',voorbeeld_papiamentu:'Mi ta skirbi un karta.',voorbeeld_nederlands:'Ik schrijf een brief.',voorbeeld_engels:'I am writing a letter.'},
 
 {week:5,nummer:444,level:'A1',tags:['werk'],papiamento:'inscribi',papiamentu:'inskribí',nederlands:'inschrijven',engels:'to register',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi kier inscribi awe.',voorbeeld_papiamentu:'Mi kier inskribí awe.',voorbeeld_nederlands:'Ik wil mij vandaag inschrijven.',voorbeeld_engels:'I want to register today.'},
 
