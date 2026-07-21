@@ -4227,20 +4227,106 @@ function openLocationOverview(
       )
   );
 
-  document.querySelector(
-    '#locationOverviewScreen h2'
-  ).textContent =
-    location.title;
+  const completedLessons =
+    location.lessons.filter(
+      lesson =>
+        isLessonCompleted(
+          lesson.id
+        )
+    ).length;
 
-document.getElementById(
-  'locationOverviewSubtitle'
-).textContent =
-  `Voltooi de ontmoetingen om ${location.title} af te ronden.`;
+  let html = `
 
-  let html = '';
+    <div
+      style="
+        background:white;
+        border-radius:24px;
+        padding:20px;
+        margin-bottom:20px;
+      "
+    >
+
+      <div
+        style="
+          font-size:64px;
+          margin-bottom:10px;
+        "
+      >
+        ${location.icon}
+      </div>
+
+
+      <p
+        style="
+          margin-top:8px;
+          opacity:.8;
+        "
+      >
+        ${location.description}
+      </p>
+
+      <div
+        style="
+          display:flex;
+          gap:10px;
+          margin-top:16px;
+        "
+      >
+
+        <div
+          style="
+            flex:1;
+            background:#F3EFE2;
+            border-radius:16px;
+            padding:12px;
+            text-align:center;
+          "
+        >
+          <div style="
+            font-weight:bold;
+            font-size:22px;
+          ">
+            ${location.lessons.length}
+          </div>
+
+          <div style="
+            font-size:12px;
+          ">
+            ontmoetingen
+          </div>
+        </div>
+
+        <div
+          style="
+            flex:1;
+            background:#F3EFE2;
+            border-radius:16px;
+            padding:12px;
+            text-align:center;
+          "
+        >
+          <div style="
+            font-weight:bold;
+            font-size:22px;
+          ">
+            ${completedLessons}
+          </div>
+
+          <div style="
+            font-size:12px;
+          ">
+            voltooid
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  `;
 
   location.lessons.forEach(
-    lesson => {
+    (lesson,index) => {
 
       const done =
         isLessonCompleted(
@@ -4248,22 +4334,96 @@ document.getElementById(
         );
 
       html += `
-        <button
-          class="practice-card"
-          onclick="openLesson('${lesson.id}')">
 
-          <div class="practice-title">
-            ${
-              done
-                ? '✅ '
-                : '📚 '
-            }
-            ${lesson.title}
+        <button
+          onclick="openLesson('${lesson.id}')"
+          style="
+            width:100%;
+            border:none;
+            background:transparent;
+            text-align:left;
+            padding:0;
+            margin-bottom:14px;
+            cursor:pointer;
+          "
+        >
+
+          <div
+            style="
+              display:flex;
+              align-items:center;
+              gap:14px;
+            "
+          >
+
+            <div
+              style="
+                width:48px;
+                height:48px;
+                border-radius:50%;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                font-weight:bold;
+                background:${
+				  done
+					? '#45B36B'
+					: '#F3EFE2'
+				};
+
+				color:${
+				  done
+					? 'white'
+					: '#0A2E57'
+				};
+                color:white;
+                flex-shrink:0;
+              "
+            >
+			${
+			  lesson.challenge
+				? '🏆'
+				: done
+				  ? '✓'
+				  : index + 1
+			}
+            </div>
+
+            <div>
+
+              <div
+                style="
+                  font-weight:700;
+                  color:#0A2E57;
+                "
+              >
+                ${lesson.challenge
+                  ? '🏆 '
+                  : `Les ${index+1} - `
+                }
+                ${lesson.title}
+              </div>
+
+              <div
+                style="
+                  font-size:13px;
+                  opacity:.7;
+                "
+              >
+                ${
+                  done
+                    ? 'Voltooid'
+                    : 'Tik om verder te gaan'
+                }
+              </div>
+
+            </div>
+
           </div>
 
         </button>
-      `;
 
+      `;
     }
   );
 
@@ -4271,7 +4431,6 @@ document.getElementById(
     'locationLessonsList'
   ).innerHTML =
     html;
-
 }
 
 let challengeIndex = 0;
