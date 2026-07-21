@@ -4227,13 +4227,45 @@ function openLocationOverview(
       )
   );
 
-  const completedLessons =
-    location.lessons.filter(
-      lesson =>
-        isLessonCompleted(
-          lesson.id
-        )
-    ).length;
+const completedLessons =
+  location.lessons.filter(
+    lesson =>
+      isLessonCompleted(
+        lesson.id
+      )
+  ).length;
+
+const totalWords =
+  location.lessons
+    .filter(
+      lesson => !lesson.challenge
+    )
+    .reduce(
+      (total, lesson) => {
+
+        const lessonInfo =
+          window.lessonData[
+            lesson.id
+          ];
+
+        return (
+          total +
+          (
+            lessonInfo?.wordIds?.length || 0
+          )
+        );
+
+      },
+      0
+    );
+
+const progressPercent =
+  Math.round(
+    (
+      completedLessons /
+      location.lessons.length
+    ) * 100
+  );
 
   let html = `
 
@@ -4286,7 +4318,11 @@ function openLocationOverview(
             font-weight:bold;
             font-size:22px;
           ">
-            ${location.lessons.length}
+            ${
+			  location.lessons.filter(
+				lesson => !lesson.challenge
+			  ).length
+			}
           </div>
 
           <div style="
@@ -4309,15 +4345,38 @@ function openLocationOverview(
             font-weight:bold;
             font-size:22px;
           ">
-            ${completedLessons}
+            ${totalWords}
           </div>
 
           <div style="
             font-size:12px;
           ">
-            voltooid
+            woorden
           </div>
         </div>
+
+		<div
+		  style="
+			flex:1;
+			background:#F3EFE2;
+			border-radius:16px;
+			padding:12px;
+			text-align:center;
+		  "
+		>
+		  <div style="
+			font-weight:bold;
+			font-size:22px;
+		  ">
+			${progressPercent}%
+		  </div>
+
+		  <div style="
+			font-size:12px;
+		  ">
+			voortgang
+		  </div>
+		</div>
 
       </div>
 
@@ -4325,13 +4384,49 @@ function openLocationOverview(
 
   `;
 
+const nextLesson =
+  location.lessons.find(
+    lesson =>
+      !isLessonCompleted(
+        lesson.id
+      )
+  );
+
   location.lessons.forEach(
     (lesson,index) => {
 
-      const done =
-        isLessonCompleted(
-          lesson.id
-        );
+const done =
+  isLessonCompleted(
+    lesson.id
+  );
+
+const active =
+  nextLesson &&
+  nextLesson.id === lesson.id;
+
+const lessonInfo =
+  window.lessonData[
+    lesson.id
+  ];
+
+const estimatedMinutes =
+  lesson.challenge
+    ? Math.max(
+        2,
+        Math.ceil(
+          (
+            lessonInfo?.questions?.length || 0
+          ) / 15
+        )
+      )
+    : Math.max(
+        1,
+        Math.ceil(
+          (
+            lessonInfo?.scene?.length || 0
+          ) / 5
+        )
+      );
 
       html += `
 
@@ -4366,17 +4461,22 @@ function openLocationOverview(
                 justify-content:center;
                 font-weight:bold;
                 background:${
-				  done
-					? '#45B36B'
-					: '#F3EFE2'
-				};
+			  done
+				? '#45B36B'
+				: active
+				  ? location.theme.progress
+				  : '#F3EFE2'
+			};
 
-				color:${
-				  done
-					? 'white'
-					: '#0A2E57'
-				};
-                color:white;
+			color:${
+			  done
+				? 'white'
+				: active
+				  ? 'white'
+				  : '#0A2E57'
+			};
+
+               
                 flex-shrink:0;
               "
             >
@@ -4404,19 +4504,18 @@ function openLocationOverview(
                 ${lesson.title}
               </div>
 
-              <div
-                style="
-                  font-size:13px;
-                  opacity:.7;
-                "
-              >
-                ${
-                  done
-                    ? 'Voltooid'
-                    : 'Tik om verder te gaan'
-                }
-              </div>
-
+		<div
+		  style="
+			font-size:13px;
+			opacity:.7;
+		  "
+		>
+		  ${
+			done
+			  ? 'Voltooid'
+			  : `⏱ ±${estimatedMinutes} min`
+		  }
+		</div>
             </div>
 
           </div>
