@@ -3576,15 +3576,17 @@ function showMainScreen(screenId){
   });
 
   if(screenId === 'homeScreen'){
-	  
+
 	 updateScreenBar(
 		'Home',
 		false
 	);
-	  
+
     document
       .getElementById('homeScreen')
       .classList.remove('hidden');
+
+    updateHomeStats();
   }
 
 // Woordenlijst is vanuit Oefenen bereikbaar.
@@ -6405,3 +6407,12 @@ ${
 }
 
 init();
+
+document.addEventListener(
+  'visibilitychange',
+  () => {
+    if(document.visibilityState === 'visible'){
+      updateHomeStats();
+    }
+  }
+);
