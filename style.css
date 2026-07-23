@@ -2725,6 +2725,59 @@ body{
   box-shadow:none;
 }
 
+.mini-game-intro{
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  gap:12px;
+  padding:28px;
+  background:linear-gradient(
+    180deg,
+    var(--text-primary) 0%,
+    var(--brand-primary-dark) 55%,
+    var(--brand-primary) 100%
+  );
+}
+
+.mini-game-intro:not(.hidden){
+  display:flex;
+  position:fixed;
+  top:64px;
+  left:0;
+  right:0;
+  bottom:calc(72px + env(safe-area-inset-bottom, 0px));
+  z-index:700;
+}
+
+.mini-game-intro-title{
+  font-weight:800;
+  font-size:24px;
+  color:var(--bg-app);
+}
+
+.mini-game-intro-sub{
+  font-size:14px;
+  color:var(--bg-app);
+  opacity:.7;
+  margin-bottom:10px;
+}
+
+.mini-game-level-btn{
+  width:100%;
+  max-width:280px;
+  background:rgba(255,255,255,.1);
+  color:var(--bg-app);
+  border:2px solid rgba(255,255,255,.25);
+  box-shadow:none;
+}
+
+.mini-game-countdown-number{
+  font-weight:800;
+  font-size:64px;
+  color:var(--brand-accent);
+}
+
 .balloon-hud{
   display:flex;
   justify-content:space-between;
@@ -2842,9 +2895,12 @@ body{
 }
 
 .balloon-end-screen{
-  position:absolute;
-  inset:0;
-  z-index:20;
+  position:fixed;
+  top:64px;
+  left:0;
+  right:0;
+  bottom:calc(72px + env(safe-area-inset-bottom, 0px));
+  z-index:600;
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -2867,6 +2923,151 @@ body{
   opacity:.8;
   max-width:280px;
   line-height:1.4;
+}
+
+.buggy-game{
+  background:linear-gradient(
+    180deg,
+    #F7DFAE 0%,
+    #F0C878 45%,
+    #D9A441 100%
+  );
+}
+
+.buggy-game .balloon-prompt-label,
+.buggy-game .balloon-prompt-word,
+.buggy-game .balloon-progress,
+.buggy-game .balloon-link-btn{
+  color:var(--text-primary);
+}
+
+.buggy-game .balloon-score{
+  color:var(--brand-primary-dark);
+}
+
+.buggy-timer-bar{
+  height:8px;
+  margin:0 16px 6px;
+  border-radius:999px;
+  background:rgba(23,54,77,.15);
+  overflow:hidden;
+}
+.buggy-timer-fill{
+  height:100%;
+  width:100%;
+  background:var(--brand-primary-dark);
+  border-radius:999px;
+}
+
+.buggy-road{
+  position:relative;
+  flex:1;
+  min-height:260px;
+  overflow:hidden;
+  background:linear-gradient(
+    180deg,
+    #8ECAE6 0%,
+    #BFE3C7 20%,
+    #E9D8A6 42%,
+    #E0B96A 68%,
+    #D9A441 100%
+  );
+}
+
+.buggy-decor{
+  position:absolute;
+  font-size:34px;
+  opacity:.65;
+  pointer-events:none;
+  user-select:none;
+  transform:translateX(-50%);
+  z-index:1;
+}
+.buggy-decor-small{ font-size:24px; opacity:.5; }
+.buggy-decor-large{ font-size:46px; opacity:.75; }
+
+.buggy-lanes{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:8px;
+  padding:20px 12px 0;
+}
+
+.buggy-signpost{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.buggy-signpost-pole{
+  width:6px;
+  height:20px;
+  background:#8B5A2B;
+  border-radius:0 0 2px 2px;
+  box-shadow:inset -2px 0 2px rgba(0,0,0,.2);
+}
+
+.buggy-sign{
+  min-height:60px;
+  padding:10px 6px;
+  border:none;
+  border-bottom:4px solid #8B5A2B;
+  border-radius:10px;
+  background:var(--bg-app);
+  color:var(--text-primary);
+  font-weight:700;
+  font-size:13px;
+  line-height:1.25;
+  box-shadow:0 6px 14px rgba(23,54,77,.25);
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+  word-break:break-word;
+  transition:transform .2s, opacity .2s;
+}
+.buggy-sign:active{ transform:scale(.96); }
+
+.buggy-sign.buggy-sign-passed{
+  animation:buggy-sign-pass .5s ease forwards;
+}
+@keyframes buggy-sign-pass{
+  0%{ transform:scale(1) translateY(0); opacity:1; }
+  60%{ transform:scale(1.15) translateY(-6px); opacity:1; }
+  100%{ transform:scale(.8) translateY(-16px); opacity:0; }
+}
+
+.buggy-vehicle{
+  position:absolute;
+  font-size:60px;
+  line-height:1;
+  z-index:3;
+  filter:drop-shadow(0 5px 8px rgba(0,0,0,.3));
+}
+
+.buggy-vehicle.buggy-crash{
+  animation:buggy-crash-shake .4s ease;
+}
+@keyframes buggy-crash-shake{
+  0%{ transform:translateX(0); }
+  25%{ transform:translateX(-8px) rotate(-5deg); }
+  50%{ transform:translateX(8px) rotate(5deg); }
+  75%{ transform:translateX(-5px) rotate(-3deg); }
+  100%{ transform:translateX(0); }
+}
+
+.buggy-confetti-piece{
+  position:absolute;
+  width:8px;
+  height:8px;
+  border-radius:2px;
+  z-index:4;
+  animation:buggy-confetti-fall .9s ease forwards;
+  pointer-events:none;
+}
+@keyframes buggy-confetti-fall{
+  0%{ transform:translateY(0) rotate(0deg); opacity:1; }
+  100%{ transform:translateY(50px) rotate(200deg); opacity:0; }
 }
 
 #locationOverviewScreen{

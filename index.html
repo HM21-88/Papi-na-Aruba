@@ -294,6 +294,32 @@
 
 </div>
 
+<div id="miniGameIntro" class="mini-game-intro hidden">
+
+  <div id="miniGameDifficultyStep">
+
+    <div class="mini-game-intro-title">Kies je niveau</div>
+    <div class="mini-game-intro-sub">Hoe snel moet je het juiste woord kiezen?</div>
+
+    <button class="btn mini-game-level-btn" onclick="chooseMiniGameDifficulty(1)">
+      🟢 Niveau 1 — Rustig
+    </button>
+    <button class="btn mini-game-level-btn" onclick="chooseMiniGameDifficulty(2)">
+      🟡 Niveau 2 — Uitdagend
+    </button>
+    <button class="btn mini-game-level-btn" onclick="chooseMiniGameDifficulty(3)">
+      🔴 Niveau 3 — Snel
+    </button>
+
+  </div>
+
+  <div id="miniGameCountdownStep" class="hidden">
+    <div class="mini-game-intro-title">Zoek het juiste woord</div>
+    <div class="mini-game-countdown-number" id="miniGameCountdownNumber">3</div>
+  </div>
+
+</div>
+
 <div id="balloonWarmup" class="balloon-game hidden">
 
   <div class="balloon-hud">
@@ -309,38 +335,80 @@
 
   <div class="balloon-sky" id="balloonSky"></div>
 
-  <button class="balloon-link-btn" type="button" onclick="switchToTypedFromBalloon()">
+  <button class="balloon-link-btn" type="button" onclick="switchToTypedFromMiniGame()">
     Liever de gewone quiz? →
   </button>
 
-  <div class="balloon-end-screen" id="balloonWarmupEnd">
-    <div class="balloon-end-emoji">🎉</div>
-    <div class="balloon-end-title">Warm-up klaar!</div>
-    <div class="balloon-end-score" id="balloonWarmupEndScore">0 van de 10 goed</div>
+</div>
 
-    <div class="story-action-bar">
-      <button class="btn story-action-btn" onclick="startBalloonWarmup(balloonWarmupMode)">
-        🎉 Nog een keer spelen
-      </button>
-    </div>
+<div id="buggyGame" class="balloon-game buggy-game hidden">
 
-    <div class="balloon-end-note">
-      Zelf een woord typen (bij de gewone oefening) traint je geheugen anders dan het herkennen van een woord op een vliegtuigje — allebei zijn waardevol.
-    </div>
-
-    <div class="story-action-bar">
-      <button class="btn story-action-btn" onclick="switchToTypedFromBalloon()">
-        📝 Doe de normale quiz
-      </button>
-    </div>
-
-    <div class="story-action-bar">
-      <button class="btn story-primary-action" onclick="completeLesson()">
-        Verder reizen
-      </button>
-    </div>
+  <div class="balloon-hud">
+    <div class="balloon-progress" id="buggyProgress">Woord 1 van 10</div>
+    <div class="balloon-lives" id="buggyLives"></div>
+    <div class="balloon-score"><span id="buggyScoreValue">0</span> goed</div>
   </div>
 
+  <div class="buggy-timer-bar"><div class="buggy-timer-fill" id="buggyTimerFill"></div></div>
+
+  <div class="balloon-prompt-wrap">
+    <div class="balloon-prompt-label">Zoek het woord voor</div>
+    <div class="balloon-prompt-word" id="buggyPromptWord">—</div>
+  </div>
+
+  <div class="buggy-road" id="buggyRoad">
+
+    <div class="buggy-decor buggy-decor-large" style="top:12%; left:6%;">🌵</div>
+    <div class="buggy-decor" style="top:16%; left:88%;">🪨</div>
+    <div class="buggy-decor buggy-decor-large" style="top:26%; left:92%;">🌵</div>
+    <div class="buggy-decor buggy-decor-small" style="top:30%; left:38%;">🪨</div>
+    <div class="buggy-decor" style="top:40%; left:14%;">🪨</div>
+    <div class="buggy-decor buggy-decor-large" style="top:44%; left:62%;">🌵</div>
+    <div class="buggy-decor buggy-decor-small" style="top:52%; left:8%;">🌵</div>
+    <div class="buggy-decor buggy-decor-large" style="top:58%; left:90%;">🪨</div>
+    <div class="buggy-decor" style="top:66%; left:30%;">🌵</div>
+    <div class="buggy-decor buggy-decor-small" style="top:72%; left:70%;">🪨</div>
+    <div class="buggy-decor buggy-decor-large" style="top:80%; left:12%;">🌵</div>
+    <div class="buggy-decor" style="top:86%; left:60%;">🪨</div>
+
+    <div class="buggy-lanes" id="buggyLanes"></div>
+
+    <div class="buggy-vehicle" id="buggyVehicle">🚙</div>
+
+  </div>
+
+  <button class="balloon-link-btn" type="button" onclick="switchToTypedFromMiniGame()">
+    Liever de gewone quiz? →
+  </button>
+
+</div>
+
+<div class="balloon-end-screen" id="balloonWarmupEnd">
+  <div class="balloon-end-emoji">🎉</div>
+  <div class="balloon-end-title">Warm-up klaar!</div>
+  <div class="balloon-end-score" id="balloonWarmupEndScore">0 van de 10 goed</div>
+
+  <div class="story-action-bar">
+    <button class="btn story-action-btn" onclick="beginMiniGameFlow(miniGameMode)">
+      🎉 Nog een keer spelen
+    </button>
+  </div>
+
+  <div class="balloon-end-note">
+    Zelf een woord typen (bij de gewone oefening) traint je geheugen anders dan het herkennen van een woord in het spel — allebei zijn waardevol.
+  </div>
+
+  <div class="story-action-bar">
+    <button class="btn story-action-btn" onclick="switchToTypedFromMiniGame()">
+      📝 Doe de normale quiz
+    </button>
+  </div>
+
+  <div class="story-action-bar">
+    <button class="btn story-primary-action" onclick="completeLesson()">
+      Verder reizen
+    </button>
+  </div>
 </div>
 
   <div

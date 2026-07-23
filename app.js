@@ -4724,6 +4724,24 @@ currentChallenge = null;
 
 currentStoryIndex = 0;
 
+// Verlaat je een les midden in een minispel (bijv. via de terugknop), dan mag
+// dat spel niet blijven "hangen" wanneer je hierna een (andere) les opent.
+clearTimeout(balloonPlaneTimer);
+clearTimeout(buggyRoundTimer);
+clearInterval(miniGameCountdownTimer);
+
+document.getElementById(
+  'buggyGame'
+).classList.add('hidden');
+
+document.getElementById(
+  'miniGameIntro'
+).classList.add('hidden');
+
+document.getElementById(
+  'balloonWarmupEnd'
+).classList.remove('show');
+
 const scene =
   lessonInfo.scene || [];
   if(
@@ -5259,8 +5277,8 @@ else if(
     <div class="story-action-bar">
       <button
         class="btn ${gameFirst ? 'story-primary-action' : 'story-action-btn'}"
-        onclick="startBalloonWarmup('${message.mode}')">
-        🎈 ${gameFirst ? 'Start het spel' : 'Speel als spel'}
+        onclick="beginMiniGameFlow('${message.mode}')">
+        🎮 ${gameFirst ? 'Start het spel' : 'Speel als spel'}
       </button>
     </div>
     <div class="story-action-bar">
@@ -5621,6 +5639,17 @@ function startTypedChallenge(mode){
   challengeIndex = 0;
   challengeScore = 0;
 
+  // Verwijder een eventuele afronding van een vorige poging (spel of typ-versie),
+  // anders denkt renderChallenge() dat deze sessie al klaar is en verschijnt het
+  // typveld niet.
+  challengeMessages =
+    challengeMessages.filter(
+      m =>
+        m.sender !== 'lessonSummary' &&
+        m.sender !== 'reviewWords' &&
+        m.sender !== 'restartLesson'
+    );
+
   challengeMessages.push({
 
     sender:'ana',
@@ -5649,10 +5678,17 @@ function startTypedChallenge(mode){
 const BALLOON_LIVES_MINIQUIZ = 3;
 const BALLOON_LIVES_CHALLENGE = 5;
 
+// Hoe lang (in seconden) een vliegtuigje over het scherm doet, per moeilijkheidsniveau.
+// Niveau 1 is het bestaande, ongewijzigde tempo.
+const BALLOON_FLIGHT_SECONDS = {
+  1: { min: 5.5, max: 8.0 },
+  2: { min: 3.5, max: 4.6 },
+  3: { min: 2.1, max: 2.9 }
+};
+
 let balloonWarmupPool = [];
 let balloonWarmupIndex = 0;
 let balloonWarmupScore = 0;
-let balloonWarmupMode = null;
 let balloonRoundLocked = false;
 let balloonPlaneTimer = null;
 let balloonCurrentTarget = null;
@@ -5693,7 +5729,7 @@ function renderBalloonLives(){
 
 }
 
-function playBalloonWrongSound(){
+function playMiniGameWrongSound(){
 
   try{
 
@@ -5767,6 +5803,150 @@ function shuffleBalloonArray(arr){
 
 }
 
+// ===== Welk minispel hoort bij welke les? =====
+// Vliegtuig en buggy wisselen elkaar af op basis van de positie van de les
+// binnen zijn hoofdstuk: les 1/3 = vliegtuig, les 2/challenge = buggy.
+// Geldt voor elk hoofdstuk (huidige en toekomstige).
+
+function getMiniGameTypeForLesson(lessonId){
+
+  let result = 'plane';
+
+  window.learningPaths.aruba.levels.forEach(level => {
+
+    level.chapters.forEach(chapter => {
+
+      chapter.locations.forEach(location => {
+
+        const index =
+          location.lessons.findIndex(
+            item => item.id === lessonId
+          );
+
+        if(index !== -1){
+          result =
+            index % 2 === 0
+              ? 'plane'
+              : 'buggy';
+        }
+
+      });
+
+    });
+
+  });
+
+  return result;
+
+}
+
+// ===== Gedeelde startflow: moeilijkheidsniveau + aftellen =====
+// Wordt door beide minispellen gebruikt, bij elke start (ook bij "nog een keer spelen").
+
+let selectedGameDifficulty = 1;
+let miniGameMode = null;
+let miniGameCountdownTimer = null;
+
+function beginMiniGameFlow(mode){
+
+  miniGameMode = mode;
+
+  document.getElementById(
+    'challengeChat'
+  ).classList.add('hidden');
+
+  document.getElementById(
+    'balloonWarmup'
+  ).classList.add('hidden');
+
+  document.getElementById(
+    'buggyGame'
+  ).classList.add('hidden');
+
+  document.getElementById(
+    'balloonWarmupEnd'
+  ).classList.remove('show');
+
+  document.getElementById(
+    'miniGameIntro'
+  ).classList.remove('hidden');
+
+  document.getElementById(
+    'miniGameDifficultyStep'
+  ).classList.remove('hidden');
+
+  document.getElementById(
+    'miniGameCountdownStep'
+  ).classList.add('hidden');
+
+}
+
+function chooseMiniGameDifficulty(level){
+
+  selectedGameDifficulty = level;
+
+  document.getElementById(
+    'miniGameDifficultyStep'
+  ).classList.add('hidden');
+
+  document.getElementById(
+    'miniGameCountdownStep'
+  ).classList.remove('hidden');
+
+  runMiniGameCountdown();
+
+}
+
+function runMiniGameCountdown(){
+
+  let n = 3;
+
+  const numEl =
+    document.getElementById(
+      'miniGameCountdownNumber'
+    );
+
+  numEl.textContent = n;
+
+  clearInterval(
+    miniGameCountdownTimer
+  );
+
+  miniGameCountdownTimer =
+    setInterval(() => {
+
+      n--;
+
+      if(n > 0){
+
+        numEl.textContent = n;
+
+      }else{
+
+        clearInterval(
+          miniGameCountdownTimer
+        );
+
+        document.getElementById(
+          'miniGameIntro'
+        ).classList.add('hidden');
+
+        if(
+          getMiniGameTypeForLesson(
+            currentLessonId
+          ) === 'buggy'
+        ){
+          startBuggyGame(miniGameMode);
+        }else{
+          startBalloonWarmup(miniGameMode);
+        }
+
+      }
+
+    }, 1000);
+
+}
+
 function startBalloonWarmup(mode){
 
   const lessonInfo =
@@ -5784,7 +5964,7 @@ function startBalloonWarmup(mode){
       .map(q => getWordById(q.id))
       .filter(Boolean);
 
-  balloonWarmupMode = mode;
+  miniGameMode = mode;
   balloonWarmupIndex = 0;
   balloonWarmupScore = 0;
   challengeMistakes = [];
@@ -5890,6 +6070,11 @@ function nextBalloonWarmupRound(){
   const flyDistance =
     sky.clientHeight + 150;
 
+  const flightRange =
+    BALLOON_FLIGHT_SECONDS[
+      selectedGameDifficulty
+    ] || BALLOON_FLIGHT_SECONDS[1];
+
   planes.forEach((word, i) => {
 
     const plane =
@@ -5918,7 +6103,11 @@ function nextBalloonWarmupRound(){
     );
 
     plane.style.animationDuration =
-      (5.5 + Math.random() * 2.5) + 's';
+      (
+        flightRange.min +
+        Math.random() *
+          (flightRange.max - flightRange.min)
+      ) + 's';
 
     plane.style.animationDelay =
       (Math.random() * 0.6) + 's';
@@ -5956,7 +6145,7 @@ function nextBalloonWarmupRound(){
         );
       }
 
-    }, 8500);
+    }, (flightRange.max + 0.5) * 1000);
 
 }
 
@@ -6036,7 +6225,7 @@ function gradeBalloonRound(
       );
     }
 
-    playBalloonWrongSound();
+    playMiniGameWrongSound();
 
     balloonLives =
       Math.max(
@@ -6080,7 +6269,7 @@ function showBalloonWarmupEnd(){
     ];
 
   currentChallenge =
-    balloonWarmupMode === 'challenge'
+    miniGameMode === 'challenge'
       ? lessonInfo
       : {
           questions:
@@ -6120,37 +6309,566 @@ function showBalloonWarmupEnd(){
 
 }
 
-function switchToTypedFromBalloon(){
+// ===== Buggy-spel (leguaan op de zandweg) — zelfde opzet als het vliegtuigspel =====
+// gebruikt voor Tanki Flip en Oranjestad (zie getMiniGameTypeForLesson).
+
+const BUGGY_TIME_SECONDS = { 1: 6, 2: 4, 3: 2.5 };
+const BUGGY_OPTION_COUNT = 4;
+
+let buggyPool = [];
+let buggyIndex = 0;
+let buggyScore = 0;
+let buggyRoundLocked = false;
+let buggyRoundTimer = null;
+let buggyCurrentTarget = null;
+let buggyTotalLives = 0;
+let buggyLives = 0;
+
+function renderBuggyLives(){
+
+  const container =
+    document.getElementById(
+      'buggyLives'
+    );
+
+  container.innerHTML = '';
+
+  for(
+    let i = 0;
+    i < buggyTotalLives;
+    i++
+  ){
+
+    const heart =
+      document.createElement('span');
+
+    heart.className =
+      'balloon-life' +
+      (
+        i < buggyTotalLives - buggyLives
+          ? ' lost'
+          : ''
+      );
+
+    heart.textContent = '❤️';
+
+    container.appendChild(heart);
+
+  }
+
+}
+
+function startBuggyGame(mode){
+
+  const lessonInfo =
+    lessonData[
+      currentLessonId
+    ];
+
+  const questions =
+    mode === 'challenge'
+      ? lessonInfo.questions
+      : lessonInfo.miniQuiz;
+
+  buggyPool =
+    questions
+      .map(q => getWordById(q.id))
+      .filter(Boolean);
+
+  buggyIndex = 0;
+  buggyScore = 0;
+  challengeMistakes = [];
+
+  buggyTotalLives =
+    mode === 'challenge'
+      ? BALLOON_LIVES_CHALLENGE
+      : BALLOON_LIVES_MINIQUIZ;
+
+  buggyLives =
+    buggyTotalLives;
+
+  renderBuggyLives();
+
+  document.getElementById(
+    'buggyGame'
+  ).classList.remove('hidden');
+
+  document.getElementById(
+    'balloonWarmupEnd'
+  ).classList.remove('show');
+
+  resetBuggyVehiclePosition();
+
+  nextBuggyRound();
+
+}
+
+function resetBuggyVehiclePosition(){
+
+  const vehicle =
+    document.getElementById(
+      'buggyVehicle'
+    );
+
+  const road =
+    document.getElementById(
+      'buggyRoad'
+    );
+
+  vehicle.style.transition = 'none';
+
+  vehicle.style.left =
+    (
+      (road.clientWidth / 2) -
+      (vehicle.offsetWidth / 2)
+    ) + 'px';
+
+  vehicle.style.top =
+    (
+      road.clientHeight -
+      vehicle.offsetHeight -
+      14
+    ) + 'px';
+
+  vehicle.classList.remove(
+    'buggy-crash'
+  );
+
+}
+
+function nextBuggyRound(){
+
+  clearTimeout(
+    buggyRoundTimer
+  );
+
+  resetBuggyVehiclePosition();
+
+  const lanesEl =
+    document.getElementById(
+      'buggyLanes'
+    );
+
+  lanesEl.innerHTML = '';
+
+  if(
+    buggyIndex >=
+    buggyPool.length
+  ){
+    showBuggyGameEnd();
+    return;
+  }
+
+  buggyRoundLocked = false;
+
+  buggyCurrentTarget =
+    buggyPool[buggyIndex];
+
+  document.getElementById(
+    'buggyProgress'
+  ).textContent =
+    `Woord ${buggyIndex + 1} van ${buggyPool.length}`;
+
+  document.getElementById(
+    'buggyScoreValue'
+  ).textContent =
+    buggyScore;
+
+  document.getElementById(
+    'buggyPromptWord'
+  ).textContent =
+    buggyCurrentTarget
+      .nederlands
+      .split(',')[0]
+      .trim();
+
+  const distractorPool =
+    shuffleBalloonArray(
+      buggyPool.filter(
+        w =>
+          w.id !== buggyCurrentTarget.id &&
+          getPrimaryWord(w) !== getPrimaryWord(buggyCurrentTarget)
+      )
+    ).slice(
+      0,
+      Math.min(
+        BUGGY_OPTION_COUNT - 1,
+        buggyPool.length - 1
+      )
+    );
+
+  const options =
+    shuffleBalloonArray([
+      buggyCurrentTarget,
+      ...distractorPool
+    ]);
+
+  options.forEach(word => {
+
+    const post =
+      document.createElement('div');
+
+    post.className = 'buggy-signpost';
+
+    const sign =
+      document.createElement('button');
+
+    sign.type = 'button';
+    sign.className = 'buggy-sign';
+    sign.textContent = getPrimaryWord(word);
+
+    sign.addEventListener(
+      'click',
+      () =>
+        handleBuggySignTap(
+          word,
+          sign
+        )
+    );
+
+    const pole =
+      document.createElement('div');
+
+    pole.className = 'buggy-signpost-pole';
+
+    post.appendChild(sign);
+    post.appendChild(pole);
+
+    lanesEl.appendChild(post);
+
+  });
+
+  const seconds =
+    BUGGY_TIME_SECONDS[
+      selectedGameDifficulty
+    ] ||
+    BUGGY_TIME_SECONDS[1];
+
+  startBuggyTimer(seconds);
+
+}
+
+function startBuggyTimer(seconds){
+
+  const fill =
+    document.getElementById(
+      'buggyTimerFill'
+    );
+
+  fill.style.transition = 'none';
+  fill.style.width = '100%';
+
+  // Forceer een reflow zodat de overgang hieronder echt vanaf 100% animeert.
+  void fill.offsetWidth;
+
+  fill.style.transition =
+    `width ${seconds}s linear`;
+
+  fill.style.width = '0%';
+
+  buggyRoundTimer =
+    setTimeout(() => {
+
+      if(!buggyRoundLocked){
+        gradeBuggyRound(
+          null,
+          false,
+          null
+        );
+      }
+
+    }, seconds * 1000);
+
+}
+
+function handleBuggySignTap(
+  word,
+  signEl
+){
+
+  if(buggyRoundLocked){
+    return;
+  }
+
+  buggyRoundLocked = true;
+
+  clearTimeout(
+    buggyRoundTimer
+  );
+
+  const road =
+    document.getElementById(
+      'buggyRoad'
+    );
+
+  const vehicle =
+    document.getElementById(
+      'buggyVehicle'
+    );
+
+  const signRect =
+    signEl.getBoundingClientRect();
+
+  const roadRect =
+    road.getBoundingClientRect();
+
+  const targetX =
+    signRect.left -
+    roadRect.left +
+    (signRect.width / 2) -
+    (vehicle.offsetWidth / 2);
+
+  const targetY =
+    signRect.top -
+    roadRect.top +
+    (signRect.height / 2) -
+    (vehicle.offsetHeight / 2);
+
+  vehicle.style.transition =
+    'left .6s cubic-bezier(.3,.6,.4,1), top .6s cubic-bezier(.3,.6,.4,1)';
+
+  vehicle.style.left =
+    targetX + 'px';
+
+  vehicle.style.top =
+    targetY + 'px';
+
+  const correct =
+    word.id === buggyCurrentTarget.id;
+
+  setTimeout(() => {
+    gradeBuggyRound(
+      word,
+      correct,
+      signEl
+    );
+  }, 600);
+
+}
+
+function spawnBuggyConfetti(signEl){
+
+  const road =
+    document.getElementById(
+      'buggyRoad'
+    );
+
+  const roadRect =
+    road.getBoundingClientRect();
+
+  const signRect =
+    signEl.getBoundingClientRect();
+
+  const originX =
+    signRect.left -
+    roadRect.left +
+    (signRect.width / 2);
+
+  const originY =
+    signRect.top -
+    roadRect.top;
+
+  const colors = [
+    'var(--brand-accent)',
+    'var(--brand-primary)',
+    'var(--bad)'
+  ];
+
+  for(
+    let i = 0;
+    i < 10;
+    i++
+  ){
+
+    const piece =
+      document.createElement('span');
+
+    piece.className =
+      'buggy-confetti-piece';
+
+    piece.style.left =
+      (originX + (Math.random() * 60 - 30)) + 'px';
+
+    piece.style.top =
+      originY + 'px';
+
+    piece.style.background =
+      colors[i % colors.length];
+
+    piece.style.animationDelay =
+      (Math.random() * 0.15) + 's';
+
+    road.appendChild(piece);
+
+    setTimeout(
+      () => piece.remove(),
+      1000
+    );
+
+  }
+
+}
+
+function gradeBuggyRound(
+  word,
+  correct,
+  signEl
+){
+
+  updateWordProgress(
+    buggyCurrentTarget.id,
+    correct
+  );
+
+  logQuizAttempt({
+    word_id: buggyCurrentTarget.id,
+    typed_answer: null,
+    correct: correct,
+    match_type: 'sign_tap',
+    category: 'buggyspel'
+  });
+
+  if(correct){
+
+    buggyScore++;
+
+    if(signEl){
+      spawnBuggyConfetti(signEl);
+      signEl.classList.add(
+        'buggy-sign-passed'
+      );
+    }
+
+    speakText(
+      getPrimaryWord(
+        buggyCurrentTarget
+      )
+    );
+
+  }else{
+
+    const vehicle =
+      document.getElementById(
+        'buggyVehicle'
+      );
+
+    vehicle.classList.add(
+      'buggy-crash'
+    );
+
+    playMiniGameWrongSound();
+
+    buggyLives =
+      Math.max(
+        0,
+        buggyLives - 1
+      );
+
+    renderBuggyLives();
+
+    if(
+      !challengeMistakes.includes(
+        buggyCurrentTarget.id
+      )
+    ){
+      challengeMistakes.push(
+        buggyCurrentTarget.id
+      );
+    }
+
+  }
+
+  document.getElementById(
+    'buggyScoreValue'
+  ).textContent =
+    buggyScore;
+
+  buggyIndex++;
+
+  setTimeout(
+    nextBuggyRound,
+    700
+  );
+
+}
+
+function showBuggyGameEnd(){
+
+  const lessonInfo =
+    lessonData[
+      currentLessonId
+    ];
+
+  currentChallenge =
+    miniGameMode === 'challenge'
+      ? lessonInfo
+      : {
+          questions:
+            lessonInfo.miniQuiz
+        };
+
+  challengeScore =
+    buggyScore;
+
+  finishChallengeQuestions();
+
+  const learnerData =
+    getLearnerData();
+
+  if(
+    !learnerData.travel_progress
+  ){
+    learnerData.travel_progress = {};
+  }
+
+  learnerData.travel_progress[
+    currentLessonId
+  ] = true;
+
+  saveLearnerData(
+    learnerData
+  );
+
+  document.getElementById(
+    'balloonWarmupEndScore'
+  ).textContent =
+    `${buggyScore} van de ${buggyPool.length} goed`;
+
+  document.getElementById(
+    'balloonWarmupEnd'
+  ).classList.add('show');
+
+}
+
+function switchToTypedFromMiniGame(){
 
   clearTimeout(
     balloonPlaneTimer
   );
 
+  clearTimeout(
+    buggyRoundTimer
+  );
+
   document.getElementById(
     'balloonWarmup'
   ).classList.add('hidden');
+
+  document.getElementById(
+    'buggyGame'
+  ).classList.add('hidden');
+
+  document.getElementById(
+    'balloonWarmupEnd'
+  ).classList.remove('show');
 
   document.getElementById(
     'challengeChat'
   ).classList.remove('hidden');
 
   startTypedChallenge(
-    balloonWarmupMode
+    miniGameMode
   );
-
-}
-
-function showChallengeChatAfterBalloon(){
-
-  document.getElementById(
-    'balloonWarmup'
-  ).classList.add('hidden');
-
-  document.getElementById(
-    'challengeChat'
-  ).classList.remove('hidden');
-
-  renderChallenge();
 
 }
 
