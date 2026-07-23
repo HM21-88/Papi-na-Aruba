@@ -5,7 +5,12 @@ const APP_CONFIG = {
     'showOtherVariant'
   ) !== 'false',
 
-  subscription: 'free'
+  subscription: 'free',
+
+  kidsMode:
+    localStorage.getItem(
+      'kidsMode'
+    ) === 'true'
 };
 
 const data = window.wordsData || [];
@@ -309,6 +314,18 @@ function toggleOtherVariant(){
   renderList();
   renderFlash();
   updateHomeStats();
+
+}
+
+function toggleKidsMode(){
+
+  APP_CONFIG.kidsMode =
+    !APP_CONFIG.kidsMode;
+
+  localStorage.setItem(
+    'kidsMode',
+    APP_CONFIG.kidsMode
+  );
 
 }
 
@@ -3545,6 +3562,16 @@ if(toggle){
   toggle.checked =
     APP_CONFIG.showOtherVariant;
 }
+
+const kidsToggle =
+  document.getElementById(
+    'kidsModeToggle'
+  );
+
+if(kidsToggle){
+  kidsToggle.checked =
+    APP_CONFIG.kidsMode;
+}
 }
 
 function showMainScreen(screenId){
@@ -4708,34 +4735,16 @@ const scene =
     ).style.display = 'none';
 
 	showNextStoryMessage();
-    
-	if(
-      lessonInfo.questions
-    ){
-
-      currentChallenge =
-        lessonInfo;
-
-      challengeIndex = 0;
-
-      challengeScore = 0;
-
-      challengeMessages.push({
-
-        sender:'question',
-
-        text:
-          currentChallenge
-            .questions[0]
-            .word
-
-      });
-
-    }
 
     document.getElementById(
       'challengeChat'
     ).classList.remove(
+      'hidden'
+    );
+
+    document.getElementById(
+      'balloonWarmup'
+    ).classList.add(
       'hidden'
     );
 
@@ -4832,39 +4841,26 @@ function showNextStoryMessage(){
       ];
 
     if(
-      lessonInfo.questions
+      (
+        lessonInfo.questions ||
+        lessonInfo.miniQuiz
+      ) &&
+      !challengeMessages.some(
+        message =>
+          message.sender ===
+          'practiceModeChoice'
+      )
     ){
 
-      currentChallenge =
-        lessonInfo;
-
-      challengeIndex = 0;
-      challengeScore = 0;
-
       challengeMessages.push({
-        sender:'question',
-        text:
-          currentChallenge
-            .questions[0]
-            .word
+        sender:'practiceModeChoice',
+        mode:
+          lessonInfo.questions
+            ? 'challenge'
+            : 'miniQuiz'
       });
 
     }
-else if(
-  lessonInfo.miniQuiz &&
-  !challengeMessages.some(
-    message =>
-      message.sender ===
-      'miniQuizStart'
-  )
-){
-
-challengeMessages.push({
-  sender:'miniQuizStart',
-  text:'Mini-quiz starten →'
-});
-
-}
 
     renderChallenge();
     return;
@@ -5248,14 +5244,30 @@ anaText =
       }
 
 else if(
-  message.sender === 'miniQuizStart'
+  message.sender === 'practiceModeChoice'
 ){
+
+  const gameFirst =
+    APP_CONFIG.kidsMode;
+
+  const typedLabel =
+    message.mode === 'challenge'
+      ? '📝 Challenge starten →'
+      : '📝 Mini-quiz starten →';
+
   html += `
     <div class="story-action-bar">
       <button
-        class="btn story-action-btn"
-        onclick="startMiniQuiz()">
-        ${message.text}
+        class="btn ${gameFirst ? 'story-primary-action' : 'story-action-btn'}"
+        onclick="startBalloonWarmup('${message.mode}')">
+        🎈 ${gameFirst ? 'Start het spel' : 'Speel als spel'}
+      </button>
+    </div>
+    <div class="story-action-bar">
+      <button
+        class="btn ${gameFirst ? 'story-action-btn' : 'story-primary-action'}"
+        onclick="startTypedChallenge('${message.mode}')">
+        ${gameFirst ? '📝 Liever de gewone quiz?' : typedLabel}
       </button>
     </div>
   `;
@@ -5429,7 +5441,7 @@ const showStoryButton =
   !challengeMessages.some(
     message =>
       message.sender ===
-      'miniQuizStart'
+      'practiceModeChoice'
   ) &&
   !challengeMessages.some(
     message =>
@@ -5444,12 +5456,17 @@ const showStoryButton =
         'lessonSummary'
     );
 
+  const showingTypedInput =
+    !hasSummary &&
+    currentChallenge;
+
+  let footerHtml = '';
+
 if(
-  !hasSummary &&
-  currentChallenge
+  showingTypedInput
 ){
-	
-    html += `
+
+    footerHtml += `
 
       <div
         style="
@@ -5497,7 +5514,7 @@ if(
   showStoryButton
 ){
 
-html += `
+footerHtml += `
   <div class="story-action-bar">
     <button
       class="btn story-action-btn"
@@ -5509,29 +5526,49 @@ html += `
 `;
 }
 
-
-  document.getElementById(
-    'challengeChat'
-  ).innerHTML = html;
+  const isFullscreen =
+    !showingTypedInput;
 
   const challengeChat =
     document.getElementById(
       'challengeChat'
     );
 
+  challengeChat.classList.toggle(
+    'fullscreen',
+    isFullscreen
+  );
+
+  const messagesEl =
+    document.getElementById(
+      'challengeMessages'
+    );
+
+  messagesEl.innerHTML = html;
+
+  document.getElementById(
+    'challengeFooter'
+  ).innerHTML = footerHtml;
+
 setTimeout(() => {
 
-if(
-  challengeMessages.length > 1
-){
-  window.scrollTo({
-    top: document.body.scrollHeight,
-    behavior:'smooth'
-  });
-}
+  if(isFullscreen){
 
-  challengeChat.scrollTop =
-    challengeChat.scrollHeight;
+    messagesEl.scrollTop =
+      messagesEl.scrollHeight;
+
+  }else{
+
+    if(
+      challengeMessages.length > 1
+    ){
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior:'smooth'
+      });
+    }
+
+  }
 
   const answerInput =
     document.getElementById(
@@ -5564,19 +5601,22 @@ function toggleTranslation(
 }
 
 
-function startMiniQuiz(){
+function startTypedChallenge(mode){
+
+  const lessonInfo =
+    lessonData[
+      currentLessonId
+    ];
 
   challengeMistakes = [];
-  challengeMessages = [];
 
-  currentChallenge = {
-
-    questions:
-      lessonData[
-        currentLessonId
-      ].miniQuiz
-
-  };
+  currentChallenge =
+    mode === 'challenge'
+      ? lessonInfo
+      : {
+          questions:
+            lessonInfo.miniQuiz
+        };
 
   challengeIndex = 0;
   challengeScore = 0;
@@ -5599,6 +5639,622 @@ function startMiniQuiz(){
         .questions[0]
         .word
 
+  });
+
+  renderChallenge();
+
+}
+
+
+const BALLOON_LIVES_MINIQUIZ = 3;
+const BALLOON_LIVES_CHALLENGE = 5;
+
+let balloonWarmupPool = [];
+let balloonWarmupIndex = 0;
+let balloonWarmupScore = 0;
+let balloonWarmupMode = null;
+let balloonRoundLocked = false;
+let balloonPlaneTimer = null;
+let balloonCurrentTarget = null;
+let balloonTotalLives = 0;
+let balloonLives = 0;
+
+function renderBalloonLives(){
+
+  const container =
+    document.getElementById(
+      'balloonLives'
+    );
+
+  container.innerHTML = '';
+
+  for(
+    let i = 0;
+    i < balloonTotalLives;
+    i++
+  ){
+
+    const heart =
+      document.createElement('span');
+
+    heart.className =
+      'balloon-life' +
+      (
+        i < balloonTotalLives - balloonLives
+          ? ' lost'
+          : ''
+      );
+
+    heart.textContent = '❤️';
+
+    container.appendChild(heart);
+
+  }
+
+}
+
+function playBalloonWrongSound(){
+
+  try{
+
+    const AudioCtx =
+      window.AudioContext ||
+      window.webkitAudioContext;
+
+    const ctx = new AudioCtx();
+
+    const osc =
+      ctx.createOscillator();
+
+    const gain =
+      ctx.createGain();
+
+    osc.type = 'sine';
+
+    osc.frequency.setValueAtTime(
+      220,
+      ctx.currentTime
+    );
+
+    osc.frequency.exponentialRampToValueAtTime(
+      110,
+      ctx.currentTime + 0.25
+    );
+
+    gain.gain.setValueAtTime(
+      0.2,
+      ctx.currentTime
+    );
+
+    gain.gain.exponentialRampToValueAtTime(
+      0.001,
+      ctx.currentTime + 0.3
+    );
+
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+
+    osc.start();
+    osc.stop(ctx.currentTime + 0.3);
+
+  }catch(e){
+    // Web Audio niet beschikbaar — geluid is niet essentieel
+  }
+
+}
+
+function shuffleBalloonArray(arr){
+
+  const a = [...arr];
+
+  for(
+    let i = a.length - 1;
+    i > 0;
+    i--
+  ){
+
+    const j =
+      Math.floor(
+        Math.random() * (i + 1)
+      );
+
+    [a[i], a[j]] =
+      [a[j], a[i]];
+
+  }
+
+  return a;
+
+}
+
+function startBalloonWarmup(mode){
+
+  const lessonInfo =
+    lessonData[
+      currentLessonId
+    ];
+
+  const questions =
+    mode === 'challenge'
+      ? lessonInfo.questions
+      : lessonInfo.miniQuiz;
+
+  balloonWarmupPool =
+    questions
+      .map(q => getWordById(q.id))
+      .filter(Boolean);
+
+  balloonWarmupMode = mode;
+  balloonWarmupIndex = 0;
+  balloonWarmupScore = 0;
+  challengeMistakes = [];
+
+  balloonTotalLives =
+    mode === 'challenge'
+      ? BALLOON_LIVES_CHALLENGE
+      : BALLOON_LIVES_MINIQUIZ;
+
+  balloonLives =
+    balloonTotalLives;
+
+  renderBalloonLives();
+
+  document.getElementById(
+    'challengeChat'
+  ).classList.add('hidden');
+
+  document.getElementById(
+    'balloonWarmup'
+  ).classList.remove('hidden');
+
+  document.getElementById(
+    'balloonWarmupEnd'
+  ).classList.remove('show');
+
+  nextBalloonWarmupRound();
+
+}
+
+function nextBalloonWarmupRound(){
+
+  clearTimeout(
+    balloonPlaneTimer
+  );
+
+  const sky =
+    document.getElementById(
+      'balloonSky'
+    );
+
+  sky.querySelectorAll(
+    '.balloon-plane'
+  ).forEach(p => p.remove());
+
+  if(
+    balloonWarmupIndex >=
+    balloonWarmupPool.length
+  ){
+    showBalloonWarmupEnd();
+    return;
+  }
+
+  balloonRoundLocked = false;
+
+  balloonCurrentTarget =
+    balloonWarmupPool[
+      balloonWarmupIndex
+    ];
+
+  document.getElementById(
+    'balloonProgress'
+  ).textContent =
+    `Woord ${balloonWarmupIndex + 1} van ${balloonWarmupPool.length}`;
+
+  document.getElementById(
+    'balloonScoreValue'
+  ).textContent =
+    balloonWarmupScore;
+
+  document.getElementById(
+    'balloonPromptWord'
+  ).textContent =
+    balloonCurrentTarget
+      .nederlands
+      .split(',')[0]
+      .trim();
+
+  const distractorPool =
+    shuffleBalloonArray(
+      balloonWarmupPool.filter(
+        w =>
+          w.id !== balloonCurrentTarget.id &&
+          getPrimaryWord(w) !== getPrimaryWord(balloonCurrentTarget)
+      )
+    ).slice(
+      0,
+      Math.min(
+        2,
+        balloonWarmupPool.length - 1
+      )
+    );
+
+  const planes =
+    shuffleBalloonArray([
+      balloonCurrentTarget,
+      ...distractorPool
+    ]);
+
+  const laneCount =
+    planes.length;
+
+  const flyDistance =
+    sky.clientHeight + 150;
+
+  planes.forEach((word, i) => {
+
+    const plane =
+      document.createElement('div');
+
+    plane.className =
+      'balloon-plane';
+
+    plane.innerHTML =
+      `<span class="balloon-plane-emoji">✈️</span><span class="balloon-plane-word">${escapeHtml(getPrimaryWord(word))}</span>`;
+
+    const laneWidth =
+      sky.clientWidth / laneCount;
+
+    plane.style.left =
+      (
+        Math.round(laneWidth * i) +
+        Math.round(
+          Math.random() * (laneWidth * 0.3)
+        )
+      ) + 'px';
+
+    plane.style.setProperty(
+      '--balloon-fly-distance',
+      flyDistance + 'px'
+    );
+
+    plane.style.animationDuration =
+      (5.5 + Math.random() * 2.5) + 's';
+
+    plane.style.animationDelay =
+      (Math.random() * 0.6) + 's';
+
+    plane.addEventListener(
+      'animationend',
+      () => plane.remove()
+    );
+
+    plane.addEventListener(
+      'click',
+      () =>
+        handleBalloonPlaneTap(
+          plane,
+          word
+        )
+    );
+
+    sky.appendChild(plane);
+
+    requestAnimationFrame(
+      () =>
+        plane.classList.add('flying')
+    );
+
+  });
+
+  balloonPlaneTimer =
+    setTimeout(() => {
+
+      if(!balloonRoundLocked){
+        gradeBalloonRound(
+          null,
+          false
+        );
+      }
+
+    }, 8500);
+
+}
+
+function handleBalloonPlaneTap(
+  planeEl,
+  tappedWord
+){
+
+  if(balloonRoundLocked){
+    return;
+  }
+
+  gradeBalloonRound(
+    tappedWord,
+    tappedWord.id === balloonCurrentTarget.id,
+    planeEl
+  );
+
+}
+
+function gradeBalloonRound(
+  tappedWord,
+  correct,
+  tappedPlaneEl
+){
+
+  balloonRoundLocked = true;
+
+  clearTimeout(
+    balloonPlaneTimer
+  );
+
+  updateWordProgress(
+    balloonCurrentTarget.id,
+    correct
+  );
+
+  logQuizAttempt({
+    word_id: balloonCurrentTarget.id,
+    typed_answer: null,
+    correct: correct,
+    match_type: 'plane_tap',
+    category: 'ballonspel'
+  });
+
+  document.querySelectorAll(
+    '#balloonSky .balloon-plane'
+  ).forEach(p => {
+
+    if(p !== tappedPlaneEl){
+      p.remove();
+    }
+
+  });
+
+  if(correct){
+
+    balloonWarmupScore++;
+
+    if(tappedPlaneEl){
+      tappedPlaneEl.classList.add(
+        'correct-pop'
+      );
+    }
+
+    speakText(
+      getPrimaryWord(
+        balloonCurrentTarget
+      )
+    );
+
+  }else{
+
+    if(tappedPlaneEl){
+      tappedPlaneEl.classList.add(
+        'wrong-pop'
+      );
+    }
+
+    playBalloonWrongSound();
+
+    balloonLives =
+      Math.max(
+        0,
+        balloonLives - 1
+      );
+
+    renderBalloonLives();
+
+    if(
+      !challengeMistakes.includes(
+        balloonCurrentTarget.id
+      )
+    ){
+      challengeMistakes.push(
+        balloonCurrentTarget.id
+      );
+    }
+
+  }
+
+  document.getElementById(
+    'balloonScoreValue'
+  ).textContent =
+    balloonWarmupScore;
+
+  balloonWarmupIndex++;
+
+  setTimeout(
+    nextBalloonWarmupRound,
+    700
+  );
+
+}
+
+function showBalloonWarmupEnd(){
+
+  const lessonInfo =
+    lessonData[
+      currentLessonId
+    ];
+
+  currentChallenge =
+    balloonWarmupMode === 'challenge'
+      ? lessonInfo
+      : {
+          questions:
+            lessonInfo.miniQuiz
+        };
+
+  challengeScore =
+    balloonWarmupScore;
+
+  finishChallengeQuestions();
+
+  const learnerData =
+    getLearnerData();
+
+  if(
+    !learnerData.travel_progress
+  ){
+    learnerData.travel_progress = {};
+  }
+
+  learnerData.travel_progress[
+    currentLessonId
+  ] = true;
+
+  saveLearnerData(
+    learnerData
+  );
+
+  document.getElementById(
+    'balloonWarmupEndScore'
+  ).textContent =
+    `${balloonWarmupScore} van de ${balloonWarmupPool.length} goed`;
+
+  document.getElementById(
+    'balloonWarmupEnd'
+  ).classList.add('show');
+
+}
+
+function switchToTypedFromBalloon(){
+
+  clearTimeout(
+    balloonPlaneTimer
+  );
+
+  document.getElementById(
+    'balloonWarmup'
+  ).classList.add('hidden');
+
+  document.getElementById(
+    'challengeChat'
+  ).classList.remove('hidden');
+
+  startTypedChallenge(
+    balloonWarmupMode
+  );
+
+}
+
+function showChallengeChatAfterBalloon(){
+
+  document.getElementById(
+    'balloonWarmup'
+  ).classList.add('hidden');
+
+  document.getElementById(
+    'challengeChat'
+  ).classList.remove('hidden');
+
+  renderChallenge();
+
+}
+
+function finishChallengeQuestions(){
+
+  const total =
+    currentChallenge.questions.length;
+
+  let summaryText = '';
+
+  if(
+    challengeScore === total
+  ){
+
+    summaryText =
+      `${challengeScore} van de ${total} vragen goed.\n\nMi ta orguyoso di bo! 🌴`;
+
+  }
+  else if(
+    challengeScore >=
+    Math.ceil(
+      total * 0.8
+    )
+  ){
+
+    summaryText =
+      `${challengeScore} van de ${total} vragen goed.\n\nJe bent klaar voor de volgende stap van je reis.`;
+
+  }
+  else if(
+    challengeScore >=
+    Math.ceil(
+      total * 0.5
+    )
+  ){
+
+    summaryText =
+      `${challengeScore} van de ${total} vragen goed.\n\nMet een beetje oefenen kom je er wel.`;
+
+  }
+  else{
+
+    summaryText =
+      `${challengeScore} van de ${total} vragen goed.\n\nTalen leer je stap voor stap.`;
+
+  }
+
+  let finalSummary =
+    summaryText;
+
+  const learnerData =
+    getLearnerData();
+
+  if(
+    !learnerData.challengeScores
+  ){
+    learnerData.challengeScores = {};
+  }
+
+  learnerData.challengeScores[
+    currentLessonId
+  ] = {
+    score: challengeScore,
+    total: total
+  };
+
+  saveLearnerData(
+    learnerData
+  );
+
+  if(
+    currentChallenge.summary
+  ){
+
+    finalSummary +=
+      '\n\n' +
+      currentChallenge.summary;
+
+  }
+
+  challengeMessages =
+    challengeMessages.filter(
+      m =>
+        m.sender !== 'lessonSummary' &&
+        m.sender !== 'reviewWords' &&
+        m.sender !== 'restartLesson'
+    );
+
+  challengeMessages.push({
+    sender:'lessonSummary',
+    text:finalSummary
+  });
+
+  challengeMessages.push({
+    sender:'ana',
+    text:'Wil je nog even oefenen? We kunnen de woorden herhalen die je lastig vond of de les opnieuw doen.'
+  });
+
+  challengeMessages.push({
+    sender:'reviewWords'
+  });
+
+  challengeMessages.push({
+    sender:'restartLesson'
   });
 
   renderChallenge();
@@ -5745,101 +6401,7 @@ if (
       currentChallenge.questions.length
     ){
 
-      const total =
-        currentChallenge.questions.length;
-
-let summaryText = '';
-
-if(
-  challengeScore === total
-){
-
-  summaryText =
-    `${challengeScore} van de ${total} vragen goed.\n\nMi ta orguyoso di bo! 🌴`;
-
-}
-else if(
-  challengeScore >=
-  Math.ceil(
-    total * 0.8
-  )
-){
-
-  summaryText =
-    `${challengeScore} van de ${total} vragen goed.\n\nJe bent klaar voor de volgende stap van je reis.`;
-
-}
-else if(
-  challengeScore >=
-  Math.ceil(
-    total * 0.5
-  )
-){
-
-  summaryText =
-    `${challengeScore} van de ${total} vragen goed.\n\nMet een beetje oefenen kom je er wel.`;
-
-}
-else{
-
-  summaryText =
-    `${challengeScore} van de ${total} vragen goed.\n\nTalen leer je stap voor stap.`;
-
-}
-
-let finalSummary =
-  summaryText;
-
-const learnerData =
-  getLearnerData();
-
-if(
-  !learnerData.challengeScores
-){
-  learnerData.challengeScores = {};
-}
-
-learnerData.challengeScores[
-  currentLessonId
-] = {
-  score: challengeScore,
-  total: total
-};
-
-saveLearnerData(
-  learnerData
-);
-
-if(
-  currentChallenge.summary
-){
-
-  finalSummary +=
-    '\n\n' +
-    currentChallenge.summary;
-
-}
-
-challengeMessages.push({
-  sender:'lessonSummary',
-  text:finalSummary
-});
-
-challengeMessages.push({
-  sender:'ana',
-  text:'Wil je nog even oefenen? We kunnen de woorden herhalen die je lastig vond of de les opnieuw doen.'
-});
-
-challengeMessages.push({
-  sender:'reviewWords'
-});
-
-challengeMessages.push({
-  sender:'restartLesson'
-});
-
-
-      renderChallenge();
+      finishChallengeQuestions();
 
       return;
 

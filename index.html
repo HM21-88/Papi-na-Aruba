@@ -288,8 +288,61 @@
 <div
   id="challengeChat"
   class="hidden">
+
+  <div id="challengeMessages"></div>
+  <div id="challengeFooter"></div>
+
 </div>
-  
+
+<div id="balloonWarmup" class="balloon-game hidden">
+
+  <div class="balloon-hud">
+    <div class="balloon-progress" id="balloonProgress">Woord 1 van 10</div>
+    <div class="balloon-lives" id="balloonLives"></div>
+    <div class="balloon-score"><span id="balloonScoreValue">0</span> goed</div>
+  </div>
+
+  <div class="balloon-prompt-wrap">
+    <div class="balloon-prompt-label">Tik het vliegtuigje met</div>
+    <div class="balloon-prompt-word" id="balloonPromptWord">—</div>
+  </div>
+
+  <div class="balloon-sky" id="balloonSky"></div>
+
+  <button class="balloon-link-btn" type="button" onclick="switchToTypedFromBalloon()">
+    Liever de gewone quiz? →
+  </button>
+
+  <div class="balloon-end-screen" id="balloonWarmupEnd">
+    <div class="balloon-end-emoji">🎉</div>
+    <div class="balloon-end-title">Warm-up klaar!</div>
+    <div class="balloon-end-score" id="balloonWarmupEndScore">0 van de 10 goed</div>
+
+    <div class="story-action-bar">
+      <button class="btn story-action-btn" onclick="startBalloonWarmup(balloonWarmupMode)">
+        🎉 Nog een keer spelen
+      </button>
+    </div>
+
+    <div class="balloon-end-note">
+      Zelf een woord typen (bij de gewone oefening) traint je geheugen anders dan het herkennen van een woord op een vliegtuigje — allebei zijn waardevol.
+    </div>
+
+    <div class="story-action-bar">
+      <button class="btn story-action-btn" onclick="switchToTypedFromBalloon()">
+        📝 Doe de normale quiz
+      </button>
+    </div>
+
+    <div class="story-action-bar">
+      <button class="btn story-primary-action" onclick="completeLesson()">
+        Verder reizen
+      </button>
+    </div>
+  </div>
+
+</div>
+
   <div
   id="airportLessonActions"
   style="margin-top:20px;">
@@ -555,6 +608,35 @@ zodat alle onderdelen van Oefenen hetzelfde systeem gebruiken.
       type="checkbox"
       id="showOtherVariantToggle"
       onchange="toggleOtherVariant()">
+
+    <span class="slider"></span>
+
+  </label>
+
+</div>
+
+<div class="setting-divider"></div>
+
+<div class="setting-row">
+
+  <div class="setting-content">
+
+    <div class="setting-title">
+      Kindvriendelijke oefenmodus
+    </div>
+
+    <div class="setting-description">
+      Na een les of als hoofdstuk-challenge wordt het leerspel als eerste optie voorgesteld in plaats van de typ-oefening.
+    </div>
+
+  </div>
+
+  <label class="switch">
+
+    <input
+      type="checkbox"
+      id="kidsModeToggle"
+      onchange="toggleKidsMode()">
 
     <span class="slider"></span>
 
