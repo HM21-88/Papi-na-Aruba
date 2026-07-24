@@ -1089,13 +1089,6 @@ let weeklyLearningDays =
     ) || '[]'
   );
 
-let storedWeekNumber =
-  Number(
-    localStorage.getItem(
-      'storedWeekNumber'
-    )
-  ) || 0;  
-
 let flashAnimating = false;
 let flashAudioReady = false;
 let flashAudioCtx = null;
@@ -2870,6 +2863,26 @@ function updateProgressScreen(){
       data.length;
   }
 
+  const currentStreak =
+    document.getElementById(
+      'progressCurrentStreak'
+    );
+
+  if(currentStreak){
+    currentStreak.textContent =
+      currentDailyStreak;
+  }
+
+  const bestStreak =
+    document.getElementById(
+      'progressBestStreak'
+    );
+
+  if(bestStreak){
+    bestStreak.textContent =
+      bestDailyStreak;
+  }
+
   const prep =
     document.getElementById(
       'progressPrepBestOverview'
@@ -2894,52 +2907,9 @@ function updateProgressScreen(){
 
 
 
-function getWeekNumber(date){
-
-  const startOfYear =
-    new Date(
-      date.getFullYear(),
-      0,
-      1
-    );
-
-  const days =
-    Math.floor(
-      (date - startOfYear) /
-      86400000
-    );
-
-  return Math.ceil(
-    (days +
-      startOfYear.getDay() +
-      1) / 7
-  );
-
-}
-
 function registerLearningActivity(){
 
 const now = new Date();
-
-const currentWeekNumber =
-  getWeekNumber(now);
-
-if(
-  storedWeekNumber !==
-  currentWeekNumber
-){
-
-  weeklyLearningDays = [];
-
-  storedWeekNumber =
-    currentWeekNumber;
-
-  localStorage.setItem(
-    'storedWeekNumber',
-    storedWeekNumber
-  );
-
-}
 
   const today =
     now
@@ -3431,42 +3401,147 @@ function finishPracticeSession(){
   `;
 }
 
-function updateHomeStats(){
+function renderJourneyHero(){
 
-  const weeklyProgress =
-    Math.round(
-      (weeklyLearningDays.length / 7) * 100
+  const {
+    status,
+    location
+  } =
+    getJourneyStatus();
+
+  const iconEl =
+    document.getElementById(
+      'homeHeroIcon'
     );
 
-  document.getElementById(
-    'homeWordCount'
-  ).textContent =
-    data.length;
+  const titleEl =
+    document.getElementById(
+      'homeHeroTitle'
+    );
 
-  document.getElementById(
-    'homeCurrentStreak'
-  ).textContent =
-    currentDailyStreak;
+  const subtitleEl =
+    document.getElementById(
+      'homeHeroSubtitle'
+    );
 
-  document.getElementById(
-    'homeBestStreak'
-  ).textContent =
-    bestDailyStreak;
+  const lessonLabelEl =
+    document.getElementById(
+      'homeHeroLessonLabel'
+    );
 
-  document.getElementById(
-    'homeHeroSubtitle'
-  ).textContent =
-    `${weeklyLearningDays.length} van 7 dagen deze week`;
+  const percentEl =
+    document.getElementById(
+      'homeHeroScore'
+    );
 
-  document.getElementById(
-    'homeHeroProgress'
-  ).style.width =
-    `${weeklyProgress}%`;
+  const progressEl =
+    document.getElementById(
+      'homeHeroProgress'
+    );
 
-document.getElementById(
-  'homeHeroScore'
-).textContent =
-  `${weeklyLearningDays.length}/7`;
+  const btnEl =
+    document.getElementById(
+      'homeHeroBtn'
+    );
+
+  if(status === 'completed'){
+
+    iconEl.textContent = '🏆';
+
+    titleEl.textContent =
+      'Je hebt heel Aruba gezien! 🎉';
+
+    subtitleEl.textContent =
+      'Wil je de reis herbeleven?';
+
+    lessonLabelEl.textContent = '';
+
+    percentEl.textContent = '100%';
+
+    progressEl.style.width = '100%';
+
+    btnEl.innerHTML =
+      '<i data-lucide="rotate-ccw"></i> Reis opnieuw?';
+
+    btnEl.onclick = () =>
+      showMainScreen('travelScreen');
+
+  }else if(status === 'not-started'){
+
+    iconEl.textContent =
+      location.icon;
+
+    titleEl.textContent =
+      `Je reis door Aruba begint op ${location.title}`;
+
+    subtitleEl.textContent =
+      location.subtitle;
+
+    lessonLabelEl.textContent = '';
+
+    percentEl.textContent = '0%';
+
+    progressEl.style.width = '0%';
+
+    btnEl.innerHTML =
+      '<i data-lucide="compass"></i> Begin je reis';
+
+    btnEl.onclick = () =>
+      openLocationOverview(location.id);
+
+  }else{
+
+    const completedLessons =
+      location.lessons.filter(
+        lesson =>
+          isLessonCompleted(lesson.id)
+      ).length;
+
+    const totalLessons =
+      location.lessons.length;
+
+    const currentLessonNumber =
+      Math.min(
+        completedLessons + 1,
+        totalLessons
+      );
+
+    const percent =
+      Math.round(
+        (completedLessons / totalLessons) * 100
+      );
+
+    iconEl.textContent =
+      location.icon;
+
+    titleEl.textContent =
+      location.title;
+
+    subtitleEl.textContent =
+      `Hoofdstuk ${location.chapter} van je reis`;
+
+    lessonLabelEl.textContent =
+      `Les ${currentLessonNumber} van ${totalLessons}`;
+
+    percentEl.textContent =
+      `${percent}%`;
+
+    progressEl.style.width =
+      `${percent}%`;
+
+    btnEl.innerHTML =
+      '<i data-lucide="footprints"></i> Verder reizen';
+
+    btnEl.onclick = () =>
+      openLocationOverview(location.id);
+
+  }
+
+}
+
+function updateHomeStats(){
+
+  renderJourneyHero();
 
 const word =
   getWordOfDay();
@@ -3543,35 +3618,58 @@ function renderWeekTracker(){
     'Zo'
   ];
 
-  const activeDays =
-    weeklyLearningDays.map(dateStr => {
+  const now = new Date();
 
-      const date =
-        new Date(dateStr);
+  const todayStr =
+    now
+      .toISOString()
+      .split('T')[0];
 
-      const day =
-        date.getDay();
+  // JS getDay(): 0=Zo..6=Za
+  // wij willen de maandag van
+  // deze week als startpunt
 
-      // JS:
-      // 0=Zo
-      // 1=Ma
-      // 2=Di
-      // ...
-      // wij willen:
-      // 0=Ma
-      // 1=Di
-      // ...
-      // 6=Zo
+  const jsDay =
+    now.getDay();
 
-      return day === 0
-        ? 6
-        : day - 1;
+  const mondayOffset =
+    jsDay === 0
+      ? 6
+      : jsDay - 1;
+
+  const weekDates =
+    days.map((_, index) => {
+
+      const d =
+        new Date(now);
+
+      d.setDate(
+        now.getDate() -
+        mondayOffset +
+        index
+      );
+
+      return d
+        .toISOString()
+        .split('T')[0];
     });
 
   document.getElementById(
     'weekTracker'
   ).innerHTML =
-    days.map((day, index) => `
+    days.map((day, index) => {
+
+      const dateStr =
+        weekDates[index];
+
+      const state =
+        weeklyLearningDays.includes(dateStr)
+          ? 'active'
+          : dateStr === todayStr
+            ? 'today'
+            : '';
+
+      return `
       <div class="week-day">
 
         <div class="week-day-label">
@@ -3580,16 +3678,13 @@ function renderWeekTracker(){
 
         <div class="
           week-day-dot
-          ${
-            activeDays.includes(index)
-              ? 'active'
-              : ''
-          }
+          ${state}
         ">
         </div>
 
       </div>
-    `).join('');
+    `;
+    }).join('');
 }
 
 function init(){
@@ -3821,6 +3916,63 @@ function isLessonCompleted(
         lessonId
       ]
   );
+
+}
+
+function getJourneyStatus(){
+
+  const locations =
+    window.learningPaths
+      .aruba
+      .levels
+      .flatMap(level => level.chapters)
+      .flatMap(chapter => chapter.locations);
+
+  const totalLessons =
+    locations.reduce(
+      (sum, location) =>
+        sum + location.lessons.length,
+      0
+    );
+
+  const completedLessons =
+    locations.reduce(
+      (sum, location) =>
+        sum +
+        location.lessons.filter(
+          lesson =>
+            isLessonCompleted(lesson.id)
+        ).length,
+      0
+    );
+
+  if(completedLessons === 0){
+    return {
+      status: 'not-started',
+      location: locations[0]
+    };
+  }
+
+  if(completedLessons === totalLessons){
+    return {
+      status: 'completed',
+      location: null
+    };
+  }
+
+  const currentLocation =
+    locations.find(
+      location =>
+        location.lessons.some(
+          lesson =>
+            !isLessonCompleted(lesson.id)
+        )
+    );
+
+  return {
+    status: 'in-progress',
+    location: currentLocation
+  };
 
 }
 
@@ -8634,6 +8786,8 @@ function completeLesson(){
   saveLearnerData(
     learnerData
   );
+
+  registerLearningActivity();
 
   openLocationOverview(
     currentLocationId

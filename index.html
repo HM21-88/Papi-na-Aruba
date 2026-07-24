@@ -94,7 +94,17 @@
 
   <div class="hero-card">
 
+<div class="hero-eyebrow">
+  Jouw reis
+</div>
+
 <div class="hero-header">
+
+  <div
+    class="hero-icon-box"
+    id="homeHeroIcon">
+    🌴
+  </div>
 
   <div>
 
@@ -110,18 +120,20 @@
       0 woorden beschikbaar
     </div>
 
-<div
-  class="week-tracker"
-  id="weekTracker">
-</div>
-
   </div>
 
-<div
-  class="hero-score"
-  id="homeHeroScore">
-  0%
 </div>
+
+<div class="hero-lesson-row">
+
+  <span id="homeHeroLessonLabel">
+  </span>
+
+  <span
+    class="hero-percent"
+    id="homeHeroScore">
+    0%
+  </span>
 
 </div>
 
@@ -134,8 +146,18 @@
 
 </div>
 
+<div class="week-tracker-wrap">
+
+  <div
+    class="week-tracker"
+    id="weekTracker">
+  </div>
+
+</div>
+
 <button
   class="hero-btn"
+  id="homeHeroBtn"
   onclick="showMainScreen('learnScreen')">
 
   <i data-lucide="book-open"></i>
@@ -189,57 +211,6 @@
 	</div>
 
 </div>
-
-	<h3>
-	  <i data-lucide="flame"></i>
-	  Jouw statistieken
-	</h3>
-
-  <div class="stats-grid">
-
-   <div class="stat-card">
-
-  <div
-    class="stat-number"
-    id="homeWordCount">
-    0
-  </div>
-
-  <div class="stat-label">
-    Woorden
-  </div>
-
-</div>
-
-	<div class="stat-card">
-
-	  <div
-		class="stat-number"
-		id="homeCurrentStreak">
-		0
-	  </div>
-
-	  <div class="stat-label">
-		Dagreeks
-	  </div>
-
-	</div>
-
-	<div class="stat-card">
-
-	  <div
-		class="stat-number"
-		id="homeBestStreak">
-		0
-	  </div>
-
-	  <div class="stat-label">
-		Recordreeks
-	  </div>
-
-	</div>
-
-  </div>
 
 </section>
 
@@ -577,6 +548,22 @@ zodat alle onderdelen van Oefenen hetzelfde systeem gebruiken.
       <i data-lucide="library"></i>
 		Woorden beschikbaar:
       <span id="progressWords">
+        0
+      </span>
+    </div>
+
+    <div class="stat">
+      <i data-lucide="flame"></i>
+		Dagreeks:
+      <span id="progressCurrentStreak">
+        0
+      </span>
+    </div>
+
+    <div class="stat">
+      <i data-lucide="flame"></i>
+		Beste dagreeks:
+      <span id="progressBestStreak">
         0
       </span>
     </div>
