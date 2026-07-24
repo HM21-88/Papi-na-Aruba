@@ -2511,13 +2511,21 @@ body{
   position:relative;
 }
 
+.word-of-day-header{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.word-of-day-header .word{
+  min-width:0;
+  overflow-wrap:break-word;
+}
+
 .word-of-day-header .audio-btn{
-  position:absolute;
-
-  top:0;
-  right:0;
-
-  z-index:10;
+  flex-shrink:0;
+  margin-top:2px;
 }
 
 .flash-card-audio{
