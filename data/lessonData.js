@@ -3733,6 +3733,445 @@ summary:`
 
   `
 
+},
+
+
+'san-nicolas-1': {
+
+  title:'Kaya di Koló',
+
+  scene:[
+
+    {
+      sender:'narration',
+      text:'🎨 Bij Seroe Preto rijden jullie verder, en de weg brengt jullie naar San Nicolas. Ineens veranderen de muren om je heen — overal kleurrijke muurschilderingen.'
+    },
+
+    {
+      sender:'ana',
+      text:'Bon bini na San Nicolas, mijn tweede favoriete stad. Hier vind je Aruba\'s grootste openluchtmuseum: straatkunst, elk jaar meer.'
+    },
+
+    {
+      sender:'narration',
+      text:'🖌️ Op een steiger tegen een gevel staat een jonge man met een verfroller, druk bezig met een enorme muurschildering.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Chenko',
+      avatar:'local',
+      text:'Bon dia! Ta bon pa mira hende ta wak mi trabou.',
+      translation:'Goedendag! Het is fijn om te zien dat mensen naar mijn werk kijken.'
+    },
+
+    {
+      sender:'ana',
+      text:'Dit is Chenko, een van de jonge kunstenaars die deze muren tot leven brengt.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Blanco betekent wit. Mira, e muraya aki tabata blanco promé — kijk, deze muur was eerst helemaal wit en leeg.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Chenko',
+      avatar:'local',
+      text:'Awor mi ta pinta e cu hopi koló.',
+      translation:'Nu schilder ik hem met heel veel kleuren.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Preto betekent zwart. Chenko gebruikt eerst preto voor de contouren van zijn tekening.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Biña betekent paars. Kijk naar de lucht die hij schildert bij zonsondergang — vol biña en ros.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Ros betekent roze.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Shinishi betekent grijs. Zelfs shinishi gebruikt hij, voor de schaduw tussen de felle kleuren.'
+    },
+
+    {
+      sender:'narration',
+      text:'🌈 Op de muur ontstaat een tropisch tafereel: bomen, dieren en een zee vol kleur.'
+    },
+
+    {
+      sender:'ana',
+      text:'Cora ken je van Oranjestad, en geel ook — kijk, die zitten er allebei in.'
+    },
+
+    {
+      sender:'ana',
+      text:'Blauw en oraño ken je van Eagle Beach — moet je zien hoe Chenko ze hier gebruikt voor de lucht.'
+    },
+
+    {
+      sender:'ana',
+      text:'Berde ken je van Arikok, voor de bladeren van de bomen.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Chenko',
+      avatar:'local',
+      text:'Promé e muronan aki tabata masha mahos.',
+      translation:'Vroeger waren deze muren erg lelijk.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Mahos betekent lelijk.'
+    },
+
+    {
+      sender:'ana',
+      text:'Bunita ken je van de Gruta di Lourdes. Kijk om je heen — nu is alles hier juist heel bunita.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Chenko',
+      avatar:'local',
+      text:'Esey ta e mihó parti di mi trabou.',
+      translation:'Dat is het mooiste deel van mijn werk.'
+    },
+
+    {
+      sender:'ana',
+      text:'Mooi! Je hebt nu een heel palet aan kleuren geleerd — en gezien hoe San Nicolas ze gebruikt om zichzelf opnieuw uit te vinden.'
+    }
+
+  ],
+
+  miniQuiz:[
+    { id:'blanco_320', word:'Blanco' },
+    { id:'preto_326', word:'Preto' },
+    { id:'biña_319', word:'Biña' },
+    { id:'ros_327', word:'Ros' },
+    { id:'shinishi_328', word:'Shinishi' },
+    { id:'mahos_366', word:'Mahos' }
+  ],
+
+  wordIds:[
+    319, 320, 326, 327, 328, 366
+  ]
+
+},
+
+
+'san-nicolas-2': {
+
+  title:'E Historia Tras di Muro',
+
+  scene:[
+
+    {
+      sender:'narration',
+      text:'🖌️ Terwijl Chenko verder schildert, komt het gesprek op wie hem dit ooit heeft leren waarderen.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Chenko',
+      avatar:'local',
+      text:'Mi welo tabata traha na Lago.',
+      translation:'Mijn opa werkte bij Lago.'
+    },
+
+    {
+      sender:'ana',
+      text:'Welo ken je van de familie-les, en traha ken je van Tanki Flip.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Antes betekent vroeger. Antes was Lago de grootste werkgever van heel Aruba.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Chenko',
+      avatar:'local',
+      text:'Lago a habri na 1924, i a bira un di e refineria mas grandi di mundu.',
+      translation:'Lago opende in 1924, en werd een van de grootste raffinaderijen ter wereld.'
+    },
+
+    {
+      sender:'ana',
+      text:'Tijdens de Tweede Wereldoorlog was het zelfs de op één na grootste raffinaderij ter wereld. Er werkten hier mensen uit meer dan vijftig landen.'
+    },
+
+    {
+      sender:'ana',
+      text:'Mijn eigen oom werkte er ook. En dankzij hem mocht ik als klein meisje weleens mee naar Seroe Colorado.'
+    },
+
+    {
+      sender:'narration',
+      text:'👀 Ana\'s blik verandert even, alsof ze heel ver terugkijkt.'
+    },
+
+    {
+      sender:'ana',
+      text:'Seroe Colorado was geen gewoon dorp. Het lag apart, achter een hek, alleen toegankelijk voor Lago-personeel en hun familie.'
+    },
+
+    {
+      sender:'ana',
+      text:'Er was zelfs een eigen poort met een nummer — Gate 6, precies waar nu het rode anker staat.'
+    },
+
+    {
+      sender:'ana',
+      text:'Het had zijn eigen school, winkels, een jachthaven, zelfs een honkbalveld. Voor mij als kind voelde het bijna als een andere wereld.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Pasado betekent verleden. Dat pasado van Aruba ligt dus soms letterlijk achter een hek.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Chenko',
+      avatar:'local',
+      text:'Mi welo semper tabata conta mi con e tabata.',
+      translation:'Mijn opa vertelde me altijd hoe het was.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Awendia betekent tegenwoordig. Awendia is er van dat afgesloten wereldje bijna niets meer over.'
+    },
+
+    {
+      sender:'ana',
+      text:'Personeel kwam trouwens niet alleen uit Amerika. De meeste mensen kwamen uit Brits-Caribische gebieden, en woonden in wijken als Lago Heights, Essoville en Lagoville.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Chenko',
+      avatar:'local',
+      text:'P\'esey mi ta pinta e historia aki riba e muronan.',
+      translation:'Daarom schilder ik deze geschiedenis op de muren.'
+    },
+
+    {
+      sender:'ana',
+      text:'Mooi! Nu ken je niet alleen de kleuren van San Nicolas, maar ook een stukje van het verhaal erachter — en van mijn eigen verleden.'
+    }
+
+  ],
+
+  miniQuiz:[
+    { id:'antes_71', word:'Antes' },
+    { id:'pasado_334', word:'Pasado' },
+    { id:'awendia_333', word:'Awendia' }
+  ],
+
+  wordIds:[
+    71, 333, 334
+  ]
+
+},
+
+
+'san-nicolas-3': {
+
+  title:'Den e Pueblo',
+
+  scene:[
+
+    {
+      sender:'narration',
+      text:'🚶 Chenko biedt aan om samen door het dorp te lopen, langs de gebouwen die zijn opa nog persoonlijk kende.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Chenko',
+      avatar:'local',
+      text:'Mira, ey ta Nicolaas Store.',
+      translation:'Kijk, daar is de Nicolaas Store.'
+    },
+
+    {
+      sender:'ana',
+      text:'Ey ken je van Oranjestad.'
+    },
+
+    {
+      sender:'narration',
+      text:'🏬 Het pand is prachtig gerestaureerd: felle kleuren, sierlijke ramen, een echte blikvanger.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Chenko',
+      avatar:'local',
+      text:'Mi welo tabata cumpra tur cos aki.',
+      translation:'Mijn opa kocht hier altijd alles.'
+    },
+
+    {
+      sender:'ana',
+      text:'Cumpra ken je van Mainstreet in Oranjestad.'
+    },
+
+    {
+      sender:'narration',
+      text:'🗼 Verderop, boven de daken uit, staat een oude, ronde watertoren.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Chenko',
+      avatar:'local',
+      text:'Ata e toren di awa, un otro monumento.',
+      translation:'Daar is de watertoren, nog een monument.'
+    },
+
+    {
+      sender:'ana',
+      text:'Awa ken je nog van eerder — water.'
+    },
+
+    {
+      sender:'narration',
+      text:'🏛️ Een stukje verder wijst Chenko naar nog een gerestaureerd pand: Uncle Louis Store.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Chenko',
+      avatar:'local',
+      text:'Mi ta mustra bo Uncle Louis Store awor.',
+      translation:'Ik wijs je nu de Uncle Louis Store aan.'
+    },
+
+    {
+      sender:'ana',
+      text:'Mustra ken je ook van Oranjestad.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Yen betekent vol. Op zaterdag tijdens de Aruba Art Fair is deze straat helemaal yen met mensen.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Chenko',
+      avatar:'local',
+      text:'E kaya aki ta keto tur otro dia, pero e dia ei ta yen di bida.',
+      translation:'Deze straat is meestal stil, maar die dag zit vol leven.'
+    },
+
+    {
+      sender:'ana',
+      text:'Keto ken je van de Gruta di Lourdes.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Bashi betekent leeg. Maar niet alles hier is yen — sommige oude panden verderop staan nog bashi, wachtend op een nieuwe muurschildering.'
+    },
+
+    {
+      sender:'ana',
+      text:'Mooi! Je hebt nu geleerd hoe je een dorp beschrijft met yen en bashi — vol en leeg, precies zoals Aruba zelf soms is.'
+    }
+
+  ],
+
+  miniQuiz:[
+    { id:'yen_364', word:'Yen' },
+    { id:'bashi_365', word:'Bashi' }
+  ],
+
+  wordIds:[
+    364, 365
+  ]
+
+},
+
+
+'san-nicolas-challenge': {
+
+  title:'San Nicolas Challenge',
+
+  scene:[
+
+    {
+      sender:'narration',
+      text:'🏆 Van de kleurrijke muren tot het verhaal van Lago — je hebt een dorp met twee gezichten leren kennen.'
+    },
+
+    {
+      sender:'ana',
+      text:'Chenko en zijn opa, en mijn eigen herinneringen aan Seroe Colorado... laten we kijken wat je hebt onthouden.'
+    }
+
+  ],
+
+  questions:[
+
+    // Les 1
+
+    { id:'blanco_320', word:'Blanco' },
+    { id:'preto_326', word:'Preto' },
+    { id:'biña_319', word:'Biña' },
+    { id:'ros_327', word:'Ros' },
+    { id:'shinishi_328', word:'Shinishi' },
+    { id:'mahos_366', word:'Mahos' },
+
+    // Les 2
+
+    { id:'antes_71', word:'Antes' },
+    { id:'pasado_334', word:'Pasado' },
+    { id:'awendia_333', word:'Awendia' },
+
+    // Les 3
+
+    { id:'yen_364', word:'Yen' },
+    { id:'bashi_365', word:'Bashi' }
+
+  ],
+
+  summary:`
+
+    Je hebt San Nicolas leren kennen als een dorp met twee gezichten: vol kleur op straat, en vol geschiedenis erachter.
+
+    🟨 Antes tabata yen di hende, awendia e pasado ta bashi.
+
+    Je hebt geleerd hoe je kleuren beschrijft, hoe je over vroeger en tegenwoordig praat, en hoe een straat vol of leeg kan voelen.
+
+    Chenko rijdt nog een stukje met jullie mee, voorbij Gate 6, richting Seroe Colorado.
+
+    Ana wordt stil. "Antes was dit hier een wereld op zich — met een eigen school, winkels, zelfs een jachthaven. Awendia is het bijna een spookdorp."
+
+    Lago sloot in 1985. Sindsdien vertrokken de meeste mensen, en bleef Seroe Colorado grotendeels bashi.
+
+    De weg voor jullie loopt door, richting de punt van het eiland.
+
+    🌴 Klaar voor de volgende halte van je reis?
+
+  `
+
 }
 
 };

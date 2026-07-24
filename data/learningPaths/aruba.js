@@ -394,6 +394,70 @@ chapters: [
         ]
       }
     ]
+  },
+
+  // =========================
+  // H7 - HERINNERING
+  // =========================
+
+  {
+    id: 'memory',
+    title: 'Herinnering',
+    order: 7,
+
+    locations: [
+      {
+        id: 'san-nicolas',
+
+        title: 'San Nicolas',
+
+        chapter: 7,
+
+        shortTitle: 'Herinnering',
+
+        subtitle: 'Muurschilderingen, familieverhalen en een dorp met twee gezichten',
+
+        description:
+          'Ontdek de kleurrijke straatkunst van San Nicolas, hoor het verhaal van Lago via Chenko en Ana, en voel het contrast met het stille Seroe Colorado.',
+
+        icon: '🎨',
+
+        souvenir:{
+          icon:'🎨',
+          title:'Pinta di San Nicolas'
+        },
+
+        theme:{
+          background:'#FDEDF0',
+          progress:'#D64550'
+        },
+
+        map:{
+          x:225,
+          y:100
+        },
+
+        lessons: [
+          {
+            id: 'san-nicolas-1',
+            title: 'Kaya di Koló'
+          },
+          {
+            id: 'san-nicolas-2',
+            title: 'E Historia Tras di Muro'
+          },
+          {
+            id: 'san-nicolas-3',
+            title: 'Den e Pueblo'
+          },
+          {
+            id: 'san-nicolas-challenge',
+            title: 'San Nicolas Challenge',
+            challenge: true
+          }
+        ]
+      }
+    ]
   }
 
 ]
