@@ -13,6 +13,15 @@ const APP_CONFIG = {
     ) === 'true'
 };
 
+(function(){
+  const header = document.querySelector('.screen-bar');
+  if(!header) return;
+
+  window.addEventListener('scroll', function(){
+    header.classList.toggle('is-scrolled', window.scrollY > 6);
+  }, { passive:true });
+})();
+
 const data = window.wordsData || [];
 
 data.forEach(word => {
@@ -402,21 +411,6 @@ const weekSelections = {
   quizWeek: ['alle']
 };
 
-function toggleFlashSettingsButton(show){
-
-  const btn =
-    document.getElementById(
-      'flashSettingsHeaderBtn'
-    );
-
-  if(!btn){
-    return;
-  }
-
-  btn.style.display =
-    show ? 'flex' : 'none';
-}
-
 function updateScreenBar(
   title,
   showBack = true,
@@ -445,12 +439,6 @@ function updateScreenBar(
     backBtn.onclick =
       backAction || null;
   }
-  
-toggleFlashSettingsButton(
-  title === 'Flashcards' ||
-  title === 'Quiz' ||
-  title === 'Woordenlijst'
-);
 
 }
 

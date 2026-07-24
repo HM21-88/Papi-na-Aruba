@@ -67,15 +67,6 @@
 
 </div>
 
-  <button
-    class="header-icon-btn"
-    id="flashSettingsHeaderBtn"
-    onclick="toggleFlashSettings()">
-
-    <i data-lucide="settings-2"></i>
-
-  </button>
-
 </div>
 
 </header>
@@ -738,12 +729,22 @@ zodat alle onderdelen van Oefenen hetzelfde systeem gebruiken.
 
 </div>
 
-<div class="row">
+<div class="row search-row">
 
   <input
     id="search"
     placeholder="Zoek in Papiamento, Papiamentu of Nederlands..."
     oninput="renderList()" />
+
+  <button
+    class="filterbtn"
+    type="button"
+    onclick="toggleFlashSettings()"
+    aria-label="Filter op week">
+
+    <i data-lucide="sliders-horizontal"></i>
+
+  </button>
 
 </div>
 
@@ -861,6 +862,15 @@ zodat alle onderdelen van Oefenen hetzelfde systeem gebruiken.
 
   <div class="stats" style="margin-top:12px">
   <div class="stat" id="flashHardCount">Moeilijk: 0</div>
+  <button
+    class="filterbtn"
+    type="button"
+    onclick="toggleFlashSettings()"
+    aria-label="Filter en instellingen">
+
+    <i data-lucide="sliders-horizontal"></i>
+
+  </button>
 </div>
 
   <div class="flash-wrap">
@@ -977,6 +987,15 @@ zodat alle onderdelen van Oefenen hetzelfde systeem gebruiken.
       <div class="stat" id="quizScoreGood">Goed: 0</div>
       <div class="stat" id="quizScoreBad">Fout: 0</div>
       <div class="stat" id="quizQueueInfo">Herhaling: 0</div>
+      <button
+        class="filterbtn"
+        type="button"
+        onclick="toggleFlashSettings()"
+        aria-label="Filter op week">
+
+        <i data-lucide="sliders-horizontal"></i>
+
+      </button>
     </div>
 
     <div class="quiz-q" id="quizQ"></div>
