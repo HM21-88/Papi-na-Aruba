@@ -7211,17 +7211,23 @@ document.addEventListener(
   handleSnakeKeydown
 );
 
-function handleSnakeTouchStart(event){
+function isSnakeGameVisible(){
 
   const game =
     document.getElementById(
       'snakeGame'
     );
 
-  if(
-    !game ||
-    game.classList.contains('hidden')
-  ){
+  return (
+    !!game &&
+    !game.classList.contains('hidden')
+  );
+
+}
+
+function handleSnakeTouchStart(event){
+
+  if(!isSnakeGameVisible()){
     return;
   }
 
@@ -7230,6 +7236,23 @@ function handleSnakeTouchStart(event){
 
   snakeTouchStartX = touch.clientX;
   snakeTouchStartY = touch.clientY;
+
+}
+
+// Zonder dit blokkeert de browser de swipe niet, en interpreteert een
+// vingerbeweging op het bord als "pagina scrollen" i.p.v. "richting
+// kiezen" -- de swipe-detectie in handleSnakeTouchEnd werkt dan wel,
+// maar wordt in de praktijk overstemd door het scrollgedrag.
+function handleSnakeTouchMove(event){
+
+  if(
+    !isSnakeGameVisible() ||
+    snakeTouchStartX === null
+  ){
+    return;
+  }
+
+  event.preventDefault();
 
 }
 
@@ -7270,6 +7293,12 @@ document.getElementById('snakeBoard').addEventListener(
   'touchstart',
   handleSnakeTouchStart,
   { passive: true }
+);
+
+document.getElementById('snakeBoard').addEventListener(
+  'touchmove',
+  handleSnakeTouchMove,
+  { passive: false }
 );
 
 document.getElementById('snakeBoard').addEventListener(

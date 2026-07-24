@@ -3234,6 +3234,9 @@ body{
   border:4px solid var(--text-primary);
   border-radius:8px;
   box-sizing:border-box;
+  /* Voorkomt dat de browser een vinger-swipe hier oppakt als paginascroll
+     i.p.v. als richting-input. */
+  touch-action:none;
 }
 
 .snake-cell{
