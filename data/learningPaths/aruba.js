@@ -330,6 +330,70 @@ chapters: [
         ]
       }
     ]
+  },
+
+  // =========================
+  // H6 - TRADITIE
+  // =========================
+
+  {
+    id: 'tradition',
+    title: 'Traditie',
+    order: 6,
+
+    locations: [
+      {
+        id: 'savaneta',
+
+        title: 'Savaneta',
+
+        chapter: 6,
+
+        shortTitle: 'Traditie',
+
+        subtitle: 'Marinierskazerne, verse vis en een stille grot',
+
+        description:
+          'Beleef Dia di Marina bij de kazerne, proef verse vis bij Zeerovers en vind de rust bij de Gruta di Lourdes.',
+
+        icon: '⚓',
+
+        souvenir:{
+          icon:'🕯️',
+          title:'Kandela di Lourdes'
+        },
+
+        theme:{
+          background:'#EAF0F6',
+          progress:'#3B5998'
+        },
+
+        map:{
+          x:210,
+          y:130
+        },
+
+        lessons: [
+          {
+            id: 'savaneta-1',
+            title: 'Dia di Marina'
+          },
+          {
+            id: 'savaneta-2',
+            title: 'Zeerovers'
+          },
+          {
+            id: 'savaneta-3',
+            title: 'E Gruta di Lourdes'
+          },
+          {
+            id: 'savaneta-challenge',
+            title: 'Savaneta Challenge',
+            challenge: true
+          }
+        ]
+      }
+    ]
   }
 
 ]

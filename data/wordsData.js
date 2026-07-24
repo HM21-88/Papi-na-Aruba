@@ -1127,6 +1127,20 @@ window.wordsData = [
 
 {week:5,nummer:520.18,level:'A1',tags:['dieren'],papiamento:'cascabel',papiamentu:'kaskabel',nederlands:'ratelslang',engels:'rattlesnake',varianten:'Cuidadó di Cunucu',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Cascabel ta biba unicamente na Aruba.',voorbeeld_papiamentu:'Kaskabel ta biba unikamente na Aruba.',voorbeeld_nederlands:'De ratelslang leeft alleen op Aruba.',voorbeeld_engels:'The rattlesnake lives only on Aruba.'},
 
+{week:5,nummer:520.19,level:'A1',tags:['vervoer','plaatsen'],papiamento:'boto',papiamentu:'boto',nederlands:'boot',engels:'boat',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Nos ta subi e boto.',voorbeeld_papiamentu:'Nos ta subi e boto.',voorbeeld_nederlands:'Wij stappen in de boot.',voorbeeld_engels:'We get into the boat.'},
+
+{week:5,nummer:520.21,level:'A1',tags:['plaatsen'],papiamento:'fila',papiamentu:'fila',nederlands:'rij, wachtrij',engels:'line, queue',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Tin hopi hende den fila.',voorbeeld_papiamentu:'Tin hopi hende den fila.',voorbeeld_nederlands:'Er staan veel mensen in de rij.',voorbeeld_engels:'There are a lot of people in line.'},
+
+{week:5,nummer:520.22,level:'A1',tags:['eten_drinken'],papiamento:'pisca',papiamentu:'piska',nederlands:'vis (voedsel)',engels:'fish (food)',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'E pisca aki ta fresco.',voorbeeld_papiamentu:'E piska aki ta fresku.',voorbeeld_nederlands:'Deze vis is vers.',voorbeeld_engels:'This fish is fresh.'},
+
+{week:5,nummer:520.23,level:'A1',tags:['eten_drinken'],papiamento:'fresco',papiamentu:'fresku',nederlands:'vers',engels:'fresh',varianten:'',type:'bijvoeglijk naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta gusta pisca fresco.',voorbeeld_papiamentu:'Mi ta gusta piska fresku.',voorbeeld_nederlands:'Ik hou van verse vis.',voorbeeld_engels:'I like fresh fish.'},
+
+{week:5,nummer:520.24,level:'A1',tags:['eten_drinken'],papiamento:'pidi',papiamentu:'pidi',nederlands:'vragen, bestellen',engels:'to ask, to order',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Mi kier pidi un pisca.',voorbeeld_papiamentu:'Mi ke pidi un piska.',voorbeeld_nederlands:'Ik wil graag een vis bestellen.',voorbeeld_engels:'I would like to order a fish.'},
+
+{week:5,nummer:520.25,level:'A1',tags:['eten_drinken'],papiamento:'skohe',papiamentu:'skohe',nederlands:'kiezen',engels:'to choose',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Bo mester skohe un pisca.',voorbeeld_papiamentu:'Bo mester skohe un piska.',voorbeeld_nederlands:'Je moet een vis kiezen.',voorbeeld_engels:'You have to choose a fish.'},
+
+{week:5,nummer:520.26,level:'A1',tags:['mensen'],papiamento:'santu',papiamentu:'santu',nederlands:'heilig, heilige',engels:'holy, saint',varianten:'',type:'bijvoeglijk naamwoord / zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'E imagen di Maria ta santu pa hopi hende.',voorbeeld_papiamentu:'E imágen di Maria ta santu pa hopi hende.',voorbeeld_nederlands:'Het beeld van Maria is heilig voor veel mensen.',voorbeeld_engels:'The statue of Mary is holy to many people.'},
+
 
  // ===== WEEK 6 =====
 

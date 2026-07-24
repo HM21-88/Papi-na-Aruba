@@ -3224,6 +3224,515 @@ summary:`
 
   `
 
+},
+
+
+'savaneta-1': {
+
+  title:'Dia di Marina',
+
+  scene:[
+
+    {
+      sender:'narration',
+      text:'🌅 De volgende ochtend rijden jullie van Conchi terug richting de bewoonde kant van het eiland, op weg naar Savaneta.'
+    },
+
+    {
+      sender:'ana',
+      text:'Ayera nos tabata na Arikok. Awe ta diahuebs — kico ta e dia despues di diahuebs?'
+    },
+
+    {
+      sender:'ana',
+      text:'Sigur bo sa... diabierna! En vandaag is bovendien een bijzondere dag: 1 di mei.'
+    },
+
+    {
+      sender:'ana',
+      text:'1 di mei is Dia di Trabou — de Dag van de Arbeid, een vrije dag voor bijna iedereen op Aruba.'
+    },
+
+    {
+      sender:'ana',
+      text:'Maar hier in Savaneta betekent deze dag nog iets extra\'s: het is Dia di Marina, de opendag van de Marinierskazerne.'
+    },
+
+    {
+      sender:'narration',
+      text:'🚧 Bij de ingang van de kazerne staat al een lange rij mensen te wachten.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Hende betekent mens of mensen.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Hunta betekent samenbrengen. Eén keer per jaar komt bijna heel Savaneta hier samen.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Fila betekent rij.'
+    },
+
+    {
+      sender:'ana',
+      text:'Deze kazerne bestaat al sinds 1951. Generaties lang deden Arubaanse jongemannen hier hun dienstplicht, samen met militairen uit Nederland.'
+    },
+
+    {
+      sender:'narration',
+      text:'🚤 Bij het water ligt een snelle grijze boot. Mensen stappen in voor een rondvaart.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Boto betekent boot.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Momento betekent moment of momentje. Wacht even, wij zijn zo aan de beurt.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Sergeant Kelly',
+      avatar:'local',
+      text:'Bon dia! Nan boto ta bay hopi lihe riba awa.',
+      translation:'Goedendag! Die boot vaart heel snel over het water.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Lihe betekent snel.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Sergeant Kelly',
+      avatar:'local',
+      text:'Nos hendenan ta balente, semper cla pa yuda.',
+      translation:'Onze mensen zijn moedig, altijd klaar om te helpen.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Balente betekent moedig.'
+    },
+
+    {
+      sender:'narration',
+      text:'🎶 Verderop klinkt livemuziek uit de luidsprekers, en een paar kinderen dansen vrolijk mee.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Musica betekent muziek.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Balia betekent dansen.'
+    },
+
+    {
+      sender:'narration',
+      text:'👮 Bij de kraampjes staat ook de politie. Ze laten hun werk zien aan een groepje nieuwsgierige kinderen.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Polis betekent politie.'
+    },
+
+    {
+      sender:'ana',
+      text:'De opbrengst van vandaag gaat trouwens naar het goede doel. Typisch Aruba: samen feest vieren, en tegelijk voor elkaar zorgen.'
+    },
+
+    {
+      sender:'ana',
+      text:'Mooi! Je hebt de drukte van Dia di Marina gezien — van de rij bij de boot tot de muziek en de dans.'
+    }
+
+  ],
+
+  miniQuiz:[
+    { id:'hende_521', word:'Hende' },
+    { id:'hunta_279', word:'Hunta' },
+    { id:'fila_520.21', word:'Fila' },
+    { id:'momento_410', word:'Momento' },
+    { id:'boto_520.19', word:'Boto' },
+    { id:'lihe_89', word:'Lihe' },
+    { id:'balente_229', word:'Balente' },
+    { id:'musica_688', word:'Musica' },
+    { id:'balia_304', word:'Balia' },
+    { id:'polis_520', word:'Polis' }
+  ],
+
+  wordIds:[
+    89, 229, 279, 304, 410, 520, 521, 688, 520.19, 520.21
+  ]
+
+},
+
+
+'savaneta-2': {
+
+  title:'Zeerovers',
+
+  scene:[
+
+    {
+      sender:'narration',
+      text:'🚶 Na de kazerne lopen jullie langs het water naar een informeel restaurant vlak bij Savaneta: Zeerovers.'
+    },
+
+    {
+      sender:'ana',
+      text:'Hier serveren ze de vangst van vandaag, rechtstreeks van de vissersboten.'
+    },
+
+    {
+      sender:'narration',
+      text:'🎣 Een visser draagt een krat glimmende vis van de boot naar de keuken.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Pisca betekent vis.'
+    },
+
+    {
+      sender:'ana',
+      text:'Weet je nog dat pisca ook vissen betekent, het werkwoord? Hetzelfde woord, twee vormen.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Pancho',
+      avatar:'local',
+      text:'E pisca aki ta masha fresco — nos a piska ne awe mainta.',
+      translation:'Deze vis is heel vers — we hebben hem vanochtend gevangen.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Fresco betekent vers.'
+    },
+
+    {
+      sender:'ana',
+      text:'Masha ken je nog van Ramon bij Rosa.'
+    },
+
+    {
+      sender:'narration',
+      text:'🍽️ Jullie gaan zitten aan een tafel met uitzicht op de vissersboten, met de laman op de achtergrond.'
+    },
+
+    {
+      sender:'ana',
+      text:'Laman ken je nog van Eagle Beach.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Pancho',
+      avatar:'local',
+      text:'Kico bo kier pidi?',
+      translation:'Wat wil je bestellen?'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Pidi betekent vragen of bestellen.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Skohe betekent kiezen. Er zijn hier altijd een paar verse soorten om uit te kiezen.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Hamber betekent honger. Mi tin hamber — dat zeg je hier al snel na een dag vol wandelen.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Pancho',
+      avatar:'local',
+      text:'Saboria e — e ta dushi!',
+      translation:'Proef het — het is heerlijk!'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Saboria betekent proeven.'
+    },
+
+    {
+      sender:'ana',
+      text:'Dushi ken je nog van Rosa bij Tanki Flip.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Sirbi betekent bedienen of helpen.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Come betekent eten.'
+    },
+
+    {
+      sender:'ana',
+      text:'Masha danki, zeg je als je klaar bent. Danki ken je al helemaal vanaf het vliegveld.'
+    },
+
+    {
+      sender:'ana',
+      text:'Mooi! Je hebt nu geleerd hoe je eten bestelt, kiest en erover praat — helemaal aan het water.'
+    }
+
+  ],
+
+  miniQuiz:[
+    { id:'pisca_520.22', word:'Pisca' },
+    { id:'fresco_520.23', word:'Fresco' },
+    { id:'pidi_520.24', word:'Pidi' },
+    { id:'skohe_520.25', word:'Skohe' },
+    { id:'hamber_154', word:'Hamber' },
+    { id:'saboria_164', word:'Saboria' },
+    { id:'sirbi_185', word:'Sirbi' },
+    { id:'come_155', word:'Come' }
+  ],
+
+  wordIds:[
+    154, 155, 164, 185, 520.22, 520.23, 520.24, 520.25
+  ]
+
+},
+
+
+'savaneta-3': {
+
+  title:'E Gruta di Lourdes',
+
+  scene:[
+
+    {
+      sender:'narration',
+      text:'🚗 Na de lunch rijden jullie een klein stukje verder, richting Seroe Preto, waar de weg naar San Nicolas begint.'
+    },
+
+    {
+      sender:'narration',
+      text:'🕊️ Tussen de rotsen ligt een kleine, stille grot, half verscholen onder een afdak van steen.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Keto betekent stil of rustig.'
+    },
+
+    {
+      sender:'ana',
+      text:'Na de drukte van vandaag is dit altijd een plek waar ik graag even keto kom zitten.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Aña betekent jaar.'
+    },
+
+    {
+      sender:'ana',
+      text:'Deze grot is gebouwd in het aña 1958, door een priester samen met de mensen hier — ter ere van honderdvijftig aña sinds Maria verscheen in Lourdes, Frankrijk.'
+    },
+
+    {
+      sender:'narration',
+      text:'🗿 Diep in de rots staat een groot, zwaar beeld van Maria, zevenhonderd kilo, uitgehouwen in de steen zelf.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Santu betekent heilig.'
+    },
+
+    {
+      sender:'ana',
+      text:'Voor veel mensen hier is dit beeld santu.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Misa betekent kerk of mis.'
+    },
+
+    {
+      sender:'ana',
+      text:'Elk jaar op 11 februari loopt er een stoet vanuit de kerk in San Nicolas hierheen, voor een misa.'
+    },
+
+    {
+      sender:'narration',
+      text:'👵 Een oudere vrouw zit stil op een bankje, ogen dicht, handen gevouwen.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Corda betekent herinneren.'
+    },
+
+    {
+      sender:'ana',
+      text:'Ik corda me nog goed dat mijn grootmoeder hier elk jaar op 11 februari kwam.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Respet betekent respect.'
+    },
+
+    {
+      sender:'ana',
+      text:'Ook als je zelf niet gelovig bent, voel je hier al snel respet voor de mensen die wel komen.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Humilde betekent nederig of bescheiden.'
+    },
+
+    {
+      sender:'ana',
+      text:'Dat is denk ik wat deze plek me altijd leert: humilde blijven.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Kere betekent geloven of denken.'
+    },
+
+    {
+      sender:'ana',
+      text:'Of je nu kere in God, of gewoon kere in de kracht van herinnering — hier voelt bijna iedereen iets.'
+    },
+
+    {
+      sender:'ana',
+      text:'De rust hier is net zo bunita als de drukte van vanochtend, op zijn eigen manier.'
+    },
+
+    {
+      sender:'ana',
+      text:'Mooi. Van de duizenden mensen bij de kazerne tot deze stille grot met plek voor maar een paar — dat is ook Aruba: veel gezichten, dicht bij elkaar.'
+    }
+
+  ],
+
+  miniQuiz:[
+    { id:'keto_77', word:'Keto' },
+    { id:'aña_336', word:'Aña' },
+    { id:'santu_520.26', word:'Santu' },
+    { id:'misa_470', word:'Misa' },
+    { id:'corda_204', word:'Corda' },
+    { id:'respet_519', word:'Respet' },
+    { id:'humilde_516', word:'Humilde' },
+    { id:'kere_224', word:'Kere' }
+  ],
+
+  wordIds:[
+    77, 204, 224, 336, 470, 516, 519, 520.26
+  ]
+
+},
+
+
+'savaneta-challenge': {
+
+  title:'Savaneta Challenge',
+
+  scene:[
+
+    {
+      sender:'narration',
+      text:'🏆 Je hebt een dag vol tegenstellingen beleefd — van de drukte van Dia di Marina tot de stilte van de Gruta di Lourdes.'
+    },
+
+    {
+      sender:'ana',
+      text:'Je hebt een boot horen razen, verse vis geproefd bij Zeerovers, en gevoeld hoe stil Aruba ook kan zijn.'
+    },
+
+    {
+      sender:'ana',
+      text:'Laten we kijken wat je hebt onthouden van Savaneta.'
+    }
+
+  ],
+
+  questions:[
+
+    // Les 1
+
+    { id:'hende_521', word:'Hende' },
+    { id:'hunta_279', word:'Hunta' },
+    { id:'fila_520.21', word:'Fila' },
+    { id:'momento_410', word:'Momento' },
+    { id:'boto_520.19', word:'Boto' },
+    { id:'lihe_89', word:'Lihe' },
+    { id:'balente_229', word:'Balente' },
+    { id:'musica_688', word:'Musica' },
+    { id:'balia_304', word:'Balia' },
+    { id:'polis_520', word:'Polis' },
+
+    // Les 2
+
+    { id:'pisca_520.22', word:'Pisca' },
+    { id:'fresco_520.23', word:'Fresco' },
+    { id:'pidi_520.24', word:'Pidi' },
+    { id:'skohe_520.25', word:'Skohe' },
+    { id:'hamber_154', word:'Hamber' },
+    { id:'saboria_164', word:'Saboria' },
+    { id:'sirbi_185', word:'Sirbi' },
+    { id:'come_155', word:'Come' },
+
+    // Les 3
+
+    { id:'keto_77', word:'Keto' },
+    { id:'aña_336', word:'Aña' },
+    { id:'santu_520.26', word:'Santu' },
+    { id:'misa_470', word:'Misa' },
+    { id:'corda_204', word:'Corda' },
+    { id:'respet_519', word:'Respet' },
+    { id:'humilde_516', word:'Humilde' },
+    { id:'kere_224', word:'Kere' }
+
+  ],
+
+  summary:`
+
+    Je hebt een dag beleefd van uitersten — van het lawaai bij de Marinierskazerne tot de stilte van de Gruta di Lourdes.
+
+    🟨 Awe mi a mira hopi hende, mi a come pisca fresco, y mi a sinta keto den un gruta santu.
+
+    Je hebt geleerd hoe je een menigte beschrijft, hoe je eten bestelt en kiest aan het water, en hoe je met respet over een heilige plek praat.
+
+    Je weet nu ook waarom 1 mei hier dubbel bijzonder is, en waarom Savaneta al generaties lang mensen samenbrengt — hunta, precies zoals dat woord het zegt.
+
+    🌴 Klaar voor de volgende halte van je reis?
+
+  `
+
 }
 
 };
