@@ -151,7 +151,8 @@ function logQuizAttempt({
 
 function updateWordProgress(
   wordId,
-  correct
+  correct,
+  { reducedJump = false } = {}
 ){
 
   const learnerData =
@@ -184,13 +185,20 @@ function updateWordProgress(
     const intervals =
       [1, 3, 7, 14, 30];
 
+    let intervalIndex =
+      Math.min(
+        progress.repetitions - 1,
+        intervals.length - 1
+      );
+
+    // Typo/bijna-goed: één stap minder ver in de intervallentabel.
+    if(reducedJump){
+      intervalIndex =
+        Math.max(0, intervalIndex - 1);
+    }
+
     progress.interval_days =
-      intervals[
-        Math.min(
-          progress.repetitions - 1,
-          intervals.length - 1
-        )
-      ];
+      intervals[intervalIndex];
 
   }else{
 

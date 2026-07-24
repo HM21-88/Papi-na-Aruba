@@ -1757,43 +1757,37 @@ const otherAnswers =
     .map(s => normalize(s))
     .filter(Boolean);
 
-const hasInput =
-  input.length > 0;
+const primaryCandidates =
+  [primaryAnswer, ...otherAnswers]
+    .filter(Boolean);
 
-const usedPrimary =
-  input === primaryAnswer;
-
-const usedSecondary =
-  input === secondaryAnswer &&
-  secondaryAnswer !== primaryAnswer;
-
-const ok =
-  hasInput &&
+const secondaryCandidates =
   (
-    usedPrimary ||
-    usedSecondary ||
-    otherAnswers.includes(input)
-  );
-  
- let matchType = 'wrong';
+    dir === 'nl-pa' &&
+    secondaryAnswer &&
+    secondaryAnswer !== primaryAnswer
+  )
+    ? [secondaryAnswer]
+    : [];
 
-if(ok){
+const matchResult =
+  evaluateAnswer({
+    input,
+    primaryCandidates,
+    secondaryCandidates,
+    context:'practice'
+  });
 
-  matchType =
-	(
-	  usedPrimary ||
-	  otherAnswers.includes(input)
-	)
-	  ? 'exact'
-	  : 'variant';
-
-}
+const ok = matchResult.ok;
+const matchType = matchResult.matchType;
+const isTypo = matchType === 'typo';
+const isCrossDialect = matchType === 'cross_dialect';
 
 let variantNotice = '';
 
 if(
   dir === 'nl-pa' &&
-  usedSecondary
+  isCrossDialect
 ){
 
 variantNotice = `
@@ -1849,6 +1843,27 @@ variantNotice = `
   `;
 }
 
+let typoNotice = '';
+
+if(isTypo){
+
+typoNotice = `
+	<div class="quiz-variant-warning">
+
+	✏️ Bijna goed! Let op de spelling.
+
+	<br><br>
+
+		Juiste antwoord: <strong>${escapeHtml(
+		  dir==='nl-pa'
+		    ? getPrimaryWord(currentQuiz)
+		    : currentQuiz.nederlands
+		)}</strong>
+
+	</div>
+  `;
+}
+
 logQuizAttempt({
 
   word_id:
@@ -1870,7 +1885,8 @@ logQuizAttempt({
 
 updateWordProgress(
   currentQuiz.id,
-  ok
+  ok,
+  { reducedJump: isTypo }
 );
 
 quizAnswered++;
@@ -1883,9 +1899,10 @@ quizAnswered++;
     document.getElementById('quizF').innerHTML=`
       <div class="feedback good">Goed.</div>
       ${pepHtml}
-	  
+
 	  ${variantNotice}
-	  
+	  ${typoNotice}
+
       <div><strong>Juiste antwoord:</strong> ${escapeHtml(
   dir==='nl-pa'
     ? getPrimaryWord(currentQuiz)
@@ -5696,6 +5713,14 @@ function startTypedChallenge(mode){
             lessonInfo.miniQuiz
         };
 
+  // Onderscheid voor de matchfunctie: in de Challenge telt een
+  // bijna-goed (typo/andere variant) als kleinere sprong; in de
+  // mini-quiz telt dat als volle sprong, net als bij Oefenen.
+  currentChallenge.contextType =
+    mode === 'challenge'
+      ? 'challenge'
+      : 'miniquiz';
+
   challengeIndex = 0;
   challengeScore = 0;
 
@@ -7062,9 +7087,6 @@ if(
   return;
 }
 
-const userAnswer =
-  normalizeAnswer(rawUserAnswer);
-
   if(
     !rawUserAnswer
   ){
@@ -7086,7 +7108,7 @@ const userAnswer =
 
   input.value = '';
 
-let acceptedAnswers = [];
+let displayAnswers = [];
 
 if(question.id){
 
@@ -7095,7 +7117,7 @@ if(question.id){
       question.id
     );
 
-  acceptedAnswers =
+  displayAnswers =
     getAcceptedAnswers(
       word
     );
@@ -7103,7 +7125,7 @@ if(question.id){
 }
 else{
 
-  acceptedAnswers = [
+  displayAnswers = [
 
     question.answer
       .toLowerCase()
@@ -7114,6 +7136,20 @@ else{
 
 }
 
+const primaryCandidates =
+  displayAnswers.map(a => normalize(a));
+
+const contextType =
+  currentChallenge.contextType || 'challenge';
+
+const matchResult =
+  evaluateAnswer({
+    input: normalize(rawUserAnswer),
+    primaryCandidates,
+    secondaryCandidates: [],
+    context: contextType
+  });
+
   anaTyping = true;
 
   renderChallenge();
@@ -7122,23 +7158,60 @@ else{
 
     anaTyping = false;
 
-if (
-    acceptedAnswers.includes(userAnswer)
-) {
+if (matchResult.ok) {
 
     if(question.id){
+
+      const reducedJump =
+        matchResult.matchType === 'typo' ||
+        (
+          contextType === 'challenge' &&
+          matchResult.matchType === 'cross_dialect'
+        );
+
       updateWordProgress(
         question.id,
-        true
+        true,
+        { reducedJump }
       );
+
+      logQuizAttempt({
+        word_id: question.id,
+        typed_answer: rawUserAnswer,
+        correct: true,
+        match_type: matchResult.matchType,
+        category: contextType
+      });
+
     }
 
     challengeScore++;
 
-    challengeMessages.push({
+    if(matchResult.matchType === 'typo'){
+
+      const matchedIndex =
+        primaryCandidates.indexOf(
+          matchResult.matchedAnswer
+        );
+
+      const niceAnswer =
+        matchedIndex >= 0
+          ? displayAnswers[matchedIndex]
+          : displayAnswers[0];
+
+      challengeMessages.push({
+        sender:'ana',
+        text: `☑️ Bijna goed! Je bedoelde vast "${niceAnswer}". Dat tellen we goed.`
+      });
+
+    } else {
+
+      challengeMessages.push({
         sender:'ana',
         text:'☑️ Hopi bon! Dat is correct.'
-    });
+      });
+
+    }
 
 } else {
 
@@ -7148,6 +7221,14 @@ if (
 		question.id,
 		false
 	  );
+
+	  logQuizAttempt({
+	    word_id: question.id,
+	    typed_answer: rawUserAnswer,
+	    correct: false,
+	    match_type: 'incorrect',
+	    category: contextType
+	  });
 
 	  if(
 		!challengeMistakes.includes(
@@ -7165,7 +7246,7 @@ if (
         sender:'ana',
         text: question.id
             ? '❌ Niet helemaal. Mogelijke antwoorden zijn: ' +
-              acceptedAnswers.join(', ')
+              displayAnswers.join(', ')
             : '❌ Niet helemaal. Het juiste antwoord is: ' +
               question.answer
     });
@@ -7255,20 +7336,27 @@ function submitChallengeReviewAnswer(
       question.id
     );
 
-  const answers =
+  const displayAnswers =
     getAcceptedAnswers(
       word
     );
 
-  const userAnswer =
-    normalizeAnswer(
-      rawUserAnswer
-    );
+  const primaryCandidates =
+    displayAnswers.map(a => normalize(a));
 
-  const correct =
-    answers.includes(
-      userAnswer
-    );
+  const contextType =
+    (currentChallenge && currentChallenge.contextType) || 'challenge';
+
+  const matchResult =
+    evaluateAnswer({
+      input: normalize(rawUserAnswer),
+      primaryCandidates,
+      secondaryCandidates: [],
+      context: contextType
+    });
+
+  const answers = displayAnswers;
+  const correct = matchResult.ok;
 
   challengeMessages.push({
     sender:'user',
@@ -7285,15 +7373,52 @@ function submitChallengeReviewAnswer(
 
     if(correct){
 
-      challengeMessages.push({
-        sender:'ana',
-        text:'☑️ Hopi bon!'
-      });
+      if(matchResult.matchType === 'typo'){
+
+        const matchedIndex =
+          primaryCandidates.indexOf(
+            matchResult.matchedAnswer
+          );
+
+        const niceAnswer =
+          matchedIndex >= 0
+            ? displayAnswers[matchedIndex]
+            : displayAnswers[0];
+
+        challengeMessages.push({
+          sender:'ana',
+          text: `☑️ Bijna goed! Je bedoelde vast "${niceAnswer}". Dat tellen we goed.`
+        });
+
+      } else {
+
+        challengeMessages.push({
+          sender:'ana',
+          text:'☑️ Hopi bon!'
+        });
+
+      }
+
+      const reducedJump =
+        matchResult.matchType === 'typo' ||
+        (
+          contextType === 'challenge' &&
+          matchResult.matchType === 'cross_dialect'
+        );
 
       updateWordProgress(
         question.id,
-        true
+        true,
+        { reducedJump }
       );
+
+      logQuizAttempt({
+        word_id: question.id,
+        typed_answer: rawUserAnswer,
+        correct: true,
+        match_type: matchResult.matchType,
+        category: contextType
+      });
 
     }else{
 
@@ -7308,6 +7433,14 @@ function submitChallengeReviewAnswer(
         question.id,
         false
       );
+
+      logQuizAttempt({
+        word_id: question.id,
+        typed_answer: rawUserAnswer,
+        correct: false,
+        match_type: 'incorrect',
+        category: contextType
+      });
 
     }
 
