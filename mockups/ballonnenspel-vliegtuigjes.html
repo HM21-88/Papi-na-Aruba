@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ballonnenspel — Vliegtuigjes (H1 Airport)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0F3B44;
+    --teal:#12666A;
+    --teal-deep:#0B4448;
+    --gold:#E3A93C;
+    --gold-deep:#C08D26;
+    --coral:#E8865A;
+    --coral-deep:#D06B42;
+    --cream:#F3EEDD;
+    --cream-deep:#EADFC0;
+  }
+  *{box-sizing:border-box;}
+  html,body{
+    margin:0; padding:0; height:100%;
+    font-family:'Inter',sans-serif;
+    background:var(--navy);
+    overscroll-behavior:none;
+  }
+  .app{
+    max-width:480px; margin:0 auto; min-height:100vh;
+    background:linear-gradient(180deg, var(--navy) 0%, var(--teal-deep) 55%, var(--teal) 100%);
+    display:flex; flex-direction:column; position:relative; overflow:hidden;
+  }
+
+  /* ---- HUD ---- */
+  .hud{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 18px 10px;
+    color:var(--cream);
+    z-index:5;
+  }
+  .lives{ display:flex; gap:4px; font-size:18px; }
+  .life{ opacity:1; transition:opacity .3s, transform .3s; }
+  .life.lost{ opacity:0.25; transform:scale(0.8); }
+  .score{
+    font-family:'Baloo 2', sans-serif; font-weight:700; font-size:18px;
+    color:var(--gold);
+    background:rgba(255,255,255,0.08);
+    padding:4px 12px; border-radius:20px;
+  }
+
+  /* ---- Prompt ---- */
+  .prompt-wrap{
+    text-align:center; padding:6px 20px 18px; z-index:5;
+  }
+  .prompt-label{
+    font-size:12px; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--cream); opacity:.65; font-weight:600;
+  }
+  .prompt-word{
+    font-family:'Baloo 2', sans-serif; font-weight:800; font-size:34px;
+    color:var(--cream); margin-top:2px;
+  }
+
+  /* ---- Sky / play area ---- */
+  .sky{
+    position:relative; flex:1; min-height:380px;
+    background:
+      radial-gradient(ellipse at 20% 15%, rgba(227,169,60,0.18), transparent 55%),
+      radial-gradient(ellipse at 80% 75%, rgba(232,134,90,0.12), transparent 50%);
+    overflow:hidden;
+  }
+  .cloud{
+    position:absolute; opacity:.15; color:var(--cream); font-size:52px;
+    filter:blur(0.3px);
+  }
+
+  .plane{
+    position:absolute;
+    display:flex; align-items:center; gap:8px;
+    padding:9px 16px 9px 12px;
+    background:rgba(243,238,221,0.97);
+    border-radius:999px;
+    box-shadow:0 6px 16px rgba(11,68,72,0.35);
+    cursor:pointer;
+    user-select:none;
+    -webkit-tap-highlight-color:transparent;
+    transition:transform .15s ease;
+    white-space:nowrap;
+    left:-260px;
+  }
+  .plane:active{ transform:scale(0.94); }
+  .plane .emoji{ font-size:22px; transform:scaleX(-1); }
+  .plane .word{
+    font-family:'Baloo 2', sans-serif; font-weight:700; font-size:16px;
+    color:var(--navy);
+  }
+  .plane.flying{
+    animation-name:fly-across;
+    animation-timing-function:linear;
+    animation-fill-mode:forwards;
+  }
+  @keyframes fly-across{
+    from{ transform:translateX(0); }
+    to{ transform:translateX(calc(100vw + 300px)); }
+  }
+  .plane.correct-pop{
+    animation:pop-good .45s ease forwards !important;
+    pointer-events:none;
+  }
+  .plane.wrong-pop{
+    animation:pop-bad .4s ease forwards !important;
+    pointer-events:none;
+  }
+  @keyframes pop-good{
+    0%{ transform:scale(1); }
+    40%{ transform:scale(1.35) rotate(-6deg); background:var(--gold); }
+    100%{ transform:scale(0); opacity:0; }
+  }
+  @keyframes pop-bad{
+    0%{ transform:scale(1); }
+    30%{ transform:scale(0.9) rotate(4deg); background:var(--coral); }
+    100%{ transform:scale(0.4); opacity:0; }
+  }
+
+  .float-feedback{
+    position:absolute;
+    font-family:'Baloo 2', sans-serif; font-weight:800; font-size:20px;
+    pointer-events:none;
+    animation:float-up 0.9s ease forwards;
+    z-index:10;
+  }
+  .float-feedback.good{ color:var(--gold); }
+  .float-feedback.bad{ color:var(--coral); }
+  @keyframes float-up{
+    0%{ transform:translateY(0); opacity:1; }
+    100%{ transform:translateY(-40px); opacity:0; }
+  }
+
+  /* ---- Bottom bar ---- */
+  .footer{
+    padding:14px 20px 20px; text-align:center; z-index:5;
+  }
+  .hint{
+    font-size:12px; color:var(--cream); opacity:.55;
+  }
+
+  /* ---- End screen ---- */
+  .end-screen{
+    position:absolute; inset:0; z-index:20;
+    background:linear-gradient(180deg, rgba(15,59,68,0.97), rgba(11,68,72,0.97));
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; padding:32px; opacity:0; pointer-events:none;
+    transition:opacity .3s;
+  }
+  .end-screen.show{ opacity:1; pointer-events:all; }
+  .end-emoji{ font-size:56px; margin-bottom:6px; }
+  .end-title{
+    font-family:'Baloo 2', sans-serif; font-weight:800; font-size:26px;
+    color:var(--cream); margin-bottom:6px;
+  }
+  .end-score{
+    font-family:'Baloo 2', sans-serif; font-weight:700; font-size:16px;
+    color:var(--gold); margin-bottom:26px;
+  }
+  .btn{
+    font-family:'Baloo 2', sans-serif; font-weight:700; font-size:16px;
+    border:none; border-radius:999px; padding:13px 28px;
+    cursor:pointer; margin:6px 0;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .btn-primary{ background:var(--gold); color:var(--navy); }
+  .btn-primary:active{ background:var(--gold-deep); }
+  .btn-secondary{ background:transparent; color:var(--cream); border:1.5px solid rgba(243,238,221,0.4); }
+
+  /* ---- Start screen ---- */
+  .start-screen{
+    position:absolute; inset:0; z-index:20;
+    background:linear-gradient(180deg, var(--navy), var(--teal-deep));
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; padding:36px;
+  }
+  .start-emoji{ font-size:48px; margin-bottom:10px; }
+  .start-title{
+    font-family:'Baloo 2', sans-serif; font-weight:800; font-size:26px;
+    color:var(--cream); margin-bottom:8px;
+  }
+  .start-sub{
+    font-size:14px; color:var(--cream); opacity:.7; margin-bottom:28px; line-height:1.5;
+    max-width:300px;
+  }
+</style>
+</head>
+<body>
+<div class="app" id="app">
+
+  <div class="hud">
+    <div class="lives" id="lives"></div>
+    <div class="score" id="score">0</div>
+  </div>
+
+  <div class="prompt-wrap">
+    <div class="prompt-label">Tik het vliegtuigje met</div>
+    <div class="prompt-word" id="promptWord">—</div>
+  </div>
+
+  <div class="sky" id="sky">
+    <div class="cloud" style="top:8%; left:10%;">☁️</div>
+    <div class="cloud" style="top:60%; left:75%; font-size:38px;">☁️</div>
+  </div>
+
+  <div class="footer">
+    <div class="hint">Tik het juiste vliegtuigje — verkeerde tik kost een leven ✈️</div>
+  </div>
+
+  <div class="start-screen" id="startScreen">
+    <div class="start-emoji">✈️</div>
+    <div class="start-title">Vliegtuigjes-spel</div>
+    <div class="start-sub">Boven zie je een Nederlands woord. Tik het vliegtuigje met het juiste Papiamento woord voordat het wegvliegt!</div>
+    <button class="btn btn-primary" onclick="startGame()">Start spel</button>
+  </div>
+
+  <div class="end-screen" id="endScreen">
+    <div class="end-emoji" id="endEmoji">🏆</div>
+    <div class="end-title" id="endTitle">Goed gedaan!</div>
+    <div class="end-score" id="endScore">0 punten</div>
+    <button class="btn btn-primary" onclick="startGame()">Nog een keer</button>
+  </div>
+
+</div>
+
+<script>
+/* ===== Plaatsvervangende woordenlijst — zelfde vorm als wordsData in de app.
+   Vervang dit array straks door de echte H1 (Airport) lijst en het spel werkt meteen door. ===== */
+const wordsData = [
+  { id:'wela_121',   nummer:121, papiamento:'wela',   papiamentu:'wela',   nederlands:'oma' },
+  { id:'bay_5',       nummer:5,   papiamento:'bay',     papiamentu:'bai',    nederlands:'gaan' },
+  { id:'tin_9',       nummer:9,   papiamento:'tin',     papiamentu:'tin',    nederlands:'hebben' },
+  { id:'dushi_40',    nummer:40,  papiamento:'dushi',   papiamentu:'dushi',  nederlands:'lekker' },
+  { id:'drumi_60',    nummer:60,  papiamento:'drumi',   papiamentu:'drumi',  nederlands:'slapen' },
+  { id:'bondia_1',    nummer:1,   papiamento:'bon dia', papiamentu:'bon dia',nederlands:'goedemorgen' },
+  { id:'danki_2',     nummer:2,   papiamento:'danki',   papiamentu:'danki',  nederlands:'dank je wel' },
+  { id:'si_3',        nummer:3,   papiamento:'sí',      papiamentu:'sí',     nederlands:'ja' },
+];
+
+const TOTAL_LIVES = 3;
+const ROUND_COUNT = 8;
+const DISTRACTORS_PER_ROUND = 2; // + 1 juiste = 3 vliegtuigjes per rondje
+
+let lives, score, roundsPlayed, currentRound, roundLocked, planeTimer;
+
+const sky = document.getElementById('sky');
+const promptWordEl = document.getElementById('promptWord');
+const livesEl = document.getElementById('lives');
+const scoreEl = document.getElementById('score');
+const startScreen = document.getElementById('startScreen');
+const endScreen = document.getElementById('endScreen');
+
+function shuffle(arr){
+  const a = [...arr];
+  for(let i=a.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [a[i],a[j]] = [a[j],a[i]];
+  }
+  return a;
+}
+
+function renderLives(){
+  livesEl.innerHTML = '';
+  for(let i=0;i<TOTAL_LIVES;i++){
+    const s = document.createElement('span');
+    s.className = 'life' + (i < TOTAL_LIVES - lives ? ' lost' : '');
+    s.textContent = '❤️';
+    livesEl.appendChild(s);
+  }
+}
+
+function speakWord(word){
+  // In productie: vervangen door ingesproken audiobestand per woord.
+  if(!('speechSynthesis' in window)) return;
+  const u = new SpeechSynthesisUtterance(word);
+  u.lang = 'nl-NL';
+  u.rate = 0.85;
+  speechSynthesis.speak(u);
+}
+
+function floatFeedback(x, y, text, good){
+  const el = document.createElement('div');
+  el.className = 'float-feedback ' + (good ? 'good' : 'bad');
+  el.style.left = x + 'px';
+  el.style.top = y + 'px';
+  el.textContent = text;
+  sky.appendChild(el);
+  setTimeout(()=> el.remove(), 900);
+}
+
+function startGame(){
+  lives = TOTAL_LIVES;
+  score = 0;
+  roundsPlayed = 0;
+  renderLives();
+  scoreEl.textContent = score;
+  startScreen.style.display = 'none';
+  endScreen.classList.remove('show');
+  sky.querySelectorAll('.plane').forEach(p=>p.remove());
+  nextRound();
+}
+
+function nextRound(){
+  clearTimeout(planeTimer);
+  sky.querySelectorAll('.plane').forEach(p=>p.remove());
+
+  if(roundsPlayed >= ROUND_COUNT || lives <= 0){
+    return endGame();
+  }
+
+  roundLocked = false;
+  const correctWord = wordsData[Math.floor(Math.random()*wordsData.length)];
+  const distractors = shuffle(wordsData.filter(w => w.id !== correctWord.id)).slice(0, DISTRACTORS_PER_ROUND);
+  const planes = shuffle([correctWord, ...distractors]);
+
+  promptWordEl.textContent = correctWord.nederlands;
+
+  const laneCount = planes.length;
+  const skyHeight = sky.clientHeight;
+  const usableHeight = skyHeight - 80;
+
+  planes.forEach((word, i) => {
+    const plane = document.createElement('div');
+    plane.className = 'plane';
+    plane.innerHTML = `<span class="emoji">✈️</span><span class="word">${word.papiamento}</span>`;
+
+    const top = 20 + Math.round((usableHeight / laneCount) * i) + Math.round(Math.random()*14);
+    plane.style.top = top + 'px';
+
+    const duration = 5.5 + Math.random()*2.5;
+    const delay = Math.random()*0.6;
+    plane.style.animationDuration = duration + 's';
+    plane.style.animationDelay = delay + 's';
+
+    plane.addEventListener('animationend', (e) => {
+      if(e.animationName === 'fly-across' && !roundLocked){
+        // gemist: telt niet als fout tikken, maar rondje mislukt zonder punt
+      }
+      if(e.animationName === 'fly-across'){
+        plane.remove();
+      }
+    });
+
+    plane.addEventListener('click', (e) => handlePlaneTap(plane, word, correctWord, e));
+    sky.appendChild(plane);
+
+    requestAnimationFrame(()=> plane.classList.add('flying'));
+  });
+
+  // als niemand op tijd tikt, ga automatisch door naar volgend rondje
+  const maxWait = 8500;
+  planeTimer = setTimeout(() => {
+    if(!roundLocked){
+      roundLocked = true;
+      roundsPlayed++;
+      nextRound();
+    }
+  }, maxWait);
+}
+
+function handlePlaneTap(planeEl, word, correctWord, e){
+  if(roundLocked) return;
+
+  const rect = planeEl.getBoundingClientRect();
+  const skyRect = sky.getBoundingClientRect();
+  const x = rect.left - skyRect.left + rect.width/2 - 10;
+  const y = rect.top - skyRect.top;
+
+  if(word.id === correctWord.id){
+    roundLocked = true;
+    clearTimeout(planeTimer);
+    planeEl.classList.add('correct-pop');
+    score += 10;
+    scoreEl.textContent = score;
+    floatFeedback(x, y, '+10', true);
+    speakWord(word.papiamento);
+
+    // andere vliegtuigjes ook laten wegvliegen
+    sky.querySelectorAll('.plane').forEach(p => {
+      if(p !== planeEl) p.style.animationPlayState = 'running';
+    });
+
+    roundsPlayed++;
+    setTimeout(nextRound, 700);
+  } else {
+    // fout getikt — anti-gok: dit vliegtuigje verdwijnt, leven kwijt, rondje loopt door
+    planeEl.classList.add('wrong-pop');
+    lives--;
+    renderLives();
+    floatFeedback(x, y, '−1 ❤️', false);
+
+    if(lives <= 0){
+      roundLocked = true;
+      clearTimeout(planeTimer);
+      roundsPlayed++;
+      setTimeout(nextRound, 500);
+    }
+  }
+}
+
+function endGame(){
+  const won = lives > 0;
+  document.getElementById('endEmoji').textContent = won ? '🏆' : '💔';
+  document.getElementById('endTitle').textContent = won ? 'Goed gedaan!' : 'Bijna! Probeer opnieuw';
+  document.getElementById('endScore').textContent = score + ' punten';
+  endScreen.classList.add('show');
+}
+</script>
+</body>
+</html>
