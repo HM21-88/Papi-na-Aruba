@@ -2671,6 +2671,559 @@ summary:`
 
   `
 
+},
+
+
+'arikok-1': {
+
+  title:'Ayera, Awe y Mayan',
+
+  scene:[
+
+    {
+      sender:'narration',
+      text:'🚙 De volgende ochtend rijden jullie Oranjestad uit, de kustweg op richting het binnenland.'
+    },
+
+    {
+      sender:'ana',
+      text:'Ayera nos tabata Oranjestad. Awe nos ta bay den naturalesa, cana den mondi y cerca Conchi.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Ayera betekent gisteren.'
+    },
+
+    {
+      sender:'ana',
+      text:'Awe en mayan ken je al. Samen vormen ze een mooi drietal: gisteren, vandaag, morgen.'
+    },
+
+    {
+      sender:'narration',
+      text:'🌵 De weg wordt smaller. Cactussen en droge cunucu strekken zich uit aan beide kanten.'
+    },
+
+    {
+      sender:'ana',
+      text:'Voordat we verder gaan, wil ik je iets leren dat je hier de hele reis nog gaat gebruiken: de dagen van de week.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Dia betekent dag.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Siman betekent week.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Dianan di siman betekent dagen van de week.'
+    },
+
+    {
+      sender:'narration',
+      text:'🚧 Bij een klein hek naar het park staat een man met een verweerde hoed te wachten.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Mito',
+      avatar:'local',
+      text:'Bon dia! Ki dia di siman ta awe?',
+      translation:'Goedendag! Welke dag van de week is het vandaag?'
+    },
+
+    {
+      sender:'ana',
+      text:'Laten we samen de hele week doorlopen, dan kun je hem straks zelf beantwoorden.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Dialuna betekent maandag.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Diamars betekent dinsdag.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Diaranzon betekent woensdag.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Diahuebs betekent donderdag.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Diabierna betekent vrijdag. Voor veel mensen hier begint het weekend al op vrijdagmiddag.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Diasabra betekent zaterdag.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Diadumingo betekent zondag.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Mito',
+      avatar:'local',
+      text:'Awe ta diaranzon. Un bon dia pa cana den mondi!',
+      translation:'Vandaag is het woensdag. Een goede dag om door de natuur te wandelen!'
+    },
+
+    {
+      sender:'ana',
+      text:'Mooi! Je kent nu de dagen van de week, en je weet hoe gisteren, vandaag en morgen zich tot elkaar verhouden.'
+    }
+
+  ],
+
+  miniQuiz:[
+    { id:'ayera_69', word:'Ayera' },
+    { id:'dia_339', word:'Dia' },
+    { id:'siman_338', word:'Siman' },
+    { id:'dianan di siman_340', word:'Dianan di siman' },
+    { id:'dialuna_341', word:'Dialuna' },
+    { id:'diamars_342', word:'Diamars' },
+    { id:'diaranzon_343', word:'Diaranzon' },
+    { id:'diahuebs_344', word:'Diahuebs' },
+    { id:'diabierna_345', word:'Diabierna' },
+    { id:'diasabra_346', word:'Diasabra' },
+    { id:'diadumingo_347', word:'Diadumingo' }
+  ],
+
+  wordIds:[
+    69, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347
+  ]
+
+},
+
+
+'arikok-2': {
+
+  title:'Cana Den Mondi',
+
+  scene:[
+
+    {
+      sender:'narration',
+      text:'🥾 Jullie parkeren bij de ingang van Parke Nacional Arikok en beginnen te wandelen.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Cana betekent lopen.'
+    },
+
+    {
+      sender:'ana',
+      text:'We cana nu door de naturalesa — Aruba\'s wildernis.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Naturalesa betekent natuur.'
+    },
+
+    {
+      sender:'narration',
+      text:'🐕 Een verdwaalde hond komt kwispelend aangelopen en snuffelt aan je schoenen.'
+    },
+
+    {
+      sender:'ana',
+      text:'Op Aruba loopt hopi cacho vrij rond. Bijna iedereen kent wel een zwerfhond in de buurt.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Cacho betekent hond.'
+    },
+
+    {
+      sender:'narration',
+      text:'🐴 Verderop staat een ezel rustig te grazen tussen de cactussen.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Mito',
+      avatar:'local',
+      text:'Mira, un buriku! Nan ta cana liber aki den mondi.',
+      translation:'Kijk, een ezel! Ze lopen hier vrij rond in de natuur.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Buriku betekent ezel.'
+    },
+
+    {
+      sender:'narration',
+      text:'🐐 Iets verderop springen een paar geiten behendig tussen de rotsen.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Mito',
+      avatar:'local',
+      text:'E cabritunan ta gusta e mondi seco.',
+      translation:'De geiten houden van de droge natuur.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Cabritu betekent geit.'
+    },
+
+    {
+      sender:'narration',
+      text:'🐍 Mito steekt zijn hand op en wijst voorzichtig naar een steen naast het pad.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Mito',
+      avatar:'local',
+      text:'Cuidao — tin cascabel den e mondi aki.',
+      translation:'Voorzichtig — er is een ratelslang in deze natuur.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Cascabel betekent ratelslang. Hij leeft nergens anders ter wereld dan hier op Aruba.'
+    },
+
+    {
+      sender:'ana',
+      text:'De mensen hier noemen hem ook wel Cuidadó di Cunucu — bewaker van het cunucu. Weet je nog wat cunucu betekent?'
+    },
+
+    {
+      sender:'narration',
+      text:'🦉 Bij een klein hol in de grond zit een bruin vogeltje roerloos op wacht.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Shoco betekent uil. Dit is onze nationale vogel.'
+    },
+
+    {
+      sender:'narration',
+      text:'🦎 Op een warme rots flitst iets helderblauws voorbij.'
+    },
+
+    {
+      sender:'ana',
+      text:'Kijk, een cododo!'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Cododo betekent de blauwe mannetjeshagedis.'
+    },
+
+    {
+      sender:'ana',
+      text:'De vrouwtjes en de jongen zien er anders uit — die noemen we lagadishi.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Lagadishi betekent hagedis, voor het vrouwtje of het jong.'
+    },
+
+    {
+      sender:'ana',
+      text:'Net als bij yiu homber en yiu muhe: één basiswoord, en de vorm vertelt je meer.'
+    },
+
+    {
+      sender:'ana',
+      text:'Mooi! Je hebt nu de dieren van het mondi leren herkennen — van buriku tot cododo.'
+    }
+
+  ],
+
+  miniQuiz:[
+    { id:'cana_149', word:'Cana' },
+    { id:'naturalesa_474', word:'Naturalesa' },
+    { id:'cacho_388', word:'Cacho' },
+    { id:'buriku_520.8', word:'Buriku' },
+    { id:'cabritu_520.9', word:'Cabritu' },
+    { id:'cascabel_520.18', word:'Cascabel' },
+    { id:'shoco_520.11', word:'Shoco' },
+    { id:'cododo_520.12', word:'Cododo' },
+    { id:'lagadishi_520.13', word:'Lagadishi' }
+  ],
+
+  wordIds:[
+    149, 388, 474, 520.8, 520.9, 520.18, 520.11, 520.12, 520.13
+  ]
+
+},
+
+
+'arikok-3': {
+
+  title:'Conchi, e Poza Natural',
+
+  scene:[
+
+    {
+      sender:'narration',
+      text:'🌋 In de verte, tussen de rotsen, doemt een vertrouwde vorm op boven de horizon.'
+    },
+
+    {
+      sender:'ana',
+      text:'Kijk daar — dat is de Hooiberg.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Cero betekent berg of heuvel.'
+    },
+
+    {
+      sender:'ana',
+      text:'We beklimmen hem vandaag niet, maar ik ben er als kind vaak boven geweest.'
+    },
+
+    {
+      sender:'narration',
+      text:'🪨 Het pad daalt via ruwe, natuurlijke rotsblokken naar beneden.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Trapi betekent trap of treden. Deze is door de natuur zelf gemaakt, niet door mensen.'
+    },
+
+    {
+      sender:'narration',
+      text:'☁️ Boven jullie pakken een paar wolken samen.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Nubia betekent wolk.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Mito',
+      avatar:'local',
+      text:'Awor lo yobe un tiki.',
+      translation:'Nu gaat het een beetje regenen.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Yobe betekent regenen.'
+    },
+
+    {
+      sender:'ana',
+      text:'En als het eenmaal valt, noemen we het awacero.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Awacero betekent regen. Goed voor de naturalesa — na een bui wordt alles hier ineens fris.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Biento betekent wind. Herken je dat woord nog? Dezelfde wind boog de divi-divi krom bij Eagle Beach.'
+    },
+
+    {
+      sender:'narration',
+      text:'🌿 Na de korte bui kleurt het dorre mondi ineens frisser.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Berde betekent groen.'
+    },
+
+    {
+      sender:'narration',
+      text:'🌊 Tussen zwarte vulkanische rotsen ligt ineens een verrassend kalm, blauw zwembad van zeewater.'
+    },
+
+    {
+      sender:'ana',
+      text:'Welkom bij Conchi.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Conchi betekent kom of schaal — precies de vorm van dit natuurzwembad.'
+    },
+
+    {
+      sender:'ana',
+      text:'Sommigen noemen het ook Cura di Tortuga — de kooi van de schildpad.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Tortuga betekent schildpad.'
+    },
+
+    {
+      sender:'ana',
+      text:'Vroeger zwommen hier schildpadden rond, beschut tussen de rotsen. Ze komen nog steeds naar Aruba om eieren te leggen.'
+    },
+
+    {
+      sender:'narration',
+      text:'🪨 Jullie gaan even zitten op een warme rots, met uitzicht over het water.'
+    },
+
+    {
+      sender:'ana',
+      text:'🟨 Sinta betekent zitten.'
+    },
+
+    {
+      sender:'dialogue',
+      speaker:'Mito',
+      avatar:'local',
+      text:'Ta bunita, no? Kico bo ta bay haci mayan?',
+      translation:'Mooi, toch? Wat ga je morgen doen?'
+    },
+
+    {
+      sender:'ana',
+      text:'Antwoord maar met wat je al kent: mayan mi ta bay... en vul zelf aan.'
+    },
+
+    {
+      sender:'ana',
+      text:'Mooi! Van de Hooiberg in de verte tot Conchi hier beneden — je hebt een heel stuk natuur leren beschrijven, in weer, dieren en tijd.'
+    }
+
+  ],
+
+  miniQuiz:[
+    { id:'cero_520.6', word:'Cero' },
+    { id:'trapi_520.7', word:'Trapi' },
+    { id:'nubia_427', word:'Nubia' },
+    { id:'yobe_520.15', word:'Yobe' },
+    { id:'awacero_520.14', word:'Awacero' },
+    { id:'biento_426', word:'Biento' },
+    { id:'berde_318', word:'Berde' },
+    { id:'conchi_520.16', word:'Conchi' },
+    { id:'tortuga_520.17', word:'Tortuga' },
+    { id:'sinta_147', word:'Sinta' }
+  ],
+
+  wordIds:[
+    147, 318, 426, 427, 520.6, 520.7, 520.14, 520.15, 520.16, 520.17
+  ]
+
+},
+
+
+'arikok-challenge': {
+
+  title:'Arikok Challenge',
+
+  scene:[
+
+    {
+      sender:'narration',
+      text:'🏆 Je hebt Parke Nacional Arikok doorkruist — van de dagen van de week tot de rustige poza bij Conchi.'
+    },
+
+    {
+      sender:'ana',
+      text:'Je hebt buriku\'s en cabritu\'s gezien, een cascabel en een shoco herkend, en zelfs het verschil geleerd tussen een cododo en een lagadishi.'
+    },
+
+    {
+      sender:'ana',
+      text:'Laten we kijken wat je hebt onthouden van dit stuk wilde Aruba.'
+    }
+
+  ],
+
+  questions:[
+
+    // Les 1
+
+    { id:'ayera_69', word:'Ayera' },
+    { id:'dia_339', word:'Dia' },
+    { id:'siman_338', word:'Siman' },
+    { id:'dianan di siman_340', word:'Dianan di siman' },
+    { id:'dialuna_341', word:'Dialuna' },
+    { id:'diamars_342', word:'Diamars' },
+    { id:'diaranzon_343', word:'Diaranzon' },
+    { id:'diahuebs_344', word:'Diahuebs' },
+    { id:'diabierna_345', word:'Diabierna' },
+    { id:'diasabra_346', word:'Diasabra' },
+    { id:'diadumingo_347', word:'Diadumingo' },
+
+    // Les 2
+
+    { id:'cana_149', word:'Cana' },
+    { id:'naturalesa_474', word:'Naturalesa' },
+    { id:'cacho_388', word:'Cacho' },
+    { id:'buriku_520.8', word:'Buriku' },
+    { id:'cabritu_520.9', word:'Cabritu' },
+    { id:'cascabel_520.18', word:'Cascabel' },
+    { id:'shoco_520.11', word:'Shoco' },
+    { id:'cododo_520.12', word:'Cododo' },
+    { id:'lagadishi_520.13', word:'Lagadishi' },
+
+    // Les 3
+
+    { id:'cero_520.6', word:'Cero' },
+    { id:'trapi_520.7', word:'Trapi' },
+    { id:'nubia_427', word:'Nubia' },
+    { id:'yobe_520.15', word:'Yobe' },
+    { id:'awacero_520.14', word:'Awacero' },
+    { id:'biento_426', word:'Biento' },
+    { id:'berde_318', word:'Berde' },
+    { id:'conchi_520.16', word:'Conchi' },
+    { id:'tortuga_520.17', word:'Tortuga' },
+    { id:'sinta_147', word:'Sinta' }
+
+  ],
+
+  summary:`
+
+    Je hebt een dag in de natuur van Aruba beleefd — van de dagen van de week tot de rustige poza bij Conchi.
+
+    🟨 Ayera Oranjestad, awe naturalesa, mayan... kico bo ta bay haci?
+
+    Je hebt geleerd hoe je een week beschrijft, dieren herkent in het mondi, en praat over wolken, wind en regen.
+
+    Je weet nu ook waarom de cascabel hier Cuidadó di Cunucu wordt genoemd, en waarom Conchi zijn naam draagt.
+
+    🌴 Klaar voor de volgende halte van je reis?
+
+  `
+
 }
 
 };

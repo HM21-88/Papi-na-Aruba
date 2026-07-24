@@ -266,12 +266,71 @@ chapters: [
         ]
       }
     ]
-  }
+  },
 
   // =========================
-  // H5 - SUPERMARKT
-  // PLAK HIER HOOFDSTUK 5
+  // H5 - NATUUR
   // =========================
+
+  {
+    id: 'nature',
+    title: 'Natuur',
+    order: 5,
+
+    locations: [
+      {
+        id: 'arikok',
+
+        title: 'Parke Nacional Arikok',
+
+        chapter: 5,
+
+        shortTitle: 'Natuur',
+
+        subtitle: 'Wandelen door het wild van Aruba',
+
+        description:
+          'Leer de dagen van de week, ontdek de dieren van het mondi en vind de verborgen Conchi.',
+
+        icon: '🌵',
+
+        souvenir:{
+          icon:'🐢',
+          title:'Conchi Stone'
+        },
+
+        theme:{
+          background:'#EFF7E8',
+          progress:'#588157'
+        },
+
+        map:{
+          x:230,
+          y:170
+        },
+
+        lessons: [
+          {
+            id: 'arikok-1',
+            title: 'Ayera, Awe y Mayan'
+          },
+          {
+            id: 'arikok-2',
+            title: 'Cana Den Mondi'
+          },
+          {
+            id: 'arikok-3',
+            title: 'Conchi, e Poza Natural'
+          },
+          {
+            id: 'arikok-challenge',
+            title: 'Arikok Challenge',
+            challenge: true
+          }
+        ]
+      }
+    ]
+  }
 
 ]
 	}

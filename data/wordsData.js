@@ -1103,6 +1103,30 @@ window.wordsData = [
 
 {week:5,nummer:520.5,level:'A1',tags:['werk'],papiamento:'plachi di number',papiamentu:'plachi di number',nederlands:'kentekenplaat, nummerplaat',engels:'Vihicle registraion plate',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'E plachi di number di auto ta manca.',voorbeeld_papiamentu:'E plachi di number di auto ta manca.',voorbeeld_nederlands:'Het kentekenplaat van de auto mist.',voorbeeld_engels:'The car is missing a registration plate.'},
 
+{week:5,nummer:520.6,level:'A1',tags:['natuur','plaatsen'],papiamento:'cero',papiamentu:'seru',nederlands:'berg, heuvel',engels:'mountain, hill',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Hooiberg ta un cero na Aruba.',voorbeeld_papiamentu:'Hooiberg ta un seru na Aruba.',voorbeeld_nederlands:'De Hooiberg is een berg op Aruba.',voorbeeld_engels:'The Hooiberg is a hill on Aruba.'},
+
+{week:5,nummer:520.7,level:'A1',tags:['plaatsen'],papiamento:'trapi',papiamentu:'trapi',nederlands:'trap, treden',engels:'stairs, steps',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'E trapi pa baha na Conchi ta smal.',voorbeeld_papiamentu:'E trapi pa baha na Conchi ta smal.',voorbeeld_nederlands:'De trap naar beneden bij Conchi is smal.',voorbeeld_engels:'The steps down to Conchi are narrow.'},
+
+{week:5,nummer:520.8,level:'A1',tags:['dieren'],papiamento:'buriku',papiamentu:'buriku',nederlands:'ezel',engels:'donkey',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Un buriku ta cana den mondi.',voorbeeld_papiamentu:'Un buriku ta kana den mondi.',voorbeeld_nederlands:'Een ezel loopt door de natuur.',voorbeeld_engels:'A donkey is walking through nature.'},
+
+{week:5,nummer:520.9,level:'A1',tags:['dieren'],papiamento:'cabritu',papiamentu:'kabritu',nederlands:'geit',engels:'goat',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'E cabritu ta come cerca di caminda.',voorbeeld_papiamentu:'E kabritu ta kome serka di kaminda.',voorbeeld_nederlands:'De geit eet dichtbij de weg.',voorbeeld_engels:'The goat is eating close to the road.'},
+
+{week:5,nummer:520.11,level:'A1',tags:['dieren'],papiamento:'shoco',papiamentu:'shoko',nederlands:'uil',engels:'owl',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'E shoco ta biba den buracu.',voorbeeld_papiamentu:'E shoko ta biba den buraku.',voorbeeld_nederlands:'De uil woont in een hol.',voorbeeld_engels:'The owl lives in a burrow.'},
+
+{week:5,nummer:520.12,level:'A1',tags:['dieren'],papiamento:'cododo',papiamentu:'kododo',nederlands:'blauwe mannetjeshagedis',engels:'blue male whiptail lizard',varianten:'blòblò',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'E cododo ta un lagadishi blauw.',voorbeeld_papiamentu:'E kododo ta un lagadishi blauw.',voorbeeld_nederlands:'De cododo is een blauwe hagedis.',voorbeeld_engels:'The cododo is a blue lizard.'},
+
+{week:5,nummer:520.13,level:'A1',tags:['dieren'],papiamento:'lagadishi',papiamentu:'lagadishi',nederlands:'hagedis (vrouwtje of jong)',engels:'lizard (female or young)',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Mi ta mira un lagadishi.',voorbeeld_papiamentu:'Mi ta mira un lagadishi.',voorbeeld_nederlands:'Ik zie een hagedis.',voorbeeld_engels:'I see a lizard.'},
+
+{week:5,nummer:520.14,level:'A1',tags:['weer'],papiamento:'awacero',papiamentu:'awaseru',nederlands:'regen',engels:'rain',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Awacero ta bon pa naturalesa.',voorbeeld_papiamentu:'Awaseru ta bon pa naturalesa.',voorbeeld_nederlands:'Regen is goed voor de natuur.',voorbeeld_engels:'Rain is good for nature.'},
+
+{week:5,nummer:520.15,level:'A1',tags:['weer'],papiamento:'yobe',papiamentu:'yobe',nederlands:'regenen',engels:'to rain',varianten:'',type:'werkwoord',uitspraak:'',voorbeeld_papiamento:'Awe ta yobe un tiki.',voorbeeld_papiamentu:'Awe ta yobe un tiki.',voorbeeld_nederlands:'Vandaag regent het een beetje.',voorbeeld_engels:'Today it is raining a little.'},
+
+{week:5,nummer:520.16,level:'A1',tags:['natuur','plaatsen'],papiamento:'conchi',papiamentu:'konchi',nederlands:'kom, schaal',engels:'bowl',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Nan ta yama e poza Conchi.',voorbeeld_papiamentu:'Nan ta yama e poza Konchi.',voorbeeld_nederlands:'Ze noemen dit natuurzwembad Conchi.',voorbeeld_engels:'They call this natural pool Conchi.'},
+
+{week:5,nummer:520.17,level:'A1',tags:['dieren'],papiamento:'tortuga',papiamentu:'tortuga',nederlands:'schildpad',engels:'turtle',varianten:'',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Tortuga ta bin Aruba pa pone webo.',voorbeeld_papiamentu:'Tortuga ta bin Aruba pa pone webo.',voorbeeld_nederlands:'Schildpadden komen naar Aruba om eieren te leggen.',voorbeeld_engels:'Turtles come to Aruba to lay eggs.'},
+
+{week:5,nummer:520.18,level:'A1',tags:['dieren'],papiamento:'cascabel',papiamentu:'kaskabel',nederlands:'ratelslang',engels:'rattlesnake',varianten:'Cuidadó di Cunucu',type:'zelfstandig naamwoord',uitspraak:'',voorbeeld_papiamento:'Cascabel ta biba unicamente na Aruba.',voorbeeld_papiamentu:'Kaskabel ta biba unikamente na Aruba.',voorbeeld_nederlands:'De ratelslang leeft alleen op Aruba.',voorbeeld_engels:'The rattlesnake lives only on Aruba.'},
+
 
  // ===== WEEK 6 =====
 
