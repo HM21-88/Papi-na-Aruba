@@ -269,6 +269,66 @@ function getCategoryAccuracy(
 
 }
 
+function logConfusion(
+  targetId,
+  distractorId
+){
+
+  const learnerData =
+    getLearnerData();
+
+  if(
+    !learnerData.confusion_log
+  ){
+    learnerData.confusion_log = [];
+  }
+
+  learnerData.confusion_log.push({
+
+    target_id: targetId,
+
+    distractor_id: distractorId,
+
+    timestamp:
+      new Date().toISOString()
+
+  });
+
+  saveLearnerData(
+    learnerData
+  );
+
+}
+
+function getConfusionCandidates(
+  targetId
+){
+
+  const learnerData =
+    getLearnerData();
+
+  const log =
+    learnerData.confusion_log || [];
+
+  const counts = {};
+
+  log.forEach(entry => {
+
+    if(entry.target_id !== targetId){
+      return;
+    }
+
+    counts[entry.distractor_id] =
+      (counts[entry.distractor_id] || 0) + 1;
+
+  });
+
+  return Object.entries(counts)
+    .sort(([, a], [, b]) => b - a)
+    .map(([distractorId]) => distractorId);
+
+}
+
 function getDifficultWords(
   limit = 3
 ){

@@ -4791,21 +4791,12 @@ currentStoryIndex = 0;
 
 // Verlaat je een les midden in een minispel (bijv. via de terugknop), dan mag
 // dat spel niet blijven "hangen" wanneer je hierna een (andere) les opent.
-clearTimeout(balloonPlaneTimer);
-clearTimeout(buggyRoundTimer);
 clearInterval(miniGameCountdownTimer);
-
-document.getElementById(
-  'buggyGame'
-).classList.add('hidden');
+hideAllMiniGames();
 
 document.getElementById(
   'miniGameIntro'
 ).classList.add('hidden');
-
-document.getElementById(
-  'balloonWarmupEnd'
-).classList.remove('show');
 
 const scene =
   lessonInfo.scene || [];
@@ -5877,13 +5868,18 @@ function shuffleBalloonArray(arr){
 }
 
 // ===== Welk minispel hoort bij welke les? =====
-// Vliegtuig en buggy wisselen elkaar af op basis van de positie van de les
-// binnen zijn hoofdstuk: les 1/3 = vliegtuig, les 2/challenge = buggy.
-// Geldt voor elk hoofdstuk (huidige en toekomstige).
+// Vliegtuig, buggy en snake wisselen elkaar af op basis van de positie van
+// de les binnen zijn hoofdstuk: les 1 = vliegtuig, les 2 = buggy, les 3 =
+// snake. De challenge (altijd index 3, na de 3 gewone lessen) valt door de
+// cyclus van 3 vanzelf terug op vliegtuig (3 % 3 = 0) — geen aparte
+// uitzondering nodig. Geldt voor elk hoofdstuk (huidige en toekomstige).
 
 function getMiniGameTypeForLesson(lessonId){
 
   let result = 'plane';
+
+  const typesByIndex =
+    ['plane', 'buggy', 'snake'];
 
   window.learningPaths.aruba.levels.forEach(level => {
 
@@ -5898,9 +5894,9 @@ function getMiniGameTypeForLesson(lessonId){
 
         if(index !== -1){
           result =
-            index % 2 === 0
-              ? 'plane'
-              : 'buggy';
+            typesByIndex[
+              index % typesByIndex.length
+            ];
         }
 
       });
@@ -5920,13 +5916,17 @@ let selectedGameDifficulty = 1;
 let miniGameMode = null;
 let miniGameCountdownTimer = null;
 
-function beginMiniGameFlow(mode){
+// Verstopt/annuleert ALLE minispel-types tegelijk, ongeacht welk spel er nu
+// actief is. Eén gedeelde plek hiervoor voorkomt de bug die het doolhofspel
+// eerder had: een nieuw speltype toevoegen zonder het overal in deze lijst
+// mee te nemen, waardoor een oud spel onder een nieuwe intro actief bleef.
+function hideAllMiniGames(){
 
-  miniGameMode = mode;
-
-  document.getElementById(
-    'challengeChat'
-  ).classList.add('hidden');
+  clearTimeout(balloonPlaneTimer);
+  clearTimeout(buggyRoundTimer);
+  clearTimeout(snakeRoundTimer);
+  clearTimeout(snakeAdvanceTimer);
+  clearInterval(snakeTickTimer);
 
   document.getElementById(
     'balloonWarmup'
@@ -5937,8 +5937,24 @@ function beginMiniGameFlow(mode){
   ).classList.add('hidden');
 
   document.getElementById(
+    'snakeGame'
+  ).classList.add('hidden');
+
+  document.getElementById(
     'balloonWarmupEnd'
   ).classList.remove('show');
+
+}
+
+function beginMiniGameFlow(mode){
+
+  miniGameMode = mode;
+
+  document.getElementById(
+    'challengeChat'
+  ).classList.add('hidden');
+
+  hideAllMiniGames();
 
   document.getElementById(
     'miniGameIntro'
@@ -6004,12 +6020,15 @@ function runMiniGameCountdown(){
           'miniGameIntro'
         ).classList.add('hidden');
 
-        if(
+        const miniGameType =
           getMiniGameTypeForLesson(
             currentLessonId
-          ) === 'buggy'
-        ){
+          );
+
+        if(miniGameType === 'buggy'){
           startBuggyGame(miniGameMode);
+        }else if(miniGameType === 'snake'){
+          startSnakeGame(miniGameMode);
         }else{
           startBalloonWarmup(miniGameMode);
         }
@@ -6375,6 +6394,10 @@ function showBalloonWarmupEnd(){
     'balloonWarmupEndScore'
   ).textContent =
     `${balloonWarmupScore} van de ${balloonWarmupPool.length} goed`;
+
+  document.getElementById(
+    'balloonWarmupEndReason'
+  ).textContent = '';
 
   document.getElementById(
     'balloonWarmupEnd'
@@ -6908,6 +6931,10 @@ function showBuggyGameEnd(){
     `${buggyScore} van de ${buggyPool.length} goed`;
 
   document.getElementById(
+    'balloonWarmupEndReason'
+  ).textContent = '';
+
+  document.getElementById(
     'balloonWarmupEnd'
   ).classList.add('show');
 
@@ -6915,25 +6942,7 @@ function showBuggyGameEnd(){
 
 function switchToTypedFromMiniGame(){
 
-  clearTimeout(
-    balloonPlaneTimer
-  );
-
-  clearTimeout(
-    buggyRoundTimer
-  );
-
-  document.getElementById(
-    'balloonWarmup'
-  ).classList.add('hidden');
-
-  document.getElementById(
-    'buggyGame'
-  ).classList.add('hidden');
-
-  document.getElementById(
-    'balloonWarmupEnd'
-  ).classList.remove('show');
+  hideAllMiniGames();
 
   document.getElementById(
     'challengeChat'
@@ -6944,6 +6953,925 @@ function switchToTypedFromMiniGame(){
   );
 
 }
+
+// ===== Cascabel Snake — derde minispel, voor les 3 =====
+// Klassiek Snake-gedrag op een vast, muurloos rooster: de slang beweegt
+// continu in de huidige richting, de speler stuurt alleen de richting
+// (swipe of d-pad). Woorden zijn voer op het bord. Zie
+// getMiniGameTypeForLesson hierboven voor de koppeling aan les 3.
+
+const SNAKE_FOOD_COUNT = 4; // 1 doelwoord + 3 afleiders
+const SNAKE_COLS = 9;
+const SNAKE_ROWS = 11;
+
+// Alleen snelheid en startlengte schalen per niveau — het rooster blijft
+// hetzelfde formaat.
+const SNAKE_CONFIG = {
+  1: { tickMs: 650, startLength: 3 },
+  2: { tickMs: 450, startLength: 4 },
+  3: { tickMs: 300, startLength: 5 }
+};
+
+const SNAKE_DIRS = {
+  up: { dx: 0, dy: -1 },
+  down: { dx: 0, dy: 1 },
+  left: { dx: -1, dy: 0 },
+  right: { dx: 1, dy: 0 }
+};
+
+let snakeWordPool = [];
+let snakeCorrectCount = 0;
+let snakeScore = 0;
+let snakeSegments = [];
+let snakeDirection = { ...SNAKE_DIRS.right };
+let snakeNextDirection = { ...SNAKE_DIRS.right };
+let snakeCurrentTarget = null;
+let snakePreviousTargetId = null;
+let snakeRecentDistractorIds = [];
+let snakeFoodItems = {};
+let snakeRoundLocked = false;
+let snakeCellEls = [];
+let snakeTickTimer = null;
+let snakeAdvanceTimer = null;
+let snakeRoundTimer = null;
+let snakeTouchStartX = null;
+let snakeTouchStartY = null;
+
+function isOppositeSnakeDirection(a, b){
+  return a.dx === -b.dx && a.dy === -b.dy;
+}
+
+function setSnakeDirection(dirName){
+
+  const proposed =
+    SNAKE_DIRS[dirName];
+
+  if(!proposed){
+    return;
+  }
+
+  if(
+    isOppositeSnakeDirection(
+      proposed,
+      snakeDirection
+    )
+  ){
+    return;
+  }
+
+  snakeNextDirection = proposed;
+
+}
+
+function handleSnakeKeydown(event){
+
+  const game =
+    document.getElementById(
+      'snakeGame'
+    );
+
+  if(
+    !game ||
+    game.classList.contains('hidden')
+  ){
+    return;
+  }
+
+  const keyMap = {
+    ArrowUp: 'up',
+    ArrowDown: 'down',
+    ArrowLeft: 'left',
+    ArrowRight: 'right'
+  };
+
+  const dir =
+    keyMap[event.key];
+
+  if(dir){
+    event.preventDefault();
+    setSnakeDirection(dir);
+  }
+
+}
+
+document.addEventListener(
+  'keydown',
+  handleSnakeKeydown
+);
+
+function handleSnakeTouchStart(event){
+
+  const game =
+    document.getElementById(
+      'snakeGame'
+    );
+
+  if(
+    !game ||
+    game.classList.contains('hidden')
+  ){
+    return;
+  }
+
+  const touch =
+    event.touches[0];
+
+  snakeTouchStartX = touch.clientX;
+  snakeTouchStartY = touch.clientY;
+
+}
+
+function handleSnakeTouchEnd(event){
+
+  if(snakeTouchStartX === null){
+    return;
+  }
+
+  const touch =
+    event.changedTouches[0];
+
+  const dx =
+    touch.clientX - snakeTouchStartX;
+
+  const dy =
+    touch.clientY - snakeTouchStartY;
+
+  snakeTouchStartX = null;
+  snakeTouchStartY = null;
+
+  if(
+    Math.abs(dx) < 20 &&
+    Math.abs(dy) < 20
+  ){
+    return;
+  }
+
+  if(Math.abs(dx) > Math.abs(dy)){
+    setSnakeDirection(dx > 0 ? 'right' : 'left');
+  }else{
+    setSnakeDirection(dy > 0 ? 'down' : 'up');
+  }
+
+}
+
+document.getElementById('snakeBoard').addEventListener(
+  'touchstart',
+  handleSnakeTouchStart,
+  { passive: true }
+);
+
+document.getElementById('snakeBoard').addEventListener(
+  'touchend',
+  handleSnakeTouchEnd
+);
+
+// Kiest willekeurige lege cellen (niet bezet door de slang) voor het voer
+// van deze ronde.
+function pickEmptySnakeCells(count){
+
+  const occupied =
+    new Set(
+      snakeSegments.map(
+        s => s.r + ',' + s.c
+      )
+    );
+
+  const cells = [];
+
+  for(let r = 0; r < SNAKE_ROWS; r++){
+
+    for(let c = 0; c < SNAKE_COLS; c++){
+
+      if(!occupied.has(r + ',' + c)){
+        cells.push({ r, c });
+      }
+
+    }
+
+  }
+
+  return shuffleBalloonArray(cells).slice(0, count);
+
+}
+
+// Doelwoord: verstreken next_review_at eerst (spaced repetition), anders
+// willekeurig met voorkeur voor lage repetitions. Nooit twee keer
+// achtereen hetzelfde doelwoord.
+function pickSnakeTarget(pool){
+
+  const learnerData =
+    getLearnerData();
+
+  const now =
+    new Date();
+
+  const usable =
+    pool.filter(
+      w => w.id !== snakePreviousTargetId
+    );
+
+  const source =
+    usable.length ? usable : pool;
+
+  const due =
+    source.filter(w => {
+
+      const progress =
+        learnerData.word_progress[w.id];
+
+      return (
+        progress &&
+        progress.next_review_at &&
+        new Date(progress.next_review_at) <= now
+      );
+
+    });
+
+  if(due.length){
+    return due[
+      Math.floor(Math.random() * due.length)
+    ];
+  }
+
+  const repsOf =
+    w =>
+      (learnerData.word_progress[w.id] || {}).repetitions || 0;
+
+  const minReps =
+    Math.min(...source.map(repsOf));
+
+  const lowReps =
+    source.filter(w => repsOf(w) === minReps);
+
+  return lowReps[
+    Math.floor(Math.random() * lowReps.length)
+  ];
+
+}
+
+// Afleiders: makkelijk = willekeurig uit de les-lijst zelf; middel = zelfde
+// woordtype/betekenisveld uit de bredere woordenset, week-genabuurd;
+// moeilijk = eerst confusion_log van deze gebruiker, anders fonetisch/
+// spelling-gelijkende woorden (Levenshtein). Nooit dezelfde afleider die
+// in de vorige ronde ook al te zien was.
+function pickSnakeDistractors(target, pool, difficulty){
+
+  const usableFromLesson =
+    pool.filter(
+      w =>
+        w.id !== target.id &&
+        w.id !== snakePreviousTargetId
+    );
+
+  const needed =
+    SNAKE_FOOD_COUNT - 1;
+
+  if(difficulty === 1){
+
+    let candidates =
+      shuffleBalloonArray(
+        usableFromLesson.filter(
+          w => !snakeRecentDistractorIds.includes(w.id)
+        )
+      );
+
+    if(candidates.length < needed){
+      candidates =
+        shuffleBalloonArray(usableFromLesson);
+    }
+
+    return candidates.slice(0, needed);
+
+  }
+
+  if(difficulty === 2){
+
+    const sameField =
+      data.filter(w =>
+        w.id !== target.id &&
+        w.id !== snakePreviousTargetId &&
+        !snakeRecentDistractorIds.includes(w.id) &&
+        (
+          w.type === target.type ||
+          (w.tags || []).some(
+            t => (target.tags || []).includes(t)
+          )
+        ) &&
+        Math.abs(Number(w.week) - Number(target.week)) <= 2
+      );
+
+    let candidates =
+      shuffleBalloonArray(sameField);
+
+    if(candidates.length < needed){
+      candidates =
+        shuffleBalloonArray(usableFromLesson);
+    }
+
+    return candidates.slice(0, needed);
+
+  }
+
+  const confusionWords =
+    getConfusionCandidates(target.id)
+      .map(id => getWordById(id))
+      .filter(Boolean)
+      .filter(
+        w =>
+          w.id !== target.id &&
+          !snakeRecentDistractorIds.includes(w.id)
+      );
+
+  let candidates = [...confusionWords];
+
+  if(candidates.length < needed){
+
+    const targetWord =
+      getPrimaryWord(target);
+
+    const similarityRanked =
+      data
+        .filter(w =>
+          w.id !== target.id &&
+          w.id !== snakePreviousTargetId &&
+          !candidates.some(c => c.id === w.id)
+        )
+        .map(w => ({
+          w,
+          dist:
+            levenshteinDistance(
+              targetWord,
+              getPrimaryWord(w)
+            )
+        }))
+        .sort((a, b) => a.dist - b.dist)
+        .map(x => x.w);
+
+    candidates =
+      [...candidates, ...similarityRanked];
+
+  }
+
+  return candidates.slice(0, needed);
+
+}
+
+function buildSnakeBoard(){
+
+  const board =
+    document.getElementById(
+      'snakeBoard'
+    );
+
+  board.innerHTML = '';
+
+  board.style.setProperty(
+    '--snake-cols',
+    SNAKE_COLS
+  );
+
+  board.style.setProperty(
+    '--snake-rows',
+    SNAKE_ROWS
+  );
+
+  snakeCellEls = [];
+
+  for(let r = 0; r < SNAKE_ROWS; r++){
+
+    const row = [];
+
+    for(let c = 0; c < SNAKE_COLS; c++){
+
+      const cell =
+        document.createElement('div');
+
+      cell.className = 'snake-cell';
+
+      board.appendChild(cell);
+
+      row.push(cell);
+
+    }
+
+    snakeCellEls.push(row);
+
+  }
+
+}
+
+function renderSnakeFood(){
+
+  for(let r = 0; r < SNAKE_ROWS; r++){
+
+    for(let c = 0; c < SNAKE_COLS; c++){
+
+      const cellEl =
+        snakeCellEls[r][c];
+
+      cellEl.innerHTML = '';
+
+      cellEl.classList.remove(
+        'snake-food-cell'
+      );
+
+    }
+
+  }
+
+  Object.keys(snakeFoodItems).forEach(key => {
+
+    const [r, c] =
+      key.split(',').map(Number);
+
+    const word =
+      snakeFoodItems[key];
+
+    const cellEl =
+      snakeCellEls[r][c];
+
+    cellEl.classList.add(
+      'snake-food-cell'
+    );
+
+    const label =
+      document.createElement('span');
+
+    label.className = 'snake-food-label';
+
+    label.textContent =
+      getPrimaryWord(word);
+
+    cellEl.appendChild(label);
+
+  });
+
+}
+
+function renderSnakeSnakeBody(){
+
+  for(let r = 0; r < SNAKE_ROWS; r++){
+
+    for(let c = 0; c < SNAKE_COLS; c++){
+
+      snakeCellEls[r][c].classList.remove(
+        'snake-head',
+        'snake-segment'
+      );
+
+    }
+
+  }
+
+  snakeSegments.forEach((seg, i) => {
+
+    const cellEl =
+      snakeCellEls[seg.r] &&
+      snakeCellEls[seg.r][seg.c];
+
+    if(cellEl){
+
+      cellEl.classList.add(
+        i === 0 ? 'snake-head' : 'snake-segment'
+      );
+
+    }
+
+  });
+
+}
+
+function flashSnakeCell(cellKey, className){
+
+  const [r, c] =
+    cellKey.split(',').map(Number);
+
+  const cellEl =
+    snakeCellEls[r] &&
+    snakeCellEls[r][c];
+
+  if(!cellEl){
+    return;
+  }
+
+  cellEl.classList.add(className);
+
+  setTimeout(() => {
+    cellEl.classList.remove(className);
+  }, 450);
+
+}
+
+// Placeholder-geluid voor een foute hap, via de Web Audio API. Vervang dit
+// later door een opgenomen geluidseffect (audiobestand).
+function playSnakeBuzzSound(){
+
+  try{
+
+    const AudioCtx =
+      window.AudioContext ||
+      window.webkitAudioContext;
+
+    const ctx = new AudioCtx();
+
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+
+    osc.type = 'sawtooth';
+    osc.frequency.value = 160;
+
+    gain.gain.setValueAtTime(
+      0.25,
+      ctx.currentTime
+    );
+
+    gain.gain.exponentialRampToValueAtTime(
+      0.001,
+      ctx.currentTime + 0.3
+    );
+
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+
+    osc.start();
+    osc.stop(ctx.currentTime + 0.3);
+
+  }catch(e){}
+
+}
+
+function startSnakeGame(mode){
+
+  clearTimeout(snakeRoundTimer);
+  clearTimeout(snakeAdvanceTimer);
+  clearInterval(snakeTickTimer);
+
+  const lessonInfo =
+    lessonData[
+      currentLessonId
+    ];
+
+  const questions =
+    mode === 'challenge'
+      ? lessonInfo.questions
+      : lessonInfo.miniQuiz;
+
+  snakeWordPool =
+    questions
+      .map(q => getWordById(q.id))
+      .filter(Boolean);
+
+  miniGameMode = mode;
+  snakeCorrectCount = 0;
+  snakeScore = 0;
+  challengeMistakes = [];
+  snakePreviousTargetId = null;
+  snakeRecentDistractorIds = [];
+  snakeRoundLocked = false;
+
+  const config =
+    SNAKE_CONFIG[selectedGameDifficulty] ||
+    SNAKE_CONFIG[1];
+
+  const startRow =
+    Math.floor(SNAKE_ROWS / 2);
+
+  const startCol =
+    Math.floor(SNAKE_COLS / 2);
+
+  snakeSegments = [];
+
+  for(let i = 0; i < config.startLength; i++){
+    snakeSegments.push({ r: startRow, c: startCol - i });
+  }
+
+  snakeDirection = { ...SNAKE_DIRS.right };
+  snakeNextDirection = { ...SNAKE_DIRS.right };
+
+  document.getElementById(
+    'challengeChat'
+  ).classList.add('hidden');
+
+  document.getElementById(
+    'snakeGame'
+  ).classList.remove('hidden');
+
+  document.getElementById(
+    'balloonWarmupEnd'
+  ).classList.remove('show');
+
+  document.getElementById(
+    'snakeScoreValue'
+  ).textContent = snakeScore;
+
+  buildSnakeBoard();
+  renderSnakeSnakeBody();
+
+  nextSnakeRound();
+
+  snakeTickTimer =
+    setInterval(
+      snakeTick,
+      config.tickMs
+    );
+
+}
+
+function nextSnakeRound(){
+
+  clearTimeout(snakeAdvanceTimer);
+
+  if(snakeCorrectCount >= snakeWordPool.length){
+    showSnakeGameEnd();
+    return;
+  }
+
+  snakeRoundLocked = false;
+
+  snakeCurrentTarget =
+    pickSnakeTarget(snakeWordPool);
+
+  snakePreviousTargetId =
+    snakeCurrentTarget.id;
+
+  const distractors =
+    pickSnakeDistractors(
+      snakeCurrentTarget,
+      snakeWordPool,
+      selectedGameDifficulty
+    );
+
+  snakeRecentDistractorIds =
+    distractors.map(w => w.id);
+
+  const foodWords =
+    shuffleBalloonArray([
+      snakeCurrentTarget,
+      ...distractors
+    ]);
+
+  const cells =
+    pickEmptySnakeCells(foodWords.length);
+
+  snakeFoodItems = {};
+
+  cells.forEach((cell, i) => {
+
+    if(foodWords[i]){
+
+      snakeFoodItems[
+        cell.r + ',' + cell.c
+      ] = foodWords[i];
+
+    }
+
+  });
+
+  document.getElementById(
+    'snakeProgress'
+  ).textContent =
+    `Woord ${snakeCorrectCount + 1} van ${snakeWordPool.length}`;
+
+  document.getElementById(
+    'snakePromptWord'
+  ).textContent =
+    snakeCurrentTarget
+      .nederlands
+      .split(',')[0]
+      .trim();
+
+  renderSnakeFood();
+
+}
+
+function gradeSnakeBite(correct, cellKey){
+
+  const bittenWord =
+    snakeFoodItems[cellKey];
+
+  updateWordProgress(
+    bittenWord.id,
+    correct
+  );
+
+  logQuizAttempt({
+    word_id: bittenWord.id,
+    typed_answer: null,
+    correct: correct,
+    match_type:
+      correct ? 'correct' : 'incorrect',
+    category: 'cascabelsnake'
+  });
+
+  if(correct){
+
+    snakeScore += 10;
+    snakeCorrectCount++;
+
+    document.getElementById(
+      'snakeScoreValue'
+    ).textContent = snakeScore;
+
+    flashSnakeCell(cellKey, 'snake-food-correct');
+
+    // Placeholder: speakText() gebruikt speechSynthesis.
+    // Vervang later door een ingesproken audiobestand per woord.
+    speakText(
+      getPrimaryWord(bittenWord)
+    );
+
+    delete snakeFoodItems[cellKey];
+
+    snakeRoundLocked = true;
+
+    snakeAdvanceTimer =
+      setTimeout(() => {
+        nextSnakeRound();
+      }, 450);
+
+  }else{
+
+    snakeScore -= 10;
+
+    document.getElementById(
+      'snakeScoreValue'
+    ).textContent = snakeScore;
+
+    if(bittenWord.id !== snakeCurrentTarget.id){
+      logConfusion(
+        snakeCurrentTarget.id,
+        bittenWord.id
+      );
+    }
+
+    flashSnakeCell(cellKey, 'snake-food-wrong');
+    playSnakeBuzzSound();
+
+    delete snakeFoodItems[cellKey];
+
+    if(
+      !challengeMistakes.includes(
+        snakeCurrentTarget.id
+      )
+    ){
+      challengeMistakes.push(
+        snakeCurrentTarget.id
+      );
+    }
+
+  }
+
+  renderSnakeFood();
+
+}
+
+function snakeTick(){
+
+  if(snakeRoundLocked){
+    return;
+  }
+
+  if(
+    !isOppositeSnakeDirection(
+      snakeNextDirection,
+      snakeDirection
+    )
+  ){
+    snakeDirection = snakeNextDirection;
+  }
+
+  const head = snakeSegments[0];
+
+  const newHead = {
+    r: head.r + snakeDirection.dy,
+    c: head.c + snakeDirection.dx
+  };
+
+  if(
+    newHead.r < 0 ||
+    newHead.r >= SNAKE_ROWS ||
+    newHead.c < 0 ||
+    newHead.c >= SNAKE_COLS
+  ){
+    showSnakeGameEnd('wall');
+    return;
+  }
+
+  const cellKey =
+    newHead.r + ',' + newHead.c;
+
+  const foodHere =
+    snakeFoodItems[cellKey];
+
+  const isCorrectEat =
+    !!foodHere &&
+    foodHere.id === snakeCurrentTarget.id;
+
+  const bodyToCheck =
+    (foodHere && isCorrectEat)
+      ? snakeSegments
+      : snakeSegments.slice(0, -1);
+
+  if(
+    bodyToCheck.some(
+      seg => seg.r === newHead.r && seg.c === newHead.c
+    )
+  ){
+    showSnakeGameEnd('self');
+    return;
+  }
+
+  snakeSegments.unshift(newHead);
+
+  if(foodHere){
+
+    gradeSnakeBite(isCorrectEat, cellKey);
+
+    if(!isCorrectEat){
+
+      snakeSegments.pop();
+
+      if(snakeSegments.length > 0){
+        snakeSegments.pop();
+      }
+
+      if(snakeSegments.length === 0){
+        showSnakeGameEnd('tooShort');
+        return;
+      }
+
+    }
+
+  }else{
+
+    snakeSegments.pop();
+
+  }
+
+  renderSnakeSnakeBody();
+
+}
+
+// reason: 'wall' | 'self' | 'tooShort' | undefined (undefined = normale
+// afronding doordat de hele lesst is doorlopen). Zorgt dat de speler altijd
+// begrijpt WAAROM het spel stopte, i.p.v. zich af te vragen wat er gebeurde.
+function showSnakeGameEnd(reason){
+
+  clearInterval(snakeTickTimer);
+  clearTimeout(snakeAdvanceTimer);
+
+  const reasonText = {
+    wall: '🧱 Je botste tegen de rand van het bord!',
+    self: '🐍 Je botste tegen jezelf!',
+    tooShort: '📏 Je slang was te kort om door te gaan!'
+  }[reason] || '';
+
+  document.getElementById(
+    'balloonWarmupEndReason'
+  ).textContent = reasonText;
+
+  const lessonInfo =
+    lessonData[
+      currentLessonId
+    ];
+
+  currentChallenge =
+    miniGameMode === 'challenge'
+      ? lessonInfo
+      : {
+          questions:
+            lessonInfo.miniQuiz
+        };
+
+  challengeScore =
+    snakeCorrectCount;
+
+  finishChallengeQuestions();
+
+  const learnerData =
+    getLearnerData();
+
+  if(!learnerData.travel_progress){
+    learnerData.travel_progress = {};
+  }
+
+  learnerData.travel_progress[
+    currentLessonId
+  ] = true;
+
+  saveLearnerData(learnerData);
+
+  document.getElementById(
+    'balloonWarmupEndScore'
+  ).textContent =
+    `${snakeScore} punten — ${snakeCorrectCount} van de ${snakeWordPool.length} woorden goed`;
+
+  document.getElementById(
+    'balloonWarmupEnd'
+  ).classList.add('show');
+
+}
+
 
 function finishChallengeQuestions(){
 

@@ -374,9 +374,49 @@
 
 </div>
 
+<div id="snakeGame" class="balloon-game snake-game hidden">
+
+  <div class="balloon-hud">
+    <div class="balloon-progress" id="snakeProgress">Woord 1 van 10</div>
+    <div class="balloon-score"><span id="snakeScoreValue">0</span> punten</div>
+  </div>
+
+  <div class="balloon-prompt-wrap">
+    <div class="balloon-prompt-label">Vang het woord voor</div>
+    <div class="balloon-prompt-word" id="snakePromptWord">—</div>
+  </div>
+
+  <div class="snake-wrap">
+    <div class="snake-board" id="snakeBoard"></div>
+  </div>
+
+  <div class="snake-dpad">
+
+    <div class="snake-dpad-row">
+      <button type="button" class="snake-dpad-btn snake-dpad-up" onclick="setSnakeDirection('up')">⬆️</button>
+    </div>
+
+    <div class="snake-dpad-row">
+      <button type="button" class="snake-dpad-btn" onclick="setSnakeDirection('left')">⬅️</button>
+      <button type="button" class="snake-dpad-btn" onclick="setSnakeDirection('right')">➡️</button>
+    </div>
+
+    <div class="snake-dpad-row">
+      <button type="button" class="snake-dpad-btn" onclick="setSnakeDirection('down')">⬇️</button>
+    </div>
+
+  </div>
+
+  <button class="balloon-link-btn" type="button" onclick="switchToTypedFromMiniGame()">
+    Liever de gewone quiz? →
+  </button>
+
+</div>
+
 <div class="balloon-end-screen" id="balloonWarmupEnd">
   <div class="balloon-end-emoji">🎉</div>
   <div class="balloon-end-title">Warm-up klaar!</div>
+  <div class="balloon-end-reason" id="balloonWarmupEndReason"></div>
   <div class="balloon-end-score" id="balloonWarmupEndScore">0 van de 10 goed</div>
 
   <div class="story-action-bar">
