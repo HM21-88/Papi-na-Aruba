@@ -769,7 +769,7 @@ header .wrap{
   .flash{
     position:relative;
     z-index:2;
-    min-height:240px;
+    height:340px;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -781,11 +781,29 @@ header .wrap{
     box-shadow:0 10px 24px rgba(31,41,55,.08);
     transform-origin:center center;
     will-change:transform, opacity;
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    touch-action:pan-y;
     transition:
       transform .42s cubic-bezier(.22,.8,.24,1),
       opacity .42s cubic-bezier(.22,.8,.24,1),
       box-shadow .25s ease,
       border-color .25s ease;
+  }
+
+  .flash > div{
+    width:100%;
+    max-width:100%;
+  }
+
+  .flash.is-flipping{
+    animation:flashFlipPulse .26s ease;
+  }
+
+  @keyframes flashFlipPulse{
+    0%{ transform:scale(1); }
+    45%{ transform:scale(.965); }
+    100%{ transform:scale(1); }
   }
 
   .flash.is-entering{
@@ -817,13 +835,11 @@ header .wrap{
   }
 
 .flash-hard-btn{
-  background:#FFF9E8;
-  color:#9A6700;
+  background:rgba(217,164,65,.12);
+  color:var(--brand-accent-dark);
 
-  border:3px solid var(--flag-yellow);
+  border:1px solid rgba(217,164,65,.45);
   border-radius:14px;
-  
-  color:var(--text-primary);
 
   font-weight:700;
   cursor:pointer;
@@ -831,10 +847,75 @@ header .wrap{
   display:flex;
   align-items:center;
   justify-content:center;
+
+  box-shadow:var(--shadow-soft);
+  transition:transform .15s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
 }
 
 .flash-hard-btn:hover{
-  background:#F8EFD8;
+  background:rgba(217,164,65,.20);
+  border-color:var(--brand-accent);
+}
+
+.flash-hard-btn:active{
+  transform:scale(.96);
+}
+
+/* ===== FLASHCARD ACTION BUTTONS (V3) ===== */
+
+.flash-btn{
+  border-radius:14px;
+  cursor:pointer;
+  transition:transform .15s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+}
+
+.flash-btn:active{
+  transform:scale(.96);
+}
+
+.flash-btn-outline{
+  background:#FCFAF7;
+  border:1px solid var(--border-soft);
+  color:var(--brand-primary);
+  box-shadow:var(--shadow-soft);
+}
+
+.flash-btn-outline:hover{
+  background:#F8F5EF;
+  border-color:var(--brand-primary);
+  transform:translateY(-1px);
+}
+
+.flash-btn-primary{
+  background:var(--brand-primary);
+  border:1px solid var(--brand-primary);
+  color:#fff;
+  box-shadow:0 8px 20px rgba(15,109,115,.28);
+}
+
+.flash-btn-primary:hover{
+  background:var(--brand-primary-dark);
+  border-color:var(--brand-primary-dark);
+  transform:translateY(-1px);
+}
+
+@media (min-width:560px){
+  #flashcards .action-btn .label{
+    display:block;
+    margin-top:2px;
+    font-size:.78rem;
+    font-weight:700;
+  }
+}
+
+#flashHardCount{
+  background:rgba(217,164,65,.12);
+  border:1px solid rgba(217,164,65,.35);
+  border-radius:999px;
+  padding:8px 14px;
+  font-size:.88rem;
+  font-weight:700;
+  color:var(--brand-accent-dark);
 }
 
 .flash .big{
@@ -1510,12 +1591,41 @@ body{
     }
 
     .flash{
-      min-height:180px;
-      padding:14px;
+      height:300px;
+      padding:16px;
     }
 
     .flash .big{
       font-size:1.25rem;
+    }
+
+    .flash-front-word{
+      font-size:1.55rem;
+    }
+
+    .flash-answer-word{
+      font-size:1.6rem;
+      margin-bottom:6px;
+    }
+
+    .flash-answer-variants{
+      margin-bottom:12px;
+      font-size:.9rem;
+    }
+
+    .flash-example{
+      padding:12px;
+    }
+
+    .flash-example-title{
+      margin-bottom:6px;
+      font-size:.92rem;
+    }
+
+    .flash-example-pa,
+    .flash-example-nl{
+      font-size:.92rem;
+      margin-bottom:4px;
     }
 
     .quiz-q{

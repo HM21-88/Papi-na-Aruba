@@ -1482,6 +1482,14 @@ function flipFlash(){
   if(!flashPool.length || flashAnimating) return;
   flashFlipped=!flashFlipped;
   playFlashSound('flip');
+
+  const box=getFlashBox();
+  if(box){
+    box.classList.remove('is-flipping');
+    void box.offsetWidth;
+    box.classList.add('is-flipping');
+  }
+
   renderFlash();
 }
 
@@ -1908,6 +1916,58 @@ quizAnswered++;
 
   updateQuizStats();
 }
+
+let flashSwipeTracking=false;
+let flashSwipeStartX=0;
+let flashSwipeStartY=0;
+let flashSwipeStartTime=0;
+
+function initFlashSwipe(){
+  const box=getFlashBox();
+  if(!box) return;
+
+  box.addEventListener('touchstart', function(e){
+    if(e.touches.length!==1) return;
+    flashSwipeTracking=true;
+    flashSwipeStartX=e.touches[0].clientX;
+    flashSwipeStartY=e.touches[0].clientY;
+    flashSwipeStartTime=Date.now();
+  }, {passive:true});
+
+  box.addEventListener('touchend', function(e){
+    if(!flashSwipeTracking) return;
+    flashSwipeTracking=false;
+
+    if(!flashPool.length || flashAnimating) return;
+
+    const touch=e.changedTouches[0];
+    const deltaX=touch.clientX-flashSwipeStartX;
+    const deltaY=touch.clientY-flashSwipeStartY;
+    const elapsed=Date.now()-flashSwipeStartTime;
+
+    const SWIPE_MIN_DISTANCE=45;
+    const SWIPE_MAX_OFFAXIS=60;
+    const SWIPE_MAX_TIME=700;
+
+    if(Math.abs(deltaX)<SWIPE_MIN_DISTANCE || Math.abs(deltaY)>SWIPE_MAX_OFFAXIS || elapsed>SWIPE_MAX_TIME){
+      return;
+    }
+
+    e.preventDefault();
+
+    if(deltaX<0){
+      nextFlash();
+    } else {
+      prevFlash();
+    }
+  });
+
+  box.addEventListener('touchcancel', function(){
+    flashSwipeTracking=false;
+  });
+}
+
+initFlashSwipe();
 
 document.addEventListener('keydown', function(e){
   const flashVisible=!document.getElementById('flashcards').classList.contains('hidden');
